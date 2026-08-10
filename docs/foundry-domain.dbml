@@ -1,0 +1,912 @@
+Project startup_foundry {
+  database_type: 'PostgreSQL'
+  Note: 'Logical Foundry schema. SQLAlchemy keeps it portable to SQLite for local learning.'
+}
+
+Enum workspace_kind {
+  idea
+  venture
+  foundry_capability
+}
+
+Enum record_status {
+  active
+  archived
+}
+
+Enum idea_origin {
+  original_source
+  generated_derived
+  generated_new
+  user_added
+}
+
+Enum idea_relation_kind {
+  derived_from
+  combined_with
+  duplicates
+  pivots_from
+}
+
+Enum source_kind {
+  document
+  spreadsheet
+  webpage
+  interview
+  dataset
+  observation
+  report
+  other
+}
+
+Enum idea_source_role {
+  inspiration
+  market_reference
+  validation
+}
+
+Enum market_actor_relation {
+  competitor
+  alternative
+  partner
+  benchmark
+}
+
+Enum scorecard_status {
+  draft
+  active
+  retired
+}
+
+Enum score_direction {
+  positive
+  penalty
+}
+
+Enum confidence_level {
+  low
+  medium
+  high
+}
+
+Enum venture_stage {
+  discovery
+  validation
+  build
+  pilot
+  beta
+  operating
+  paused
+  archived
+}
+
+Enum assumption_kind {
+  desirability
+  viability
+  feasibility
+  usability
+  growth
+  ethics
+}
+
+Enum assumption_status {
+  open
+  testing
+  supported
+  refuted
+  superseded
+  accepted_risk
+}
+
+Enum assumption_relation_kind {
+  derived_from
+  refines
+  contradicts
+  depends_on
+}
+
+Enum work_item_kind {
+  investigation
+  experiment
+  execution
+}
+
+Enum work_item_status {
+  todo
+  ready
+  in_progress
+  blocked
+  done
+  cancelled
+}
+
+Enum experiment_status {
+  planned
+  running
+  complete
+  cancelled
+}
+
+Enum evidence_kind {
+  observation
+  interview
+  experiment_result
+  analytics
+  document
+  market_research
+  external_outcome
+  artifact_review
+}
+
+Enum artifact_kind {
+  document
+  dataset
+  report
+  prototype
+  code
+  model
+  configuration
+  prompt
+  evaluation
+  release
+  other
+}
+
+Enum artifact_relation_kind {
+  derived_from
+  supersedes
+  input_to
+  output_of
+}
+
+Enum assessment_outcome {
+  supported
+  weakened
+  refuted
+  inconclusive
+}
+
+Enum decision_kind {
+  continue
+  pivot
+  narrow
+  stop
+  build
+  defer
+  accept_risk
+  promote
+  rollback
+}
+
+Enum decision_status {
+  proposed
+  accepted
+  superseded
+  reversed
+}
+
+Enum friction_severity {
+  minor
+  moderate
+  major
+  blocker
+}
+
+Enum friction_status {
+  open
+  mitigated
+  resolved
+  accepted
+}
+
+Enum capability_status {
+  observed
+  shaping
+  piloting
+  adopted
+  rejected
+  retired
+}
+
+Enum capability_use_outcome {
+  success
+  partial
+  failure
+  inconclusive
+}
+
+Enum agent_definition_status {
+  active
+  paused
+  retired
+}
+
+Enum agent_run_status {
+  requested
+  waiting_approval
+  running
+  succeeded
+  failed
+  cancelled
+}
+
+Enum action_risk {
+  internal
+  reversible_external
+  external_communication
+  financial
+  destructive
+}
+
+Enum external_action_status {
+  proposed
+  awaiting_approval
+  approved
+  executing
+  succeeded
+  failed
+  rejected
+  expired
+  cancelled
+}
+
+Enum approval_status {
+  pending
+  approved
+  rejected
+  expired
+  revoked
+}
+
+Enum action_attempt_status {
+  started
+  succeeded
+  failed
+  unknown
+}
+
+Table portfolios {
+  id uuid [pk]
+  key varchar(100) [not null, unique]
+  name varchar(200) [not null]
+  description text
+  base_currency char(3) [not null, default: 'EUR']
+  version_id int [not null, default: 1, note: 'Optimistic-lock counter']
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table workspaces {
+  id uuid [pk]
+  portfolio_id uuid [not null, ref: > portfolios.id]
+  key varchar(120) [not null]
+  title varchar(240) [not null]
+  kind workspace_kind [not null]
+  status record_status [not null, default: 'active']
+  description text
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (portfolio_id, key) [unique] }
+  Note: 'Common context for idea, venture, and Foundry-capability learning loops.'
+}
+
+Table reference_sources {
+  id uuid [pk]
+  portfolio_id uuid [not null, ref: > portfolios.id]
+  kind source_kind [not null]
+  title varchar(500) [not null]
+  locator text [not null]
+  publisher varchar(240)
+  published_at date
+  retrieved_at timestamptz
+  content_digest varchar(128)
+  notes text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (portfolio_id, locator) [unique] }
+}
+
+Table ideas {
+  id uuid [pk]
+  workspace_id uuid [not null, unique, ref: > workspaces.id]
+  origin idea_origin [not null]
+  external_key varchar(100)
+  current_revision_id uuid [ref: > idea_revisions.id]
+  status record_status [not null, default: 'active']
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table idea_revisions {
+  id uuid [pk]
+  idea_id uuid [not null, ref: > ideas.id]
+  revision_number int [not null, note: 'Must be >= 1']
+  title varchar(300) [not null]
+  category varchar(160)
+  venture_type varchar(160)
+  cluster varchar(160)
+  original_text text
+  cleaned_description text [not null]
+  narrowing_or_pivot text
+  target_customer text
+  business_model text
+  focused_mvp_scope text
+  estimated_mvp_weeks float
+  key_validation_test text
+  change_reason text
+  authored_by varchar(200)
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (idea_id, revision_number) [unique] }
+}
+
+Table idea_relations {
+  id uuid [pk]
+  source_idea_id uuid [not null, ref: > ideas.id]
+  target_idea_id uuid [not null, ref: > ideas.id]
+  kind idea_relation_kind [not null]
+  rationale text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (source_idea_id, target_idea_id, kind) [unique] }
+}
+
+Table idea_sources {
+  id uuid [pk]
+  idea_id uuid [not null, ref: > ideas.id]
+  source_id uuid [not null, ref: > reference_sources.id]
+  role idea_source_role [not null]
+  note text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (idea_id, source_id, role) [unique] }
+}
+
+Table market_actors {
+  id uuid [pk]
+  portfolio_id uuid [not null, ref: > portfolios.id]
+  name varchar(240) [not null]
+  website text
+  description text
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (portfolio_id, name) [unique] }
+}
+
+Table idea_market_actors {
+  id uuid [pk]
+  idea_revision_id uuid [not null, ref: > idea_revisions.id]
+  market_actor_id uuid [not null, ref: > market_actors.id]
+  relation market_actor_relation [not null]
+  is_primary boolean [not null, default: false]
+  note text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (idea_revision_id, market_actor_id, relation) [unique] }
+}
+
+Table scorecards {
+  id uuid [pk]
+  portfolio_id uuid [not null, ref: > portfolios.id]
+  name varchar(240) [not null]
+  version int [not null]
+  status scorecard_status [not null, default: 'draft']
+  description text
+  formula_description text
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (portfolio_id, name, version) [unique] }
+}
+
+Table scoring_criteria {
+  id uuid [pk]
+  scorecard_id uuid [not null, ref: > scorecards.id]
+  key varchar(100) [not null]
+  name varchar(240) [not null]
+  description text
+  direction score_direction [not null]
+  weight float [not null, note: '0..1']
+  scale_min int [not null]
+  scale_max int [not null]
+  guidance text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (scorecard_id, key) [unique] }
+}
+
+Table idea_assessments {
+  id uuid [pk]
+  idea_revision_id uuid [not null, ref: > idea_revisions.id]
+  scorecard_id uuid [not null, ref: > scorecards.id]
+  assessment_number int [not null, default: 1, note: 'Must be >= 1']
+  confidence confidence_level [not null]
+  overall_score float [note: '0..100']
+  grade varchar(20)
+  recommendation text
+  pros text
+  cons text
+  revenue_year_1 decimal(16,2)
+  revenue_year_3 decimal(16,2)
+  rationale text
+  assessed_by varchar(200)
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (idea_revision_id, scorecard_id, assessment_number) [unique] }
+}
+
+Table criterion_scores {
+  id uuid [pk]
+  assessment_id uuid [not null, ref: > idea_assessments.id]
+  criterion_id uuid [not null, ref: > scoring_criteria.id]
+  raw_score float [not null]
+  normalized_score float
+  weighted_contribution float
+  rationale text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (assessment_id, criterion_id) [unique] }
+}
+
+Table criterion_score_evidence {
+  id uuid [pk]
+  criterion_score_id uuid [not null, ref: > criterion_scores.id]
+  evidence_id uuid [not null, ref: > evidence.id]
+  note text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (criterion_score_id, evidence_id) [unique] }
+}
+
+Table ranking_snapshots {
+  id uuid [pk]
+  portfolio_id uuid [not null, ref: > portfolios.id]
+  scorecard_id uuid [not null, ref: > scorecards.id]
+  label varchar(240) [not null]
+  description text
+  generated_by varchar(200)
+  generated_at timestamptz [not null]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (portfolio_id, label) [unique] }
+}
+
+Table ranking_entries {
+  id uuid [pk]
+  snapshot_id uuid [not null, ref: > ranking_snapshots.id]
+  idea_id uuid [not null, ref: > ideas.id]
+  assessment_id uuid [not null, ref: > idea_assessments.id]
+  rank int [not null, note: 'Must be >= 1']
+  score float [not null]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes {
+    (snapshot_id, rank) [unique]
+    (snapshot_id, idea_id) [unique]
+  }
+}
+
+Table ventures {
+  id uuid [pk]
+  workspace_id uuid [not null, unique, ref: > workspaces.id]
+  source_idea_revision_id uuid [ref: > idea_revisions.id]
+  objective text [not null]
+  stage venture_stage [not null]
+  current_focus text
+  budget_limit decimal(14,2)
+  budget_currency char(3) [not null, default: 'EUR']
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table assumptions {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  statement text [not null]
+  kind assumption_kind [not null]
+  status assumption_status [not null, default: 'open']
+  importance int [not null, note: '1..5']
+  uncertainty int [not null, note: '1..5']
+  origin_evidence_id uuid [ref: > evidence.id, note: 'Makes evidence-generated assumptions explicit']
+  created_by varchar(200)
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table assumption_relations {
+  id uuid [pk]
+  source_assumption_id uuid [not null, ref: > assumptions.id]
+  target_assumption_id uuid [not null, ref: > assumptions.id]
+  kind assumption_relation_kind [not null]
+  rationale text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (source_assumption_id, target_assumption_id, kind) [unique] }
+}
+
+Table work_items {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  decision_id uuid [ref: > decisions.id]
+  parent_id uuid [ref: > work_items.id]
+  title varchar(300) [not null]
+  description text
+  question text
+  kind work_item_kind [not null, note: 'Investigation, assumption experiment, or execution']
+  status work_item_status [not null]
+  desired_outcome text
+  acceptance_criteria text
+  owner varchar(200)
+  due_at timestamptz
+  budget_limit decimal(14,2)
+  budget_currency char(3) [not null, default: 'EUR']
+  blocked_reason text
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table experiments {
+  id uuid [pk]
+  work_item_id uuid [not null, unique, ref: > work_items.id]
+  status experiment_status [not null, default: 'planned']
+  method text [not null]
+  success_criteria text [not null]
+  failure_criteria text [not null]
+  result_summary text
+  started_at timestamptz
+  completed_at timestamptz
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table experiment_assumptions {
+  id uuid [pk]
+  experiment_id uuid [not null, ref: > experiments.id]
+  assumption_id uuid [not null, ref: > assumptions.id]
+  is_primary boolean [not null, default: false]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (experiment_id, assumption_id) [unique] }
+}
+
+Table evidence {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  origin_work_item_id uuid [ref: > work_items.id]
+  kind evidence_kind [not null]
+  summary text [not null]
+  details text
+  confidence confidence_level [not null]
+  captured_at timestamptz [not null]
+  captured_by varchar(200)
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+  Note: 'Append-only observation; interpretations belong in assessments.'
+}
+
+Table evidence_sources {
+  id uuid [pk]
+  evidence_id uuid [not null, ref: > evidence.id]
+  source_id uuid [not null, ref: > reference_sources.id]
+  excerpt text
+  source_location varchar(500)
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (evidence_id, source_id) [unique] }
+}
+
+Table artifacts {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  work_item_id uuid [ref: > work_items.id]
+  agent_run_id uuid [ref: > agent_runs.id]
+  kind artifact_kind [not null]
+  name varchar(300) [not null]
+  location text [not null]
+  media_type varchar(200)
+  content_digest varchar(128)
+  semantic_version varchar(100)
+  metadata_json json [not null]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table artifact_relations {
+  id uuid [pk]
+  source_artifact_id uuid [not null, ref: > artifacts.id]
+  target_artifact_id uuid [not null, ref: > artifacts.id]
+  kind artifact_relation_kind [not null]
+  rationale text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (source_artifact_id, target_artifact_id, kind) [unique] }
+}
+
+Table evidence_artifacts {
+  id uuid [pk]
+  evidence_id uuid [not null, ref: > evidence.id]
+  artifact_id uuid [not null, ref: > artifacts.id]
+  role varchar(100)
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (evidence_id, artifact_id) [unique] }
+}
+
+Table assumption_assessments {
+  id uuid [pk]
+  assumption_id uuid [not null, ref: > assumptions.id]
+  outcome assessment_outcome [not null]
+  confidence confidence_level [not null]
+  rationale text [not null]
+  assessed_by varchar(200)
+  assessed_at timestamptz [not null]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+  Note: 'Append-only interpretation; new evidence produces another assessment.'
+}
+
+Table assessment_evidence {
+  id uuid [pk]
+  assessment_id uuid [not null, ref: > assumption_assessments.id]
+  evidence_id uuid [not null, ref: > evidence.id]
+  weight float
+  note text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (assessment_id, evidence_id) [unique] }
+}
+
+Table decisions {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  supersedes_decision_id uuid [ref: > decisions.id]
+  kind decision_kind [not null]
+  status decision_status [not null]
+  summary text [not null]
+  rationale text [not null]
+  decided_by varchar(200)
+  decided_at timestamptz [not null]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+  Note: 'Commitment or course change, linked to the evidence/assessments that justified it.'
+}
+
+Table decision_evidence {
+  id uuid [pk]
+  decision_id uuid [not null, ref: > decisions.id]
+  evidence_id uuid [not null, ref: > evidence.id]
+  note text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (decision_id, evidence_id) [unique] }
+}
+
+Table decision_assessments {
+  id uuid [pk]
+  decision_id uuid [not null, ref: > decisions.id]
+  assessment_id uuid [not null, ref: > assumption_assessments.id]
+  note text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (decision_id, assessment_id) [unique] }
+}
+
+Table friction_occurrences {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  work_item_id uuid [ref: > work_items.id]
+  agent_run_id uuid [ref: > agent_runs.id]
+  recurrence_key varchar(160) [not null]
+  summary text [not null]
+  severity friction_severity [not null]
+  status friction_status [not null, default: 'open']
+  impact text
+  workaround text
+  time_cost_minutes int
+  money_cost decimal(14,2)
+  cost_currency char(3) [not null, default: 'EUR']
+  occurred_at timestamptz [not null]
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { recurrence_key }
+}
+
+Table capability_candidates {
+  id uuid [pk]
+  workspace_id uuid [not null, unique, ref: > workspaces.id]
+  title varchar(300) [not null]
+  problem_statement text [not null]
+  minimal_scope text [not null]
+  status capability_status [not null]
+  owner varchar(200)
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table friction_capabilities {
+  id uuid [pk]
+  friction_id uuid [not null, ref: > friction_occurrences.id]
+  capability_id uuid [not null, ref: > capability_candidates.id]
+  match_strength int [not null, note: '1..5']
+  rationale text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (friction_id, capability_id) [unique] }
+}
+
+Table capability_uses {
+  id uuid [pk]
+  capability_id uuid [not null, ref: > capability_candidates.id]
+  venture_id uuid [not null, ref: > ventures.id]
+  work_item_id uuid [ref: > work_items.id]
+  evidence_id uuid [ref: > evidence.id]
+  outcome capability_use_outcome [not null]
+  time_saved_minutes int
+  notes text
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+  Note: 'A real venture pilot; repeated successful uses justify generalization.'
+}
+
+Table agent_definitions {
+  id uuid [pk]
+  portfolio_id uuid [not null, ref: > portfolios.id]
+  key varchar(120) [not null]
+  name varchar(240) [not null]
+  purpose text [not null]
+  status agent_definition_status [not null, default: 'active']
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (portfolio_id, key) [unique] }
+}
+
+Table agent_versions {
+  id uuid [pk]
+  agent_definition_id uuid [not null, ref: > agent_definitions.id]
+  version varchar(100) [not null]
+  prompt_version varchar(160) [not null]
+  toolset_version varchar(160) [not null]
+  policy_version varchar(160) [not null]
+  code_version varchar(160)
+  provider_config json [not null]
+  runtime_config json [not null]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (agent_definition_id, version) [unique] }
+}
+
+Table agent_runs {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  work_item_id uuid [ref: > work_items.id]
+  agent_version_id uuid [not null, ref: > agent_versions.id]
+  status agent_run_status [not null]
+  provider varchar(120)
+  model varchar(160)
+  runtime_config json [not null]
+  correlation_id varchar(160)
+  evalops_trace_id varchar(160) [note: 'Identifier only; EvalOps remains a separate product.']
+  input_digest varchar(128)
+  output_digest varchar(128)
+  estimated_cost decimal(14,6)
+  cost_currency char(3) [not null, default: 'USD']
+  latency_ms int
+  input_tokens int
+  output_tokens int
+  started_at timestamptz
+  completed_at timestamptz
+  error_summary text
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table external_actions {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  work_item_id uuid [ref: > work_items.id]
+  agent_run_id uuid [ref: > agent_runs.id]
+  action_type varchar(160) [not null]
+  adapter varchar(160) [not null]
+  payload json [not null]
+  payload_digest varchar(128) [not null]
+  idempotency_key varchar(240) [not null, unique]
+  risk action_risk [not null]
+  approval_required boolean [not null, default: true]
+  status external_action_status [not null]
+  estimated_cost decimal(14,6)
+  cost_currency char(3) [not null, default: 'USD']
+  not_before timestamptz
+  expires_at timestamptz
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+  Note: 'Exact proposed side effect and payload. Consequential actions default to approval.'
+}
+
+Table approval_requests {
+  id uuid [pk]
+  external_action_id uuid [not null, unique, ref: > external_actions.id]
+  status approval_status [not null]
+  requested_by varchar(200) [not null]
+  reason text [not null]
+  decided_by varchar(200)
+  decision_notes text
+  requested_at timestamptz [not null]
+  decided_at timestamptz
+  expires_at timestamptz
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+}
+
+Table action_attempts {
+  id uuid [pk]
+  external_action_id uuid [not null, ref: > external_actions.id]
+  attempt_number int [not null]
+  status action_attempt_status [not null]
+  provider_reference varchar(300)
+  receipt json [not null]
+  error_summary text
+  started_at timestamptz [not null]
+  completed_at timestamptz
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+
+  indexes { (external_action_id, attempt_number) [unique] }
+}
+
+Table audit_events {
+  id uuid [pk]
+  workspace_id uuid [ref: > workspaces.id]
+  entity_type varchar(160) [not null]
+  entity_id uuid [not null]
+  event_type varchar(160) [not null]
+  actor varchar(200) [not null]
+  payload json [not null]
+  correlation_id varchar(160)
+  causation_id varchar(160)
+  occurred_at timestamptz [not null]
+
+  indexes {
+    (entity_type, entity_id)
+    (workspace_id, occurred_at)
+  }
+  Note: 'Append-only technical audit, distinct from business evidence and decisions.'
+}
