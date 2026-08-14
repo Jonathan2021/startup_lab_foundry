@@ -1,0 +1,47 @@
+x-foundry-image: &foundry-image
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: foundry:dev
+  env_file:
+    - path: ${FOUNDRY_ENV_FILE:-.env.dev}
+      required: true
+
+services:
+  foundry:
+    <<: *foundry-image
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    profiles:
+      - cli
+
+  migrate:
+    <<: *foundry-image
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+    entrypoint: ["/bin/sh", "-eu", "-c"]
+    command:
+      - >-
+        test -n "$${FOUNDRY_DATABASE_URL:-}" ||
+        { echo 'error: FOUNDRY_DATABASE_URL is required' >&2; exit 2; };
+        exec alembic upgrade head
+
+  db:
+    image: postgres:18
+    env_file:
+      - path: ${FOUNDRY_ENV_FILE:-.env.dev}
+        required: true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - db_data:/var/lib/postgresql
+
+volumes:
+  db_data:

@@ -26,17 +26,24 @@ CLI / future API / agent adapters
  SQLAlchemy relational domain          replaceable external adapters
               │
               ▼
- repository/session boundary ───────► SQLite local / PostgreSQL later
+ repository/session boundary ───────► SQLite local / PostgreSQL deployment
 ```
 
 SQLAlchemy 2 provides the typed mapping and database constraints. SQLite is the
-local Slice 001 database; Alembic owns migrations; PostgreSQL enters when a
-named concurrency or deployment need justifies it. Pydantic belongs at external
-contract boundaries and DSPy belongs behind agent adapters. Provider SDKs and
-Agent EvalOps runtime code do not enter the domain module.
+local Slice 001 database; Alembic owns migrations. Slice 002 introduced
+PostgreSQL only as a container deployment adapter while preserving the same
+domain/application boundary. Active Slice 003 verifies those completed
+boundaries in CI and does not change the runtime architecture. Pydantic belongs
+at external contract boundaries and DSPy belongs behind agent adapters.
+Provider SDKs and Agent EvalOps runtime code do not enter the domain module.
 
-See [ADR-0003](docs/adr/0003-foundry-domain-and-dependencies.md) for the decision
-and [the DBML schema](docs/foundry-domain.dbml) for a copy/paste visualization.
+See [ADR-0003](docs/adr/0003-foundry-domain-and-dependencies.md) for the domain
+decision, accepted
+[ADR-0004](docs/adr/0004-containerized-cli-and-postgresql.md) for the current
+container lifecycle,
+[proposed ADR-0005](docs/adr/0005-ci-evidence-and-trust-boundary.md) for the CI
+evidence boundary, and [the DBML schema](docs/foundry-domain.dbml) for a
+copy/paste visualization.
 
 ## Domain map
 
@@ -132,8 +139,9 @@ approved action and retain the provider receipt or error.
 ## Initial implementation boundary
 
 Slice 001 exposes only enough local persistence and command behavior to create
-and inspect an Agent EvalOps-shaped venture workspace. Portfolio importing,
-automated scoring, agent orchestration, capability promotion, approvals, and
-external adapters remain unimplemented until a named product or learning slice
-needs them. No current code sends messages, provisions infrastructure, or spends
-money.
+and inspect an Agent EvalOps-shaped venture workspace. Slice 002 changed its
+local packaging/deployment environment, not this application scope. Slice 003
+adds verification evidence only. Portfolio importing, automated scoring, agent
+orchestration, capability promotion, approvals, and external adapters remain
+unimplemented until a named product or learning slice needs them. No current
+code sends messages, provisions infrastructure, or spends money.

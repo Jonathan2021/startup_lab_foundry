@@ -1,8 +1,4 @@
-"""Acceptance-first contract for Slice 001.
-
-These tests exercise the product through its command boundary. They should be
-red before learner implementation and green at the slice definition of done.
-"""
+"""End-to-end acceptance checks for the Foundry CLI workspace."""
 
 from __future__ import annotations
 

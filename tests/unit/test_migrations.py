@@ -8,6 +8,7 @@ from alembic.runtime.migration import MigrationContext
 from sqlalchemy import create_engine, inspect
 
 from alembic import command
+from startup_foundry import migrations
 from startup_foundry.migrations import alembic_config
 
 
@@ -35,3 +36,21 @@ def test_upgrade_downgrade_upgrade_uses_only_the_injected_database(
     command.upgrade(config, "head")
     assert database.exists()
     assert not (tmp_path / "foundry.local.db").exists()
+
+
+def test_installed_distribution_locates_packaged_migration_assets(
+    tmp_path: Path, monkeypatch
+) -> None:  # type: ignore[no-untyped-def]
+    installed_root = tmp_path / "share" / "startup-foundry"
+    (installed_root / "alembic").mkdir(parents=True)
+    (installed_root / "alembic.ini").write_text("[alembic]\n", encoding="utf-8")
+    fake_module = tmp_path / "lib" / "site-packages" / "startup_foundry" / "x.py"
+    monkeypatch.setattr(migrations, "__file__", str(fake_module))
+    monkeypatch.setattr(migrations.sysconfig, "get_path", lambda _name: str(tmp_path))
+
+    config = migrations.alembic_config("sqlite:///installed.db")
+
+    assert config.config_file_name == str(installed_root / "alembic.ini")
+    assert config.get_main_option("script_location") == str(
+        installed_root / "alembic"
+    )

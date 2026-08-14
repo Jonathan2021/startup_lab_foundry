@@ -9,12 +9,14 @@ The authoritative supplied brief is [docs/startup_foundry_project.md](docs/start
 
 ## Current scope
 
-The product is in Stage 0: internal notebook replacement. The complete relational
-domain map and schema regression were agent-prepared after portfolio analysis.
-Slice 001 asks the learner to implement only a small SQLite-backed application
-path for one venture's experiment, evidence, assessment, decision, work, and
-artifact history. Agent-run, approval, portfolio-import, and automated-action
-application behavior remains deferred until a real workflow needs it.
+The product is in Stage 0: internal notebook replacement. Slice 001 completed a
+small SQLite-backed application path for one venture's experiment, evidence,
+assessment, decision, work, and artifact history. Slice 002 completed a
+non-root image and readiness-aware PostgreSQL Compose path. Active Slice 003
+uses those existing boundaries as a real GitHub Actions CI workload; it does not
+expand Foundry application behavior. Agent-run, approval, portfolio-import,
+API, worker, and automated-action behavior remains deferred until a real
+product workflow needs it.
 
 Agent EvalOps will be registered as the first venture after the Foundry foundation and delivery learning slices are usable. Its source remains in `../agentevalops/`; only its venture-management records belong in Foundry state.
 
@@ -28,12 +30,20 @@ make test-regression
 make test-slice
 ```
 
-At the start of Slice 001, regression tests pass and slice acceptance tests fail. Read the [slice brief](../learning/slices/001-foundry-python-foundations/BRIEF.md) before implementation.
+Completed behavior is regression. Active Slice 003 has a learner-authored CI
+workflow and an agent-owned structural contract; hosted pull-request evidence
+is still required. Read the
+[brief](../learning/slices/003-github-actions-ci-fundamentals/BRIEF.md),
+[TODO](../learning/slices/003-github-actions-ci-fundamentals/TODO.md), and
+[acceptance contract](../learning/slices/003-github-actions-ci-fundamentals/ACCEPTANCE.md)
+before editing `.github/workflows/ci.yml`.
 
-## Non-goals for the active slice
+## Current non-goals
 
 - no generic autonomous-company generator;
 - no provider integration or prompt framework;
-- no API server, PostgreSQL server, worker, Docker, cloud, or Kubernetes;
+- no API server, worker, fake long-running process, cloud, or Kubernetes;
+- no registry publication, release, production deployment, cloud identity, or
+  write-authority GitHub workflow;
 - no Agent EvalOps trace/evaluation domain;
 - no automated external actions.
