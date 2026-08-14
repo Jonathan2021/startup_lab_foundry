@@ -1,4 +1,4 @@
-"""Regression tests for agent-owned generic persistence plumbing."""
+"""Integration checks for generic persistence plumbing."""
 
 from __future__ import annotations
 

@@ -12,6 +12,7 @@ DEFAULT_DATABASE_URL = "sqlite:///foundry.local.db"
 TRUE_VALUES = frozenset({"1", "true", "yes", "on"})
 FALSE_VALUES = frozenset({"0", "false", "no", "off"})
 
+
 def _boolean_value(name: str, raw_value: str | None, *, default: bool) -> bool:
     if raw_value is None:
         return default

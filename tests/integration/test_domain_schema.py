@@ -1,4 +1,4 @@
-"""Regression checks for the agent-owned Foundry domain schema."""
+"""Integration checks for the Foundry relational domain schema."""
 
 from __future__ import annotations
 
