@@ -46,6 +46,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 test-results*.xml
+*-results.xml
 *.cover
 *.py.cover
 *.lcov

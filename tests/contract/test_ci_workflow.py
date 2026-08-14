@@ -217,9 +217,17 @@ def test_postgresql_service_job_exercises_migration_and_cli() -> None:
         "CI integration uses synthetic credentials, not repository secrets"
     )
     commands = _commands(integration)
-    for required in ("uv lock --check", "alembic upgrade head", "foundry"):
+    for required in (
+        "uv lock --check",
+        "alembic upgrade head",
+        "alembic check",
+    ):
         assert required in commands, f"integration job must run {required!r}"
-    assert "venture create" in commands and "venture show" in commands
+    has_cli_commands = "venture create" in commands and "venture show" in commands
+    has_cli_test = "tests/integration/test_postgresql_cli.py" in commands
+    assert has_cli_commands or has_cli_test, (
+        "integration job must exercise venture create/show against PostgreSQL"
+    )
 
 
 def test_image_evidence_and_stable_gate_cover_all_jobs() -> None:
@@ -235,7 +243,11 @@ def test_image_evidence_and_stable_gate_cover_all_jobs() -> None:
     )
     image_commands = _commands(image_job)
     has_uid_check = "id -u" in image_commands or (
-        "--entrypoint id" in image_commands and "uid=" in image_commands
+        "--entrypoint id" in image_commands
+        and (
+            "uid=" in image_commands
+            or (" -u" in image_commands and "10001" in image_commands)
+        )
     )
     assert has_uid_check, "retain non-root runtime evidence"
     assert "--help" in image_commands, "prove the built image executes the CLI"

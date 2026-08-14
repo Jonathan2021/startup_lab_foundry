@@ -12,9 +12,9 @@ The authoritative supplied brief is [docs/startup_foundry_project.md](docs/start
 The product is in Stage 0: internal notebook replacement. Slice 001 completed a
 small SQLite-backed application path for one venture's experiment, evidence,
 assessment, decision, work, and artifact history. Slice 002 completed a
-non-root image and readiness-aware PostgreSQL Compose path. Active Slice 003
-uses those existing boundaries as a real GitHub Actions CI workload; it does not
-expand Foundry application behavior. Agent-run, approval, portfolio-import,
+non-root image and readiness-aware PostgreSQL Compose path. Slice 003
+used those existing boundaries as a real GitHub Actions CI workload without
+expanding Foundry application behavior. Agent-run, approval, portfolio-import,
 API, worker, and automated-action behavior remains deferred until a real
 product workflow needs it.
 
@@ -30,13 +30,11 @@ make test-regression
 make test-slice
 ```
 
-Completed behavior is regression. Active Slice 003 has a learner-authored CI
-workflow and an agent-owned structural contract; hosted pull-request evidence
-is still required. Read the
-[brief](../learning/slices/003-github-actions-ci-fundamentals/BRIEF.md),
-[TODO](../learning/slices/003-github-actions-ci-fundamentals/TODO.md), and
-[acceptance contract](../learning/slices/003-github-actions-ci-fundamentals/ACCEPTANCE.md)
-before editing `.github/workflows/ci.yml`.
+Completed behavior is regression. Slice 003's accepted workflow has a
+learner-authored foundation and agent-authored production hardening, with
+attribution retained in its
+[review](../learning/slices/003-github-actions-ci-fundamentals/FEEDBACK.md).
+No next slice is prepared.
 
 ## Current non-goals
 

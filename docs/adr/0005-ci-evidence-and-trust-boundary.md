@@ -1,7 +1,8 @@
 # ADR-0005: Foundry CI evidence and trust boundary
 
-- Status: Proposed for Slice 003
+- Status: Accepted
 - Date: 2026-08-13
+- Accepted: 2026-08-14
 
 ## Context
 
@@ -11,7 +12,7 @@ reviewable evidence that these boundaries hold on a clean runner. The CI design
 must teach GitHub Actions fundamentals without publishing images, deploying,
 using repository secrets, or coupling Foundry to the parent learning workspace.
 
-## Proposed decision
+## Decision
 
 Keep Foundry's CI workflow in the independent `foundry` repository. Validate
 pull requests and the protected branch with least-privilege permissions and
@@ -31,6 +32,12 @@ Dependency caches are acceleration only and are keyed from locked inputs;
 artifacts are bounded, non-sensitive diagnostic evidence. The untrusted pull
 request workflow receives no write permission, environment approval, cloud
 identity, or publishing credential.
+
+Every job has a timeout. Checkout does not persist credentials. The PostgreSQL
+job verifies both migration application and metadata drift before exercising a
+real CLI create/show path. The image job proves the non-root entry point and
+then runs the existing full container-stack contract. Matrix artifacts are
+named by Python version and run attempt and retained for five days.
 
 ## Consequences
 

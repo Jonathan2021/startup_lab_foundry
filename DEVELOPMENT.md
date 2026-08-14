@@ -27,16 +27,17 @@ make typecheck
 make check
 ```
 
-During Slice 003:
+After Slice 003:
 
 - `make test-repository` covers parent-repository source-document boundaries;
 - `make test-product` covers fast Foundry unit, persistence, CLI, and package
   behavior without Docker or parent-repository assumptions;
 - `make test-container` covers the complete local Compose/image/PostgreSQL
   acceptance path;
-- `make test-ci` and `make test-slice` cover the active workflow structure;
-- `make test-regression` combines the completed repository, product, and
-  container behavior from Slices 001-002;
+- `make test-ci` covers the accepted workflow structure;
+- `make test-regression` combines the completed repository, product, container,
+  and CI behavior from Slices 001-003;
+- `make test-slice` reports that no next slice is prepared;
 - `make lint` and `make typecheck` enforce the production-Python contract; and
 - `make check` runs all of the above.
 
@@ -46,14 +47,11 @@ the active slice's implementation and diagnosis.
 
 ## CI slice
 
-Read the [Slice 003 brief](../learning/slices/003-github-actions-ci-fundamentals/BRIEF.md),
-[TODO](../learning/slices/003-github-actions-ci-fundamentals/TODO.md), and
-[acceptance contract](../learning/slices/003-github-actions-ci-fundamentals/ACCEPTANCE.md)
-before editing `.github/workflows/ci.yml`. The agent owns the static acceptance
-tests, dependency-lock refresh, routine documentation, and later evidence
-writeup. Learner work is limited to the workflow's event/trust/job design,
-quality matrix and cache/artifact semantics, PostgreSQL/image evidence, and
-hosted-run diagnosis.
+Slice 003's [review](../learning/slices/003-github-actions-ci-fundamentals/FEEDBACK.md)
+and [implementation notes](../learning/slices/003-github-actions-ci-fundamentals/IMPLEMENTATION_NOTES.md)
+record the accepted workflow and learner/agent attribution. The CI contract,
+dependency maintenance, routine documentation, PostgreSQL integration test, and
+post-merge production hardening are agent-owned.
 
 This workflow is verification only. It must not require a repository secret,
 publish an image, deploy, mutate repository settings, or obtain cloud identity.
@@ -151,7 +149,7 @@ not a transaction or migration test.
   behavior.
 - `tests/integration/` — relational schema and repository integration.
 - `tests/acceptance/` — CLI-workspace and container-stack end-to-end behavior.
-- `tests/contract/` — package-boundary and active CI workflow structure.
-- `.github/workflows/ci.yml` — learner-authored verification workflow; hosted
-  evidence remains learner-owned.
+- `tests/contract/` — package-boundary and accepted CI workflow structure.
+- `.github/workflows/ci.yml` — read-only verification workflow with a
+  learner-authored foundation and agent-authored production hardening.
 - `docs/` — the preserved product brief plus future product documentation.

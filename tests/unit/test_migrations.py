@@ -23,9 +23,16 @@ def test_upgrade_downgrade_upgrade_uses_only_the_injected_database(
     engine = create_engine(f"sqlite:///{database}")
     with engine.connect() as connection:
         assert MigrationContext.configure(connection).get_current_revision() == (
-            "149fc56b9af9"
+            "42d765ac6946"
         )
         assert "ventures" in inspect(connection).get_table_names()
+        assert any(
+            foreign_key["name"] == "fk_ideas_current_revision"
+            and foreign_key["constrained_columns"] == ["current_revision_id"]
+            and foreign_key["referred_table"] == "idea_revisions"
+            and foreign_key["referred_columns"] == ["id"]
+            for foreign_key in inspect(connection).get_foreign_keys("ideas")
+        )
     engine.dispose()
 
     command.downgrade(config, "base")
