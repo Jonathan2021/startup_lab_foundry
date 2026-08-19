@@ -5,7 +5,7 @@ on:
     inputs:
       candidate:
         description: "Candidate tag for the image"
-        required: false
+        required: true
         type: string
       publish:
         required: true
