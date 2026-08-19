@@ -187,6 +187,38 @@ def test_quality_matrix_uses_lock_cache_and_test_evidence() -> None:
     ), "retain diagnostic evidence when tests fail"
 
 
+def test_uv_dependency_cache_has_one_matrix_writer() -> None:
+    """Parallel 3.13 jobs must not race to reserve the same cache key."""
+    jobs = _jobs(_workflow())
+    setup_steps: list[tuple[str, dict[str, Any]]] = []
+    for job_id, raw_job in jobs.items():
+        job = _mapping(raw_job, f"job {job_id}")
+        if "steps" not in job:
+            continue
+        for uses, step in _external_actions({str(job_id): job}):
+            if uses.split("@", maxsplit=1)[0].endswith("/setup-uv"):
+                setup_steps.append((str(job_id), step))
+
+    assert setup_steps, "CI jobs must install uv through the reviewed setup action"
+    writers = []
+    readers = []
+    for job_id, step in setup_steps:
+        options = _mapping(step.get("with", {}), f"{job_id} setup-uv.with")
+        assert options.get("enable-cache", "true") != "false"
+        if options.get("save-cache", "true") == "false":
+            readers.append(job_id)
+        else:
+            writers.append(job_id)
+
+    assert writers == ["python-quality"], (
+        "the Python matrix must be the sole cache writer; otherwise parallel "
+        "3.13 jobs race to reserve the same setup-uv cache key"
+    )
+    assert {"postgres-integration", "image"}.issubset(readers), (
+        "PostgreSQL and image jobs should restore but not save the shared cache"
+    )
+
+
 def test_postgresql_service_job_exercises_migration_and_cli() -> None:
     workflow = _workflow()
     jobs = _jobs(workflow)

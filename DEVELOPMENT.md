@@ -27,7 +27,7 @@ make typecheck
 make check
 ```
 
-After Slice 003:
+With Slice 004 prepared:
 
 - `make test-repository` covers parent-repository source-document boundaries;
 - `make test-product` covers fast Foundry unit, persistence, CLI, and package
@@ -37,7 +37,8 @@ After Slice 003:
 - `make test-ci` covers the accepted workflow structure;
 - `make test-regression` combines the completed repository, product, container,
   and CI behavior from Slices 001-003;
-- `make test-slice` reports that no next slice is prepared;
+- `make test-slice` runs the active Slice 004 delivery contract and begins with
+  four focused failures;
 - `make lint` and `make typecheck` enforce the production-Python contract; and
 - `make check` runs all of the above.
 
@@ -55,6 +56,25 @@ post-merge production hardening are agent-owned.
 
 This workflow is verification only. It must not require a repository secret,
 publish an image, deploy, mutate repository settings, or obtain cloud identity.
+
+## Delivery slice
+
+Slice 004's
+[brief](../learning/slices/004-advanced-actions-delivery-gh200-readiness/BRIEF.md),
+[TODO](../learning/slices/004-advanced-actions-delivery-gh200-readiness/TODO.md),
+and
+[acceptance contract](../learning/slices/004-advanced-actions-delivery-gh200-readiness/ACCEPTANCE.md)
+define the active work. The agent owns the structural contract, proposed ADR,
+routine documentation, governance prompts, and evidence transcription. The
+learner owns the workflow/action interfaces, authority decisions, hosted
+operation, failure diagnosis, and readiness demonstration.
+
+The prepared `delivery.yml`, `reusable-image-delivery.yml`, and local
+`release-metadata/action.yml` are valid but intentionally failing manual-only
+scaffolds. They have no write permission. Do not commit/push, create an
+environment, dispatch a run, or publish a package merely to satisfy local
+tests. An actual GHCR publication requires separate exact approval and must not
+be confused with application deployment.
 
 ## Local data
 
@@ -152,4 +172,10 @@ not a transaction or migration test.
 - `tests/contract/` — package-boundary and accepted CI workflow structure.
 - `.github/workflows/ci.yml` — read-only verification workflow with a
   learner-authored foundation and agent-authored production hardening.
+- `.github/workflows/delivery.yml` — active Slice 004 manual/scheduled caller
+  scaffold.
+- `.github/workflows/reusable-image-delivery.yml` — active Slice 004 reusable
+  workflow scaffold.
+- `.github/actions/release-metadata/action.yml` — active Slice 004 local
+  composite-action scaffold.
 - `docs/` — the preserved product brief plus future product documentation.

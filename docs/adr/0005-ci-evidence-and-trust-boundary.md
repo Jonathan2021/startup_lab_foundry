@@ -39,6 +39,12 @@ real CLI create/show path. The image job proves the non-root entry point and
 then runs the existing full container-stack contract. Matrix artifacts are
 named by Python version and run attempt and retained for five days.
 
+The Python matrix is the sole writer for setup-uv dependency caches. Its Python
+version and the lockfile distinguish the cache keys. The PostgreSQL and image
+jobs restore the shared 3.13 cache but do not save it, avoiding concurrent
+post-job attempts to reserve the same key without storing three equivalent
+caches.
+
 ## Consequences
 
 - Clean-runner evidence becomes repeatable and reviewable, but GitHub-hosted
@@ -57,3 +63,12 @@ Revisit in Slice 004 when reusable/composite workflows, manual or scheduled
 delivery, GHCR publication, environments, provenance, or OIDC are introduced.
 Revisit earlier only if measured runner cost or duration makes the matrix
 unreasonable, or if Foundry gains a second independently testable runtime.
+
+## Slice 004 revisit
+
+Revisited on 2026-08-14. The accepted CI workflow remains an independently
+required, read-only verification boundary. Proposed
+[ADR-0006](0006-guarded-image-delivery.md) adds a separate default-read-only
+caller/reusable/composite delivery path and isolates any exact-approved package
+authority behind a manual decision and environment. It does not add registry,
+attestation, or OIDC authority to pull-request CI.

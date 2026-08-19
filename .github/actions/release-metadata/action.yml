@@ -1,0 +1,68 @@
+name: Foundry release metadata
+description: Slice 004 scaffold for validated image metadata.
+
+inputs:
+  image-name:
+    description: Base GHCR image name, without tag or digest.
+    required: true
+
+  candidate-tag:
+    description: Candidate GHCR image tag supplied by the caller.
+    required: true
+
+outputs:
+  normalized-image-name:
+    description: Normalized GHCR image name.
+    value: ${{ steps.metadata.outputs.image-name }}
+
+  normalized-tag:
+    description: Normalized candidate tag.
+    value: ${{ steps.metadata.outputs.tag }}
+
+  image-ref:
+    description: Complete normalized tagged image reference.
+    value: ${{ steps.metadata.outputs.image-ref }}
+
+runs:
+  using: composite
+  steps:
+    - id: metadata
+      name: Validate and normalize release metadata
+      env:
+        IMAGE_NAME: ${{ inputs.image-name }}
+        CANDIDATE_TAG: ${{ inputs.candidate-tag }}
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        image_name="${IMAGE_NAME,,}"
+        candidate_tag="${CANDIDATE_TAG,,}"
+
+        # Only GHCR images are valid for this delivery workflow.
+        if [[ ! "$image_name" =~ ^ghcr\.io/[a-z0-9][a-z0-9._/-]*[a-z0-9]$ ]]; then
+          echo "Invalid GHCR image name" >&2
+          exit 1
+        fi
+
+        # Reject malformed path components such as //, /./ or /../.
+        image_path="${image_name#ghcr.io/}"
+        IFS='/' read -ra components <<< "$image_path"
+
+        for component in "${components[@]}"; do
+          if [[ ! "$component" =~ ^[a-z0-9][a-z0-9._-]*[a-z0-9]$ &&
+                ! "$component" =~ ^[a-z0-9]$ ]]; then
+            echo "Invalid GHCR image-name component" >&2
+            exit 1
+          fi
+        done
+
+        if [[ ! "$candidate_tag" =~ ^[a-z0-9][a-z0-9._-]{0,63}$ ]]; then
+          echo "Invalid candidate image tag" >&2
+          exit 1
+        fi
+
+        image_ref="${image_name}:${candidate_tag}"
+
+        echo "image-name=${image_name}" >> "$GITHUB_OUTPUT"
+        echo "tag=${candidate_tag}" >> "$GITHUB_OUTPUT"
+        echo "image-ref=${image_ref}" >> "$GITHUB_OUTPUT"
