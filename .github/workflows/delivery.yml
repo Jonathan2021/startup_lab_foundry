@@ -6,8 +6,8 @@ on:
       publish:
         description: Should you publish or only validate
         required: true
-        type: boolean
         default: false
+        type: boolean
       
       target_environment:
         description: "Environment used for publication"

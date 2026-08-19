@@ -233,26 +233,44 @@ def test_composite_action_validates_inputs_without_shell_interpolation() -> None
 def test_publication_is_guarded_scoped_and_attested() -> None:
     caller = _yaml(CALLER_PATH, "delivery caller")
     reusable = _yaml(REUSABLE_PATH, "reusable delivery workflow")
+    caller_jobs = _jobs(caller)
     jobs = _jobs(reusable)
 
-    privileged: list[tuple[str, dict[str, Any]]] = []
-    for job_id, raw_job in jobs.items():
+    privileged_calls: list[tuple[str, dict[str, Any]]] = []
+    for job_id, raw_job in caller_jobs.items():
         job = _mapping(raw_job, f"job {job_id}")
         if _permissions(job, f"job {job_id}").get("packages") == "write":
-            privileged.append((str(job_id), job))
-    assert privileged, "add one explicit GHCR publication job with packages: write"
+            privileged_calls.append((str(job_id), job))
+    assert privileged_calls, (
+        "add one explicit GHCR publication call with packages: write"
+    )
 
-    for job_id, job in privileged:
-        permissions = _permissions(job, f"job {job_id}")
+    for job_id, call in privileged_calls:
+        permissions = _permissions(call, f"caller job {job_id}")
         assert permissions.get("contents") == "read"
         assert permissions.get("packages") == "write"
         assert permissions.get("attestations") == "write"
         assert permissions.get("id-token") == "write"
+
+    publication_jobs: list[tuple[str, dict[str, Any]]] = []
+    for job_id, raw_job in jobs.items():
+        job = _mapping(raw_job, f"job {job_id}")
+        rendered_job = yaml.dump(job)
+        if "docker push" in rendered_job and "attest" in rendered_job.lower():
+            publication_jobs.append((str(job_id), job))
+    assert publication_jobs, "the reusable workflow needs one publication job"
+
+    for job_id, job in publication_jobs:
+        assert "permissions" not in job, (
+            f"called publication job {job_id} must inherit the caller ceiling; "
+            "declaring write scopes here makes the shared workflow invalid for "
+            "the read-only CI caller before its input-gated job can be skipped"
+        )
         assert "inputs." in str(job.get("if", "")), (
-            f"privileged job {job_id} must require the typed publication input"
+            f"publication job {job_id} must require the typed publication input"
         )
         assert "inputs." in yaml.dump(job.get("environment", {})), (
-            f"privileged job {job_id} must target the selected protected environment"
+            f"publication job {job_id} must target the selected protected environment"
         )
 
     rendered = yaml.dump(reusable)
@@ -272,5 +290,5 @@ def test_publication_is_guarded_scoped_and_attested() -> None:
         "attest the exact published digest rather than only a mutable tag"
     )
 
-    all_jobs = {**_jobs(caller), **jobs}
+    all_jobs = {**caller_jobs, **jobs}
     _assert_immutable_actions(all_jobs)

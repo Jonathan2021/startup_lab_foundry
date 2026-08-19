@@ -29,9 +29,13 @@ receive a human decision for each occurrence.
 - Use a repository-local composite action only for release-metadata validation
   and normalization. Treat inputs as hostile data, pass them through step
   environment variables, and publish only validated outputs.
-- Give package, attestation, and OIDC write scopes only to the publication job.
-  That job additionally references the selected configured environment and
-  runs only for an explicit manual publication input.
+- Give package, attestation, and OIDC write scopes only to the caller's manual
+  publication job. The called publication job inherits that ceiling, references
+  the selected configured environment, and runs only for an explicit manual
+  publication input. Every other called job explicitly downgrades its token.
+  Do not redeclare write scopes in the shared called workflow: GitHub validates
+  its permission graph against the read-only CI caller before an input-gated
+  publication job can be skipped.
 - Authenticate to GHCR with the ephemeral repository `GITHUB_TOKEN`; do not add
   a PAT or stored registry credential. Retain and attest the pushed digest.
 - Treat the scheduled path as a freshness/portability validation. It may build
@@ -49,8 +53,9 @@ supported by the actual repository plan.
 
 ## Consequences
 
-- Validation and delivery share a reviewed job-level definition while token
-  authority remains visible at each caller and called job.
+- Validation and delivery share a reviewed job-level definition while write
+  authority remains visible on the publication caller and read-only downgrades
+  remain visible on every non-publishing called job.
 - The composite action can be exercised with hostile inputs independently of
   registry publication, but it remains repository-local rather than becoming a
   premature public component.

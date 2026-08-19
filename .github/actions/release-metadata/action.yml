@@ -63,6 +63,6 @@ runs:
 
         image_ref="${image_name}:${candidate_tag}"
 
-        echo "image-name=${image_name}" >> "$GITHUB_OUTPUT"
-        echo "tag=${candidate_tag}" >> "$GITHUB_OUTPUT"
-        echo "image-ref=${image_ref}" >> "$GITHUB_OUTPUT"
+        printf "image-name=%s\n" "${image_name}" >> "$GITHUB_OUTPUT"
+        printf "tag=%s\n" "${candidate_tag}" >> "$GITHUB_OUTPUT"
+        printf "image-ref=%s\n" "${image_ref}" >> "$GITHUB_OUTPUT"

@@ -10,6 +10,12 @@ import yaml
 
 FOUNDRY_ROOT = Path(__file__).parents[2]
 WORKFLOW_PATH = FOUNDRY_ROOT / ".github" / "workflows" / "ci.yml"
+REUSABLE_IMAGE_WORKFLOW_PATH = (
+    FOUNDRY_ROOT / ".github" / "workflows" / "reusable-image-delivery.yml"
+)
+REUSABLE_IMAGE_WORKFLOW_USES = (
+    "./.github/workflows/reusable-image-delivery.yml"
+)
 SHA_PIN = re.compile(r"^[^@\s]+@[0-9a-fA-F]{40}$")
 
 
@@ -25,11 +31,9 @@ def _sequence(value: Any, label: str) -> list[Any]:
     return value
 
 
-def _workflow() -> dict[str, Any]:
-    assert WORKFLOW_PATH.is_file(), (
-        "create .github/workflows/ci.yml for L-001"
-    )
-    parsed = yaml.load(WORKFLOW_PATH.read_text(), Loader=yaml.BaseLoader)
+def _workflow(path: Path = WORKFLOW_PATH) -> dict[str, Any]:
+    assert path.is_file(), f"workflow does not exist: {path}"
+    parsed = yaml.load(path.read_text(), Loader=yaml.BaseLoader)
     return _mapping(parsed, "workflow")
 
 
@@ -38,6 +42,9 @@ def _jobs(workflow: dict[str, Any]) -> dict[str, Any]:
 
 
 def _steps(job: dict[str, Any]) -> list[dict[str, Any]]:
+    if "steps" not in job:
+        assert "uses" in job, "job must define steps or call a reusable workflow"
+        return []
     raw_steps = _sequence(job.get("steps"), "job steps")
     return [_mapping(step, "workflow step") for step in raw_steps]
 
@@ -77,6 +84,28 @@ def _find_job_with(
     raise AssertionError(f"workflow needs {label}")
 
 
+def _called_image_workflow(
+    workflow: dict[str, Any],
+) -> tuple[str, dict[str, Any]]:
+    jobs = _jobs(workflow)
+    call_id, call = _find_job_with(
+        jobs,
+        lambda job: job.get("uses") == REUSABLE_IMAGE_WORKFLOW_USES,
+        "a call to the local reusable image workflow",
+    )
+    inputs = _mapping(call.get("with"), f"job {call_id} inputs")
+    assert inputs.get("publish") == "false", (
+        "CI must call the reusable image workflow in validation-only mode"
+    )
+    return call_id, _jobs(_workflow(REUSABLE_IMAGE_WORKFLOW_PATH))
+
+
+def _prefixed_jobs(
+    prefix: str, jobs: dict[str, Any]
+) -> dict[str, Any]:
+    return {f"{prefix}/{job_id}": job for job_id, job in jobs.items()}
+
+
 def test_events_permissions_concurrency_and_action_pins() -> None:
     workflow = _workflow()
     events = _mapping(workflow.get("on"), "on")
@@ -111,7 +140,10 @@ def test_events_permissions_concurrency_and_action_pins() -> None:
     )
     assert concurrency.get("cancel-in-progress") == "true"
 
-    actions = _external_actions(jobs)
+    image_call_id, image_jobs = _called_image_workflow(workflow)
+    actions = _external_actions(jobs) + _external_actions(
+        _prefixed_jobs(image_call_id, image_jobs)
+    )
     assert actions, "use reviewed actions for checkout/setup/cache/artifact work"
     mutable = [uses for uses, _ in actions if not SHA_PIN.fullmatch(uses)]
     assert not mutable, f"pin external actions to full commit SHAs: {mutable}"
@@ -142,8 +174,24 @@ def test_quality_matrix_uses_lock_cache_and_test_evidence() -> None:
     )
 
     commands = _commands(quality)
-    for required in ("uv lock --check", "ruff", "mypy", "pytest"):
+    for required in (
+        "uv lock --check",
+        "ruff",
+        "mypy",
+        "pytest",
+    ):
         assert required in commands, f"quality matrix must run {required!r}"
+
+    actionlint_steps = [
+        step
+        for step in _steps(quality)
+        if str(step.get("uses", "")).startswith(
+            "docker://rhysd/actionlint@sha256:"
+        )
+    ]
+    assert actionlint_steps, (
+        "quality job must run the digest-pinned actionlint container"
+    )
     for suite in (
         "tests/unit",
         "tests/integration",
@@ -189,9 +237,15 @@ def test_quality_matrix_uses_lock_cache_and_test_evidence() -> None:
 
 def test_uv_dependency_cache_has_one_matrix_writer() -> None:
     """Parallel 3.13 jobs must not race to reserve the same cache key."""
-    jobs = _jobs(_workflow())
+    workflow = _workflow()
+    jobs = _jobs(workflow)
+    image_call_id, image_jobs = _called_image_workflow(workflow)
+    inspected_jobs = {
+        **jobs,
+        **_prefixed_jobs(image_call_id, image_jobs),
+    }
     setup_steps: list[tuple[str, dict[str, Any]]] = []
-    for job_id, raw_job in jobs.items():
+    for job_id, raw_job in inspected_jobs.items():
         job = _mapping(raw_job, f"job {job_id}")
         if "steps" not in job:
             continue
@@ -214,7 +268,10 @@ def test_uv_dependency_cache_has_one_matrix_writer() -> None:
         "the Python matrix must be the sole cache writer; otherwise parallel "
         "3.13 jobs race to reserve the same setup-uv cache key"
     )
-    assert {"postgres-integration", "image"}.issubset(readers), (
+    assert {
+        "postgres-integration",
+        f"{image_call_id}/image",
+    }.issubset(readers), (
         "PostgreSQL and image jobs should restore but not save the shared cache"
     )
 
@@ -265,13 +322,14 @@ def test_postgresql_service_job_exercises_migration_and_cli() -> None:
 def test_image_evidence_and_stable_gate_cover_all_jobs() -> None:
     workflow = _workflow()
     jobs = _jobs(workflow)
+    image_call_id, image_jobs = _called_image_workflow(workflow)
 
     def builds_image(job: dict[str, Any]) -> bool:
         commands = _commands(job)
         return "docker build" in commands and "docker run" in commands
 
-    image_id, image_job = _find_job_with(
-        jobs, builds_image, "an image build/runtime evidence job"
+    _, image_job = _find_job_with(
+        image_jobs, builds_image, "an image build/runtime evidence job"
     )
     image_commands = _commands(image_job)
     has_uid_check = "id -u" in image_commands or (
@@ -300,7 +358,11 @@ def test_image_evidence_and_stable_gate_cover_all_jobs() -> None:
         jobs, has_postgres_service, "a PostgreSQL service-container job"
     )
 
-    uploads = _action_steps(jobs, "/upload-artifact")
+    inspected_jobs = {
+        **jobs,
+        **_prefixed_jobs(image_call_id, image_jobs),
+    }
+    uploads = _action_steps(inspected_jobs, "/upload-artifact")
     assert uploads, "upload bounded test or image evidence"
     for step in uploads:
         options = _mapping(step.get("with"), "upload-artifact.with")
@@ -309,7 +371,7 @@ def test_image_evidence_and_stable_gate_cover_all_jobs() -> None:
 
     gate = _mapping(jobs.get("ci"), "stable ci gate job")
     needs = {str(value) for value in _sequence(gate.get("needs"), "ci.needs")}
-    assert {quality_id, integration_id, image_id}.issubset(needs), (
+    assert {quality_id, integration_id, image_call_id}.issubset(needs), (
         "stable gate must depend on quality, integration, and image"
     )
     assert "always()" in str(gate.get("if", "")), (
