@@ -1,0 +1,55 @@
+name: Foundry image delivery
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Should you publish or only validate
+        required: true
+        default: false
+        type: boolean
+      
+      target_environment:
+        description: "Environment used for publication"
+        required: false
+        type: environment
+
+  schedule:
+    - cron: "0 0 * * *"
+    
+
+permissions: {}
+
+
+jobs:
+  validate:
+    if: >
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' && !inputs.publish)
+    
+    permissions:
+      contents: read
+    
+    uses: ./.github/workflows/reusable-image-delivery.yml
+    with:
+      candidate: validate-${{ github.run_id }}
+      publish: false
+  
+  publish:
+    if: >
+      github.event_name == 'workflow_dispatch' &&
+      inputs.publish &&
+      github.ref == 'refs/heads/main'
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
+    uses: ./.github/workflows/reusable-image-delivery.yml
+
+    with:
+      candidate: release-${{ github.run_id }}
+      publish: true
+      target_environment: ${{ inputs.target_environment }}

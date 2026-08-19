@@ -33,8 +33,10 @@ SQLAlchemy 2 provides the typed mapping and database constraints. SQLite is the
 local Slice 001 database; Alembic owns migrations. Slice 002 introduced
 PostgreSQL only as a container deployment adapter while preserving the same
 domain/application boundary. Completed Slice 003 verifies those completed
-boundaries in CI and does not change the runtime architecture. Pydantic belongs
-at external contract boundaries and DSPy belongs behind agent adapters.
+boundaries in CI and does not change the runtime architecture. Active Slice 004
+adds package-delivery automation around the existing image; it does not add a
+runtime service or product-domain dependency. Pydantic belongs at external
+contract boundaries and DSPy belongs behind agent adapters.
 Provider SDKs and Agent EvalOps runtime code do not enter the domain module.
 
 See [ADR-0003](docs/adr/0003-foundry-domain-and-dependencies.md) for the domain
@@ -42,7 +44,9 @@ decision, accepted
 [ADR-0004](docs/adr/0004-containerized-cli-and-postgresql.md) for the current
 container lifecycle,
 [accepted ADR-0005](docs/adr/0005-ci-evidence-and-trust-boundary.md) for the CI
-evidence boundary, and [the DBML schema](docs/foundry-domain.dbml) for a
+evidence boundary,
+[proposed ADR-0006](docs/adr/0006-guarded-image-delivery.md) for the active
+image-delivery boundary, and [the DBML schema](docs/foundry-domain.dbml) for a
 copy/paste visualization.
 
 ## Domain map
@@ -141,7 +145,9 @@ approved action and retain the provider receipt or error.
 Slice 001 exposes only enough local persistence and command behavior to create
 and inspect an Agent EvalOps-shaped venture workspace. Slice 002 changed its
 local packaging/deployment environment, not this application scope. Slice 003
-adds verification evidence only. Portfolio importing, automated scoring, agent
-orchestration, capability promotion, approvals, and external adapters remain
-unimplemented until a named product or learning slice needs them. No current
-code sends messages, provisions infrastructure, or spends money.
+adds verification evidence only. Slice 004 may publish a container package
+after exact human approval but does not deploy or operate the application.
+Portfolio importing, automated scoring, agent orchestration, capability
+promotion, approvals, and external adapters remain unimplemented until a named
+product or learning slice needs them. No current product code sends messages,
+provisions infrastructure, or spends money.
