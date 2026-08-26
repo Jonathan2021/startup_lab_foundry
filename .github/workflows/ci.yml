@@ -83,7 +83,10 @@ jobs:
 
       - name: Verify the CI contract
         if: ${{ matrix.python-version == '3.13' && !cancelled() }}
-        run: uv run pytest tests/contract/test_ci_workflow.py
+        run: >-
+          uv run pytest
+          tests/contract/test_ci_workflow.py
+          tests/contract/test_delivery_workflows.py
 
       - name: Generate coverage evidence
         if: ${{ !cancelled() }}
@@ -126,8 +129,12 @@ jobs:
           persist-credentials: false
 
       - name: Configure the synthetic database URL
+        env:
+          POSTGRES_PORT: ${{ job.services.postgres.ports['5432'] }}
         run: |
-          echo "FOUNDRY_DATABASE_URL=postgresql+psycopg://foundry:foundry@localhost:${{ job.services.postgres.ports['5432'] }}/foundry" >> "$GITHUB_ENV"
+          printf '%s\n' \
+            "FOUNDRY_DATABASE_URL=postgresql+psycopg://foundry:foundry@localhost:${POSTGRES_PORT}/foundry" \
+            >> "$GITHUB_ENV"
 
       - name: Install uv and Python
         uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1

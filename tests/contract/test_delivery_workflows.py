@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import os
 import re
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -77,6 +79,45 @@ def _external_actions(jobs: dict[str, Any]) -> list[str]:
 def _assert_immutable_actions(jobs: dict[str, Any]) -> None:
     mutable = [uses for uses in _external_actions(jobs) if not SHA_PIN.fullmatch(uses)]
     assert not mutable, f"pin every external action to a full commit SHA: {mutable}"
+
+
+def _run_metadata_action(
+    tmp_path: Path, *, image_name: str, candidate_tag: str
+) -> subprocess.CompletedProcess[str]:
+    """Run the composite action's exact shell step as GitHub would."""
+    action = _yaml(ACTION_PATH, "release metadata action")
+    runs = _mapping(action.get("runs"), "runs")
+    steps = [
+        _mapping(step, "composite step")
+        for step in _sequence(runs.get("steps"), "composite steps")
+    ]
+    run_steps = [step for step in steps if "run" in step]
+    assert len(run_steps) == 1, "keep metadata validation atomic and testable"
+
+    output_path = tmp_path / "github-output"
+    environment = {
+        **os.environ,
+        "IMAGE_NAME": image_name,
+        "CANDIDATE_TAG": candidate_tag,
+        "GITHUB_OUTPUT": str(output_path),
+    }
+    return subprocess.run(
+        [
+            "bash",
+            "--noprofile",
+            "--norc",
+            "-e",
+            "-o",
+            "pipefail",
+            "-c",
+            str(run_steps[0]["run"]),
+        ],
+        cwd=FOUNDRY_ROOT,
+        env=environment,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
 
 
 def test_typed_manual_and_scheduled_callers_separate_authority() -> None:
@@ -230,6 +271,48 @@ def test_composite_action_validates_inputs_without_shell_interpolation() -> None
     assert "exit" in commands, "reject malformed or disallowed release metadata"
 
 
+def test_composite_action_normalizes_valid_metadata(tmp_path: Path) -> None:
+    result = _run_metadata_action(
+        tmp_path,
+        image_name="GHCR.IO/Jonathan2021/Foundry",
+        candidate_tag="Release-123",
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert (tmp_path / "github-output").read_text().splitlines() == [
+        "image-name=ghcr.io/jonathan2021/foundry",
+        "tag=release-123",
+        "image-ref=ghcr.io/jonathan2021/foundry:release-123",
+    ]
+
+
+def test_composite_action_rejects_shell_input_without_executing_it(
+    tmp_path: Path,
+) -> None:
+    marker = tmp_path / "injected"
+    result = _run_metadata_action(
+        tmp_path,
+        image_name="ghcr.io/jonathan2021/foundry",
+        candidate_tag=f"release; touch {marker}",
+    )
+
+    assert result.returncode != 0
+    assert "Invalid candidate image tag" in result.stderr
+    assert not marker.exists(), "caller input must remain inert data"
+
+
+def test_composite_action_rejects_invalid_registry_path(tmp_path: Path) -> None:
+    result = _run_metadata_action(
+        tmp_path,
+        image_name="ghcr.io/jonathan2021/bad..component",
+        candidate_tag="release-123",
+    )
+
+    assert result.returncode != 0
+    assert "Invalid GHCR image-name component" in result.stderr
+    assert not (tmp_path / "github-output").exists()
+
+
 def test_publication_is_guarded_scoped_and_attested() -> None:
     caller = _yaml(CALLER_PATH, "delivery caller")
     reusable = _yaml(REUSABLE_PATH, "reusable delivery workflow")
@@ -241,8 +324,8 @@ def test_publication_is_guarded_scoped_and_attested() -> None:
         job = _mapping(raw_job, f"job {job_id}")
         if _permissions(job, f"job {job_id}").get("packages") == "write":
             privileged_calls.append((str(job_id), job))
-    assert privileged_calls, (
-        "add one explicit GHCR publication call with packages: write"
+    assert len(privileged_calls) == 1, (
+        "grant packages: write to exactly one explicit publication call"
     )
 
     for job_id, call in privileged_calls:

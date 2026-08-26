@@ -33,8 +33,8 @@ SQLAlchemy 2 provides the typed mapping and database constraints. SQLite is the
 local Slice 001 database; Alembic owns migrations. Slice 002 introduced
 PostgreSQL only as a container deployment adapter while preserving the same
 domain/application boundary. Completed Slice 003 verifies those completed
-boundaries in CI and does not change the runtime architecture. Active Slice 004
-adds package-delivery automation around the existing image; it does not add a
+boundaries in CI and does not change the runtime architecture. Reviewed Slice
+004 adds package-delivery automation around the existing image; it does not add a
 runtime service or product-domain dependency. Pydantic belongs at external
 contract boundaries and DSPy belongs behind agent adapters.
 Provider SDKs and Agent EvalOps runtime code do not enter the domain module.
@@ -45,7 +45,7 @@ decision, accepted
 container lifecycle,
 [accepted ADR-0005](docs/adr/0005-ci-evidence-and-trust-boundary.md) for the CI
 evidence boundary,
-[proposed ADR-0006](docs/adr/0006-guarded-image-delivery.md) for the active
+[accepted ADR-0006](docs/adr/0006-guarded-image-delivery.md) for the reviewed
 image-delivery boundary, and [the DBML schema](docs/foundry-domain.dbml) for a
 copy/paste visualization.
 

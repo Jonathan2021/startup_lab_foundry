@@ -17,9 +17,10 @@ assessment, decision, work, and artifact history. Slice 002 completed a
 non-root image and readiness-aware PostgreSQL Compose path. Slice 003 used
 those existing boundaries as a real GitHub Actions CI workload without
 expanding Foundry application behavior. Slice 004 prepares a guarded
-image-package delivery boundary and GH-200 readiness gate; its current caller,
-reusable-workflow, and composite-action files are intentionally incomplete and
-grant no token authority. Agent-run, approval, portfolio-import, API, worker,
+image-package delivery boundary and GH-200 readiness gate. Its current caller,
+reusable workflow, and composite action pass local review with publication
+authority confined to one explicit manual caller; current hosted evidence and
+environment inspection are still pending. Agent-run, approval, portfolio-import, API, worker,
 and automated product-action behavior remains deferred until a real product
 workflow needs it.
 
@@ -39,11 +40,11 @@ Completed behavior is regression. Slice 003's accepted workflow has a
 learner-authored foundation and agent-authored production hardening, with
 attribution retained in its
 [review](../learning/slices/003-github-actions-ci-fundamentals/FEEDBACK.md).
-The active
+The reviewed
 [Slice 004 brief](../learning/slices/004-advanced-actions-delivery-gh200-readiness/BRIEF.md)
 and
 [acceptance contract](../learning/slices/004-advanced-actions-delivery-gh200-readiness/ACCEPTANCE.md)
-govern the intentionally red delivery work.
+govern the delivery work and remaining hosted remediation.
 
 ## Current non-goals
 
