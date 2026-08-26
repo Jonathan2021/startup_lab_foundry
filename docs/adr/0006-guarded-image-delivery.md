@@ -1,7 +1,8 @@
 # ADR-0006: Guarded reusable Foundry image delivery
 
-- Status: Proposed for Slice 004
+- Status: Accepted
 - Date: 2026-08-14
+- Accepted: 2026-08-26
 
 ## Context
 
@@ -17,7 +18,7 @@ concepts without deploying an application or provisioning a cloud provider.
 Scheduled automation also has ongoing runner-cost implications and cannot
 receive a human decision for each occurrence.
 
-## Proposed decision
+## Decision
 
 - Keep `.github/workflows/ci.yml` read-only and independently required.
 - Add a caller workflow for typed manual dispatch and scheduled validation.
@@ -38,18 +39,19 @@ receive a human decision for each occurrence.
   publication job can be skipped.
 - Authenticate to GHCR with the ephemeral repository `GITHUB_TOKEN`; do not add
   a PAT or stored registry credential. Retain and attest the pushed digest.
-- Treat the scheduled path as a freshness/portability validation. It may build
-  and test but receives no write scope and produces no registry package.
+- Treat the scheduled path as a weekly freshness/portability validation,
+  staggered away from the start of the hour. It may build and test but receives
+  no write scope and produces no registry package.
 - Use `id-token: write` only for digest provenance. No cloud audience, role,
   provider trust, credential, or resource is created in this slice.
 - Require exact human approval of repository, commit, image, tags, visibility,
   environment, expected cost, and cleanup/retention intent before the first
   real publication. Workflow code alone is not that approval.
 
-The learner still owns the skill-bearing choices: interface names, schedule,
-job graph, runner, metadata format, build-transfer/rebuild approach, action
-vendors and reviewed SHAs, output/summary shape, and environment configuration
-supported by the actual repository plan.
+The learner authored the skill-bearing implementation. The closure review
+tightened the schedule, metadata validation, shell/input handling, summaries,
+and executable contract coverage; attribution is retained in the Slice 004
+review record.
 
 ## Consequences
 

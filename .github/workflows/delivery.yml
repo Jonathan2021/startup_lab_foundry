@@ -4,37 +4,36 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: Should you publish or only validate
+        description: "Publish the candidate image (default: validate only)"
         required: true
         default: false
         type: boolean
-      
+
       target_environment:
         description: "Environment used for publication"
         required: false
         type: environment
 
   schedule:
-    - cron: "0 0 * * *"
-    
+    # Weekly and off the top of the hour to limit cost and scheduler congestion.
+    - cron: "17 4 * * 1"
 
 permissions: {}
-
 
 jobs:
   validate:
     if: >
       github.event_name == 'schedule' ||
       (github.event_name == 'workflow_dispatch' && !inputs.publish)
-    
+
     permissions:
       contents: read
-    
+
     uses: ./.github/workflows/reusable-image-delivery.yml
     with:
       candidate: validate-${{ github.run_id }}
       publish: false
-  
+
   publish:
     if: >
       github.event_name == 'workflow_dispatch' &&
@@ -48,7 +47,6 @@ jobs:
       id-token: write
 
     uses: ./.github/workflows/reusable-image-delivery.yml
-
     with:
       candidate: release-${{ github.run_id }}
       publish: true

@@ -49,8 +49,7 @@ runs:
         IFS='/' read -ra components <<< "$image_path"
 
         for component in "${components[@]}"; do
-          if [[ ! "$component" =~ ^[a-z0-9][a-z0-9._-]*[a-z0-9]$ &&
-                ! "$component" =~ ^[a-z0-9]$ ]]; then
+          if [[ ! "$component" =~ ^[a-z0-9]+(([._]|__|-+)[a-z0-9]+)*$ ]]; then
             echo "Invalid GHCR image-name component" >&2
             exit 1
           fi
@@ -63,6 +62,6 @@ runs:
 
         image_ref="${image_name}:${candidate_tag}"
 
-        printf "image-name=%s\n" "${image_name}" >> "$GITHUB_OUTPUT"
-        printf "tag=%s\n" "${candidate_tag}" >> "$GITHUB_OUTPUT"
-        printf "image-ref=%s\n" "${image_ref}" >> "$GITHUB_OUTPUT"
+        printf 'image-name=%s\n' "$image_name" >> "$GITHUB_OUTPUT"
+        printf 'tag=%s\n' "$candidate_tag" >> "$GITHUB_OUTPUT"
+        printf 'image-ref=%s\n' "$image_ref" >> "$GITHUB_OUTPUT"
