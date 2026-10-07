@@ -1,5 +1,13 @@
 # Foundry input inbox
 
+2026-10-07 priority update: the six build tracks can proceed from their prepared
+implementation maps. [R012](2026-10-07-priorities.md) asks only for the missing
+conversation source. [R011](2026-10-06-crous.md) is optional later pilot input;
+observing lunch queues is not a prerequisite for building Crous Queue. R001's
+historical ETA example below is retained evidence; the current motorcycle product
+is preference-based route creation. See the
+[priority report](../docs/inquiry/priority-mvps-2026-10-07/REPORT.md).
+
 Updated 2026-10-02. Edit the **Response** blocks inline. Leave an item open or
 write “not available” if needed. Independent work continues. No learning tasks.
 Local-model installation and training are deferred; no action needed for them.

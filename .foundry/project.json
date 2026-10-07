@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "first_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+  "cli": [
+    "/home/jonathan/startup_lab/.venv/bin/foundry",
+    "--store",
+    "/home/jonathan/.local/share/startup-foundry/foundry.local.db"
+  ],
+  "feedback_workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "repository": "/home/jonathan/startup_lab/foundry",
+  "kit_sha256": "dc2d39488bcae88b04ca726b939da01cd5b829f2b5b059fb2d06ce4ea88b6b84",
+  "coordination": "One writer per venture; claims are persistent, no automatic worker or lease timeout."
+}

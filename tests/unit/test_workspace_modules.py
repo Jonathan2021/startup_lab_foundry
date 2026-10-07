@@ -60,3 +60,43 @@ def test_config_metrics_unknown_and_no_forecast_as_actual(tmp_path):
             "coopain",
             ConfigInput(expected_revision=2, actor="operator", modules=["suppliers"]),
         )
+
+
+def test_rename_is_versioned_and_preserves_prior_title(tmp_path):
+    from startup_foundry.workspace_modules import RenameInput
+
+    url = f"sqlite:///{tmp_path / 'rename.db'}"
+    upgrade_database(url)
+    factory = create_session_factory(create_db_engine(url))
+    app = FoundryApplication(factory)
+    app.create_venture(
+        venture_id="ride",
+        name="Old diagnosis",
+        objective="Create rides",
+        stage=VentureStage.DISCOVERY,
+    )
+    service = WorkspaceModuleService(factory)
+    version = service.show("ride")["workspace_version"]
+    result = service.rename(
+        "ride",
+        RenameInput(
+            expected_version=version,
+            title="Ride Options",
+            actor="operator",
+            rationale="User corrected the product scope",
+        ),
+    )
+    assert result["title"] == "Ride Options"
+    assert result["previous_title"] == "Old diagnosis"
+    assert service.show("ride")["title"] == "Ride Options"
+    assert service.show("ride")["name_history"][0]["previous_title"] == "Old diagnosis"
+    with pytest.raises(ConflictError):
+        service.rename(
+            "ride",
+            RenameInput(
+                expected_version=version,
+                title="Stale",
+                actor="other",
+                rationale="Outdated edit",
+            ),
+        )

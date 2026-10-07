@@ -39,6 +39,7 @@ from startup_foundry.workspace_modules import (
     ConfigInput,
     IssueInput,
     MetricsInput,
+    RenameInput,
     WorkspaceModuleService,
 )
 
@@ -76,6 +77,7 @@ def add_parsers(resources: Any) -> None:
         },
         "workspace": {
             "show": "id",
+            "rename": "both",
             "configure": "both",
             "metrics": "both",
             "issue": "both",
@@ -193,6 +195,8 @@ def dispatch(
         m = WorkspaceModuleService(factory)
         if args.action == "show":
             return m.show(args.id)
+        if args.action == "rename":
+            return m.rename(args.id, read_input(RenameInput, args.input))
         if args.action == "configure":
             return m.configure(args.id, read_input(ConfigInput, args.input))
         if args.action == "metrics":

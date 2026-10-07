@@ -1,0 +1,25 @@
+{
+  "synthetic": true,
+  "checks": [
+    "equal teams: +12/-12, zero-sum with fixed equal team size",
+    "corrected result changes downstream history deterministically",
+    "queue: empty, expiry boundary, genuine zero, device dedupe, disagreement",
+    "routes: hard constraints first, non-dominated tradeoffs, no duplicate/fake third route",
+    "coach: duration/equipment/court constraints; reported pain suppresses auto scheduling",
+    "rating limitation: fixed teammates cannot be individually distinguished by team results"
+  ],
+  "passed": 6,
+  "rating_example": {
+    "a": 1012.0,
+    "b": 1012.0,
+    "c": 1012.0,
+    "d": 988.0,
+    "e": 988.0,
+    "f": 988.0
+  },
+  "limits": [
+    "No adoption, coaching effectiveness, real-time queue accuracy or route beauty measurement.",
+    "Same-device deduplication is not Sybil resistance.",
+    "Elo is a group-relative game statistic, not official ability."
+  ]
+}

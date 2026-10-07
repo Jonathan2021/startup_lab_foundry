@@ -59,11 +59,11 @@ jobs:
 
       - name: Lint
         if: ${{ matrix.python-version == '3.13' }}
-        run: uv run ruff check src tests
+        run: uv run ruff check src tests scripts/agent-kit
 
       - name: Type check
         if: ${{ matrix.python-version == '3.13' }}
-        run: uv run mypy src
+        run: uv run mypy src scripts/agent-kit/foundry_agent.py
 
       - name: Validate GitHub Actions workflows
         if: ${{ matrix.python-version == '3.13' }}
@@ -79,6 +79,7 @@ jobs:
           tests/integration
           tests/acceptance/test_cli_workspace.py
           tests/acceptance/test_cli_lifecycle.py
+          tests/acceptance/test_agent_kit.py
           tests/contract/test_package_boundary.py
           --junitxml=test-results.xml
 

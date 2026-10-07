@@ -1,0 +1,609 @@
+{
+  "volley-match": {
+    "name": "Volley Match",
+    "venture": "v-sports-session",
+    "workspace": "417476af-0674-4aba-9022-843957dc3ca2",
+    "goal": "A private volleyball group can invite friends, join a session, record and confirm a match, and see trustworthy match and Elo history.",
+    "decision": "GO for a private friends-group MVP. One implementation combines the user-facing P023/P103 jobs; P103 is the canonical build workspace. Preserve P023 and the historical pending fusion proposal as lineage, not another implementation queue. Public matchmaking, court booking and automated tournaments follow demonstrated group reuse.",
+    "evidence": "The user plays outdoor volleyball, currently coordinates on WhatsApp, wants balanced teams and progression, and explicitly prioritizes this build. Rankade already supports private groups, results and team rankings; this is not an unserved-category claim. Synthetic replay established the proposed rating invariants and showed that permanently fixed teammates cannot be individually identified from team outcomes.",
+    "sources": [
+      [
+        "Rankade capabilities",
+        "https://rankade.com/"
+      ],
+      [
+        "Rankade group-relative ranking limits",
+        "https://rankade.com/ree/"
+      ],
+      [
+        "Playtomic open-match model",
+        "https://third-party.playtomic.io/"
+      ],
+      [
+        "User group reference",
+        "https://greenvolleyparis.com/fr"
+      ]
+    ],
+    "scope": "Include: private group creation and revocable invite links; user accounts and consented display names; upcoming session creation with venue/time/capacity; join/leave; organizer team assignment; equal-size 2v2 through 6v6 volleyball matches; configurable friendly or rated match; score proposal, opposing-side confirmation, dispute and correction; group/format-specific Elo; match/player history; mobile-first UI; export and account deletion.\n\nDo not require every friend to register before a group can prepare a session: organizers may create clearly unclaimed guest slots. A guest match remains unrated until the relevant players claim their identities and the result is confirmed. Do not attach an invite token to a public profile. No paid bookings, public precise-location map, stranger messaging, global cross-sport leaderboard, video or automatic brackets in v1.",
+    "design": "Use a Python FastAPI modular monolith, SQLAlchemy/Alembic, PostgreSQL for multi-user testing, SQLite for deterministic local tests, Jinja/HTMX or a small typed browser client. Choose the smaller UI that satisfies mobile acceptance; no native app requirement. Cookie sessions (HttpOnly/SameSite/Secure under HTTPS), CSRF protection, password hashing through a maintained library. Local seeded auth supports demos; real email remains disabled until configured and authorized. Domain services must not import Foundry.\n\nCore records: User; Group; Membership(role, status); Invite(token_hash, expiry, max_uses); Session(start_at_UTC, display_timezone, venue, capacity, revision); Attendance(unique session/user, status); Match(group, session, format, rules_version, status, played_at, immutable roster snapshot); MatchRevision(scores, submitting_user, reason); Confirmation(revision, user, side); RatingEvent(player, match_revision, pool, algorithm_version, before, delta, after, sequence); AuditEvent. Never reuse a rating from a different group/format pool.\n\nState machine: scheduled -> score_pending -> confirmed; pending -> disputed -> new score revision -> pending; confirmed -> correction_pending -> confirmed replacement. One participant on each opposing side confirms the same revision; author confirmation counts only for their side. Organizer override requires a visible reason and audit, and must not silently forge player confirmation. Rated confirmation and rating events commit once in one transaction. Replayed requests return the same outcome using an idempotency key; conflicting payloads fail.\n\nInitial Elo v1: each claimed player begins at 1000, provisional for first 10 rated matches; team strength is the arithmetic mean of roster ratings; expected_A = 1/(1+10**((mean_B-mean_A)/400)); each A player changes by 24*(win_A-expected_A), B changes by the negative amount. Only equal-size rated teams, no draws, fixed rosters per match; substitutions require a new match or friendly mode. Rated result uses match win, never each set or point margin. Keep full precision internally and round only display. No inactivity decay. Scores are local estimates, not official ability. Exact chronological replay sorts by played_at then immutable ID; correction/void/backdated insertion recomputes subsequent events in that pool transactionally. Version every rule and keep old history revisions queryable.\n\nScoring: explicit modes single set to 21 or 25, win by two, optional agreed cap recorded before play; best-of-3 with deciding set to 15. Validate enough completed sets, no extra sets after match won, no negative scores, no ties, and cap semantics. Friendly/custom score can be stored but is unrated when rules do not validate. Team balancing is a later optional deterministic suggestion using mean ratings and explicit position preferences, never an MVP blocker.",
+    "api": "POST /groups; POST /groups/{id}/invites; POST /invites/{token}/accept; POST /groups/{id}/sessions; POST /sessions/{id}/attendance; DELETE /sessions/{id}/attendance/me; POST /sessions/{id}/matches; POST /matches/{id}/score-revisions; POST /matches/{id}/confirmations; POST /matches/{id}/disputes; POST /matches/{id}/corrections; GET /groups/{id}/ratings?format=3v3; GET /players/{id}/history?group_id=... . Each write authorizes membership/role and expected revision. Outsiders cannot enumerate private groups. Show friendly/unconfirmed/voided matches without implying they changed ratings.",
+    "ux": "Home: next session and Join button. Session: attendees, teams, Record score. Confirmation page: both rosters and exact score, Confirm / Dispute. Completed match: rating before -> delta -> after for every player, link to history. Group: recent matches, rating table with provisional marker, create session. Player: matches and rating chart scoped visibly to group/format. Screens at 390px and keyboard-only; no browser horizontal overflow. A friend arriving from WhatsApp invite should understand the next action in one screen.",
+    "packages": [
+      [
+        "V01",
+        [],
+        "Bootstrap a runnable authenticated group shell",
+        "Create package/config/migrations, local synthetic seed and CI; implement user/group membership and revocable invites. Add fixtures for Alice/Bob/outsider, expired invite and two groups. Keep email adapter fake locally.",
+        "Database survives restart; outsider read/write is denied; expired/revoked invite cannot join; CI lint/types/unit/integration passes."
+      ],
+      [
+        "V02",
+        [
+          "V01"
+        ],
+        "Sessions, attendance and fixed match rosters",
+        "Implement capacity-safe join/leave with DB uniqueness and concurrent last-seat handling, organizer roster selection and friendly/rated modes. Retain roster snapshot after membership edits.",
+        "Two concurrent last-seat joins yield one winner; duplicate joins do not double count; organizer cannot assign an outsider; 3v3 roster persists after rename."
+      ],
+      [
+        "V03",
+        [
+          "V02"
+        ],
+        "Confirmed scores and replayable Elo",
+        "Implement rules/state machine above before UI polish. Add transaction/idempotency tests, dispute/correction UI and full pool replay. Store algorithm version and immutable rating history.",
+        "Equal 1000-rated 3v3 winners become 1012 and losers 988; no pending/guest/friendly/disputed match changes Elo; replay after correcting first of three matches matches fresh calculation; double confirmation applies once."
+      ],
+      [
+        "V04",
+        [
+          "V03"
+        ],
+        "Mobile match and progression experience",
+        "Build join, record, confirm, match history and player chart flows. French default with plain language; show privacy and provisional ratings. Synthetic six-friend demo only.",
+        "Real browser at desktop/390px completes create -> invite -> join -> score -> opponent confirm -> history; restart preserves all; backdated corrections update chart and explain why."
+      ],
+      [
+        "V05",
+        [
+          "V04"
+        ],
+        "Release and private pilot",
+        "Export/delete data, backup/restore, rate limits, configuration checks, auth threat review and deployment checklist. Prepare an unsent invite draft and two-session observation sheet.",
+        "Clean checkout can install, migrate, seed and serve; acceptance suite green; no real user data in repo. Before exposing beyond loopback: HTTPS/auth/secrets/retention review and explicit deployment approval."
+      ]
+    ],
+    "pilot": "Two voluntary friends sessions: can participants join and confirm without the developer operating their accounts; record completion time, disputes, missing players and whether they want to reuse it. Failure should simplify confirmation/onboarding, not add public matchmaking. Successful repeated private use permits team-balancing and seeded tournament work; global matchmaking requires connected rating pools and moderation.",
+    "cases": [
+      [
+        "equal_teams",
+        "Six players at 1000; confirmed 3v3 match",
+        "winners 1012, losers 988"
+      ],
+      [
+        "pending",
+        "One side has not confirmed",
+        "rating unchanged"
+      ],
+      [
+        "correction",
+        "First of three matches corrected",
+        "exact deterministic pool replay"
+      ],
+      [
+        "isolation",
+        "Outsider requests private history",
+        "403 or non-enumerating 404"
+      ],
+      [
+        "last_seat",
+        "Two concurrent joins for one seat",
+        "one accepted, one capacity error"
+      ],
+      [
+        "unknown_guest",
+        "Guest has not claimed identity",
+        "history retained, no rating"
+      ]
+    ],
+    "slug": "volley-match"
+  },
+  "ride-options": {
+    "name": "Ride Options",
+    "venture": "v-route-repair",
+    "workspace": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+    "goal": "Generate A–B and loop motorcycle rides from preferences and a riding-time budget, explain distinct alternatives, let the rider choose and export GPX.",
+    "decision": "GO for a regional planning MVP. Reset the venture objective from ETA diagnosis to route creation. Keep prior GPX/ETA evidence as history. A road-use pilot is gated by motorcycle access/turn-restriction verification; prototyping and UI can proceed immediately against fixtures and the tested local engine.",
+    "evidence": "User supplied a concrete planning pain: manually placing road-precise markers and checking views. Kurviger already offers curvy routing and loops, so the hypothesis is less manual planning through explicit tradeoffs and broad-area preferences, not invention of curvy routing. GraphHopper 11.1 produced real alternatives and loops locally on an Andorra OSM extract; detailed timings, hashes and failures are in the portfolio route probe. A 40km loop request failed and smaller requested lengths overshot: implement feasibility checks.",
+    "sources": [
+      [
+        "Kurviger existing planning",
+        "https://docs.kurviger.com/web/getting_started"
+      ],
+      [
+        "GraphHopper engine API",
+        "https://github.com/graphhopper/graphhopper/blob/11.1/docs/web/api-doc.md"
+      ],
+      [
+        "Custom route models",
+        "https://github.com/graphhopper/graphhopper/blob/11.1/docs/core/custom-models.md"
+      ],
+      [
+        "Motorcycle baseline model",
+        "https://github.com/graphhopper/graphhopper/blob/11.1/core/src/main/resources/com/graphhopper/custom_models/motorcycle.json"
+      ],
+      [
+        "Street View constraints",
+        "https://developers.google.com/maps/documentation/streetview/policies"
+      ],
+      [
+        "OSM reuse",
+        "https://www.openstreetmap.org/copyright"
+      ]
+    ],
+    "scope": "A–B and start/loop requests; manual map points or typed coordinates initially; riding duration separate from breaks; avoid motorway/tolls/unpaved preferences; curvature and nature preferences; at most three genuinely different feasible suggestions; distance, model ETA, uncertainty and tradeoffs; basic manual via points; save locally and export GPX. Broad circular must-pass areas can be the first extension after this core.\n\nDefer turn-by-turn navigation, live traffic/weather, a social route network, universal road beauty scores and computer vision. In v1 a Street View button may open Google Maps at the selected sample coordinate; embedded images and image-derived scores are a separate licensed/costed integration. No free production dependence on public demo routers, bulk tile downloads or automated Google imagery collection.",
+    "design": "Python FastAPI web app with a thin map client (MapLibre GL JS), SQLAlchemy/Alembic, a RoutingProvider interface and a local GraphHopper 11.1 HTTP sidecar. This one sidecar is justified by a mature routing engine; do not implement routing graph search in Python. Use the tested pinned engine/config plus local regional OSM extract. Record engine version, extract timestamp/hash, custom-model version and query on every plan. Start on a small region and then a France region; UI must reject locations outside loaded coverage. No shared runtime code with Foundry.\n\nRecords: RouteRequest(id, mode, points, target_minutes, hard_constraints, soft_weights, desired_areas, budget, created_at); Candidate(id, geometry, distance, engine_duration, proxy_metrics, missing_metrics, constraint_checks, generation_config, generation_id); Plan(request, selected_candidate, revision); UserFeedback(chosen candidate, reasons, consent, model_version). Persist actual generated geometry, not a string claiming success. API budget: at most 12 engine requests / plan, concurrency 2, 30-second generation deadline, cap visited nodes; cancellation stops outstanding work. Cache only results allowed by source licenses. Save no precise GPS trace by default.\n\nGeneration: obtain a neutral direct baseline without a curvature reward, then bounded balanced/curvy candidates (three soft-weight presets and engine alternatives), and for loops a bounded seed/heading/distance search. Never label the first motorcycle-engine path “fastest”: the probe returned a 38.9-minute first route and a 21.5-minute alternative. Rank by measured returned duration when choosing fastest among generated candidates. Filter hard restrictions and time budget before ranking. Resample geometry and compare undirected edge/distance overlap; treat >85% shared length as effectively duplicate, retain the clearer candidate. Return one or two routes honestly if only those are feasible. Empty result explains constraints and offers user-controlled relaxation; no silent motorway use or time-budget expansion.\n\nFor a requested loop, validate endpoint distance <=100m and repeated-edge fraction (exclude unavoidable start/end spur); show actual length/time. For a circular must-pass area later, generate candidate points on routable roads inside it, then verify geometry intersects the circle. A center waypoint alone is not correct area routing.\n\nMetrics: curvature proxy from signed bearing changes after consistent resampling (exclude noise/junction artifacts); forest/water proximity only from attributable OSM data and with coverage shown; road class and surface proportions from engine details. Missing scenery stays unknown; curvature is not beauty or safety. Score weight explanations use these measurable proxies, with “scenery proxy” wording. Use model duration, no calibrated confidence interval unless measured. Riding-speed preferences are road-character preferences bounded by legal limits, never incentives to speed.\n\nCritical spike: stock motorcycle.json uses car_access. Verify explicit motorcycle=no/yes, motor_vehicle restrictions, access=private, one-way and motorcycle turn restrictions on tiny OSM fixtures; adapt import/access parser or switch to a verified provider if it fails. Retain unknown seasonal/conditional restrictions visibly; no claim of road safety/current openness. This check gates road-use pilot, not UI implementation. Current local trial proves generation only.",
+    "api": "POST /plans/generate {mode, points, max_riding_minutes, hard_constraints, preferences}; GET /generations/{id}; POST /plans {request_id,candidate_id}; PATCH /plans/{id} with expected_revision and explicit via changes; GET /plans/{id}/export.gpx; POST /plans/{id}/feedback. Provider timeouts produce an actionable partial/failed response, never straight-line geometry masquerading as roads. Validate coordinates, generation bounds and JSON limits; disallow arbitrary provider URLs to prevent SSRF.",
+    "ux": "Choose A–B or Loop; mark start/end; set maximum riding time and three preference controls. Results show synchronized map overlays and cards labelled Direct / Balanced / More curves only where the metrics justify these names. Each card explains added riding time and what it gains/loses. Details expose unknowns and data date. Pick -> optional via edit -> save/export. Clear “planning preview, check road conditions” label; breaks appear separately. Mobile map must leave enough space for a readable alternative card.",
+    "packages": [
+      [
+        "R01",
+        [],
+        "Reproduce routing and settle access semantics",
+        "Package local engine startup/config and pinned extract manifest; implement RoutingProvider with recorded HTTP fixtures. Add minimal OSM access/one-way/turn restriction fixtures before a road-use pilot. Document exact failing cases and an adapter/engine choice.",
+        "A–B and loop generation run locally; unsupported area and timeout return clear errors; no motorcycle-forbidden edge in restricted fixture. If stock access fails, keep app preview-only until fixed."
+      ],
+      [
+        "R02",
+        [
+          "R01"
+        ],
+        "Bounded candidate and tradeoff pipeline",
+        "Implement direct baseline, preset candidate generation, hard filters, loop feasibility, geometry deduplication and non-dominated ranking; persist reproducibility metadata.",
+        "Synthetic dominated/duplicate/over-budget candidates are removed; no fake third route; failed 40km-loop fixture returns infeasible; reversed shared edges count toward duplicate loops."
+      ],
+      [
+        "R03",
+        [
+          "R02"
+        ],
+        "Request/results map and GPX workflow",
+        "Build mobile request form, candidate cards, map, selection, via edit and GPX export; basic save/reload.",
+        "Browser completes both A–B and Loop; selected GPX preserves chosen geometry and namespace; regeneration retains prior revision; errors preserve form input."
+      ],
+      [
+        "R04",
+        [
+          "R03"
+        ],
+        "Preference quality checkpoint",
+        "Benchmark 10 fixed regional queries including user-inspired 4–5h Auvergne/river preferences. Add broad-area routing only after core passes; compare same queries in Kurviger manually without scraping.",
+        "Report generation latency, feasible/unique options, hard-constraint errors, interventions and user preference judgments separately. No invented beauty ground truth or ETA calibration."
+      ],
+      [
+        "R05",
+        [
+          "R04"
+        ],
+        "Regional private release",
+        "Bound resource use, map tile/provider attribution, backup/export, abuse controls and a deployment cost inventory. Prepare five planning trials and manual GPX inspection.",
+        "Independent install and recorded fixtures work without network; road-use checks pass; explicit approval precedes hosting or paid mapping. Go wider only after riders prefer choices and need fewer edits."
+      ]
+    ],
+    "pilot": "Compare actual planning tasks with Kurviger for the same preferences, recording time, manual edits, rejected suggestions and why. Build can proceed without user data. If an existing planner gives equally useful choices with less effort, use it or narrow to broad-area tradeoffs. Social route ratings wait for a repeat-use base; videos/images wait for licensed access.",
+    "cases": [
+      [
+        "no_options",
+        "Every candidate exceeds budget",
+        "empty with reasons, no relaxation"
+      ],
+      [
+        "duplicates",
+        "Three candidates share >85% length",
+        "collapse duplicates"
+      ],
+      [
+        "loop_failure",
+        "Engine cannot generate target loop",
+        "explicit infeasible"
+      ],
+      [
+        "restrictions",
+        "motorcycle=no on otherwise allowed car road",
+        "excluded"
+      ],
+      [
+        "motorway",
+        "motorway hard avoid enabled",
+        "zero motorway segments"
+      ],
+      [
+        "provenance",
+        "saved route reopened after data update",
+        "original geometry and engine/data versions retained"
+      ]
+    ],
+    "slug": "ride-options"
+  },
+  "crous-queue": {
+    "name": "Crous Queue",
+    "venture": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+    "workspace": "81ee3117-de70-411e-9856-07420859ffad",
+    "goal": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting.",
+    "decision": "GO for a national-directory, crowd-reporting MVP. All 26 official feeds were fetched: 972 unique region-scoped venue IDs, including restaurants, cafeterias and other types. This is observed directory coverage, not proof every venue is open or every university restaurant is listed. Seed Cuvier/Châtelet for a local pilot without blocking the build on lunch observations.",
+    "evidence": "CNOUS feed license is fr-lo (Open Licence); all 26 current resource URLs returned parseable XML. Paris has separate RU Cuvier paris:r177, RU Châtelet paris:r175, Cuvier cafeteria paris:r889 and administrative Jussieu paris:r1149. Never merge these by coordinates. HTTPS on the legacy Paris feed returned 404 while the catalog-declared HTTP feed succeeded; import server-side with strict bounds and plain-text normalization. Existing Affluences and CrousRadar establish strong overlap; adoption remains an experiment.",
+    "sources": [
+      [
+        "Official national directory",
+        "https://www.data.gouv.fr/datasets/restaurants-brasseries-et-cafeterias-des-crous"
+      ],
+      [
+        "CrousRadar listing",
+        "https://apps.apple.com/fr/app/crousradar/id6755202143"
+      ],
+      [
+        "Affluences restaurant offering",
+        "https://www.pro.affluences.com/restaurant-universitaire"
+      ],
+      [
+        "RU Cuvier",
+        "https://www.crous-paris.fr/restaurant/ru-cuvier/"
+      ],
+      [
+        "RU Châtelet",
+        "https://www.crous-paris.fr/restaurant/ru-chatelet/"
+      ]
+    ],
+    "scope": "National searchable directory; restaurant/cafeteria filters; manual city/search selection with optional one-time approximate geolocation; favorite venues stored locally; recent crowd-reported wait; report current estimated remaining wait or start/finish an own wait timer; freshness, report count and disagreement; report-abuse action and small admin moderation view. No signup to view or contribute in initial MVP; signed pseudonymous device session and strict throttles.\n\nDo not infer seats, menus, queue length, future wait or walking-time savings. Do not import Affluences live data without an authorized feed. Menus and predictions are later options. Keep private/staff-only venues visibly identified when source access information is available. Public reports contain no names, free text, photos or location traces.",
+    "design": "Python FastAPI/SQLAlchemy/Alembic modular monolith; responsive server-rendered PWA shell, SQLite local and PostgreSQL for public concurrency. App owns no precise location-history table. DirectoryImporter interface: fixed catalog/resource allowlist, timeout, payload/row limits, XML parser with external entities disabled, reject nonfinite/out-of-range coordinates, normalize HTML to safe plain text, never fetch embedded image/contact URLs. Store source timestamp and fetched_at separately; catalog updated_at is not proof venue hours are current.\n\nVenue key is region + ':' + original_id, unique. Store source name/type/coordinates, cautiously normalized address/access/hours text, active/closed flags as source data, last_seen_at, source_url, license. Partial feed failure retains last-good region data and flags stale coverage; missing in one refresh is not deletion. Keep administrative/restaurant/cafeteria identities separate even at identical coordinates. Import all listed venues, default to restaurant type in UI and expose other types explicitly.\n\nWaitReport(id, venue_id, queue_kind, kind=estimate|completed, minutes, observed_at, received_at, source_window_start, device_hash, idempotency_key, visibility). Use server received time; client observation time cannot be >2min future or >60min old. Estimate: “how much longer do you think someone joining now would wait?” integer 0–120. Completed timer: measured own wait, preserve join and finish; label as completed experience ending X minutes ago and do not silently mix it with current estimates. Only estimate reports enter initial live median. A completed report remains a separate recent observation because its queue state may have changed while waiting.\n\nAggregation v1: only visible estimates with age <15min, latest per device+venue+queue; zero is a real report, no observations is unknown. One report is labeled unconfirmed single report. Two+ reports use median, show range/count and newest age; range >15min displays conflicting range instead of a precise aggregate. Timestamp expiry enforced on server reads and client timer, not only scheduled cleanup. Start with separate queues only where real queue classes are known; never pool staff/student reports.\n\nAbuse: signed random device cookie, one contribution per venue per 2min; report replaces that device's aggregate contribution; coarse salted IP rate limiting with short retention, aggregate counters, admin hide with audit. This limits repeats, not Sybil attacks. No device fingerprinting. Raw reports default 7-day retention, rate-limit identifiers <=24h; document any change. Moderation endpoint requires separate admin authentication. No blanket credibility score from number of reports.",
+    "api": "GET /venues?q=&region=&type=restaurant; GET /venues/{id}; GET /venues/{id}/waits; POST /venues/{id}/reports {kind, minutes, observed_at, queue_kind, idempotency_key}; POST /timers/start and /timers/{id}/finish bound to device; POST /reports/{id}/flags with enum reason; admin POST /reports/{id}/hide with rationale. Device/IP rate limits and payload validation apply before writes. No endpoint lists raw device identities.",
+    "ux": "Home: search university/city/restaurant and favorites. Venue: name, type/access, recent wait state, timestamp and report count, large “Report a wait” button, quick values 0/5/10/15/20/30 plus numeric input. Ask whether this is an estimate now or a completed wait. Empty state says “No recent report”, never “0 min”. Confirmation is one tap after value selection; show new aggregate and expiry. Cuvier cafeteria/admin rows are clearly distinguished in search. FR first, installable browser app, no app-store prerequisite.",
+    "packages": [
+      [
+        "Q01",
+        [],
+        "Import and search the national directory",
+        "Build strict importer from 26 declared feeds using the retained normalized snapshot and small XML fixtures. Save provenance, separate source fields and safe display fields.",
+        "972-row observed snapshot imports idempotently; Cuvier/Châtelet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable."
+      ],
+      [
+        "Q02",
+        [
+          "Q01"
+        ],
+        "Reports, expiry and honest aggregation",
+        "Implement signed device session, request idempotency, estimate/completed split, throttles and exact 15-minute clock semantics. Unit test with injected UTC clock.",
+        "Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes."
+      ],
+      [
+        "Q03",
+        [
+          "Q02"
+        ],
+        "Mobile search/report/favorites experience",
+        "Build venue card/search and one-hand report form. Display counts, freshness and source limitations, with client expiry and offline read-only/error behavior.",
+        "At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required."
+      ],
+      [
+        "Q04",
+        [
+          "Q03"
+        ],
+        "Moderation and public-readiness safeguards",
+        "Implement admin auth, hide/flag history, server limits, retention command, metrics without PII, backup/restore, and plain-language privacy page.",
+        "Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location."
+      ],
+      [
+        "Q05",
+        [
+          "Q04"
+        ],
+        "Private pilot then explicit deployment checkpoint",
+        "Exercise Cuvier/Châtelet with synthetic data in demo and ordinary voluntary reports only when available. Prepare rollout config and cost/teardown document; do not seed public live feeds with invented waits.",
+        "National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs."
+      ]
+    ],
+    "pilot": "Five lunch days at Cuvier/Châtelet after a usable app exists: freshness coverage at fixed checks, estimate versus own completed wait (clearly different measures), contribution friction and repeat contributors. No mandatory interviews before implementation. National venue availability does not imply national live data. If reporting stays sparse, keep honest unknowns and test distribution rather than adding fictitious prediction.",
+    "cases": [
+      [
+        "expiry",
+        "report age exactly 15min",
+        "excluded"
+      ],
+      [
+        "zero",
+        "fresh estimate zero",
+        "display 0, single-report label"
+      ],
+      [
+        "separate_venues",
+        "same coordinates, three Cuvier/Jussieu IDs",
+        "independent reports"
+      ],
+      [
+        "device_repeat",
+        "same device reports 5 then 20",
+        "one latest contribution"
+      ],
+      [
+        "conflict",
+        "independent fresh 0 and 40",
+        "range/conflicting state"
+      ],
+      [
+        "partial_import",
+        "one region feed errors",
+        "retain prior region data"
+      ]
+    ],
+    "slug": "crous-queue"
+  },
+  "volley-coach": {
+    "name": "Volley Coach",
+    "venture": "v-volley-coach",
+    "workspace": null,
+    "goal": "Help an adult recreational volleyball player follow a realistic weekly progression plan that fits available time, equipment, court and partners, then adapt from their logged experience.",
+    "decision": "GO for an availability-aware volleyball practice planner; HOLD automatic form judgment and live match-video strategy. Prefer personal progression over a video analytics competitor: it shares user access with Volley Match, can be useful without a labeled video corpus, and has a bounded deterministic first implementation. Keep its repository/domain independent; optional match history import comes later.",
+    "evidence": "The user proposed this exact choice. Hudl Balltime already markets volleyball video analysis, statistics and coaching tools; SwingVision offers tennis video review and shot statistics. Those vendor claims do not prove accuracy, but they raise the bar for a new vision product. USA Volleyball publishes coach/drill resources; public access is not a license to copy videos or prescribe individualized training. Synthetic slots verified time/equipment/court constraints only.",
+    "sources": [
+      [
+        "Hudl Balltime",
+        "https://www.hudl.com/products/balltime"
+      ],
+      [
+        "SwingVision video review",
+        "https://swing.vision/guides/review-your-video-footage"
+      ],
+      [
+        "USA Volleyball coach resources",
+        "https://usavolleyball.org/resources-for-coaches/coaches-tools/"
+      ],
+      [
+        "Art of Coaching existing content",
+        "https://www.theartofcoachingvolleyball.com/goal-setting-worksheet/"
+      ]
+    ],
+    "scope": "Adult self-assessment by skills and confidence; weekly availability with separate home/gym/court/partner slots; goal selection; small curated drill catalog with source links and review status; deterministic weekly plan; session logging (completed/skipped/easier/harder, perceived effort, optional discomfort flag); rescheduling when court availability changes; progression history and one explicit next-week adjustment.\n\nInitial usable mode schedules user/coach-selected drills and conservative reviewed catalog sessions. Do not claim automated diagnosis, injury rehabilitation, personalized medical suitability, level certification or video form verification. No training a model, storing minors' videos, scraping paid exercise content, generic motivational chatbot or open coach marketplace. Video later starts with consented clips and human feedback; automated analysis gets a separate validation gate.",
+    "design": "Python FastAPI, SQLAlchemy/Alembic, mobile-first server-rendered UI, deterministic Planner interface; no LLM required. Catalog owned or licensed original descriptions, links to official learning resources, reviewer/date/version. Unreviewed catalog entries are usable only as clearly synthetic demo placeholders, never delivered as approved physical instructions. Users can schedule their own existing program without claiming our professional endorsement.\n\nRecords: PlayerProfile(adult attestation, goals, experience, self-assessed skill dimensions, uncertainty); AvailabilitySlot(local date/time, IANA timezone, minutes, equipment, court, partner_count); Drill(version, learning objective, duration including warm-up/rest/cooldown, requirements, instruction_source, author/reviewer, status, progression variants); PlanRevision(week, inputs_hash, scheduling_rules_version, assignments, unfilled_goals, rationale); SessionLog(plan_item, outcome, exertion, discomfort flag, duration, notes); ProgressionDecision(previous plan/log refs, change, reason, reversible).\n\nScheduling: never exceed time or assign unavailable resources; reserve recovery constraints stated by the approved program, account for matches supplied by the user, and avoid stacking missed sessions. No court means offer an explicitly suitable home/review alternative or leave the skill objective unmet. Skill self-report is not an objective rating and is separate from match Elo. DST uses local-zone conversion with ambiguous times resolved explicitly. Changing availability revises only future sessions, retaining completed history.\n\nProgression: do not infer more volume from attendance alone. Start with user/coach-approved fixed program variants; after logged completion and user “too easy” feedback, offer a reviewed small variant change with rationale, user acceptance and easy undo. Pain/discomfort or illness input suppresses automatic physical progression, offers rest/skip and recommends appropriate professional input without diagnosis. Never ask for detailed health history. Personal safety/medical content needs qualified review before broad pilot; this does not block the scheduling implementation.\n\nVideo match coaching would require permissions, representative camera positions/formats, reliable rally/action/rotation labels, blind held-out evaluations, manual correction UX, compute/storage cost measurement and evidence coaches act differently. Reopen only after access to labeled matches or a suitable provider and a narrow unmet task; do not launch a general vision model because scheduling is green-lit.",
+    "api": "POST /profile; PUT /availability/{week}; GET /drills?requirements=...; POST /plans/generate; GET /plans/{week}; POST /plans/{id}/accept; POST /sessions/{id}/log; POST /plans/{id}/revise; GET /progress; export/delete endpoints. Every plan exposes why each assignment fits, unfilled needs and its source/version. Concurrent availability edit causes a stale-plan rejection, never silent overwrite.",
+    "ux": "Onboarding: goal -> self-assessed comfort (unknown allowed) -> this week's time and court access. Plan calendar cards show time, where, equipment, skill purpose, linked technique reference and why chosen. After practice: Done/Skipped, felt easy/about right/hard, discomfort optional. When a court cancels: “Replan remaining week” with visible changes and unchanged past sessions. No jump-height/skill claims from fabricated video metrics.",
+    "packages": [
+      [
+        "C01",
+        [],
+        "Profiles, availability and catalog contracts",
+        "Implement adult profile, timezone-aware slots, versioned drills and approval/review status. Seed synthetic scheduling fixtures plus links, not copied videos.",
+        "Unknown ability valid; overlapping slots handled; equipment/court metadata explicit; unreviewed physical content cannot appear as approved instruction."
+      ],
+      [
+        "C02",
+        [
+          "C01"
+        ],
+        "Deterministic constraint-respecting planner",
+        "Build scheduler with durations including transition/rest, resource requirements, recovery constraints and unfilled-goal explanations. Add no-court/zero-time/DST/match-day fixtures.",
+        "No assignment exceeds slot or uses missing equipment/partners; no-court remains valid; identical input/version gives identical plan; empty week is honest, not failure."
+      ],
+      [
+        "C03",
+        [
+          "C02"
+        ],
+        "Logs, revised weeks and controlled progression",
+        "Persist completion and skipped reasons; implement availability change and reviewed variant proposal; keep past sessions immutable.",
+        "Skipped session is not crammed into tomorrow; pain suppresses physical progression; stale plan cannot overwrite new availability; user can reject/undo change."
+      ],
+      [
+        "C04",
+        [
+          "C03"
+        ],
+        "Mobile planning and practice flow",
+        "Build onboarding/calendar/today/log/progress; plain explanations and self-assessment caveat.",
+        "Browser completes week -> court cancellation -> replan -> log -> next week; desktop/390px usable; no compulsory video or wearables."
+      ],
+      [
+        "C05",
+        [
+          "C04"
+        ],
+        "Content and pilot readiness",
+        "Obtain review/permission for initial small exercise catalog or keep user-provided-program mode; privacy/export/delete, backup, release config and two-week pilot sheet.",
+        "Scheduling MVP works independently; broader physical-instruction pilot waits for qualified review. Measure adherence, usefulness and feasible plans, not physiological improvement from a synthetic test."
+      ]
+    ],
+    "pilot": "Two weeks with consenting adult recreational volleyball players once catalog content is appropriately reviewed or user-supplied. Record whether sessions fit actual access, why skipped and whether plans are reused. Coach correctness and injury outcomes are not established by adherence. Integrate with match Elo only as a user-chosen signal, never evidence of fitness or diagnosis.",
+    "cases": [
+      [
+        "no_court",
+        "Only home slots",
+        "no court-only drills"
+      ],
+      [
+        "short_slot",
+        "20 minutes free",
+        "total including rest <=20"
+      ],
+      [
+        "cancelled",
+        "Court cancelled after one completed session",
+        "completed unchanged, future revised"
+      ],
+      [
+        "pain",
+        "Discomfort logged",
+        "automatic physical progression held"
+      ],
+      [
+        "unknown_level",
+        "Self-assessment uncertain",
+        "no certified level assigned"
+      ],
+      [
+        "concurrency",
+        "Availability updated after plan generation",
+        "stale acceptance refused"
+      ]
+    ],
+    "slug": "volley-coach"
+  },
+  "coopain": {
+    "name": "Coopain",
+    "venture": "v-coopain",
+    "workspace": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+    "goal": "A job seeker finds a relevant role through a consenting employee referrer, both decide whether to connect, share only chosen information, and track the introduction.",
+    "decision": "GO for improving the existing private prototype, candidates free and no bonus custody/sharing/payment automation in MVP. Do not rewrite it. Public/commercial release is gated on collaborator rights, employer referral-policy compatibility and production security. These gates do not block local implementation with synthetic profiles.",
+    "evidence": "Existing FastAPI/SQLAlchemy backend and Next/Expo clients retained at aa382779b79951f843f37b8080f6f0972efe7e3c. Seven selected existing tests passed in isolated Python 3.11 with pinned backend requirements and bcrypt 4.0.1: privacy grants, referrer job posts, safety, match snapshots and preference lifecycle. This is not full-suite or end-user runtime certification. Frontend dashboard still derives compatibility from stable IDs; migrations and storage completion remain documented gaps. No user tests or ownership/license agreement reported.",
+    "sources": [
+      [
+        "Placement principles",
+        "https://code.travail.gouv.fr/code-du-travail/l5321-1"
+      ],
+      [
+        "Candidate payment restriction",
+        "https://code.travail.gouv.fr/code-du-travail/l5321-3"
+      ],
+      [
+        "CNIL recruitment guidance",
+        "https://www.cnil.fr/fr/le-guide-du-recrutement"
+      ],
+      [
+        "Direct referral-network comparator",
+        "https://refer.me/"
+      ],
+      [
+        "Enterprise referral comparator",
+        "https://recruteur.hellowork.com/fr/produit/cooptation.html"
+      ]
+    ],
+    "scope": "Keep candidate/referrer modes, profiles/preferences, manual verified-by-referrer job posts, consented introduction requests, mutual match/connection, scoped PII grants, message thread, block/report, intro status history and export/delete. Add fields for employer referral policy URL/last checked, eligibility attestation and bonus information with source/date/status only. A stated bonus is unverified information, not guaranteed candidate income.\n\nNo mandatory candidate fee, subscription tied to access to placement, paid referral endorsement, bonus escrow/splitting, bulk job-board/LinkedIn scraping, auto-applying or sending on the user's behalf. No ATS integration or push requirement for first pilot. Exact monetization flow remains a later reviewed decision; another country's paid referral service does not establish legality in France.",
+    "design": "Preserve backend/app routes/domain/models and the existing web client. Focus on one web path before mobile parity. Separate infrastructure repair, user-facing product completion and commercial questions. Backend currently pins old dependencies; create a reproducible lock/environment and address advisories with compatible upgrades and regression tests rather than moving everything to the Foundry environment. The successful probe added bcrypt<4.1 for passlib compatibility; treat that as historical baseline, not a recommendation to indefinitely keep the old auth stack.\n\nRemove scoreFromStableId from all real-user surfaces. Either no compatibility percentage or an explainable deterministic “matched preferences” checklist based on actual skills/location/role criteria; missing data is unknown. Never imply a ranking is predictive of hiring.\n\nUse existing candidate/referrer overlays and append-only snapshots. Introduction lifecycle: requested -> referrer_review -> declined|accepted -> candidate_share_consent -> referred (manually recorded by actual referrer) -> outcome_unknown|interview|hired|closed. State transition actor/authority and timestamp must be explicit. Do not auto-claim a person is known to the employee: referrer attests the real relationship/assessment and checks company policy. Keep messages private to connection participants and honor block/revoked grants across list/detail/download paths.\n\nPrivacy: data minimization, match-scoped access grants, no CV upload needed for first pilot. If document upload stays enabled, verify completion/object ownership/MIME/size and malware strategy before making it available; presigning alone does not prove safe file contents. Retention/deletion/export and narrow audit redaction required. Disable actual SMTP/social provider/S3 calls in local fixture tests. Existing databases, .env and personal CVs are never test inputs or migration-reset targets.\n\nMigrations: bootstrap from current SQLAlchemy schema without dropping populated data; rehearse on a synthetic DB and a user-authorized backup if one later exists. Do not run create_all as production migration strategy. Define auth reset/verification, token expiry, consent and admin boundaries with tests. Public release requires collaborator agreement on code rights and operation, named data controller and selected employer-policy fit; record these as release gates, not demands for interviews before code repair.",
+    "api": "Reuse OpenAPI routes in backend/generated/openapi.json and regenerate clients from source after changes. Implementation first maps actual endpoint names for signup/login, preferences, referrer posts, feeds/swipes, matches, grants/messages and block/report into a browser replay. Add introduction state fields/endpoints only after checking existing equivalents; avoid duplicate match and intro truth. All external actions stay draft/manual recorded.",
+    "ux": "Candidate chooses skills/location/role and sees relevant jobs with an employee willing to consider a referral; requests introduction without automatic PII disclosure. Referrer sees a useful minimal profile, accepts/declines and explains missing fit. Candidate explicitly shares selected data; both see intro status and next action. Hide fake scores, empty unsupported badges and “sent” claims unless actually recorded. Make candidate free/no guaranteed bonus explicit.",
+    "packages": [
+      [
+        "J01",
+        [],
+        "Reproducible safe baseline and honest compatibility",
+        "Retain Git/untracked state; lock supported backend environment; run all existing tests with fake providers. Remove ID-derived compatibility and show real matched criteria/unknown. Inventory dependency advisories and assign fixes.",
+        "Selected seven tests still pass; full-suite failures documented/fixed by scope; no outbound SMTP/storage/social requests; no UI random/ID-derived percentages."
+      ],
+      [
+        "J02",
+        [
+          "J01"
+        ],
+        "One candidate-to-referrer vertical flow",
+        "Verify or repair existing web API calls through signup/profile/job/request/match/grant/message/decline. Add intro state and employer-policy metadata where absent, preserving snapshots.",
+        "Two users complete synthetic introduction; outsider and blocked user cannot read thread/PII; revoked grant immediately removes access; no fake referral submission."
+      ],
+      [
+        "J03",
+        [
+          "J02"
+        ],
+        "Persistence, security and migration readiness",
+        "Introduce/rehearse additive Alembic baseline, modernize vulnerable deps with auth regression, tighten upload feature gate, audit/retention/export/delete and error handling.",
+        "Restart and migration preserve historical matches; no reset of existing DB; token/CSRF/rate-limit/PII boundary tests green; disabled uploads cannot produce presigned access."
+      ],
+      [
+        "J04",
+        [
+          "J03"
+        ],
+        "Private web pilot quality",
+        "Browser tests at desktop/390px; synthetic seed and clean install; focus candidate and referrer dashboards, truthful filters and match reasons. Prepare observer task sheet.",
+        "Candidate and referrer complete flow without dev-UI tooling; blocked/withdrawn/deleted profile paths safe; no claims of paid or automatic referral."
+      ],
+      [
+        "J05",
+        [
+          "J04"
+        ],
+        "Release gates and payer experiment preparation",
+        "Prepare collaborator rights checklist, employer policy check and concrete employer/community-funded options. Draft, do not send, tester invitations. Distinguish private local demo from actual personal-data onboarding.",
+        "Local MVP complete; external launch held only on explicit unresolved rights/privacy/policy facts. No candidate charge or bonus handling without later fact-specific legal/payment design review."
+      ]
+    ],
+    "pilot": "Use willing friends only after privacy and operating rights are settled. Observe one real job/referrer/candidate flow; measure useful introductions and referrer effort, not number of swipes. Later test employer/community payer interest. French placement rules prohibit direct/indirect candidate remuneration for placement subject to specified exceptions; no claim here clears an exact bonus-sharing contract.",
+    "cases": [
+      [
+        "fake_score",
+        "Two equivalent profiles have different IDs",
+        "same real criteria; no invented compatibility percent"
+      ],
+      [
+        "grant",
+        "Candidate revokes documents/contact",
+        "all subsequent unauthorized reads denied"
+      ],
+      [
+        "blocked",
+        "One party blocks another",
+        "no new message or data access"
+      ],
+      [
+        "snapshot",
+        "Profile changes after introduction",
+        "historical match snapshot unchanged"
+      ],
+      [
+        "policy",
+        "Employer disallows external referrals",
+        "no claim of eligibility; request cannot be marked compliant"
+      ],
+      [
+        "external",
+        "Local demo requests verification message",
+        "fake provider only"
+      ]
+    ],
+    "slug": "coopain"
+  },
+  "foundry": {
+    "name": "Foundry",
+    "slug": "foundry",
+    "venture": "v-foundry",
+    "workspace": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+    "goal": "Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope.",
+    "decision": "GO: continue the existing lifecycle MVP as the internal coordination tool. Add only demonstrated dogfood improvements. No managed-agent runtime, token billing, MCP server, generic plugin system or multi-user hosted service in this tranche.",
+    "evidence": "Main commit 07ecb37 passed GitHub Python 3.11/3.13, PostgreSQL and image/Compose CI. Current campaign adds a stdlib CLI bridge, local feedback outbox and retry receipts. Actual inspection found an obsolete ready Foundry task and no decision map in its own venture; the campaign corrects the current map/queue while preserving old records. Parent-directory mypy omitted Foundry strict configuration; Makefile now names that configuration.",
+    "packages": [
+      [
+        "F01",
+        [],
+        "Run one complete agent handoff per venture",
+        "Use prepared configs and maps; one writer per venture at a time, parallelism across venture repositories. Verify claim, prepare, result preview/accept, resume and feedback receipt. No production model service.",
+        "Every prepared repo resolves its own workspace and current work; stale/conflicting claims fail; failed feedback send is retained and retry is idempotent."
+      ],
+      [
+        "F02",
+        [
+          "F01"
+        ],
+        "Triage observed agent friction",
+        "Inspect Foundry unreviewed feedback evidence plus local outboxes. Reproduce highest-impact issue, classify duplicate/accepted/deferred/rejected with rationale and link a bounded Foundry work item; do not treat every suggestion as mandatory.",
+        "At least one completed real venture package can be resumed by a fresh agent without reading full chat; retained feedback has decision and work reference or explicit defer reason."
+      ],
+      [
+        "F03",
+        [
+          "F02"
+        ],
+        "Improve context and queue behavior only where measured",
+        "Measure time to identify work, context bytes, omitted information, stale submissions and manual recovery. Fix concrete recurring cases with regression tests. Keep provider/action/storage boundaries replaceable.",
+        "No source lost in context; changed evidence invalidates unsafe effects; completed work is absent from executable queue; app remains useful without the helper."
+      ],
+      [
+        "F04",
+        [
+          "F03"
+        ],
+        "Release the dogfood-supported local MVP update",
+        "Run standalone lint/types/product/agent-kit/browser/container checks appropriate to changes, installed CLI and backup/restore. Update direction and one operator guide; preserve exact evidence IDs.",
+        "A clean checkout supports two separate venture agents and later review; no unconfigured external actions, no claimed commercial or token savings without measurement."
+      ]
+    ],
+    "pilot": "One completed package from volleyball and one from Crous before extending the platform. If manual helper/config work dominates, simplify commands based on the actual failures. Hosted collaboration and autonomous agents need separate requirements and threat/cost design."
+  }
+}

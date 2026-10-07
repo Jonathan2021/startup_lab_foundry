@@ -166,3 +166,23 @@ note are in the [release report](inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
 The MVP establishes reliable local behavior. Long-term maintenance benefit,
 commercial demand and token savings require continued use and comparative
 measurement; none follows from a smaller context or a synthetic fixture.
+
+
+## Independent implementation agents (2026-10-07)
+
+Prepared venture repositories contain `.foundry/project.json` and
+`tools/foundry_agent.py`. Run `python3 tools/foundry_agent.py resume`, then
+`start --actor UNIQUE_SESSION_NAME` from the target repository. The bridge claims
+current next work, prepares bounded context and saves it locally. It releases its
+exact claim if context preparation fails. Review context coverage and sources
+before editing; submit/preview/resolve results using the existing CLI contracts.
+The [agent handoff guide](plans/2026-10-07-agent-dogfood/AGENT_HANDOFF.md) documents
+review, stale-result recovery and durable feedback retries. No worker/model is
+started. Failed feedback delivery remains in the owning repo's `feedback/` outbox;
+receipts mean recorded, not triaged.
+
+`workspace show --id VENTURE_ID` exposes the current title/workspace_version.
+`workspace rename --id VENTURE_ID --input rename.json` accepts title,
+expected_version, actor and rationale, preserving a name-history artifact. A rename
+invalidates earlier context scope; do not substitute new version fields into old
+results to force their acceptance.

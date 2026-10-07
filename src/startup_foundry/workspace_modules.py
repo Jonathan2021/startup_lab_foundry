@@ -9,7 +9,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from startup_foundry.domain import Artifact, Venture, WorkItem, utc_now
+from startup_foundry.domain import Artifact, Venture, WorkItem, Workspace, utc_now
 from startup_foundry.errors import ConflictError, ReferenceError, ValidationError
 from startup_foundry.repository import SessionFactory
 from startup_foundry.snapshots import snapshot, transaction
@@ -39,6 +39,13 @@ class ConfigInput(Contract):
     expected_revision: int = Field(ge=0)
     actor: str = Field(min_length=1, max_length=200)
     modules: list[str] = Field(max_length=2)
+
+
+class RenameInput(Contract):
+    expected_version: int = Field(ge=1)
+    title: str = Field(min_length=1, max_length=240)
+    actor: str = Field(min_length=1, max_length=200)
+    rationale: str = Field(min_length=1, max_length=10000)
 
 
 class MetricsInput(Contract):
@@ -90,6 +97,31 @@ class WorkspaceModuleService:
             raise ValidationError("Choose unique allowlisted software/outreach modules")
         return self._append(identity, "venture-workspace-config/v1", payload)
 
+    def rename(self, identity: str, payload: RenameInput) -> JSON:
+        if not all(
+            x.strip() for x in (payload.title, payload.actor, payload.rationale)
+        ):
+            raise ValidationError("Title, actor and rationale must be nonblank")
+        with transaction(self.factory) as session:
+            venture = self._venture(session, identity)
+            workspace = session.get(Workspace, venture.workspace_id)
+            assert workspace is not None
+            if workspace.version_id != payload.expected_version:
+                raise ConflictError("Workspace changed; reload before renaming")
+            previous_title = workspace.title
+            workspace.title = payload.title.strip()
+            session.flush()
+            data = {
+                "title": workspace.title,
+                "previous_title": previous_title,
+                "workspace_version": workspace.version_id,
+                "actor": payload.actor,
+                "rationale": payload.rationale,
+                "recorded_at": utc_now().isoformat(),
+            }
+            artifact = snapshot(session, workspace.id, "venture-name-revision/v1", data)
+            return {"id": artifact.id, **data}
+
     def metrics(self, identity: str, payload: MetricsInput) -> JSON:
         return self._append(identity, "venture-metrics/v1", payload)
 
@@ -137,6 +169,8 @@ class WorkspaceModuleService:
     def show(self, identity: str) -> JSON:
         with self.factory() as session:
             v = self._venture(session, identity)
+            workspace = session.get(Workspace, v.workspace_id)
+            assert workspace is not None
             configs = self.history(
                 session, v.workspace_id, "venture-workspace-config/v1"
             )
@@ -150,6 +184,11 @@ class WorkspaceModuleService:
                 else []
             )
             return {
+                "title": workspace.title,
+                "workspace_version": workspace.version_id,
+                "name_history": self.history(
+                    session, v.workspace_id, "venture-name-revision/v1"
+                ),
                 "config": configs[0]
                 if configs
                 else {"revision": 0, "modules": suggested},

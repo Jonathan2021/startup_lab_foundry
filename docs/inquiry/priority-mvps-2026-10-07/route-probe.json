@@ -1,0 +1,174 @@
+{
+  "checked_on": "2026-10-07",
+  "engine": "GraphHopper 11.1",
+  "jar_sha256": "8462f758d9ea49edaded557cec5c687a0a24f004ec371cd4daaeb0534824ea33",
+  "data_source": "https://download.geofabrik.de/europe/andorra-latest.osm.pbf",
+  "data_sha256": "9372ec76f60b7bf9df129e589af7b66ffc81af12ef5087f53843d64169e0b3f1",
+  "data_date": "2026-10-06T20:21:06Z",
+  "results": [
+    {
+      "mode": "direct",
+      "request": {
+        "profile": "motorcycle",
+        "points": [
+          [
+            1.5218,
+            42.5078
+          ],
+          [
+            1.5995,
+            42.5676
+          ]
+        ],
+        "points_encoded": false,
+        "ch.disable": true,
+        "details": [
+          "road_class",
+          "surface",
+          "max_speed"
+        ],
+        "custom_model": {
+          "distance_influence": 250,
+          "priority": [
+            {
+              "if": "road_class == MOTORWAY",
+              "multiply_by": "0"
+            }
+          ]
+        },
+        "algorithm": "alternative_route",
+        "alternative_route.max_paths": 3
+      },
+      "latency_s": 0.168,
+      "paths": [
+        {
+          "km": 27.69,
+          "engine_minutes": 38.9,
+          "geometry_sha256": "8d048df159c267b1939dbba880845947976e9cdcb3891ceb6300233e0fdfb167",
+          "points": 1288
+        },
+        {
+          "km": 13.17,
+          "engine_minutes": 21.5,
+          "geometry_sha256": "d8eb4c126b97f9239f9f869d82228c3ca1bca0918b460a2cc87af133a996a69b",
+          "points": 634
+        }
+      ]
+    },
+    {
+      "mode": "balanced",
+      "request": {
+        "profile": "motorcycle",
+        "points": [
+          [
+            1.5218,
+            42.5078
+          ],
+          [
+            1.5995,
+            42.5676
+          ]
+        ],
+        "points_encoded": false,
+        "ch.disable": true,
+        "details": [
+          "road_class",
+          "surface",
+          "max_speed"
+        ],
+        "custom_model": {
+          "distance_influence": 90,
+          "priority": [
+            {
+              "if": "road_class == MOTORWAY",
+              "multiply_by": "0"
+            }
+          ]
+        },
+        "algorithm": "alternative_route",
+        "alternative_route.max_paths": 3
+      },
+      "latency_s": 0.05,
+      "paths": [
+        {
+          "km": 28.05,
+          "engine_minutes": 37.7,
+          "geometry_sha256": "e4ff3c99a94cbccfc0e11b824b0599d6f228ff31dcd4a4683b7d6b09019b58bd",
+          "points": 1250
+        }
+      ]
+    },
+    {
+      "mode": "curvy",
+      "request": {
+        "profile": "motorcycle",
+        "points": [
+          [
+            1.5218,
+            42.5078
+          ],
+          [
+            1.5995,
+            42.5676
+          ]
+        ],
+        "points_encoded": false,
+        "ch.disable": true,
+        "details": [
+          "road_class",
+          "surface",
+          "max_speed"
+        ],
+        "custom_model": {
+          "distance_influence": 0,
+          "priority": [
+            {
+              "if": "road_class == MOTORWAY",
+              "multiply_by": "0"
+            }
+          ]
+        },
+        "algorithm": "alternative_route",
+        "alternative_route.max_paths": 3
+      },
+      "latency_s": 0.051,
+      "paths": [
+        {
+          "km": 29.23,
+          "engine_minutes": 37.3,
+          "geometry_sha256": "b3498cf5475d9b001d159a80569dfdf9fe2b4ebf338c01fb69e166b373e61856",
+          "points": 1365
+        }
+      ]
+    },
+    {
+      "mode": "loop",
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ],
+  "limits": [
+    "Small Andorra extract: not a French route quality or adoption test.",
+    "Engine motorcycle profile derives access from car_access; motorcycle-specific restrictions need dedicated import/fixture tests before road-use pilot.",
+    "Engine ETA not calibrated; beauty/traffic/weather not measured.",
+    "Two failed startups retained: built-in model filename collision, then missing import.osm.ignored_highways."
+  ],
+  "loop_followup": [
+    {
+      "target_m": 15000,
+      "actual_m": 21020.41,
+      "engine_minutes": 34.23826666666667,
+      "status": "generated"
+    },
+    {
+      "target_m": 25000,
+      "actual_m": 39076.029,
+      "engine_minutes": 56.578066666666665,
+      "status": "generated"
+    },
+    {
+      "target_m": 40000,
+      "error": "{\"message\":\"Could not find a valid point after 3 tries, for the point:42.5078,1.5218\",\"hints\":[{\"message\":\"Could not find a valid point after 3 tries, for the point:42.5078,1.5218\",\"details\":\"java.lang.IllegalArgumentException\"}]}",
+      "status": "infeasible"
+    }
+  ]
+}

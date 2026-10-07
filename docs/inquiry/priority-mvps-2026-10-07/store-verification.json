@@ -1,0 +1,340 @@
+{
+  "integrity": "ok",
+  "foreign_key_violations": 0,
+  "prior_primary_keys_retained": true,
+  "tables": [
+    {
+      "table": "alembic_version",
+      "prior_keys": 1,
+      "current_keys": 1,
+      "removed_keys": 0
+    },
+    {
+      "table": "portfolios",
+      "prior_keys": 1,
+      "current_keys": 1,
+      "removed_keys": 0
+    },
+    {
+      "table": "agent_definitions",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "market_actors",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "reference_sources",
+      "prior_keys": 120,
+      "current_keys": 120,
+      "removed_keys": 0
+    },
+    {
+      "table": "scorecards",
+      "prior_keys": 2,
+      "current_keys": 2,
+      "removed_keys": 0
+    },
+    {
+      "table": "workspaces",
+      "prior_keys": 262,
+      "current_keys": 264,
+      "removed_keys": 0
+    },
+    {
+      "table": "agent_versions",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "audit_events",
+      "prior_keys": 51,
+      "current_keys": 92,
+      "removed_keys": 0
+    },
+    {
+      "table": "capability_candidates",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "decisions",
+      "prior_keys": 277,
+      "current_keys": 283,
+      "removed_keys": 0
+    },
+    {
+      "table": "ranking_snapshots",
+      "prior_keys": 2,
+      "current_keys": 2,
+      "removed_keys": 0
+    },
+    {
+      "table": "scoring_criteria",
+      "prior_keys": 24,
+      "current_keys": 24,
+      "removed_keys": 0
+    },
+    {
+      "table": "idea_relations",
+      "prior_keys": 8,
+      "current_keys": 8,
+      "removed_keys": 0
+    },
+    {
+      "table": "idea_revisions",
+      "prior_keys": 251,
+      "current_keys": 252,
+      "removed_keys": 0
+    },
+    {
+      "table": "idea_sources",
+      "prior_keys": 467,
+      "current_keys": 467,
+      "removed_keys": 0
+    },
+    {
+      "table": "work_items",
+      "prior_keys": 524,
+      "current_keys": 537,
+      "removed_keys": 0
+    },
+    {
+      "table": "agent_runs",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "evidence",
+      "prior_keys": 295,
+      "current_keys": 308,
+      "removed_keys": 0
+    },
+    {
+      "table": "experiments",
+      "prior_keys": 24,
+      "current_keys": 24,
+      "removed_keys": 0
+    },
+    {
+      "table": "idea_assessments",
+      "prior_keys": 244,
+      "current_keys": 244,
+      "removed_keys": 0
+    },
+    {
+      "table": "idea_market_actors",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "ventures",
+      "prior_keys": 11,
+      "current_keys": 12,
+      "removed_keys": 0
+    },
+    {
+      "table": "artifacts",
+      "prior_keys": 617,
+      "current_keys": 682,
+      "removed_keys": 0
+    },
+    {
+      "table": "assumptions",
+      "prior_keys": 277,
+      "current_keys": 277,
+      "removed_keys": 0
+    },
+    {
+      "table": "capability_uses",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "criterion_scores",
+      "prior_keys": 2899,
+      "current_keys": 2899,
+      "removed_keys": 0
+    },
+    {
+      "table": "decision_evidence",
+      "prior_keys": 18,
+      "current_keys": 46,
+      "removed_keys": 0
+    },
+    {
+      "table": "evidence_sources",
+      "prior_keys": 51,
+      "current_keys": 51,
+      "removed_keys": 0
+    },
+    {
+      "table": "external_actions",
+      "prior_keys": 4,
+      "current_keys": 4,
+      "removed_keys": 0
+    },
+    {
+      "table": "friction_occurrences",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "ranking_entries",
+      "prior_keys": 241,
+      "current_keys": 241,
+      "removed_keys": 0
+    },
+    {
+      "table": "action_attempts",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "approval_requests",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "artifact_relations",
+      "prior_keys": 0,
+      "current_keys": 8,
+      "removed_keys": 0
+    },
+    {
+      "table": "assumption_assessments",
+      "prior_keys": 277,
+      "current_keys": 277,
+      "removed_keys": 0
+    },
+    {
+      "table": "assumption_relations",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "criterion_score_evidence",
+      "prior_keys": 10,
+      "current_keys": 10,
+      "removed_keys": 0
+    },
+    {
+      "table": "evidence_artifacts",
+      "prior_keys": 30,
+      "current_keys": 30,
+      "removed_keys": 0
+    },
+    {
+      "table": "experiment_assumptions",
+      "prior_keys": 24,
+      "current_keys": 24,
+      "removed_keys": 0
+    },
+    {
+      "table": "friction_capabilities",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "assessment_evidence",
+      "prior_keys": 281,
+      "current_keys": 281,
+      "removed_keys": 0
+    },
+    {
+      "table": "decision_assessments",
+      "prior_keys": 277,
+      "current_keys": 277,
+      "removed_keys": 0
+    },
+    {
+      "table": "ideas",
+      "prior_keys": 251,
+      "current_keys": 252,
+      "removed_keys": 0
+    },
+    {
+      "table": "step_runs",
+      "prior_keys": 8,
+      "current_keys": 8,
+      "removed_keys": 0
+    },
+    {
+      "table": "workspace_reviews",
+      "prior_keys": 299,
+      "current_keys": 317,
+      "removed_keys": 0
+    },
+    {
+      "table": "human_requests",
+      "prior_keys": 11,
+      "current_keys": 12,
+      "removed_keys": 0
+    },
+    {
+      "table": "human_request_targets",
+      "prior_keys": 36,
+      "current_keys": 37,
+      "removed_keys": 0
+    },
+    {
+      "table": "venture_assessments",
+      "prior_keys": 10,
+      "current_keys": 10,
+      "removed_keys": 0
+    },
+    {
+      "table": "venture_criterion_scores",
+      "prior_keys": 101,
+      "current_keys": 101,
+      "removed_keys": 0
+    },
+    {
+      "table": "venture_criterion_score_evidence",
+      "prior_keys": 5,
+      "current_keys": 5,
+      "removed_keys": 0
+    },
+    {
+      "table": "portfolio_proposals",
+      "prior_keys": 1,
+      "current_keys": 1,
+      "removed_keys": 0
+    },
+    {
+      "table": "proposal_participants",
+      "prior_keys": 4,
+      "current_keys": 4,
+      "removed_keys": 0
+    },
+    {
+      "table": "human_request_dependencies",
+      "prior_keys": 0,
+      "current_keys": 0,
+      "removed_keys": 0
+    },
+    {
+      "table": "decision_maps",
+      "prior_keys": 1,
+      "current_keys": 6,
+      "removed_keys": 0
+    }
+  ],
+  "backup_before": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/before.db",
+  "backup_after": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/after.db",
+  "limits": "Checks presence of historical primary keys, not equality of intentionally revised current state."
+}

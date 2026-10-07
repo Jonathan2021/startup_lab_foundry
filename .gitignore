@@ -234,3 +234,7 @@ __marimo__/
 
 # Local inquiry trials and database sidecars
 /.local/
+
+# Agent coordination transient inputs
+.foundry/runs/
+.foundry/*input*.json

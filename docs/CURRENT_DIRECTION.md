@@ -1,5 +1,25 @@
 # Current Foundry direction
 
+Latest update 2026-10-07: user-selected MVP implementation now takes priority.
+[Priority campaign](inquiry/priority-mvps-2026-10-07/REPORT.md) prepares Volley Match,
+Coopain, Ride Options, Crous Queue, Volley Coach and Foundry itself as independent
+repositories/agent tracks. Local/private MVP construction is authorized; demand,
+rights, physical-content review and public deployment are separate gates. Ride
+Options owns A–B/loop creation with preference tradeoffs, not ETA diagnosis.
+Crous starts with crowd-reported current waits and the national venue directory;
+R011 ordinary-visit observations are optional later pilot data, not a build blocker.
+Volleyball uses one canonical implementation workspace (v-sports-session), retaining
+P023/P103 provenance and the pending historical fusion proposal. No second sports
+implementation is queued. Video coaching is deferred in favor of availability-aware
+personal progression. The unspecified linked-conversation candidate awaits source
+identification; no transcript contents were invented.
+
+Each repo has .foundry/project.json, a scoped agent handoff and a durable feedback
+outbox that syncs into Foundry's own evidence. Existing actor labels and claims
+coordinate trusted local agents; they are not authentication for a hosted service.
+The prior dated investigations and holds below are historical when superseded by
+these explicit user-directed scope changes.
+
 Latest update 2026-10-06: the user authorized a complete useful lifecycle MVP,
 with monetization and model training deferred. The implemented direction is a
 local venture workbench used with the operator's existing agent: capture a

@@ -1,0 +1,9 @@
+{
+  "from": "/home/jonathan/coopain",
+  "to": "/home/jonathan/startup_lab/coopain",
+  "compatibility_symlink": true,
+  "preserved": {
+    "head": "aa382779b79951f843f37b8080f6f0972efe7e3c",
+    "status": "?? backend/.coverage\n?? backend/generated/coverage.json\n?? backend/generated/refactor_scan_20260311.md\n?? backend/openapi_new.yaml\n?? backend/preprompt\n?? backend/test_results\n?? backend/tmp_prompt\n?? next_propmpt\n?? \"unchanged. Venture and coordination records were updated\"\n"
+  }
+}
