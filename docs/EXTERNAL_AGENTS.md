@@ -15,6 +15,11 @@ workspace. Copy `scripts/agent-kit/foundry_agent.py` to `tools/foundry_agent.py`
 record its SHA-256 in the manifest. The prepared Startup Lab repositories already
 have this setup. Paths must be changed when moving to another machine.
 
+Each prepared repository must also have a root `AGENTS.md` that explicitly
+requires this workflow, links its handoff, shows the start/feedback commands and
+explains the local outbox and Foundry feedback destination. Do not rely on an
+agent discovering a README on its own. Foundry's own `AGENTS.md` has an example.
+
 The helper refuses a missing explicitly configured SQLite store. It will not
 replace an inaccessible operator DB with an empty one. Do not copy credentials
 into the manifest. Configure PostgreSQL separately through the supported operator

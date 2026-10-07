@@ -42,3 +42,54 @@ Read the root `AGENTS.md` first.
   Hindsight remains an optional comparison, not a mandatory integration.
   If the central folder is unavailable, keep pending
   tooling feedback locally and report the gap.
+
+## Required Foundry workflow and feedback
+
+Use Foundry to coordinate this repository's work. Read [docs/plans/2026-10-07-agent-dogfood/AGENT_HANDOFF.md](docs/plans/2026-10-07-agent-dogfood/AGENT_HANDOFF.md)
+for the complete claim, context, result-review and recovery procedure. Run commands
+from this repository; `.foundry/project.json` selects its venture/workspace, the
+operator's store and the feedback destination.
+
+Before starting an implementation package:
+
+```bash
+python3 tools/foundry_agent.py cli agent guide
+python3 tools/foundry_agent.py resume
+python3 tools/foundry_agent.py start --actor YOUR_AGENT_UNIQUE_SESSION
+```
+
+Read the saved context and relevant arrivals before editing. Claim only eligible
+work in the assigned scope; do not steal a claim, silently pivot the venture or
+create an empty replacement store. If the user's task differs from the reviewed
+next package, reconcile the work scope rather than claiming an unrelated task.
+Use `python3 tools/foundry_agent.py cli agent schema --name result` and the handoff
+to submit checkpoint evidence, actual tests, limits and proposed next work. Preview
+and resolve results only within your assigned review authority. A chat summary
+alone does not update Foundry. No Codex-specific integration is required.
+
+Report blocking Foundry defects immediately. At each package checkpoint, report
+observed bugs, friction, improvement ideas or useful behavior; if none occurred,
+say so in the checkpoint result rather than inventing feedback. To submit a report:
+
+```bash
+python3 tools/foundry_agent.py feedback-template > .foundry/feedback-input.json
+# Fill descriptive fields; keep the generated UUID and venture/workspace IDs.
+python3 tools/foundry_agent.py feedback --input .foundry/feedback-input.json
+```
+
+Use kind `bug`, `friction`, `idea` or `positive`. Include what you expected, what
+happened, reproduction steps, impact, suggested improvement and sanitized evidence
+paths. Keep secrets, personal data and confidential documents out of reports.
+
+**Where it goes:** an immutable local outbox entry is saved as
+`feedback/<UUID>.json`; successful delivery adds `feedback/<UUID>.receipt.json`.
+The helper records it as evidence in **Foundry's own venture (`v-foundry`)**, using
+`feedback_workspace_id` from the manifest, while retaining this source venture's
+identity. It appears in Foundry's Now/unreviewed evidence for coordinator triage.
+A receipt means recorded, not fixed. For failed delivery, retry the identical
+outbox file with `feedback --input feedback/<UUID>.json`; use a new template/UUID
+for a different report. Continue independent work during an outage only when its
+ownership and scope are already established; reconcile on reconnection.
+
+The repository-side helper is coordination tooling; application code must not
+import it.
