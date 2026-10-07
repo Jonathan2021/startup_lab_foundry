@@ -1,0 +1,102 @@
+{
+  "trial": "T6",
+  "outcome": "PASSED_EXACT_DEPENDENCY_CONTROLS",
+  "input_sha256": {
+    "ideas.json": "fac4ed137ce27d1d4e4fae486106b87caecb0fbfe47408322a5434e95b6a508e",
+    "sources.json": "eb0f2c7dc31d6737555a50194c27612f68a1395c1e054e653ea22fba856baa70"
+  },
+  "cases": [
+    {
+      "source_id": "mlflow",
+      "versions": [
+        {
+          "revision": "synthetic:r1",
+          "claim": "Documents trace-derived failures, code/LLM scorers and pytest/CI gates.",
+          "retrieval": "initial"
+        },
+        {
+          "revision": "synthetic:r2",
+          "claim": "Documents trace-derived failures, code/LLM scorers and pytest/CI gates.",
+          "retrieval": "footer changed"
+        },
+        {
+          "revision": "synthetic:r3",
+          "claim": "SYNTHETIC CONTRADICTION: capability removed"
+        }
+      ],
+      "noise": {
+        "status": "UNCHANGED_CLAIM",
+        "review_ids": []
+      },
+      "contradiction": {
+        "status": "REVIEW_REQUIRED",
+        "review_ids": [
+          "G002",
+          "G015",
+          "G019",
+          "G021",
+          "P088",
+          "P125",
+          "P129",
+          "P142",
+          "P174",
+          "P182",
+          "P187",
+          "P196"
+        ]
+      },
+      "decision_mutations": 0
+    },
+    {
+      "source_id": "change",
+      "versions": [
+        {
+          "revision": "synthetic:r1",
+          "claim": "Documents CSS/XPath inclusion, ignored text and diff controls; impact on a venture is a separate interpretation.",
+          "retrieval": "initial"
+        },
+        {
+          "revision": "synthetic:r2",
+          "claim": "Documents CSS/XPath inclusion, ignored text and diff controls; impact on a venture is a separate interpretation.",
+          "retrieval": "footer changed"
+        },
+        {
+          "revision": "synthetic:r3",
+          "claim": "SYNTHETIC CONTRADICTION: capability removed"
+        }
+      ],
+      "noise": {
+        "status": "UNCHANGED_CLAIM",
+        "review_ids": []
+      },
+      "contradiction": {
+        "status": "REVIEW_REQUIRED",
+        "review_ids": [
+          "G003",
+          "G008",
+          "G013",
+          "P008",
+          "P031",
+          "P059",
+          "P061",
+          "P179",
+          "P186",
+          "P193",
+          "P211"
+        ]
+      },
+      "decision_mutations": 0
+    }
+  ],
+  "unknown_control": {
+    "status": "UNMAPPED",
+    "review_ids": []
+  },
+  "original_records_unchanged": true,
+  "limits": [
+    "changes supplied explicitly, not detected semantically",
+    "source-level fan-out can overqueue individual claims",
+    "unrecorded dependencies are invisible",
+    "no measured time saving or external demand evidence"
+  ]
+}

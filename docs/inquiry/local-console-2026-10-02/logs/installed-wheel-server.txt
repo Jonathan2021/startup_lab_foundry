@@ -1,0 +1,11 @@
+2026-10-02 21:57:23,252 INFO startup_foundry.cli correlation_id=9fca9f80-bb67-44a3-bdd7-be262158352d command_started resource=ui action=serve
+2026-10-02 21:57:23,263 INFO alembic.runtime.migration correlation_id=9fca9f80-bb67-44a3-bdd7-be262158352d Context impl SQLiteImpl.
+2026-10-02 21:57:23,263 INFO alembic.runtime.migration correlation_id=9fca9f80-bb67-44a3-bdd7-be262158352d Will assume non-transactional DDL.
+INFO:     Started server process [1049848]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8767 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1049848]

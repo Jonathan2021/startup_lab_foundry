@@ -1,0 +1,557 @@
+{
+  "id": "FOUNDRY-CAMPAIGN-20261002-VERIFY:r3",
+  "date": "2026-10-02",
+  "scope": "Final campaign evidence and effective dirty-tree code/guidance; excludes this manifest and generated Python caches. No clean-tree or full-container-validation claim.",
+  "heads": {
+    ".": "e6a83e470d052439e5c8d4a943428f5bbd132f7f",
+    "foundry": "3b082507062838df4009d4b636c4f320436f3b41",
+    "learning": "5ed2b8a8c0aa34fdbff4253150cb54b66be1484e",
+    "agentevalops": "662d033dc1202359e8bcd0bf0de7120da2bd8854"
+  },
+  "files": [
+    {
+      "path": "/home/jonathan/centralized/inquiry_memory/PILOT_PLAN.md",
+      "sha256": "67dbb8249c7fb1dc1641f48fe6d5996af8c45bf40936e193bccde604edb1aaef"
+    },
+    {
+      "path": "/home/jonathan/centralized/inquiry_memory/README.md",
+      "sha256": "6a3e9db617fc923896bf0cef1bcef93771ef11b7abbb2328d750d30e247b94a8"
+    },
+    {
+      "path": "/home/jonathan/centralized/inquiry_memory/feedback/foundry/2026-10-02-portfolio-campaign-without-memory.md",
+      "sha256": "cac897d7a478d9cfc9bcf6c78c6fb2afc39c9cdc1bac28170b45677291b3f9ee"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "73cf88e673317e27f00d11e1677be3c3cdb6c67f1ff5bdf07e4166dc30539df9"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "9fbb7d72b9aaf6ba5829778ff25a13610f3bc8fadc6baa602fa0926aa78f1486"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8f2393ea3f6cd6a263b0c8124e820adc4e1ad60fc2f904814f6b692ccdfde4c5"
+    },
+    {
+      "path": "docs/adr/0009-agent-owned-portfolio-discovery.md",
+      "sha256": "2da434730880f48821c5efa20ea9ceca1f5dea03d791ae22c2292731339c1a52"
+    },
+    {
+      "path": "foundry/AGENTS.md",
+      "sha256": "1bf02b89bd57e1baf2ff13574e9e2bf8716c99c45e967529124ff526267d8903"
+    },
+    {
+      "path": "foundry/DEVELOPMENT.md",
+      "sha256": "dad986a439db97d1a6d562c31fb852caf45b89e437c7069cdd68aa9a5035d6c5"
+    },
+    {
+      "path": "foundry/README.md",
+      "sha256": "a21fe7549b260588154de0a1bb4c12f495793fd4201c2f1eaea0a463b3a88acb"
+    },
+    {
+      "path": "foundry/docs/CURRENT_DIRECTION.md",
+      "sha256": "2fddce74727dc94f020af2edacd48394c70a405914b004502872f8f893c9a22f"
+    },
+    {
+      "path": "foundry/docs/adr/0008-reconstruct-experiment-protocols.md",
+      "sha256": "9b6b6d914c1ed30e646faaeac74c8d343db5d9db628698b100e869b7fe226e0f"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/CALIBRATION.md",
+      "sha256": "108bded04f3eb8a3f457bd1a4d1c958fcab4ae2fcc1082ede54be1389b8d4afb"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/GAPS.md",
+      "sha256": "f00790e17d72c4c428720c76944d2de1d7b29a5fa2e3568d242c918c7b463f30"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/N008-CASE.md",
+      "sha256": "2f15e27d44064b4ad15a13d19f87a3cb2ece9fb2bc7b33d588cc7bb7c93ecace"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/PLAN.md",
+      "sha256": "08d2e7ca5ea63223024184f7dd3e6759c233be4a637b4f11f2ee36b7b7a74dda"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/README.md",
+      "sha256": "81c90bd88cf2f1d2f0dca8f095a15c8bf7138a202d69e787058a5d56692534d7"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/REGISTER.md",
+      "sha256": "c57762d0159adda1553daa4f72552faa96974eb33c0c167d11d8d9859e26332f"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/REPORT.md",
+      "sha256": "3d25d859389bf19bdab6cc8824485ce863c9c098c9d1ebaadc155344ee34bbec"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/SOURCES.md",
+      "sha256": "26ef674697f8ebaaa6e2257898f16f5951d1e6470366ec380c77bccc45bf1b28"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/VERIFICATION.md",
+      "sha256": "680fdbc234562c82e7b9538533b7b11373183ef0e467234f764a34d4cb54c967"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/foundry-recording/campaign-snapshot.json",
+      "sha256": "cd1f8b930f337ff703f3eff04d4558782e804a9d584f4f01c977813c92f8a895"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/foundry-recording/operations.json",
+      "sha256": "b1ddf503968e7901504e69d7d827627f092a25a8aa34c1ae65022111176dd4c8"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/foundry-recording/provenance.json",
+      "sha256": "c8b42cf916af6abfd111e183dfaa85ee5be814d7b26b456fa6f20e2ff2718b10"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/foundry-recording/route-operations.json",
+      "sha256": "365eae36a9aa297ce801a70207538a3b50740118ac5ef8520086811d4e318906"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/foundry-recording/route-provenance.json",
+      "sha256": "2b5ab5017d2143f28734fec9c0917c0df62fd7e4a9945ff33e507953b7a71319"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/foundry-recording/route-snapshot.json",
+      "sha256": "98c30a4668ceb98b113ab4a9da85ed382827e1d80d830f5409a549fe2e793acf"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/groups.json",
+      "sha256": "8802c97d136e389897260880ff6cef77b956053dc548c7fdd18fab4ea6c16e5f"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/ideas.json",
+      "sha256": "a8e179c12a76166e98ef4b4b12ee805d2e698650d71973233f52ee3751a2d361"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/intake-manifest.json",
+      "sha256": "41610cf660b64873cf9190c34934126f0058c71a7e8e38edf9dcfa7b13666d44"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/revisions/r1/groups.json",
+      "sha256": "24fc7f3a886f41370e971c297b6b507cfe20f53468aa8e78717eaf17d395d6e9"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/revisions/r1/ideas.json",
+      "sha256": "fac4ed137ce27d1d4e4fae486106b87caecb0fbfe47408322a5434e95b6a508e"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/revisions/r1/sources.json",
+      "sha256": "eb0f2c7dc31d6737555a50194c27612f68a1395c1e054e653ea22fba856baa70"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/revisions/r2/groups.json",
+      "sha256": "2c0cce82e55413059a5d3af19ad5920c756d037ccfa4a1202ead1212d5d8d1ef"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/revisions/r2/ideas.json",
+      "sha256": "83efb963cfd18e8723af4b7458e36b1ce073d286d28518f984022cb413940db5"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/revisions/r2/sources.json",
+      "sha256": "74c32af0ccd05e21706793b8570fc384a9a1b341ee8d4555624587ac08c65b3b"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/sources.json",
+      "sha256": "54bdc07f149f016a18c90d868b41701fc730f02d24cde0df5da2baef42b11c22"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/NEW_ROUTING_COMPARATORS_PROTOCOL.md",
+      "sha256": "63db02e00b1f2a26161bfd8143814f278e32727787917507e7caf28de5ff3fd1"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/PROTOCOL.md",
+      "sha256": "ac461ddd11b85ac8d54adac5234ec908057235d3f7f5f24470a76e9a573c6475"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/README.md",
+      "sha256": "e56d8cf345efc26cdc90f9955cd53b069edc35a8b105cd52bea00f7ffce31a19"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/RIDER_CASE_PROTOCOL.md",
+      "sha256": "182533ca8412aa33ca311d2a4b8479d76ac8de6e584a71c2149b9a5b1fcb4e66"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/ROUTE_CONSTRAINT_PROTOCOL.md",
+      "sha256": "3d9c64ff55c7e9c7ee344f86a233897ee15de9ea3e38c19e2255d8c52cfa5615"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/ROUTE_DIAGNOSTIC_PROTOCOL.md",
+      "sha256": "0813e8668fc910894a8cc0b49a68c3f22e6c689524e4c9b6adcf8b6c2ecbab29"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/ROUTING_PROTOCOL.md",
+      "sha256": "36e9913daab838396e53259b18973925686e3eebbbea20742e07b1e96b0afce1"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/SOURCE_IMPACT_PROTOCOL.md",
+      "sha256": "b4d76d7cad9abe2ed9121d2dfabfcfa1855862eb3e0895f62c887ac1096aeb21"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/change-requirements.txt",
+      "sha256": "9671e01d3c0c894a347647de90b413b059b95984f935ce8dc4e3eeda44937938"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/change-result.json",
+      "sha256": "8482aef3c404bb8c75635a4fb819ead3cc7e5d2fc58f739d74118eb7f414b3c1"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/change_probe.py",
+      "sha256": "23bf7841fd872abf4cae2bd9a2d9e38fab10f7e90ff1b4ef98447e51208e0f5a"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/executed/change_probe.py",
+      "sha256": "6a16edf46fcbf294326a8b80c615f5e218f628bec361d8d2a897db680f614422"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/executed/mlflow_probe.py",
+      "sha256": "015aebbac46a048b8e64a4eea51a4af7f17c2cf1c31b32f7d3009ebaef4ec282"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/executed/route_probe.py",
+      "sha256": "54edf07d8d4a59df65d81d6f9dcdd3c6e46c1f80ecc7eba8b17a5114890a734c"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/executed/source_impact_probe.py",
+      "sha256": "d70a78c1def140b5625166709c9cb3dc60d14d909cf421b421379f165f23a82a"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/executed/source_reuse_probe.py",
+      "sha256": "b865b96dd298c8c3b7378b1df3bd7f2d1955146116d6662afad958e5cd7d59c1"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/foundry-after.json",
+      "sha256": "4544e8cb3da33a2384c27f04c46e6e6ba7f9494d8bbf8c8b747eca5fc4cb5bd2"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/foundry-before.json",
+      "sha256": "bf9621a90bc12e20ee5efdc7e3aaf0da60e68d62fee122d42ac0b9960b80f21f"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/integrity-result.json",
+      "sha256": "715014674893afbf8e1c9c1557dfd5dbf88d52399a03a8d20b48a661256d5905"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-change-install.log",
+      "sha256": "30b233f327b3498bd790c555e742bcd576793c34a17aafaa8bcfe87b8edd3e5b"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-change-trial.log",
+      "sha256": "de853077dd6ac51f164714166d37c9508ea7dc85813a2c135ddd2634bdeb3a56"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-foundry-green.log",
+      "sha256": "0d70d5e3025d41820ee8d7865e5ffaa062debd9f4fd30ca4b26f7820dfb180f9"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-foundry-red.log",
+      "sha256": "feb880dc6ec0dce673cc3fb7e340fe0fbce142c666145bae56ed749a3d3b23fa"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-lint.log",
+      "sha256": "65edfb9a66be408d4a3463f837043af522d02aefb8dabeba4972b690f487f576"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-mlflow-install.log",
+      "sha256": "87cc22d80c2684ad04ef58dcd19868f680cb4d8139dddba4d9c9759a73beaa20"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-mlflow-trial-attempt1.log",
+      "sha256": "2e82af220f3c813a267b9a2e63199ce51602c8b33ce02dca69d89c088ed93923"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-mlflow-trial-attempt2.log",
+      "sha256": "670fab7e7c24ddf4d703de6298bd29aa2e438dd2ffe0286592e0e8e858ec3fed"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-mlflow-trial-attempt3.log",
+      "sha256": "2e760d2be96e88c92c9d8e969090c665ee154aeb78e934533b773df67d26b0d8"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-product-check.log",
+      "sha256": "fc3d0d8648af3919217d655a0137ee56e449085b87f67f5536eab224f86dce0b"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-recording-r2.log",
+      "sha256": "df7c4b8069552a30ef2b28a41f0bb263975add8920f5fa8ead2051c2de4639ed"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-recording.log",
+      "sha256": "f5d4ccc909e0f3d8f786c7a03bd3e0b5b4d207f47183c56a23e70632901762f7"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-remaining-checks.log",
+      "sha256": "65db460f639376d8383f1e7ce98e0600f1d05e1f1cba9833dac877e28cf1067c"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-rider-browser-r2.log",
+      "sha256": "b57b26289c0fa51c0c01a01531915bd827b94fa1352c03ddb30a7138ede49ff6"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-rider-browser.log",
+      "sha256": "7c5b2a4a9ed0ad01760ce4c7fed837c621d822771463590111aacd5b703d5ce7"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-route-constraints.log",
+      "sha256": "e60036ada18ef8fdc8b1b6a57fe18ce5e85c4f8ba27cb2f37ef1ff1c7672634d"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-route-followups.log",
+      "sha256": "61d2fe6c0aa0b3af215a21713b952e53d0ad16c503273ba67619baf106a96a64"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/logs/campaign-types.log",
+      "sha256": "14fdf673bd175fe32ef42df34666481bb15e465313f7dbef32d0aea2ba76a26e"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/mlflow-requirements.txt",
+      "sha256": "85d993a7fe1d310d84ca99ab9e2fc38eb299a970f03e996bbd38656e4dc1d4f5"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/mlflow-result.json",
+      "sha256": "ff0d5cc9d9e071c0b4dc5e40963976a772f5fbf678787f087832faea06f06400"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/mlflow_probe.py",
+      "sha256": "53f23144025f0fbb366f62c29fb1ef872e5e54f36eb79b1307556c57efb125e7"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/new-routing-result.json",
+      "sha256": "4bf2e878ba8d1a9840d6d0ea5770aba8bfb478c36d022d714b8fcc32de06f79a"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/record_campaign.py",
+      "sha256": "0c2836da4fadab3afc5ae7259e95e54622b047c9613b46b40f7e6d3194ec96fe"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/record_route_case.py",
+      "sha256": "7ff0f2278fbfed30dbdd24afd368c3b88ac0547e7326c281a386686be67cf408"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/render_registers.py",
+      "sha256": "ec872921389a71697fb5f938168a7c00f2d5c535f097fb7448a48de6f1e3c8fa"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/replay-verification.json",
+      "sha256": "c9957af45c0f3ef2ec2112d1ed2e46062139dbe5c7360bce26b2526e2edab608"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/rider-result.json",
+      "sha256": "9e6180ec92eee8d591c73a910185d797262fdf8ad49462d0b363ea63301dfc65"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/rider_browser_probe.py",
+      "sha256": "6547ac6425da6c96e77ac1f0cec004416cc455187e2e9c4bf14475286820b3e1"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/route-car-fast.json",
+      "sha256": "5b8dcd164f434cc90e9744a6dfcd6f35a5f361f557e394f59c69e8f4980438b9"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/route-result.json",
+      "sha256": "b642b7a14f5f4c46a16e1a3af9710aef07c96b236b1f34300f4c7e64ead0b30f"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/route-trekking.json",
+      "sha256": "f24cf3423de351c5caae01b3a30914d8eb085f877a51860c34215ad876398303"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/route_constraints_probe.py",
+      "sha256": "bf1a90310b873056798deb8fe6e95707ef2f29f0abbba7e15c2a63057f9f6bdb"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/route_probe.py",
+      "sha256": "ee3dc5d36e33478104466e9d4790c34d0763a5b9c54560aa338abd93513ff5c9"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/source-reuse-result.json",
+      "sha256": "c2b49f789b96c359ceec0b72de97498a75ca1841229f54c961089957ab5896b6"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/source_impact_probe.py",
+      "sha256": "722f653257bf4a4e45b70f5c8d33f5d954fef3ee2928ebc04d6ecc0f11072fae"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/source_reuse_probe.py",
+      "sha256": "5108f38bab6c77b8d50f2728f7ac3afa86f3164ba64331f605c3e977b64a35b7"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t5/result.json",
+      "sha256": "7bf7e4820be3497d95e5ef45b940926e8fe44fea64eb6560b8248f7a1b5b0e92"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t5-diagnostic.json",
+      "sha256": "b55d0fc3eb4d1168f98779e88711ca5b2c0acb377f8c036eac21b7738537d6eb"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t6/result.json",
+      "sha256": "6bd9df0daedd8bc3ac347017eb9f71dfa7f867262edf50bf741669e5073336b1"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7/access.json",
+      "sha256": "be859636af7e266f48fda3225eab9dd7003c849ad0be71e9723ecc35589cb48f"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7/probe-attempt1.py",
+      "sha256": "95961b3d0662c2a2a273a976c1e78cb20fed08e1a62c718b3e014e086dd23bbb"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/actions.json",
+      "sha256": "b5159fa01190983c8caabd97d037b4a3b0d0bc594a22e0f0240f6c5e00ec0a5f"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/interaction.py",
+      "sha256": "3365c21b7d075dbfe3b3d01446ebe89a1993463fcf811b993373fdef05498632"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/nebo-after-search.png",
+      "sha256": "8c86faea082ff7444f9fdd76650d94532a00bb09e2b8be8cc8479a23f7e07e41"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/no-motorways-stable.png",
+      "sha256": "0e6a36cd09589885ee98b35f662f6a81b4275fd491dbd737a05b4449078c2e43"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/no-motorways.png",
+      "sha256": "95d7f822e9b20de5e8669b00049b7ed4195a0d41c588ffb29e2b0787f35df363"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/route-actions.png",
+      "sha256": "03b5beac3d2e04db0e09df7d842c84f3c9820b95ced52b402a07d5ab5cadcf6e"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/route-options.png",
+      "sha256": "49607c9613faef1de83306635e15d2aca73fb5f306640844130a7b3aa86ca556"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/search-thauvenay.png",
+      "sha256": "a5b9d7717830778ad8dd5f60d8bd5fdced336318ad8f5304eddae9f1dbd43b7a"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/selected-nebouzat.png",
+      "sha256": "85f2f12f0f0bfd5d16bc907eee73a4c9f8cbf5ede0b5c0c834d81852dcc550e8"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-126.json",
+      "sha256": "2cf9ebac0bfed16f2271d383cb74e90cb733a96282815c660206483339f91070"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-130.json",
+      "sha256": "06f00d7de1a9c097993b68e668048667a7e0b35e28816bb39a33d1260043edfb"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-134.json",
+      "sha256": "dac91b908c7ec8ccb4c60bc801fa4d4472a309e7c5821d8beaf4fea0c2dbc397"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-136.json",
+      "sha256": "dac91b908c7ec8ccb4c60bc801fa4d4472a309e7c5821d8beaf4fea0c2dbc397"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-138.json",
+      "sha256": "a8b5ded3ae837871b10076641c9ccf692a32e298a715e243a94c35352cdc30f2"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-142.json",
+      "sha256": "a8b5ded3ae837871b10076641c9ccf692a32e298a715e243a94c35352cdc30f2"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-144.json",
+      "sha256": "4b4e024780ac7fb5a54b4e0070d2d7582b6bf3b0adfa4952517112beb818f127"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-19.json",
+      "sha256": "76bf5744eb14841274a6090bb80fde73dd7b087d10dbc83a92f2a3d2aef159b5"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-2.json",
+      "sha256": "5b565a23e4e8297615a2e96ee538dcb211b03af9977d85029f97028fc17cf503"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-4.json",
+      "sha256": "40ae00f7efe14fd083f0e6ce7dc72d194bea4ca0689152d43f22890df710ae72"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-6.json",
+      "sha256": "5b565a23e4e8297615a2e96ee538dcb211b03af9977d85029f97028fc17cf503"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-8.json",
+      "sha256": "8f664756485dfc15a6edcd82dcb79b50f048f195c7ac58b8f6c437bd54cf09ab"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-liberty/state-81.json",
+      "sha256": "76bf5744eb14841274a6090bb80fde73dd7b087d10dbc83a92f2a3d2aef159b5"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-r2/68.png",
+      "sha256": "5bdba9619cc0592ff26daccec44531ac48235a6cfcb89dbc77b0cee876168ce6"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-r2/access.json",
+      "sha256": "853a730c74757a86877b2e2ab1878fca27ad12ae89ab306afa326aa40658d573"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-r2/kurviger.png",
+      "sha256": "56debeb032570fb40b4bba6ecb2c677351b60dfa3bc94292f409d6d6da916996"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-r2/liberty.png",
+      "sha256": "5d24fa28b5e42a7215b197cdeb580e18adfc043becc9809d19187fadf541ce9d"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-r2/myrouteapp.png",
+      "sha256": "fc57fee1c7f2cb862edea3af161a42acb282a94a7c3baaef9f955fa19ace3c86"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-t8-followups/access.json",
+      "sha256": "8843ddb224eb6f42121dcea698451bedc97b41f384cfb116f4510b5119c71cfb"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-t8-followups/byway.png",
+      "sha256": "ce144564ba23c7a586e1289a16b1ecadec4e279820567fdb5a505065413cb924"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-t8-followups/liberty-create.png",
+      "sha256": "dfc23b00816ceff4b1efb2e368327c99037b0eb6b84ed7c18806ad046c64cbf6"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/t7-t8-followups/throttle.png",
+      "sha256": "3636b84bfdfe41b5f61700b30a465b30f9da871ae7386f6351332df148b3db82"
+    },
+    {
+      "path": "foundry/docs/inquiry/portfolio-campaign/trials/verify_campaign.py",
+      "sha256": "472cc17f6adcb2e19023d8ba529cbd02016eec477cfd679541c3982323c00606"
+    },
+    {
+      "path": "foundry/src/startup_foundry/application.py",
+      "sha256": "cf3f1f8c7316de7dd67b8b506081b6e47ef8a2bc8e8a690869d7fd3a04259576"
+    },
+    {
+      "path": "foundry/src/startup_foundry/cli.py",
+      "sha256": "dc36bd03d62a4c8e3072733a72c4c9cf21470cf9201e184016cc0c91135f92f8"
+    },
+    {
+      "path": "foundry/tests/unit/test_experiment_reconstruction.py",
+      "sha256": "0cd92e8cad9c7a89627002a5e5cd884c4b6865be9050376fb5713c749e76d4ae"
+    },
+    {
+      "path": "learning/AGENTS.md",
+      "sha256": "7d069db5c224c76320ff5771f8bd94200b6b883d99344bedbba9c8d1f9044352"
+    },
+    {
+      "path": "learning/PROGRESS.md",
+      "sha256": "5db78e30c13afaaed4a4ab23881d413da68fd001ca5852ef044d5f1f53f32cb4"
+    },
+    {
+      "path": "learning/README.md",
+      "sha256": "dc92454d20595f960b9ddde3d7074f5cef2536e51b620ec1e925e673e87d2c48"
+    },
+    {
+      "path": "learning/ROADMAP.md",
+      "sha256": "86d8121b5a3a27307593e0688baca5fa777691f7e9757d99b275ae2ee2e56cbc"
+    }
+  ]
+}

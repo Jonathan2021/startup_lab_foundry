@@ -1,0 +1,32 @@
+<section class="panel form-panel lifecycle-now">
+  <div class="section-title"><div><p class="eyebrow">Purpose → evidence → next decision</p><h2>Decision map</h2></div><a class="button secondary" href="{{ workspace_link(path="/workspaces/"+workspace_id+"/decision-map") }}">{{ 'Open map' if lifecycle.map_revision_id else 'Create a map' }}</a></div>
+  {% if lifecycle.map_revision_id %}
+  <p>Keep the current question connected to its purpose and possible outcomes.</p>
+  {% if lifecycle.needs_review or lifecycle.stale_references %}<div class="notice" role="status"><strong>Some decisions need review.</strong> Their context changed. Review affected work before resuming it.</div>{% endif %}
+  {% else %}<p>No decision map yet. Start from the recorded objective and current work, then add the conditions that would make you continue, change direction or stop.</p>{% endif %}
+  {% for r in lifecycle.results if r.state not in ['accept','reject'] %}<p><a href="/decision-results/{{ r.id }}">Review result: {{ r.proposal.summary }}</a> · {{ r.state|pretty }}</p>{% endfor %}
+  {% if lifecycle.unreviewed_change_count %}<div class="notice"><strong>{{ lifecycle.unreviewed_change_count }} changes to consider.</strong><p>Prepare context for the affected task and inspect these records before deciding.</p><ul>{% for change in lifecycle.unreviewed_changes %}<li>{{ change.summary }} <small class="path">{{ change.id }}</small></li>{% endfor %}</ul></div>{% endif %}
+  {% if lifecycle.work %}<h3>Resume work</h3>{% for w in lifecycle.work[:5] %}
+  <article class="lifecycle-work"><div><strong>{{ w.title }}</strong><p class="muted">{{ w.status|pretty }} · {{ w.owner or 'Unassigned' }}</p>{% for reason in w.execution_blockers %}<p class="notice">{{ reason }}</p>{% endfor %}</div>
+  {% if lifecycle.map_revision_id %}<form data-lifecycle="context" data-endpoint="/api/workspaces/{{ workspace_id }}/contexts" data-next="/handoffs/">
+    <input type="hidden" name="work_id" value="{{ w.id }}"><input type="hidden" name="expected_work_version" value="{{ w.version_id }}"><input type="hidden" name="expected_head" value="{{ lifecycle.map_revision_id }}"><input type="hidden" name="actor" value="local operator">
+    <button type="submit" class="secondary">Prepare agent context</button><span class="form-error" role="alert"></span>
+  </form>{% endif %}</article>{% endfor %}{% endif %}
+  <details><summary>Record a change</summary><p>Capture a source update, customer observation, incident or supplier issue. It remains evidence to review; recording it does not change the venture's direction.</p>
+  <form data-lifecycle="capture" data-endpoint="/api/workspaces/{{ workspace_id }}/changes" data-reload>
+    <label>What changed?<textarea name="summary" required maxlength="10000" rows="2"></textarea></label>
+    <label>Details and limits<textarea name="details" maxlength="10000" rows="3"></textarea></label>
+    <label>Source<input name="source" placeholder="https://… or observation: what you observed" maxlength="2000"></label>
+    <div class="field-grid"><label>Kind<select name="kind"><option value="observation">Observation</option><option value="document">Source/document change</option><option value="experiment_result">Test result</option><option value="analytics">Operating metric</option><option value="interview">Customer conversation</option></select></label><label>Evidence status<select name="epistemic_status"><option value="observation">Observed / sourced</option><option value="inference">Inference</option><option value="unknown">Unknown</option></select></label></div>
+    <div class="field-grid"><label>Confidence<select name="confidence"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label><label>Recorded by<input name="actor" value="local operator" required maxlength="200"></label></div>
+    <button type="submit">Save for review</button><span class="form-error" role="alert"></span><span class="lifecycle-status" role="status"></span>
+  </form></details>
+  <details><summary>Add a bounded task</summary>
+  <form data-lifecycle="work" data-endpoint="/api/workspaces/{{ workspace_id }}/work" data-reload>
+    <input type="hidden" name="expected_head" value="{{ lifecycle.map_revision_id or '' }}">
+    <label>Task title<input name="title" required maxlength="300"></label><label>Question or intended change<textarea name="description" required maxlength="10000"></textarea></label>
+    <label>What would finish this task?<textarea name="acceptance_criteria" required maxlength="10000"></textarea></label><label>Why this task now?<textarea name="rationale" required maxlength="10000"></textarea></label>
+    <div class="field-grid"><label>Kind<select name="kind"><option value="investigation">Investigation</option><option value="execution">Implementation / operation</option></select></label><label>Owner<input name="owner" value="agent" required maxlength="200"></label></div>
+    <label>Created by<input name="actor" value="local operator" required maxlength="200"></label><button type="submit">Add task</button><span class="form-error" role="alert"></span>
+  </form></details>
+</section>

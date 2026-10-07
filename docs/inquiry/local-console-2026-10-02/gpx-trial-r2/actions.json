@@ -1,0 +1,9 @@
+[
+  {
+    "op": "click",
+    "selector": "button[aria-label=\"File\"]"
+  },
+  {
+    "op": "quit"
+  }
+]

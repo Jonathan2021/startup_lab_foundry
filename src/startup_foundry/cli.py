@@ -16,6 +16,13 @@ from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 
 from startup_foundry.application import FoundryApplication, JsonObject, required_text
 from startup_foundry.config import Settings, load_settings
+from startup_foundry.console_commands import (
+    add_console_parsers,
+    add_pagination,
+    add_portfolio_filters,
+    dispatch,
+    requests_directory,
+)
 from startup_foundry.domain import (
     ArtifactKind,
     AssessmentOutcome,
@@ -27,7 +34,11 @@ from startup_foundry.domain import (
     WorkItemKind,
     WorkItemStatus,
 )
-from startup_foundry.errors import ConfigurationError, StartupFoundryError
+from startup_foundry.errors import (
+    ConfigurationError,
+    StartupFoundryError,
+    ValidationError,
+)
 from startup_foundry.logging_config import configure_logging, correlation_id_var
 from startup_foundry.migrations import upgrade_database
 from startup_foundry.repository import create_db_engine, create_session_factory
@@ -40,7 +51,7 @@ def _enum_values(enum_type: type[StrEnum]) -> list[str]:
 
 
 def build_parser() -> ArgumentParser:
-    """Build the documented Stage 0 command grammar."""
+    """Build the documented Foundry command grammar."""
 
     parser = ArgumentParser(prog="foundry", description="Foundry CLI")
     parser.add_argument("--store", help="SQLite database path", default=None)
@@ -133,9 +144,7 @@ def build_parser() -> ArgumentParser:
     work_add.add_argument("--venture-id", required=True)
     work_add.add_argument("--decision-id")
     work_add.add_argument("--title", required=True)
-    work_add.add_argument(
-        "--kind", required=True, choices=_enum_values(WorkItemKind)
-    )
+    work_add.add_argument("--kind", required=True, choices=_enum_values(WorkItemKind))
     work_add.add_argument("--acceptance-criteria")
     work_add.add_argument("--method")
     work_add.add_argument("--success-criteria")
@@ -160,6 +169,40 @@ def build_parser() -> ArgumentParser:
     )
     artifact_add.add_argument("--name", required=True)
     artifact_add.add_argument("--location", required=True)
+
+    agent_run = resources.add_parser(
+        "agent-run", help="Record and link versioned agent runs"
+    )
+    agent_run_actions = agent_run.add_subparsers(dest="action", required=True)
+    agent_run_record = agent_run_actions.add_parser("record")
+    agent_run_record.add_argument("--input", required=True)
+    agent_run_show = agent_run_actions.add_parser("show")
+    _identity(agent_run_show)
+    agent_run_link = agent_run_actions.add_parser("link-evalops")
+    _identity(agent_run_link)
+    agent_run_link.add_argument("--trace-id", required=True)
+    listing = venture_actions.add_parser("list")
+    listing.add_argument("--query", default="")
+    listing.add_argument("--stage", choices=_enum_values(VentureStage))
+    add_pagination(listing)
+    add_portfolio_filters(listing)
+    for actions in [
+        assumption_actions,
+        evidence_actions,
+        decision_actions,
+        work_actions,
+        artifact_actions,
+    ]:
+        listing = actions.add_parser("list")
+        listing.add_argument("--venture-id", required=True)
+        add_pagination(listing)
+    experiments = resources.add_parser("experiment").add_subparsers(
+        dest="action", required=True
+    )
+    listing = experiments.add_parser("list")
+    listing.add_argument("--venture-id", required=True)
+    add_pagination(listing)
+    add_console_parsers(resources)
     return parser
 
 
@@ -171,7 +214,7 @@ def _clean_command_text(arguments: Namespace) -> None:
     """Validate textual command fields before opening or creating a database."""
 
     for name, value in vars(arguments).items():
-        if isinstance(value, str) and name not in {"resource", "action"}:
+        if isinstance(value, str) and name not in {"resource", "action", "query"}:
             setattr(arguments, name, required_text(name.replace("_", " "), value))
         elif isinstance(value, list):
             cleaned = [
@@ -279,7 +322,29 @@ def run_cli(application: FoundryApplication, arguments: Namespace) -> JsonObject
             name=arguments.name,
             location=arguments.location,
         )
+    if command == ("agent-run", "record"):
+        return application.record_agent_run(_read_json_object(arguments.input))
+    if command == ("agent-run", "show"):
+        return application.show_agent_run(arguments.id)
+    if command == ("agent-run", "link-evalops"):
+        return application.link_evalops_trace(arguments.id, arguments.trace_id)
     raise RuntimeError(f"Unhandled command: {command!r}")
+
+
+def _read_json_object(path_value: str) -> JsonObject:
+    """Load one local integration payload with actionable input errors."""
+
+    from pathlib import Path
+
+    try:
+        payload = json.loads(Path(path_value).read_text(encoding="utf-8"))
+    except OSError as exc:
+        raise ValidationError(f"input file could not be read: {exc}") from exc
+    except json.JSONDecodeError as exc:
+        raise ValidationError(f"input file is not valid JSON: {exc.msg}") from exc
+    if not isinstance(payload, dict):
+        raise ValidationError("input file must contain one JSON object")
+    return payload
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -302,11 +367,73 @@ def main(argv: Sequence[str] | None = None) -> int:
             arguments.resource,
             arguments.action,
         )
-        upgrade_database(settings.database_url, sql_echo=settings.sql_echo)
+        if arguments.resource == "ui" and not 1 <= arguments.port <= 65535:
+            raise ValidationError("port must be between 1 and 65535")
+        if (arguments.resource, arguments.action) == ("storage", "backup"):
+            from pathlib import Path
+
+            from startup_foundry.storage import backup_sqlite
+
+            print(
+                json.dumps(backup_sqlite(settings.database_url, Path(arguments.output)))
+            )
+            return 0
+        if (arguments.resource, arguments.action) != ("storage", "info"):
+            upgrade_database(settings.database_url, sql_echo=settings.sql_echo)
         engine = create_db_engine(settings.database_url, echo=settings.sql_echo)
         application = FoundryApplication(create_session_factory(engine))
-        result = run_cli(application, arguments)
-        print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+        if arguments.resource == "ui":
+            import uvicorn
+
+            from startup_foundry.web import create_app
+
+            uvicorn.run(
+                create_app(create_session_factory(engine), requests_directory()),
+                host="127.0.0.1",
+                port=arguments.port,
+                proxy_headers=False,
+                access_log=False,
+            )
+            return 0
+        if (
+            arguments.resource
+            in {
+                "idea",
+                "source",
+                "portfolio",
+                "step",
+                "storage",
+                "experiment",
+                "score",
+                "scorecard",
+                "review",
+                "existing-project",
+                "outreach",
+                "input",
+                "venture-score",
+                "proposal",
+                "workspace",
+                "intake",
+                "agent",
+                "decision-map",
+                "handoff",
+                "result",
+                "change",
+                "venture-work",
+            }
+            or arguments.action == "list"
+        ):
+            result = dispatch(
+                create_session_factory(engine), arguments, settings.database_url
+            )
+        else:
+            result = run_cli(application, arguments)
+        if getattr(arguments, "format", None) == "markdown" or (
+            arguments.resource == "agent" and arguments.action == "guide"
+        ):
+            print(result["markdown"], end="")
+        else:
+            print(json.dumps(result, sort_keys=True, separators=(",", ":")))
         logger.info(
             "command_completed resource=%s action=%s",
             arguments.resource,
@@ -314,9 +441,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         return 0
     except StartupFoundryError as exc:
-        logger.warning(
-            "expected_application_error error_type=%s", type(exc).__name__
-        )
+        logger.warning("expected_application_error error_type=%s", type(exc).__name__)
         print(f"error: {exc}", file=sys.stderr)
         return 2
     except IntegrityError:

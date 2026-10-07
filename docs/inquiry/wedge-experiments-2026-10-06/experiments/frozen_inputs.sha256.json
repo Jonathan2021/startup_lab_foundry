@@ -1,0 +1,6 @@
+{
+  "fixtures.json": "51a9a6c50c0e5e1ee4c0ea1fad226dcc37a05fc795dfb83d4503be543448e7f1",
+  "transition_inputs.json": "57ae256b9d82506a4aea9c0bc5621b4e128d2c7c81f561a858483e83b484f370",
+  "oracle.json": "eec39cb5b3e9214badf5b7093681a4a2a157889e2cf884f95e10bef416f74c58",
+  "generate_fixtures.py": "ccfbfd0ddf6448660e0f006d63798f2c41ca742317e2442db36d513697333845"
+}

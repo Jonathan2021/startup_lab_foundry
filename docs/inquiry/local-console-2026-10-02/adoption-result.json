@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-02",
+  "target": "/home/jonathan/.local/share/startup-foundry/foundry.local.db",
+  "backup": "/home/jonathan/.local/share/startup-foundry/backups/2026-10-02-adopted.local.db",
+  "source_sha256": {
+    "/home/jonathan/startup_lab/foundry/.local/portfolio-campaign/campaign.local.db": "b09f3ba28ff782e72e5dbe5fc44ca034ffd41c11906acd2d320e194288756707",
+    "/home/jonathan/startup_lab/foundry/.local/portfolio-realignment.local.db": "3260fe0c468558d5f822799c074aa49e5b834d269788b8c9554ef29f94f9152c"
+  },
+  "source_files_unchanged": true,
+  "merged_earlier_records": {
+    "workspaces": 3,
+    "decisions": 3,
+    "work_items": 3,
+    "evidence": 4,
+    "experiments": 1,
+    "ventures": 3,
+    "artifacts": 3,
+    "assumptions": 3,
+    "assumption_assessments": 3,
+    "experiment_assumptions": 1,
+    "assessment_evidence": 4,
+    "decision_assessments": 3
+  },
+  "portfolio_collision_policy": "Keep campaign default portfolio; preserve all earlier venture records and IDs",
+  "import": {
+    "created": 247,
+    "already_imported": false,
+    "batch_sha256": "5a3f3ffe901efc7b43c210b13f0a95a4f6cdfbeb432187116bf946f4092649a8",
+    "csv_rows": {
+      "startup_ideas": 239,
+      "startup_generated_ideas": 27,
+      "startup_competition": 150,
+      "startup_market_report": 18,
+      "startup_scoring_guide": 22,
+      "startup_dashboard": 72
+    }
+  },
+  "idea_count": 247,
+  "venture_count": 5
+}

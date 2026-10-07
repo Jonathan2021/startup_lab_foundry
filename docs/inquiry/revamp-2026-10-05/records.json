@@ -1,0 +1,543 @@
+{
+  "recorded_at": "2026-10-05",
+  "migration_head": "b10261005003",
+  "git_heads": {
+    "root": "e6a83e470d052439e5c8d4a943428f5bbd132f7f",
+    "foundry": "3b082507062838df4009d4b636c4f320436f3b41"
+  },
+  "input_hashes": {
+    "/home/jonathan/startup_lab/foundry/requests/INBOX.md": "383231335395f22202b8fc59786f09a0625b6118d826b821cb1b045da8468971",
+    "/home/jonathan/startup_lab/foundry/requests/2026-10-04-followups.md": "8705a386ac0e8588cfd8d70e397c509ef56391ce6a85f1e8f1d94a4ef0411d7b"
+  },
+  "requests": [
+    {
+      "id": "R001",
+      "status": "resolved",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+      "definition_revision": 1,
+      "definition_artifact_id": "3b63438a-ebb1-4cc0-8445-d12b07711591",
+      "response_artifact_id": "a6ca804b-8e7c-5522-8576-6bcfc3904157",
+      "review_artifact_id": "805a1277-bbe8-57ac-948b-e0620be4dd3f",
+      "review_work_id": "cee538df-2c21-5536-9d32-1df73010a220",
+      "legacy_receipt_id": "9c52b108-5d30-54cc-8977-9c4d45f9acd5",
+      "outcome": "no_change",
+      "effects": [],
+      "targets": [
+        {
+          "workspace_id": "144c7b9d-5e61-4999-b69f-37767e452df2",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "4d31208a-a404-4304-8e1c-24ed00678d87",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R002",
+      "status": "resolved",
+      "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+      "definition_revision": 1,
+      "definition_artifact_id": "fbe52686-08e0-459b-9b25-d5a8198a37db",
+      "response_artifact_id": "75e0473b-6c08-59cc-8ae4-c211ca70e31c",
+      "review_artifact_id": "e6514858-149a-592a-bbbe-a954f90c92e0",
+      "review_work_id": "27e5d277-c802-56f6-83f0-0fc91dca11c0",
+      "legacy_receipt_id": "f8e83394-b03a-592d-984f-c3e9eae398c1",
+      "outcome": "no_change",
+      "effects": [],
+      "targets": [
+        {
+          "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "9c43ec19-e1c6-47cd-aaf3-b19b064d0579",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "a47537ea-2c1e-4c61-bb9b-95eb0190d71e",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "ec6a746e-71bd-4fce-84ef-daaf32bb37f3",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R003",
+      "status": "resolved",
+      "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+      "definition_revision": 1,
+      "definition_artifact_id": "77fa6196-86f3-405f-8380-03f75cb13ec7",
+      "response_artifact_id": "24298fdf-5fc4-5a15-8c84-65e1f9b14686",
+      "review_artifact_id": "560f06d4-4d61-509e-8452-cecdb459c5d7",
+      "review_work_id": "26778197-0971-5887-942c-b9829287fdae",
+      "legacy_receipt_id": "63f36a9c-e8b4-549c-ab42-5dfeef843c77",
+      "outcome": "no_change",
+      "effects": [],
+      "targets": [
+        {
+          "workspace_id": "286f2628-cd08-434d-b074-7cdf9b275287",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "73da795e-b908-48a2-9860-1ada10d40b70",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "d509395e-0930-4236-a1e6-688fd7d66d1d",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "efa4b1dd-c121-43cd-9738-12276208cd2a",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R004",
+      "status": "resolved",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+      "definition_revision": 1,
+      "definition_artifact_id": "652f9fba-62d1-4c8f-9d57-d2d7f2beccb0",
+      "response_artifact_id": "061ca900-4a44-587b-a733-feaf283222ab",
+      "review_artifact_id": "b3507a65-b436-574b-91fb-fe0b7659924d",
+      "review_work_id": "72092691-bb78-56bf-aa65-1e403ffb7a5c",
+      "legacy_receipt_id": "48b288f9-600f-543d-8058-f3394fe08f4a",
+      "outcome": "no_change",
+      "effects": [],
+      "targets": [
+        {
+          "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "ca76f65a-8463-41ea-910c-abc2c800ecc2",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R005",
+      "status": "resolved",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+      "definition_revision": 1,
+      "definition_artifact_id": "96a5746e-ffab-4e9c-83ee-7fb2c87ff0b0",
+      "response_artifact_id": "0d9f0c0d-fd34-523d-bbe7-2476859bec15",
+      "review_artifact_id": "186e3d08-86df-4b4a-b012-fe8a2d89d10f",
+      "review_work_id": "077f2744-2141-5576-a2b9-516c9063fab2",
+      "legacy_receipt_id": null,
+      "outcome": "sufficient",
+      "effects": [
+        {
+          "review_id": "383bf13f-3312-4eea-bdbd-1a269d192282",
+          "work_id": null,
+          "workspace_id": "144c7b9d-5e61-4999-b69f-37767e452df2"
+        },
+        {
+          "review_id": "1d14cb67-6dab-4950-a1f1-ce9080965841",
+          "work_id": null,
+          "workspace_id": "4d31208a-a404-4304-8e1c-24ed00678d87"
+        },
+        {
+          "review_id": "00045c74-d6e0-4b69-a7ef-77bb5c7cc494",
+          "work_id": "e595746c-79db-4c5a-8aec-8f4d69ffd9ec",
+          "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+        }
+      ],
+      "targets": [
+        {
+          "workspace_id": "144c7b9d-5e61-4999-b69f-37767e452df2",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "4d31208a-a404-4304-8e1c-24ed00678d87",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R006",
+      "status": "resolved",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+      "definition_revision": 1,
+      "definition_artifact_id": "504329b9-ad00-468a-becf-23975dc57af0",
+      "response_artifact_id": "272f190e-a1b7-5dc1-aa2d-a36eccf16d20",
+      "review_artifact_id": "ba52b072-c9a6-4a11-a916-5cb9c821b5cd",
+      "review_work_id": "26df77a9-a8c8-5912-b247-fd31f39c4393",
+      "legacy_receipt_id": null,
+      "outcome": "sufficient",
+      "effects": [
+        {
+          "review_id": "79872368-fd2e-4c9e-b383-18049b87ae7d",
+          "work_id": "3122d93c-2462-4bd7-a172-719f12431077",
+          "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+        },
+        {
+          "review_id": "127d6591-7dc3-4cb2-92fd-4aa99fc4c74a",
+          "work_id": null,
+          "workspace_id": "6e2795a7-2457-44e1-b3e1-0bc66ed4f734"
+        },
+        {
+          "review_id": "bd33f828-4ea6-4600-9f42-2239b9c5a533",
+          "work_id": null,
+          "workspace_id": "cb3d70fe-47a7-4863-869f-7d86ac6cdd5f"
+        },
+        {
+          "review_id": "f15fa128-df58-448c-bad4-9c59e7c729ab",
+          "work_id": null,
+          "workspace_id": "e0f6a6e4-182f-4f23-b850-2f1c72d27d30"
+        }
+      ],
+      "targets": [
+        {
+          "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "6e2795a7-2457-44e1-b3e1-0bc66ed4f734",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "cb3d70fe-47a7-4863-869f-7d86ac6cdd5f",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "e0f6a6e4-182f-4f23-b850-2f1c72d27d30",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R007",
+      "status": "resolved",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+      "definition_revision": 1,
+      "definition_artifact_id": "21c3d8a2-9884-41b0-b8e4-75bd4e39f9f6",
+      "response_artifact_id": "6040b43e-ba5e-5dd2-8a71-f789cf36c160",
+      "review_artifact_id": "a2f1bb8d-5df4-4737-aa4c-5a43d7e0b901",
+      "review_work_id": "a200cee7-b632-5051-9e3c-353d44feb6a9",
+      "legacy_receipt_id": null,
+      "outcome": "sufficient",
+      "effects": [
+        {
+          "review_id": "6341fa75-64ef-4988-ab19-20a07b85a6cd",
+          "work_id": null,
+          "workspace_id": "7b337475-fcad-4040-aaf5-5739d959105d"
+        },
+        {
+          "review_id": "3c8f6bf6-1a2f-4e0e-a6ee-cf4eca148a46",
+          "work_id": "46d39829-402c-40f0-b368-0b6b68612e26",
+          "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+        }
+      ],
+      "targets": [
+        {
+          "workspace_id": "7b337475-fcad-4040-aaf5-5739d959105d",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R008",
+      "status": "deferred",
+      "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+      "definition_revision": 1,
+      "definition_artifact_id": "5dbf737c-8a6d-42d8-9195-dafe47a7a512",
+      "response_artifact_id": "51a27168-11db-5896-b783-b46e726418ca",
+      "review_artifact_id": "a8676944-2d81-4437-8312-c96590bac199",
+      "review_work_id": "a44a39f0-7e7e-5a20-8cfe-2e3049335713",
+      "legacy_receipt_id": null,
+      "outcome": "deferred",
+      "effects": [
+        {
+          "review_id": "0c5afc83-82be-44c0-8021-48475f61bc10",
+          "work_id": null,
+          "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884"
+        },
+        {
+          "review_id": "a1aeedc5-6dbe-4a7d-b1b7-22bbdbd3b162",
+          "work_id": null,
+          "workspace_id": "9c43ec19-e1c6-47cd-aaf3-b19b064d0579"
+        },
+        {
+          "review_id": "30ad7b72-b1e9-4bb2-975c-56946d182b90",
+          "work_id": null,
+          "workspace_id": "a47537ea-2c1e-4c61-bb9b-95eb0190d71e"
+        },
+        {
+          "review_id": "eace3e96-610d-4043-bcf2-848d24ceb9cc",
+          "work_id": null,
+          "workspace_id": "ec6a746e-71bd-4fce-84ef-daaf32bb37f3"
+        }
+      ],
+      "targets": [
+        {
+          "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "9c43ec19-e1c6-47cd-aaf3-b19b064d0579",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "a47537ea-2c1e-4c61-bb9b-95eb0190d71e",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "ec6a746e-71bd-4fce-84ef-daaf32bb37f3",
+          "work_item_id": null
+        }
+      ]
+    },
+    {
+      "id": "R009",
+      "status": "deferred",
+      "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+      "definition_revision": 1,
+      "definition_artifact_id": "eef6ec4d-d649-4e4f-9772-8ce25b3464d0",
+      "response_artifact_id": "4b8546a3-2526-5ac6-ab13-b06353538097",
+      "review_artifact_id": "c775db1c-726b-4534-84a3-096b0cde11f2",
+      "review_work_id": "bd44cfdf-7682-5c6c-8bbb-97e9cc4bfdad",
+      "legacy_receipt_id": null,
+      "outcome": "deferred",
+      "effects": [
+        {
+          "review_id": "d00dc4e7-74c8-4047-8051-9295d8292c5f",
+          "work_id": null,
+          "workspace_id": "286f2628-cd08-434d-b074-7cdf9b275287"
+        },
+        {
+          "review_id": "055bb8bd-71ba-4ae5-95c2-d0839251c3d8",
+          "work_id": null,
+          "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed"
+        },
+        {
+          "review_id": "828581ad-ff75-413c-818d-ba8d0d080e3d",
+          "work_id": null,
+          "workspace_id": "73da795e-b908-48a2-9860-1ada10d40b70"
+        },
+        {
+          "review_id": "bf2b4f82-4535-434c-a546-ba0a6da4272b",
+          "work_id": null,
+          "workspace_id": "d509395e-0930-4236-a1e6-688fd7d66d1d"
+        },
+        {
+          "review_id": "2fd57966-96dd-4cb2-8b88-519d96d6760f",
+          "work_id": null,
+          "workspace_id": "efa4b1dd-c121-43cd-9738-12276208cd2a"
+        }
+      ],
+      "targets": [
+        {
+          "workspace_id": "286f2628-cd08-434d-b074-7cdf9b275287",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "73da795e-b908-48a2-9860-1ada10d40b70",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "d509395e-0930-4236-a1e6-688fd7d66d1d",
+          "work_item_id": null
+        },
+        {
+          "workspace_id": "efa4b1dd-c121-43cd-9738-12276208cd2a",
+          "work_item_id": null
+        }
+      ]
+    }
+  ],
+  "proposal": {
+    "id": "91fe8686-6638-5dba-bb0a-34fe222a0be5",
+    "state": "proposed",
+    "version_id": 1,
+    "revision_artifact_id": "3d7a168a-139a-4046-9d95-25ac82a1b8f2",
+    "resolution_artifact_id": null
+  },
+  "source_ventures": [
+    {
+      "id": "v-sports-ranking",
+      "workspace_id": "6e2795a7-2457-44e1-b3e1-0bc66ed4f734",
+      "source_idea_revision_id": "dd0f21eb-aba1-4974-bb66-7264c2f538c7"
+    },
+    {
+      "id": "v-sports-session",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+      "source_idea_revision_id": "8908cee4-b62d-4dd1-8719-58a5c0ad44ee"
+    }
+  ],
+  "venture_baselines": [
+    {
+      "id": "d77ad1cb-9196-4a71-9f36-7abc9cb08f3b",
+      "venture_id": "v-coopain",
+      "scorecard_id": "portfolio-original-v1",
+      "source_assessment_id": "9a91d768-5708-4143-b7ef-231249316e28",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "a4be0de7-b411-4460-8b5b-4d48006e10bd",
+      "venture_id": "v-coopain",
+      "scorecard_id": "portfolio-reviewed-v1",
+      "source_assessment_id": "f3d53b0e-aeb1-4f17-845f-c4a7827ecd4f",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "819044a7-101b-45e7-a59b-cfcc468316a8",
+      "venture_id": "v-foundry",
+      "scorecard_id": "portfolio-original-v1",
+      "source_assessment_id": "7a46ff0a-5f6c-4e75-8782-a9cebc7523a7",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "f31bd300-f66c-4cd9-9917-61857980be22",
+      "venture_id": "v-g002",
+      "scorecard_id": "portfolio-original-v1",
+      "source_assessment_id": "9800b28b-f9d7-4c74-9e95-d2144e5c8ef0",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "80ccd495-e890-4821-8dba-e38aebee4c0a",
+      "venture_id": "v-route-repair",
+      "scorecard_id": "portfolio-reviewed-v1",
+      "source_assessment_id": "df2aca53-a4a9-4dd2-8c0e-9553c449d60b",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "a887f61d-0145-4096-aad5-af4ba765c4f3",
+      "venture_id": "v-sports-ranking",
+      "scorecard_id": "portfolio-original-v1",
+      "source_assessment_id": "ae9a1887-e3af-4643-8653-3a5598c88a93",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "5aa849e2-cdf6-4fee-bf1d-cb9c9b08cb1e",
+      "venture_id": "v-sports-ranking",
+      "scorecard_id": "portfolio-reviewed-v1",
+      "source_assessment_id": "a515fddf-72b5-47d6-8a30-64713d8be59d",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "49c54c1a-0e76-4315-83ad-ce61dc4439d2",
+      "venture_id": "v-sports-session",
+      "scorecard_id": "portfolio-original-v1",
+      "source_assessment_id": "1029bc71-5619-4227-9861-acda871934eb",
+      "kind": "source_baseline"
+    },
+    {
+      "id": "c6b7fd44-14cd-4464-9455-2384c602ee25",
+      "venture_id": "v-sports-session",
+      "scorecard_id": "portfolio-reviewed-v1",
+      "source_assessment_id": "2e4b31f5-8bed-415b-9843-54a95dd79ce1",
+      "kind": "source_baseline"
+    }
+  ],
+  "briefs": [
+    {
+      "venture": "v-route-repair",
+      "artifact_id": "fb577953-dbe2-5413-b4e3-c1cb648d91ec",
+      "source": "ROUTE.md"
+    },
+    {
+      "venture": "v-sports-session",
+      "artifact_id": "3ed84550-ff4e-51a7-b761-ceb3aae69835",
+      "source": "VOLLEYBALL.md"
+    },
+    {
+      "venture": "v-coopain",
+      "artifact_id": "fb76e961-6211-573d-a706-b0256f84000e",
+      "source": "COOPAIN.md"
+    }
+  ],
+  "current_venture_work": [
+    {
+      "id": "57852083-454f-58c4-bb6a-8bcc6e96bdc3",
+      "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+      "title": "Obtain one observable task with competent labels, or retain field-data hold.",
+      "status": "cancelled",
+      "blocked_reason": null
+    },
+    {
+      "id": "b1a3026c-5408-5e97-a451-c051b16737b4",
+      "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+      "title": "Obtain one repeatable observable low-risk task and competent labels, or retain field-data hold.",
+      "status": "blocked",
+      "blocked_reason": "external_access"
+    },
+    {
+      "id": "8c78e53a-16b2-58a9-b5de-1405b4ce10a7",
+      "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+      "title": "Choose a receiving practitioner and obtain review of the fictional sample.",
+      "status": "cancelled",
+      "blocked_reason": null
+    },
+    {
+      "id": "d55f3c6b-6e27-54b8-ab4c-7d53c9d9b5ba",
+      "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+      "title": "Choose one receiving practitioner; review the fictional sample and record a real decision-use response.",
+      "status": "blocked",
+      "blocked_reason": "human_input"
+    },
+    {
+      "id": "2eaae4e7-5d35-5ced-9db4-e813cbe8a60b",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+      "title": "Specify maximum riding time and must-keep areas.",
+      "status": "cancelled",
+      "blocked_reason": null
+    },
+    {
+      "id": "6a6b1c22-2ff1-4abe-b619-f4580a70dded",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+      "title": "Compare route-planning alternatives using an explicit routing basis",
+      "status": "ready",
+      "blocked_reason": null
+    },
+    {
+      "id": "285e380e-96b9-4d14-b62b-26684b5e5f71",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+      "title": "Verify Coopain runtime and label the compatibility placeholder before private testing",
+      "status": "ready",
+      "blocked_reason": null
+    },
+    {
+      "id": "90e268be-e214-59bc-a2da-fe8c7a63a7b5",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+      "title": "Review one employer/referrer workflow; resolve ownership and label compatibility placeholder before users.",
+      "status": "blocked",
+      "blocked_reason": "human_input"
+    }
+  ],
+  "live_store_counts": {
+    "ideas": 250,
+    "idea_revisions": 250,
+    "idea_assessments": 243,
+    "ventures": 10,
+    "artifacts": 606,
+    "work_items": 516,
+    "workspace_reviews": 294,
+    "human_requests": 9,
+    "venture_assessments": 9,
+    "portfolio_proposals": 1
+  }
+}

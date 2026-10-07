@@ -1,0 +1,37 @@
+FICTIONAL WORK-SAMPLE RECEIPT — research example only
+No credential issued. No real candidate, employer, assessment or endorsement.
+
+Reference: sample-fictional-20261004-r1
+Example date: 2026-10-04 (fictional assessment date)
+Subject: Fictional candidate A
+Issuer/reviewer: Fictional workshop / Example reviewer (neither is real)
+Exercise: Import a small CSV into local SQLite, preserve record identities, reject
+invalid rows and explain recovery after an interrupted import. Timebox: 90 minutes.
+Scope: This exercise only; no universal engineering skill or ranking claim.
+
+Rubric (illustrative):
+- Identity and idempotency: repeating the import adds no rows (0–2 points).
+- Validation: bad score values reject the whole transaction (0–2).
+- Traceability: input digest and import outcome are retained (0–2).
+- Explanation: identify one unknown and a recovery limitation (0–2).
+
+Illustrative output: importer.py, README and a test report are hypothetical files.
+Illustrative results: 2/2 identity, 2/2 validation, 1/2 traceability, 1/2 explanation.
+These results are invented examples, not executed tests or a real assessment.
+Evidence reference: sample-fictional-20261004-r1; no live verification endpoint.
+A real receipt would link permissioned source files/test logs, reviewer identity,
+criteria and exact revision so a receiver can inspect the work.
+Limits: no production deployment, team performance, independent proctoring,
+identity verification or general certification was observed.
+
+Questions for a receiving practitioner:
+1. What actual hiring/training decision, if any, would this change?
+2. Which evidence would you inspect and trust?
+3. What would you independently verify?
+4. What similar credential/work-sample workflow do you already use?
+5. Who could issue and receive a real bounded example with permission?
+
+Format note: Open Badges 3.0 already represents achievement criteria, results and
+evidence. This text is inspired by those concepts; it is not a signed or conformant
+OpenBadgeCredential and has no issuing authority.
+Source: https://www.imsglobal.org/spec/ob/v3p0/

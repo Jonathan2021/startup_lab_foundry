@@ -1,0 +1,159 @@
+.FF.                                                                     [100%]
+=================================== FAILURES ===================================
+________ test_runtime_image_is_non_root_lean_and_does_not_bake_secrets _________
+
+compose_config = {'name': 'foundry-acceptance-f206e2a9a33b', 'networks': {'default': {'ipam': {}, 'name': 'foundry-acceptance-f206e2a9a...nt': ['/bin/sh', '-eu', '-c'], ...}}, 'volumes': {'db_data': {'name': 'foundry-acceptance-f206e2a9a33b_db_data'}}, ...}
+compose_project = ComposeProject(name='foundry-acceptance-f206e2a9a33b')
+
+    def test_runtime_image_is_non_root_lean_and_does_not_bake_secrets(
+        compose_config: Mapping[str, Any],
+        compose_project: ComposeProject,
+    ) -> None:
+        environment = compose_project.environment
+        password = compose_project.password
+        compose = partial(_compose_command, compose_project.name)
+        foundry_service = _services(compose_config)["foundry"]
+        assert isinstance(foundry_service, dict)
+        image_name = foundry_service.get("image")
+        assert isinstance(image_name, str) and image_name
+    
+>       _run(
+            compose("build", "foundry"),
+            environment=environment,
+            secrets_to_redact=(password,),
+        )
+
+foundry/tests/acceptance/test_container_stack.py:224: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['docker', 'compose', '--progress', 'quiet', '--project-name', 'foundry-acceptance-f206e2a9a33b', ...]
+
+    def _run(
+        command: Sequence[str],
+        *,
+        environment: Mapping[str, str],
+        secrets_to_redact: Sequence[str] = (),
+        check: bool = True,
+    ) -> subprocess.CompletedProcess[str]:
+        completed = subprocess.run(
+            command,
+            cwd=FOUNDRY_ROOT,
+            env=environment,
+            capture_output=True,
+            check=False,
+            text=True,
+        )
+        if check and completed.returncode != 0:
+            rendered_command = " ".join(command)
+            stdout = _redact(completed.stdout, secrets_to_redact)
+            stderr = _redact(completed.stderr, secrets_to_redact)
+>           pytest.fail(
+                f"command failed ({completed.returncode}): {rendered_command}\n"
+                f"stdout:\n{stdout}\nstderr:\n{stderr}"
+            )
+E           Failed: command failed (17): docker compose --progress quiet --project-name foundry-acceptance-f206e2a9a33b --file /home/jonathan/startup_lab/foundry/docker-compose.yaml --profile cli build foundry
+E           stdout:
+E           
+E           stderr:
+E           failed to solve: failed to authorize: failed to fetch oauth token: unexpected status from GET request to https://ghcr.io/token?scope=repository%3Aastral-sh%2Fuv%3Apull&service=ghcr.io: 403 Forbidden
+
+foundry/tests/acceptance/test_container_stack.py:59: Failed
+_______ test_one_command_migrates_cli_and_postgres_then_volume_persists ________
+
+compose_project = ComposeProject(name='foundry-acceptance-f206e2a9a33b')
+
+    def test_one_command_migrates_cli_and_postgres_then_volume_persists(
+        compose_config: Mapping[str, Any],
+        compose_project: ComposeProject,
+    ) -> None:
+        del compose_config
+        environment = compose_project.environment
+        password = compose_project.password
+        compose = partial(_compose_command, compose_project.name)
+        common = {
+            "environment": environment,
+            "secrets_to_redact": (password,),
+        }
+    
+        _run(compose("up", "--build", "--detach", "--wait", "db"), **common)
+        _run(compose("run", "--rm", "migrate"), **common)
+        migration_revision = _run(
+            compose(
+                "exec",
+                "-T",
+                "db",
+                "psql",
+                "-U",
+                environment["POSTGRES_USER"],
+                "-d",
+                environment["POSTGRES_DB"],
+                "-Atc",
+                "SELECT version_num FROM alembic_version",
+            ),
+            **common,
+        ).stdout.strip()
+        assert migration_revision, "the one-shot migration must reach Alembic head"
+        _run(
+            compose("down", "--volumes", "--remove-orphans", "--timeout", "5"),
+            **common,
+        )
+    
+>       created = _run(
+            compose(
+                "run",
+                "--build",
+                "--rm",
+                "foundry",
+                "venture",
+                "create",
+                "--id",
+                "venture-container-contract",
+                "--name",
+                "Container Contract",
+                "--objective",
+                "Prove migration, networking, and persistence.",
+                "--stage",
+                "build",
+            ),
+            **common,
+        )
+
+foundry/tests/acceptance/test_container_stack.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['docker', 'compose', '--progress', 'quiet', '--project-name', 'foundry-acceptance-f206e2a9a33b', ...]
+
+    def _run(
+        command: Sequence[str],
+        *,
+        environment: Mapping[str, str],
+        secrets_to_redact: Sequence[str] = (),
+        check: bool = True,
+    ) -> subprocess.CompletedProcess[str]:
+        completed = subprocess.run(
+            command,
+            cwd=FOUNDRY_ROOT,
+            env=environment,
+            capture_output=True,
+            check=False,
+            text=True,
+        )
+        if check and completed.returncode != 0:
+            rendered_command = " ".join(command)
+            stdout = _redact(completed.stdout, secrets_to_redact)
+            stderr = _redact(completed.stderr, secrets_to_redact)
+>           pytest.fail(
+                f"command failed ({completed.returncode}): {rendered_command}\n"
+                f"stdout:\n{stdout}\nstderr:\n{stderr}"
+            )
+E           Failed: command failed (17): docker compose --progress quiet --project-name foundry-acceptance-f206e2a9a33b --file /home/jonathan/startup_lab/foundry/docker-compose.yaml --profile cli run --build --rm foundry venture create --id venture-container-contract --name Container Contract --objective Prove migration, networking, and persistence. --stage build
+E           stdout:
+E           
+E           stderr:
+E           failed to solve: failed to authorize: failed to fetch oauth token: unexpected status from GET request to https://ghcr.io/token?scope=repository%3Aastral-sh%2Fuv%3Apull&service=ghcr.io: 403 Forbidden
+
+foundry/tests/acceptance/test_container_stack.py:59: Failed
+=========================== short test summary info ============================
+FAILED foundry/tests/acceptance/test_container_stack.py::test_runtime_image_is_non_root_lean_and_does_not_bake_secrets
+FAILED foundry/tests/acceptance/test_container_stack.py::test_one_command_migrates_cli_and_postgres_then_volume_persists
+2 failed, 2 passed in 98.47s (0:01:38)

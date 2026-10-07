@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-04",
+  "scope": "Planning only; no application/database/Coopain mutations or test execution",
+  "heads_not_clean_tree_proof": {
+    "/home/jonathan/startup_lab": "e6a83e470d052439e5c8d4a943428f5bbd132f7f",
+    "/home/jonathan/startup_lab/foundry": "3b082507062838df4009d4b636c4f320436f3b41",
+    "/home/jonathan/coopain": "aa382779b79951f843f37b8080f6f0972efe7e3c"
+  },
+  "input_sha256": {
+    "/home/jonathan/startup_lab/foundry/requests/INBOX.md": "383231335395f22202b8fc59786f09a0625b6118d826b821cb1b045da8468971",
+    "/home/jonathan/startup_lab/foundry/docs/sources/startup_competition.csv": "03902c428d863e4d0ad0cec0f414ee3c083de38741eec10b30ab34093edcf6d4",
+    "/home/jonathan/startup_lab/foundry/docs/sources/startup_dashboard.csv": "54afc5aabede707f898340b4ef1bd35383cb688dff8b020a5c8bc6b958705302",
+    "/home/jonathan/startup_lab/foundry/docs/sources/startup_generated_ideas.csv": "b6e0f322f024abbc7815e93cae9690dc9754048b023d18b5852c4678eaa7cedf",
+    "/home/jonathan/startup_lab/foundry/docs/sources/startup_ideas.csv": "5c3f75856382677a73873c058c79b66853c1feecdc4c809135171f1d1af478ff",
+    "/home/jonathan/startup_lab/foundry/docs/sources/startup_market_report.csv": "3b61f37911f0e714c4d3d3ae435be14d00fd1622e02c994179dcfbef5aa5e358",
+    "/home/jonathan/startup_lab/foundry/docs/sources/startup_scoring_guide.csv": "b3052911a560497d236133be901e052d2c17c5750f06d2cb2cee609e31866e4d",
+    "/home/jonathan/startup_lab/foundry/requests/anterioux-thauvenay_68degres.gpx": "83a5ba4a8a94dd6c327cde9a78beaed9e7ada1b29b2b52cab58140863085a7c6",
+    "/home/jonathan/startup_lab/foundry/requests/anterioux-thauvenay_liberty_rider.gpx": "da30ee0fa2ff0600a9c96ad55869fadace7e401bbd89ef3d1885d1d9626c0e97",
+    "/home/jonathan/Downloads/startup_ideas_portfolio_v2(1).xlsx": "ebc5028a27aaed5c574da0355a1a7f1dc361c35493106b77d013b645ba7339e4"
+  },
+  "selected_code_sha256": {
+    "foundry/src/startup_foundry/domain.py": "8f2299d9cc0c60bbc7f5e737bc364522dc737568b339987cd40106031015c37a",
+    "foundry/src/startup_foundry/portfolio.py": "da94b5f3c16ec01172ffde4f26c7f7e6dae8aa0d3f609195512b3f23784aa603",
+    "foundry/src/startup_foundry/application.py": "0a5560dc4721a0978d1875c81e471185c6e9096a689b8a8205f83616fabfe67f",
+    "foundry/src/startup_foundry/web.py": "202bc352a83814e6ffc1f20eddd2ea5f5e09b3bc7065104fcb69dcb6c1f2a54c",
+    "foundry/src/startup_foundry/steps.py": "87e018d20c20511dbfb609af23bd484a850052327e02e2bcb1740c806a7b912b",
+    "foundry/src/startup_foundry/templates/ideas.html": "f87496335b98fb260d310fab581659fee7354717e5096ff0773c0ee61436cb24",
+    "foundry/src/startup_foundry/templates/ventures.html": "c1de115753335d5a49513cefcd48fbde440cf86a38313ca80f3d73920639bf02",
+    "/home/jonathan/coopain/README": "f3fa44f457ef8b0b51309617db97791a3bc0f63a62dcb6a39383a5b0d938c6fc",
+    "/home/jonathan/coopain/SYSTEM_GUIDE.md": "7f90ec64fb213d5d3da67b715e74623c4b497ca8815d3de1d50501ecd55c42d2",
+    "/home/jonathan/coopain/backend/README.md": "0a384f4f01557718df9df03a787cc9101cb4b08723207f6721cd2f9dbc5a5352",
+    "/home/jonathan/coopain/backend/PROGRESS.md": "9318b2ef5427c5e191c1c27cd90cb1babd19639dfa353a2d6b9b58d66f917474",
+    "/home/jonathan/coopain/backend/tests/conftest.py": "e498ba1bce62c9ad768fba09d24924950505c6f0238529304c4ab147df2e9543",
+    "/home/jonathan/coopain/frontend/apps/web/src/app/lib/utils.ts": "1108c4dc671b673de27b999ab326c9e689dedabe5d567dd37f238b20c9f7d92d",
+    "/home/jonathan/coopain/frontend/apps/web/src/app/dashboard/page.tsx": "5d2ef6c625f8b6e97a0c82e7e01a97a1bf1704ec6aaaf6d18e9184d200a04101"
+  },
+  "database_read_only_counts": {
+    "ideas": 250,
+    "ventures": 5,
+    "reference_sources": 99,
+    "scorecards": 0,
+    "scoring_criteria": 0,
+    "idea_assessments": 0,
+    "criterion_scores": 0,
+    "step_runs": 8,
+    "external_actions": 0
+  },
+  "scoring": {
+    "workbook_sheet": "Ideas",
+    "formula_cell": "AK2",
+    "formula": "MAX(0,MIN(100,ROUND(10*(0.22*X2+0.18*AA2+0.12*AB2+0.15*AC2+0.10*AD2+0.08*AE2+0.10*W2+0.05*AF2-0.10*(AJ2-1)-0.06*(AI2-1)-0.05*(AH2-1)-0.04*(AG2-1)),0)))",
+    "positive_weights": {
+      "Revenue potential": "0.22",
+      "Profitability ease": "0.18",
+      "MVP speed": "0.12",
+      "Founder fit": "0.15",
+      "Go-to-market ease": "0.10",
+      "Moat / defensibility": "0.08",
+      "Problem intensity": "0.10",
+      "Retention potential": "0.05"
+    },
+    "penalty_weights": {
+      "Legal / ethical risk": "0.10",
+      "Capital intensity": "0.06",
+      "Network dependency": "0.05",
+      "Competition intensity": "0.04"
+    },
+    "penalty_transform": "raw - 1",
+    "rounding": "Decimal ROUND_HALF_UP (Excel half away from zero)",
+    "rows": 238,
+    "matching_rows": 238,
+    "mismatches": [],
+    "anchors": {
+      "G002": {
+        "raw_score": "78.50",
+        "recomputed": 79,
+        "source": 79
+      },
+      "P023": {
+        "raw_score": "49.40",
+        "recomputed": 49,
+        "source": 49
+      },
+      "P046": {
+        "raw_score": "46.60",
+        "recomputed": 47,
+        "source": 47
+      },
+      "P103": {
+        "raw_score": "45.30",
+        "recomputed": 45,
+        "source": 45
+      }
+    }
+  },
+  "gpx_metadata": {
+    "anterioux-thauvenay_68degres.gpx": {
+      "track_points": 479,
+      "route_points": 0,
+      "time_elements": 0,
+      "geometry_analysis_performed": false
+    },
+    "anterioux-thauvenay_liberty_rider.gpx": {
+      "track_points": 6017,
+      "route_points": 66,
+      "time_elements": 0,
+      "geometry_analysis_performed": false
+    }
+  }
+}

@@ -1349,3 +1349,304 @@ class AuditEvent(IdentityMixin, Base):
     occurred_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=utc_now, nullable=False
     )
+
+
+class StepStatus(StrEnum):
+    RUNNING = "running"
+    SUCCEEDED = "succeeded"
+    BLOCKED = "blocked"
+    FAILED = "failed"
+
+
+class StepRun(IdentityMixin, TimestampMixin, VersionedMixin, Base):
+    """One idempotent bounded step; input and terminal outcome are retained."""
+
+    __tablename__ = "step_runs"
+
+    workspace_id: Mapped[str] = mapped_column(
+        ForeignKey("workspaces.id"), nullable=False, index=True
+    )
+    work_item_id: Mapped[str] = mapped_column(
+        ForeignKey("work_items.id"), nullable=False, unique=True
+    )
+    request_key: Mapped[str] = mapped_column(String(160), nullable=False, unique=True)
+    kind: Mapped[str] = mapped_column(String(80), nullable=False)
+    runner: Mapped[str] = mapped_column(String(120), nullable=False)
+    runner_version: Mapped[str] = mapped_column(String(100), nullable=False)
+    status: Mapped[StepStatus] = mapped_column(
+        enum_type(StepStatus, "step_status"), nullable=False
+    )
+    input_json: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=False)
+    input_digest: Mapped[str] = mapped_column(String(64), nullable=False)
+    output_json: Mapped[dict[str, Any]] = mapped_column(
+        JSON, default=dict, nullable=False
+    )
+    error_summary: Mapped[str | None] = mapped_column(Text)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class InvestigationStage(StrEnum):
+    INTAKE = "intake"
+    TRIAGE = "triage"
+    COMPARISON = "comparison"
+    PROBLEM_VALIDATION = "problem_validation"
+    SOLUTION_VALIDATION = "solution_validation"
+    BUSINESS_VALIDATION = "business_validation"
+
+
+class ProductMaturity(StrEnum):
+    UNKNOWN = "unknown"
+    CONCEPT = "concept"
+    PROTOTYPE = "prototype"
+    MVP = "mvp"
+    PILOT = "pilot"
+    OPERATING = "operating"
+
+
+class Disposition(StrEnum):
+    PURSUE = "pursue"
+    HOLD = "hold"
+    DROPPED = "dropped"
+    INTERNAL_ONLY = "internal_only"
+    USE_EXISTING = "use_existing"
+
+
+class WorkspaceReview(IdentityMixin, TimestampMixin, Base):
+    """Append-only reviewed coordination, independent of technical maturity."""
+
+    __tablename__ = "workspace_reviews"
+    __table_args__ = (
+        UniqueConstraint("workspace_id", "revision", name="workspace_review_revision"),
+        CheckConstraint("revision >= 1", name="review_revision_positive"),
+    )
+    workspace_id: Mapped[str] = mapped_column(
+        ForeignKey("workspaces.id"), nullable=False, index=True
+    )
+    revision: Mapped[int] = mapped_column(Integer, nullable=False)
+    investigation_stage: Mapped[InvestigationStage] = mapped_column(
+        enum_type(InvestigationStage, "investigation_stage"), nullable=False
+    )
+    product_maturity: Mapped[ProductMaturity] = mapped_column(
+        enum_type(ProductMaturity, "product_maturity"), nullable=False
+    )
+    disposition: Mapped[Disposition] = mapped_column(
+        enum_type(Disposition, "review_disposition"), nullable=False
+    )
+    next_action: Mapped[str] = mapped_column(Text, nullable=False)
+    next_work_item_id: Mapped[str | None] = mapped_column(ForeignKey("work_items.id"))
+    reason: Mapped[str] = mapped_column(Text, nullable=False)
+    author: Mapped[str] = mapped_column(String(200), nullable=False)
+    reviewed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=utc_now, nullable=False
+    )
+    source_artifact_id: Mapped[str | None] = mapped_column(ForeignKey("artifacts.id"))
+    decision_id: Mapped[str | None] = mapped_column(ForeignKey("decisions.id"))
+
+
+class DecisionMap(IdentityMixin, TimestampMixin, VersionedMixin, Base):
+    """One coordination pointer; all map revisions are immutable typed Artifacts."""
+
+    __tablename__ = "decision_maps"
+    workspace_id: Mapped[str] = mapped_column(
+        ForeignKey("workspaces.id"), nullable=False, unique=True
+    )
+    current_revision_artifact_id: Mapped[str] = mapped_column(
+        ForeignKey("artifacts.id"), nullable=False
+    )
+
+
+class HumanRequest(IdentityMixin, TimestampMixin, VersionedMixin, Base):
+    __tablename__ = "human_requests"
+    __table_args__ = (
+        CheckConstraint(
+            (
+                "status IN "
+                "('waiting_for_answer','ready_for_review','reviewing','needs_clarification','resolved','deferred')"
+            ),
+            name="request_status",
+        ),
+    )
+    workspace_id: Mapped[str] = mapped_column(
+        ForeignKey("workspaces.id"), nullable=False, index=True
+    )
+    title: Mapped[str] = mapped_column(String(300), nullable=False)
+    question: Mapped[str] = mapped_column(Text, nullable=False)
+    definition_revision: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    definition_artifact_id: Mapped[str] = mapped_column(
+        ForeignKey("artifacts.id"), nullable=False
+    )
+    response_artifact_id: Mapped[str | None] = mapped_column(ForeignKey("artifacts.id"))
+    review_artifact_id: Mapped[str | None] = mapped_column(ForeignKey("artifacts.id"))
+    status: Mapped[str] = mapped_column(
+        String(40), nullable=False, default="waiting_for_answer", index=True
+    )
+    file_path: Mapped[str | None] = mapped_column(String(300))
+    source_diagnostics: Mapped[dict[str, Any]] = mapped_column(
+        JSON, default=dict, nullable=False
+    )
+
+
+class HumanRequestTarget(IdentityMixin, TimestampMixin, Base):
+    __tablename__ = "human_request_targets"
+    __table_args__ = (
+        UniqueConstraint("request_id", "workspace_id", name="request_target_unique"),
+    )
+    request_id: Mapped[str] = mapped_column(
+        ForeignKey("human_requests.id"), nullable=False, index=True
+    )
+    workspace_id: Mapped[str] = mapped_column(
+        ForeignKey("workspaces.id"), nullable=False, index=True
+    )
+    work_item_id: Mapped[str | None] = mapped_column(ForeignKey("work_items.id"))
+
+
+class HumanRequestDependency(IdentityMixin, TimestampMixin, VersionedMixin, Base):
+    """Explicit input cause; satisfaction never implies all work causes cleared."""
+
+    __tablename__ = "human_request_dependencies"
+    __table_args__ = (
+        UniqueConstraint("target_id", "work_item_id", name="request_work_dependency"),
+    )
+    target_id: Mapped[str] = mapped_column(
+        ForeignKey("human_request_targets.id"), nullable=False, index=True
+    )
+    work_item_id: Mapped[str] = mapped_column(
+        ForeignKey("work_items.id"), nullable=False, index=True
+    )
+    satisfied_response_id: Mapped[str | None] = mapped_column(
+        ForeignKey("artifacts.id")
+    )
+    other_causes: Mapped[list[str]] = mapped_column(JSON, default=list, nullable=False)
+
+
+class VentureAssessment(IdentityMixin, TimestampMixin, Base):
+    __tablename__ = "venture_assessments"
+    __table_args__ = (
+        UniqueConstraint(
+            "venture_id", "scorecard_id", "sequence", name="venture_assessment_sequence"
+        ),
+        UniqueConstraint(
+            "venture_id", "request_key", name="venture_assessment_request"
+        ),
+        UniqueConstraint(
+            "venture_id", "baseline_card_id", name="venture_baseline_card"
+        ),
+        CheckConstraint("sequence >= 1", name="venture_sequence_positive"),
+        CheckConstraint(
+            "kind IN ('source_baseline','reviewed')", name="venture_assessment_kind"
+        ),
+        CheckConstraint(
+            "overall_score IS NULL OR (overall_score >= 0 AND overall_score <= 100)",
+            name="venture_score_range",
+        ),
+    )
+    venture_id: Mapped[str] = mapped_column(
+        ForeignKey("ventures.id"), nullable=False, index=True
+    )
+    scorecard_id: Mapped[str] = mapped_column(
+        ForeignKey("scorecards.id"), nullable=False, index=True
+    )
+    baseline_card_id: Mapped[str | None] = mapped_column(ForeignKey("scorecards.id"))
+    sequence: Mapped[int] = mapped_column(Integer, nullable=False)
+    kind: Mapped[str] = mapped_column(String(30), nullable=False)
+    source_assessment_id: Mapped[str | None] = mapped_column(
+        ForeignKey("idea_assessments.id")
+    )
+    overall_score: Mapped[float | None] = mapped_column(Float)
+    confidence: Mapped[ConfidenceLevel] = mapped_column(
+        enum_type(ConfidenceLevel, "venture_assessment_confidence"), nullable=False
+    )
+    rationale: Mapped[str] = mapped_column(Text, nullable=False)
+    author: Mapped[str] = mapped_column(String(200), nullable=False)
+    context_json: Mapped[dict[str, Any]] = mapped_column(JSON, nullable=False)
+    context_digest: Mapped[str] = mapped_column(String(64), nullable=False)
+    request_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    payload_digest: Mapped[str] = mapped_column(String(64), nullable=False)
+
+
+class VentureCriterionScore(IdentityMixin, TimestampMixin, Base):
+    __tablename__ = "venture_criterion_scores"
+    __table_args__ = (
+        UniqueConstraint(
+            "assessment_id", "criterion_id", name="venture_criterion_unique"
+        ),
+    )
+    assessment_id: Mapped[str] = mapped_column(
+        ForeignKey("venture_assessments.id"), nullable=False, index=True
+    )
+    criterion_id: Mapped[str] = mapped_column(
+        ForeignKey("scoring_criteria.id"), nullable=False
+    )
+    raw_score: Mapped[float] = mapped_column(Float, nullable=False)
+    normalized_score: Mapped[float | None] = mapped_column(Float)
+    weighted_contribution: Mapped[float | None] = mapped_column(Float)
+    rationale: Mapped[str] = mapped_column(Text, nullable=False)
+
+
+class VentureCriterionScoreEvidence(IdentityMixin, TimestampMixin, Base):
+    __tablename__ = "venture_criterion_score_evidence"
+    __table_args__ = (
+        UniqueConstraint(
+            "criterion_score_id",
+            "evidence_id",
+            name="venture_criterion_evidence_unique",
+        ),
+    )
+    criterion_score_id: Mapped[str] = mapped_column(
+        ForeignKey("venture_criterion_scores.id"), nullable=False
+    )
+    evidence_id: Mapped[str] = mapped_column(ForeignKey("evidence.id"), nullable=False)
+    note: Mapped[str | None] = mapped_column(Text)
+
+
+class PortfolioProposal(IdentityMixin, TimestampMixin, VersionedMixin, Base):
+    __tablename__ = "portfolio_proposals"
+    __table_args__ = (
+        CheckConstraint("kind = 'fusion'", name="proposal_kind"),
+        CheckConstraint(
+            "state IN ('proposed','rejected','applied','reversed','superseded')",
+            name="proposal_state",
+        ),
+        UniqueConstraint("portfolio_id", "request_key", name="proposal_request_key"),
+        Index(
+            "pending_fusion_sources", "portfolio_id", "pending_source_key", unique=True
+        ),
+    )
+    portfolio_id: Mapped[str] = mapped_column(
+        ForeignKey("portfolios.id"), nullable=False
+    )
+    workspace_id: Mapped[str] = mapped_column(
+        ForeignKey("workspaces.id"), nullable=False
+    )
+    kind: Mapped[str] = mapped_column(String(30), nullable=False, default="fusion")
+    revision_artifact_id: Mapped[str] = mapped_column(
+        ForeignKey("artifacts.id"), nullable=False
+    )
+    resolution_artifact_id: Mapped[str | None] = mapped_column(
+        ForeignKey("artifacts.id")
+    )
+    request_key: Mapped[str] = mapped_column(String(160), nullable=False)
+    pending_source_key: Mapped[str | None] = mapped_column(String(64))
+    state: Mapped[str] = mapped_column(
+        String(30), nullable=False, default="proposed", index=True
+    )
+
+
+class ProposalParticipant(IdentityMixin, TimestampMixin, Base):
+    __tablename__ = "proposal_participants"
+    __table_args__ = (
+        CheckConstraint("role IN ('source','result')", name="participant_role"),
+        CheckConstraint(
+            "(idea_id IS NULL) <> (venture_id IS NULL)", name="participant_one_entity"
+        ),
+        UniqueConstraint("proposal_id", "role", "idea_id", name="proposal_idea_unique"),
+        UniqueConstraint(
+            "proposal_id", "role", "venture_id", name="proposal_venture_unique"
+        ),
+    )
+    proposal_id: Mapped[str] = mapped_column(
+        ForeignKey("portfolio_proposals.id"), nullable=False, index=True
+    )
+    role: Mapped[str] = mapped_column(String(20), nullable=False)
+    idea_id: Mapped[str | None] = mapped_column(ForeignKey("ideas.id"))
+    venture_id: Mapped[str | None] = mapped_column(ForeignKey("ventures.id"))

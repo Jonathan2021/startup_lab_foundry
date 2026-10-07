@@ -1,0 +1,685 @@
+{
+  "measurement": "UTF-8 bytes and whitespace-delimited words; no token/cost/latency measurement",
+  "cases": [
+    {
+      "case_id": "C01",
+      "required_ids": [
+        "C01-E1",
+        "C01-E2",
+        "C01-E3",
+        "C01-E4",
+        "C01-E5"
+      ],
+      "selected_ids": [
+        "C01-E1",
+        "C01-E2",
+        "C01-E3",
+        "C01-E4",
+        "C01-E5"
+      ],
+      "missing_required_ids": [],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 1.0,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2771,
+          "words": 393
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1667,
+          "words": 246
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 2773,
+          "words": 313
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 662,
+        "words": 94
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 2111
+    },
+    {
+      "case_id": "C02",
+      "required_ids": [
+        "C02-E1",
+        "C02-E2",
+        "C02-E3",
+        "C02-E4",
+        "C02-E5"
+      ],
+      "selected_ids": [
+        "C02-E1",
+        "C02-E2",
+        "C02-E3",
+        "C02-E4",
+        "C02-E5"
+      ],
+      "missing_required_ids": [],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 1.0,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2861,
+          "words": 398
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1757,
+          "words": 251
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 2928,
+          "words": 322
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 708,
+        "words": 106
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 2220
+    },
+    {
+      "case_id": "C03",
+      "required_ids": [
+        "C03-E1",
+        "C03-E2",
+        "C03-E3",
+        "C03-E4",
+        "C03-E5"
+      ],
+      "selected_ids": [
+        "C03-E1",
+        "C03-E2",
+        "C03-E3",
+        "C03-E4"
+      ],
+      "missing_required_ids": [
+        "C03-E5"
+      ],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 0.8,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2708,
+          "words": 399
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1604,
+          "words": 252
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 2374,
+          "words": 279
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 431,
+        "words": 73
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 1943
+    },
+    {
+      "case_id": "C04",
+      "required_ids": [
+        "C04-E1",
+        "C04-E2",
+        "C04-E3",
+        "C04-E4",
+        "C04-E5"
+      ],
+      "selected_ids": [
+        "C04-E1",
+        "C04-E2",
+        "C04-E3",
+        "C04-E4",
+        "C04-E5"
+      ],
+      "missing_required_ids": [],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 1.0,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2884,
+          "words": 416
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1780,
+          "words": 269
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 2878,
+          "words": 335
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 761,
+        "words": 115
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 2117
+    },
+    {
+      "case_id": "C05",
+      "required_ids": [
+        "C05-E1",
+        "C05-E2",
+        "C05-E3",
+        "C05-E4",
+        "C05-E5"
+      ],
+      "selected_ids": [
+        "C05-E1",
+        "C05-E2",
+        "C05-E3",
+        "C05-E4",
+        "C05-E5"
+      ],
+      "missing_required_ids": [],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 1.0,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2716,
+          "words": 394
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1612,
+          "words": 247
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 2721,
+          "words": 313
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 655,
+        "words": 102
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 2066
+    },
+    {
+      "case_id": "C06",
+      "required_ids": [
+        "C06-E1",
+        "C06-E2",
+        "C06-E3",
+        "C06-E4",
+        "C06-E5"
+      ],
+      "selected_ids": [
+        "C06-E1",
+        "C06-E2",
+        "C06-E3",
+        "C06-E4",
+        "C06-E5"
+      ],
+      "missing_required_ids": [],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 1.0,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2654,
+          "words": 370
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1550,
+          "words": 223
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 2661,
+          "words": 291
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 667,
+        "words": 96
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 1994
+    },
+    {
+      "case_id": "C07",
+      "required_ids": [
+        "C07-E1",
+        "C07-E2",
+        "C07-E3",
+        "C07-E4",
+        "C07-E5"
+      ],
+      "selected_ids": [
+        "C07-E1",
+        "C07-E2",
+        "C07-E3",
+        "C07-E4",
+        "C07-E5"
+      ],
+      "missing_required_ids": [],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 1.0,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2898,
+          "words": 395
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1794,
+          "words": 248
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 2945,
+          "words": 316
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 761,
+        "words": 104
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 2184
+    },
+    {
+      "case_id": "C08",
+      "required_ids": [
+        "C08-E1",
+        "C08-E2",
+        "C08-E3",
+        "C08-E4",
+        "C08-E5"
+      ],
+      "selected_ids": [
+        "C08-E1",
+        "C08-E2",
+        "C08-E3",
+        "C08-E4",
+        "C08-E5"
+      ],
+      "missing_required_ids": [],
+      "unexpected_selected_ids": [],
+      "required_evidence_recall": 1.0,
+      "sizes": {
+        "full_dossier.md": {
+          "utf8_bytes": 2945,
+          "words": 407
+        },
+        "concise_brief.md": {
+          "utf8_bytes": 1841,
+          "words": 260
+        },
+        "dependency_packet.json": {
+          "utf8_bytes": 3008,
+          "words": 329
+        }
+      },
+      "selected_source_text_only": {
+        "utf8_bytes": 799,
+        "words": 109
+      },
+      "packet_bytes_minus_selected_source_text_bytes": 2209
+    }
+  ],
+  "totals": {
+    "full_dossier.md": {
+      "utf8_bytes": 22437,
+      "words": 3172
+    },
+    "concise_brief.md": {
+      "utf8_bytes": 13605,
+      "words": 1996
+    },
+    "dependency_packet.json": {
+      "utf8_bytes": 22288,
+      "words": 2498
+    }
+  },
+  "transitions": [
+    {
+      "name": "stale_revision",
+      "expected": "reject_stale",
+      "actual": "reject_stale",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "open",
+        "sibling": "active",
+        "successor": null,
+        "results": {},
+        "history": [],
+        "effects": 0,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "duplicate_result",
+      "expected": "one_effect",
+      "actual": "one_effect",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "completed",
+        "sibling": "active",
+        "successor": "ready",
+        "results": {
+          "r1": {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        },
+        "history": [
+          {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        ],
+        "effects": 1,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "cross_scope_reference",
+      "expected": "reject_scope",
+      "actual": "reject_scope",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "open",
+        "sibling": "active",
+        "successor": null,
+        "results": {},
+        "history": [],
+        "effects": 0,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "unknown_branch",
+      "expected": "held_no_successor",
+      "actual": "held_no_successor",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "held",
+        "sibling": "active",
+        "successor": null,
+        "results": {
+          "r1": {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "unknown",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        },
+        "history": [
+          {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "unknown",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        ],
+        "effects": 1,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "stop",
+      "expected": "stopped_no_successor",
+      "actual": "stopped_no_successor",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "stopped",
+        "sibling": "active",
+        "successor": null,
+        "results": {
+          "r1": {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "stop",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        },
+        "history": [
+          {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "stop",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        ],
+        "effects": 1,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "later_contradiction",
+      "expected": "review_required_successor_blocked",
+      "actual": "review_required_successor_blocked",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "review_required",
+        "sibling": "active",
+        "successor": "blocked_review",
+        "results": {
+          "r1": {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        },
+        "history": [
+          {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          },
+          {
+            "event": "contradictory_evidence",
+            "id": "E-later",
+            "contradicts": "E-current"
+          }
+        ],
+        "effects": 1,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "unrelated_active_sibling",
+      "expected": "sibling_active",
+      "actual": "sibling_active",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "stopped",
+        "sibling": "active",
+        "successor": null,
+        "results": {
+          "r1": {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "stop",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        },
+        "history": [
+          {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "stop",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        ],
+        "effects": 1,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "scope_revision",
+      "expected": "old_result_historical_new_scope_unresolved",
+      "actual": "old_result_historical_new_scope_unresolved",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 4,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "unresolved_new_scope",
+        "sibling": "active",
+        "successor": "blocked_scope_change",
+        "results": {
+          "r1": {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        },
+        "history": [
+          {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        ],
+        "effects": 1,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "unsupported_continue",
+      "expected": "reject_insufficient",
+      "actual": "reject_insufficient",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "open",
+        "sibling": "active",
+        "successor": null,
+        "results": {},
+        "history": [],
+        "effects": 0,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    },
+    {
+      "name": "duplicate_key_changed_payload",
+      "expected": "reject_key_conflict",
+      "actual": "reject_key_conflict",
+      "passed": true,
+      "final_state": {
+        "scope_revision": 3,
+        "question_revision": 2,
+        "scope": "venture-A",
+        "current": "completed",
+        "sibling": "active",
+        "successor": "ready",
+        "results": {
+          "r1": {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        },
+        "history": [
+          {
+            "scope_revision": 3,
+            "question_revision": 2,
+            "branch": "continue",
+            "evidence": [
+              "E-current"
+            ]
+          }
+        ],
+        "effects": 1,
+        "evidence": {
+          "E-current": "venture-A",
+          "E-private": "venture-B"
+        }
+      }
+    }
+  ],
+  "evaluator_input_sizes": {
+    "files": {
+      "utf8_bytes": 7633,
+      "words": 1122
+    },
+    "packet": {
+      "utf8_bytes": 12223,
+      "words": 1403
+    }
+  }
+}

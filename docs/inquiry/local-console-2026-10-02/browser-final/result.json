@@ -1,0 +1,42 @@
+[
+  {
+    "check": "create and derive via browser forms",
+    "database": "disposable",
+    "parent": "f57ea554-cb99-430e-a5cf-12d98ec6256a",
+    "child_url": "http://127.0.0.1:8766/ideas/278b49df-8dac-4125-b89a-1c72801ea0d2"
+  },
+  {
+    "check": "promote and request agent via browser",
+    "outcome": "explicitly blocked; disposable handoff file"
+  },
+  {
+    "page": "/",
+    "status": 200,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/ideas/D001",
+    "status": 200,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/sources?q=Distill",
+    "status": 200,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/ventures/v-route-repair/records/decisions",
+    "status": 200,
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/requests",
+    "status": 200,
+    "horizontal_overflow": false
+  },
+  {
+    "check": "restart retained portfolio",
+    "ideas": 250,
+    "mobile_horizontal_overflow": false
+  }
+]

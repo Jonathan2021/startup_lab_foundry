@@ -1,0 +1,399 @@
+[
+  {
+    "method": "create_venture",
+    "input": {
+      "venture_id": "v-route-repair",
+      "name": "Scenic ride repair: N008 discovery",
+      "objective": "Determine whether configured incumbents can shorten a specified ride within a time budget while preserving valued sections; separate GPX path changes from ETA-model changes. No product build or payment authorization.",
+      "stage": "discovery"
+    },
+    "output": {
+      "id": "v-route-repair",
+      "name": "Scenic ride repair: N008 discovery",
+      "objective": "Determine whether configured incumbents can shorten a specified ride within a time budget while preserving valued sections; separate GPX path changes from ETA-model changes. No product build or payment authorization.",
+      "stage": "discovery",
+      "created_at": "2026-10-02T15:20:13.502785Z"
+    }
+  },
+  {
+    "method": "add_assumption",
+    "input": {
+      "assumption_id": "route-pain",
+      "venture_id": "v-route-repair",
+      "statement": "At least one rider experienced material manual-planning friction balancing scenic roads, time and GPX/ETA transfer.",
+      "kind": "desirability",
+      "importance": 5,
+      "uncertainty": 5
+    },
+    "output": {
+      "id": "route-pain",
+      "statement": "At least one rider experienced material manual-planning friction balancing scenic roads, time and GPX/ETA transfer.",
+      "kind": "desirability",
+      "status": "open",
+      "importance": 5,
+      "uncertainty": 5,
+      "created_at": "2026-10-02T15:20:13.656572Z"
+    }
+  },
+  {
+    "method": "add_assumption",
+    "input": {
+      "assumption_id": "route-gap",
+      "venture_id": "v-route-repair",
+      "statement": "Configured existing planners leave a reproducible unmet time-budget repair task for this rider.",
+      "kind": "usability",
+      "importance": 5,
+      "uncertainty": 5
+    },
+    "output": {
+      "id": "route-gap",
+      "statement": "Configured existing planners leave a reproducible unmet time-budget repair task for this rider.",
+      "kind": "usability",
+      "status": "open",
+      "importance": 5,
+      "uncertainty": 5,
+      "created_at": "2026-10-02T15:20:13.901037Z"
+    }
+  },
+  {
+    "method": "add_assumption",
+    "input": {
+      "assumption_id": "route-viability",
+      "venture_id": "v-route-repair",
+      "statement": "The residual job supports repeated adoption and payment sufficient for a sustainable new product.",
+      "kind": "viability",
+      "importance": 5,
+      "uncertainty": 5
+    },
+    "output": {
+      "id": "route-viability",
+      "statement": "The residual job supports repeated adoption and payment sufficient for a sustainable new product.",
+      "kind": "viability",
+      "status": "open",
+      "importance": 5,
+      "uncertainty": 5,
+      "created_at": "2026-10-02T15:20:14.092968Z"
+    }
+  },
+  {
+    "method": "add_work_item",
+    "input": {
+      "work_item_id": "route-first-comparison",
+      "venture_id": "v-route-repair",
+      "title": "Record rider problem, incumbent counterevidence and bounded T7/T8 results",
+      "kind": "investigation",
+      "decision_id": null,
+      "acceptance_criteria": "Preserve reported facts, observed capabilities, failed/access-limited attempts, and remaining uncertainty without claiming a historical trip reproduction.",
+      "method": null,
+      "success_criteria": null,
+      "failure_criteria": null,
+      "assumption_ids": [
+        "route-pain",
+        "route-gap",
+        "route-viability"
+      ]
+    },
+    "output": {
+      "id": "route-first-comparison",
+      "decision_id": null,
+      "title": "Record rider problem, incumbent counterevidence and bounded T7/T8 results",
+      "kind": "investigation",
+      "status": "todo",
+      "acceptance_criteria": "Preserve reported facts, observed capabilities, failed/access-limited attempts, and remaining uncertainty without claiming a historical trip reproduction.",
+      "created_at": "2026-10-02T15:20:14.233397Z"
+    }
+  },
+  {
+    "method": "add_evidence",
+    "input": {
+      "evidence_id": "route-user-report",
+      "venture_id": "v-route-repair",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "observation",
+      "confidence": "medium",
+      "summary": "First-party user reports manual Liberty Rider/Street View shaping for Belgium–France rides, a recalled 4.5h→6h estimate after GPX transfer to 68°, and rain-driven fallback to Waze without highways. No original GPX, settings, measured time or buyer commitment supplied. Self-report, not reproduced causal diagnosis."
+    },
+    "output": {
+      "id": "route-user-report",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "observation",
+      "summary": "First-party user reports manual Liberty Rider/Street View shaping for Belgium–France rides, a recalled 4.5h→6h estimate after GPX transfer to 68°, and rain-driven fallback to Waze without highways. No original GPX, settings, measured time or buyer commitment supplied. Self-report, not reproduced causal diagnosis.",
+      "confidence": "medium",
+      "captured_at": "2026-10-02T15:20:14.396281Z"
+    }
+  },
+  {
+    "method": "add_evidence",
+    "input": {
+      "evidence_id": "route-public-reports",
+      "venture_id": "v-route-repair",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "market_research",
+      "confidence": "low",
+      "summary": "Selected independent Motardie and Kurviger discussions contain related time/waypoint friction; replies also describe successful tools and workarounds. Sources rider-time-report and route-pain in sources.json. No prevalence estimate."
+    },
+    "output": {
+      "id": "route-public-reports",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "market_research",
+      "summary": "Selected independent Motardie and Kurviger discussions contain related time/waypoint friction; replies also describe successful tools and workarounds. Sources rider-time-report and route-pain in sources.json. No prevalence estimate.",
+      "confidence": "low",
+      "captured_at": "2026-10-02T15:20:14.576951Z"
+    }
+  },
+  {
+    "method": "add_evidence",
+    "input": {
+      "evidence_id": "route-t7-result",
+      "venture_id": "v-route-repair",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "experiment_result",
+      "confidence": "medium",
+      "summary": "Anonymous Liberty Rider town-centre Nébouzat→Thauvenay test displayed 2h34/255km with motorways and 3h05/225km without. Export menu only; no cross-app transfer. 68°/MyRoute-app access gates and Kurviger loading prevented fuller comparisons. Harness errors retained. See trials/rider-result.json. Retrospective DB recording; protocol was frozen in files."
+    },
+    "output": {
+      "id": "route-t7-result",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "experiment_result",
+      "summary": "Anonymous Liberty Rider town-centre Nébouzat→Thauvenay test displayed 2h34/255km with motorways and 3h05/225km without. Export menu only; no cross-app transfer. 68°/MyRoute-app access gates and Kurviger loading prevented fuller comparisons. Harness errors retained. See trials/rider-result.json. Retrospective DB recording; protocol was frozen in files.",
+      "confidence": "medium",
+      "captured_at": "2026-10-02T15:20:14.782265Z"
+    }
+  },
+  {
+    "method": "add_evidence",
+    "input": {
+      "evidence_id": "route-t8-counterevidence",
+      "venture_id": "v-route-repair",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "document",
+      "confidence": "medium",
+      "summary": "Byway advertises time-budget repair, Throttle curviness/arrival controls and MotoRidez time-budget loops/retained legs. T8 observed private-beta/access/coverage limits; no planning submissions. Existing Kurviger segment controls and MyRoute-app timing/engine comparison further weaken broad novelty. Claims are not performance validation."
+    },
+    "output": {
+      "id": "route-t8-counterevidence",
+      "origin_work_item_id": "route-first-comparison",
+      "kind": "document",
+      "summary": "Byway advertises time-budget repair, Throttle curviness/arrival controls and MotoRidez time-budget loops/retained legs. T8 observed private-beta/access/coverage limits; no planning submissions. Existing Kurviger segment controls and MyRoute-app timing/engine comparison further weaken broad novelty. Claims are not performance validation.",
+      "confidence": "medium",
+      "captured_at": "2026-10-02T15:20:14.934906Z"
+    }
+  },
+  {
+    "method": "assess_assumption",
+    "input": {
+      "assessment_id": "route-assess-pain",
+      "assumption_id": "route-pain",
+      "evidence_ids": [
+        "route-user-report",
+        "route-public-reports"
+      ],
+      "outcome": "supported",
+      "confidence": "medium",
+      "rationale": "Supported only as an experienced/reported problem for at least one rider; no frequency, accuracy or payment inference."
+    },
+    "output": {
+      "id": "route-assess-pain",
+      "assumption_id": "route-pain",
+      "evidence_ids": [
+        "route-public-reports",
+        "route-user-report"
+      ],
+      "outcome": "supported",
+      "confidence": "medium",
+      "rationale": "Supported only as an experienced/reported problem for at least one rider; no frequency, accuracy or payment inference.",
+      "assessed_at": "2026-10-02T15:20:15.103508Z"
+    }
+  },
+  {
+    "method": "assess_assumption",
+    "input": {
+      "assessment_id": "route-assess-gap",
+      "assumption_id": "route-gap",
+      "evidence_ids": [
+        "route-t7-result",
+        "route-t8-counterevidence"
+      ],
+      "outcome": "inconclusive",
+      "confidence": "low",
+      "rationale": "Basic alternatives work and close competing claims exist. Selected sections/deadline and original transfer inputs are absent, so the exact configured-incumbent comparison is incomplete."
+    },
+    "output": {
+      "id": "route-assess-gap",
+      "assumption_id": "route-gap",
+      "evidence_ids": [
+        "route-t7-result",
+        "route-t8-counterevidence"
+      ],
+      "outcome": "inconclusive",
+      "confidence": "low",
+      "rationale": "Basic alternatives work and close competing claims exist. Selected sections/deadline and original transfer inputs are absent, so the exact configured-incumbent comparison is incomplete.",
+      "assessed_at": "2026-10-02T15:20:15.240183Z"
+    }
+  },
+  {
+    "method": "assess_assumption",
+    "input": {
+      "assessment_id": "route-assess-viability",
+      "assumption_id": "route-viability",
+      "evidence_ids": [
+        "route-user-report",
+        "route-t8-counterevidence"
+      ],
+      "outcome": "inconclusive",
+      "confidence": "low",
+      "rationale": "No repeating adopter, payment, distribution or cost evidence. First-party interest and vendor feature claims cannot qualify a commercial build."
+    },
+    "output": {
+      "id": "route-assess-viability",
+      "assumption_id": "route-viability",
+      "evidence_ids": [
+        "route-t8-counterevidence",
+        "route-user-report"
+      ],
+      "outcome": "inconclusive",
+      "confidence": "low",
+      "rationale": "No repeating adopter, payment, distribution or cost evidence. First-party interest and vendor feature claims cannot qualify a commercial build.",
+      "assessed_at": "2026-10-02T15:20:15.399810Z"
+    }
+  },
+  {
+    "method": "add_decision",
+    "input": {
+      "decision_id": "route-narrow",
+      "venture_id": "v-route-repair",
+      "kind": "narrow",
+      "summary": "Continue only a specified ride-repair comparison; defer general planner/product build",
+      "rationale": "Next comparison needs a route, budget, valued legs and permitted inputs. Prefer an incumbent or a small integration if it suffices. Keep geometry and ETA questions separate. This accepted local allocation grants no spending, publication or navigation reliability approval.",
+      "assessment_ids": [
+        "route-assess-pain",
+        "route-assess-gap",
+        "route-assess-viability"
+      ]
+    },
+    "output": {
+      "id": "route-narrow",
+      "assessment_ids": [
+        "route-assess-gap",
+        "route-assess-pain",
+        "route-assess-viability"
+      ],
+      "kind": "narrow",
+      "status": "accepted",
+      "summary": "Continue only a specified ride-repair comparison; defer general planner/product build",
+      "rationale": "Next comparison needs a route, budget, valued legs and permitted inputs. Prefer an incumbent or a small integration if it suffices. Keep geometry and ETA questions separate. This accepted local allocation grants no spending, publication or navigation reliability approval.",
+      "decided_at": "2026-10-02T15:20:15.537648Z"
+    }
+  },
+  {
+    "method": "add_artifact",
+    "input": {
+      "artifact_id": "route-artifact-1",
+      "venture_id": "v-route-repair",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "N008-CASE.md SHA256 2f15e27d44064b4ad15a13d19f87a3cb2ece9fb2bc7b33d588cc7bb7c93ecace",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/N008-CASE.md"
+    },
+    "output": {
+      "id": "route-artifact-1",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "N008-CASE.md SHA256 2f15e27d44064b4ad15a13d19f87a3cb2ece9fb2bc7b33d588cc7bb7c93ecace",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/N008-CASE.md",
+      "created_at": "2026-10-02T15:20:15.796562Z"
+    }
+  },
+  {
+    "method": "add_artifact",
+    "input": {
+      "artifact_id": "route-artifact-2",
+      "venture_id": "v-route-repair",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/RIDER_CASE_PROTOCOL.md SHA256 182533ca8412aa33ca311d2a4b8479d76ac8de6e584a71c2149b9a5b1fcb4e66",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/RIDER_CASE_PROTOCOL.md"
+    },
+    "output": {
+      "id": "route-artifact-2",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/RIDER_CASE_PROTOCOL.md SHA256 182533ca8412aa33ca311d2a4b8479d76ac8de6e584a71c2149b9a5b1fcb4e66",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/RIDER_CASE_PROTOCOL.md",
+      "created_at": "2026-10-02T15:20:15.901162Z"
+    }
+  },
+  {
+    "method": "add_artifact",
+    "input": {
+      "artifact_id": "route-artifact-3",
+      "venture_id": "v-route-repair",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/rider-result.json SHA256 9e6180ec92eee8d591c73a910185d797262fdf8ad49462d0b363ea63301dfc65",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/rider-result.json"
+    },
+    "output": {
+      "id": "route-artifact-3",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/rider-result.json SHA256 9e6180ec92eee8d591c73a910185d797262fdf8ad49462d0b363ea63301dfc65",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/rider-result.json",
+      "created_at": "2026-10-02T15:20:16.027556Z"
+    }
+  },
+  {
+    "method": "add_artifact",
+    "input": {
+      "artifact_id": "route-artifact-4",
+      "venture_id": "v-route-repair",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/NEW_ROUTING_COMPARATORS_PROTOCOL.md SHA256 63db02e00b1f2a26161bfd8143814f278e32727787917507e7caf28de5ff3fd1",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/NEW_ROUTING_COMPARATORS_PROTOCOL.md"
+    },
+    "output": {
+      "id": "route-artifact-4",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/NEW_ROUTING_COMPARATORS_PROTOCOL.md SHA256 63db02e00b1f2a26161bfd8143814f278e32727787917507e7caf28de5ff3fd1",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/NEW_ROUTING_COMPARATORS_PROTOCOL.md",
+      "created_at": "2026-10-02T15:20:16.178533Z"
+    }
+  },
+  {
+    "method": "add_artifact",
+    "input": {
+      "artifact_id": "route-artifact-5",
+      "venture_id": "v-route-repair",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/new-routing-result.json SHA256 4bf2e878ba8d1a9840d6d0ea5770aba8bfb478c36d022d714b8fcc32de06f79a",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/new-routing-result.json"
+    },
+    "output": {
+      "id": "route-artifact-5",
+      "work_item_id": "route-first-comparison",
+      "kind": "report",
+      "name": "trials/new-routing-result.json SHA256 4bf2e878ba8d1a9840d6d0ea5770aba8bfb478c36d022d714b8fcc32de06f79a",
+      "location": "/home/jonathan/startup_lab/foundry/docs/inquiry/portfolio-campaign/trials/new-routing-result.json",
+      "created_at": "2026-10-02T15:20:16.327202Z"
+    }
+  },
+  {
+    "method": "set_work_item_status",
+    "input": {
+      "work_item_id": "route-first-comparison",
+      "status": "done"
+    },
+    "output": {
+      "id": "route-first-comparison",
+      "decision_id": null,
+      "title": "Record rider problem, incumbent counterevidence and bounded T7/T8 results",
+      "kind": "investigation",
+      "status": "done",
+      "acceptance_criteria": "Preserve reported facts, observed capabilities, failed/access-limited attempts, and remaining uncertainty without claiming a historical trip reproduction.",
+      "created_at": "2026-10-02T15:20:14.233397Z"
+    }
+  }
+]

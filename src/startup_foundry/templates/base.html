@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="foundry-token" content="{{ token }}"><title>{% block title %}Foundry{% endblock %}</title>
+<link rel="stylesheet" href="/static/console.css"><link rel="stylesheet" href="/static/decisions.css"><script src="/static/console.js" defer></script><script src="/static/decisions.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><aside class="sidebar">
+<a class="brand" href="/"><span class="brand-icon">F</span><span>Foundry<small>Venture workspace</small></span></a>
+<nav aria-label="Main navigation">
+{% for key, url, label, mark in [('overview','/','Today','◫'),('ventures','/ventures','Ventures','▣'),('ideas','/ideas','Ideas','◇'),('requests','/requests','Inbox','○'),('proposals','/proposals','Proposals','◇'),('steps','/steps','Work history','↗'),('sources','/sources','Sources','≡'),('outreach','/outreach','Outreach drafts','✉'),('help','/help','Help','?')] %}
+<a href="{{ url }}" class="{{ 'active' if nav == key else '' }}"><span aria-hidden="true">{{ mark }}</span>{{ label }}</a>
+{% endfor %}</nav><div class="sidebar-note"><span class="dot"></span> Local workspace<p>Evidence, decisions and next steps.<br>Saved on this computer.</p></div></aside>
+<div class="shell"><header class="topbar"><span>Keep the next decision clear</span><a class="button small" href="/new">+ Add idea or venture</a></header>
+<main id="main">{% block content %}{% endblock %}</main><footer>Foundry · Local venture workspace</footer></div></body></html>

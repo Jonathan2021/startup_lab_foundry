@@ -1,0 +1,6 @@
+{% macro scope_table(rows) %}<div class="table-wrap"><table><thead><tr><th>Capability</th><th>Treatment</th><th>Source</th><th>Reason</th></tr></thead><tbody>{% for s in rows %}<tr><td>{{ s.capability }}</td><td>{{ s.treatment|pretty }}</td><td>{{ s.provenance }}</td><td>{{ s.reason }}</td></tr>{% endfor %}</tbody></table></div>{% endmacro %}
+{% for d in r.differences %}<h4>{{ d.field|pretty }}</h4>
+{% if d.field=='scope' %}<p>Previous</p>{{ scope_table(d.previous) }}<p>Current</p>{{ scope_table(d.current) }}
+{% elif d.field=='work_treatments' %}{% for label,rows in [('Previous',d.previous),('Current',d.current)] %}<p>{{ label }}</p><ul>{% for w in rows %}<li>{{ w.work_id }} · {{ w.treatment|pretty }} · {{ w.reason }}</li>{% else %}<li>No changed work treatments</li>{% endfor %}</ul>{% endfor %}
+{% elif d.field=='alternatives' %}{% for label,rows in [('Previous',d.previous),('Current',d.current)] %}<p>{{ label }}</p><ul>{% for text in rows %}<li>{{ text }}</li>{% endfor %}</ul>{% endfor %}
+{% else %}<p>Previous: {{ d.previous }}</p><p>Current: {{ d.current }}</p>{% endif %}{% endfor %}

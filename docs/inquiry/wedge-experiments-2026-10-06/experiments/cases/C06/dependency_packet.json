@@ -1,0 +1,78 @@
+{
+  "format": "synthetic-context-packet-v1",
+  "case_id": "C06",
+  "synthetic": true,
+  "scope": "Shared shift planner for small independent bakeries.",
+  "scope_revision": 3,
+  "question_revision": 2,
+  "goal": "Find a defensible scheduling job that small bakery owners will adopt.",
+  "current_question": "Does the proposed basic weekly roster deserve an implementation sprint?",
+  "branch_criteria": {
+    "continue": "Observed important workflow failure remains despite verified incumbent capabilities.",
+    "narrow": "A specific verified constraint affects a reachable subgroup.",
+    "stop": "Proposed functionality duplicates used incumbents and no unmet job is evidenced.",
+    "unknown": "Feature listings or reported pain cannot establish actual workflow fit."
+  },
+  "allowed_scopes": [
+    "C06"
+  ],
+  "selection": {
+    "method": "explicit_bidirectional_relationship_closure",
+    "seed_ids": [
+      "C06-E1",
+      "C06-E3",
+      "C06-E4",
+      "C06-E5"
+    ],
+    "source_record_count": 11,
+    "selected_record_count": 5,
+    "limitation": "Unlinked relevant facts may be omitted. Selection is not semantic retrieval."
+  },
+  "records": [
+    {
+      "id": "C06-E1",
+      "revision": 1,
+      "scope": "C06",
+      "kind": "synthetic_source",
+      "text": "A brainstorm claimed existing shift planners lacked offline access and shift swaps; the author had not checked competitors.",
+      "links": []
+    },
+    {
+      "id": "C06-E2",
+      "revision": 1,
+      "scope": "C06",
+      "kind": "synthetic_source",
+      "text": "A desk review finds two invented incumbent products documenting offline rosters and shift swaps; one is already used by the two owners interviewed.",
+      "links": [
+        {
+          "relation": "contradicts",
+          "target": "C06-E1"
+        }
+      ]
+    },
+    {
+      "id": "C06-E3",
+      "revision": 1,
+      "scope": "C06",
+      "kind": "synthetic_source",
+      "text": "Both owners say their current tool handles weekly scheduling adequately. One dislikes account setup but could not name a recent failed roster task.",
+      "links": []
+    },
+    {
+      "id": "C06-E4",
+      "revision": 1,
+      "scope": "C06",
+      "kind": "synthetic_source",
+      "text": "No customer switching commitment, unsupported compliance need or distribution advantage has been established.",
+      "links": []
+    },
+    {
+      "id": "C06-E5",
+      "revision": 1,
+      "scope": "C06",
+      "kind": "synthetic_source",
+      "text": "One vendor's feature page is marketing evidence, not a hands-on functional test. No implementation or subscription purchase was approved.",
+      "links": []
+    }
+  ]
+}

@@ -215,6 +215,9 @@ tempCodeRunnerFile.py
 # Local GitHub Actions emulation output
 act_output*
 
+# Project-local Hindsight database/volume (configured only when the pilot starts)
+/.hindsight-data/
+
 # PyPI configuration file
 .pypirc
 
@@ -228,3 +231,6 @@ __marimo__/
 
 # ACT github CI / CD secrets
 .secrets
+
+# Local inquiry trials and database sidecars
+/.local/

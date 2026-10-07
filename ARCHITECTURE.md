@@ -1,5 +1,11 @@
 # Foundry architecture
 
+Current investment scope (2026-10-02): [internal use under evaluation](docs/CURRENT_DIRECTION.md),
+per [ADR-0008](../docs/adr/0008-evidence-first-venture-realignment.md). The schema
+and possible adapters below describe domain boundaries, not a mandate to implement
+them. Agent EvalOps is a deferred case study; its prepared run/link commands remain
+incomplete. Current operations support the full portfolio and retained venture workspaces.
+
 ## Product boundary
 
 The Foundry owns durable venture execution memory: idea portfolios, ventures,
@@ -17,7 +23,7 @@ The product is a modular monolith with dependencies pointing toward application
 behavior and the relational model:
 
 ```text
-CLI / future API / agent adapters
+CLI / local HTTP console / agent adapters
               │
               ▼
        application use cases ───────► approval and action policies
@@ -49,6 +55,34 @@ evidence boundary,
 image-delivery boundary, and [the DBML schema](docs/foundry-domain.dbml) for a
 copy/paste visualization.
 
+## Lifecycle coordination
+
+Accepted [ADR-0014](docs/adr/0014-decision-map-and-agent-context.md) adds one
+`DecisionMap` head per workspace. Immutable `Artifact` revisions store typed
+maps, pinned context, executor results and acceptance receipts. Existing
+assumptions/evidence/decisions/work remain canonical; map nodes reference them.
+
+`decision_contracts.py` owns external schemas; `decision_maps.py` owns revision,
+reference and execution-impact rules; `agent_handoffs.py` owns context selection
+and atomic result acceptance. `decision_commands.py` and `decision_console.py`
+are CLI/HTTP adapters over the same services. `snapshots.py` centralizes
+immutable receipts and transactional conflict handling. Today is a bounded
+read projection across venture state. It creates no second task store.
+
+Capturing an event records evidence without guessing its implications. Preparing
+context closes explicit relationships, includes contradictory assessments,
+discloses unselected evidence and rejects an insufficient byte budget. Results
+separate findings from proposed work/venture effects. Acceptance rechecks scope,
+map, review, work, evidence, human input and proposed-reference versions in one
+transaction. Retries return the same receipt. A rollback-only preview uses the
+same acceptance path. Changed dependencies require review before execution;
+existing claim/start paths enforce that rule. Already running external agents
+remain beyond the application's process control.
+
+This is a single-operator local boundary. Source text is untrusted data, actions
+are explicit, and no result authorizes remote send/spend/deploy operations.
+There is no provider dependency in the lifecycle services.
+
 ## Domain map
 
 `Workspace` is a shared context for three different subjects: `Idea`, `Venture`,
@@ -62,12 +96,13 @@ without pretending they are the same entity.
 | Venture learning | Assumption, Experiment, Evidence, AssumptionAssessment | Separate a belief, its test, observations, and interpretation |
 | Commitment and work | Decision, WorkItem, Artifact | Explain why work exists and retain its version-addressable output |
 | Foundry discovery | FrictionOccurrence, CapabilityCandidate, CapabilityUse | Generalize only after repeated friction and real venture pilots |
-| Agent execution | AgentDefinition, AgentVersion, AgentRun | Attribute runs to prompt/tool/policy/code/provider configuration |
+| Bounded step execution | StepRun, WorkItem | Retain the input snapshot, runner/version, idempotency key and terminal outcome |
+| Agent execution (largely deferred) | AgentDefinition, AgentVersion, AgentRun | Attribute runs to prompt/tool/policy/code/provider configuration |
 | Controlled effects | ExternalAction, ApprovalRequest, ActionAttempt, AuditEvent | Freeze intent, require human control, and retain outcome/actor history |
 
 The schema is intentionally comprehensive enough to avoid redefining identities
-and history later. It is not a mandate to expose generic CRUD for all 43 tables.
-Each vertical slice implements only the smallest current venture capability.
+and history later. It is not a mandate to expose generic CRUD for all 44 tables.
+Each capability must support a current venture task or demonstrated recurring friction.
 
 ## Core flows
 
@@ -147,7 +182,39 @@ and inspect an Agent EvalOps-shaped venture workspace. Slice 002 changed its
 local packaging/deployment environment, not this application scope. Slice 003
 adds verification evidence only. Slice 004 may publish a container package
 after exact human approval but does not deploy or operate the application.
-Portfolio importing, automated scoring, agent orchestration, capability
-promotion, approvals, and external adapters remain unimplemented until a named
-product or learning slice needs them. No current product code sends messages,
+The later product-first request adds CSV intake, idea derivation/promotion,
+list/read operations and a loopback console. Automated scoring, agent orchestration,
+capability promotion, approvals and external adapters remain deferred. No current product code sends messages,
 provisions infrastructure, or spends money.
+
+
+## Current local operation
+
+[ADR-0009](docs/adr/0009-local-console-and-executable-steps.md) adds a stable XDG
+SQLite location and safe online backup. Original trial databases remain unchanged.
+`PortfolioService` uses existing Idea/Revision/Relation/Source records; source
+summaries retain their claim, limits, check date and digest. Identical checked
+claims can be linked to several ideas; changed claims remain separate records.
+This is provenance reuse, not an automatic crawler or freshness guarantee.
+
+The FastAPI/Jinja console and CLI share application services. The console binds
+loopback, checks Host/Origin and a local mutation token, escapes evidence text and
+ships its own static assets. It is single-user local tooling; remote deployment
+requires an explicit authentication/access design.
+
+`StepService` snapshots bounded context and creates a WorkItem plus StepRun before
+execution. A request key prevents duplicate submission for the same subject/kind.
+Readiness and research briefs are deterministic. `AgentRunner` is an optional
+Python protocol; absent adapters produce blocked editable handoffs. No subprocess,
+provider default, model training or external action is hidden in that boundary.
+A synchronous adapter must provide its own time/resource limits; long-running
+work requires a durable worker before deployment. Interrupted runs stay visible
+until explicit recovery; recovery never replaces an existing terminal outcome.
+
+October 4 operation adds `scoring.py` (immutable methods and judgments), `reviews.py`
+(append-only coordination), `views.py` (shared SQL filtering/sorting/pagination),
+`projects.py` (reference-only checkpoints) and `outreach.py` (manual drafts/outcomes).
+Provider/model/action interfaces remain independent; none imports learning code.
+[ADR-0010](docs/adr/0010-portfolio-reviews-and-draft-history.md) records the one new
+review table and existing Artifact/AuditEvent history reuse. Schema migrations never
+import campaign data. Intake/backfills are explicit idempotent operator operations.

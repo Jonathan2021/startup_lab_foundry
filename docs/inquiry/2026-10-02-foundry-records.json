@@ -1,0 +1,1263 @@
+{
+  "id": "FOUNDRY-OPS-20261002-001:r1",
+  "attribution": "agent-operated; no learner acceptance or market validation",
+  "database": "foundry/.local/portfolio-realignment.local.db",
+  "commands": [
+    {
+      "args": [
+        "venture",
+        "create",
+        "--id",
+        "v-evalops",
+        "--name",
+        "Agent EvalOps case study",
+        "--objective",
+        "Retain a stop-or-pivot case; do not build an overlapping evaluation platform without a demonstrated gap",
+        "--stage",
+        "paused"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 36.765,
+      "output": {
+        "created_at": "2026-10-02T13:05:28.547997Z",
+        "id": "v-evalops",
+        "name": "Agent EvalOps case study",
+        "objective": "Retain a stop-or-pivot case; do not build an overlapping evaluation platform without a demonstrated gap",
+        "stage": "paused"
+      }
+    },
+    {
+      "args": [
+        "venture",
+        "create",
+        "--id",
+        "v-foundry",
+        "--name",
+        "Foundry internal utility",
+        "--objective",
+        "Test whether existing structured evidence and decision records justify their maintenance overhead",
+        "--stage",
+        "discovery"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.76,
+      "output": {
+        "created_at": "2026-10-02T13:05:29.478393Z",
+        "id": "v-foundry",
+        "name": "Foundry internal utility",
+        "objective": "Test whether existing structured evidence and decision records justify their maintenance overhead",
+        "stage": "discovery"
+      }
+    },
+    {
+      "args": [
+        "venture",
+        "create",
+        "--id",
+        "v-g002",
+        "--name",
+        "G002 research handoff",
+        "--objective",
+        "Compare source-backed recovery of research decisions with ordinary files and existing tools before building",
+        "--stage",
+        "discovery"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.726,
+      "output": {
+        "created_at": "2026-10-02T13:05:30.228695Z",
+        "id": "v-g002",
+        "name": "G002 research handoff",
+        "objective": "Compare source-backed recovery of research decisions with ordinary files and existing tools before building",
+        "stage": "discovery"
+      }
+    },
+    {
+      "args": [
+        "assumption",
+        "add",
+        "--id",
+        "a-evalops",
+        "--venture-id",
+        "v-evalops",
+        "--statement",
+        "The generic trace-feedback-regression loop offers enough differentiation to justify standalone development now",
+        "--kind",
+        "viability",
+        "--importance",
+        "5",
+        "--uncertainty",
+        "5"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.774,
+      "output": {
+        "created_at": "2026-10-02T13:05:30.963747Z",
+        "id": "a-evalops",
+        "importance": 5,
+        "kind": "viability",
+        "statement": "The generic trace-feedback-regression loop offers enough differentiation to justify standalone development now",
+        "status": "open",
+        "uncertainty": 5
+      }
+    },
+    {
+      "args": [
+        "assumption",
+        "add",
+        "--id",
+        "a-foundry",
+        "--venture-id",
+        "v-foundry",
+        "--statement",
+        "Foundry offers enough benefit beyond ordinary files and current tools to justify broader platform development now",
+        "--kind",
+        "viability",
+        "--importance",
+        "5",
+        "--uncertainty",
+        "5"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.76,
+      "output": {
+        "created_at": "2026-10-02T13:05:31.722475Z",
+        "id": "a-foundry",
+        "importance": 5,
+        "kind": "viability",
+        "statement": "Foundry offers enough benefit beyond ordinary files and current tools to justify broader platform development now",
+        "status": "open",
+        "uncertainty": 5
+      }
+    },
+    {
+      "args": [
+        "assumption",
+        "add",
+        "--id",
+        "a-g002",
+        "--venture-id",
+        "v-g002",
+        "--statement",
+        "Source-backed decision recovery from existing research records saves recurring work after capture and maintenance costs",
+        "--kind",
+        "usability",
+        "--importance",
+        "5",
+        "--uncertainty",
+        "5"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.735,
+      "output": {
+        "created_at": "2026-10-02T13:05:32.523826Z",
+        "id": "a-g002",
+        "importance": 5,
+        "kind": "usability",
+        "statement": "Source-backed decision recovery from existing research records saves recurring work after capture and maintenance costs",
+        "status": "open",
+        "uncertainty": 5
+      }
+    },
+    {
+      "args": [
+        "work-item",
+        "add",
+        "--id",
+        "w-evalops-research",
+        "--venture-id",
+        "v-evalops",
+        "--title",
+        "Document incumbent overlap and current investment decision",
+        "--kind",
+        "investigation",
+        "--acceptance-criteria",
+        "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.693,
+      "output": {
+        "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+        "created_at": "2026-10-02T13:05:33.225893Z",
+        "decision_id": null,
+        "id": "w-evalops-research",
+        "kind": "investigation",
+        "status": "todo",
+        "title": "Document incumbent overlap and current investment decision"
+      }
+    },
+    {
+      "args": [
+        "work-item",
+        "set-status",
+        "--id",
+        "w-evalops-research",
+        "--status",
+        "in_progress"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.761,
+      "output": {
+        "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+        "created_at": "2026-10-02T13:05:33.225893Z",
+        "decision_id": null,
+        "id": "w-evalops-research",
+        "kind": "investigation",
+        "status": "in_progress",
+        "title": "Document incumbent overlap and current investment decision"
+      }
+    },
+    {
+      "args": [
+        "work-item",
+        "add",
+        "--id",
+        "w-foundry-research",
+        "--venture-id",
+        "v-foundry",
+        "--title",
+        "Document incumbent overlap and current investment decision",
+        "--kind",
+        "investigation",
+        "--acceptance-criteria",
+        "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.79,
+      "output": {
+        "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+        "created_at": "2026-10-02T13:05:34.693781Z",
+        "decision_id": null,
+        "id": "w-foundry-research",
+        "kind": "investigation",
+        "status": "todo",
+        "title": "Document incumbent overlap and current investment decision"
+      }
+    },
+    {
+      "args": [
+        "work-item",
+        "set-status",
+        "--id",
+        "w-foundry-research",
+        "--status",
+        "in_progress"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.689,
+      "output": {
+        "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+        "created_at": "2026-10-02T13:05:34.693781Z",
+        "decision_id": null,
+        "id": "w-foundry-research",
+        "kind": "investigation",
+        "status": "in_progress",
+        "title": "Document incumbent overlap and current investment decision"
+      }
+    },
+    {
+      "args": [
+        "evidence",
+        "add",
+        "--id",
+        "e-evalops-docs",
+        "--venture-id",
+        "v-evalops",
+        "--origin-work-item-id",
+        "w-evalops-research",
+        "--kind",
+        "market_research",
+        "--confidence",
+        "high",
+        "--summary",
+        "Official MLflow documentation describes native feedback, review and regression-to-CI workflows. This supports feature overlap only, not universal adequacy. Sources S1-S4 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://mlflow.org/docs/latest/genai/eval-monitor/regression-testing/"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.72,
+      "output": {
+        "captured_at": "2026-10-02T13:05:36.184408Z",
+        "confidence": "high",
+        "id": "e-evalops-docs",
+        "kind": "market_research",
+        "origin_work_item_id": "w-evalops-research",
+        "summary": "Official MLflow documentation describes native feedback, review and regression-to-CI workflows. This supports feature overlap only, not universal adequacy. Sources S1-S4 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://mlflow.org/docs/latest/genai/eval-monitor/regression-testing/"
+      }
+    },
+    {
+      "args": [
+        "evidence",
+        "add",
+        "--id",
+        "e-foundry-docs",
+        "--venture-id",
+        "v-foundry",
+        "--origin-work-item-id",
+        "w-foundry-research",
+        "--kind",
+        "market_research",
+        "--confidence",
+        "medium",
+        "--summary",
+        "Buildpad and DimeADozen advertise idea research, guidance and validation reporting. Differentiation and willingness to pay for this Foundry remain untested. Sources S5-S6 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://buildpad.io/"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.72,
+      "output": {
+        "captured_at": "2026-10-02T13:05:36.887503Z",
+        "confidence": "medium",
+        "id": "e-foundry-docs",
+        "kind": "market_research",
+        "origin_work_item_id": "w-foundry-research",
+        "summary": "Buildpad and DimeADozen advertise idea research, guidance and validation reporting. Differentiation and willingness to pay for this Foundry remain untested. Sources S5-S6 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://buildpad.io/"
+      }
+    },
+    {
+      "args": [
+        "evidence",
+        "add",
+        "--id",
+        "e-g002-inputs",
+        "--venture-id",
+        "v-g002",
+        "--kind",
+        "document",
+        "--confidence",
+        "medium",
+        "--summary",
+        "Workbook G002 Ideas row 2 proposes R&D Decision Memory. Existing Foundry records provide permitted first-party inputs. Two projects share one owner, not independent customers. Portfolio SHA256 ebc5028a27aaed5c574da0355a1a7f1dc361c35493106b77d013b645ba7339e4. Timing, recurrence and net benefit not yet measured."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.709,
+      "output": {
+        "captured_at": "2026-10-02T13:05:37.610856Z",
+        "confidence": "medium",
+        "id": "e-g002-inputs",
+        "kind": "document",
+        "origin_work_item_id": null,
+        "summary": "Workbook G002 Ideas row 2 proposes R&D Decision Memory. Existing Foundry records provide permitted first-party inputs. Two projects share one owner, not independent customers. Portfolio SHA256 ebc5028a27aaed5c574da0355a1a7f1dc361c35493106b77d013b645ba7339e4. Timing, recurrence and net benefit not yet measured."
+      }
+    },
+    {
+      "args": [
+        "evidence",
+        "add",
+        "--id",
+        "e-g002-alternatives",
+        "--venture-id",
+        "v-g002",
+        "--kind",
+        "market_research",
+        "--confidence",
+        "medium",
+        "--summary",
+        "Ordinary files, current Hindsight documentation and W&B Reports overlap with memory/evidence recovery. Selected Hindsight v0.10.2 is uninstalled and untested locally. Current vendor capabilities do not prove pinned features. Sources S7-S8 in portfolio assessment."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.733,
+      "output": {
+        "captured_at": "2026-10-02T13:05:38.323435Z",
+        "confidence": "medium",
+        "id": "e-g002-alternatives",
+        "kind": "market_research",
+        "origin_work_item_id": null,
+        "summary": "Ordinary files, current Hindsight documentation and W&B Reports overlap with memory/evidence recovery. Selected Hindsight v0.10.2 is uninstalled and untested locally. Current vendor capabilities do not prove pinned features. Sources S7-S8 in portfolio assessment."
+      }
+    },
+    {
+      "args": [
+        "assumption",
+        "assess",
+        "--id",
+        "as-evalops",
+        "--assumption-id",
+        "a-evalops",
+        "--evidence-id",
+        "e-evalops-docs",
+        "--outcome",
+        "weakened",
+        "--confidence",
+        "high",
+        "--rationale",
+        "Overlap and absent customer evidence defeat the current investment rationale, without proving all narrow gaps are solved"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.712,
+      "output": {
+        "assessed_at": "2026-10-02T13:05:39.057255Z",
+        "assumption_id": "a-evalops",
+        "confidence": "high",
+        "evidence_ids": [
+          "e-evalops-docs"
+        ],
+        "id": "as-evalops",
+        "outcome": "weakened",
+        "rationale": "Overlap and absent customer evidence defeat the current investment rationale, without proving all narrow gaps are solved"
+      }
+    },
+    {
+      "args": [
+        "assumption",
+        "assess",
+        "--id",
+        "as-foundry",
+        "--assumption-id",
+        "a-foundry",
+        "--evidence-id",
+        "e-foundry-docs",
+        "--outcome",
+        "weakened",
+        "--confidence",
+        "medium",
+        "--rationale",
+        "Broad competing propositions and no measured advantage justify internal use only while utility is tested"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.698,
+      "output": {
+        "assessed_at": "2026-10-02T13:05:39.769214Z",
+        "assumption_id": "a-foundry",
+        "confidence": "medium",
+        "evidence_ids": [
+          "e-foundry-docs"
+        ],
+        "id": "as-foundry",
+        "outcome": "weakened",
+        "rationale": "Broad competing propositions and no measured advantage justify internal use only while utility is tested"
+      }
+    },
+    {
+      "args": [
+        "assumption",
+        "assess",
+        "--id",
+        "as-g002",
+        "--assumption-id",
+        "a-g002",
+        "--evidence-id",
+        "e-g002-inputs",
+        "--evidence-id",
+        "e-g002-alternatives",
+        "--outcome",
+        "inconclusive",
+        "--confidence",
+        "low",
+        "--rationale",
+        "Accessible first-party records justify a bounded trial, not a superiority or demand claim"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.673,
+      "output": {
+        "assessed_at": "2026-10-02T13:05:40.448551Z",
+        "assumption_id": "a-g002",
+        "confidence": "low",
+        "evidence_ids": [
+          "e-g002-alternatives",
+          "e-g002-inputs"
+        ],
+        "id": "as-g002",
+        "outcome": "inconclusive",
+        "rationale": "Accessible first-party records justify a bounded trial, not a superiority or demand claim"
+      }
+    },
+    {
+      "args": [
+        "decision",
+        "add",
+        "--id",
+        "d-evalops",
+        "--venture-id",
+        "v-evalops",
+        "--kind",
+        "defer",
+        "--summary",
+        "Defer standalone Agent EvalOps; retain the unfinished scaffold as a Foundry case study",
+        "--rationale",
+        "User authorized 2026-10-02 realignment; generic overlap and absent access do not justify the original implementation slice. ADR-0008.",
+        "--assessment-id",
+        "as-evalops"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.733,
+      "output": {
+        "assessment_ids": [
+          "as-evalops"
+        ],
+        "decided_at": "2026-10-02T13:05:41.138348Z",
+        "id": "d-evalops",
+        "kind": "defer",
+        "rationale": "User authorized 2026-10-02 realignment; generic overlap and absent access do not justify the original implementation slice. ADR-0008.",
+        "status": "accepted",
+        "summary": "Defer standalone Agent EvalOps; retain the unfinished scaffold as a Foundry case study"
+      }
+    },
+    {
+      "args": [
+        "decision",
+        "add",
+        "--id",
+        "d-foundry",
+        "--venture-id",
+        "v-foundry",
+        "--kind",
+        "narrow",
+        "--summary",
+        "Keep existing Foundry as an internal tool under evaluation",
+        "--rationale",
+        "Use completed CLI now; measure benefit versus files before expanding platform behavior. ADR-0008.",
+        "--assessment-id",
+        "as-foundry"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.739,
+      "output": {
+        "assessment_ids": [
+          "as-foundry"
+        ],
+        "decided_at": "2026-10-02T13:05:41.866120Z",
+        "id": "d-foundry",
+        "kind": "narrow",
+        "rationale": "Use completed CLI now; measure benefit versus files before expanding platform behavior. ADR-0008.",
+        "status": "accepted",
+        "summary": "Keep existing Foundry as an internal tool under evaluation"
+      }
+    },
+    {
+      "args": [
+        "decision",
+        "add",
+        "--id",
+        "d-g002",
+        "--venture-id",
+        "v-g002",
+        "--kind",
+        "continue",
+        "--summary",
+        "Allow only the bounded G002 source-backed research-handoff trial",
+        "--rationale",
+        "Eight learner hours, source-fidelity and overhead gates; optional existing-tool comparison; no substantial product build authorized. Protocol FOUNDRY-INQ-20261002-003:r1.",
+        "--assessment-id",
+        "as-g002"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.735,
+      "output": {
+        "assessment_ids": [
+          "as-g002"
+        ],
+        "decided_at": "2026-10-02T13:05:42.608651Z",
+        "id": "d-g002",
+        "kind": "continue",
+        "rationale": "Eight learner hours, source-fidelity and overhead gates; optional existing-tool comparison; no substantial product build authorized. Protocol FOUNDRY-INQ-20261002-003:r1.",
+        "status": "accepted",
+        "summary": "Allow only the bounded G002 source-backed research-handoff trial"
+      }
+    },
+    {
+      "args": [
+        "work-item",
+        "add",
+        "--id",
+        "w-g002-trial",
+        "--venture-id",
+        "v-g002",
+        "--decision-id",
+        "d-g002",
+        "--title",
+        "Compare source-backed handoff workflows before implementation",
+        "--kind",
+        "experiment",
+        "--assumption-id",
+        "a-g002",
+        "--acceptance-criteria",
+        "At most eight learner hours; raw results, failure analysis and explicit verdict; no demand claim",
+        "--method",
+        "Freeze source manifest and ten questions. Compare ordinary workflow and Foundry with equivalent inputs/model access; optional local pinned Hindsight. Record order bias, setup and update cost.",
+        "--success-criteria",
+        "At least 9/10 source-faithful answers, zero unsupported consequential claims, at least 30 percent median recovery-time improvement and positive net recurring savings; pragmatic trial thresholds.",
+        "--failure-criteria",
+        "Fidelity failure, adequate incumbent baseline, no recurring pain, overhead erases benefit, or timebox reached inconclusively: adopt/defer/stop; no platform build."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.793,
+      "output": {
+        "acceptance_criteria": "At most eight learner hours; raw results, failure analysis and explicit verdict; no demand claim",
+        "created_at": "2026-10-02T13:05:43.341856Z",
+        "decision_id": "d-g002",
+        "id": "w-g002-trial",
+        "kind": "experiment",
+        "status": "todo",
+        "title": "Compare source-backed handoff workflows before implementation"
+      }
+    },
+    {
+      "args": [
+        "work-item",
+        "set-status",
+        "--id",
+        "w-evalops-research",
+        "--status",
+        "done"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.731,
+      "output": {
+        "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+        "created_at": "2026-10-02T13:05:33.225893Z",
+        "decision_id": null,
+        "id": "w-evalops-research",
+        "kind": "investigation",
+        "status": "done",
+        "title": "Document incumbent overlap and current investment decision"
+      }
+    },
+    {
+      "args": [
+        "work-item",
+        "set-status",
+        "--id",
+        "w-foundry-research",
+        "--status",
+        "done"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.719,
+      "output": {
+        "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+        "created_at": "2026-10-02T13:05:34.693781Z",
+        "decision_id": null,
+        "id": "w-foundry-research",
+        "kind": "investigation",
+        "status": "done",
+        "title": "Document incumbent overlap and current investment decision"
+      }
+    },
+    {
+      "args": [
+        "artifact",
+        "add",
+        "--id",
+        "art-evalops",
+        "--venture-id",
+        "v-evalops",
+        "--work-item-id",
+        "w-evalops-research",
+        "--kind",
+        "document",
+        "--name",
+        "Assessment and decision sources",
+        "--location",
+        "docs/inquiry/2026-10-02-portfolio-realignment.md"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.749,
+      "output": {
+        "created_at": "2026-10-02T13:05:45.601422Z",
+        "id": "art-evalops",
+        "kind": "document",
+        "location": "docs/inquiry/2026-10-02-portfolio-realignment.md",
+        "name": "Assessment and decision sources",
+        "work_item_id": "w-evalops-research"
+      }
+    },
+    {
+      "args": [
+        "artifact",
+        "add",
+        "--id",
+        "art-foundry",
+        "--venture-id",
+        "v-foundry",
+        "--work-item-id",
+        "w-foundry-research",
+        "--kind",
+        "document",
+        "--name",
+        "Assessment and decision sources",
+        "--location",
+        "docs/inquiry/2026-10-02-portfolio-realignment.md"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.783,
+      "output": {
+        "created_at": "2026-10-02T13:05:46.334685Z",
+        "id": "art-foundry",
+        "kind": "document",
+        "location": "docs/inquiry/2026-10-02-portfolio-realignment.md",
+        "name": "Assessment and decision sources",
+        "work_item_id": "w-foundry-research"
+      }
+    },
+    {
+      "args": [
+        "artifact",
+        "add",
+        "--id",
+        "art-g002",
+        "--venture-id",
+        "v-g002",
+        "--work-item-id",
+        "w-g002-trial",
+        "--kind",
+        "document",
+        "--name",
+        "Frozen G002 trial protocol",
+        "--location",
+        "docs/ventures/research-handoff.md"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.748,
+      "output": {
+        "created_at": "2026-10-02T13:05:47.135750Z",
+        "id": "art-g002",
+        "kind": "document",
+        "location": "docs/ventures/research-handoff.md",
+        "name": "Frozen G002 trial protocol",
+        "work_item_id": "w-g002-trial"
+      }
+    },
+    {
+      "args": [
+        "venture",
+        "show",
+        "--id",
+        "v-evalops"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.612,
+      "output": {
+        "artifacts": [
+          {
+            "created_at": "2026-10-02T13:05:45.601422Z",
+            "id": "art-evalops",
+            "kind": "document",
+            "location": "docs/inquiry/2026-10-02-portfolio-realignment.md",
+            "name": "Assessment and decision sources",
+            "work_item_id": "w-evalops-research"
+          }
+        ],
+        "assumption_assessments": [
+          {
+            "assessed_at": "2026-10-02T13:05:39.057255Z",
+            "assumption_id": "a-evalops",
+            "confidence": "high",
+            "evidence_ids": [
+              "e-evalops-docs"
+            ],
+            "id": "as-evalops",
+            "outcome": "weakened",
+            "rationale": "Overlap and absent customer evidence defeat the current investment rationale, without proving all narrow gaps are solved"
+          }
+        ],
+        "assumptions": [
+          {
+            "created_at": "2026-10-02T13:05:30.963747Z",
+            "id": "a-evalops",
+            "importance": 5,
+            "kind": "viability",
+            "statement": "The generic trace-feedback-regression loop offers enough differentiation to justify standalone development now",
+            "status": "open",
+            "uncertainty": 5
+          }
+        ],
+        "decisions": [
+          {
+            "assessment_ids": [
+              "as-evalops"
+            ],
+            "decided_at": "2026-10-02T13:05:41.138348Z",
+            "id": "d-evalops",
+            "kind": "defer",
+            "rationale": "User authorized 2026-10-02 realignment; generic overlap and absent access do not justify the original implementation slice. ADR-0008.",
+            "status": "accepted",
+            "summary": "Defer standalone Agent EvalOps; retain the unfinished scaffold as a Foundry case study"
+          }
+        ],
+        "evidence": [
+          {
+            "captured_at": "2026-10-02T13:05:36.184408Z",
+            "confidence": "high",
+            "id": "e-evalops-docs",
+            "kind": "market_research",
+            "origin_work_item_id": "w-evalops-research",
+            "summary": "Official MLflow documentation describes native feedback, review and regression-to-CI workflows. This supports feature overlap only, not universal adequacy. Sources S1-S4 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://mlflow.org/docs/latest/genai/eval-monitor/regression-testing/"
+          }
+        ],
+        "venture": {
+          "created_at": "2026-10-02T13:05:28.547997Z",
+          "id": "v-evalops",
+          "name": "Agent EvalOps case study",
+          "objective": "Retain a stop-or-pivot case; do not build an overlapping evaluation platform without a demonstrated gap",
+          "stage": "paused"
+        },
+        "work_items": [
+          {
+            "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+            "created_at": "2026-10-02T13:05:33.225893Z",
+            "decision_id": null,
+            "id": "w-evalops-research",
+            "kind": "investigation",
+            "status": "done",
+            "title": "Document incumbent overlap and current investment decision"
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        "venture",
+        "show",
+        "--id",
+        "v-foundry"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.607,
+      "output": {
+        "artifacts": [
+          {
+            "created_at": "2026-10-02T13:05:46.334685Z",
+            "id": "art-foundry",
+            "kind": "document",
+            "location": "docs/inquiry/2026-10-02-portfolio-realignment.md",
+            "name": "Assessment and decision sources",
+            "work_item_id": "w-foundry-research"
+          }
+        ],
+        "assumption_assessments": [
+          {
+            "assessed_at": "2026-10-02T13:05:39.769214Z",
+            "assumption_id": "a-foundry",
+            "confidence": "medium",
+            "evidence_ids": [
+              "e-foundry-docs"
+            ],
+            "id": "as-foundry",
+            "outcome": "weakened",
+            "rationale": "Broad competing propositions and no measured advantage justify internal use only while utility is tested"
+          }
+        ],
+        "assumptions": [
+          {
+            "created_at": "2026-10-02T13:05:31.722475Z",
+            "id": "a-foundry",
+            "importance": 5,
+            "kind": "viability",
+            "statement": "Foundry offers enough benefit beyond ordinary files and current tools to justify broader platform development now",
+            "status": "open",
+            "uncertainty": 5
+          }
+        ],
+        "decisions": [
+          {
+            "assessment_ids": [
+              "as-foundry"
+            ],
+            "decided_at": "2026-10-02T13:05:41.866120Z",
+            "id": "d-foundry",
+            "kind": "narrow",
+            "rationale": "Use completed CLI now; measure benefit versus files before expanding platform behavior. ADR-0008.",
+            "status": "accepted",
+            "summary": "Keep existing Foundry as an internal tool under evaluation"
+          }
+        ],
+        "evidence": [
+          {
+            "captured_at": "2026-10-02T13:05:36.887503Z",
+            "confidence": "medium",
+            "id": "e-foundry-docs",
+            "kind": "market_research",
+            "origin_work_item_id": "w-foundry-research",
+            "summary": "Buildpad and DimeADozen advertise idea research, guidance and validation reporting. Differentiation and willingness to pay for this Foundry remain untested. Sources S5-S6 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://buildpad.io/"
+          }
+        ],
+        "venture": {
+          "created_at": "2026-10-02T13:05:29.478393Z",
+          "id": "v-foundry",
+          "name": "Foundry internal utility",
+          "objective": "Test whether existing structured evidence and decision records justify their maintenance overhead",
+          "stage": "discovery"
+        },
+        "work_items": [
+          {
+            "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+            "created_at": "2026-10-02T13:05:34.693781Z",
+            "decision_id": null,
+            "id": "w-foundry-research",
+            "kind": "investigation",
+            "status": "done",
+            "title": "Document incumbent overlap and current investment decision"
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        "venture",
+        "show",
+        "--id",
+        "v-g002"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.61,
+      "output": {
+        "artifacts": [
+          {
+            "created_at": "2026-10-02T13:05:47.135750Z",
+            "id": "art-g002",
+            "kind": "document",
+            "location": "docs/ventures/research-handoff.md",
+            "name": "Frozen G002 trial protocol",
+            "work_item_id": "w-g002-trial"
+          }
+        ],
+        "assumption_assessments": [
+          {
+            "assessed_at": "2026-10-02T13:05:40.448551Z",
+            "assumption_id": "a-g002",
+            "confidence": "low",
+            "evidence_ids": [
+              "e-g002-alternatives",
+              "e-g002-inputs"
+            ],
+            "id": "as-g002",
+            "outcome": "inconclusive",
+            "rationale": "Accessible first-party records justify a bounded trial, not a superiority or demand claim"
+          }
+        ],
+        "assumptions": [
+          {
+            "created_at": "2026-10-02T13:05:32.523826Z",
+            "id": "a-g002",
+            "importance": 5,
+            "kind": "usability",
+            "statement": "Source-backed decision recovery from existing research records saves recurring work after capture and maintenance costs",
+            "status": "open",
+            "uncertainty": 5
+          }
+        ],
+        "decisions": [
+          {
+            "assessment_ids": [
+              "as-g002"
+            ],
+            "decided_at": "2026-10-02T13:05:42.608651Z",
+            "id": "d-g002",
+            "kind": "continue",
+            "rationale": "Eight learner hours, source-fidelity and overhead gates; optional existing-tool comparison; no substantial product build authorized. Protocol FOUNDRY-INQ-20261002-003:r1.",
+            "status": "accepted",
+            "summary": "Allow only the bounded G002 source-backed research-handoff trial"
+          }
+        ],
+        "evidence": [
+          {
+            "captured_at": "2026-10-02T13:05:37.610856Z",
+            "confidence": "medium",
+            "id": "e-g002-inputs",
+            "kind": "document",
+            "origin_work_item_id": null,
+            "summary": "Workbook G002 Ideas row 2 proposes R&D Decision Memory. Existing Foundry records provide permitted first-party inputs. Two projects share one owner, not independent customers. Portfolio SHA256 ebc5028a27aaed5c574da0355a1a7f1dc361c35493106b77d013b645ba7339e4. Timing, recurrence and net benefit not yet measured."
+          },
+          {
+            "captured_at": "2026-10-02T13:05:38.323435Z",
+            "confidence": "medium",
+            "id": "e-g002-alternatives",
+            "kind": "market_research",
+            "origin_work_item_id": null,
+            "summary": "Ordinary files, current Hindsight documentation and W&B Reports overlap with memory/evidence recovery. Selected Hindsight v0.10.2 is uninstalled and untested locally. Current vendor capabilities do not prove pinned features. Sources S7-S8 in portfolio assessment."
+          }
+        ],
+        "venture": {
+          "created_at": "2026-10-02T13:05:30.228695Z",
+          "id": "v-g002",
+          "name": "G002 research handoff",
+          "objective": "Compare source-backed recovery of research decisions with ordinary files and existing tools before building",
+          "stage": "discovery"
+        },
+        "work_items": [
+          {
+            "acceptance_criteria": "At most eight learner hours; raw results, failure analysis and explicit verdict; no demand claim",
+            "created_at": "2026-10-02T13:05:43.341856Z",
+            "decision_id": "d-g002",
+            "id": "w-g002-trial",
+            "kind": "experiment",
+            "status": "todo",
+            "title": "Compare source-backed handoff workflows before implementation"
+          }
+        ]
+      }
+    }
+  ],
+  "snapshots": {
+    "evalops": {
+      "artifacts": [
+        {
+          "created_at": "2026-10-02T13:05:45.601422Z",
+          "id": "art-evalops",
+          "kind": "document",
+          "location": "docs/inquiry/2026-10-02-portfolio-realignment.md",
+          "name": "Assessment and decision sources",
+          "work_item_id": "w-evalops-research"
+        }
+      ],
+      "assumption_assessments": [
+        {
+          "assessed_at": "2026-10-02T13:05:39.057255Z",
+          "assumption_id": "a-evalops",
+          "confidence": "high",
+          "evidence_ids": [
+            "e-evalops-docs"
+          ],
+          "id": "as-evalops",
+          "outcome": "weakened",
+          "rationale": "Overlap and absent customer evidence defeat the current investment rationale, without proving all narrow gaps are solved"
+        }
+      ],
+      "assumptions": [
+        {
+          "created_at": "2026-10-02T13:05:30.963747Z",
+          "id": "a-evalops",
+          "importance": 5,
+          "kind": "viability",
+          "statement": "The generic trace-feedback-regression loop offers enough differentiation to justify standalone development now",
+          "status": "open",
+          "uncertainty": 5
+        }
+      ],
+      "decisions": [
+        {
+          "assessment_ids": [
+            "as-evalops"
+          ],
+          "decided_at": "2026-10-02T13:05:41.138348Z",
+          "id": "d-evalops",
+          "kind": "defer",
+          "rationale": "User authorized 2026-10-02 realignment; generic overlap and absent access do not justify the original implementation slice. ADR-0008.",
+          "status": "accepted",
+          "summary": "Defer standalone Agent EvalOps; retain the unfinished scaffold as a Foundry case study"
+        }
+      ],
+      "evidence": [
+        {
+          "captured_at": "2026-10-02T13:05:36.184408Z",
+          "confidence": "high",
+          "id": "e-evalops-docs",
+          "kind": "market_research",
+          "origin_work_item_id": "w-evalops-research",
+          "summary": "Official MLflow documentation describes native feedback, review and regression-to-CI workflows. This supports feature overlap only, not universal adequacy. Sources S1-S4 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://mlflow.org/docs/latest/genai/eval-monitor/regression-testing/"
+        }
+      ],
+      "venture": {
+        "created_at": "2026-10-02T13:05:28.547997Z",
+        "id": "v-evalops",
+        "name": "Agent EvalOps case study",
+        "objective": "Retain a stop-or-pivot case; do not build an overlapping evaluation platform without a demonstrated gap",
+        "stage": "paused"
+      },
+      "work_items": [
+        {
+          "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+          "created_at": "2026-10-02T13:05:33.225893Z",
+          "decision_id": null,
+          "id": "w-evalops-research",
+          "kind": "investigation",
+          "status": "done",
+          "title": "Document incumbent overlap and current investment decision"
+        }
+      ]
+    },
+    "foundry": {
+      "artifacts": [
+        {
+          "created_at": "2026-10-02T13:05:46.334685Z",
+          "id": "art-foundry",
+          "kind": "document",
+          "location": "docs/inquiry/2026-10-02-portfolio-realignment.md",
+          "name": "Assessment and decision sources",
+          "work_item_id": "w-foundry-research"
+        }
+      ],
+      "assumption_assessments": [
+        {
+          "assessed_at": "2026-10-02T13:05:39.769214Z",
+          "assumption_id": "a-foundry",
+          "confidence": "medium",
+          "evidence_ids": [
+            "e-foundry-docs"
+          ],
+          "id": "as-foundry",
+          "outcome": "weakened",
+          "rationale": "Broad competing propositions and no measured advantage justify internal use only while utility is tested"
+        }
+      ],
+      "assumptions": [
+        {
+          "created_at": "2026-10-02T13:05:31.722475Z",
+          "id": "a-foundry",
+          "importance": 5,
+          "kind": "viability",
+          "statement": "Foundry offers enough benefit beyond ordinary files and current tools to justify broader platform development now",
+          "status": "open",
+          "uncertainty": 5
+        }
+      ],
+      "decisions": [
+        {
+          "assessment_ids": [
+            "as-foundry"
+          ],
+          "decided_at": "2026-10-02T13:05:41.866120Z",
+          "id": "d-foundry",
+          "kind": "narrow",
+          "rationale": "Use completed CLI now; measure benefit versus files before expanding platform behavior. ADR-0008.",
+          "status": "accepted",
+          "summary": "Keep existing Foundry as an internal tool under evaluation"
+        }
+      ],
+      "evidence": [
+        {
+          "captured_at": "2026-10-02T13:05:36.887503Z",
+          "confidence": "medium",
+          "id": "e-foundry-docs",
+          "kind": "market_research",
+          "origin_work_item_id": "w-foundry-research",
+          "summary": "Buildpad and DimeADozen advertise idea research, guidance and validation reporting. Differentiation and willingness to pay for this Foundry remain untested. Sources S5-S6 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://buildpad.io/"
+        }
+      ],
+      "venture": {
+        "created_at": "2026-10-02T13:05:29.478393Z",
+        "id": "v-foundry",
+        "name": "Foundry internal utility",
+        "objective": "Test whether existing structured evidence and decision records justify their maintenance overhead",
+        "stage": "discovery"
+      },
+      "work_items": [
+        {
+          "acceptance_criteria": "Source-indexed assessment, explicit limits and a stop/narrow/defer decision; no demand claim",
+          "created_at": "2026-10-02T13:05:34.693781Z",
+          "decision_id": null,
+          "id": "w-foundry-research",
+          "kind": "investigation",
+          "status": "done",
+          "title": "Document incumbent overlap and current investment decision"
+        }
+      ]
+    },
+    "g002": {
+      "artifacts": [
+        {
+          "created_at": "2026-10-02T13:05:47.135750Z",
+          "id": "art-g002",
+          "kind": "document",
+          "location": "docs/ventures/research-handoff.md",
+          "name": "Frozen G002 trial protocol",
+          "work_item_id": "w-g002-trial"
+        }
+      ],
+      "assumption_assessments": [
+        {
+          "assessed_at": "2026-10-02T13:05:40.448551Z",
+          "assumption_id": "a-g002",
+          "confidence": "low",
+          "evidence_ids": [
+            "e-g002-alternatives",
+            "e-g002-inputs"
+          ],
+          "id": "as-g002",
+          "outcome": "inconclusive",
+          "rationale": "Accessible first-party records justify a bounded trial, not a superiority or demand claim"
+        }
+      ],
+      "assumptions": [
+        {
+          "created_at": "2026-10-02T13:05:32.523826Z",
+          "id": "a-g002",
+          "importance": 5,
+          "kind": "usability",
+          "statement": "Source-backed decision recovery from existing research records saves recurring work after capture and maintenance costs",
+          "status": "open",
+          "uncertainty": 5
+        }
+      ],
+      "decisions": [
+        {
+          "assessment_ids": [
+            "as-g002"
+          ],
+          "decided_at": "2026-10-02T13:05:42.608651Z",
+          "id": "d-g002",
+          "kind": "continue",
+          "rationale": "Eight learner hours, source-fidelity and overhead gates; optional existing-tool comparison; no substantial product build authorized. Protocol FOUNDRY-INQ-20261002-003:r1.",
+          "status": "accepted",
+          "summary": "Allow only the bounded G002 source-backed research-handoff trial"
+        }
+      ],
+      "evidence": [
+        {
+          "captured_at": "2026-10-02T13:05:37.610856Z",
+          "confidence": "medium",
+          "id": "e-g002-inputs",
+          "kind": "document",
+          "origin_work_item_id": null,
+          "summary": "Workbook G002 Ideas row 2 proposes R&D Decision Memory. Existing Foundry records provide permitted first-party inputs. Two projects share one owner, not independent customers. Portfolio SHA256 ebc5028a27aaed5c574da0355a1a7f1dc361c35493106b77d013b645ba7339e4. Timing, recurrence and net benefit not yet measured."
+        },
+        {
+          "captured_at": "2026-10-02T13:05:38.323435Z",
+          "confidence": "medium",
+          "id": "e-g002-alternatives",
+          "kind": "market_research",
+          "origin_work_item_id": null,
+          "summary": "Ordinary files, current Hindsight documentation and W&B Reports overlap with memory/evidence recovery. Selected Hindsight v0.10.2 is uninstalled and untested locally. Current vendor capabilities do not prove pinned features. Sources S7-S8 in portfolio assessment."
+        }
+      ],
+      "venture": {
+        "created_at": "2026-10-02T13:05:30.228695Z",
+        "id": "v-g002",
+        "name": "G002 research handoff",
+        "objective": "Compare source-backed recovery of research decisions with ordinary files and existing tools before building",
+        "stage": "discovery"
+      },
+      "work_items": [
+        {
+          "acceptance_criteria": "At most eight learner hours; raw results, failure analysis and explicit verdict; no demand claim",
+          "created_at": "2026-10-02T13:05:43.341856Z",
+          "decision_id": "d-g002",
+          "id": "w-g002-trial",
+          "kind": "experiment",
+          "status": "todo",
+          "title": "Compare source-backed handoff workflows before implementation"
+        }
+      ]
+    }
+  },
+  "source_manifest": [
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-portfolio-realignment-plan.md",
+      "sha256": "606230805bc78b649a836227235b547f16250045b557d1ba444b1cb914588379"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-portfolio-realignment.md",
+      "sha256": "c756329a001c5d940282c3587298c225c4df6121c6329890880049331c793717"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-portfolio-screen.md",
+      "sha256": "30fc4720ce751fdbc6798c5f2394db2a901fac6edf73c316848e1fff72a93915"
+    },
+    {
+      "path": "foundry/docs/ventures/research-handoff.md",
+      "sha256": "82a7abeb8f812226b0641eb80c45f5b4475bd8114c109a6ca32fea875f2b3482"
+    },
+    {
+      "path": "docs/adr/0008-evidence-first-venture-realignment.md",
+      "sha256": "562105c58b3b223ab76413ccbd36d62ebafe868bfec29570553fac16b9d8207e"
+    }
+  ],
+  "row_counts": {
+    "ventures": 3,
+    "assumptions": 3,
+    "evidence": 4,
+    "assumption_assessments": 3,
+    "decisions": 3,
+    "work_items": 3,
+    "artifacts": 3
+  },
+  "integrity_check": "ok"
+}

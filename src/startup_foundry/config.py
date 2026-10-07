@@ -5,10 +5,24 @@ from __future__ import annotations
 import os
 from collections.abc import Mapping
 from dataclasses import dataclass
+from pathlib import Path
 
 from startup_foundry.errors import ConfigurationError
 
-DEFAULT_DATABASE_URL = "sqlite:///foundry.local.db"
+
+def data_directory(environment: Mapping[str, str] | None = None) -> Path:
+    """Use one user-owned location, independent of the launch directory."""
+
+    values = os.environ if environment is None else environment
+    root = Path(values.get("XDG_DATA_HOME", str(Path.home() / ".local/share")))
+    if not root.is_absolute():
+        raise ConfigurationError("XDG_DATA_HOME must be an absolute path")
+    return root / "startup-foundry"
+
+
+DEFAULT_DATABASE_URL = (
+    f"sqlite:///{Path.home() / '.local/share/startup-foundry/foundry.local.db'}"
+)
 TRUE_VALUES = frozenset({"1", "true", "yes", "on"})
 FALSE_VALUES = frozenset({"0", "false", "no", "off"})
 
@@ -43,7 +57,10 @@ def load_settings(environment: Mapping[str, str] | None = None) -> Settings:
     """
 
     values = os.environ if environment is None else environment
-    database_url = values.get("FOUNDRY_DATABASE_URL", DEFAULT_DATABASE_URL).strip()
+    database_url = values.get("FOUNDRY_DATABASE_URL")
+    if database_url is None:
+        database_url = f"sqlite:///{data_directory(values) / 'foundry.local.db'}"
+    database_url = database_url.strip()
     if not database_url:
         raise ConfigurationError("FOUNDRY_DATABASE_URL cannot be blank")
 

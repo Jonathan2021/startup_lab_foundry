@@ -1,0 +1,15 @@
+{% macro scope_row(s) %}<fieldset data-scope-row><legend>Scope item</legend>
+<label>Capability<input name="scope_capability" value="{{ s.capability|default('') }}" required maxlength="2000"></label>
+<label>Treatment<select name="scope_treatment">{% for value in ['retained','combined','added','deferred','excluded'] %}<option value="{{ value }}" {{ 'selected' if s.treatment|default('retained')==value }}>{{ value|pretty }}</option>{% endfor %}</select></label>
+<label>Source / provenance<textarea name="scope_provenance" required>{{ s.provenance|default('') }}</textarea></label>
+<label>Reason<textarea name="scope_reason" required>{{ s.reason|default('') }}</textarea></label>
+<button type="button" data-remove-row>Remove scope item</button></fieldset>{% endmacro %}
+{% macro alternative_row(value) %}<fieldset data-alternative-row><legend>Alternative</legend><label>Option<textarea name="alternative" required>{{ value }}</textarea></label><button type="button" data-remove-row>Remove alternative</button></fieldset>{% endmacro %}
+<h3>Included and deferred scope</h3><div id="scope-rows">{% for s in draft.scope %}{{ scope_row(s) }}{% endfor %}</div>
+<template id="scope-row-template">{{ scope_row({}) }}</template><button type="button" data-add-row="scope-rows" data-row-template="scope-row-template">Add scope item</button>
+<h3>Alternatives</h3><div id="alternative-rows">{% for value in draft.alternatives %}{{ alternative_row(value) }}{% endfor %}</div>
+<template id="alternative-row-template">{{ alternative_row('') }}</template><button type="button" data-add-row="alternative-rows" data-row-template="alternative-row-template">Add alternative</button>
+<label>New venture's next work<input name="next_work_title" value="{{ draft.next_work_title }}" required maxlength="300"></label>
+<h3>Source work treatment</h3><p>Retain, supersede into the proposed next work, or cancel each eligible task. Claimed work can only be retained. Changes apply only on exact acceptance.</p>
+{% for w in proposal.work_options %}<fieldset><legend><a href="{{ w.url }}">{{ w.title }}</a> · {{ w.status|pretty }} · {{ w.owner or 'Unassigned' }}</legend>
+<input type="hidden" name="work_id" value="{{ w.id }}"><label>Treatment<select name="work_treatment">{% for value in ['retain','supersede','cancel'] if value=='retain' or w.status in ['todo','ready','blocked'] %}<option value="{{ value }}" {{ 'selected' if w.treatment==value }}>{{ value|pretty }}</option>{% endfor %}</select></label><label>Reason<input name="work_reason" value="{{ w.reason }}" required></label></fieldset>{% else %}<p>No eligible open source work. Existing records are preserved.</p>{% endfor %}

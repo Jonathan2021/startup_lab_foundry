@@ -1,3 +1,8 @@
+> Update 2026-10-02: the [portfolio reassessment](inquiry/2026-10-02-portfolio-realignment.md)
+> and [current direction](CURRENT_DIRECTION.md) govern investment. Competitor
+> existence, feature claims and funding do not independently validate demand
+> for our Foundry or prove its differentiation. Earlier comparisons follow.
+
 # Competitive landscape
 
 This document records time-sensitive market observations for the Agentic

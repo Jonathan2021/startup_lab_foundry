@@ -1,0 +1,65 @@
+{
+  "id": "PORTFOLIO-INTAKE-20261002-r1",
+  "source_count": 247,
+  "original_workbook_ideas": 238,
+  "new_bullets": 9,
+  "files": [
+    {
+      "path": "/home/jonathan/Downloads/startup_ideas_portfolio_v2(1).xlsx",
+      "sha256": "ebc5028a27aaed5c574da0355a1a7f1dc361c35493106b77d013b645ba7339e4"
+    },
+    {
+      "path": "/home/jonathan/Downloads/New ideas.txt",
+      "sha256": "7a4b2bd38105ce43bffd3b2321e96ab4b20b517c39ec31030990d81ddc911880"
+    }
+  ],
+  "relations": [
+    {
+      "ids": [
+        "N009",
+        "P140"
+      ],
+      "kind": "same core idea"
+    },
+    {
+      "ids": [
+        "G002",
+        "P088",
+        "P174"
+      ],
+      "kind": "overlapping research-memory jobs"
+    },
+    {
+      "ids": [
+        "G005",
+        "P106",
+        "N003"
+      ],
+      "kind": "overlapping portable evidence; interview outcomes differ from skill credentials"
+    },
+    {
+      "ids": [
+        "G007",
+        "P033",
+        "P041"
+      ],
+      "kind": "overlapping recency tracking"
+    },
+    {
+      "ids": [
+        "N001",
+        "G014",
+        "P007"
+      ],
+      "kind": "adjacent physical-work interfaces, not identical validation problems"
+    },
+    {
+      "ids": [
+        "G010",
+        "P128",
+        "P147"
+      ],
+      "kind": "overlapping manga/context translation"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+Scoring model and interpretation,,,,,,
+,,,,,,
+Positive factor,Weight,Meaning of 10/10,,Penalty factor,Weight,Meaning of 10/10
+Revenue potential,22%,Large credible revenue ceiling for a focused company,,Legal / ethical risk,-10%,"Core model is deceptive, harmful, illegal or highly regulated"
+Profitability ease,18%,Can reach positive unit economics with modest scale,,Capital intensity,-6%,"Requires substantial hardware, certification, inventory or operations"
+MVP speed,12%,Agent-assisted MVP can be credible very quickly,,Network dependency,-5%,Product has little value until many users/providers participate
+Founder fit,15%,Strong match with the user's ML/data/product skills and interests,,Competition,-4%,Many established products already offer the generic proposition
+Go-to-market ease,10%,Target users are reachable and value is demonstrable,,,,
+Moat / defensibility,8%,"Data, integration, workflow or network advantage compounds",,,,
+Problem intensity,10%,"Pain is urgent, frequent and costly",,,,
+Retention potential,5%,The product naturally becomes recurring infrastructure,,,,
+,,,,,,
+,,,,,,
+Grade,Priority score,Interpretation,Default action,,,
+A,70–100,Best current risk-adjusted opportunities,Build a narrowly scoped MVP,,,
+B,58–69,"Promising, but a key market assumption remains unresolved",Run interviews / paid pilot,,,
+C,45–57,"Interesting but crowded, weakly monetized or operationally hard",Narrow or park,,,
+D,0–44,Low priority relative to the portfolio,Archive,,,
+X,Any,"Deceptive, harmful or unsuitable in its current form",Reject / ethical reframe only,,,
+,,,,,,
+,,,,,,
+"Competition links are starting points, not an exhaustive market map. For unusual physical or creative concepts, the sheet sometimes lists the closest business-model or workflow analogue rather than an identical product.",,,,,,

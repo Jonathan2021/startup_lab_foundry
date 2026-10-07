@@ -1,0 +1,5 @@
+<section class="panel form-panel"><h2>Start a step</h2><form data-api="/api/steps" data-redirect="/steps/">
+<input type="hidden" name="subject" value="{{ subject }}"><input type="hidden" name="subject_id" value="{{ subject_id }}"><input type="hidden" name="request_key" value="{{ request_key }}">
+<label>Next action<select name="kind">{% for key, step in catalog.items() %}<option value="{{ key }}">{{ step.label }}</option>{% endfor %}</select></label>
+<p class="muted">Readiness and research briefs run locally. An agent request creates a handoff file until a runner is configured.</p><p class="form-error" role="alert"></p><button type="submit">Start step</button></form>
+{% if runs['items'] %}<h3 class="spaced">Recent steps</h3>{% for run in runs['items'] %}<a class="record-row" href="/steps/{{ run.id }}"><span>{{ run.kind|pretty }}</span><span class="badge {{ run.status }}">{{ run.status|pretty }}</span></a>{% endfor %}{% endif %}</section>

@@ -1,0 +1,151 @@
+{
+  "body": "GPS moto\nRoadbooks\nSOS accident\nPremium offert\nInscription / Connexion\nCréer un itinéraire\nAjoute ta première étape en cliquant sur la carte.\nou\nImporter un GPX\nPrépare\n\nPrépare ton voyage moto en plaçant les points sur la carte ou en important une trace GPX. Ta route est tracée en quelques clics.\n\nEnregistre\n\nRetrouve tous tes itinéraires dans ton compte et dans l’app Liberty Rider. C’est simple et gratuit. Tu peux planifier autant de balades que tu veux.\n\nLance le guidage\n\nLiberty Rider et son app GPS spécial moto te guide sur le tracé. Tu peux aussi exporter en GPX pour les Tomtom Rider et Garmin Zumo.\n\nSatellite\nMairie de Nébouzat\nNébouzat, France\n1 km\n© OpenMapTiles © OpenStreetMap contributors",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "title": "",
+      "cls": "index-module__XL1HWG__closeButton",
+      "aria": "Fermer"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "Inscription / Connexion",
+      "title": "",
+      "cls": "index-module__jccWhW__button index-module__jccWhW__medium index-module__jccWhW__white index-module__jccWhW__lined",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "title": "",
+      "cls": "index-module__rYG-Xa__button",
+      "aria": "Menu"
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "text": "",
+      "title": "",
+      "placeholder": "",
+      "cls": "index-module__qZR2jq__input",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "Explications",
+      "title": "",
+      "cls": "index-module__mxJYra__buttonLink",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "Fermer",
+      "title": "",
+      "cls": "index-module__jccWhW__button index-module__jccWhW__white index-module__jccWhW__small",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "title": "Options de calcul",
+      "cls": "index-module__Lm_9tq__actionButton index-module__Lm_9tq__first",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "title": "Annuler",
+      "cls": "index-module__Lm_9tq__actionButton",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "title": "Rétablir",
+      "cls": "index-module__Lm_9tq__actionButton",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "",
+      "title": "Inverser",
+      "cls": "index-module__Lm_9tq__actionButton",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "text": "Satellite",
+      "title": "",
+      "cls": "index-module__Lm_9tq__styleButton",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "",
+      "title": "Enter fullscreen",
+      "cls": "maplibregl-ctrl-fullscreen",
+      "aria": "Enter fullscreen"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "",
+      "title": "Zoom in",
+      "cls": "maplibregl-ctrl-zoom-in",
+      "aria": "Zoom in"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "",
+      "title": "Zoom out",
+      "cls": "maplibregl-ctrl-zoom-out",
+      "aria": "Zoom out"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "",
+      "title": "Find my location",
+      "cls": "maplibregl-ctrl-geolocate",
+      "aria": "Find my location"
+    },
+    {
+      "tag": "INPUT",
+      "type": "search",
+      "text": "",
+      "title": "",
+      "placeholder": "Search",
+      "cls": "maplibregl-ctrl-geocoder--input",
+      "aria": "Search"
+    },
+    {
+      "tag": "LI",
+      "type": "",
+      "text": "Mairie de Nébouzat\nNébouzat, France",
+      "title": "",
+      "cls": "",
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "text": "",
+      "title": "",
+      "cls": "maplibregl-ctrl-geocoder--button",
+      "aria": "Clear"
+    }
+  ]
+}

@@ -1,0 +1,571 @@
+[
+  {
+    "op": "type",
+    "selector": "input[aria-label='Search']",
+    "text": "Nebouzat"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "wait",
+    "selector": "li"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "click",
+    "selector": "li:first-child"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "screenshot",
+    "name": "selected-nebouzat.png"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "screenshot",
+    "name": "nebo-after-search.png"
+  },
+  {
+    "op": "click",
+    "selector": "canvas"
+  },
+  {
+    "op": "click",
+    "selector": "input[aria-label='Search']"
+  },
+  {
+    "op": "press",
+    "key": "Control+A"
+  },
+  {
+    "error": "Unknown key: \"Control+A\""
+  },
+  {
+    "op": "type",
+    "selector": "input[aria-label='Search']",
+    "text": "Thauvenay"
+  },
+  {
+    "op": "click",
+    "selector": "button[aria-label='Clear']"
+  },
+  {
+    "error": "Node is either not visible or not an HTMLElement"
+  },
+  {
+    "op": "type",
+    "selector": "input[aria-label='Search']",
+    "text": "Thauvenay"
+  },
+  {
+    "op": "wait",
+    "selector": "li"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "type",
+    "selector": "input[aria-label='Search']",
+    "text": "Thauvenay"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "screenshot",
+    "name": "search-thauvenay.png"
+  },
+  {
+    "op": "click",
+    "selector": "input[aria-label='Search']"
+  },
+  {
+    "op": "press",
+    "key": "End"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "press",
+    "key": "Backspace"
+  },
+  {
+    "op": "type",
+    "selector": "input[aria-label='Search']",
+    "text": "Thauvenay"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "click",
+    "selector": "li:first-child"
+  },
+  {
+    "op": "click",
+    "selector": "canvas"
+  },
+  {
+    "op": "click",
+    "selector": "button[title='Options de calcul']"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "screenshot",
+    "name": "route-options.png"
+  },
+  {
+    "op": "click",
+    "selector": "input[type='checkbox']"
+  },
+  {
+    "op": "click",
+    "selector": "button[class='index-module__jccWhW__button']"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "screenshot",
+    "name": "no-motorways.png"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "click",
+    "selector": "canvas"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "screenshot",
+    "name": "no-motorways-stable.png"
+  },
+  {
+    "op": "click",
+    "selector": "button[type='submit'][class='index-module__jccWhW__button index-module__jccWhW__white index-module__jccWhW__small']"
+  },
+  {
+    "error": "No node found for selector: button[type='submit'][class='index-module__jccWhW__button index-module__jccWhW__white index-module__jccWhW__small']"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "click",
+    "selector": "button.index-module__jccWhW__white.index-module__jccWhW__small"
+  },
+  {
+    "op": "inspect"
+  },
+  {
+    "op": "screenshot",
+    "name": "route-actions.png"
+  }
+]

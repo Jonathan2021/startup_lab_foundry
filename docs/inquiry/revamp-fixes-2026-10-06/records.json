@@ -1,0 +1,114 @@
+{
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "work_item_id": "2e3c7521-3da1-55d8-be65-3b4adfa0febe",
+  "work_status": "blocked",
+  "blocked_reason": "external_access",
+  "owner": "agent",
+  "review_id": "f614a4b3-1155-4c08-b1fe-98f885d6f023",
+  "report_artifact_id": "9543ef95-efd1-5bef-953d-27a0978066b9",
+  "browser_pending": true,
+  "migration_head": "b10261006002",
+  "requests": [
+    {
+      "id": "R001",
+      "status": "resolved",
+      "response_id": "a6ca804b-8e7c-5522-8576-6bcfc3904157",
+      "review_id": "805a1277-bbe8-57ac-948b-e0620be4dd3f"
+    },
+    {
+      "id": "R002",
+      "status": "resolved",
+      "response_id": "75e0473b-6c08-59cc-8ae4-c211ca70e31c",
+      "review_id": "e6514858-149a-592a-bbbe-a954f90c92e0"
+    },
+    {
+      "id": "R003",
+      "status": "resolved",
+      "response_id": "24298fdf-5fc4-5a15-8c84-65e1f9b14686",
+      "review_id": "560f06d4-4d61-509e-8452-cecdb459c5d7"
+    },
+    {
+      "id": "R004",
+      "status": "resolved",
+      "response_id": "061ca900-4a44-587b-a733-feaf283222ab",
+      "review_id": "b3507a65-b436-574b-91fb-fe0b7659924d"
+    },
+    {
+      "id": "R005",
+      "status": "resolved",
+      "response_id": "0d9f0c0d-fd34-523d-bbe7-2476859bec15",
+      "review_id": "186e3d08-86df-4b4a-b012-fe8a2d89d10f"
+    },
+    {
+      "id": "R006",
+      "status": "resolved",
+      "response_id": "272f190e-a1b7-5dc1-aa2d-a36eccf16d20",
+      "review_id": "ba52b072-c9a6-4a11-a916-5cb9c821b5cd"
+    },
+    {
+      "id": "R007",
+      "status": "resolved",
+      "response_id": "6040b43e-ba5e-5dd2-8a71-f789cf36c160",
+      "review_id": "a2f1bb8d-5df4-4737-aa4c-5a43d7e0b901"
+    },
+    {
+      "id": "R008",
+      "status": "deferred",
+      "response_id": "51a27168-11db-5896-b783-b46e726418ca",
+      "review_id": "a8676944-2d81-4437-8312-c96590bac199"
+    },
+    {
+      "id": "R009",
+      "status": "deferred",
+      "response_id": "4b8546a3-2526-5ac6-ab13-b06353538097",
+      "review_id": "c775db1c-726b-4534-84a3-096b0cde11f2"
+    },
+    {
+      "id": "R010",
+      "status": "resolved",
+      "response_id": "bf6edcac-f2b6-51aa-a44f-524b87437bab",
+      "review_id": "5eff1845-fd7e-4536-885c-a4fe76756007"
+    },
+    {
+      "id": "R011",
+      "status": "waiting_for_answer",
+      "response_id": null,
+      "review_id": null
+    }
+  ],
+  "sports_proposal": {
+    "id": "91fe8686-6638-5dba-bb0a-34fe222a0be5",
+    "state": "proposed",
+    "revision_artifact_id": "3d7a168a-139a-4046-9d95-25ac82a1b8f2"
+  },
+  "crous_assessment_ids": [
+    "cc26ba68-ebca-4cad-9482-190caabda8a4",
+    "2b38b397-ddd8-4c15-bb1a-f9d36df96e51"
+  ],
+  "counts": {
+    "ideas": 251,
+    "ventures": 11,
+    "human_requests": 11,
+    "portfolio_proposals": 1,
+    "venture_assessments": 10,
+    "human_request_dependencies": 0,
+    "work_items": 524,
+    "workspace_reviews": 298,
+    "artifacts": 615
+  },
+  "final_interface_tests": 18,
+  "cli_smoke": {
+    "request": "passed",
+    "handoff": "passed",
+    "claim": "passed",
+    "release": "passed",
+    "database": "/home/jonathan/startup_lab/foundry/.local/revamp-fixes-2026-10-06/cli-smoke.db"
+  },
+  "final_evidence_hashes": {
+    "make-check.txt": "c9358f41db062808bdbb38ad4e7fb730090d082219101c120d84f738a7aae5d3",
+    "live-verification.json": "42dfba83fa5653df8a3d497f3fa76db5f30c2addb91d8f105958010a5f38affe",
+    "final-interface-checks.txt": "32a1b9afe04aba8c5f036dbbc0bd79fc2699ec7ff4da928bbc95e9da2725b8c1",
+    "cli-smoke.json": "559cefcdb11851673c4679cdf98e569ecaa60423ef87a645ee665eae255df09b"
+  }
+}

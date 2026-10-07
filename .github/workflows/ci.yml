@@ -78,8 +78,19 @@ jobs:
           tests/unit
           tests/integration
           tests/acceptance/test_cli_workspace.py
+          tests/acceptance/test_cli_lifecycle.py
           tests/contract/test_package_boundary.py
           --junitxml=test-results.xml
+
+      - name: Install Chromium for lifecycle interaction checks
+        if: ${{ matrix.python-version == '3.13' }}
+        run: uv run playwright install --with-deps chromium
+
+      - name: Verify desktop and mobile lifecycle workflows
+        if: ${{ matrix.python-version == '3.13' }}
+        env:
+          FOUNDRY_BROWSER_ARTIFACTS: browser-artifacts
+        run: uv run pytest tests/acceptance/test_lifecycle_browser.py tests/acceptance/test_revamp_browser.py
 
       - name: Verify the CI contract
         if: ${{ matrix.python-version == '3.13' && !cancelled() }}
@@ -100,6 +111,7 @@ jobs:
           path: |
             test-results.xml
             coverage.xml
+            browser-artifacts/
           if-no-files-found: warn
           retention-days: 5
 

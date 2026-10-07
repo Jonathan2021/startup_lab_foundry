@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-02",
+  "bookkeeping": "Recorded after comparisons; prior frozen Markdown protocols retained.",
+  "ideas": [
+    {
+      "id": "D001",
+      "parents": [
+        "N008"
+      ],
+      "disposition": "input_hold",
+      "venture": "v-route-repair",
+      "assumption_id": "console-d001-a",
+      "work_item_id": "console-d001-w",
+      "evidence_id": "console-d001-e",
+      "assessment_id": "console-d001-assessment",
+      "decision_id": "console-d001-decision",
+      "step_run_ids": [
+        "37fc8ebe-2dbf-46d6-acfc-55900fc926ec",
+        "b23149bd-8640-41a0-811c-f344e9bf4d8e"
+      ]
+    },
+    {
+      "id": "D002",
+      "parents": [
+        "G002",
+        "P088",
+        "P174"
+      ],
+      "disposition": "internal_only",
+      "venture": "v-g002",
+      "assumption_id": "console-d002-a",
+      "work_item_id": "console-d002-w",
+      "evidence_id": "console-d002-e",
+      "assessment_id": "console-d002-assessment",
+      "decision_id": "console-d002-decision",
+      "step_run_ids": [
+        "0e4cb9bd-a15a-4a6b-9c28-64ecddd07eb5",
+        "f15c9cef-0807-4997-a4a8-84de396a4d54"
+      ]
+    },
+    {
+      "id": "D003",
+      "parents": [
+        "N003",
+        "G005",
+        "P106"
+      ],
+      "disposition": "access_hold",
+      "venture": "portfolio-campaign",
+      "assumption_id": "console-d003-a",
+      "work_item_id": "console-d003-w",
+      "evidence_id": "console-d003-e",
+      "assessment_id": "console-d003-assessment",
+      "decision_id": "console-d003-decision",
+      "step_run_ids": [
+        "79764cf1-36ad-4ce2-8ac5-1470cab51cdd",
+        "926b3054-121d-40d1-a760-61ac75e2412e"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "79f5ede2-6637-57a5-ad25-05194330ef3f",
+      "title": "RouteConverter capabilities",
+      "url": "https://www.routeconverter.com/",
+      "claim": "The official site describes conversion/editing and visible position lists in the current desktop editor.",
+      "limits": "Vendor documentation only. Not installed or runtime-tested; no ETA diagnosis validated.",
+      "checked_on": "2026-10-02",
+      "ideas": [
+        "D001",
+        "N008"
+      ]
+    },
+    {
+      "id": "98a32818-2673-5fa1-80aa-d923c4d90655",
+      "title": "RouteConverter route and track workflow",
+      "url": "https://www.routeconverter.com/help/getting-started/",
+      "claim": "The official guide explains route/track editing, splitting/merging and reducing points.",
+      "limits": "Documentation only; does not establish handling of the reported Liberty Rider/68 ETA mismatch.",
+      "checked_on": "2026-10-02",
+      "ideas": [
+        "D001",
+        "N008"
+      ]
+    },
+    {
+      "id": "bb3c003e-dbbb-5bec-90d6-c06c2265596e",
+      "title": "gpx.studio bounded anonymous editor observation",
+      "url": "https://gpx.studio/app",
+      "claim": "Two visits loaded the editor with HTTP 200. The retry showed File/Open/Export controls.",
+      "limits": "Inconclusive harness trial: no fixture imported, pair compared, or geometry export verified. See GPX_COMPARISON_RESULT.md.",
+      "checked_on": "2026-10-02",
+      "ideas": [
+        "D001",
+        "N008"
+      ]
+    },
+    {
+      "id": "781d8342-3d75-5605-9978-3a38be4da2f6",
+      "title": "Distill change history and highlighted changes",
+      "url": "https://distill.io/docs/web-monitor/change-history-and-highlighted-changes/",
+      "claim": "Distill documents retained versions and visual/text comparisons of changes.",
+      "limits": "Documentation only; a claim-to-decision review workflow and buyer demand were not tested.",
+      "checked_on": "2026-10-02",
+      "ideas": [
+        "D002",
+        "G002",
+        "P088",
+        "P174"
+      ]
+    },
+    {
+      "id": "ed1aa344-dce2-59ff-900e-787aa9981de9",
+      "title": "Distill empty-selection behavior",
+      "url": "https://distill.io/docs/web-monitor/config-and-advanced-monitor-options/",
+      "claim": "The documentation describes ignoreEmptyText and a SELECTION_EMPTY error when the selection is empty.",
+      "limits": "No runtime test; not a guarantee about all selector drift or semantic changes.",
+      "checked_on": "2026-10-02",
+      "ideas": [
+        "D002",
+        "P088",
+        "P174"
+      ]
+    },
+    {
+      "id": "bf682820-c14a-5b49-82f8-7498ee951b55",
+      "title": "Open Badges evidence and criteria",
+      "url": "https://openbadges.org/about/faq",
+      "claim": "The official FAQ describes issuer, criteria and evidence as badge information.",
+      "limits": "No issuer/recipient adoption or work-sample validation was tested.",
+      "checked_on": "2026-10-02",
+      "ideas": [
+        "D003",
+        "N003",
+        "G005",
+        "P106"
+      ]
+    },
+    {
+      "id": "ea5ede3d-4f76-5685-96f2-b518c1c1eb72",
+      "title": "Open Badges 3.0 specification",
+      "url": "https://www.imsglobal.org/spec/ob/v3p0/",
+      "claim": "The specification defines verifiable achievement credentials including evidence.",
+      "limits": "Format capability only; no credential verifier was run and institutional acceptance remains untested.",
+      "checked_on": "2026-10-02",
+      "ideas": [
+        "D003",
+        "N003",
+        "G005",
+        "P106"
+      ]
+    }
+  ],
+  "idea_count": 250,
+  "source_count": 99
+}

@@ -1,0 +1,23 @@
+{
+  "id": "T2",
+  "status": "passed",
+  "version": "0.60.8",
+  "scope": "upstream HTML filter/text/ignore component, not full service",
+  "outputs": {
+    "base": "Review queues included.",
+    "noise": "Review queues included.",
+    "changed": "Review queues require team plan.",
+    "missing": ""
+  },
+  "assertions": {
+    "noise_ignored": true,
+    "claim_change_retained": true,
+    "missing_selector_empty": true
+  },
+  "limits": [
+    "No crawl scheduling or notifications",
+    "No authenticated/browser-rendered site",
+    "Empty selection needs caller handling; not proof upstream silently misses it",
+    "Synthetic changes do not establish legal or commercial impact"
+  ]
+}

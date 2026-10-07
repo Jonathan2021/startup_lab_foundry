@@ -23,9 +23,11 @@ def test_upgrade_downgrade_upgrade_uses_only_the_injected_database(
     engine = create_engine(f"sqlite:///{database}")
     with engine.connect() as connection:
         assert MigrationContext.configure(connection).get_current_revision() == (
-            "42d765ac6946"
+            "b10261006003"
         )
-        assert "ventures" in inspect(connection).get_table_names()
+        assert {"ventures", "step_runs", "workspace_reviews"} <= set(
+            inspect(connection).get_table_names()
+        )
         assert any(
             foreign_key["name"] == "fk_ideas_current_revision"
             and foreign_key["constrained_columns"] == ["current_revision_id"]
@@ -58,6 +60,4 @@ def test_installed_distribution_locates_packaged_migration_assets(
     config = migrations.alembic_config("sqlite:///installed.db")
 
     assert config.config_file_name == str(installed_root / "alembic.ini")
-    assert config.get_main_option("script_location") == str(
-        installed_root / "alembic"
-    )
+    assert config.get_main_option("script_location") == str(installed_root / "alembic")

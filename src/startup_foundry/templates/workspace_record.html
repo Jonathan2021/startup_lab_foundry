@@ -1,0 +1,15 @@
+{% extends 'base.html' %}{% block content %}
+<a class="back" href="{{ workspace_url }}">← {{ subject_id }} work</a>
+<p class="eyebrow">{{ subject_id }} · {{ 'State review' if is_review else 'Work' }} · {{ record.id }}</p>
+<h1>{{ record.next_action if is_review else record.title }}</h1>
+{% if is_review %}
+<dl><dt>Disposition</dt><dd>{{ record.disposition|pretty }}</dd><dt>Investigation stage</dt><dd>{{ record.investigation_stage|pretty }}</dd><dt>Product maturity</dt><dd>{{ record.product_maturity|pretty }}</dd><dt>Reviewed by</dt><dd>{{ record.author }} · {{ record.reviewed_at }}</dd></dl>
+<h2>Reason</h2><p class="preserve">{{ record.reason }}</p>
+{% if next_work %}<p>Linked work: <a href="{{ next_work.url }}">{{ next_work.title }}</a> · {{ next_work.status|pretty }} · Owner: {{ next_work.owner or 'Unassigned' }}</p>{% endif %}
+{% else %}
+<dl><dt>Status</dt><dd>{{ record.status|pretty }}</dd><dt>Owner</dt><dd>{{ record.owner or 'Unassigned' }}</dd><dt>Kind</dt><dd>{{ record.kind|pretty }}</dd><dt>Blocked cause</dt><dd>{{ record.blocked_reason or 'None recorded' }}</dd></dl>
+<h2>Purpose</h2><p class="preserve">{{ record.description or 'No description retained' }}</p>
+<h2>Completion criteria</h2><p class="preserve">{{ record.acceptance_criteria or 'No criteria retained' }}</p>
+<p>A saved ready task is queued. It does not start an unattended worker.</p>
+{% endif %}<details><summary>Record provenance</summary><pre>{{ record|tojson(indent=2) }}</pre></details>
+{% endblock %}

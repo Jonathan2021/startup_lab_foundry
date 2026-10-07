@@ -1,0 +1,55 @@
+{
+  "source_databases": {
+    "/home/jonathan/startup_lab/foundry/.local/portfolio-campaign/campaign.local.db": {
+      "sha256": "b09f3ba28ff782e72e5dbe5fc44ca034ffd41c11906acd2d320e194288756707",
+      "unchanged": true,
+      "retained_record_ids": 1798
+    },
+    "/home/jonathan/startup_lab/foundry/.local/portfolio-realignment.local.db": {
+      "sha256": "3260fe0c468558d5f822799c074aa49e5b834d269788b8c9554ef29f94f9152c",
+      "unchanged": true,
+      "retained_record_ids": 35
+    }
+  },
+  "csv_sources": {
+    "startup_ideas.csv": {
+      "sha256": "5c3f75856382677a73873c058c79b66853c1feecdc4c809135171f1d1af478ff",
+      "rows_retained": 239
+    },
+    "startup_generated_ideas.csv": {
+      "sha256": "b6e0f322f024abbc7815e93cae9690dc9754048b023d18b5852c4678eaa7cedf",
+      "rows_retained": 27
+    },
+    "startup_competition.csv": {
+      "sha256": "03902c428d863e4d0ad0cec0f414ee3c083de38741eec10b30ab34093edcf6d4",
+      "rows_retained": 150
+    },
+    "startup_market_report.csv": {
+      "sha256": "3b61f37911f0e714c4d3d3ae435be14d00fd1622e02c994179dcfbef5aa5e358",
+      "rows_retained": 18
+    },
+    "startup_scoring_guide.csv": {
+      "sha256": "b3052911a560497d236133be901e052d2c17c5750f06d2cb2cee609e31866e4d",
+      "rows_retained": 22
+    },
+    "startup_dashboard.csv": {
+      "sha256": "54afc5aabede707f898340b4ef1bd35383cb688dff8b020a5c8bc6b958705302",
+      "rows_retained": 72
+    }
+  },
+  "working_database": "/home/jonathan/.local/share/startup-foundry/foundry.local.db",
+  "backup": "/home/jonathan/.local/share/startup-foundry/backups/2026-10-02-console-complete.local.db",
+  "counts": {
+    "ideas": 250,
+    "ventures": 5,
+    "reference_sources": 99,
+    "step_runs": 8,
+    "evidence": 265,
+    "decisions": 257,
+    "artifacts": 271
+  },
+  "revision": "7ce261002001",
+  "backup_sha256": "72a94408f89b15dc38bc55b20c09ea60ed81aefc448e8d6a5753639f96b7b24d",
+  "integrity": "ok",
+  "foreign_keys": "ok"
+}

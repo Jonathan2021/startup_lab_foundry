@@ -1,0 +1,53 @@
+{
+  "venture": {
+    "id": "portfolio-campaign",
+    "name": "Portfolio discovery campaign",
+    "objective": "Investigate all 247 source ideas, compare incumbent tools, retain justified survivors and recurring friction; no market-validation claim",
+    "stage": "discovery",
+    "created_at": "2026-10-02T13:53:12.016316Z"
+  },
+  "assumptions": [
+    {
+      "id": "a-mlflow",
+      "statement": "Generic feedback-to-test infrastructure must be custom built",
+      "kind": "feasibility",
+      "status": "open",
+      "importance": 5,
+      "uncertainty": 4,
+      "created_at": "2026-10-02T13:53:12.162853Z"
+    },
+    {
+      "id": "a-monitor",
+      "statement": "A basic meaningful-change detector needs custom implementation",
+      "kind": "feasibility",
+      "status": "open",
+      "importance": 5,
+      "uncertainty": 4,
+      "created_at": "2026-10-02T13:53:12.418680Z"
+    }
+  ],
+  "evidence": [],
+  "assumption_assessments": [],
+  "decisions": [],
+  "work_items": [
+    {
+      "id": "trial-mlflow",
+      "decision_id": null,
+      "title": "Incumbent comparison: mlflow",
+      "kind": "experiment",
+      "status": "todo",
+      "acceptance_criteria": "Document actual tested scope and failures",
+      "created_at": "2026-10-02T13:53:12.310564Z"
+    },
+    {
+      "id": "trial-monitor",
+      "decision_id": null,
+      "title": "Incumbent comparison: monitor",
+      "kind": "experiment",
+      "status": "todo",
+      "acceptance_criteria": "Document actual tested scope and failures",
+      "created_at": "2026-10-02T13:53:12.541380Z"
+    }
+  ],
+  "artifacts": []
+}

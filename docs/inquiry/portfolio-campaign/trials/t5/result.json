@@ -1,0 +1,95 @@
+{
+  "trial": "T5",
+  "date": "2026-10-02",
+  "requests": [
+    {
+      "name": "baseline",
+      "url": "https://brouter.de/brouter?lonlats=13.278%2C52.508%7C13.51%2C52.365&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=false",
+      "params": {
+        "lonlats": "13.278,52.508|13.51,52.365",
+        "profile": "car-fast",
+        "alternativeidx": "0",
+        "format": "geojson",
+        "profile:avoid_motorways": "false"
+      },
+      "valid": false,
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    },
+    {
+      "name": "avoid-control",
+      "url": "https://brouter.de/brouter?lonlats=13.278%2C52.508%7C13.51%2C52.365&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=true",
+      "params": {
+        "lonlats": "13.278,52.508|13.51,52.365",
+        "profile": "car-fast",
+        "alternativeidx": "0",
+        "format": "geojson",
+        "profile:avoid_motorways": "true"
+      },
+      "valid": false,
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    },
+    {
+      "name": "b1-first",
+      "url": "https://brouter.de/brouter?lonlats=13.278%2C52.508%7C13.417%2C52.468&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=false",
+      "params": {
+        "lonlats": "13.278,52.508|13.417,52.468",
+        "profile": "car-fast",
+        "alternativeidx": "0",
+        "format": "geojson",
+        "profile:avoid_motorways": "false"
+      },
+      "valid": false,
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    },
+    {
+      "name": "b1-second",
+      "url": "https://brouter.de/brouter?lonlats=13.417%2C52.468%7C13.51%2C52.365&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=true",
+      "params": {
+        "lonlats": "13.417,52.468|13.51,52.365",
+        "profile": "car-fast",
+        "alternativeidx": "0",
+        "format": "geojson",
+        "profile:avoid_motorways": "true"
+      },
+      "valid": false,
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    },
+    {
+      "name": "b2-first",
+      "url": "https://brouter.de/brouter?lonlats=13.278%2C52.508%7C13.441%2C52.466&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=false",
+      "params": {
+        "lonlats": "13.278,52.508|13.441,52.466",
+        "profile": "car-fast",
+        "alternativeidx": "0",
+        "format": "geojson",
+        "profile:avoid_motorways": "false"
+      },
+      "valid": false,
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    },
+    {
+      "name": "b2-second",
+      "url": "https://brouter.de/brouter?lonlats=13.441%2C52.466%7C13.51%2C52.365&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=true",
+      "params": {
+        "lonlats": "13.441,52.466|13.51,52.365",
+        "profile": "car-fast",
+        "alternativeidx": "0",
+        "format": "geojson",
+        "profile:avoid_motorways": "true"
+      },
+      "valid": false,
+      "error": "HTTPError: HTTP Error 500: Internal Server Error"
+    }
+  ],
+  "positive_control": false,
+  "alternatives": [],
+  "selected": null,
+  "outcome": "INCONCLUSIVE",
+  "limits": [
+    "synthetic task",
+    "two sampled points, not continuous optimality",
+    "no beauty or usability validation",
+    "public service profile/version not pinned",
+    "no safe-navigation or customer-demand inference"
+  ]
+}

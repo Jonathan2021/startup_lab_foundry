@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<p class="eyebrow">HUMAN INPUT</p><h1>Inbox</h1><p>Answers wait here until an agent session reviews them. Copy the handoff to continue in your coding agent.</p>
+<nav class="workspace-tabs" aria-label="Inbox filters">{% for key,label in [('needs_you','Needs you'),('awaiting_review','Answers awaiting review'),('deferred','Deferred'),('history','History')] %}<a href="/requests?status={{ key }}" class="{{ 'active' if status==key }}">{{ label }}</a>{% endfor %}</nav>
+<section class="panel form-panel">{% for r in page['items'] %}<p><a href="/requests/{{ r.id }}">{{ r.id }} · {{ r.title }}</a> <span class="badge">{{ r.status|pretty }}</span></p>{% else %}<p>No requests in this queue.</p>{% endfor %}</section>
+{% include 'sync_inputs.html' %}{% endblock %}

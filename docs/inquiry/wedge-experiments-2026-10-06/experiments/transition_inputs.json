@@ -1,0 +1,120 @@
+[
+  {
+    "name": "stale_revision",
+    "action": "submit",
+    "scope_revision": 2,
+    "question_revision": 2,
+    "branch": "continue",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "reject_stale"
+  },
+  {
+    "name": "duplicate_result",
+    "action": "duplicate",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "continue",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "one_effect"
+  },
+  {
+    "name": "cross_scope_reference",
+    "action": "submit",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "continue",
+    "evidence": [
+      "E-private"
+    ],
+    "result_id": "r1",
+    "expected": "reject_scope"
+  },
+  {
+    "name": "unknown_branch",
+    "action": "submit",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "unknown",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "held_no_successor"
+  },
+  {
+    "name": "stop",
+    "action": "submit",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "stop",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "stopped_no_successor"
+  },
+  {
+    "name": "later_contradiction",
+    "action": "contradict",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "continue",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "review_required_successor_blocked"
+  },
+  {
+    "name": "unrelated_active_sibling",
+    "action": "submit",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "stop",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "sibling_active"
+  },
+  {
+    "name": "scope_revision",
+    "action": "revise_scope",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "continue",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "old_result_historical_new_scope_unresolved"
+  },
+  {
+    "name": "unsupported_continue",
+    "action": "submit",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "continue",
+    "evidence": [],
+    "result_id": "r1",
+    "expected": "reject_insufficient"
+  },
+  {
+    "name": "duplicate_key_changed_payload",
+    "action": "changed_duplicate",
+    "scope_revision": 3,
+    "question_revision": 2,
+    "branch": "continue",
+    "evidence": [
+      "E-current"
+    ],
+    "result_id": "r1",
+    "expected": "reject_key_conflict"
+  }
+]

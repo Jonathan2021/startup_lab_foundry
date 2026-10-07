@@ -1,0 +1,72 @@
+Startup idea portfolio – expanded edition,,,,,,,,,Top generated / added idea,Origin,Priority,MVP weeks,Grade,Primary competitor
+"Includes 212 original PDF notes, the user-added Agentic Startup Foundry, and 25 generated ideas. Descriptions were cleaned, original text was retained, and a bold narrowing/pivot recommendation was added.",,,,,,,,,R&D Decision Memory,Generated — derived,79,5,A,MLflow
+,,,,,,,,,Evaluation Dataset Builder for AI Teams,Generated — new,76,5,A,Weights & Biases
+Total ideas,238,,,,,,,,AI Governance Evidence Builder,Generated — derived,75,5,A,Credo AI
+Original PDF ideas,212,,,,,,,,Regulatory Change-to-Action Monitor,Generated — derived,75,5,A,Visualping
+User-added ideas,1,,,,,,,,Human-in-the-Loop Agent Control Center,Generated — new,74,6,A,Gumloop
+Generated ideas,25,,,,,,,,Specialist Job Search Pipeline,Generated — derived,72,4,A,Simplify
+A-grade ideas,16,,,,,,,,Model Data-Gap Scout,Generated — derived,72,5,A,Weights & Biases
+B-grade ideas,18,,,,,,,,Small-Business Contract & Admin Inbox,Generated — derived,72,4,A,Papernest
+Explicit rejects,8,,,,,,,,Single-Sport Club OS,Generated — derived,71,4,A,Spond
+Median priority score,46,,,,,,,,Vertical SaaS Factory,Generated — derived,71,8,A,Buildpad
+,,,,,,,,,Agentic Startup Foundry,Added by user,71,6,A,Buildpad
+Rank,Idea,Origin,Category,Priority,Grade,MVP weeks,Action,,Club Equipment Library,Generated — derived,70,4,A,Spond
+1,R&D Decision Memory,Generated — derived,Research & science,79,A,5,Build a focused MVP,,,,,,,
+2,Evaluation Dataset Builder for AI Teams,Generated — new,Developer & AI tools,76,A,5,Build a focused MVP,,,,,,,
+3,AI Model Risk Pre-Mortem,Original PDF,Legal & AI governance,75,A,4,Build a focused MVP,,Idea,Priority,,,,
+4,AI Governance Evidence Builder,Generated — derived,Legal & AI governance,75,A,5,Build a focused MVP,,R&D Decision Memory,79,,,,
+5,Regulatory Change-to-Action Monitor,Generated — derived,Legal & AI governance,75,A,5,Build a focused MVP,,Evaluation Dataset Builder for AI Teams,76,,,,
+6,Human-in-the-Loop Agent Control Center,Generated — new,Developer & AI tools,74,A,6,Build a focused MVP,,AI Model Risk Pre-Mortem,75,,,,
+7,Specialist Job Search Pipeline,Generated — derived,Jobs & HR,72,A,4,Build a focused MVP,,AI Governance Evidence Builder,75,,,,
+8,Model Data-Gap Scout,Generated — derived,Research & science,72,A,5,Build a focused MVP,,Regulatory Change-to-Action Monitor,75,,,,
+9,Small-Business Contract & Admin Inbox,Generated — derived,Productivity & personal operations,72,A,4,Build a focused MVP,,Human-in-the-Loop Agent Control Center,74,,,,
+10,Single-Sport Club OS,Generated — derived,Sports & fitness,71,A,4,Build a focused MVP,,Specialist Job Search Pipeline,72,,,,
+11,Experiment Combination Tracker,Original PDF,Research & science,71,A,4,Build a focused MVP,,Model Data-Gap Scout,72,,,,
+12,Vertical SaaS Factory,Generated — derived,Developer & AI tools,71,A,8,Build a focused MVP,,Small-Business Contract & Admin Inbox,72,,,,
+13,Agentic Startup Foundry,Added by user,Developer & AI tools,71,A,6,Build a focused MVP,,Single-Sport Club OS,71,,,,
+14,Club Equipment Library,Generated — derived,Marketplace & local services,70,A,4,Build a focused MVP,,Experiment Combination Tracker,71,,,,
+15,Living Research Review,Generated — derived,Research & science,70,A,5,Build a focused MVP,,Vertical SaaS Factory,71,,,,
+16,Visual Equipment Maintenance Assistant,Generated — derived,Developer & AI tools,70,A,5,Build a focused MVP,,,,,,,
+17,Used Asset Deal Intelligence,Generated — derived,Consumer apps & services,69,B,4,Validate soon,,,,,,,
+18,Context-Preserving Localization Workbench,Generated — derived,Developer & AI tools,69,B,5,Validate soon,,,,,,,
+19,Physiotherapy Practice Management,Original PDF,Health & wellness,68,B,4,Validate soon,,,,,,,
+20,Research Experiment Memory,Original PDF,Research & science,67,B,4,Validate soon,,,,,,,
+21,Physio Adherence Companion,Generated — derived,Health & wellness,67,B,5,Validate soon,,,,,,,
+22,Creator Archive Factory,Generated — derived,Media & creative,66,B,5,Validate soon,,,,,,,
+23,Outdoor Activity Window Planner,Generated — derived,Travel & local discovery,65,B,4,Validate soon,,,,,,,
+24,Living-Text Update Assistant,Original PDF,Media & creative,65,B,4,Validate soon,,,,,,,
+25,Amateur Sports Video Analytics,Generated — derived,Sports & fitness,65,B,8,Validate soon,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,Category,Ideas,Avg priority,,,
+,,,,,,,,,Productivity & personal operations,26,50.7,,,
+,,,,,,,,,Sports & fitness,20,46.4,,,
+,,,,,,,,,Media & creative,19,42.5,,,
+,,,,,,,,,Developer & AI tools,16,57.6,,,
+,,,,,,,,,Travel & local discovery,16,47.6,,,
+,,,,,,,,,Hardware & consumer products,14,39,,,
+,,,,,,,,,Marketplace & local services,13,46.3,,,
+,,,,,,,,,Education & learning,12,46.8,,,
+,,,,,,,,,Health & wellness,12,47.7,,,
+,,,,,,,,,Consumer apps & services,11,48.1,,,
+,,,,,,,,,Research & science,11,58.6,,,
+,,,,,,,,,Games & entertainment,10,46.2,,,
+,,,,,,,,,Finance & betting,8,45.1,,,
+,,,,,,,,,Jobs & HR,8,55.1,,,
+,,,,,,,,,Legal & AI governance,8,58.4,,,
+,,,,,,,,,Reject: deceptive / harmful,8,5.2,,,
+,,,,,,,,,Adult & sexual wellness,6,42.2,,,
+,,,,,,,,,Social & community,6,42,,,
+,,,,,,,,,Food & hospitality,5,39.8,,,
+,,,,,,,,,Mobility & real estate,5,43,,,
+,,,,,,,,,"Climate, energy & infrastructure",4,40.2,,,

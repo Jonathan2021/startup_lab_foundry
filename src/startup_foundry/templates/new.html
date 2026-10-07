@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% block title %}Add an idea · Foundry{% endblock %}{% block content %}<p><a class="button secondary" href="/existing-project">Join an existing project</a> — keep its code and history.</p>
+<p class="eyebrow">{% if parent %}DERIVE FROM {{ parent.id }}{% else %}START WITH A PROBLEM{% endif %}</p><h1>{% if parent %}A narrower possibility.{% else %}Add an idea or venture.{% endif %}</h1><p class="lede">Capture the job, who has it, and what would change your mind.</p>
+<div class="two-columns"><section class="panel form-panel"><h2>{% if parent %}Derived idea{% else %}New idea{% endif %}</h2>{% if parent %}<p>Parent: <a href="/ideas/{{ parent.id|urlencode }}">{{ parent.title }}</a></p>{% endif %}
+<form data-api="/api/ideas" data-redirect="/ideas/">
+<label>Title<input name="title" maxlength="300" required placeholder="What specific problem would this solve?"></label>
+<label>Problem and proposed approach<textarea name="description" rows="5" maxlength="20000" required></textarea></label>
+<label>Target user<input name="customer" placeholder="Who experiences this problem?"></label>
+<label>First comparison or falsifying test<textarea name="validation_test" rows="3" placeholder="What existing tool and concrete task would you test?"></textarea></label>
+<label>Parent idea IDs <span class="muted">optional; comma separated</span><input name="parent_ids" value="{{ parent.id if parent else '' }}" placeholder="N008, G002"></label>
+<label>Reason for deriving or combining<textarea name="derivation_reason" rows="3" placeholder="What did the evidence change?" {{ 'required' if parent else '' }}></textarea></label>
+<p class="form-error" role="alert"></p><button type="submit">Save idea</button></form></section>
+<section class="panel form-panel"><h2>Open a venture directly</h2><p>For a specific investigation you already want to pursue. Its initial stage is discovery.</p><form data-api="/api/ventures" data-redirect="/ventures/">
+<label>Name<input name="name" maxlength="240" required></label><label>Objective<textarea name="objective" rows="6" maxlength="20000" required></textarea></label><p class="form-error" role="alert"></p><button type="submit" class="secondary">Create venture</button></form><div class="callout"><h3>Keep uncertainty visible.</h3><p>Creating an idea or venture records intent. Market support comes from evidence gathered afterward.</p></div></section></div>{% endblock %}

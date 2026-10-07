@@ -1,0 +1,82 @@
+{
+  "format": "synthetic-context-packet-v1",
+  "case_id": "C08",
+  "synthetic": true,
+  "scope": "Repair booking venture revision 3; moving from homeowners to maintenance teams.",
+  "scope_revision": 3,
+  "question_revision": 2,
+  "goal": "Establish a recurring paid coordination job for small property maintenance teams.",
+  "current_question": "Does the old homeowner landing-page result justify proceeding with the current business-customer pilot?",
+  "branch_criteria": {
+    "continue": "Evidence from the current maintenance-team customer and job meets a newly frozen pilot condition.",
+    "narrow": "One reachable maintenance-team subgroup has a verified repeated coordination failure.",
+    "stop": "Current target users report no material unmet job after the agreed inquiry.",
+    "unknown": "Evidence concerns an earlier scope or insufficient current target users; rewrite the scoped test."
+  },
+  "allowed_scopes": [
+    "C08"
+  ],
+  "selection": {
+    "method": "explicit_bidirectional_relationship_closure",
+    "seed_ids": [
+      "C08-E1",
+      "C08-E2",
+      "C08-E4",
+      "C08-E5"
+    ],
+    "source_record_count": 11,
+    "selected_record_count": 5,
+    "limitation": "Unlinked relevant facts may be omitted. Selection is not semantic retrieval."
+  },
+  "records": [
+    {
+      "id": "C08-E1",
+      "revision": 1,
+      "scope": "C08",
+      "kind": "synthetic_source",
+      "text": "Scope revision 1 targeted individual homeowners. Twelve of forty visitors clicked a hypothetical 9 euro booking button; there were no payments.",
+      "links": []
+    },
+    {
+      "id": "C08-E2",
+      "revision": 1,
+      "scope": "C08",
+      "kind": "synthetic_source",
+      "text": "The old test's frozen criterion was ten clicks before prototyping for homeowners. The click threshold was reached, but it was never a business-customer criterion.",
+      "links": []
+    },
+    {
+      "id": "C08-E3",
+      "revision": 1,
+      "scope": "C08",
+      "kind": "synthetic_source",
+      "text": "A later decision changed scope to revision 3: maintenance teams coordinating repeat repairs across properties. It explicitly supersedes the homeowner prototype objective.",
+      "links": [
+        {
+          "relation": "supersedes",
+          "target": "C08-E1"
+        },
+        {
+          "relation": "supersedes",
+          "target": "C08-E2"
+        }
+      ]
+    },
+    {
+      "id": "C08-E4",
+      "revision": 1,
+      "scope": "C08",
+      "kind": "synthetic_source",
+      "text": "One maintenance manager describes spreadsheet coordination; no measured delay, buying authority, paid commitment or repeated observation exists.",
+      "links": []
+    },
+    {
+      "id": "C08-E5",
+      "revision": 1,
+      "scope": "C08",
+      "kind": "synthetic_source",
+      "text": "An outstanding research submission was produced against scope revision 1. A separate current-scope accessibility audit remains active and does not depend on the homeowner test.",
+      "links": []
+    }
+  ]
+}

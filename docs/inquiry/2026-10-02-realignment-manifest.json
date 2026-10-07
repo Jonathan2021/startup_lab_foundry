@@ -1,0 +1,184 @@
+{
+  "id": "FOUNDRY-VERIFY-20261002-001:manifest-r1",
+  "scope": "effective code/config and current guidance at verification, after local operation; not a clean commit snapshot",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0ca81901b8b9652d899a94aa14fadd871cf8fe512af3f96d435e306db911a2f2"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "de6c141e2fe1fa6267b023ae78ee2fdc470a3acd0bf08aabc0baec62027689b7"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4591faf9257765eae1658ecdde31e285d01f31efd2f4b334c563b957ec3709a0"
+    },
+    {
+      "path": "agentevalops/README.md",
+      "sha256": "58401b6388b759fd335a9e786c3bccc57f495272140351141e40a67c4f680c8d"
+    },
+    {
+      "path": "agentevalops/docs/adr/0001-core-domain-and-foundry-integration.md",
+      "sha256": "482bf8925df78c23573121d038ecc01024adb77dfa4d5eea36cd102ffd1cdbba"
+    },
+    {
+      "path": "agentevalops/docs/research/2026-10-02-disposition.md",
+      "sha256": "91107e90481d68c258a21869637e5e9b0db102d782a424b852d4c5e1caf4a39d"
+    },
+    {
+      "path": "docs/adr/0008-evidence-first-venture-realignment.md",
+      "sha256": "562105c58b3b223ab76413ccbd36d62ebafe868bfec29570553fac16b9d8207e"
+    },
+    {
+      "path": "docs/reference/README.md",
+      "sha256": "1f7b689aabb741742abf847c686a975bb9f3230f497c69ac4582f96ad8dfc33a"
+    },
+    {
+      "path": "foundry/.dockerignore",
+      "sha256": "50218edfaea94ccd9f71fc32da3e4aa4dfea0cc936e2c2b69f2690f5c21a6a60"
+    },
+    {
+      "path": "foundry/ARCHITECTURE.md",
+      "sha256": "555277bac96976f57771cc5a413a1ebd76d3e221f9a5ee8747086743b67d5970"
+    },
+    {
+      "path": "foundry/Dockerfile",
+      "sha256": "aa16b4731ae3357b07c6d473a3a6039d328ab63e285ba1cab4199d7032085868"
+    },
+    {
+      "path": "foundry/README.md",
+      "sha256": "6c7e54666d67f460f5c97ec161a1b8543b781693725df1184ea4f956d06df762"
+    },
+    {
+      "path": "foundry/alembic/env.py",
+      "sha256": "e6c91fbf1a3b19842c72c7147d0df34b4bc4380f151633007fef6c699b28f997"
+    },
+    {
+      "path": "foundry/alembic/versions/149fc56b9af9_initial_schema.py",
+      "sha256": "2445684d66c9628b3d639d9adb1d01a93470021161a281f3d9bb212fb7aa0484"
+    },
+    {
+      "path": "foundry/alembic/versions/42d765ac6946_add_current_revision_foreign_key.py",
+      "sha256": "9903493cf31e030fff381b7eda83ca4f9a5b0f979029ce84aa20dd3072aa5806"
+    },
+    {
+      "path": "foundry/docker-compose.yaml",
+      "sha256": "d92b25d48a61de857fb43c2b4693ff7d7c945ea86103e14e7720c8c604560d38"
+    },
+    {
+      "path": "foundry/docs/CURRENT_DIRECTION.md",
+      "sha256": "29b00700d39f5465fcac165f6932a9544e905181c37ff71dfecd4f30e9136c09"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-foundry-operation.md",
+      "sha256": "4d8bab0aca0f6b57ecb37fed779a477377aa25778872c2cc47b488d81dd0106e"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-foundry-records.json",
+      "sha256": "22884786c50f0857d9f4af417ca718b14209e00662ea27de13f220c93d1b41c5"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-portfolio-realignment-plan.md",
+      "sha256": "606230805bc78b649a836227235b547f16250045b557d1ba444b1cb914588379"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-portfolio-realignment.md",
+      "sha256": "c756329a001c5d940282c3587298c225c4df6121c6329890880049331c793717"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-portfolio-screen.md",
+      "sha256": "30fc4720ce751fdbc6798c5f2394db2a901fac6edf73c316848e1fff72a93915"
+    },
+    {
+      "path": "foundry/docs/inquiry/2026-10-02-realignment-verification.md",
+      "sha256": "d0a492a1580b30135bafa1eeecefa882d54a094e1119692d33abc7ea950ac48d"
+    },
+    {
+      "path": "foundry/docs/ventures/research-handoff.md",
+      "sha256": "82a7abeb8f812226b0641eb80c45f5b4475bd8114c109a6ca32fea875f2b3482"
+    },
+    {
+      "path": "foundry/pyproject.toml",
+      "sha256": "043aeb253681a00ba5046e1fd537d72579c7e8e521d5ee3830c72dd8af82b536"
+    },
+    {
+      "path": "foundry/src/startup_foundry/__init__.py",
+      "sha256": "2f17f092477ec353cf5591a6047cf417d69d811762d312181f6b488bc1b582ef"
+    },
+    {
+      "path": "foundry/src/startup_foundry/__main__.py",
+      "sha256": "fb6dec101d509aad6a66271adaf770ebadf61b7f39e6d0a70779b6e1af95fad8"
+    },
+    {
+      "path": "foundry/src/startup_foundry/application.py",
+      "sha256": "ca5089a334ddd3a8d0d732b6f821a5cc56da53f5d60101d9b0faaa41a33cfb47"
+    },
+    {
+      "path": "foundry/src/startup_foundry/cli.py",
+      "sha256": "dc36bd03d62a4c8e3072733a72c4c9cf21470cf9201e184016cc0c91135f92f8"
+    },
+    {
+      "path": "foundry/src/startup_foundry/config.py",
+      "sha256": "ae158bc822c025cfc1058a9301b4c06d288632a68ea5144084f7a8882035f6da"
+    },
+    {
+      "path": "foundry/src/startup_foundry/domain.py",
+      "sha256": "5b319a5d9062f0a4bdac25e95b4ec6d8ec8a68bff145e35cb79f1191eceede1e"
+    },
+    {
+      "path": "foundry/src/startup_foundry/errors.py",
+      "sha256": "b2f16ea0e3f6d0a111bb4597c0dd5771a8f562dcfe70a7bddb3e8271a98eee1e"
+    },
+    {
+      "path": "foundry/src/startup_foundry/logging_config.py",
+      "sha256": "d4820d36cdca8ca3dec8776d258b05b707d22eb7ad71e805cff0d7a5dcd99d60"
+    },
+    {
+      "path": "foundry/src/startup_foundry/migrations.py",
+      "sha256": "803dfb884d4a8a28203a5ddd30250f3fdb5b947aacdaff4087430b59f7a7be32"
+    },
+    {
+      "path": "foundry/src/startup_foundry/repository.py",
+      "sha256": "f71b643dc4f41460ed181dafd65d6275bfa8efc64c42467f58e1712deb4c5cc2"
+    },
+    {
+      "path": "foundry/uv.lock",
+      "sha256": "981bbf6791e4cea57574c2b9e934075fb53e26572b6c02a33a5a58808852c6df"
+    },
+    {
+      "path": "learning/PROGRESS.md",
+      "sha256": "19a9262eb50a0b8c7a1a0826d2c7813b3cdff71269739cc7ec06fa3b3753488f"
+    },
+    {
+      "path": "learning/README.md",
+      "sha256": "75eb189fbab33821e7efb89f18745f16a1deb3f03db3429fb8999ff7cb35e5a0"
+    },
+    {
+      "path": "learning/ROADMAP.md",
+      "sha256": "2c53525f7145b41daeba66d1661e41df514d2e75997e3eb8e8d445d99de4959b"
+    },
+    {
+      "path": "learning/slices/005-venture-evidence-gate/ACCEPTANCE.md",
+      "sha256": "674d0aaab5906b8630a63616205b7c721b389a90d3120893d852636c7a00bfc7"
+    },
+    {
+      "path": "learning/slices/005-venture-evidence-gate/BRIEF.md",
+      "sha256": "67be8bdc086eb04e9b297770037f28e5763bb6dfed9f6f7fd7ace50a4add763e"
+    },
+    {
+      "path": "learning/slices/005-venture-evidence-gate/RESULTS_TEMPLATE.md",
+      "sha256": "43053d58619337836e003d2356f4ebbcd674d6d10e371e8ac2ee8fa682392971"
+    },
+    {
+      "path": "learning/slices/005-venture-evidence-gate/TODO.md",
+      "sha256": "5b863b6cdc9db049947e902f292d0e470e86604db3b03660beb2c52f76d565e2"
+    }
+  ],
+  "heads": {
+    ".": "e6a83e470d052439e5c8d4a943428f5bbd132f7f",
+    "foundry": "3b082507062838df4009d4b636c4f320436f3b41",
+    "agentevalops": "662d033dc1202359e8bcd0bf0de7120da2bd8854",
+    "learning": "5ed2b8a8c0aa34fdbff4253150cb54b66be1484e"
+  }
+}

@@ -1,0 +1,686 @@
+[
+  {
+    "key": "liberty-create",
+    "requested_url": "https://liberty-rider.com/fr/roadbooks/edit",
+    "url": "https://liberty-rider.com/fr/roadbooks/edit",
+    "status": 200,
+    "body_excerpt": "GPS moto\nRoadbooks\nSOS accident\nPremium offert\nInscription / Connexion\nCr\u00e9er un itin\u00e9raire\nAjoute ta premi\u00e8re \u00e9tape en cliquant sur la carte.\nou\nImporter un GPX\nPr\u00e9pare\n\nPr\u00e9pare ton voyage moto en pla\u00e7ant les points sur la carte ou en important une trace GPX. Ta route est trac\u00e9e en quelques clics.\n\nEnregistre\n\nRetrouve tous tes itin\u00e9raires dans ton compte et dans l\u2019app Liberty\u00a0Rider. C\u2019est simple et gratuit. Tu peux planifier autant de balades que tu veux.\n\nLance le guidage\n\nLiberty\u00a0Rider et son app GPS sp\u00e9cial moto te guide sur le trac\u00e9. Tu peux aussi exporter en GPX pour les Tomtom Rider et Garmin Zumo.\n\nSatellite\n100\u00a0km\n\u00a9 OpenMapTiles \u00a9 OpenStreetMap contributors",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "",
+        "aria": "Fermer"
+      },
+      {
+        "tag": "A",
+        "text": "Installer",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/app"
+      },
+      {
+        "tag": "A",
+        "text": "GPS moto",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/fonctionnalites/application-gps-moto"
+      },
+      {
+        "tag": "A",
+        "text": "Roadbooks",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks"
+      },
+      {
+        "tag": "A",
+        "text": "SOS accident",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/fonctionnalites/sos-accident"
+      },
+      {
+        "tag": "A",
+        "text": "Premium offert",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/partenaires"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Inscription / Connexion",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "",
+        "aria": "Menu"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Explications",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Fermer",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Options de calcul",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Annuler",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "R\u00e9tablir",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Inverser",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Satellite",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Enter fullscreen",
+        "aria": "Enter fullscreen"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Zoom in",
+        "aria": "Zoom in"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Zoom out",
+        "aria": "Zoom out"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Find my location",
+        "aria": "Find my location"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Search",
+        "aria": "Search"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "",
+        "aria": "Clear"
+      },
+      {
+        "tag": "A",
+        "text": "\u00a9 OpenMapTiles",
+        "title": "",
+        "aria": null,
+        "href": "https://www.openmaptiles.org/"
+      },
+      {
+        "tag": "A",
+        "text": "\u00a9 OpenStreetMap contributors",
+        "title": "",
+        "aria": null,
+        "href": "https://www.openstreetmap.org/copyright"
+      }
+    ]
+  },
+  {
+    "key": "byway",
+    "requested_url": "https://www.byway.world/app",
+    "url": "https://www.byway.world/invite",
+    "status": 200,
+    "body_excerpt": "Byway\nPRIVATE BETA\nGet your invite.\n\nByway is live and invite-only while we open it in stages.\n\nByway plans around your taste, verified places, real weather and opening hours \u2014 then opens every leg in Google Maps with one tap.\n\nMAPPED BYWAYS\n863\nLOOKOUTS\n2,095\nVERIFIED PLACES\n435,576\nEMAIL ADDRESS\nJoin private beta\n\nPrivate beta \u00b7 Free to join \u00b7 No card \u00b7 We'll send a code to confirm it's you\n\nAlready have an invite? Sign in\n\n\u00a9 2026 Byway Technologies LLC. All rights reserved.\n\n\u00b7\n\nByway\u2122 is a trademark of Byway Technologies LLC.\n\nCOOKIES\n\nNecessary cookies keep sign-in working. With your permission, analytics and session recordings help us improve the site. No ads, no cross-site tracking, no data sales.\n\nAccept all cookies\nReject all cookies\nPrivacy policy",
+    "controls": [
+      {
+        "tag": "A",
+        "text": "Byway",
+        "title": "",
+        "aria": "Byway \u2014 back to main site",
+        "href": "https://www.byway.world/"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "",
+        "aria": "Theme: dusk"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "you@email.com",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Join private beta",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Sign in",
+        "title": "",
+        "aria": null,
+        "href": "https://www.byway.world/app/sign-in"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Accept all cookies",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reject all cookies",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Privacy policy",
+        "title": "",
+        "aria": null,
+        "href": "https://www.byway.world/privacy"
+      }
+    ]
+  },
+  {
+    "key": "throttle",
+    "requested_url": "https://app.throttlerides.com/",
+    "url": "https://app.throttlerides.com/",
+    "status": 200,
+    "body_excerpt": "OPEN BETAThrottle ships improvements almost daily. A ride you planned last week may render a little differently today, and the occasional rough edge slips through. Something off? hello@throttlerides.com\nGOT IT\nTHROTTLE\nPLAN CURVY. RIDE GOOGLE MAPS.\nMI\nKM\nFAST\nDIRECT\nBALANCED\nSOME CURVES\nBACKROADS\nSUNDAY RIDE\nTWISTIES\nMAX CURVES\nNOVA\nPLAN\nTUNE\nDESCRIBE YOUR RIDE\nPLAN\nSAVE\nROUTE\nRIDE \u2192\n\u25ce\nLOCATE ME\n\u25a6\nMAP\n\u25c9\nSATELLITE\nSIGN UP \u00b7 SIGN IN\n\u25be",
+    "controls": [
+      {
+        "tag": "A",
+        "text": "hello@throttlerides.com",
+        "title": "",
+        "aria": null,
+        "href": "mailto:hello@throttlerides.com"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "GOT IT",
+        "title": "",
+        "aria": "Dismiss beta notice"
+      },
+      {
+        "tag": "A",
+        "text": "THROTTLE\nPLAN CURVY. RIDE GOOGLE MAPS.",
+        "title": "Throttle home",
+        "aria": "Throttle \u2014 go to home",
+        "href": "https://throttlerides.com/"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "MI",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "KM",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "FAST\nDIRECT",
+        "title": "Shortest time. Highways allowed. ETA-first.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "BALANCED\nSOME CURVES",
+        "title": "Mild backroad bias. Adds a little time, dodges slabs when reasonable.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "BACKROADS\nSUNDAY RIDE",
+        "title": "Strong backroad bias. Avoids highways unless required to connect.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "TWISTIES\nMAX CURVES",
+        "title": "Will detour to find the bends. ~30% longer routes are normal.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "NOVA",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "PLAN",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "TUNE",
+        "title": "Plan a route first \u2014 these settings change one.",
+        "aria": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "3 hours from Half Moon Bay, twisties, burger, back by 6",
+        "aria": "Describe your ride in one sentence"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "PLAN",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u21bbQuick round tripBeta",
+        "title": "Generate a round-trip loop from your current location",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u21a5Import a route",
+        "title": "Import a .gpx or .kml file, or a Google Maps directions link",
+        "aria": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Start \u2014 or use my location",
+        "aria": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Add destination",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Or describe the ride in a sentence\u2192",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Stops & timing\u203a",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u25efANY",
+        "title": "ANY",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u26fdGAS",
+        "title": "GAS",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\ud83c\udf74FOOD",
+        "title": "FOOD",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u2316SCENIC",
+        "title": "SCENIC",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u23f8REST",
+        "title": "REST",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Suggest stops",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Fuel, meals, avoids, arrive-by \u2192 Tune",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "SAVE",
+        "title": "Save this trip to your account",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "ROUTE",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "RIDE \u2192",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Zoom in",
+        "aria": "Zoom in"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "Zoom out",
+        "aria": "Zoom out"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u25ce\nLOCATE ME",
+        "title": "Center on my location",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u25a6\nMAP",
+        "title": "MAP",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u25c9\nSATELLITE",
+        "title": "SATELLITE",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Where to?",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "THROTTLEPlan curvy. Ride Google Maps.",
+        "title": "Throttle home",
+        "aria": "Throttle \u2014 go to home",
+        "href": "https://throttlerides.com/"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "mi",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "km",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u00d7",
+        "title": "",
+        "aria": "Close"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "FASTDirect",
+        "title": "Shortest time. Highways allowed. ETA-first.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "BALANCEDSome curves",
+        "title": "Mild backroad bias. Adds a little time, dodges slabs when reasonable.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "BACKROADSSunday ride",
+        "title": "Strong backroad bias. Avoids highways unless required to connect.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "TWISTIESMax curves",
+        "title": "Will detour to find the bends. ~30% longer routes are normal.",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Nova",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Plan",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Tune",
+        "title": "Plan a route first \u2014 these settings change one.",
+        "aria": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "3 hours from Half Moon Bay, twisties, burger, back by 6",
+        "aria": "Describe your ride in one sentence"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Plan",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u21bbQuick round tripBeta",
+        "title": "Generate a round-trip loop from your current location",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u21a5Import a route",
+        "title": "Import a .gpx or .kml file, or a Google Maps directions link",
+        "aria": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Start \u2014 or use my location",
+        "aria": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Add destination",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Or describe the ride in a sentence\u2192",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Stops & timing\u203a",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u25efANY",
+        "title": "ANY",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u26fdGAS",
+        "title": "GAS",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\ud83c\udf74FOOD",
+        "title": "FOOD",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u2316SCENIC",
+        "title": "SCENIC",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u23f8REST",
+        "title": "REST",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Suggest stops",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Fuel, meals, avoids, arrive-by \u2192 Tune",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Save",
+        "title": "Save this trip to your account",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Route",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Ride \u2192",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "\u2190",
+        "title": "",
+        "aria": "Back to plan"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Plan a new ride \u2192",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sign in",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sign in",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Back to planner",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "SIGN UP \u00b7 SIGN IN\n\u25be",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Map",
+        "title": "",
+        "aria": "Map"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Plan",
+        "title": "",
+        "aria": "Plan"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "New",
+        "title": "",
+        "aria": "Plan a new ride"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "My rides",
+        "title": "",
+        "aria": "My rides"
+      }
+    ]
+  }
+]

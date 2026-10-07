@@ -1,0 +1,505 @@
+{
+  "record_id": "FOUNDRY-HANDOFF-20261004-001:r1",
+  "findings": {
+    "ROUTE": [
+      {
+        "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+        "artifact_id": "d4efdb60-74b2-5ff2-b989-f42194961ae7",
+        "evidence_id": "9e2c534a-249b-567a-971b-9286d10667d5",
+        "assumption_assessment_id": "55841e79-8a2a-564b-be99-e1d8f285052d",
+        "decision_id": "02f45bc0-29be-5568-83c9-a80b7f66c42c",
+        "run_id": "ROUTE-20261004-001",
+        "content_digest": "92d399a4060010884d72341f0e07ec17ccc866607a6992e4833ccc2f5a5b9536",
+        "source_ids": []
+      },
+      {
+        "workspace_id": "144c7b9d-5e61-4999-b69f-37767e452df2",
+        "artifact_id": "8f7c409c-532c-56d2-a361-6f65dc636600",
+        "evidence_id": "69adf845-5832-5258-b457-4c367bf0d062",
+        "assumption_assessment_id": "f0868e5e-159a-56d1-8abb-4b2cc9b6344c",
+        "decision_id": "1d4dd546-7462-5029-8b3e-aa8c0b44f73a",
+        "run_id": "ROUTE-20261004-001",
+        "content_digest": "92d399a4060010884d72341f0e07ec17ccc866607a6992e4833ccc2f5a5b9536",
+        "source_ids": []
+      },
+      {
+        "workspace_id": "4d31208a-a404-4304-8e1c-24ed00678d87",
+        "artifact_id": "a04e3aea-269a-5984-a3a1-121eedc27803",
+        "evidence_id": "5711392f-22bc-5d9f-aa31-e68e896978c8",
+        "assumption_assessment_id": "b91ecd54-1a90-5a0c-aa0f-2bdbf5ee5cbc",
+        "decision_id": "dc3fe642-3da3-55af-b69c-2afbcaa9bc74",
+        "run_id": "ROUTE-20261004-001",
+        "content_digest": "92d399a4060010884d72341f0e07ec17ccc866607a6992e4833ccc2f5a5b9536",
+        "source_ids": []
+      }
+    ],
+    "COOPAIN": [
+      {
+        "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+        "artifact_id": "9362796f-6acb-568d-a049-0de8077f4473",
+        "evidence_id": "b2c0818a-4738-5629-8a96-8f0573a2c4ba",
+        "assumption_assessment_id": "99a486d6-f9f0-5824-ac96-c99244782acf",
+        "decision_id": "9a523fb2-9739-52b2-8d98-81f948a2b624",
+        "run_id": "COOPAIN-20261004-001",
+        "content_digest": "482179bac9413047b2a26803ce051feb16100a17474a9d0d7e6493f42c618ffa",
+        "source_ids": [
+          "6f1a4641-be7d-58af-8259-9d8d073eb3df",
+          "c7670daa-89c3-5a0e-803c-a8951c441f1a",
+          "b82f3112-5942-5041-abaf-19183516d0c2",
+          "ab55c9db-03fd-5260-91cb-d1d1d81fdf75"
+        ]
+      },
+      {
+        "workspace_id": "7b337475-fcad-4040-aaf5-5739d959105d",
+        "artifact_id": "a97e7a62-f04b-5f6f-9acc-7d5a9ebb0695",
+        "evidence_id": "bc4333af-8d13-5747-9c5d-e559ac74b64e",
+        "assumption_assessment_id": "fe7bfe8d-4309-526f-8a39-f4615276c756",
+        "decision_id": "3e0109b8-9238-5dcc-b9bf-8b3d76bc9581",
+        "run_id": "COOPAIN-20261004-001",
+        "content_digest": "482179bac9413047b2a26803ce051feb16100a17474a9d0d7e6493f42c618ffa",
+        "source_ids": [
+          "6f1a4641-be7d-58af-8259-9d8d073eb3df",
+          "c7670daa-89c3-5a0e-803c-a8951c441f1a",
+          "b82f3112-5942-5041-abaf-19183516d0c2",
+          "ab55c9db-03fd-5260-91cb-d1d1d81fdf75"
+        ]
+      }
+    ],
+    "SPORTS": [
+      {
+        "workspace_id": "6e2795a7-2457-44e1-b3e1-0bc66ed4f734",
+        "artifact_id": "064271c7-8eb0-5cb5-a935-09d5138b18d8",
+        "evidence_id": "e387b063-7b3a-51ba-bfea-c8a011d668e5",
+        "assumption_assessment_id": "df9ebaa1-b58c-5fb5-99d2-4f7379056657",
+        "decision_id": "9e05ba3e-0de6-5d99-9708-cc8c2bacff8e",
+        "run_id": "SPORTS-20261004-001",
+        "content_digest": "9fe9e81e8fcb6c0a2e9021d52c4e2331304287d8bfb768f0300ae1f4552c9a0d",
+        "source_ids": [
+          "39132651-a71e-5c34-a9d4-337a24aa51c6",
+          "e428c257-a1c0-58c7-a4c2-0422c1da4c83"
+        ]
+      },
+      {
+        "workspace_id": "cb3d70fe-47a7-4863-869f-7d86ac6cdd5f",
+        "artifact_id": "77a4dd1a-c584-5693-916e-511941787a92",
+        "evidence_id": "c95fda71-4f1c-5384-ae3c-12ad65d67826",
+        "assumption_assessment_id": "5dc70301-2c0a-5c34-b191-0f7c98fa9cb1",
+        "decision_id": "e14607d5-72e2-5d3a-8ffb-e17fbd11e17f",
+        "run_id": "SPORTS-20261004-001",
+        "content_digest": "9fe9e81e8fcb6c0a2e9021d52c4e2331304287d8bfb768f0300ae1f4552c9a0d",
+        "source_ids": [
+          "39132651-a71e-5c34-a9d4-337a24aa51c6",
+          "e428c257-a1c0-58c7-a4c2-0422c1da4c83"
+        ]
+      },
+      {
+        "workspace_id": "e0f6a6e4-182f-4f23-b850-2f1c72d27d30",
+        "artifact_id": "b0d72200-0b34-59b1-a585-63e22ef3863e",
+        "evidence_id": "59121ebe-ac67-5769-a348-2f9c88cbd6d0",
+        "assumption_assessment_id": "b23045ed-3eeb-599c-9bb9-178583ada3a3",
+        "decision_id": "395c97fa-2419-548a-b5b5-1ebea552ed85",
+        "run_id": "SPORTS-20261004-001",
+        "content_digest": "9fe9e81e8fcb6c0a2e9021d52c4e2331304287d8bfb768f0300ae1f4552c9a0d",
+        "source_ids": [
+          "39132651-a71e-5c34-a9d4-337a24aa51c6",
+          "e428c257-a1c0-58c7-a4c2-0422c1da4c83"
+        ]
+      },
+      {
+        "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+        "artifact_id": "1388cad8-6496-565d-bdfe-a9911836a8fa",
+        "evidence_id": "6f954bb0-dc7f-5d14-897b-83a4f5bc38f8",
+        "assumption_assessment_id": "9fd2dda6-ab39-57fc-90c4-88836a7c9f4b",
+        "decision_id": "713aa486-fcb5-5f3c-8c16-dd424e8eba16",
+        "run_id": "SPORTS-20261004-001",
+        "content_digest": "9fe9e81e8fcb6c0a2e9021d52c4e2331304287d8bfb768f0300ae1f4552c9a0d",
+        "source_ids": [
+          "39132651-a71e-5c34-a9d4-337a24aa51c6",
+          "e428c257-a1c0-58c7-a4c2-0422c1da4c83"
+        ]
+      }
+    ],
+    "PHYSICAL": [
+      {
+        "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+        "artifact_id": "3922fa3d-649e-59f3-9fd0-4e4ed7c11c57",
+        "evidence_id": "66e71f65-8e17-57ba-bc36-485988840590",
+        "assumption_assessment_id": "34250a4f-300c-5ff1-9b1f-582896f4f55d",
+        "decision_id": "6566b674-daeb-5943-9431-c2e364836666",
+        "run_id": "PHYSICAL-20261004-001",
+        "content_digest": "719dd358ce031ff922157e17c58acd91f190e5415af5bdd39c5210596d890120",
+        "source_ids": [
+          "bbed95c7-d758-5646-9bb7-a082a36d998d",
+          "230abd2d-7ceb-5db0-a0db-4313765c169d",
+          "9795e3ee-45b4-58e5-8a05-8d7aa6dba9dc"
+        ]
+      },
+      {
+        "workspace_id": "a47537ea-2c1e-4c61-bb9b-95eb0190d71e",
+        "artifact_id": "4b1bf550-dbdf-5269-bda7-ca30ecae62b5",
+        "evidence_id": "f68aa5b4-c8c8-573f-9817-62c7483e2272",
+        "assumption_assessment_id": "df64ddf0-5c6a-54a6-881b-c8af1b8805fe",
+        "decision_id": "88f692ec-bbdf-5011-b74a-cbf0acfa5f87",
+        "run_id": "PHYSICAL-20261004-001",
+        "content_digest": "719dd358ce031ff922157e17c58acd91f190e5415af5bdd39c5210596d890120",
+        "source_ids": [
+          "bbed95c7-d758-5646-9bb7-a082a36d998d",
+          "230abd2d-7ceb-5db0-a0db-4313765c169d",
+          "9795e3ee-45b4-58e5-8a05-8d7aa6dba9dc"
+        ]
+      },
+      {
+        "workspace_id": "ec6a746e-71bd-4fce-84ef-daaf32bb37f3",
+        "artifact_id": "89a06754-9378-5638-ba4c-8e55aea18379",
+        "evidence_id": "f390009e-115b-561e-ac98-3aec3552b692",
+        "assumption_assessment_id": "935c2d40-f765-53a9-b1e0-86b0d46d1548",
+        "decision_id": "e8cf0b42-2639-5991-b066-ca7d375adb80",
+        "run_id": "PHYSICAL-20261004-001",
+        "content_digest": "719dd358ce031ff922157e17c58acd91f190e5415af5bdd39c5210596d890120",
+        "source_ids": [
+          "bbed95c7-d758-5646-9bb7-a082a36d998d",
+          "230abd2d-7ceb-5db0-a0db-4313765c169d",
+          "9795e3ee-45b4-58e5-8a05-8d7aa6dba9dc"
+        ]
+      },
+      {
+        "workspace_id": "9c43ec19-e1c6-47cd-aaf3-b19b064d0579",
+        "artifact_id": "8c20d7cf-2aaa-5a69-9326-833480c873f9",
+        "evidence_id": "b36a60bb-f8c0-579d-ae51-b8785f50ed8c",
+        "assumption_assessment_id": "770cccb9-8791-567b-ae4d-5565e5b7438e",
+        "decision_id": "edfb0f44-2e39-5cf0-86f1-07b382a6e545",
+        "run_id": "PHYSICAL-20261004-001",
+        "content_digest": "719dd358ce031ff922157e17c58acd91f190e5415af5bdd39c5210596d890120",
+        "source_ids": [
+          "bbed95c7-d758-5646-9bb7-a082a36d998d",
+          "230abd2d-7ceb-5db0-a0db-4313765c169d",
+          "9795e3ee-45b4-58e5-8a05-8d7aa6dba9dc"
+        ]
+      }
+    ],
+    "RECEIPT": [
+      {
+        "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+        "artifact_id": "c04d2ddf-04d3-513a-a1cc-bcbc355f8baf",
+        "evidence_id": "83efc045-4d50-55ff-910e-d94d02db2658",
+        "assumption_assessment_id": "bf6bb22c-3a5d-52e7-9c67-c186561320e3",
+        "decision_id": "b8562059-7a0b-5d37-b58d-20560282969d",
+        "run_id": "RECEIPT-20261004-001",
+        "content_digest": "b0817d9707320feff885d167d7287574160e1b5738afada6eb74239939587c8a",
+        "source_ids": [
+          "bffba69c-a694-53c4-9d5b-02269da7c3cd"
+        ]
+      },
+      {
+        "workspace_id": "d509395e-0930-4236-a1e6-688fd7d66d1d",
+        "artifact_id": "d48c069d-15f8-54c7-be6a-fa9461e2e412",
+        "evidence_id": "7236f099-6696-5ede-a8ac-cd27d79b190f",
+        "assumption_assessment_id": "c9ec1f91-d3dd-5ff6-9f9f-77ea656df774",
+        "decision_id": "0e4ebd2b-ac11-5069-9628-8cf6c141ee80",
+        "run_id": "RECEIPT-20261004-001",
+        "content_digest": "b0817d9707320feff885d167d7287574160e1b5738afada6eb74239939587c8a",
+        "source_ids": [
+          "bffba69c-a694-53c4-9d5b-02269da7c3cd"
+        ]
+      },
+      {
+        "workspace_id": "73da795e-b908-48a2-9860-1ada10d40b70",
+        "artifact_id": "396d395a-cf4f-54e7-bd38-9981c66e6b15",
+        "evidence_id": "2fe0614a-7356-586c-b2c0-6ac33d9977f1",
+        "assumption_assessment_id": "fe18f30e-f36d-5e4c-a9dc-abf2d9b007f3",
+        "decision_id": "2d578850-84a6-5481-b70e-9dd79ad24355",
+        "run_id": "RECEIPT-20261004-001",
+        "content_digest": "b0817d9707320feff885d167d7287574160e1b5738afada6eb74239939587c8a",
+        "source_ids": [
+          "bffba69c-a694-53c4-9d5b-02269da7c3cd"
+        ]
+      },
+      {
+        "workspace_id": "efa4b1dd-c121-43cd-9738-12276208cd2a",
+        "artifact_id": "6aa2f94b-4730-564c-8c93-f52f430fc7d5",
+        "evidence_id": "4abd5b84-24f7-52b1-b20e-a38cabdab9e9",
+        "assumption_assessment_id": "ecd92dc7-f8d4-5752-8ee4-3690a727cc7e",
+        "decision_id": "ea6fb372-f7fa-5693-83c8-409efefff806",
+        "run_id": "RECEIPT-20261004-001",
+        "content_digest": "b0817d9707320feff885d167d7287574160e1b5738afada6eb74239939587c8a",
+        "source_ids": [
+          "bffba69c-a694-53c4-9d5b-02269da7c3cd"
+        ]
+      },
+      {
+        "workspace_id": "286f2628-cd08-434d-b074-7cdf9b275287",
+        "artifact_id": "bb025c3b-da38-51f2-a7bb-9ff8a78d5226",
+        "evidence_id": "454da1c3-a5ef-5bb8-9999-9c51cb1725ab",
+        "assumption_assessment_id": "b1cdfc31-8d69-5cf6-a6c8-3fe902632906",
+        "decision_id": "03ab0aed-42fd-5fe4-a66f-062941601e24",
+        "run_id": "RECEIPT-20261004-001",
+        "content_digest": "b0817d9707320feff885d167d7287574160e1b5738afada6eb74239939587c8a",
+        "source_ids": [
+          "bffba69c-a694-53c4-9d5b-02269da7c3cd"
+        ]
+      }
+    ]
+  },
+  "ventures": {
+    "portfolio-campaign": {
+      "workspace_id": "6bf82c1c-2d24-4834-85f6-6817c027c34f",
+      "lifecycle_stage": "discovery",
+      "review_id": "7cad36ef-2ab3-4cdd-907d-1bb30dd3a271",
+      "revision": 1,
+      "disposition": "internal_only",
+      "investigation_stage": "triage",
+      "product_maturity": "prototype",
+      "next_work_item_id": "f94af21e-8ae5-57fb-8d42-36bc3f45c1bd",
+      "source_artifact_id": "register-plan-md",
+      "decision_id": null
+    },
+    "v-coopain": {
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+      "lifecycle_stage": "discovery",
+      "review_id": "1b810c6c-469a-441d-9bd4-dfea9de7cef6",
+      "revision": 2,
+      "disposition": "hold",
+      "investigation_stage": "business_validation",
+      "product_maturity": "prototype",
+      "next_work_item_id": "90e268be-e214-59bc-a2da-fe8c7a63a7b5",
+      "source_artifact_id": "9362796f-6acb-568d-a049-0de8077f4473",
+      "decision_id": "9a523fb2-9739-52b2-8d98-81f948a2b624"
+    },
+    "v-evalops": {
+      "workspace_id": "632b48f5-0089-4683-982c-aa64a55f731c",
+      "lifecycle_stage": "paused",
+      "review_id": "a98d61a6-81fd-495c-9d42-49367c0e9e3a",
+      "revision": 1,
+      "disposition": "hold",
+      "investigation_stage": "comparison",
+      "product_maturity": "unknown",
+      "next_work_item_id": "03b9ec25-a99a-59fd-b099-54e1bed527a9",
+      "source_artifact_id": "art-evalops",
+      "decision_id": null
+    },
+    "v-foundry": {
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+      "lifecycle_stage": "discovery",
+      "review_id": "ca24c691-baab-4426-bbdf-9b975d98a833",
+      "revision": 1,
+      "disposition": "internal_only",
+      "investigation_stage": "solution_validation",
+      "product_maturity": "prototype",
+      "next_work_item_id": "handoff-foundry-next-r1",
+      "source_artifact_id": "handoff-foundry-operation-r1",
+      "decision_id": null
+    },
+    "v-g002": {
+      "workspace_id": "cdf67bd8-b581-4853-a2c3-ec9721bbf63c",
+      "lifecycle_stage": "discovery",
+      "review_id": "a055519f-a9fb-4735-80c3-1d60bb2a204e",
+      "revision": 1,
+      "disposition": "internal_only",
+      "investigation_stage": "comparison",
+      "product_maturity": "concept",
+      "next_work_item_id": "2cd60110-02f3-5036-9341-eece1aac9fc2",
+      "source_artifact_id": "art-g002",
+      "decision_id": null
+    },
+    "v-physical": {
+      "workspace_id": "30e593da-2186-47f0-bae5-94a43e6e9884",
+      "lifecycle_stage": "discovery",
+      "review_id": "d94d05c9-5f06-487a-92ce-69b1cbb425ed",
+      "revision": 1,
+      "disposition": "hold",
+      "investigation_stage": "comparison",
+      "product_maturity": "concept",
+      "next_work_item_id": "b1a3026c-5408-5e97-a451-c051b16737b4",
+      "source_artifact_id": "3922fa3d-649e-59f3-9fd0-4e4ed7c11c57",
+      "decision_id": "6566b674-daeb-5943-9431-c2e364836666"
+    },
+    "v-receipt": {
+      "workspace_id": "6072f298-52ad-4c55-a8cb-286f3ad436ed",
+      "lifecycle_stage": "discovery",
+      "review_id": "21f5dc81-97d2-44bd-8624-1d9c913d59c0",
+      "revision": 1,
+      "disposition": "hold",
+      "investigation_stage": "problem_validation",
+      "product_maturity": "concept",
+      "next_work_item_id": "d55f3c6b-6e27-54b8-ab4c-7d53c9d9b5ba",
+      "source_artifact_id": "c04d2ddf-04d3-513a-a1cc-bcbc355f8baf",
+      "decision_id": "b8562059-7a0b-5d37-b58d-20560282969d"
+    },
+    "v-route-repair": {
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+      "lifecycle_stage": "discovery",
+      "review_id": "8d3888fd-79d6-42d7-b23a-2d1f13f7494b",
+      "revision": 1,
+      "disposition": "pursue",
+      "investigation_stage": "comparison",
+      "product_maturity": "concept",
+      "next_work_item_id": "ab20ecb9-789b-5493-8129-06e76f43962e",
+      "source_artifact_id": "d4efdb60-74b2-5ff2-b989-f42194961ae7",
+      "decision_id": "02f45bc0-29be-5568-83c9-a80b7f66c42c"
+    },
+    "v-sports-ranking": {
+      "workspace_id": "6e2795a7-2457-44e1-b3e1-0bc66ed4f734",
+      "lifecycle_stage": "discovery",
+      "review_id": "7d6a8d97-4978-451c-bf3f-664b1012281c",
+      "revision": 1,
+      "disposition": "pursue",
+      "investigation_stage": "comparison",
+      "product_maturity": "concept",
+      "next_work_item_id": "d12ca45c-e7c5-5655-bc7c-d294bac836bb",
+      "source_artifact_id": "064271c7-8eb0-5cb5-a935-09d5138b18d8",
+      "decision_id": "9e05ba3e-0de6-5d99-9708-cc8c2bacff8e"
+    },
+    "v-sports-session": {
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+      "lifecycle_stage": "discovery",
+      "review_id": "9bc256fe-f6da-4bb8-b224-4bc16d321640",
+      "revision": 1,
+      "disposition": "pursue",
+      "investigation_stage": "comparison",
+      "product_maturity": "concept",
+      "next_work_item_id": "ce8f37a2-8aee-55da-b0f0-0f715a130326",
+      "source_artifact_id": "1388cad8-6496-565d-bdfe-a9911836a8fa",
+      "decision_id": "713aa486-fcb5-5f3c-8c16-dd424e8eba16"
+    }
+  },
+  "targeted_scores": {
+    "P023": [
+      {
+        "assessment_id": "a515fddf-72b5-47d6-8a30-64713d8be59d",
+        "scorecard_id": "portfolio-reviewed-v1",
+        "total": 51.0,
+        "coverage": 12,
+        "confidence": "low"
+      },
+      {
+        "assessment_id": "ae9a1887-e3af-4643-8653-3a5598c88a93",
+        "scorecard_id": "portfolio-original-v1",
+        "total": 49.0,
+        "coverage": 12,
+        "confidence": "medium"
+      }
+    ],
+    "P103": [
+      {
+        "assessment_id": "2e4b31f5-8bed-415b-9843-54a95dd79ce1",
+        "scorecard_id": "portfolio-reviewed-v1",
+        "total": 47.0,
+        "coverage": 12,
+        "confidence": "low"
+      },
+      {
+        "assessment_id": "1029bc71-5619-4227-9861-acda871934eb",
+        "scorecard_id": "portfolio-original-v1",
+        "total": 45.0,
+        "coverage": 12,
+        "confidence": "medium"
+      }
+    ],
+    "P046": [
+      {
+        "assessment_id": "f3d53b0e-aeb1-4f17-845f-c4a7827ecd4f",
+        "scorecard_id": "portfolio-reviewed-v1",
+        "total": 48.0,
+        "coverage": 12,
+        "confidence": "low"
+      },
+      {
+        "assessment_id": "9a91d768-5708-4143-b7ef-231249316e28",
+        "scorecard_id": "portfolio-original-v1",
+        "total": 47.0,
+        "coverage": 12,
+        "confidence": "low"
+      }
+    ],
+    "N008": [
+      {
+        "assessment_id": "df2aca53-a4a9-4dd2-8c0e-9553c449d60b",
+        "scorecard_id": "portfolio-reviewed-v1",
+        "total": null,
+        "coverage": 2,
+        "confidence": "low"
+      }
+    ],
+    "D001": [
+      {
+        "assessment_id": "fbe520c8-89bc-47dd-8267-69e5b171f2b4",
+        "scorecard_id": "portfolio-reviewed-v1",
+        "total": null,
+        "coverage": 2,
+        "confidence": "low"
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "id": "2e1f5b6f-66c0-5630-af71-49941268f688",
+      "language": "en",
+      "tone": "formal",
+      "revision": 1,
+      "status": "proposed",
+      "recipients": 0,
+      "approval_required": true
+    },
+    {
+      "id": "8481439b-69e8-5fcd-8410-9b8a190d5402",
+      "language": "en",
+      "tone": "informal",
+      "revision": 1,
+      "status": "proposed",
+      "recipients": 0,
+      "approval_required": true
+    },
+    {
+      "id": "007e2807-7d17-5cc5-9c96-50fa38354ec8",
+      "language": "fr",
+      "tone": "formal",
+      "revision": 1,
+      "status": "proposed",
+      "recipients": 0,
+      "approval_required": true
+    },
+    {
+      "id": "9a3141ba-aa46-5d75-af64-bf28a393ad85",
+      "language": "fr",
+      "tone": "informal",
+      "revision": 1,
+      "status": "proposed",
+      "recipients": 0,
+      "approval_required": true
+    }
+  ],
+  "ranking_snapshots": [
+    {
+      "id": "db1c8961-734b-4e81-ba0b-265f7c8495ea",
+      "scorecard_id": "portfolio-original-v1",
+      "label": "handoff-20261004-portfolio-original-v1"
+    },
+    {
+      "id": "ed38b8ba-21e5-4e6f-9bd5-0a197a1b938b",
+      "scorecard_id": "portfolio-reviewed-v1",
+      "label": "handoff-20261004-portfolio-reviewed-v1"
+    }
+  ],
+  "inbox_receipts": [
+    {
+      "request_id": "R001",
+      "artifact_id": "9c52b108-5d30-54cc-8977-9c4d45f9acd5",
+      "section_sha256": "7c9f8cd849e97c64125f1a035a2fd8278f2f45d5efc5d421bd937bd07ab0ef48"
+    },
+    {
+      "request_id": "R002",
+      "artifact_id": "f8e83394-b03a-592d-984f-c3e9eae398c1",
+      "section_sha256": "433079c92c18a2b28518ab6b68b81b9056e075e29899f4ce8ad768f2dba9bda2"
+    },
+    {
+      "request_id": "R003",
+      "artifact_id": "63f36a9c-e8b4-549c-ab42-5dfeef843c77",
+      "section_sha256": "5f791526884cf536dcc6ad765ea54b6e11c1de772cf42a773288e748dd5161dc"
+    },
+    {
+      "request_id": "R004",
+      "artifact_id": "48b288f9-600f-543d-8058-f3394fe08f4a",
+      "section_sha256": "9afece190ccabfdb6cd93af6af36a2909874b5d0529e698b4aac14097578c8c7"
+    }
+  ]
+}

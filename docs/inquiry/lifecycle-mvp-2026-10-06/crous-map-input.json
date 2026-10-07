@@ -1,0 +1,203 @@
+{
+  "expected_head": null,
+  "request_key": "crous-lifecycle-working-map-2026-10-06",
+  "actor": "Codex",
+  "rationale": "Working map derived from the October 6 desk review and the user’s named Cuvier/Châtelet sites. Branch conditions are proposed review criteria, not observed outcomes. Original venture objective, score, input answers and work blockers remain authoritative.",
+  "map": {
+    "nodes": [
+      {
+        "id": "goal",
+        "kind": "goal",
+        "title": "Help eligible diners make a better lunch choice at Cuvier or Châtelet",
+        "detail": "Working map derived from the October 6 desk review and the user’s named Cuvier/Châtelet sites. Branch conditions are proposed review criteria, not observed outcomes. Original venture objective, score, input answers and work blockers remain authoritative.",
+        "ref": null
+      },
+      {
+        "id": "gap",
+        "kind": "question",
+        "title": "What arrival-time choice is still poorly served by incumbents?",
+        "detail": "Compare exact venue, relevant queue, walking time, predicted wait and seating; absence from a web search proves no coverage claim.",
+        "ref": null
+      },
+      {
+        "id": "freshness",
+        "kind": "question",
+        "title": "Can useful data stay fresh without constant organizer effort?",
+        "detail": "Keep wait, walking time and seat search separate. A few own lunches cannot validate a collaborative feed.",
+        "ref": null
+      },
+      {
+        "id": "coverage_work",
+        "kind": "record",
+        "title": "Check the exact restaurants in incumbent apps",
+        "detail": "",
+        "ref": {
+          "kind": "work",
+          "id": "dbbfbb3d-3ec5-5cca-8d2a-2eae04cc21b2"
+        }
+      },
+      {
+        "id": "queue_work",
+        "kind": "record",
+        "title": "Clarify relevant queue and optional firsthand observation",
+        "detail": "",
+        "ref": {
+          "kind": "work",
+          "id": "4626ac2b-ae37-515e-998a-8634086981dd"
+        }
+      },
+      {
+        "id": "overlap",
+        "kind": "record",
+        "title": "Saved desk review: substantial incumbent overlap; local performance unverified",
+        "detail": "",
+        "ref": {
+          "kind": "evidence",
+          "id": "fa0001ad-a069-5ba3-8580-1a399b92f006"
+        }
+      },
+      {
+        "id": "venues",
+        "kind": "record",
+        "title": "Saved official-site distinctions; do not pool staff and student services",
+        "detail": "",
+        "ref": {
+          "kind": "evidence",
+          "id": "ccf1fde5-cbc7-57d5-86f7-b2080c77c4cd"
+        }
+      },
+      {
+        "id": "request",
+        "kind": "record",
+        "title": "User’s original need and chosen sites",
+        "detail": "",
+        "ref": {
+          "kind": "evidence",
+          "id": "e7d845f6-cf34-50cb-8db9-73a7d56ed65d"
+        }
+      },
+      {
+        "id": "feed",
+        "kind": "record",
+        "title": "No validated live-data feed from the menu/catalog sources",
+        "detail": "",
+        "ref": {
+          "kind": "evidence",
+          "id": "429df1fb-5b44-5c3b-aeb6-8e862ff9125a"
+        }
+      },
+      {
+        "id": "use_existing",
+        "kind": "alternative",
+        "title": "Use an incumbent and stop duplicating its covered job",
+        "detail": "",
+        "ref": null
+      },
+      {
+        "id": "narrow",
+        "kind": "alternative",
+        "title": "Test one demonstrated arrival-choice gap locally",
+        "detail": "",
+        "ref": null
+      },
+      {
+        "id": "hold",
+        "kind": "alternative",
+        "title": "Hold if coverage or data supply cannot be established",
+        "detail": "",
+        "ref": null
+      }
+    ],
+    "edges": [
+      {
+        "source": "gap",
+        "target": "goal",
+        "kind": "contributes_to",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "freshness",
+        "target": "goal",
+        "kind": "contributes_to",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "coverage_work",
+        "target": "gap",
+        "kind": "tests",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "queue_work",
+        "target": "freshness",
+        "kind": "tests",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "overlap",
+        "target": "gap",
+        "kind": "informs",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "venues",
+        "target": "gap",
+        "kind": "informs",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "request",
+        "target": "goal",
+        "kind": "informs",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "feed",
+        "target": "freshness",
+        "kind": "informs",
+        "condition": "",
+        "outcome": null
+      },
+      {
+        "source": "gap",
+        "target": "use_existing",
+        "kind": "may_lead_to",
+        "condition": "Exact-site use shows an incumbent answers the relevant arrival choice adequately",
+        "outcome": "refuted"
+      },
+      {
+        "source": "gap",
+        "target": "narrow",
+        "kind": "may_lead_to",
+        "condition": "A concrete information gap remains after incumbent checks and up to three eligible own-lunch observations; explicit review is still required before any wider pilot",
+        "outcome": "supported"
+      },
+      {
+        "source": "freshness",
+        "target": "hold",
+        "kind": "may_lead_to",
+        "condition": "No eligible observations or reliable freshness mechanism; record what is unknown without claiming failure of demand",
+        "outcome": "blocked"
+      },
+      {
+        "source": "narrow",
+        "target": "freshness",
+        "kind": "revisits",
+        "condition": "",
+        "outcome": null
+      }
+    ],
+    "focus": [
+      "coverage_work",
+      "queue_work"
+    ]
+  },
+  "work_treatments": []
+}

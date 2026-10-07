@@ -1,0 +1,81 @@
+{
+  "format": "synthetic-context-packet-v1",
+  "case_id": "C07",
+  "synthetic": true,
+  "scope": "Portfolio proposal coordinating CourtBalance and LeagueDesk; source records retain ownership.",
+  "scope_revision": 3,
+  "question_revision": 2,
+  "goal": "Choose one coherent near-term sports experiment without discarding distinct future options.",
+  "current_question": "Should casual team balancing and formal league administration become one venture now?",
+  "branch_criteria": {
+    "fuse": "A shared reachable user and initial job support one scope, with explicit treatment of source work and retained lineage.",
+    "link": "Reusable capabilities overlap but customers or near-term workflows differ.",
+    "reject": "Combining scope obscures the first customer or removes necessary ownership/context.",
+    "unknown": "Access, user overlap or proposed scope/work treatment is unverified."
+  },
+  "allowed_scopes": [
+    "C07",
+    "CourtBalance",
+    "LeagueDesk"
+  ],
+  "selection": {
+    "method": "explicit_bidirectional_relationship_closure",
+    "seed_ids": [
+      "C07-E1",
+      "C07-E2",
+      "C07-E3",
+      "C07-E4",
+      "C07-E5"
+    ],
+    "source_record_count": 11,
+    "selected_record_count": 5,
+    "limitation": "Unlinked relevant facts may be omitted. Selection is not semantic retrieval."
+  },
+  "records": [
+    {
+      "id": "C07-E1",
+      "revision": 1,
+      "scope": "CourtBalance",
+      "kind": "synthetic_source",
+      "text": "CourtBalance targets a friends' volleyball organizer: balance teams and repeat attendance. Six friends expressed interest; no completed trial exists.",
+      "links": []
+    },
+    {
+      "id": "C07-E2",
+      "revision": 1,
+      "scope": "LeagueDesk",
+      "kind": "synthetic_source",
+      "text": "LeagueDesk targets club administrators: season registration, fees and official fixtures. No administrator access has been obtained.",
+      "links": []
+    },
+    {
+      "id": "C07-E3",
+      "revision": 1,
+      "scope": "C07",
+      "kind": "synthetic_source",
+      "text": "Both proposals mention ratings, but formal league payments and rules are not requirements for the friends' first session.",
+      "links": []
+    },
+    {
+      "id": "C07-E4",
+      "revision": 1,
+      "scope": "C07",
+      "kind": "synthetic_source",
+      "text": "A first fusion draft would delete both source histories. The later proposal requires preserved source identities/history and explicit retain, defer or supersede treatment for every active task.",
+      "links": [
+        {
+          "relation": "qualifies",
+          "target": "C07-E3"
+        }
+      ]
+    },
+    {
+      "id": "C07-E5",
+      "revision": 1,
+      "scope": "C07",
+      "kind": "synthetic_source",
+      "text": "No person has accepted a fusion or authorized any source task closure. A casual-session pilot can be proposed independently without deleting the league hypothesis.",
+      "links": []
+    }
+  ]
+}

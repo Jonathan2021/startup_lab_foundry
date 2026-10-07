@@ -1,0 +1,22 @@
+[
+  {
+    "key": "liberty",
+    "requested_url": "https://liberty-rider.com/fr/roadbooks",
+    "error": "NetworkError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.referrer - BINDINGS: string value expected at position 61"
+  },
+  {
+    "key": "68",
+    "requested_url": "https://app68.studio/fr",
+    "error": "NetworkError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.referrer - BINDINGS: string value expected at position 45"
+  },
+  {
+    "key": "kurviger",
+    "requested_url": "https://kurviger.com/en/plan",
+    "error": "NetworkError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.referrer - BINDINGS: string value expected at position 51"
+  },
+  {
+    "key": "myrouteapp",
+    "requested_url": "https://www.myrouteapp.com/route/create",
+    "error": "NetworkError: Protocol error (Page.navigate): Invalid parameters Failed to deserialize params.referrer - BINDINGS: string value expected at position 62"
+  }
+]

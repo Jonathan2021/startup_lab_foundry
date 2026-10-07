@@ -1,0 +1,19 @@
+{
+  "venture_id": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+  "workspace_id": "81ee3117-de70-411e-9856-07420859ffad",
+  "map_revision_id": "841898a9-d3e4-5a48-870d-89ea52bc9d74",
+  "map_digest": "22796035dbd5bc071eb41b363d2ce17013287b44dcbe790cf4b9c047f974122e",
+  "source_report": "../crous-2026-10-06/REPORT.md",
+  "unreviewed_changes": 0,
+  "foundry_release": {
+    "venture_id": "v-foundry",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+    "work_id": "2e3c7521-3da1-55d8-be65-3b4adfa0febe",
+    "status": "done",
+    "previous_version": 2,
+    "version": 3,
+    "review_id": "da347387-494d-410d-b35a-30a94a22a152",
+    "review_revision": 4,
+    "release_artifact_id": "20414022-3280-5597-b577-04ce3f94948a"
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "page": "/",
+    "status": 200,
+    "heading": "Find what is worth building.",
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/ideas?q=route",
+    "status": 200,
+    "heading": "Ideas",
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/ideas/N008",
+    "status": 200,
+    "heading": "Scenic ride repair within a time budget (narrowed from route planner)",
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/requests",
+    "status": 200,
+    "heading": "Needs your input",
+    "horizontal_overflow": false
+  },
+  {
+    "page": "/ventures/v-route-repair",
+    "status": 200,
+    "heading": "Scenic ride repair: N008 discovery",
+    "horizontal_overflow": false
+  },
+  {
+    "action": "rider readiness through UI",
+    "url": "http://127.0.0.1:8765/steps/c29d438e-c286-409e-969c-78c0da60b7ea",
+    "outcome": "succeeded"
+  }
+]

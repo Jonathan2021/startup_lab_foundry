@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-02",
+  "attribution": "agent-owned, no learner credit",
+  "recording": "retrospective; frozen before-run protocols retained separately",
+  "database": "/home/jonathan/startup_lab/foundry/.local/portfolio-campaign/campaign.local.db",
+  "operation_count": 19,
+  "application_sha256": "cf3f1f8c7316de7dd67b8b506081b6e47ef8a2bc8e8a690869d7fd3a04259576",
+  "counts": {
+    "assumptions": 3,
+    "evidence": 4,
+    "assumption_assessments": 3,
+    "decisions": 1,
+    "work_items": 1,
+    "experiments": 0,
+    "artifacts": 5
+  }
+}

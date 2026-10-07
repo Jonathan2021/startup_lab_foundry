@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-02",
+  "attribution": "agent-owned; no learner credit",
+  "database": "foundry/.local/portfolio-campaign/campaign.local.db",
+  "operation_count": 1514,
+  "code_sha256": "cf3f1f8c7316de7dd67b8b506081b6e47ef8a2bc8e8a690869d7fd3a04259576",
+  "input_sha256": {
+    "ideas.json": "a8e179c12a76166e98ef4b4b12ee805d2e698650d71973233f52ee3751a2d361",
+    "sources.json": "54bdc07f149f016a18c90d868b41701fc730f02d24cde0df5da2baef42b11c22",
+    "intake-manifest.json": "41610cf660b64873cf9190c34934126f0058c71a7e8e38edf9dcfa7b13666d44"
+  },
+  "counts": {
+    "assumptions": 249,
+    "evidence": 253,
+    "assumption_assessments": 249,
+    "decisions": 249,
+    "work_items": 253,
+    "experiments": 2,
+    "artifacts": 12
+  },
+  "caveat": "Existing Experiment.status remains planned; work completion and result evidence are separate. No lifecycle state was inferred or patched directly."
+}
