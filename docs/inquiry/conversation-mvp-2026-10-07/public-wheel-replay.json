@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "interface": "public CLI through subprocesses; no Foundry imports in client",
+  "python": "/home/jonathan/startup_lab/foundry/.local/conversation-mvp-2026-10-07/installed-env/bin/python",
+  "scope": "isolated synthetic store",
+  "context_complete": true,
+  "context_bytes": 2129,
+  "result_id": "15d61499-0cf6-5ef2-b199-291deda74166",
+  "feedback_evidence_id": "1f91a589-b0ed-40f4-b6d2-671027510982",
+  "checks": [
+    "guide",
+    "schemas",
+    "claim",
+    "context",
+    "arrivals/fetch",
+    "submit",
+    "preview",
+    "accept/retry",
+    "fresh-process resume",
+    "feedback/retry"
+  ],
+  "limits": "Not an independent LLM or MCP host evaluation. No live ventures or paid execution."
+}

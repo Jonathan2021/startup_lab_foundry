@@ -1,0 +1,37 @@
+{
+  "idea_id": "conversation-offer-check-20261007",
+  "venture_id": "v-offer-check",
+  "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8",
+  "research_work_id": "ed72e9e5-9db1-49a7-9712-4a659ec5c62b",
+  "context_id": "d5e33037-2ef2-503b-a12b-824f59e860d2",
+  "result_id": "f758721d-8d12-5b5a-9a36-6e65314be1f4",
+  "receipt": {
+    "actor": "Codex:conversation-mvp-2026-10-07",
+    "coverage_action": "reviewed",
+    "coverage_rationale": "Supplied source and primary sources read; full local plans/probe retained. No commercial truth or demand inferred.",
+    "effects": {
+      "assessment_ids": [],
+      "completed_work_id": "ed72e9e5-9db1-49a7-9712-4a659ec5c62b",
+      "decision_id": "2ee34c83-705e-41b7-8bb9-f709842edc78",
+      "evidence_ids": [
+        "2d19d052-6a3b-40e4-bc72-d0a6b5c25996"
+      ],
+      "map_revision_id": "1b642dd7-b21d-5a5c-b551-5145a6abe948",
+      "next_work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+      "review_id": "38040d12-59df-41fe-bf9f-09fc042a4767",
+      "work_needing_review": {}
+    },
+    "rationale": "Reviewed bounded local handoff under user authorization; self-review, not independent market validation.",
+    "request_digest": "f867cd43c5ee8f744d22cff92eec24d1f301c933641e22be62f2adf54e728972",
+    "resolution": "accept",
+    "result_digest": "c25db33e0401b21d5c594616d28d0dae80a8113f0f3e61b206f5194c5a8c46c2",
+    "result_id": "f758721d-8d12-5b5a-9a36-6e65314be1f4"
+  },
+  "first_work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+  "input_receipt": {
+    "effects": [],
+    "historical": false,
+    "id": "c06d74c2-627e-4e33-a6e6-19c472f6854e"
+  },
+  "repository": "/home/jonathan/startup_lab/offer-check"
+}

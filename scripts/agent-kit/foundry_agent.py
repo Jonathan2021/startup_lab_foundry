@@ -20,7 +20,8 @@ def write_new(path: Path, value: dict[str, Any]) -> None:
         out.write("\n")
 
 
-def invoke(config: dict[str, Any], *args: str) -> dict[str, Any]:
+def cli_argv(config: dict[str, Any]) -> list[str]:
+    """Validate operator configuration before the CLI can initialize a store."""
     argv = config["cli"]
     if (
         not isinstance(argv, list)
@@ -28,8 +29,33 @@ def invoke(config: dict[str, Any], *args: str) -> dict[str, Any]:
         or not all(isinstance(x, str) for x in argv)
     ):
         raise ValueError("project.json cli must be a nonempty argv array")
+    argv = list(argv)
+    for index, value in enumerate(argv):
+        if value == "--store":
+            if index + 1 == len(argv):
+                raise ValueError("Configured --store needs an existing database path")
+            path = argv[index + 1]
+        elif value.startswith("--store="):
+            path = value.split("=", 1)[1]
+        else:
+            continue
+        resolved = Path(path).expanduser().resolve()
+        if not path or not resolved.is_file():
+            raise ValueError(
+                "Configured Foundry store is missing; restore it or correct "
+                "project.json. Refusing to create an empty operator database."
+            )
+        # Pass the exact checked path, including expansion; subprocess has no shell.
+        if value == "--store":
+            argv[index + 1] = str(resolved)
+        else:
+            argv[index] = "--store=" + str(resolved)
+    return argv
+
+
+def invoke(config: dict[str, Any], *args: str) -> dict[str, Any]:
     completed = subprocess.run(
-        [*argv, *args], capture_output=True, text=True, timeout=60
+        [*cli_argv(config), *args], capture_output=True, text=True, timeout=60
     )
     if completed.returncode:
         raise RuntimeError(completed.stderr.strip()[-2000:] or "Foundry command failed")
@@ -169,6 +195,10 @@ def main() -> int:
     parser.add_argument("--config", default=".foundry/project.json")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("resume")
+    command = commands.add_parser(
+        "cli", help="Use the configured public CLI; start with: cli agent guide"
+    )
+    command.add_argument("arguments", nargs=argparse.REMAINDER)
     start = commands.add_parser("start", help="Claim current work and prepare context")
     start.add_argument("--actor", required=True)
     start.add_argument("--work-id")
@@ -182,6 +212,12 @@ def main() -> int:
     try:
         config_path = Path(args.config).resolve()
         config = json.loads(config_path.read_text())
+        if args.command == "cli":
+            # Pass argv, never a shell string. This trusted-local convenience is
+            # not an authorization boundary or workspace-limited credential.
+            return subprocess.run(
+                [*cli_argv(config), *(args.arguments or ["--help"])], timeout=60
+            ).returncode
         if args.command == "resume":
             result = invoke(
                 config,

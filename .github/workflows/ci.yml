@@ -63,7 +63,7 @@ jobs:
 
       - name: Type check
         if: ${{ matrix.python-version == '3.13' }}
-        run: uv run mypy src scripts/agent-kit/foundry_agent.py
+        run: uv run mypy src scripts/agent-kit
 
       - name: Validate GitHub Actions workflows
         if: ${{ matrix.python-version == '3.13' }}

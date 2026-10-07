@@ -11,12 +11,19 @@ R011 ordinary-visit observations are optional later pilot data, not a build bloc
 Volleyball uses one canonical implementation workspace (v-sports-session), retaining
 P023/P103 provenance and the pending historical fusion proposal. No second sports
 implementation is queued. Video coaching is deferred in favor of availability-aware
-personal progression. The unspecified linked-conversation candidate awaits source
-identification; no transcript contents were invented.
+personal progression. The later supplied `Generate Startup Ideas.md` resolves the
+conversation source: [OfferCheck](inquiry/conversation-mvp-2026-10-07/REPORT.md)
+now has an independent repo, synthetic quote-checking probe, dependent MVP map
+and ready first package. It checks exact-SKU supplier offers; demand and advantage
+over existing procurement workflows remain unvalidated. R012 is reviewed.
 
 Each repo has .foundry/project.json, a scoped agent handoff and a durable feedback
 outbox that syncs into Foundry's own evidence. Existing actor labels and claims
 coordinate trusted local agents; they are not authentication for a hosted service.
+The [outside-agent contract](EXTERNAL_AGENTS.md) works through the public CLI and
+has an installed-wheel replay. No Foundry internals or Codex integration is needed.
+MCP-only/remote agents remain unsupported directly; ADR-0016 keeps MCP an optional
+adapter to add when a named host needs it.
 The prior dated investigations and holds below are historical when superseded by
 these explicit user-directed scope changes.
 

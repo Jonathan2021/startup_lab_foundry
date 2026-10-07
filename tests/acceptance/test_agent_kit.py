@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import runpy
 import subprocess
 import sys
 from pathlib import Path
@@ -15,6 +16,84 @@ from startup_foundry.errors import ConflictError
 from startup_foundry.repository import create_db_engine, create_session_factory
 
 KIT = Path(__file__).resolve().parents[2] / "scripts/agent-kit/foundry_agent.py"
+
+
+def test_bridge_passes_the_exact_checked_store_path(tmp_path, monkeypatch):
+    cli_argv = runpy.run_path(str(KIT))["cli_argv"]
+    store = tmp_path / "store with spaces.db"
+    store.touch()
+    original_expanduser = Path.expanduser
+    monkeypatch.setattr(
+        Path,
+        "expanduser",
+        lambda path: (
+            store if str(path) == "~/operator.db" else original_expanduser(path)
+        ),
+    )
+    config = {"cli": ["foundry", "--store=~/operator.db"]}
+    assert cli_argv(config) == ["foundry", "--store=" + str(store)]
+    assert config["cli"] == ["foundry", "--store=~/operator.db"]
+    assert cli_argv({"cli": ["foundry", "--store", "~/operator.db"]}) == [
+        "foundry",
+        "--store",
+        str(store),
+    ]
+
+
+def test_public_contract_client_completes_a_checkpoint_without_internal_imports(
+    tmp_path,
+):
+    completed = subprocess.run(
+        [
+            sys.executable,
+            str(KIT.with_name("contract_replay.py")),
+            "--output-dir",
+            str(tmp_path / "public-replay"),
+        ],
+        capture_output=True,
+        text=True,
+        timeout=180,
+    )
+    assert completed.returncode == 0, completed.stderr
+    report = json.loads(completed.stdout)
+    assert report["status"] == "pass"
+    assert "accept/retry" in report["checks"]
+    assert report["context_complete"]
+
+
+def test_bridge_discovers_public_contracts_without_creating_missing_store(tmp_path):
+    project = tmp_path / "venture"
+    (project / ".foundry").mkdir(parents=True)
+    store = project / "operator-store.db"
+    config = {
+        "cli": [sys.executable, "-m", "startup_foundry", "--store", str(store)],
+        "venture_id": "missing",
+        "workspace_id": "missing",
+    }
+    (project / ".foundry/project.json").write_text(json.dumps(config))
+    missing = subprocess.run(
+        [sys.executable, str(KIT), "resume"],
+        cwd=project,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    assert missing.returncode == 1
+    assert not store.exists(), "A missing operator store must never become an empty DB"
+    assert "missing" in missing.stderr.lower()
+    manifest = create_demo(store)
+    config.update(manifest["ventures"][0])
+    (project / ".foundry/project.json").write_text(json.dumps(config))
+    for name in ("context", "claim", "release", "result", "resolution"):
+        response = subprocess.run(
+            [sys.executable, str(KIT), "cli", "agent", "schema", "--name", name],
+            cwd=project,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        assert response.returncode == 0, response.stderr
+        assert json.loads(response.stdout)["type"] == "object"
 
 
 def test_independent_agent_feedback_retry_and_claim_conflict(tmp_path):

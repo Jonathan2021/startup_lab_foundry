@@ -96,7 +96,7 @@ and versions. Claim ready work before preparing execution context using
 with `handoff release`; release also needs a rationale. Preparing a context is
 allowed for review even when execution remains blocked.
 
-`agent schema --name map|context|result|resolution|change|work` publishes the
+`agent schema --name map|context|claim|release|result|resolution|change|work` publishes the
 validated contracts. Supply a JSON file through `--input`; effects never depend
 on an agent successfully editing several independent rows. Typical commands:
 
@@ -169,6 +169,11 @@ measurement; none follows from a smaller context or a synthetic fixture.
 
 
 ## Independent implementation agents (2026-10-07)
+
+Start with [the public outside-agent contract](EXTERNAL_AGENTS.md). It covers
+setup, exact schemas, returning/reviewing a result, recovery and trust limits.
+The repository helper's `cli` subcommand uses the configured connection for all
+public commands; no Foundry Python imports or Codex-specific tools are required.
 
 Prepared venture repositories contain `.foundry/project.json` and
 `tools/foundry_agent.py`. Run `python3 tools/foundry_agent.py resume`, then

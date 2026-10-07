@@ -12,6 +12,7 @@ Read root/repository AGENTS and the decision, architecture and roadmap in this
 folder. Preserve any dirty state. Then from this repository:
 
 ```bash
+python3 tools/foundry_agent.py cli agent guide
 python3 tools/foundry_agent.py resume
 python3 tools/foundry_agent.py start --actor implementer-foundry-YOUR_SESSION_ID
 ```
@@ -32,17 +33,20 @@ unavailable. The app's runtime must remain independent of Foundry.
 
 ## Check context coverage before implementation
 
-Use the saved context ID with the configured CLI:
+Use `python3 tools/foundry_agent.py cli` followed by any CLI arguments below.
+This forwards the configured executable/store; it is not a workspace permission
+boundary. Use the saved context ID:
 
 ```text
 handoff arrivals --id CONTEXT_ID
 handoff fetch --id CONTEXT_ID --kind evidence --record-id EVIDENCE_ID
 ```
 
-`handoff prepare` accepts the documented ContextInput contract in Foundry source; `agent schema --name result|resolution|change|work|map`
-are the published schema choices. To include extra evidence, prepare a new context
+`agent schema --name context` publishes the full preparation contract. Published
+schema choices are `map`, `context`, `claim`, `release`, `result`, `resolution`,
+`change` and `work`; no Foundry source-code knowledge is needed. To include extra evidence, prepare a new context
 using expected work version and map head from the live state, plus `evidence_ids`.
-Fetch every relevant arrival and page using `--offset`; unselected records are not
+Fetch every relevant arrival and page using `--offset` with `next_offset` until null; unselected records are not
 proved irrelevant. Read source files referenced by the roadmap. Prepared context
 is a coordination summary, not a substitute for actual code/source inspection.
 
@@ -87,7 +91,7 @@ prepare fresh context and submit a superseding result with reconciliation ration
 
 ```bash
 python3 tools/foundry_agent.py feedback-template > .foundry/feedback-input.json
-# Edit all fields; sanitize and include exact reproduction and evidence paths.
+# Keep the generated UUID and scope IDs; fill the descriptive fields and sources.
 python3 tools/foundry_agent.py feedback --input .foundry/feedback-input.json
 ```
 

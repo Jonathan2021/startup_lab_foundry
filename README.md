@@ -11,6 +11,11 @@ results, evolving assessments, human input and explicit portfolio fusion.
 See the [release evidence](docs/inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
 Monetization, managed agents, training and hosted multi-user operation are deferred.
 
+Agents outside Codex can use the [public agent contract](docs/EXTERNAL_AGENTS.md)
+with local shell access and a configured store. The repository helper handles
+claims, saved context and feedback; `cli` exposes the remaining public commands.
+There is no MCP server or authenticated remote agent endpoint yet.
+
 The preserved supplied brief is [docs/startup_foundry_project.md](docs/startup_foundry_project.md).
 The [current direction](docs/CURRENT_DIRECTION.md) and
 [ADR-0008](../docs/adr/0008-evidence-first-venture-realignment.md) govern investment

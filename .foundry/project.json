@@ -10,6 +10,6 @@
   ],
   "feedback_workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
   "repository": "/home/jonathan/startup_lab/foundry",
-  "kit_sha256": "dc2d39488bcae88b04ca726b939da01cd5b829f2b5b059fb2d06ce4ea88b6b84",
+  "kit_sha256": "08dcb36af550a22edffbb1ea3e326f8bf0d2fd836b982d57d6db6f4a7f471291",
   "coordination": "One writer per venture; claims are persistent, no automatic worker or lease timeout."
 }

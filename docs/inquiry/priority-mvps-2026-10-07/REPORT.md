@@ -1,5 +1,11 @@
 # Priority MVPs: investigation and implementation handoffs
 
+Later update, 2026-10-07: the user supplied the missing source. The seventh track
+is now [OfferCheck, with its completed MVP handoff](../conversation-mvp-2026-10-07/REPORT.md).
+R012 is resolved. All repository helpers/handoffs were also updated for the
+[public outside-agent contract](../../EXTERNAL_AGENTS.md). The original campaign
+results and hashes below remain a snapshot of the earlier six-track checkpoint.
+
 2026-10-07. Six tracks are ready for bounded implementation; the
 conversation-derived track is held only for its missing source. This report
 records build decisions, not demand validation. The new venture applications have

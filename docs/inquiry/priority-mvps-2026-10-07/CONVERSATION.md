@@ -1,5 +1,11 @@
 # Conversation-derived candidate: source checkpoint
 
+Resolved later on 2026-10-07: the user supplied `Generate Startup Ideas.md`.
+It is a separate B2A/commercial-execution conversation, not either guessed source
+below. [The completed investigation and OfferCheck handoff](../conversation-mvp-2026-10-07/REPORT.md)
+supersede this access hold. The N001 physical-task hold is unchanged. R012 is
+reviewed; the following text preserves what was known before source recovery.
+
 The current request refers to “the conversation linked” but contains no link.
 An asynchronous clarification was sent at the start. The retained records have
 at least two possible conversations:
