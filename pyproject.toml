@@ -23,7 +23,7 @@ dependencies = [
 bootstrap = [
     "playwright>=1.58,<2",
     "mypy>=2.3.0",
-    "pytest>=8,<9",
+    "pytest>=8,<10",
     "pytest-cov>=7.1.0",
     "httpx>=0.28,<1",
     "pyyaml>=6,<7",
@@ -33,7 +33,7 @@ bootstrap = [
 [dependency-groups]
 dev = [
     "mypy>=2.3.0",
-    "pytest>=8,<9",
+    "pytest>=8,<10",
     "pytest-cov>=7.1.0",
     "httpx>=0.28,<1",
     "pyyaml>=6,<7",
