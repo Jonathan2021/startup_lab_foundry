@@ -48,5 +48,30 @@
   "handoffs": "handoff-verification.json",
   "isolated_starts": "agent-smoke.json",
   "store_integrity_and_preservation": "store-verification.json",
-  "claim_limits": "New venture apps are not implemented by this campaign; synthetic checks are not user or physical-world validation."
+  "claim_limits": "New venture apps are not implemented by this campaign; synthetic checks are not user or physical-world validation.",
+  "post_dependency_patch": {
+    "mako": "1.4.3",
+    "pytest": "9.1.1",
+    "lock_check": "pass",
+    "ruff": "pass",
+    "local_checks": [
+      {
+        "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/patched-dependencies-product.txt",
+        "sha256": "bca4b7c5b5d6b1367066af0ba9aad5487de0d7ef8824b427644e7de46a5a5a4a",
+        "result": "144 passed, 1 skipped"
+      },
+      {
+        "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/patched-dependencies-browser-workflow.txt",
+        "sha256": "4cafa564ec75cbd873be7d14599c4fa755f98461c636a011927f47008722f072",
+        "result": "17 passed"
+      }
+    ],
+    "limits": "Host PostgreSQL still intentionally skipped without explicit URL; CI validates PostgreSQL and image on the pushed revision."
+  },
+  "github_pre_dependency_patch": {
+    "commit": "a42f08ef852ab73b400e7a109de461102e28634e",
+    "run": "https://github.com/Jonathan2021/startup_lab_foundry/actions/runs/37616462723",
+    "conclusion": "success",
+    "jobs": "Python 3.11/3.13, PostgreSQL, browser, image/Compose; publication skipped"
+  }
 }

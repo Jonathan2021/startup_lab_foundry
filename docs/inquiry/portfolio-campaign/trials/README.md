@@ -1,5 +1,15 @@
 # Trials: scope, failures and reproduction
 
+2026-10-07 dependency review: `change-requirements.txt` is a historical environment
+receipt, not a supported installation recipe. Its cryptography 44.0.0 and Werkzeug
+3.1.6 have reported vulnerabilities. They are not Foundry runtime dependencies.
+Keep the receipt unchanged for provenance; ordinary new trials must resolve and
+check a patched isolated environment and record new versions/results. Do not run
+the historical stack as a server or give it untrusted input or credentials. The
+older reproduction instructions below describe the original experiment, not an
+override of this restriction. See
+[current triage](../../priority-mvps-2026-10-07/DEPENDENCIES.md).
+
 Date: 2026-10-02. All operations were agent-owned. No provider/model calls, paid
 services, new accounts, customer outreach, route publication or cloud provisioning.
 Public page/route requests did occur. Synthetic feedback is not actual human

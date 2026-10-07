@@ -54,7 +54,7 @@
     {
       "table": "audit_events",
       "prior_keys": 51,
-      "current_keys": 92,
+      "current_keys": 93,
       "removed_keys": 0
     },
     {
@@ -114,7 +114,7 @@
     {
       "table": "evidence",
       "prior_keys": 295,
-      "current_keys": 308,
+      "current_keys": 309,
       "removed_keys": 0
     },
     {
@@ -144,7 +144,7 @@
     {
       "table": "artifacts",
       "prior_keys": 617,
-      "current_keys": 682,
+      "current_keys": 683,
       "removed_keys": 0
     },
     {

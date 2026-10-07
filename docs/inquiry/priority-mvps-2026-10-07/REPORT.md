@@ -224,6 +224,10 @@ strict mypy configuration explicitly; unrelated parent changes were preserved.
 The Foundry test groups overlap; do not add them into a unique-test total. Product
 checks preceded the final extra helper test, which was then separately run. Exact
 command/log references and hashes are in [verification.json](verification.json).
+The push also surfaced two alerts in the current dependency lock. Mako and pytest
+were patched, while seven alerts from a historical experiment were retained and
+explicitly scoped. [Dependency triage](DEPENDENCIES.md) and the appended verification
+record distinguish the updated-lock checks from these baseline results.
 The earlier main commit `07ecb37` also passed GitHub Python 3.11/3.13,
 PostgreSQL and image/Compose jobs; that result alone does not certify later changes.
 

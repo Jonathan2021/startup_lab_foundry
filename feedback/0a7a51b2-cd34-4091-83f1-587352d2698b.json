@@ -1,0 +1,16 @@
+{
+  "id": "0a7a51b2-cd34-4091-83f1-587352d2698b",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "actor": "Codex:priority-mvps-2026-10-07",
+  "kind": "bug",
+  "summary": "Push surfaced two current dependency alerts and seven historical-trial alerts",
+  "expected": "Active dependency lock uses patched versions, while historical trial records remain traceable and cannot be mistaken for supported install instructions.",
+  "actual": "Current lock had Mako 1.4.1 and pytest 8.4.2. Seven other alerts target frozen changedetection experiment requirements.",
+  "reproduction": "Inspect GitHub Dependabot alerts and their manifest paths; see docs/inquiry/priority-mvps-2026-10-07/DEPENDENCIES.md.",
+  "impact": "Current development/migration dependencies needed maintenance. Historical dependency alerts do not imply these packages run in Foundry. No exploitation was observed or assessed.",
+  "suggestion": "Patched active constraints/lock and documented historical replay restrictions. Review actual post-patch regression evidence; do not mutate old receipts just to remove alerts.",
+  "sources": [
+    "document: docs/inquiry/priority-mvps-2026-10-07/DEPENDENCIES.md"
+  ]
+}
