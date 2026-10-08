@@ -7,13 +7,16 @@ There is no MCP server or authenticated remote agent API in this release.
 
 ## Operator setup, once
 
-Install Foundry using the standalone instructions in `LIFECYCLE_MVP.md`. Create or
+Install Foundry using the [standalone instructions](LIFECYCLE_MVP.md). Create or
 select the venture through the console/CLI, review its decision map and next work,
 and supply the agent with the venture repository. Its `.foundry/project.json`
 names the installed CLI argv, permanent store, venture/workspace and feedback
 workspace. Copy `scripts/agent-kit/foundry_agent.py` to `tools/foundry_agent.py` and
 record its SHA-256 in the manifest. The prepared Startup Lab repositories already
-have this setup. Paths must be changed when moving to another machine.
+have this setup. For a new checkout copy `.foundry/project.example.json` to the
+ignored `.foundry/project.json` and replace the paths and IDs using your own
+reviewed workspace. Operator manifests are local configuration, not a shared
+venture database. Paths must be changed when moving to another machine.
 
 Each prepared repository must also have a root `AGENTS.md` that explicitly
 requires this workflow, links its handoff, shows the start/feedback commands and
@@ -142,3 +145,61 @@ handling, revocation, transport limits and an approved deployment.
 new synthetic store, with no Foundry imports in the client. The release also
 replays it against an installed wheel outside the checkout. That checks the
 interface, not an independent LLM's comprehension or a particular MCP host.
+# Historical upgrade 2026-10-07.2
+
+Run `python3 tools/foundry_agent.py doctor` in a prepared repository. Require
+`bridge_version` and `agent_contract_version` to be `2026-10-07.2`, and
+`manifest_hash_matches` to be true. Doctor checks local configuration and the
+public schema without opening the database; follow it with `resume` to verify
+the actual workspace. The upgraded CLI is the executable configured in the
+manifest. Application runtime dependencies remain independent.
+
+Guide/schema discovery works without a database; other commands still refuse a
+missing configured store. A larger bounded timeout can be selected before the
+subcommand: `python3 tools/foundry_agent.py --timeout-seconds 120 resume`.
+Timeouts never trigger automatic mutation retries. Inspect persisted state and
+reuse the same request key and payload if an idempotent retry is warranted.
+
+For interrupted work already owned by this exact agent, use
+`start --resume-owned --actor ORIGINAL_ACTOR --work-id WORK_ID`. Read the fresh
+saved context and arrivals before editing. This neither steals a claim nor
+releases it on preparation failure. Preserve original actor identity only when
+continuing that session; a different agent must obtain explicit ownership
+reconciliation rather than impersonating the owner.
+
+Prepared contexts now label selected versus total map nodes and provide the
+exact full-map revision command. Evidence coverage remains a separate check.
+Conditional `may_lead_to` edges require both a nonblank `condition` and `outcome`.
+Use created IDs from the final resolve receipt and `resume`, never preview IDs.
+
+
+# Local upgrade 2026-10-08.1
+
+Current agent contract and canonical repository bridge: **2026-10-08.1**.
+Run `doctor` from the venture root and require the canonical SHA in its manifest.
+The 2026-10-07.2 section above records the previous upgrade; use this revision
+for the remarks continuations. No database migration is required.
+
+Ride Options feedback `5dc313c3-bd38-494f-bd31-442cce31e69e` showed an accepted
+correction leaving its original as `needs_reconciliation`. Result show/list/resume
+now expose `superseded_by` and label unresolved ancestors `superseded` only after
+an accepted descendant exists. Chained replacements work across list pagination.
+Pending, rejected and deferred proposals do not retire prior results. Original
+proposal/digest/receipt and stale reasons remain intact. The console links the
+accepted replacement and removes historical entries from pending review lists.
+This is a read projection, not a fabricated resolution or relaxed stale guard.
+
+Coopain's delivered worktree was pushed and merged, while its original working
+folder still contained the old dirty MVP. Therefore release checkpoint evidence
+must name the canonical checkout and any delivery worktree, branch, local HEAD,
+remote branch and SHA, remaining local changes, and Actions URL/head/conclusion.
+Distinguish committed, pushed, merged and CI-verified facts. Before claiming the
+user's folder is current, verify it against the delivered commit; reconcile
+reversibly or document exact remaining divergence and a recoverable snapshot.
+Never stash-pop obsolete code over a newer delivered tree or discard unique files.
+The CLI guide carries the same requirement. No automatic Git mutation or publication
+is added to Foundry.
+
+Public release requirements and reproducible checks:
+[release readiness](RELEASE_READINESS.md). Detailed venture/operator records remain
+in the owning local workspace and are not needed to install or use Foundry.

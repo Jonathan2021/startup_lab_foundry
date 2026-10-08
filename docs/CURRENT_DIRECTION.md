@@ -1,5 +1,22 @@
 # Current Foundry direction
 
+Latest product update 2026-10-08: Foundry `0.1.0` uses agent contract/bridge
+`2026-10-08.1`. Feedback from six implementation agents led to database-independent
+schema discovery, conditional-branch guidance, explicit context/full-map coverage,
+same-owner interrupted-work recovery, and accepted-result lineage that removes
+replaced proposals from pending attention without deleting their history.
+[ADR-0017](adr/0017-dogfood-contract-and-recovery-update.md),
+[ADR-0018](adr/0018-accepted-result-lineage-and-standalone-release.md), and the
+[operator guide](EXTERNAL_AGENTS.md) explain the behavior and upgrade procedure.
+
+The current delivery target is a reproducible standalone repository: locked
+installation, documented local use, regression and browser checks, installed-wheel
+backup/restore/restart verification, and hosted CI for the pushed commit. See
+[release verification](RELEASE_READINESS.md) for scope and commands. Operator
+configuration, current venture claims, private review evidence and databases stay
+local. Repository delivery does not establish commercial demand or authorize a
+hosted deployment. Dated venture investigations below remain historical.
+
 Latest update 2026-10-07: user-selected MVP implementation now takes priority.
 [Priority campaign](inquiry/priority-mvps-2026-10-07/REPORT.md) prepares Volley Match,
 Coopain, Ride Options, Crous Queue, Volley Coach and Foundry itself as independent

@@ -59,11 +59,11 @@ jobs:
 
       - name: Lint
         if: ${{ matrix.python-version == '3.13' }}
-        run: uv run ruff check src tests scripts/agent-kit
+        run: uv run ruff check src tests scripts/agent-kit scripts/verify_distribution.py
 
       - name: Type check
         if: ${{ matrix.python-version == '3.13' }}
-        run: uv run mypy src scripts/agent-kit
+        run: uv run mypy src scripts/agent-kit scripts/verify_distribution.py
 
       - name: Validate GitHub Actions workflows
         if: ${{ matrix.python-version == '3.13' }}
@@ -82,6 +82,9 @@ jobs:
           tests/acceptance/test_agent_kit.py
           tests/contract/test_package_boundary.py
           --junitxml=test-results.xml
+
+      - name: Verify standalone installed distribution and recovery
+        run: make verify-distribution PYTHON_VERSION=${{ matrix.python-version }}
 
       - name: Install Chromium for lifecycle interaction checks
         if: ${{ matrix.python-version == '3.13' }}
@@ -109,10 +112,15 @@ jobs:
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: python-${{ matrix.python-version }}-attempt-${{ github.run_attempt }}
+          # Only the explicitly selected files below, never the test databases.
+          include-hidden-files: true
           path: |
             test-results.xml
             coverage.xml
             browser-artifacts/
+            .local/distribution-check/dist/
+            .local/distribution-check/requirements.txt
+            .local/distribution-check/smoke/summary.json
           if-no-files-found: warn
           retention-days: 5
 

@@ -8,7 +8,9 @@ share a portfolio; each retains its own history and work.
 The [local lifecycle MVP](docs/LIFECYCLE_MVP.md) is implemented. It includes
 versioned decision maps, attributed changes, concise agent context, reviewed
 results, evolving assessments, human input and explicit portfolio fusion.
-See the [release evidence](docs/inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
+Distribution **0.1.0**, agent contract **2026-10-08.1**. See current
+[release checks and limits](docs/RELEASE_READINESS.md) and the historical
+[lifecycle evidence](docs/inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
 Monetization, managed agents, training and hosted multi-user operation are deferred.
 
 Agents outside Codex can use the [public agent contract](docs/EXTERNAL_AGENTS.md)
@@ -18,8 +20,8 @@ There is no MCP server or authenticated remote agent endpoint yet.
 
 The preserved supplied brief is [docs/startup_foundry_project.md](docs/startup_foundry_project.md).
 The [current direction](docs/CURRENT_DIRECTION.md) and
-[ADR-0008](../docs/adr/0008-evidence-first-venture-realignment.md) govern investment
-as of 2026-10-02: internal use under evaluation, without a validated platform business.
+product boundaries in [ARCHITECTURE.md](ARCHITECTURE.md) govern its direction:
+internal use under evaluation, without a validated platform business.
 Time-sensitive competitor notes and product comparisons are maintained in the
 [competitive landscape](docs/competitive-landscape.md).
 
@@ -42,7 +44,8 @@ and completed container/CI/delivery checks remain available. No publication or
 remote deployment follows from starting the console.
 
 Agent EvalOps is the first documented stop-or-pivot case and is deferred as a
-standalone product. Its source remains in `../agentevalops/`; its venture decision
+standalone product. Its source is separate (the optional parent workspace uses
+`../agentevalops/`); its venture decision
 belongs in Foundry. The current
 [portfolio campaign](docs/inquiry/portfolio-campaign/REPORT.md) compares existing
 tools and records dispositions across all supplied ideas. The earlier
@@ -52,26 +55,43 @@ incumbent capabilities, but no paid demand or semantic-memory advantage.
 
 ## Start here
 
-From the repository root:
+From a standalone clone of this repository, with Python 3.11+ (3.13 recommended),
+[uv](https://docs.astral.sh/uv/getting-started/installation/) and GNU Make installed:
 
 ```bash
+git clone https://github.com/Jonathan2021/startup_lab_foundry.git
+cd startup_lab_foundry
 make bootstrap
 make foundry-ui
-# Browse http://127.0.0.1:8765; stop with Ctrl-C.
+# Open http://127.0.0.1:8765; stop with Ctrl-C.
 ```
 
-Useful CLI commands, in another terminal:
+No parent workspace, model, provider account or Docker is needed for local SQLite.
+The first launch creates an empty permanent store; it does not contain another
+operator's ventures. Use **New idea** in the UI, then open its venture investigation.
+For an isolated three-scenario synthetic demo instead:
 
 ```bash
-.venv/bin/foundry storage info
-.venv/bin/foundry venture list
-.venv/bin/foundry idea list --query route
-.venv/bin/foundry idea show --id N008
-.venv/bin/foundry source list --query Distill
-.venv/bin/foundry evidence list --venture-id v-route-repair
-.venv/bin/foundry step start --subject idea --subject-id D001 --kind research_brief --request-key my-d001-brief-1
-.venv/bin/foundry storage backup --output /tmp/foundry-snapshot.local.db
+make seed-demo
+uv run foundry --store .local/demo.local.db ui --port 8766
 ```
+
+The demo command requires a new path and refuses to overwrite existing data.
+Run these from another terminal for configuration, records and backup:
+
+```bash
+uv run foundry storage info
+uv run foundry venture list
+uv run foundry idea list
+uv run foundry storage backup --output /absolute/path/to/new-backup.local.db
+```
+
+See the [usage guide](docs/LIFECYCLE_MVP.md) for the daily workflow, demo,
+confirmation/reconciliation and recovery. For development use `make check`,
+`make test-browser` and `make verify-distribution`; prerequisites and Docker checks
+are in [DEVELOPMENT.md](DEVELOPMENT.md). CI runs the Python matrix, desktop/mobile
+browser flows, isolated wheel installation/recovery, PostgreSQL and image/Compose
+checks on pushes and PRs. It does not publish images or deploy the app.
 
 A backup refuses to overwrite an existing file. Reusing a step request key returns
 that run; a fresh evaluation needs a new key. A successful readiness step checks
@@ -96,7 +116,8 @@ The [October 4 handoff execution](docs/inquiry/handoff-2026-10-04/README.md) add
 explainable original/reviewed scores, portfolio filters, separate investigation /
 product maturity / disposition reviews, existing-project checkpoints, editable
 manual outreach drafts and built-in `/help`. Run `foundry ui --port 8765`, then
-open the local console. Drafts have no delivery provider. The permanent store
-contains the imported workbook history and current investigations; real-user and
-expert-access gates remain in [dated follow-ups](requests/2026-10-04-followups.md).
+open the local console. Drafts have no delivery provider. The historical operator
+store contains imported workbook history and investigations; new installations
+start empty. The [dated follow-ups](requests/2026-10-04-followups.md) preserve that
+operator's real-user and expert-access gates.
 See [development commands](DEVELOPMENT.md) for JSON input formats and backup/configuration.

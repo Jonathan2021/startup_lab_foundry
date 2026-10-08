@@ -17,7 +17,7 @@ python3 tools/foundry_agent.py resume
 python3 tools/foundry_agent.py start --actor implementer-foundry-YOUR_SESSION_ID
 ```
 
-The second command claims the current reviewed next work and saves context under
+The third command claims the current reviewed next work and saves context under
 `.foundry/runs/`. Use a unique actor per agent session. It does not launch a model.
 If the current work is already claimed, do not steal it or reset the database.
 If preparation exceeds its 24KB budget, the bridge releases its exact claim;
@@ -113,3 +113,16 @@ Acceptance: Every prepared repo resolves its own workspace and current work; sta
 
 Do not claim the app is built because its specification or synthetic fixture passes.
 Only add current-package tests. Keep real user trial gates distinct from build gates.
+
+
+## Current upgrade and delivery evidence (2026-10-08.1)
+
+Use the current `doctor` and CLI guide; historical initial-task IDs do not override
+resume. An unresolved result with `state=superseded` links its accepted replacement
+in `superseded_by`; do not repeat completed reconciliation. Originals remain
+immutable and pending/rejected/deferred replacements do not count as acceptance.
+
+For a Git delivery include canonical path, delivery worktree, branch, local HEAD,
+remote branch SHA, residual local changes and the matching CI URL/head/conclusion.
+Report commit, push, merge and original-checkout synchronization independently.
+See [EXTERNAL_AGENTS.md](../../EXTERNAL_AGENTS.md) for the current upgrade contract.

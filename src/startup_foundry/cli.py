@@ -353,6 +353,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     arguments = build_parser().parse_args(argv)
     try:
         _clean_command_text(arguments)
+        # Discovery is a static public contract, including during store outages.
+        if arguments.resource == "agent" and arguments.action in {"guide", "schema"}:
+            from startup_foundry.decision_commands import GUIDE, public_schema
+
+            if arguments.action == "guide":
+                print(GUIDE, end="")
+            else:
+                print(json.dumps(public_schema(arguments.name), sort_keys=True))
+            return 0
         settings = get_settings(arguments)
     except (ConfigurationError, StartupFoundryError) as exc:
         print(f"error: {exc}", file=sys.stderr)

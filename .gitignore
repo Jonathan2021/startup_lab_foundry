@@ -238,3 +238,10 @@ __marimo__/
 # Agent coordination transient inputs
 .foundry/runs/
 .foundry/*input*.json
+
+# Operator-owned coordination configuration and local SQLite stores
+/.foundry/project.json
+*.local.db
+*.local.db-wal
+*.local.db-shm
+*.local.db-journal

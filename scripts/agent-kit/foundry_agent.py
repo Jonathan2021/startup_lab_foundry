@@ -8,9 +8,12 @@ import json
 import subprocess
 import sys
 import tempfile
+from hashlib import sha256
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
+
+BRIDGE_VERSION = "2026-10-08.1"
 
 
 def write_new(path: Path, value: dict[str, Any]) -> None:
@@ -20,7 +23,7 @@ def write_new(path: Path, value: dict[str, Any]) -> None:
         out.write("\n")
 
 
-def cli_argv(config: dict[str, Any]) -> list[str]:
+def cli_argv(config: dict[str, Any], *, require_store: bool = True) -> list[str]:
     """Validate operator configuration before the CLI can initialize a store."""
     argv = config["cli"]
     if (
@@ -40,7 +43,7 @@ def cli_argv(config: dict[str, Any]) -> list[str]:
         else:
             continue
         resolved = Path(path).expanduser().resolve()
-        if not path or not resolved.is_file():
+        if not path or (require_store and not resolved.is_file()):
             raise ValueError(
                 "Configured Foundry store is missing; restore it or correct "
                 "project.json. Refusing to create an empty operator database."
@@ -53,10 +56,37 @@ def cli_argv(config: dict[str, Any]) -> list[str]:
     return argv
 
 
+def command_timeout(config: dict[str, Any]) -> int:
+    value = config.get("timeout_seconds", 60)
+    if type(value) is not int or not 1 <= value <= 600:
+        raise ValueError("timeout_seconds must be an integer from 1 to 600")
+    return value
+
+
+def run_command(
+    config: dict[str, Any], args: tuple[str, ...], *, capture: bool
+) -> subprocess.CompletedProcess[str]:
+    timeout = command_timeout(config)
+    static = args[:2] in {("agent", "guide"), ("agent", "schema")}
+    try:
+        return subprocess.run(
+            [*cli_argv(config, require_store=not static), *args],
+            capture_output=capture,
+            text=True,
+            timeout=timeout,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(
+            f"Foundry exceeded {timeout}s. A mutation outcome may be unknown; "
+            "inspect resume/result show and saved context before retrying. "
+            "No automatic retry was performed. Keep the same request key/payload "
+            "for an idempotent retry. Use --timeout-seconds 120 for a bounded "
+            "read retry; never reset the store or steal a claim."
+        ) from exc
+
+
 def invoke(config: dict[str, Any], *args: str) -> dict[str, Any]:
-    completed = subprocess.run(
-        [*cli_argv(config), *args], capture_output=True, text=True, timeout=60
-    )
+    completed = run_command(config, args, capture=True)
     if completed.returncode:
         raise RuntimeError(completed.stderr.strip()[-2000:] or "Foundry command failed")
     value = json.loads(completed.stdout)
@@ -75,7 +105,12 @@ def submit(
 
 
 def start_work(
-    config: dict[str, Any], actor: str, work_id: str | None, budget: int
+    config: dict[str, Any],
+    actor: str,
+    work_id: str | None,
+    budget: int,
+    *,
+    resume_owned: bool = False,
 ) -> dict[str, Any]:
     workspace = config["workspace_id"]
     state = invoke(
@@ -85,9 +120,35 @@ def start_work(
     selected = work_id or review.get("next_work_item_id")
     work = next((w for w in state["work"] if w["id"] == selected), None)
     if work is None:
-        raise ValueError("No current next work; review Foundry and choose --work-id")
+        raise ValueError(
+            "No current next work; completed MVPs need an explicitly reviewed "
+            "continuation via venture-work create, then start --work-id. "
+            "Do not reclaim completed work or invent an unrelated task."
+        )
     if not state["map_revision_id"]:
         raise ValueError("Create and review a decision map before starting work")
+    if resume_owned:
+        if work["status"] != "in_progress" or work["owner"] != actor:
+            raise ValueError(
+                "Recovery requires in_progress work with this exact owner; "
+                "use normal start for ready work and never take another owner's claim"
+            )
+        # No claim mutation and no release on failure: interrupted work stays owned.
+        return submit(
+            config,
+            {
+                "work_id": work["id"],
+                "expected_work_version": work["version_id"],
+                "expected_head": state["map_revision_id"],
+                "request_key": "recover:" + str(uuid4()),
+                "actor": actor,
+                "budget_bytes": budget,
+            },
+            "handoff",
+            "prepare",
+            "--workspace-id",
+            workspace,
+        )
     claimed = submit(
         config,
         {"expected_version": work["version_id"], "actor": actor},
@@ -193,8 +254,14 @@ def send_feedback(config: dict[str, Any], report: dict[str, Any]) -> dict[str, A
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default=".foundry/project.json")
+    parser.add_argument(
+        "--timeout-seconds", type=int, help="Bound each CLI call (1–600s)"
+    )
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("resume")
+    commands.add_parser(
+        "doctor", help="Check bridge, public contract and store configuration"
+    )
     command = commands.add_parser(
         "cli", help="Use the configured public CLI; start with: cli agent guide"
     )
@@ -203,6 +270,7 @@ def main() -> int:
     start.add_argument("--actor", required=True)
     start.add_argument("--work-id")
     start.add_argument("--budget-bytes", type=int, default=24000)
+    start.add_argument("--resume-owned", action="store_true")
     commands.add_parser("feedback-template")
     feedback = commands.add_parser(
         "feedback", help="Retain and send one sanitized feedback report"
@@ -212,13 +280,38 @@ def main() -> int:
     try:
         config_path = Path(args.config).resolve()
         config = json.loads(config_path.read_text())
+        if args.timeout_seconds is not None:
+            config["timeout_seconds"] = args.timeout_seconds
+        command_timeout(config)
         if args.command == "cli":
             # Pass argv, never a shell string. This trusted-local convenience is
             # not an authorization boundary or workspace-limited credential.
-            return subprocess.run(
-                [*cli_argv(config), *(args.arguments or ["--help"])], timeout=60
+            return run_command(
+                config, tuple(args.arguments or ["--help"]), capture=False
             ).returncode
-        if args.command == "resume":
+        if args.command == "doctor":
+            argv = cli_argv(config)
+            schema = invoke(config, "agent", "schema", "--name", "result")
+            kit_hash = sha256(Path(__file__).read_bytes()).hexdigest()
+            result = {
+                "bridge_version": BRIDGE_VERSION,
+                "agent_contract_version": schema.get(
+                    "x-foundry-agent-contract", "legacy"
+                ),
+                "kit_sha256": kit_hash,
+                "manifest_hash_matches": config.get("kit_sha256") == kit_hash,
+                "workspace_id": config["workspace_id"],
+                "venture_id": config["venture_id"],
+                "configured_cli": argv,
+                "timeout_seconds": command_timeout(config),
+                "store_file_checked": any(
+                    arg == "--store" or arg.startswith("--store=") for arg in argv
+                ),
+                "database_opened": False,
+                "next_check": "Run resume to verify workspace records; "
+                "doctor checks configuration only",
+            }
+        elif args.command == "resume":
             result = invoke(
                 config,
                 "agent",
@@ -229,7 +322,13 @@ def main() -> int:
                 "json",
             )
         elif args.command == "start":
-            result = start_work(config, args.actor, args.work_id, args.budget_bytes)
+            result = start_work(
+                config,
+                args.actor,
+                args.work_id,
+                args.budget_bytes,
+                resume_owned=args.resume_owned,
+            )
             path = config_path.parent / "runs" / (result["id"] + ".json")
             write_new(path, result)
             result = {"saved_context": str(path), **result}

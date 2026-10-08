@@ -81,6 +81,16 @@ def test_bridge_discovers_public_contracts_without_creating_missing_store(tmp_pa
     assert missing.returncode == 1
     assert not store.exists(), "A missing operator store must never become an empty DB"
     assert "missing" in missing.stderr.lower()
+    discovery = subprocess.run(
+        [sys.executable, str(KIT), "cli", "agent", "schema", "--name", "result"],
+        cwd=project,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    assert discovery.returncode == 0, discovery.stderr
+    assert not store.exists()
+    assert json.loads(discovery.stdout)["x-foundry-agent-contract"] == "2026-10-08.1"
     manifest = create_demo(store)
     config.update(manifest["ventures"][0])
     (project / ".foundry/project.json").write_text(json.dumps(config))
@@ -170,6 +180,26 @@ def test_independent_agent_feedback_retry_and_claim_conflict(tmp_path):
     context = json.loads(started.stdout)
     assert Path(context["saved_context"]).is_file()
     assert context["work"]["owner"] == "one"
+    recovered = run(
+        "start", "--actor", "one", "--work-id", work["id"], "--resume-owned"
+    )
+    assert recovered.returncode == 0, recovered.stderr
+    fresh = json.loads(recovered.stdout)
+    assert fresh["id"] != context["id"]
+    assert fresh["work"]["version_id"] == context["work"]["version_id"]
+    assert (
+        run(
+            "start", "--actor", "two", "--work-id", work["id"], "--resume-owned"
+        ).returncode
+        == 1
+    )
+    doctor = run("doctor")
+    assert doctor.returncode == 0, doctor.stderr
+    health = json.loads(doctor.stdout)
+    assert (
+        health["agent_contract_version"] == health["bridge_version"] == "2026-10-08.1"
+    )
+    assert health["store_file_checked"] and not health["database_opened"]
     try:
         service.claim(
             source["workspace_id"],

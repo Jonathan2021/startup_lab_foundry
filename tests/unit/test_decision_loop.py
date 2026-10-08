@@ -1,10 +1,12 @@
 """Behavior contracts for durable, scoped lifecycle decisions and agent results."""
 
 import pytest
+from fastapi.testclient import TestClient
 from sqlalchemy import func, select
 
 from startup_foundry.agent_handoffs import AgentHandoffService
 from startup_foundry.application import FoundryApplication
+from startup_foundry.decision_console import portfolio_attention
 from startup_foundry.decision_contracts import (
     ContextInput,
     MapInput,
@@ -24,6 +26,7 @@ from startup_foundry.errors import ConflictError, ReferenceError, ValidationErro
 from startup_foundry.migrations import upgrade_database
 from startup_foundry.portfolio import IdeaDraft, PortfolioService
 from startup_foundry.repository import create_db_engine, create_session_factory
+from startup_foundry.web import create_app
 
 
 @pytest.fixture
@@ -189,6 +192,11 @@ def test_map_history_retry_and_current_scope(loop):
 def test_context_counterevidence_new_arrivals_and_budget(loop):
     f, venture, _, eid, _, _, handoffs, _, _ = loop
     first = context(loop)
+    coverage = first["map_coverage"]
+    assert coverage["selected_nodes"] == len(first["map"]["nodes"])
+    assert coverage["total_nodes"] >= coverage["selected_nodes"]
+    assert first["map_revision_id"] in coverage["full_map_command"]
+    assert "selected for this work" in first["markdown"]
     assert (
         eid in first["markdown"] and "r18 staging crosses accounts" in first["markdown"]
     )
@@ -460,3 +468,70 @@ def test_deferral_is_visible_after_restart_and_remains_reviewable(loop):
     assert maps.show(venture["workspace_id"])["id"] == head["id"]
     restarted.resolve(result["id"], resolution(result, ctx))
     assert restarted.show_result(result["id"])["state"] == "accept"
+
+
+@pytest.mark.parametrize("replacement_resolution", [None, "reject", "defer", "accept"])
+def test_superseded_history_requires_accepted_replacement(
+    loop, replacement_resolution, tmp_path
+):
+    factory, venture, *_ = loop
+    service = loop[6]
+    ws = venture["workspace_id"]
+    ctx = context(loop)
+    old = service.submit(ws, result_payload(ctx, request_key="original"))
+    middle = service.submit(
+        ws,
+        result_payload(
+            ctx,
+            request_key="middle",
+            supersedes_result_id=old["id"],
+            reconciliation_rationale="Correct the original finding",
+        ),
+    )
+    replacement = service.submit(
+        ws,
+        result_payload(
+            ctx,
+            request_key="replacement",
+            supersedes_result_id=middle["id"],
+            reconciliation_rationale="Finish reconciling the finding",
+        ),
+    )
+    if replacement_resolution:
+        service.resolve(
+            replacement["id"],
+            resolution(replacement, ctx, resolution=replacement_resolution),
+        )
+    resumed = AgentHandoffService(factory).resume(ws)
+    original = service.show_result(old["id"])
+    assert original["digest"] == old["digest"]
+    assert original["proposal"] == old["proposal"]
+    assert original["receipt"] is None
+    if replacement_resolution == "accept":
+        assert original["state"] == "superseded"
+        assert original["superseded_by"] == replacement["id"]
+        assert service.show_result(middle["id"])["superseded_by"] == replacement["id"]
+        assert original["stale_reasons"]  # Retain why the historical context changed.
+        assert f"Result {old['id']}: needs_reconciliation" not in resumed["markdown"]
+        assert replacement["id"] in resumed["markdown"]
+        # Pagination must not determine whether an accepted successor exists.
+        assert service.list_results(ws, limit=1)[0]["state"] == "accept"
+        assert service.show_result(replacement["id"])["state"] == "accept"
+        pending = [
+            r["id"]
+            for item in portfolio_attention(factory)["items"]
+            for r in item["results"]
+        ]
+        assert old["id"] not in pending and middle["id"] not in pending
+        with TestClient(
+            create_app(factory, tmp_path), base_url="http://127.0.0.1"
+        ) as client:
+            page = client.get("/decision-results/" + old["id"])
+            assert page.status_code == 200
+            assert "Historical result superseded by" in page.text
+            assert f"/decision-results/{replacement['id']}" in page.text
+            assert "Reconciliation required" not in page.text
+            assert 'data-lifecycle="resolve"' not in page.text
+    else:
+        assert original["state"] != "superseded"
+        assert original["superseded_by"] is None

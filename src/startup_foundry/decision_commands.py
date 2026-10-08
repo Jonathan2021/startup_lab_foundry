@@ -26,6 +26,7 @@ from startup_foundry.inputs import read_input
 from startup_foundry.repository import SessionFactory
 
 RESOURCES = {"agent", "decision-map", "handoff", "result", "change", "venture-work"}
+AGENT_CONTRACT_VERSION = "2026-10-08.1"
 SCHEMAS: dict[str, type[BaseModel]] = {
     "map": MapInput,
     "context": ContextInput,
@@ -72,7 +73,34 @@ fact without claiming its impact. `venture-work create` adds a bounded task.
 `decision-map show` includes historical revision IDs; --revision retrieves one.
 `handoff release` needs expected_version, actor and rationale for interrupted work.
 Use the CLI's --store PATH consistently for an isolated/demo store.
+
+Public contract revision: 2026-10-08.1. Guide and schema discovery do not open,
+migrate or create a database. Stateful commands still require the intended store.
+Prepared context contains the map nodes selected for this work; map_coverage
+gives counts and the command to retrieve the exact full map revision. This is
+separate from context_complete, which describes evidence selection coverage.
+For may_lead_to edges supply both a nonblank condition and an outcome enum.
+Preview-created IDs are provisional: copy new IDs from the final resolve receipt,
+then resume to select current work. Never use preview IDs for the next claim.
+An interrupted agent may prepare fresh context for its existing claim with the
+same actor and current versions. The repository bridge exposes this explicitly as
+start --resume-owned --actor ACTOR --work-id ID; it never takes another actor's claim.
+Result views label unresolved originals superseded only after an accepted descendant;
+superseded_by links that replacement. Pending/rejected/deferred replacements do not
+clear review work. Original proposals, digests and stale reasons remain available.
+For delivery, record the canonical checkout and any separate worktree, branch, local
+HEAD, remote branch SHA, residual local changes and the CI URL/head/conclusion.
+A commit is not a push; a pushed branch is not a main merge; green CI on another SHA
+is not verification of the delivered tree. Reconcile the user's working folder or
+state its exact remaining divergence and recovery path. Never discard local work.
 """
+
+
+def public_schema(name: str) -> dict[str, Any]:
+    return {
+        **SCHEMAS[name].model_json_schema(),
+        "x-foundry-agent-contract": AGENT_CONTRACT_VERSION,
+    }
 
 
 def add_parsers(resources: Any) -> None:
@@ -141,7 +169,7 @@ def dispatch(factory: SessionFactory, args: Namespace) -> dict[str, Any]:
     if action == ("agent", "guide"):
         return {"markdown": GUIDE}
     if action == ("agent", "schema"):
-        return SCHEMAS[args.name].model_json_schema()
+        return public_schema(args.name)
     if action == ("agent", "resume"):
         workspace = args.workspace_id
         if args.venture_id:

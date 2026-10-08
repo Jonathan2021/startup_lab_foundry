@@ -1,6 +1,8 @@
 # Foundry-specific instructions
 
-Read the root `AGENTS.md` first.
+When this product is nested in Startup Lab, read its parent `AGENTS.md` first.
+A standalone checkout follows the rules here and its public development/agent guides;
+the parent workspace and its learning records are optional.
 
 - Build the Foundry alongside named real ventures. Every capability must unblock a current venture task or record demonstrated friction.
 - Implement the smallest capability that serves the current venture. Generalize only after substantially the same need recurs in real use.

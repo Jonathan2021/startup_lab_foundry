@@ -277,6 +277,14 @@ def render_context(data: JSON) -> str:
         "",
         "## Purpose and conditional next steps",
     ]
+    coverage = data.get("map_coverage")
+    if coverage:
+        lines += [
+            f"Map nodes selected for this work: {coverage['selected_nodes']} "
+            f"of {coverage['total_nodes']}. Other nodes remain in the full roadmap.",
+            "Full saved revision: " + coverage["full_map_command"],
+            "Evidence coverage is reported separately by context_complete.",
+        ]
     for node in data["map"]["nodes"]:
         lines.append(
             f"- {node['id']}: {node['title']}"
@@ -451,7 +459,12 @@ class AgentHandoffService:
             for blocker in item["execution_blockers"]:
                 lines.append("  Blocked: " + blocker)
         for item in result["results"]:
-            if item["state"] not in {"accept", "reject"}:
+            if item["state"] == "superseded":
+                lines.append(
+                    f"- Historical result {item['id']}: superseded by accepted "
+                    f"result {item['superseded_by']}"
+                )
+            elif item["state"] not in {"accept", "reject"}:
                 lines.append("- Result " + item["id"] + ": " + item["state"])
         if result["unreviewed_change_count"]:
             lines.append(
@@ -627,6 +640,16 @@ class AgentHandoffService:
                 "scope": workspace_scope(session, workspace),
                 "map_revision_id": head.current_revision_artifact_id,
                 "map": selected_map,
+                "map_coverage": {
+                    "selected_nodes": len(selected_map["nodes"]),
+                    "total_nodes": len(data["map"]["nodes"]),
+                    "selected_edges": len(selected_map["edges"]),
+                    "total_edges": len(data["map"]["edges"]),
+                    "full_map_command": "foundry decision-map show --workspace-id "
+                    + workspace
+                    + " --revision "
+                    + head.current_revision_artifact_id,
+                },
                 "work": row_json(work),
                 "records": records,
                 "inputs": input_state(session, workspace),
@@ -877,8 +900,48 @@ class AgentHandoffService:
     def _proposal(result: Artifact) -> JSON:
         return {k: v for k, v in result.metadata_json.items() if not k.startswith("_")}
 
+    @staticmethod
+    def _accepted_superseders(session: Session, workspace: str) -> dict[str, str]:
+        """Project accepted replacement chains without rewriting historical records.
+
+        Read the whole workspace, independently of result-list pagination. A
+        pending, rejected or deferred proposal cannot retire an older result.
+        Newest accepted descendants take precedence when history branches.
+        """
+        records = list(
+            session.scalars(
+                select(Artifact)
+                .where(
+                    Artifact.workspace_id == workspace,
+                    Artifact.name.in_([RESULT_SCHEMA, RESOLUTION_SCHEMA]),
+                )
+                .order_by(Artifact.created_at.desc(), Artifact.id)
+            )
+        )
+        proposals = {r.id: r.metadata_json for r in records if r.name == RESULT_SCHEMA}
+        superseders: dict[str, str] = {}
+        for receipt in records:
+            if (
+                receipt.name != RESOLUTION_SCHEMA
+                or receipt.metadata_json["resolution"] != "accept"
+            ):
+                continue
+            accepted_id = receipt.metadata_json["result_id"]
+            predecessor = proposals.get(accepted_id, {}).get("supersedes_result_id")
+            visited = {accepted_id}
+            while predecessor in proposals and predecessor not in visited:
+                visited.add(predecessor)
+                superseders.setdefault(predecessor, accepted_id)
+                predecessor = proposals[predecessor].get("supersedes_result_id")
+        return superseders
+
     @classmethod
-    def _result_view(cls, session: Session, result: Artifact) -> JSON:
+    def _result_view(
+        cls,
+        session: Session,
+        result: Artifact,
+        superseders: dict[str, str] | None = None,
+    ) -> JSON:
         context = cls._artifact(
             session, result.metadata_json["context_id"], CONTEXT_SCHEMA
         )
@@ -901,6 +964,9 @@ class AgentHandoffService:
             .order_by(Artifact.created_at.desc(), Artifact.id)
             .limit(1)
         )
+        if superseders is None:
+            superseders = cls._accepted_superseders(session, result.workspace_id)
+        superseded_by = superseders.get(result.id)
         return {
             "id": result.id,
             "workspace_id": result.workspace_id,
@@ -909,12 +975,15 @@ class AgentHandoffService:
             "context_id": context.id,
             "state": receipt.metadata_json["resolution"]
             if receipt
+            else "superseded"
+            if superseded_by
             else "needs_reconciliation"
             if stale
             else "deferred"
             if deferred
             else "ready_for_review",
             "stale_reasons": stale,
+            "superseded_by": superseded_by,
             "receipt": receipt.metadata_json if receipt else None,
             "deferral": deferred.metadata_json if deferred else None,
             "context_complete": context.metadata_json["context_complete"],
@@ -932,8 +1001,9 @@ class AgentHandoffService:
             raise ValidationError("Result limit must be 1–200")
         with self.factory() as session:
             workspace_scope(session, workspace)
+            superseders = self._accepted_superseders(session, workspace)
             return [
-                self._result_view(session, result)
+                self._result_view(session, result, superseders)
                 for result in session.scalars(
                     select(Artifact)
                     .where(

@@ -1,0 +1,12 @@
+include Makefile DEVELOPMENT.md ARCHITECTURE.md AGENTS.md .env.example
+include Dockerfile docker-compose.yaml .dockerignore uv.lock uv-build-requirements.txt
+include scripts/verify_distribution.py
+include docs/LIFECYCLE_MVP.md docs/EXTERNAL_AGENTS.md docs/RELEASE_READINESS.md
+include docs/adr/0017-dogfood-contract-and-recovery-update.md
+include docs/adr/0018-accepted-result-lineage-and-standalone-release.md
+include .foundry/project.example.json
+recursive-include scripts/agent-kit *.py
+graft tests
+recursive-include .github *.yml
+exclude .foundry/project.json
+recursive-exclude * __pycache__ *.py[cod]

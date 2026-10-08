@@ -55,6 +55,34 @@ class MapNode(Contract):
 
 
 class MapEdge(Contract):
+    model_config = ConfigDict(
+        json_schema_extra={
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {"kind": {"const": "may_lead_to"}},
+                        "required": ["kind"],
+                    },
+                    "then": {
+                        "required": ["condition", "outcome"],
+                        "properties": {
+                            "condition": {"type": "string", "pattern": r"\S"},
+                            "outcome": {"type": "string"},
+                        },
+                    },
+                }
+            ],
+            "examples": [
+                {
+                    "source": "trial",
+                    "target": "pilot",
+                    "kind": "may_lead_to",
+                    "condition": "The bounded trial supports useful repeat use",
+                    "outcome": "supported",
+                }
+            ],
+        }
+    )
     source: str = Field(min_length=1, max_length=64)
     target: str = Field(min_length=1, max_length=64)
     kind: Literal[
@@ -67,7 +95,11 @@ class MapEdge(Contract):
         "supports",
         "contradicts",
     ]
-    condition: str = Field(default="", max_length=2000)
+    condition: str = Field(
+        default="",
+        max_length=2000,
+        description="For may_lead_to, supply a nonblank condition and an outcome.",
+    )
     outcome: (
         Literal[
             "supported", "weakened", "refuted", "inconclusive", "blocked", "conflicting"

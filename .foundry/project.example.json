@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "venture_id": "YOUR_VENTURE_ID",
+  "workspace_id": "YOUR_WORKSPACE_ID",
+  "cli": [
+    "/absolute/path/to/foundry",
+    "--store",
+    "/absolute/path/to/existing.local.db"
+  ],
+  "feedback_workspace_id": "FOUNDRY_FEEDBACK_WORKSPACE_ID",
+  "repository": "/absolute/path/to/venture",
+  "kit_sha256": "3911d27334f0f05a4643913b3c0d681d77a6cd45a4ae6dcd9b5ca4b7b06a2e5e",
+  "agent_contract_version": "2026-10-08.1"
+}

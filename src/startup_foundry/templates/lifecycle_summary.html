@@ -4,7 +4,7 @@
   <p>Keep the current question connected to its purpose and possible outcomes.</p>
   {% if lifecycle.needs_review or lifecycle.stale_references %}<div class="notice" role="status"><strong>Some decisions need review.</strong> Their context changed. Review affected work before resuming it.</div>{% endif %}
   {% else %}<p>No decision map yet. Start from the recorded objective and current work, then add the conditions that would make you continue, change direction or stop.</p>{% endif %}
-  {% for r in lifecycle.results if r.state not in ['accept','reject'] %}<p><a href="/decision-results/{{ r.id }}">Review result: {{ r.proposal.summary }}</a> · {{ r.state|pretty }}</p>{% endfor %}
+  {% for r in lifecycle.results if r.state not in ['accept','reject','superseded'] %}<p><a href="/decision-results/{{ r.id }}">Review result: {{ r.proposal.summary }}</a> · {{ r.state|pretty }}</p>{% endfor %}
   {% if lifecycle.unreviewed_change_count %}<div class="notice"><strong>{{ lifecycle.unreviewed_change_count }} changes to consider.</strong><p>Prepare context for the affected task and inspect these records before deciding.</p><ul>{% for change in lifecycle.unreviewed_changes %}<li>{{ change.summary }} <small class="path">{{ change.id }}</small></li>{% endfor %}</ul></div>{% endif %}
   {% if lifecycle.work %}<h3>Resume work</h3>{% for w in lifecycle.work[:5] %}
   <article class="lifecycle-work"><div><strong>{{ w.title }}</strong><p class="muted">{{ w.status|pretty }} · {{ w.owner or 'Unassigned' }}</p>{% for reason in w.execution_blockers %}<p class="notice">{{ reason }}</p>{% endfor %}</div>

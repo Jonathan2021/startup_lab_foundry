@@ -1,84 +1,57 @@
 # Foundry development
 
-## Environment
+## Standalone environment and checks
 
-Use Python 3.11 or newer. From the repository root:
-
-```bash
-make bootstrap
-```
-
-This uses `uv` and the committed `foundry/uv.lock` when available (including on
-hosts whose Python lacks `ensurepip`). The fallback uses a standard-library
-virtual environment and the equivalent `bootstrap` extra. Runtime dependencies
-include SQLAlchemy, Alembic, psycopg, python-dotenv, FastAPI, Jinja and Uvicorn;
-linting, typing, testing and coverage tools are development-only dependencies. Lower bounds admit
-compatible security and bug-fix releases while the lockfile makes the normal
-development install deterministic.
-
-## Checks
+Run commands from this Foundry repository, including when it is nested under
+Startup Lab. No parent checkout or learning directory is required. Use Python
+3.11+ (default/recommended 3.13), GNU Make and uv. CI pins uv 0.12.4; local 0.11.29
+is also exercised. The committed lock controls runtime and development packages.
 
 ```bash
-make test-regression
-make test-slice
-make test
-make lint
-make typecheck
-make check
+make bootstrap                         # uv sync --locked --group dev
+make check                             # Ruff, strict mypy, product + CI contracts
+uv run playwright install chromium     # one-time browser binary install
+make test-browser                      # actual desktop/mobile Chromium workflows
+make verify-distribution               # isolated wheel install, migration/recovery/HTTP
 ```
 
-After the Slice 004 local review:
+`make bootstrap PYTHON_VERSION=3.11` selects the other supported CI Python.
+`make test-product` runs unit/integration/CLI/package tests. The PostgreSQL CLI
+case skips unless an explicit **disposable test** `FOUNDRY_DATABASE_URL` is set;
+CI runs it in a separate PostgreSQL 18 service. Never aim tests at the operator
+store. Use `make workflow-lint` and `make test-container` with Docker/Compose
+available. Container acceptance creates unique disposable projects and removes
+only their own resources. `make check` does not require Docker or include deferred
+EvalOps/learner exercises.
 
-- `make test-repository` covers parent-repository source-document boundaries;
-- `make test-product` covers fast Foundry unit, persistence, CLI, and package
-  behavior without Docker or parent-repository assumptions;
-- `make test-container` covers the complete local Compose/image/PostgreSQL
-  acceptance path;
-- `make test-ci` covers the accepted CI and delivery workflow structures plus
-  executable metadata-action behavior;
-- `make test-regression` combines the completed repository, product, container,
-  CI, and delivery behavior from Slices 001-004;
-- `make test-discovery-support` runs CLI workspace, experiment-reconstruction, intake, step and console
-  checks for agent-owned discovery; no learner implementation slice is active;
-- `make test-evalops-case-study` retains the deferred, incomplete EvalOps contracts
-  outside the current learning critical path;
-- `make lint` and `make typecheck` enforce the production-Python contract; and
-- `make check` runs lint, type checking and the current regression set; it does
-  not run deferred EvalOps contracts.
+A distribution check refuses an existing output directory. Choose a new one for
+another run, e.g. `make verify-distribution DIST_VERIFY_ROOT=/tmp/foundry-dist-2`.
+The target builds wheel/sdist, exports hash-locked runtime dependencies, installs
+into an isolated venv and calls `scripts/verify_distribution.py`. This stdlib
+harness imports from that venv, runs from an empty cwd, creates only synthetic
+stores, exercises migrations/lifecycle resume, refuses backup overwrite, restores
+and integrity-checks a copy, and starts/stops the packaged HTTP app twice. CI runs
+this on both supported Python versions. Review its `smoke/summary.json` and logs.
 
-Do not weaken, skip, or delete acceptance checks to make them green. Routine
-test organization and coverage are agent-owned; learner work remains focused on
-the implementation and diagnosis of whichever slice is explicitly active.
+Keep failed current-scope acceptance separate from green regression evidence;
+do not skip or weaken tests to claim completion. Add tests around real changed
+behavior, especially stale/conflicting writes, ownership and transaction rollback.
 
-## CI slice
+## CI and delivery
 
-Slice 003's [review](../learning/slices/003-github-actions-ci-fundamentals/FEEDBACK.md)
-and [implementation notes](../learning/slices/003-github-actions-ci-fundamentals/IMPLEMENTATION_NOTES.md)
-record the accepted workflow and learner/agent attribution. The CI contract,
-dependency maintenance, routine documentation, PostgreSQL integration test, and
-post-merge production hardening are agent-owned.
+`.github/workflows/ci.yml` verifies pushes/PRs to main with Python 3.11/3.13, lint,
+strict typing, locked dependencies, workflow checks, CLI and desktop/mobile browser
+flows, standalone wheel recovery, PostgreSQL migration drift, and a non-root
+image/Compose contract. Its final `ci` job requires every verification job to pass.
+Retained artifacts contain synthetic test/coverage/distribution evidence, not
+operator databases. Actions are pinned; permissions are read-only for validation.
 
-This workflow is verification only. It must not require a repository secret,
-publish an image, deploy, mutate repository settings, or obtain cloud identity.
-
-## Delivery slice
-
-Slice 004's
-[brief](../learning/slices/004-advanced-actions-delivery-gh200-readiness/BRIEF.md),
-[TODO](../learning/slices/004-advanced-actions-delivery-gh200-readiness/TODO.md),
-and
-[review](../learning/slices/004-advanced-actions-delivery-gh200-readiness/FEEDBACK.md)
-define the accepted implementation and hosted evidence. The learner owns
-the workflow/action foundation and permission-graph diagnosis. The agent owns
-the structural/executable contract, closure hardening, accepted ADR, routine
-documentation, governance map, and evidence transcription.
-
-The accepted `delivery.yml`, `reusable-image-delivery.yml`, and local
-`release-metadata/action.yml` default to validation and grant write permissions
-only to the explicit manual publication caller. The first successful
-publication is recorded in the Slice 004 review. Any additional GHCR
-publication requires separate exact approval and must not be confused with
-application deployment.
+Manual/scheduled `delivery.yml` calls the same image workflow. It defaults to
+validation. Publishing additionally requires an explicit manual request, main,
+a target environment and write permissions; a source push does not publish an
+image or deploy an application. Historical learner attribution remains in the
+parent Startup Lab learning records, if that optional checkout is available.
+No learning slice is active or required to develop/run this product.
 
 ## Local data
 
@@ -90,13 +63,9 @@ requirement.
 
 ## Container lifecycle
 
-Read the [Slice 002 brief](../learning/slices/002-foundry-containerization/BRIEF.md),
-[TODO](../learning/slices/002-foundry-containerization/TODO.md), and
-[acceptance contract](../learning/slices/002-foundry-containerization/ACCEPTANCE.md)
-before continuing container work. The accepted Compose topology keeps Foundry as an
-ephemeral CLI, uses a healthy PostgreSQL service plus one-shot migration, and
-does not publish the database port. Runtime configuration is local and must not
-be baked into the image or committed.
+The Compose topology keeps Foundry as an ephemeral CLI, with a healthy PostgreSQL
+service and one-shot migration. It does not publish a database port. Runtime
+configuration is local and must not be baked into the image or committed.
 
 The configuration scaffold currently reads real process environment variables:
 
@@ -104,13 +73,13 @@ The configuration scaffold currently reads real process environment variables:
 |---|---|---|
 | `FOUNDRY_DATABASE_URL` | Absolute SQLite URL under XDG data home | SQLAlchemy/Alembic database |
 | `XDG_DATA_HOME` | `~/.local/share` | Parent of `startup-foundry/foundry.local.db`; must be absolute |
-| `FOUNDRY_REQUESTS_DIR` | Checkout `foundry/requests`, otherwise XDG data directory `/requests` | Editable handoffs/inbox |
+| `FOUNDRY_REQUESTS_DIR` | Repository `requests/`, otherwise XDG data directory `/requests` | Editable handoffs/inbox |
 | `FOUNDRY_DEBUG` | `false` | Application diagnostic mode |
 | `FOUNDRY_SQL_ECHO` | `false` | Explicit SQL statement/parameter echo |
 
 The host CLI needs no `.env` for local SQLite. For Compose development, copy `.env.example`
 to `.env.dev`, replace the password placeholder with a generated URL-safe local
-value, and run from `foundry/`. Compose passes that product-local file to every
+value, and run from this repository. Compose passes that product-local file to every
 service, so later `docker compose run` commands do not need to repeat
 `--env-file`. Both populated files are ignored and must not be committed.
 
@@ -123,8 +92,8 @@ errors carry a correlation ID in stderr logs without logging command payloads.
 
 ## Container commands
 
-Run these from the repository root after copying `foundry/.env.example` to the
-ignored `foundry/.env.dev` and replacing its password placeholder:
+Run these from this repository after copying `.env.example` to the
+ignored `.env.dev` and replacing its password placeholder:
 
 ```bash
 make foundry-up
@@ -147,30 +116,29 @@ needed, while the unit of work alone commits or rolls back and closes the
 session. This makes experiment work, experiment metadata, and assumption links
 atomic.
 
-## L-004 disposable migration drill
+## Disposable migration drill
 
 Run destructive downgrade practice only against a newly created disposable
 directory, never against a venture database:
 
 ```bash
-cd foundry
 FOUNDRY_L004_TMP="$(mktemp -d)"
 export FOUNDRY_DATABASE_URL="sqlite:///$FOUNDRY_L004_TMP/foundry.local.db"
 
-../.venv/bin/alembic upgrade head
-../.venv/bin/alembic current
-../.venv/bin/alembic downgrade base
-../.venv/bin/alembic upgrade head
-../.venv/bin/alembic check
+uv run alembic upgrade head
+uv run alembic current
+uv run alembic downgrade base
+uv run alembic upgrade head
+uv run alembic check
 ```
 
-Your learner-owned verification should assert revision/table state and that no
+Verification should assert revision/table state and that no
 default database appeared elsewhere; a successful command transcript alone is
 not a transaction or migration test.
 
 ## Layout
 
-- `src/startup_foundry/` — completed narrow Stage 0 product package.
+- `src/startup_foundry/` — local lifecycle product package.
 - `tests/unit/` — focused application, configuration, migration, and transaction
   behavior.
 - `tests/integration/` — relational schema and repository integration.
@@ -183,7 +151,7 @@ not a transaction or migration test.
   validation/publication workflow.
 - `.github/actions/release-metadata/action.yml` — reviewed local composite
   metadata action.
-- `docs/` — the preserved product brief plus future product documentation.
+- `docs/` — the preserved product brief, usage guides, ADRs and release documentation.
 
 
 ## Permanent local workspace and console
@@ -252,7 +220,7 @@ Use `--disposition`, `--investigation-stage`, `--product-maturity`, `--blocker`,
 filters/pagination persist in links. Empty filters mean all, including dropped/held.
 
 ```bash
-foundry score import-original --sources-directory foundry/docs/sources
+foundry score import-original --sources-directory docs/sources
 foundry scorecard list
 foundry score show --idea-id P046
 foundry score sensitivity --idea-id P046 --scorecard-id portfolio-original-v1
@@ -329,8 +297,8 @@ actions remain drafts; manual outcome labels do not grant future send permission
 HTTP mutations still need the per-process local token and same Origin. `/help`
 explains actual flows. The dated follow-up file leaves original inbox responses
 untouched; the explicit October 4 scripts retain receipt digests and findings.
-Real user trials, browser visual QA and Coopain runtime checks remain separately
-identified gates, not synthetic passing results.
+Real user trials and venture runtime checks remain separate from Foundry's
+synthetic tests. Actual Foundry browser checks are described above.
 
 ## Venture workspace revamp (ADR-0011)
 
@@ -499,8 +467,8 @@ The official image uses the same uv 0.11.29 release from hash-pinned official Py
 wheels in the build stage, retaining frozen runtime dependencies and non-root
 image security checks. See [ADR-0012](docs/adr/0012-hash-pinned-official-uv-build-source.md).
 The registry failure and subsequent passing image path are recorded in the
-[repair report](docs/inquiry/revamp-fixes-2026-10-06/REPORT.md). `make check` includes
-the real container/PostgreSQL path. Desktop/mobile interaction remains a separate
+[repair report](docs/inquiry/revamp-fixes-2026-10-06/REPORT.md). `make test-container`
+exercises the container/PostgreSQL path. Desktop/mobile interaction is a separate
 browser acceptance gate and cannot be certified by HTTP or Node serialization.
 
 HTTP: `/requests?status=needs_you|awaiting_review|deferred|history`, `/requests/R006`

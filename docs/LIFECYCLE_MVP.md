@@ -7,7 +7,7 @@ The same workflow works for a new idea, an operating service or a supplier issue
 
 ## Start locally
 
-From `/home/jonathan/startup_lab`:
+From the standalone Foundry repository root (Python 3.11+, uv and GNU Make):
 
 ```bash
 make bootstrap
@@ -20,8 +20,9 @@ records survive restart. `foundry storage info` reports configuration without
 creating or migrating a database. Normal data commands and UI startup apply
 additive migrations; back up first when upgrading an existing installation.
 
-A distributable wheel and source archive can be built with `uv build --project
-foundry`. Install the wheel in a Python 3.11+ environment and run `foundry ui`.
+A distributable wheel and source archive can be built with `uv build`. Install the wheel in a Python 3.11+ environment and run `foundry ui`.
+For a locked installation and executable recovery check, use
+`make verify-distribution` as described in [release readiness](RELEASE_READINESS.md).
 The wheel includes templates, static assets and Alembic migrations. The existing
 Docker/Compose route supports the CLI and PostgreSQL. This release is for local,
 single-operator use; exposing it as a multi-user website requires a separate
@@ -156,12 +157,14 @@ operators use their normal database backup/restore procedure.
 
 ## Release checks
 
-`make check` runs lint, strict typing, repository/product/CLI, official container
-and workflow checks. `make test-browser` exercises actual Chromium interaction.
+`make check` runs lint, strict typing, repository/product/CLI and workflow checks.
+`make test-container` covers Docker/Compose and PostgreSQL separately.
+`make test-browser` exercises actual Chromium interaction.
 Install the browser with `.venv/bin/playwright install chromium` or set
 `FOUNDRY_BROWSER_EXECUTABLE` to an existing Chromium executable. CI installs its
-browser and retains screenshots. Detailed results and the live-store migration
-note are in the [release report](inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
+browser and retains screenshots. Current standalone validation is described in
+[release readiness](RELEASE_READINESS.md); the earlier live-store migration note
+is in the [historical release report](inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
 
 The MVP establishes reliable local behavior. Long-term maintenance benefit,
 commercial demand and token savings require continued use and comparative

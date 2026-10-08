@@ -118,6 +118,11 @@ def test_lifecycle_cli_replays_and_refuses_demo_overwrite(tmp_path: Path):
             assert resumed["current_review"]["product_maturity"] == original_maturity
             assert resumed["scope"] == original_scope
             assert resumed["unreviewed_change_count"] == 0
+            if entry["venture_id"] == "demo-supplier" and sequence == 0:
+                historical = run("result", "show", "--id", old["id"])
+                assert historical["state"] == "superseded"
+                assert historical["superseded_by"] == result["id"]
+                assert historical["digest"] == old["digest"]
             if sequence == 0:
                 submit(
                     "venture-work",

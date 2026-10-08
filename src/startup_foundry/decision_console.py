@@ -10,7 +10,7 @@ from fastapi.responses import PlainTextResponse, Response
 from sqlalchemy import func, select
 
 from startup_foundry.agent_handoffs import AgentHandoffService
-from startup_foundry.decision_commands import GUIDE, SCHEMAS
+from startup_foundry.decision_commands import GUIDE, SCHEMAS, public_schema
 from startup_foundry.decision_contracts import (
     CaptureInput,
     ContextInput,
@@ -57,7 +57,9 @@ def portfolio_attention(factory: SessionFactory) -> JSON:
     for head in heads:
         current = AgentHandoffService(factory).resume(head.workspace_id)
         pending = [
-            r for r in current["results"] if r["state"] not in {"accept", "reject"}
+            r
+            for r in current["results"]
+            if r["state"] not in {"accept", "reject", "superseded"}
         ]
         if pending or current["needs_review"] or current["unreviewed_change_count"]:
             scope = current["scope"]
@@ -133,7 +135,7 @@ def install_decision_routes(
     def schema(name: str) -> JSON:
         if name not in SCHEMAS:
             raise ReferenceError("Unknown contract")
-        return SCHEMAS[name].model_json_schema()
+        return public_schema(name)
 
     @app.get("/api/workspaces/{workspace}/resume")
     def resume(workspace: str) -> JSON:
