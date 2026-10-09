@@ -70,10 +70,6 @@ def card_id(request: Request) -> str:
     return DetailQuery.parse(request).card_id
 
 
-def back_url(request: Request, kind: str) -> str:
-    return DetailQuery.parse(request).back(kind)
-
-
 def context(
     factory: SessionFactory,
     inputs: HumanInputService,
