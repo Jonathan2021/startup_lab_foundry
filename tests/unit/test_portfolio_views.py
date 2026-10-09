@@ -7,8 +7,16 @@ from startup_foundry.migrations import upgrade_database
 from startup_foundry.portfolio import IdeaDraft, PortfolioService
 from startup_foundry.repository import create_db_engine, create_session_factory
 from startup_foundry.reviews import ReviewInput, ReviewService
-from startup_foundry.scoring import FACTORS, AssessmentInput, ScoringService
+from startup_foundry.scoring import (
+    FACTORS,
+    ORIGINAL,
+    REVIEWED,
+    AssessmentInput,
+    ScoringService,
+    scorecard_for_view,
+)
 from startup_foundry.views import PortfolioQuery, PortfolioViewService
+from startup_foundry.workspace_navigation import DetailQuery
 
 
 @pytest.fixture
@@ -137,3 +145,13 @@ def test_linked_ventures_are_not_arbitrarily_collapsed(view):
 def test_query_bounds_are_explicit(input):
     with pytest.raises(ValueError):
         PortfolioQuery(**input)
+
+
+@pytest.mark.parametrize(
+    ("score_view", "card"),
+    [("original", ORIGINAL), ("reviewed", REVIEWED), ("custom-v2", "custom-v2")],
+)
+def test_list_and_detail_queries_resolve_score_views_identically(score_view, card):
+    assert scorecard_for_view(score_view) == card
+    assert PortfolioQuery(score_view=score_view).card_id == card
+    assert DetailQuery(score_view=score_view).card_id == card

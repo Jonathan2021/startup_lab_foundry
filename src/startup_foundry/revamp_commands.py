@@ -17,7 +17,7 @@ from startup_foundry.human_inputs import (
     ResponseInput,
     ReviewResult,
 )
-from startup_foundry.inputs import read_input
+from startup_foundry.inputs import read_bounded, read_input
 from startup_foundry.manual_intake import (
     IntakeCompletion,
     IntakeRequest,
@@ -145,10 +145,7 @@ def dispatch(
             return inputs.preview()
         if args.action == "sync":
             try:
-                raw = Path(args.preview).read_bytes()
-                if len(raw) > 100000:
-                    raise ValidationError("Sync preview exceeds 100 KB")
-                preview = json.loads(raw)
+                preview = json.loads(read_bounded(args.preview, "Sync preview"))
             except (OSError, ValueError) as exc:
                 raise ValidationError("Cannot read sync preview JSON") from exc
             return inputs.sync(preview, reconciliation=args.reconciliation)

@@ -9,8 +9,17 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from workflow_yaml import (
+    FOUNDRY_ROOT,
+    SHA_PIN,
+    as_mapping,
+    as_sequence,
+    external_actions,
+    job_commands,
+    load_yaml,
+    workflow_jobs,
+)
 
-FOUNDRY_ROOT = Path(__file__).parents[2]
 CALLER_PATH = FOUNDRY_ROOT / ".github" / "workflows" / "delivery.yml"
 REUSABLE_PATH = (
     FOUNDRY_ROOT / ".github" / "workflows" / "reusable-image-delivery.yml"
@@ -18,42 +27,10 @@ REUSABLE_PATH = (
 ACTION_PATH = (
     FOUNDRY_ROOT / ".github" / "actions" / "release-metadata" / "action.yml"
 )
-SHA_PIN = re.compile(r"^[^@\s]+@[0-9a-fA-F]{40}$")
-
-
-def _mapping(value: Any, label: str) -> dict[str, Any]:
-    assert isinstance(value, dict), f"{label} must be a YAML mapping"
-    return value
-
-
-def _sequence(value: Any, label: str) -> list[Any]:
-    if isinstance(value, str):
-        return [value]
-    assert isinstance(value, list), f"{label} must be a YAML sequence"
-    return value
-
-
-def _yaml(path: Path, label: str) -> dict[str, Any]:
-    assert path.is_file(), f"create {path.relative_to(FOUNDRY_ROOT)}"
-    parsed = yaml.load(path.read_text(), Loader=yaml.BaseLoader)
-    return _mapping(parsed, label)
-
-
-def _jobs(workflow: dict[str, Any]) -> dict[str, Any]:
-    return _mapping(workflow.get("jobs"), "jobs")
-
-
-def _steps(job: dict[str, Any]) -> list[dict[str, Any]]:
-    raw_steps = _sequence(job.get("steps"), "job steps")
-    return [_mapping(step, "workflow step") for step in raw_steps]
-
-
-def _commands(job: dict[str, Any]) -> str:
-    return "\n".join(str(step.get("run", "")) for step in _steps(job))
 
 
 def _permissions(container: dict[str, Any], label: str) -> dict[str, Any]:
-    return _mapping(container.get("permissions", {}), f"{label} permissions")
+    return as_mapping(container.get("permissions", {}), f"{label} permissions")
 
 
 def _has_write_permission(container: dict[str, Any], label: str) -> bool:
@@ -63,21 +40,10 @@ def _has_write_permission(container: dict[str, Any], label: str) -> bool:
     )
 
 
-def _external_actions(jobs: dict[str, Any]) -> list[str]:
-    actions: list[str] = []
-    for job_id, raw_job in jobs.items():
-        job = _mapping(raw_job, f"job {job_id}")
-        if "steps" not in job:
-            continue
-        for step in _steps(job):
-            uses = str(step.get("uses", ""))
-            if uses and not uses.startswith(("./", "docker://")):
-                actions.append(uses)
-    return actions
-
-
 def _assert_immutable_actions(jobs: dict[str, Any]) -> None:
-    mutable = [uses for uses in _external_actions(jobs) if not SHA_PIN.fullmatch(uses)]
+    mutable = [
+        uses for uses, _ in external_actions(jobs) if not SHA_PIN.fullmatch(uses)
+    ]
     assert not mutable, f"pin every external action to a full commit SHA: {mutable}"
 
 
@@ -85,11 +51,11 @@ def _run_metadata_action(
     tmp_path: Path, *, image_name: str, candidate_tag: str
 ) -> subprocess.CompletedProcess[str]:
     """Run the composite action's exact shell step as GitHub would."""
-    action = _yaml(ACTION_PATH, "release metadata action")
-    runs = _mapping(action.get("runs"), "runs")
+    action = load_yaml(ACTION_PATH, "release metadata action")
+    runs = as_mapping(action.get("runs"), "runs")
     steps = [
-        _mapping(step, "composite step")
-        for step in _sequence(runs.get("steps"), "composite steps")
+        as_mapping(step, "composite step")
+        for step in as_sequence(runs.get("steps"), "composite steps")
     ]
     run_steps = [step for step in steps if "run" in step]
     assert len(run_steps) == 1, "keep metadata validation atomic and testable"
@@ -121,8 +87,8 @@ def _run_metadata_action(
 
 
 def test_typed_manual_and_scheduled_callers_separate_authority() -> None:
-    workflow = _yaml(CALLER_PATH, "delivery caller")
-    events = _mapping(workflow.get("on"), "on")
+    workflow = load_yaml(CALLER_PATH, "delivery caller")
+    events = as_mapping(workflow.get("on"), "on")
     assert {"workflow_dispatch", "schedule"}.issubset(events), (
         "delivery needs a typed manual trigger and a scheduled validation trigger"
     )
@@ -130,10 +96,10 @@ def test_typed_manual_and_scheduled_callers_separate_authority() -> None:
         events
     ), "no unreviewed event may publish a package"
 
-    dispatch = _mapping(events["workflow_dispatch"], "on.workflow_dispatch")
-    dispatch_inputs = _mapping(dispatch.get("inputs"), "workflow_dispatch.inputs")
+    dispatch = as_mapping(events["workflow_dispatch"], "on.workflow_dispatch")
+    dispatch_inputs = as_mapping(dispatch.get("inputs"), "workflow_dispatch.inputs")
     boolean_inputs = {
-        name: _mapping(spec, f"dispatch input {name}")
+        name: as_mapping(spec, f"dispatch input {name}")
         for name, spec in dispatch_inputs.items()
         if isinstance(spec, dict) and spec.get("type") == "boolean"
     }
@@ -148,7 +114,7 @@ def test_typed_manual_and_scheduled_callers_separate_authority() -> None:
         for spec in dispatch_inputs.values()
     ), "make the target a constrained environment or choice input"
 
-    schedules = _sequence(events["schedule"], "on.schedule")
+    schedules = as_sequence(events["schedule"], "on.schedule")
     assert any(
         isinstance(entry, dict) and str(entry.get("cron", "")).strip()
         for entry in schedules
@@ -159,9 +125,9 @@ def test_typed_manual_and_scheduled_callers_separate_authority() -> None:
         "the caller must deny write authority by default"
     )
 
-    jobs = _jobs(workflow)
+    jobs = workflow_jobs(workflow)
     calls = [
-        (str(job_id), _mapping(raw_job, f"job {job_id}"))
+        (str(job_id), as_mapping(raw_job, f"job {job_id}"))
         for job_id, raw_job in jobs.items()
         if isinstance(raw_job, dict)
         and str(raw_job.get("uses", "")).startswith("./.github/workflows/")
@@ -197,10 +163,10 @@ def test_typed_manual_and_scheduled_callers_separate_authority() -> None:
 
 
 def test_reusable_workflow_exposes_typed_inputs_outputs_and_image_evidence() -> None:
-    workflow = _yaml(REUSABLE_PATH, "reusable delivery workflow")
-    events = _mapping(workflow.get("on"), "on")
-    call = _mapping(events.get("workflow_call"), "on.workflow_call")
-    inputs = _mapping(call.get("inputs"), "workflow_call.inputs")
+    workflow = load_yaml(REUSABLE_PATH, "reusable delivery workflow")
+    events = as_mapping(workflow.get("on"), "on")
+    call = as_mapping(events.get("workflow_call"), "on.workflow_call")
+    inputs = as_mapping(call.get("inputs"), "workflow_call.inputs")
     assert any(
         isinstance(spec, dict) and spec.get("type") == "boolean"
         for spec in inputs.values()
@@ -209,7 +175,7 @@ def test_reusable_workflow_exposes_typed_inputs_outputs_and_image_evidence() -> 
         isinstance(spec, dict) and spec.get("type") == "string"
         for spec in inputs.values()
     ), "the reusable workflow needs a typed target/environment input"
-    outputs = _mapping(call.get("outputs"), "workflow_call.outputs")
+    outputs = as_mapping(call.get("outputs"), "workflow_call.outputs")
     assert outputs, "return bounded image identity/digest evidence to callers"
 
     permissions = _permissions(workflow, "reusable workflow")
@@ -217,9 +183,9 @@ def test_reusable_workflow_exposes_typed_inputs_outputs_and_image_evidence() -> 
         "the reusable workflow must deny write authority by default"
     )
 
-    jobs = _jobs(workflow)
+    jobs = workflow_jobs(workflow)
     all_commands = "\n".join(
-        _commands(_mapping(job, f"job {job_id}"))
+        job_commands(as_mapping(job, f"job {job_id}"))
         for job_id, job in jobs.items()
         if isinstance(job, dict) and "steps" in job
     )
@@ -241,19 +207,19 @@ def test_reusable_workflow_exposes_typed_inputs_outputs_and_image_evidence() -> 
 
 
 def test_composite_action_validates_inputs_without_shell_interpolation() -> None:
-    action = _yaml(ACTION_PATH, "release metadata action")
-    inputs = _mapping(action.get("inputs"), "action inputs")
+    action = load_yaml(ACTION_PATH, "release metadata action")
+    inputs = as_mapping(action.get("inputs"), "action inputs")
     assert len(inputs) >= 2, (
         "accept enough metadata to validate and construct an immutable image reference"
     )
-    outputs = _mapping(action.get("outputs"), "action outputs")
+    outputs = as_mapping(action.get("outputs"), "action outputs")
     assert outputs, "publish validated metadata through declared action outputs"
 
-    runs = _mapping(action.get("runs"), "runs")
+    runs = as_mapping(action.get("runs"), "runs")
     assert runs.get("using") == "composite"
     steps = [
-        _mapping(step, "composite step")
-        for step in _sequence(runs.get("steps"), "composite steps")
+        as_mapping(step, "composite step")
+        for step in as_sequence(runs.get("steps"), "composite steps")
     ]
     run_steps = [step for step in steps if "run" in step]
     assert run_steps, "implement validation in one or more composite run steps"
@@ -314,14 +280,14 @@ def test_composite_action_rejects_invalid_registry_path(tmp_path: Path) -> None:
 
 
 def test_publication_is_guarded_scoped_and_attested() -> None:
-    caller = _yaml(CALLER_PATH, "delivery caller")
-    reusable = _yaml(REUSABLE_PATH, "reusable delivery workflow")
-    caller_jobs = _jobs(caller)
-    jobs = _jobs(reusable)
+    caller = load_yaml(CALLER_PATH, "delivery caller")
+    reusable = load_yaml(REUSABLE_PATH, "reusable delivery workflow")
+    caller_jobs = workflow_jobs(caller)
+    jobs = workflow_jobs(reusable)
 
     privileged_calls: list[tuple[str, dict[str, Any]]] = []
     for job_id, raw_job in caller_jobs.items():
-        job = _mapping(raw_job, f"job {job_id}")
+        job = as_mapping(raw_job, f"job {job_id}")
         if _permissions(job, f"job {job_id}").get("packages") == "write":
             privileged_calls.append((str(job_id), job))
     assert len(privileged_calls) == 1, (
@@ -337,7 +303,7 @@ def test_publication_is_guarded_scoped_and_attested() -> None:
 
     publication_jobs: list[tuple[str, dict[str, Any]]] = []
     for job_id, raw_job in jobs.items():
-        job = _mapping(raw_job, f"job {job_id}")
+        job = as_mapping(raw_job, f"job {job_id}")
         rendered_job = yaml.dump(job)
         if "docker push" in rendered_job and "attest" in rendered_job.lower():
             publication_jobs.append((str(job_id), job))
