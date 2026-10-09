@@ -1,0 +1,10 @@
+{
+  "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5",
+  "expected_revision": 10,
+  "investigation_stage": "problem_validation",
+  "product_maturity": "mvp",
+  "disposition": "hold",
+  "next_action": "HOLD: the operator answers one five-minute question (R006-coach): do you, or at least two adults in your volleyball group, follow a written training program with two or more sessions a week outside group play? If no, stop and fold Volley Coach into Volley Match as a held candidate feature with one shared participant gate. Agent now: sync the checkout to GitHub main 122968b (VC-P4) and fix the planner defect that silently schedules at most one session per goal per week (VC-P3) so the delivered MVP is correct; French UI and phone access (VC-P5) wait for a yes and hosting approval.",
+  "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/volley-coach/REVIEW.md): make check (41 tests) and 4 browser tests pass and CI is green (run 37930071447 on PR #1), but there is zero demand evidence, competitors for personal training plans (Fitbod, Volt, TrueCoach, several volleyball apps) were never researched, the user's only recorded volleyball pain is teams/tournaments/Elo (Volley Match territory), the planner drops sessions without telling the user (services/planner.py), the progress feature cannot trigger in the only usable mode, and the app is loopback-only and English-only. Stage moved to solution_validation earlier with no user evidence; the honest stage is problem validation.",
+  "author": "agent:fable-portfolio-20261009"
+}

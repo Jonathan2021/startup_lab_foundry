@@ -1,0 +1,10 @@
+{
+  "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+  "expected_revision": 18,
+  "investigation_stage": "solution_validation",
+  "product_maturity": "mvp",
+  "disposition": "pursue",
+  "next_action": "NARROWED 2026-10-09 to a private planner for the founder. Agent: record PR #1 and cancel the superseded investigation, defer the imagery decision and focus the rider trial gate (RO-P0); deliver the 4–5 h ride via a target riding-time band with honest 'closest found' (RO-P1); navigation-safe GPX with route shaping points and stop waypoints beside the track (RO-P3); small fixes incl. the avoid_unpaved default and FR strings (RO-P4); review the 16 unenforced restriction relations before any GPX is ridden (RO-P5). Human: the R005 rider-vs-Kurviger trial (RO-P2) decides continue/STOP; a region matching real rides (RO-P6) only if it passes. Imagery and ML stay frozen; no commercial claim.",
+  "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/ride-options/REVIEW.md): make check (73 tests), tsc, byte-identical bundle rebuild and 6 browser flows pass; labelling is honest and security/pinning basics are solid. But the core job is not delivered: requests take only a maximum riding time and loops are chosen under it (R06 runs returned 68/142/156 min against a 240-min maximum), the GPX export is a track only so navigation apps reroute it (the user's original complaint), coverage is Andorra/Auvergne only, and 16 road-restriction relations are not enforced. Competition is heavy (Kurviger €15–30/yr, Calimoto ~€60/yr, Scenic, Liberty Rider, 68°, Detecht) with no demand beyond the founder. Foundry's focus sat on the imagery choice (281b3f40) instead of the rider trial (ae6816fd, empty since 2026-10-07). GitHub main 2d6fd6c (PR #1) is ahead of the recorded 6db7080.",
+  "author": "agent:fable-portfolio-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-crous-queue-P3-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package P3; see docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md section 6.",
+  "expected_head": "d941cc63-e8c7-5c54-855e-4887fd52bdf8",
+  "work": {
+    "title": "P3 — Sybil and trusted-proxy hardening",
+    "description": "Red tests reproducing cookie-churn consensus and proxy IP collapse; device-age gating, per-network new-device cap per venue window, trusted-proxy config, 'N appareils' wording, admin bulk-hide by network bucket.",
+    "acceptance_criteria": "Six fresh cookies from one network cannot produce more than the configured cap of counted estimates; X-Forwarded-For only honoured from configured proxy; make check and browser tests green; ADR updated.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready",
+    "blocked_reason": null
+  }
+}

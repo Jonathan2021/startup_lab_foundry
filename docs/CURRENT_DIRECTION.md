@@ -1,5 +1,16 @@
 # Current Foundry direction
 
+Latest update 2026-10-09 (portfolio review): the six running ventures were re-reviewed
+through Foundry ([report](inquiry/portfolio-review-2026-10-09/REPORT.md),
+[protocol](inquiry/portfolio-review-2026-10-09/PROTOCOL.md)). Dispositions on the reviewed
+scorecard: Crous Queue NARROW 30, Ride Options NARROW 35, Volley Match NARROW 37, Coopain
+HOLD 31, OfferCheck HOLD 29, Volley Coach HOLD 30; v-sports-ranking is held as lineage.
+Twenty-one implementation packages were delivered to GitHub `main` with exact-SHA CI
+(`<slug>/DELIVERY.md`). Every venture now waits on a human gate registered from
+`requests/` (R005, R006 ×2, R011, R013 by 2026-10-23, R014, R015). The loop's friction
+became [ADR-0020](adr/0020-truthful-venture-state-requests-and-drift.md) and package
+F10 (implementer follow-ups). Bridge `2026-10-09.1` is installed in all six repositories.
+
 Latest update 2026-10-09: the user-supplied transcript `idea_queue/agentic_stack_ideas.md`
 was processed as a Foundry discovery loop ([report](inquiry/agentic-stack-2026-10-09/REPORT.md),
 [protocol](inquiry/agentic-stack-2026-10-09/PROTOCOL.md)). Nine transcript-derived

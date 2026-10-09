@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-crous-queue-P5-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package P5; see docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md section 6.",
+  "expected_head": "0aeb234e-ae50-5eab-b2cd-01faf30b20ee",
+  "work": {
+    "title": "P5 — UI honesty polish",
+    "description": "Remove empty service line for unknown hours, human region labels, dataset date in Licence Ouverte attribution, directory-age notice.",
+    "acceptance_criteria": "Browser test asserts no empty 'Service :' text, proper region labels and visible dataset date; all checks green.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo",
+    "blocked_reason": null
+  }
+}

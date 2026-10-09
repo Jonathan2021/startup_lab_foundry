@@ -1,0 +1,13 @@
+{
+  "request_key": "portfolio-review-volley-match-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Portfolio review 2026-10-09: recommendation NARROW (confidence low); score change lower; 3 proposed packages; blockers: R006 follow-up (foundry/requests/2026-10-07-volley-match-R006-pilot-access.md) unanswered: no willing organizer, access arrangement, consent owner or spending cap recorded; hosting and invitations remain unauthorized, Local checkout 2679b75 is behind origin/main 991d702 (unattended PR #1) with no Foundry record, Fusion proposal 91fe8686 and venture v-sports-ranking need a human/coordinator resolution. Full review: docs/inquiry/portfolio-review-2026-10-09/volley-match/REVIEW.md",
+  "details": "{\"recommendation\": \"NARROW\", \"confidence\": \"low\", \"score_change\": \"lower\", \"blockers\": [\"R006 follow-up (foundry/requests/2026-10-07-volley-match-R006-pilot-access.md) unanswered: no willing organizer, access arrangement, consent owner or spending cap recorded; hosting and invitations remain unauthorized\", \"Local checkout 2679b75 is behind origin/main 991d702 (unattended PR #1) with no Foundry record\", \"Fusion proposal 91fe8686 and venture v-sports-ranking need a human/coordinator resolution\"], \"packages\": {\"VM-R1\": \"ready\", \"VM-R6\": \"blocked:Operator pilot (R006): two real outings with results recorded and shared to WhatsApp; needs organizer, consent owner and hosting arrangement.\", \"VM-R7\": \"blocked:Only if the VM-R6 pilot shows organizer attestation is needed.\"}, \"feedback_ids\": [\"fe29bb87-9456-471e-9206-136e9926c188\", \"0a88acc7-acec-4b17-985a-79f3855a3024\", \"00123a17-e956-4fe4-9011-fc7eb93769e6\"]}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "low",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/volley-match/REVIEW.md"
+  ],
+  "refs": []
+}

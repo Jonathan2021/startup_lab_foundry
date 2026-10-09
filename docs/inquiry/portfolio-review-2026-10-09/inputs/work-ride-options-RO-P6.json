@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-ride-options-RO-P6-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package RO-P6; see docs/inquiry/portfolio-review-2026-10-09/ride-options/REVIEW.md section 6.",
+  "expected_head": "646b868e-5c79-5ad3-b45b-44d8f4dfff52",
+  "work": {
+    "title": "RO-P6 — Coverage for the user's real ride region",
+    "description": "If RO-P2 passes, add one region matching the founder's real rides (Ile-de-France or Nord/Belgium border) after measuring import RAM/disk/time.",
+    "acceptance_criteria": "Pinned manifest; local-prepare succeeds within documented memory; one trial in the new region passes.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "blocked",
+    "blocked_reason": "Only if the RO-P2 trial passes; needs documented RAM for the regional extract."
+  }
+}

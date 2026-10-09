@@ -1,0 +1,32 @@
+{
+  "venture_id": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "expected_sequence": 1,
+  "request_key": "portfolio-review-score-crous-queue-2026-10-09",
+  "scores": {
+    "revenue": 2,
+    "profitability": 2,
+    "mvp_speed": 8,
+    "founder_fit": 5,
+    "go_to_market": 4,
+    "moat": 2,
+    "problem": 7,
+    "retention": 5,
+    "legal_risk": 4,
+    "capital": 2,
+    "network": 9,
+    "competition": 7
+  },
+  "rationale": "Reviewer judgment 2026-10-09, low–medium confidence: free student utility with no credible income (revenue 2, profitability 2); v0.2.0 built and CI-green (mvp_speed 8); no ML edge until data exists and activation needs on-campus presence (founder_fit 5, go_to_market 4); trivially copyable, 15-minute data decay (moat 2); real 2026 pain (problem 7); daily habit only with fresh data (retention 5). Penalties: low personal-data risk but 'Crous' naming unchecked (legal 4), ≤€25/month hosting (capital 2), value entirely contributor density (network 9), Affluences/CrousRadar/Croustillapp/Crous & go' (competition 7).",
+  "author": "agent:fable-portfolio-20261009",
+  "confidence": "low",
+  "criterion_rationales": {},
+  "evidence_ids": {
+    "competition": [
+      "da8766ba-d043-438a-965a-71b1b0ad72e0"
+    ],
+    "moat": [
+      "da8766ba-d043-438a-965a-71b1b0ad72e0"
+    ]
+  }
+}

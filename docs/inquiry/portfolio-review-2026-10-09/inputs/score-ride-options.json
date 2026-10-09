@@ -1,0 +1,32 @@
+{
+  "venture_id": "v-route-repair",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "expected_sequence": 1,
+  "request_key": "portfolio-review-score-ride-options-2026-10-09",
+  "scores": {
+    "revenue": 2,
+    "profitability": 3,
+    "mvp_speed": 7,
+    "founder_fit": 8,
+    "go_to_market": 3,
+    "moat": 2,
+    "problem": 5,
+    "retention": 4,
+    "legal_risk": 4,
+    "capital": 2,
+    "network": 2,
+    "competition": 9
+  },
+  "rationale": "Reviewer judgment 2026-10-09, low–medium confidence: no payer beyond the founder (revenue 2, profitability 3); MVP exists (mvp_speed 7); founder rides and built it (founder_fit 8); incumbents own distribution (go_to_market 3, moat 2); real but already-served pain (problem 5, retention 4). Penalties: OSM/engine licences and riding-safety labelling (legal 4), local engine (capital 2, network 2), six established apps (competition 9). Replaces the 2/12 partial score tied to the old ETA-repair objective.",
+  "author": "agent:fable-portfolio-20261009",
+  "confidence": "low",
+  "criterion_rationales": {},
+  "evidence_ids": {
+    "competition": [
+      "78d042df-8ab2-4d02-a3c4-1afd487e4caa"
+    ],
+    "moat": [
+      "78d042df-8ab2-4d02-a3c4-1afd487e4caa"
+    ]
+  }
+}

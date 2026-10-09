@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-coopain-C04-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package C04; see docs/inquiry/portfolio-review-2026-10-09/coopain/REVIEW.md section 6.",
+  "expected_head": "f805152e-c504-5c9b-aa60-5c708c5dcba2",
+  "work": {
+    "title": "C04 — Whole-repo quality gates and enums",
+    "description": "Mechanical ruff fix/format, fix 8 mypy errors, widen CI lint/type scope, replace role/status literals with StrEnum.",
+    "acceptance_criteria": "CI ruff check backend tools and mypy app clean; tests unchanged and green; OpenAPI byte-identical",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo",
+    "blocked_reason": null
+  }
+}

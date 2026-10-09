@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-coopain-C03-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package C03; see docs/inquiry/portfolio-review-2026-10-09/coopain/REVIEW.md section 6.",
+  "expected_head": "61241edb-35c5-5186-8937-d26e723d8847",
+  "work": {
+    "title": "C03 — Sync main and fix profile stale-load race",
+    "description": "Fast-forward local main to fc5b92b; guard stale GET /referrer/jobs responses in profile page with regression test.",
+    "acceptance_criteria": "verify_local_mvp.py passes 5 consecutive runs; backend suite >=267 passed",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo",
+    "blocked_reason": null
+  }
+}

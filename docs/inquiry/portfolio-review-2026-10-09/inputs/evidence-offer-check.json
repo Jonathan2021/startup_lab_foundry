@@ -1,0 +1,13 @@
+{
+  "request_key": "portfolio-review-offer-check-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Portfolio review 2026-10-09: recommendation HOLD (confidence low); score change record; 3 proposed packages; blockers: R013 owner-authorized redacted request, two existing quotes and designated reviewer: unanswered since 2026-10-08, Local checkout and Foundry record 411d683 while remote main is 7c33c95 (PR #1 unrecorded). Full review: docs/inquiry/portfolio-review-2026-10-09/offer-check/REVIEW.md",
+  "details": "{\"recommendation\": \"HOLD\", \"confidence\": \"low\", \"score_change\": \"record\", \"blockers\": [\"R013 owner-authorized redacted request, two existing quotes and designated reviewer: unanswered since 2026-10-08\", \"Local checkout and Foundry record 411d683 while remote main is 7c33c95 (PR #1 unrecorded)\"], \"packages\": {\"OC-R1\": \"ready\", \"OC-R4\": \"todo\", \"OC-T1\": \"blocked:Only if the operator answers R013 by 2026-10-23 with permitted quotes and a reviewer.\"}, \"feedback_ids\": [\"4ed2d64d-4e11-4dbf-b422-d7a8b6d2a325\", \"3559c1dc-dd4c-4657-a908-91a0be932ea8\", \"b368c596-9ebf-4f86-ac26-c6b9ba582219\"]}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "low",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/offer-check/REVIEW.md"
+  ],
+  "refs": []
+}

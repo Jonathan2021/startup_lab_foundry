@@ -1,0 +1,10 @@
+{
+  "workspace_id": "6e2795a7-2457-44e1-b3e1-0bc66ed4f734",
+  "expected_revision": 2,
+  "investigation_stage": "comparison",
+  "product_maturity": "concept",
+  "disposition": "hold",
+  "next_action": "Retired as an active venture 2026-10-09: v-sports-session is the single volleyball implementation (decision a38e9141). Keep P023/P103 history. The fusion proposal 91fe8686 awaits the user's resolution as superseded (agent resolution requires human delegation); do not create a third sports venture.",
+  "reason": "Portfolio review 2026-10-09 (volley-match/REVIEW.md): accepting the fusion proposal would create a duplicate venture; the 51 score is a 2026-10-05 starting estimate for the broad Elo & tournaments idea, not the narrowed private recorder. The sibling venture showing 'pursue' at a higher score than the built product misleads the portfolio view.",
+  "author": "agent:fable-portfolio-20261009"
+}

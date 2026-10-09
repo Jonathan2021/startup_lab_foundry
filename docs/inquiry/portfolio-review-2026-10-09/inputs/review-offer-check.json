@@ -1,0 +1,10 @@
+{
+  "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8",
+  "expected_revision": 10,
+  "investigation_stage": "business_validation",
+  "product_maturity": "mvp",
+  "disposition": "hold",
+  "next_action": "HOLD until 2026-10-23: the operator either supplies R013 (an owner-authorised redacted exact-SKU EUR request, two real quotes, permitted local-use scope and a designated reviewer) or the venture becomes STOP/archive. If supplied, run the three-arm matched trial (usual agent + inclus/exclu/non précisé template vs OfferCheck on identical frozen quotes, counting entry time); continue only with fewer material misses for equal or less effort and stated intent to reuse. Agent now: sync the checkout to GitHub main 7c33c95, record PR #1 / run 37930110427, retire stale O02–O05 placeholder nodes, repository hygiene. No extraction, French UI or hosting work before the trial.",
+  "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/offer-check/REVIEW.md): the code is sound (make check 59 tests + 6 browser; CI green on PR #1 with 107 tests), but the product does the easy half (arithmetic on already-typed terms), source linking means hand-typing JSON, every rehearsal 'source' is a copy of the structured offer, the UI is English-only, and free or EU-hosted alternatives now cover the differentiator (Umbiko quote extraction/comparison with a free tier; ilisai's free 2026-09-06 French guide and XLSX template encoding the same missing-cost rules; Precoro AI quote extraction since 2026-04-21). R013 has been blank since 2026-10-08 while the console showed 'pursue' and 'No open human requests'.",
+  "author": "agent:fable-portfolio-20261009"
+}

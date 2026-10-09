@@ -1,0 +1,13 @@
+{
+  "request_key": "portfolio-review-ride-options-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Portfolio review 2026-10-09: recommendation NARROW (confidence low); score change record; 3 proposed packages; blockers: Operator rider/Kurviger comparison (ae6816fd) unanswered since 2026-10-07, Local checkout 6db7080 behind remote main 2d6fd6c; fast-forward needs human approval, 16 generic restriction relations unenforced; no road use of exported GPX, No external demand or willingness-to-pay evidence. Full review: docs/inquiry/portfolio-review-2026-10-09/ride-options/REVIEW.md",
+  "details": "{\"recommendation\": \"NARROW\", \"confidence\": \"low\", \"score_change\": \"record\", \"blockers\": [\"Operator rider/Kurviger comparison (ae6816fd) unanswered since 2026-10-07\", \"Local checkout 6db7080 behind remote main 2d6fd6c; fast-forward needs human approval\", \"16 generic restriction relations unenforced; no road use of exported GPX\", \"No external demand or willingness-to-pay evidence\"], \"packages\": {\"RO-P0\": \"ready\", \"RO-P2\": \"blocked:Operator trial: fill R005 T01–T04 rider-vs-Kurviger observations after RO-P1/RO-P3 land.\", \"RO-P6\": \"blocked:Only if the RO-P2 trial passes; needs documented RAM for the regional extract.\"}, \"feedback_ids\": [\"f935582d-89f5-48dd-9cb9-61bf2cca3422\", \"bc8fb5b7-a1f7-42ea-bd65-05902d2bc1e8\", \"c2d19d42-6edf-4be9-b4b3-ec177290f563\", \"74692ccf-d4b8-48ea-bc07-49ad881e35da\"]}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "low",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/ride-options/REVIEW.md"
+  ],
+  "refs": []
+}

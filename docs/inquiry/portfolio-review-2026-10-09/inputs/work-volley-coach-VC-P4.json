@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-volley-coach-VC-P4-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package VC-P4; see docs/inquiry/portfolio-review-2026-10-09/volley-coach/REVIEW.md section 6.",
+  "expected_head": "d88624dd-cdec-59dd-9784-3bf56258040d",
+  "work": {
+    "title": "VC-P4 — Sync local checkout to remote main",
+    "description": "Fast-forward local main to 122968b without losing local changes and re-run make check and make test-browser.",
+    "acceptance_criteria": "HEAD equals origin/main; reported test counts match PR #1.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready",
+    "blocked_reason": null
+  }
+}

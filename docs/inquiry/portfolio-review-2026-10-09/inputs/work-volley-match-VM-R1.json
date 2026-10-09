@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-volley-match-VM-R1-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package VM-R1; see docs/inquiry/portfolio-review-2026-10-09/volley-match/REVIEW.md section 6.",
+  "expected_head": "584d51b8-35a5-55f0-afcd-88c6b28f8d24",
+  "work": {
+    "title": "VM-R1 — Foundry record hygiene",
+    "description": "Coordinator/human: resolve proposal 91fe8686 as superseded by decision a38e9141; mark v-sports-ranking dropped/merged lineage pointing to v-sports-session with P023 tournament/sponsor ideas as deferred hypotheses; set v-sports-session maturity to mvp; append reviewed score about 37; record PR #1 / 991d702 as an external change.",
+    "acceptance_criteria": "proposal list shows no pending sports proposal; both venture pages show no 'Review fusion proposal'; v-sports-session shows the reviewed score and mvp maturity; an evidence item cites 991d702 and CI 37928573496.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready",
+    "blocked_reason": null
+  }
+}

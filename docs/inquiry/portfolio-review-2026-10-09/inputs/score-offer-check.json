@@ -1,0 +1,32 @@
+{
+  "venture_id": "v-offer-check",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "expected_sequence": 0,
+  "request_key": "portfolio-review-score-offer-check-2026-10-09",
+  "scores": {
+    "revenue": 3,
+    "profitability": 4,
+    "mvp_speed": 7,
+    "founder_fit": 4,
+    "go_to_market": 2,
+    "moat": 1,
+    "problem": 3,
+    "retention": 3,
+    "legal_risk": 3,
+    "capital": 2,
+    "network": 3,
+    "competition": 9
+  },
+  "rationale": "Reviewer judgment 2026-10-09, medium-low confidence (desk research, no customers): weak willingness to pay for the easy half of the job (revenue 3, profitability 4); MVP exists (mvp_speed 7); no procurement background and sales-led buyers (founder_fit 4, go_to_market 2); no defensible asset (moat 1); pain already served by spreadsheets, guides and incumbents (problem 3, retention 3). Penalties: low (legal 3, capital 2, network 3); Umbiko, Precoro, QuoteWerks, Fairmarkit, free templates (competition 9).",
+  "author": "agent:fable-portfolio-20261009",
+  "confidence": "low",
+  "criterion_rationales": {},
+  "evidence_ids": {
+    "competition": [
+      "63efb356-a161-4a07-9246-ecb5c0ddc99e"
+    ],
+    "moat": [
+      "63efb356-a161-4a07-9246-ecb5c0ddc99e"
+    ]
+  }
+}

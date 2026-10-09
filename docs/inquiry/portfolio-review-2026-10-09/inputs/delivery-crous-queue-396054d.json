@@ -1,0 +1,13 @@
+{
+  "request_key": "delivery-crous-queue-396054d",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Delivery: main=396054d8e9e0d7c02c6973c0af8d1ccf6545b15e ci=37985797145 (2026-10-09). Vendored Foundry bridge updated to contract 2026-10-09.1 on top of the 2026-10-09 implementation packages; see DELIVERY.md for the package commits and runs.",
+  "details": "{\"main\": \"396054d8e9e0d7c02c6973c0af8d1ccf6545b15e\", \"ci_run\": \"37985797145\", \"earlier_runs_this_review\": [\"37948283870 (092bba2, P3)\", \"37970042546 (a4f0487, P5)\", \"37971430794 (784246e, P4)\"], \"record\": \"docs/inquiry/portfolio-review-2026-10-09/crous-queue/DELIVERY.md\"}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/crous-queue/DELIVERY.md"
+  ],
+  "refs": []
+}

@@ -1,0 +1,13 @@
+{
+  "request_key": "delivery-foundry-0af4c09",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Delivery: main=0af4c090a16a3af0a62e682a570add79f9331eb9 ci=37985672390 (2026-10-09). ADR-0020 package F05-F09: derived venture state, request-file sync, repository drift, venture alias, venture-work close, --id selectors; make check 234 passed/1 skipped, mypy 47 files, browser 5 passed.",
+  "details": "{\"main\": \"0af4c090a16a3af0a62e682a570add79f9331eb9\", \"ci_run\": \"37985672390\", \"earlier_runs_this_review\": [], \"record\": \"docs/inquiry/portfolio-review-2026-10-09/REPORT.md\"}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/REPORT.md"
+  ],
+  "refs": []
+}

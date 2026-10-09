@@ -1,0 +1,13 @@
+{
+  "request_key": "delivery-ride-options-a436d91",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Delivery: main=a436d91ff7e4f5fbf76c3a64ed4fc8c1720e3ab5 ci=37985800627 (2026-10-09). Vendored Foundry bridge updated to contract 2026-10-09.1 on top of the 2026-10-09 implementation packages; see DELIVERY.md for the package commits and runs.",
+  "details": "{\"main\": \"a436d91ff7e4f5fbf76c3a64ed4fc8c1720e3ab5\", \"ci_run\": \"37985800627\", \"earlier_runs_this_review\": [\"37949876329 (fc4c25e, RO-P1)\", \"37969991972 (c87312a, RO-P3)\", \"37971408624 (8e668ff, RO-P4)\", \"37975693265 (c0f775c, RO-P5)\"], \"record\": \"docs/inquiry/portfolio-review-2026-10-09/ride-options/DELIVERY.md\"}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/ride-options/DELIVERY.md"
+  ],
+  "refs": []
+}

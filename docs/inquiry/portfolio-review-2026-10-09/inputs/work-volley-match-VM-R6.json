@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-volley-match-VM-R6-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package VM-R6; see docs/inquiry/portfolio-review-2026-10-09/volley-match/REVIEW.md section 6.",
+  "expected_head": "716473b6-97fa-50b4-be9b-8c76b3ca87f5",
+  "work": {
+    "title": "VM-R6 — Real two-outing pilot gate (human)",
+    "description": "User answers the R006 follow-up (organizer, access arrangement, consent/retention owner, spending cap); agent then prepares the exact deployment/invite payload for separate approval and records outcomes in docs/pilot/observation_packet.json.",
+    "acceptance_criteria": "Two real outings observed: per-match entry time, confirmation completion, unprompted standings views/requests, and stated wish to continue; GO-continue or use-existing decision recorded in Foundry.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "blocked",
+    "blocked_reason": "Operator pilot (R006): two real outings with results recorded and shared to WhatsApp; needs organizer, consent owner and hosting arrangement."
+  }
+}

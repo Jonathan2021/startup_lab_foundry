@@ -1,0 +1,13 @@
+{
+  "request_key": "portfolio-review-crous-queue-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Portfolio review 2026-10-09: recommendation NARROW (confidence low); score change record; 4 proposed packages; blockers: R011 human answer (4626ac2b) outstanding since 2026-10-06, Incumbent listing check (dbbfbb3d) blocked on external access; needs a human Android check, No approved hosting/phone-reachable access; local loopback MVP cannot collect real reports, Cookie-churn Sybil weakness must be fixed before any shared use, Local checkout 70737c8 behind origin/main cfd094c; Foundry unaware of PR #1. Full review: docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md",
+  "details": "{\"recommendation\": \"NARROW\", \"confidence\": \"low\", \"score_change\": \"record\", \"blockers\": [\"R011 human answer (4626ac2b) outstanding since 2026-10-06\", \"Incumbent listing check (dbbfbb3d) blocked on external access; needs a human Android check\", \"No approved hosting/phone-reachable access; local loopback MVP cannot collect real reports\", \"Cookie-churn Sybil weakness must be fixed before any shared use\", \"Local checkout 70737c8 behind origin/main cfd094c; Foundry unaware of PR #1\"], \"packages\": {\"P3\": \"ready\", \"P5\": \"todo\", \"P4\": \"todo\", \"P6\": \"blocked:Awaits R011, the Android incumbent check and an approved hosted private-beta payload (P4).\"}, \"feedback_ids\": [\"c8cf70d7-1c9d-464b-a815-1b7a5e46a5a7\", \"a0ae626c-c0ba-4291-8c5a-684bbb7d6f7d\", \"63f92c44-0561-484a-9599-73f0d828fb14\"]}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "low",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md"
+  ],
+  "refs": []
+}

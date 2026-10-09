@@ -1,0 +1,10 @@
+{
+  "workspace_id": "81ee3117-de70-411e-9856-07420859ffad",
+  "expected_revision": 15,
+  "investigation_stage": "solution_validation",
+  "product_maturity": "mvp",
+  "disposition": "pursue",
+  "next_action": "NARROWED 2026-10-09: no further feature work. Human: answer R011 and check Affluences, CrousRadar and Croustillapp on an Android phone for live Cuvier/Châtelet data (stop if an incumbent already shows it). Agent: harden cookie-churn Sybil reports and trusted-proxy client IPs (P3), polish UI honesty (P5), then draft a hosted private-beta approval payload (P4, nothing provisioned). Only then run the five-lunch coverage test (P6): pass if ≥40% of 12:15/12:45/13:15 checks have a fresh real estimate and ≥3 devices contribute on ≥2 days; STOP/archive below 20%.",
+  "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md): the problem got worse in 2026 (€1 meals open to all students, +48% meals, 40–60 min waits at Cuvier reported), but the differentiator (crowd-reported waits) depends entirely on contributor density per venue per 15 minutes, directory/hours are commoditised (Croustillapp, official tools), Affluences sensors are the operator-side answer, revenue is near zero, and the loopback-only MVP cannot collect real reports. A reproduced Sybil weakness (six fresh cookies → six-report consensus) must be fixed before any shared use. The first decision's competitor-app check was bypassed and stays a human precondition. GitHub main cfd094c (PR #1, 2026-10-09) is ahead of the recorded 70737c8.",
+  "author": "agent:fable-portfolio-20261009"
+}

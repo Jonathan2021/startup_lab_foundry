@@ -1,0 +1,13 @@
+{
+  "request_key": "delivery-volley-coach-7b06738",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Delivery: main=7b06738ad44ed353dfdae2dec17b27aa42bfa428 ci=37985814380 (2026-10-09). Vendored Foundry bridge updated to contract 2026-10-09.1 on top of the 2026-10-09 implementation packages; see DELIVERY.md for the package commits and runs.",
+  "details": "{\"main\": \"7b06738ad44ed353dfdae2dec17b27aa42bfa428\", \"ci_run\": \"37985814380\", \"earlier_runs_this_review\": [\"37944729340 (5fde687)\", \"37947467313 (6ed83ed)\"], \"record\": \"docs/inquiry/portfolio-review-2026-10-09/volley-coach/DELIVERY.md\"}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/volley-coach/DELIVERY.md"
+  ],
+  "refs": []
+}

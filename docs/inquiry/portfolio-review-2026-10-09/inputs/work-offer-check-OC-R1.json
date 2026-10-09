@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-offer-check-OC-R1-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package OC-R1; see docs/inquiry/portfolio-review-2026-10-09/offer-check/REVIEW.md section 6.",
+  "expected_head": "41345a6d-c84c-52b6-b373-eb928f4088f8",
+  "work": {
+    "title": "OC-R1 — Reconcile repository and Foundry state",
+    "description": "Fast-forward local checkout to remote main 7c33c95, rerun make check and browser tests, record PR #1 and CI run 37930110427 as evidence, retire stale O02-O05 placeholder map nodes.",
+    "acceptance_criteria": "Local HEAD equals remote main; Foundry evidence cites 7c33c95 with actual test counts; decision map has no undone duplicate O-nodes.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready",
+    "blocked_reason": null
+  }
+}

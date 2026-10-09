@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-volley-match-VM-R7-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package VM-R7; see docs/inquiry/portfolio-review-2026-10-09/volley-match/REVIEW.md section 6.",
+  "expected_head": "5edcabe3-37c2-582f-a2e6-f08d7b648181",
+  "work": {
+    "title": "VM-R7 — Organizer-attested rating option (conditional)",
+    "description": "Only if VM-R6 shows account claiming blocks use: per private group opt-in where organizer attestation rates guest-slot matches provisionally, with dispute after claim triggering replay; ADR on the trust-model change.",
+    "acceptance_criteria": "ADR accepted by user; service tests for attest, claim, dispute, replay exactly once; one-device browser journey from session to Elo table for six guests.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "blocked",
+    "blocked_reason": "Only if the VM-R6 pilot shows organizer attestation is needed."
+  }
+}

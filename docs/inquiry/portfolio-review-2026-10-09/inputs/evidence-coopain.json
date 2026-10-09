@@ -1,0 +1,13 @@
+{
+  "request_key": "portfolio-review-coopain-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Portfolio review 2026-10-09: recommendation HOLD (confidence medium); score change lower; 4 proposed packages; blockers: No demand, referrer-willingness or buyer evidence, Employer referral policies may forbid or not pay stranger referrals (unchecked for France), Launch gates R1-R4 and P1-P4 (rights, controller, privacy, employer policy) all UNKNOWN, Local main behind GitHub main fc5b92b; Foundry unaware of PR #3. Full review: docs/inquiry/portfolio-review-2026-10-09/coopain/REVIEW.md",
+  "details": "{\"recommendation\": \"HOLD\", \"confidence\": \"medium\", \"score_change\": \"lower\", \"blockers\": [\"No demand, referrer-willingness or buyer evidence\", \"Employer referral policies may forbid or not pay stranger referrals (unchecked for France)\", \"Launch gates R1-R4 and P1-P4 (rights, controller, privacy, employer policy) all UNKNOWN\", \"Local main behind GitHub main fc5b92b; Foundry unaware of PR #3\"], \"packages\": {\"C02\": \"ready\", \"C03\": \"todo\", \"C04\": \"todo\", \"C05\": \"todo\"}, \"feedback_ids\": [\"96a2ae4c-11a3-4898-94b3-cdd2634f3216\", \"044c6697-318b-43b0-aa4e-86c1abef74e8\", \"341bf215-8f3e-4b4c-98c7-a3d72ee53928\"]}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "medium",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/coopain/REVIEW.md"
+  ],
+  "refs": []
+}

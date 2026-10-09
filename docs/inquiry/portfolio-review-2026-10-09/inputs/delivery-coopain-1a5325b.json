@@ -1,0 +1,13 @@
+{
+  "request_key": "delivery-coopain-1a5325b",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Delivery: main=1a5325be21e767ba4d0f8e7872d1fdd0ed9ba5b9 ci=37985792402 (2026-10-09). Vendored Foundry bridge updated to contract 2026-10-09.1 on top of the 2026-10-09 implementation packages C02-C05; see DELIVERY.md for the package commits and runs.",
+  "details": "{\"main\": \"1a5325be21e767ba4d0f8e7872d1fdd0ed9ba5b9\", \"ci_run\": \"37985792402\", \"earlier_runs_this_review\": [\"37969597406 (78f35af, C02)\", \"37975495446 (2588d6b, C03)\", \"37980110728 (3135903, C04)\", \"37983853750 (bfa739b, C05)\"], \"record\": \"docs/inquiry/portfolio-review-2026-10-09/coopain/DELIVERY.md\"}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/coopain/DELIVERY.md"
+  ],
+  "refs": []
+}

@@ -1,0 +1,10 @@
+{
+  "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+  "expected_revision": 14,
+  "investigation_stage": "problem_validation",
+  "product_maturity": "mvp",
+  "disposition": "hold",
+  "next_action": "HOLD 2026-10-09: the finished local MVP needs no more features before demand is tested. Human gate (R015): five short conversations with employees at different French employers — pass if ≥3 say their written referral policy allows referring someone met through a platform and they would review ≥2 requests a month; STOP if policies generally require knowing the candidate. Agent now: update the Foundry record and sync the checkout to GitHub main fc5b92b (C01), research French employer referral policies and the missing competitors (Basile by Hellowork, Keycoopt, Coop-Time, BeCoopt, Blind/Glassdoor forums) and draft the interview guide without sending anything (C02); fix the profile-page race, widen lint/type CI to the whole repo, replace hard-coded role/status strings, and refuse the placeholder secret outside development (C03–C05) so the codebase stays clean while held.",
+  "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/coopain/REVIEW.md): the launcher prepares in 16 s, the backend passes 250 tests at 92% coverage, web/mobile lint/build/types and both browser runs pass, and CI is green on PR #3 (run 37928455952). But there is no demand evidence from job seekers, referrers or employers; prior research named two competitors and missed Basile by Hellowork, Keycoopt, Coop-Time, BeCoopt and free stranger-referral forums; many employer referral policies require knowing the candidate, which undercuts the referrer motive and was never checked for French employers. The stored score rated the original scraped-offers-plus-shared-bonus idea. CI lints/type-checks ~7 files (ruff 453 findings, mypy 8 errors repo-wide), a profile-page race makes a browser test flaky, the app starts with the placeholder 'change-me' secret, and 19 role/status strings are hard-coded. Local main was 21 commits behind fc5b92b.",
+  "author": "agent:fable-portfolio-20261009"
+}

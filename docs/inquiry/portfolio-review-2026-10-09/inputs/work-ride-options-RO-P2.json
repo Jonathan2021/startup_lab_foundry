@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-ride-options-RO-P2-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package RO-P2; see docs/inquiry/portfolio-review-2026-10-09/ride-options/REVIEW.md section 6.",
+  "expected_head": "eb78a476-ff43-509f-beac-6bd7a6a301c8",
+  "work": {
+    "title": "RO-P2 — Founder comparison trial vs Kurviger (operator)",
+    "description": "Run R005 T01-T04 in Ride Options and Kurviger per COMPARISON_PROTOCOL.md; record planning minutes, edits, rejections, choice and would-repeat.",
+    "acceptance_criteria": "ae6816fd observation fields filled and a NARROW-continue or STOP decision recorded in Foundry.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "blocked",
+    "blocked_reason": "Operator trial: fill R005 T01–T04 rider-vs-Kurviger observations after RO-P1/RO-P3 land."
+  }
+}

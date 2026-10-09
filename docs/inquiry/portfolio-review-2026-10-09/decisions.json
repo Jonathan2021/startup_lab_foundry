@@ -1,0 +1,82 @@
+{
+  "crous-queue": {
+    "investigation_stage": "solution_validation",
+    "product_maturity": "mvp",
+    "confidence": "low",
+    "next_action": "NARROWED 2026-10-09: no further feature work. Human: answer R011 and check Affluences, CrousRadar and Croustillapp on an Android phone for live Cuvier/Châtelet data (stop if an incumbent already shows it). Agent: harden cookie-churn Sybil reports and trusted-proxy client IPs (P3), polish UI honesty (P5), then draft a hosted private-beta approval payload (P4, nothing provisioned). Only then run the five-lunch coverage test (P6): pass if ≥40% of 12:15/12:45/13:15 checks have a fresh real estimate and ≥3 devices contribute on ≥2 days; STOP/archive below 20%.",
+    "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md): the problem got worse in 2026 (€1 meals open to all students, +48% meals, 40–60 min waits at Cuvier reported), but the differentiator (crowd-reported waits) depends entirely on contributor density per venue per 15 minutes, directory/hours are commoditised (Croustillapp, official tools), Affluences sensors are the operator-side answer, revenue is near zero, and the loopback-only MVP cannot collect real reports. A reproduced Sybil weakness (six fresh cookies → six-report consensus) must be fixed before any shared use. The first decision's competitor-app check was bypassed and stays a human precondition. GitHub main cfd094c (PR #1, 2026-10-09) is ahead of the recorded 70737c8.",
+    "score_rationale": "Reviewer judgment 2026-10-09, low–medium confidence: free student utility with no credible income (revenue 2, profitability 2); v0.2.0 built and CI-green (mvp_speed 8); no ML edge until data exists and activation needs on-campus presence (founder_fit 5, go_to_market 4); trivially copyable, 15-minute data decay (moat 2); real 2026 pain (problem 7); daily habit only with fresh data (retention 5). Penalties: low personal-data risk but 'Crous' naming unchecked (legal 4), ≤€25/month hosting (capital 2), value entirely contributor density (network 9), Affluences/CrousRadar/Croustillapp/Crous & go' (competition 7).",
+    "packages": {
+      "P3": "ready",
+      "P5": "todo",
+      "P4": "todo",
+      "P6": "blocked:Awaits R011, the Android incumbent check and an approved hosted private-beta payload (P4)."
+    }
+  },
+  "offer-check": {
+    "investigation_stage": "business_validation",
+    "product_maturity": "mvp",
+    "confidence": "low",
+    "next_action": "HOLD until 2026-10-23: the operator either supplies R013 (an owner-authorised redacted exact-SKU EUR request, two real quotes, permitted local-use scope and a designated reviewer) or the venture becomes STOP/archive. If supplied, run the three-arm matched trial (usual agent + inclus/exclu/non précisé template vs OfferCheck on identical frozen quotes, counting entry time); continue only with fewer material misses for equal or less effort and stated intent to reuse. Agent now: sync the checkout to GitHub main 7c33c95, record PR #1 / run 37930110427, retire stale O02–O05 placeholder nodes, repository hygiene. No extraction, French UI or hosting work before the trial.",
+    "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/offer-check/REVIEW.md): the code is sound (make check 59 tests + 6 browser; CI green on PR #1 with 107 tests), but the product does the easy half (arithmetic on already-typed terms), source linking means hand-typing JSON, every rehearsal 'source' is a copy of the structured offer, the UI is English-only, and free or EU-hosted alternatives now cover the differentiator (Umbiko quote extraction/comparison with a free tier; ilisai's free 2026-09-06 French guide and XLSX template encoding the same missing-cost rules; Precoro AI quote extraction since 2026-04-21). R013 has been blank since 2026-10-08 while the console showed 'pursue' and 'No open human requests'.",
+    "score_rationale": "Reviewer judgment 2026-10-09, medium-low confidence (desk research, no customers): weak willingness to pay for the easy half of the job (revenue 3, profitability 4); MVP exists (mvp_speed 7); no procurement background and sales-led buyers (founder_fit 4, go_to_market 2); no defensible asset (moat 1); pain already served by spreadsheets, guides and incumbents (problem 3, retention 3). Penalties: low (legal 3, capital 2, network 3); Umbiko, Precoro, QuoteWerks, Fairmarkit, free templates (competition 9).",
+    "packages": {
+      "OC-R1": "ready",
+      "OC-R4": "todo",
+      "OC-T1": "blocked:Only if the operator answers R013 by 2026-10-23 with permitted quotes and a reviewer."
+    }
+  },
+  "volley-coach": {
+    "investigation_stage": "problem_validation",
+    "product_maturity": "mvp",
+    "confidence": "low",
+    "next_action": "HOLD: the operator answers one five-minute question (R006-coach): do you, or at least two adults in your volleyball group, follow a written training program with two or more sessions a week outside group play? If no, stop and fold Volley Coach into Volley Match as a held candidate feature with one shared participant gate. Agent now: sync the checkout to GitHub main 122968b (VC-P4) and fix the planner defect that silently schedules at most one session per goal per week (VC-P3) so the delivered MVP is correct; French UI and phone access (VC-P5) wait for a yes and hosting approval.",
+    "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/volley-coach/REVIEW.md): make check (41 tests) and 4 browser tests pass and CI is green (run 37930071447 on PR #1), but there is zero demand evidence, competitors for personal training plans (Fitbod, Volt, TrueCoach, several volleyball apps) were never researched, the user's only recorded volleyball pain is teams/tournaments/Elo (Volley Match territory), the planner drops sessions without telling the user (services/planner.py), the progress feature cannot trigger in the only usable mode, and the app is loopback-only and English-only. Stage moved to solution_validation earlier with no user evidence; the honest stage is problem validation.",
+    "score_rationale": "Reviewer judgment 2026-10-09, low confidence: no evidence anyone wants it (revenue 2, profitability 3, problem 3, retention 3); MVP exists (mvp_speed 7); founder plays and can build (founder_fit 6) but has no distribution (go_to_market 3); trivially copyable (moat 1). Penalties: physical-advice disclaimers for adults (legal 4), none (capital 1), partners/programs needed (network 3), Fitbod/Volt/TrueCoach/volleyball training apps (competition 6).",
+    "packages": {
+      "VC-P4": "ready",
+      "VC-P3": "todo",
+      "VC-P5": "blocked:Deferred until the operator answers the demand question with yes and approves private phone access/hosting."
+    }
+  },
+  "ride-options": {
+    "investigation_stage": "solution_validation",
+    "product_maturity": "mvp",
+    "confidence": "low",
+    "next_action": "NARROWED 2026-10-09 to a private planner for the founder. Agent: record PR #1 and cancel the superseded investigation, defer the imagery decision and focus the rider trial gate (RO-P0); deliver the 4–5 h ride via a target riding-time band with honest 'closest found' (RO-P1); navigation-safe GPX with route shaping points and stop waypoints beside the track (RO-P3); small fixes incl. the avoid_unpaved default and FR strings (RO-P4); review the 16 unenforced restriction relations before any GPX is ridden (RO-P5). Human: the R005 rider-vs-Kurviger trial (RO-P2) decides continue/STOP; a region matching real rides (RO-P6) only if it passes. Imagery and ML stay frozen; no commercial claim.",
+    "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/ride-options/REVIEW.md): make check (73 tests), tsc, byte-identical bundle rebuild and 6 browser flows pass; labelling is honest and security/pinning basics are solid. But the core job is not delivered: requests take only a maximum riding time and loops are chosen under it (R06 runs returned 68/142/156 min against a 240-min maximum), the GPX export is a track only so navigation apps reroute it (the user's original complaint), coverage is Andorra/Auvergne only, and 16 road-restriction relations are not enforced. Competition is heavy (Kurviger €15–30/yr, Calimoto ~€60/yr, Scenic, Liberty Rider, 68°, Detecht) with no demand beyond the founder. Foundry's focus sat on the imagery choice (281b3f40) instead of the rider trial (ae6816fd, empty since 2026-10-07). GitHub main 2d6fd6c (PR #1) is ahead of the recorded 6db7080.",
+    "score_rationale": "Reviewer judgment 2026-10-09, low–medium confidence: no payer beyond the founder (revenue 2, profitability 3); MVP exists (mvp_speed 7); founder rides and built it (founder_fit 8); incumbents own distribution (go_to_market 3, moat 2); real but already-served pain (problem 5, retention 4). Penalties: OSM/engine licences and riding-safety labelling (legal 4), local engine (capital 2, network 2), six established apps (competition 9). Replaces the 2/12 partial score tied to the old ETA-repair objective.",
+    "packages": {
+      "RO-P0": "ready",
+      "RO-P2": "blocked:Operator trial: fill R005 T01–T04 rider-vs-Kurviger observations after RO-P1/RO-P3 land.",
+      "RO-P6": "blocked:Only if the RO-P2 trial passes; needs documented RAM for the regional extract."
+    }
+  },
+  "volley-match": {
+    "investigation_stage": "solution_validation",
+    "product_maturity": "mvp",
+    "confidence": "low",
+    "next_action": "NARROWED 2026-10-09 to the private results-and-Elo recorder for the founder's own group. Agent: clean Foundry records and sync the checkout to GitHub main 991d702 (VM-R1/VM-R2); add a copy-for-WhatsApp results and standings summary (VM-R3); explain the rating rule in the app (VM-R4); make the browser harness surface server errors (VM-R5); de-minify templates (VM-R8). Human: the two-outing pilot (VM-R6, R006) — results recorded in about a minute per match and shared to WhatsApp, group asks to continue — decides continue/STOP; organizer attestation (VM-R7) only if the pilot shows it is needed. Public discovery and admission work frozen. v-sports-ranking retired; fusion proposal 91fe8686 awaits the user's resolution as superseded.",
+    "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/volley-match/REVIEW.md): make check (89 tests), PostgreSQL suite, backup/restore and browser suites pass (one flaky core replay under load; harness discards server stderr); CI green on PR #1 (run 37928573496). Nobody has used it for real: only 2 of 24 evidence items concern demand, R006 pilot access is unanswered, and a match is rated only when every player has an account and the other side confirms, so the cheapest trial produces no Elo. Spond, WhatsApp group events, VolleySmart, Spiker Pro, OpenSports, TeamChooser and OpenSkill were never assessed. The fusion proposal would create a third duplicate venture; decision a38e9141 already chose v-sports-session.",
+    "score_rationale": "Reviewer judgment 2026-10-09, low–medium confidence, replacing the stale 2026-10-05 starting estimate of 47: free group utility with no payer (revenue 2, profitability 3); released MVP (mvp_speed 7); founder plays and organises (founder_fit 7); word of mouth inside one group only (go_to_market 4); copyable (moat 2); coordination pain is real but served by WhatsApp/Spond (problem 5, retention 5). Penalties: low (legal 3, capital 2), group adoption needed (network 6), Spond/TeamSnap/Heja/Playtomic/OpenSports (competition 7).",
+    "packages": {
+      "VM-R1": "ready",
+      "VM-R6": "blocked:Operator pilot (R006): two real outings with results recorded and shared to WhatsApp; needs organizer, consent owner and hosting arrangement.",
+      "VM-R7": "blocked:Only if the VM-R6 pilot shows organizer attestation is needed."
+    }
+  },
+  "coopain": {
+    "investigation_stage": "problem_validation",
+    "product_maturity": "mvp",
+    "confidence": "medium",
+    "next_action": "HOLD 2026-10-09: the finished local MVP needs no more features before demand is tested. Human gate (R015): five short conversations with employees at different French employers — pass if ≥3 say their written referral policy allows referring someone met through a platform and they would review ≥2 requests a month; STOP if policies generally require knowing the candidate. Agent now: update the Foundry record and sync the checkout to GitHub main fc5b92b (C01), research French employer referral policies and the missing competitors (Basile by Hellowork, Keycoopt, Coop-Time, BeCoopt, Blind/Glassdoor forums) and draft the interview guide without sending anything (C02); fix the profile-page race, widen lint/type CI to the whole repo, replace hard-coded role/status strings, and refuse the placeholder secret outside development (C03–C05) so the codebase stays clean while held.",
+    "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/coopain/REVIEW.md): the launcher prepares in 16 s, the backend passes 250 tests at 92% coverage, web/mobile lint/build/types and both browser runs pass, and CI is green on PR #3 (run 37928455952). But there is no demand evidence from job seekers, referrers or employers; prior research named two competitors and missed Basile by Hellowork, Keycoopt, Coop-Time, BeCoopt and free stranger-referral forums; many employer referral policies require knowing the candidate, which undercuts the referrer motive and was never checked for French employers. The stored score rated the original scraped-offers-plus-shared-bonus idea. CI lints/type-checks ~7 files (ruff 453 findings, mypy 8 errors repo-wide), a profile-page race makes a browser test flaky, the app starts with the placeholder 'change-me' secret, and 19 role/status strings are hard-coded. Local main was 21 commits behind fc5b92b.",
+    "score_rationale": "Reviewer judgment 2026-10-09, medium confidence, replacing the 2026-10-05 estimate of 48 that rated a different idea: no identified payer and employer policies likely exclude platform strangers (revenue 4, profitability 4); MVP finished (mvp_speed 8); founder lacks recruiting-market access (founder_fit 5, go_to_market 3); referral marketplaces and free forums (moat 3, competition 7); pain is real for seekers but served (problem 5, retention 3). Penalties: candidate personal data, placement-payment rules and bonus terms (legal 6); low capital (2); two-sided network (7).",
+    "packages": {
+      "C02": "ready",
+      "C03": "todo",
+      "C04": "todo",
+      "C05": "todo"
+    }
+  }
+}

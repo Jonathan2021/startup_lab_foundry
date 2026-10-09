@@ -1,0 +1,13 @@
+{
+  "request_key": "delivery-volley-match-39a1c32",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Delivery: main=39a1c32adfdac3bc0f13e8f780dad4b0f28f4808 ci=37985804298 (2026-10-09). Vendored Foundry bridge updated to contract 2026-10-09.1 on top of the 2026-10-09 implementation packages; see DELIVERY.md for the package commits and runs.",
+  "details": "{\"main\": \"39a1c32adfdac3bc0f13e8f780dad4b0f28f4808\", \"ci_run\": \"37985804298\", \"earlier_runs_this_review\": [\"37946112249 (87e76cd, R3)\", \"37947620068 (b3666ea, R4)\", \"37949947178 (6462e00, R5)\", \"37970831604 (1517010, R8)\", \"37971670254 (9b09f1d, failed on a racing V10 browser test)\", \"37972574492 (5b02522, fix, success)\"], \"record\": \"docs/inquiry/portfolio-review-2026-10-09/volley-match/DELIVERY.md\"}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/volley-match/DELIVERY.md"
+  ],
+  "refs": []
+}

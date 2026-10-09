@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-ride-options-RO-P0-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package RO-P0; see docs/inquiry/portfolio-review-2026-10-09/ride-options/REVIEW.md section 6.",
+  "expected_head": "7b3191e3-ec8a-5fbe-8aa9-dd272d0fdbca",
+  "work": {
+    "title": "RO-P0 — Foundry record and checkout hygiene",
+    "description": "Record PR #1 (2d6fd6c, CI 37930036947) as delivery evidence; human-approved fast-forward of local checkout; cancel superseded 6a6b1c22; defer imagery 281b3f40; set map focus to ae6816fd and link it to the pilot question; record reviewed 12-factor score.",
+    "acceptance_criteria": "Resume shows 2d6fd6c; focus ae6816fd; no needs_review banner; score 12/12 recorded.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready",
+    "blocked_reason": null
+  }
+}

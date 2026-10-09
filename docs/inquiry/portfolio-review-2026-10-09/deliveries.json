@@ -1,0 +1,224 @@
+{
+  "offer-check": {
+    "status": "delivered",
+    "main": "7f150d35e8480aa00a410c0b97284e55034d6f6c",
+    "ci": [
+      "37930110427 (7c33c95, OC-R1 no-change)",
+      "37945711983 (7f150d3)"
+    ],
+    "packages": {
+      "OC-R1": "result fd782e96 accepted (decision affd0dc2); map head 4956a114; PR #1 evidence 04374ff2",
+      "OC-R4": "result 06a14882 accepted (decision 4dbdccef); commits 760879c, 7f150d3"
+    },
+    "not_done": [
+      "OC-T1 blocked on R013 (deadline 2026-10-23, default STOP/archive)",
+      "no extraction/FR/hosting",
+      "local wheel check (CI only)"
+    ],
+    "feedback": [
+      "6e62dec0 bug: cancelled review still startable in console",
+      "f2beefe2 friction: map edge edit flagged unchanged work for review",
+      "7d5632c3 friction: routine result overwrote venture next action; preview did not show it"
+    ],
+    "human_gate": "R013 by 2026-10-23",
+    "delivery_evidence": [
+      {
+        "main": "e200d515af42eeb71ba7f490a98c85ce331f9fc7",
+        "ci": "37985808907",
+        "evidence_id": "aa84f8d4-d58c-4aed-98a9-a8db9fd4420e"
+      }
+    ]
+  },
+  "volley-coach": {
+    "status": "delivered",
+    "main": "6ed83edb249ca951a64b8134a28c978f3feac5bd",
+    "ci": [
+      "37944729340 (5fde687)",
+      "37947467313 (6ed83ed)"
+    ],
+    "packages": {
+      "VC-P4": "result 6a9400b1 accepted (first bb34d9e5 superseded to keep the HOLD next action); evidence 7c4c5336 for PR #1; map 389ff7c8: da9f64ff cancelled, duplicate C02–C05 question nodes removed, focus demand_gate, VC-P5 depends_on it; commit 5fde687 (feedback files)",
+      "VC-P3": "result 318836b9 accepted; commit 6ed83ed: multi-session programs, ordered sessions, explicit unscheduled notices; make check 81 passed, browser 5 passed; ADR 0007 in repo"
+    },
+    "not_done": [
+      "VC-P5 blocked on the demand question and phone-access/hosting approval",
+      "progress feature left unable to escalate difficulty (would be unreviewed physical advice); copy now says program kept as written",
+      "stage label mismatch (Foundry display) left to Foundry package F07"
+    ],
+    "feedback": [
+      "23905972 friction: adding one edge to a blocked item flagged it for review",
+      "6968bab5 friction: evidence cited in an accepted result still listed as unreviewed"
+    ],
+    "human_gate": "R006-coach demand question",
+    "delivery_evidence": [
+      {
+        "main": "7b06738ad44ed353dfdae2dec17b27aa42bfa428",
+        "ci": "37985814380",
+        "evidence_id": "41c32530-c9d4-49d4-9c66-d0fa959afd9d"
+      }
+    ]
+  },
+  "crous-queue": {
+    "status": "delivered",
+    "main": "784246e24166aef0174766bc543904570c82272d",
+    "ci": [
+      "37948283870 (092bba2, P3)",
+      "37970042546 (a4f0487, P5)",
+      "37971430794 (784246e, P4)"
+    ],
+    "packages": {
+      "P3": "result be6bc8b6 accepted; commits d6b8b3b dabc81c ce48159 092bba2; six fresh cookies now count 2 / sources 1 / excluded 4; forwarding headers only from configured proxies (default none); ADR-0009 abuse model; first push failed on a stale migration-count pin, fixed; PR #1 evidence c38602e1; dbbfbb3d cancelled; focus = five-lunch gate",
+      "P5": "result d372094d accepted; commits 491ac01 a4f0487; unknown hours honest, region names, directory date, DD/MM/YYYY, 390px tests (90 core, 16 browser)",
+      "P4": "result 211623f5 accepted; commits 074ffae 784246e; deploy/PRIVATE_BETA_APPROVAL.md NOT AUTHORIZED; Scaleway DEV1-S fr-par-1 €0.00898/h, ceiling €25/month, ≤21 days; PostgreSQL check on throwaway 18.6 (prod target 16 is a listed gate); invite-link cookie instead of basic auth so /admin keeps its token header"
+    },
+    "not_done": [
+      "P6 (human gate)",
+      "PostgreSQL 16 verification",
+      "English UI",
+      "'Crous' trademark check",
+      "Caddy config unvalidated locally",
+      "P5 local verify_release skipped for disk quota (CI ran it)"
+    ],
+    "feedback": [
+      "ab89b18a friction",
+      "176c4619 positive",
+      "05edb95a friction"
+    ],
+    "human_gate": "R011 answer + Android incumbent check + approve/reject the exact P4 payload, then P6",
+    "map_head": "4dfad8e8",
+    "delivery_evidence": [
+      {
+        "main": "396054d8e9e0d7c02c6973c0af8d1ccf6545b15e",
+        "ci": "37985797145",
+        "evidence_id": "f42250a6-5dba-4db4-8905-be91556cbf7c"
+      }
+    ]
+  },
+  "volley-match": {
+    "status": "delivered",
+    "main": "5b025229932b777176b5bccab9b13430498cd7bf",
+    "ci": [
+      "37946112249 (87e76cd, R3)",
+      "37947620068 (b3666ea, R4)",
+      "37949947178 (6462e00, R5)",
+      "37970831604 (1517010, R8)",
+      "37971670254 (9b09f1d, failed on a racing V10 browser test)",
+      "37972574492 (5b02522, fix, success)"
+    ],
+    "packages": {
+      "VM-R1": "result 09ac7dd6 accepted; no commit; 132 tests, browser 3× green; PR #1 evidence 9d6d27b9; focus = pilot gate; 8 duplicate placeholder nodes removed",
+      "VM-R3": "result 7033140c accepted; commit 87e76cd; plain-text results/standings copy, no links",
+      "VM-R4": "result 891768bc accepted; commit b3666ea; /elo page, pre-match win probability on match pages",
+      "VM-R5": "result e434772b accepted; commit 6462e00; server log tail on failed start, configurable timeout; original flake not reproduced (root cause unknown)",
+      "VM-R8": "result a2d902af accepted; commit 1517010; HTML identical after reformat, 16/20 screenshots pixel-identical, local dd/mm/yyyy à HH:MM"
+    },
+    "not_done": [
+      "fusion proposal 91fe8686 and v-sports-ranking lineage need the user",
+      "VM-R6/VM-R7 blocked",
+      "stage label still 'discovery' (Foundry display; F07 fixes)"
+    ],
+    "feedback": [
+      "90806f7d friction",
+      "77d088f2 positive",
+      "1a06939c idea",
+      "0a1780f1 positive",
+      "61841218 friction"
+    ],
+    "human_gate": "R006 pilot (organizer, access, consent owner, spending cap) + proposal decision",
+    "map_head": "3fe462d6",
+    "note": "feedback files are gitignored in this repo and were force-added per brief; last acceptance emptied the map focus, restored manually",
+    "delivery_evidence": [
+      {
+        "main": "39a1c32adfdac3bc0f13e8f780dad4b0f28f4808",
+        "ci": "37985804298",
+        "evidence_id": "47c50b3f-7a98-4289-9ed0-2939cb40dfa0"
+      }
+    ]
+  },
+  "ride-options": {
+    "status": "delivered",
+    "main": "c0f775c",
+    "ci": [
+      "37949876329 (fc4c25e, RO-P1)",
+      "37969991972 (c87312a, RO-P3)",
+      "37971408624 (8e668ff, RO-P4)",
+      "37975693265 (c0f775c, RO-P5)"
+    ],
+    "packages": {
+      "RO-P0": "result 2322ec6f accepted; verified 2d6fd6c (129 tests, tsc, identical bundle, 6 browser flows); PR #1 evidence 8ce0832c; 9 duplicate placeholders removed; 6a6b1c22 cancelled; imagery 281b3f40 paused",
+      "RO-P1": "result 6a38bb18 accepted; commits d4c9225 fc4c25e; target riding-time band; live Auvergne T03/T04 returned two loops in 240–300 min (249.3, 257.6) after 9 engine requests",
+      "RO-P3": "result e82dd4fc accepted; commits 498fe10 c87312a; stop waypoints + route points every ~10 km beside the track; GPX 1.1 schema-valid; no real app import performed",
+      "RO-P4": "result 31489c39 accepted; commits 4fbaaca 6a86a6f eb9ef30 8e668ff; avoid_unpaved default matches form; app.ts reformatted (byte-identical bundle); free port; French main flow",
+      "RO-P5": "result f3b9f508 accepted; commits 53ca227 c0f775c; 16 relations dispositioned (6 enforced, 5 narrowed, 5 omitted); repaired engine takes 0/9 forbidden turns vs 8/9 before; 7 relations unresolved → not road-use clearance"
+    },
+    "not_done": [
+      "RO-P2 founder trial (human) and RO-P6 (conditional) not claimed",
+      "operator's .local/auvergne still holds the old import; repaired import is .local/auvergne-ro-p5b; operator .env caps routing at 12 requests/30 s (left untouched)"
+    ],
+    "feedback": [
+      "72f11bd7",
+      "3ab2bb88",
+      "f34ec599",
+      "a496b610",
+      "53d4ad73"
+    ],
+    "human_gate": "R005 rider-vs-Kurviger trial (RO-P2); switch engine import to the repaired one before riding",
+    "map_head": "3c493b04",
+    "note": "result acceptance kept moving the map focus off the gate; restored manually (second venture to report this)",
+    "delivery_evidence": [
+      {
+        "main": "a436d91ff7e4f5fbf76c3a64ed4fc8c1720e3ab5",
+        "ci": "37985800627",
+        "evidence_id": "c7dc96cd-2176-4b79-9650-e14f2bde5beb"
+      }
+    ]
+  },
+  "coopain": {
+    "status": "delivered",
+    "main": "bfa739b9f9ec5edefa314916400a07513e348509",
+    "ci": [
+      "37969597406 (78f35af, C02)",
+      "37975495446 (2588d6b, C03)",
+      "37980110728 (3135903, C04)",
+      "37983853750 (bfa739b, C05)"
+    ],
+    "packages": {
+      "C02": "result 227c36d5 accepted (decision cdfaea3a); commit 78f35af; desk pack of 8 French cooptation agreements (none requires knowing the candidate; 7/8 assume a relationship; 6/8 exclude third-party-presented candidates) so R015 is 'not decided'; FR/EN interview guide, nothing sent; PR #3 evidence f0e42852 (267 backend tests 92.82%, 19 web); 285e380e cancelled; 90e268be repointed at R015; J01-J05 duplicate nodes removed; focus = policy question",
+      "C03": "result 60695e0f accepted (decision a1b9197f); commit 2588d6b; load-guard ticketing fixes profile stale-load and matches form reset; 8 node tests (6 fail on old code); verifier readiness wait 90 s -> 240 s; 5 consecutive desktop+390px passes",
+      "C04": "result 40feade1 accepted (decision 05b75a1b); commits 9a2f7b1 3c6cf45 3135903; ruff+mypy over whole backend/tools, mobile and design-system lint/tsc in CI, no allowlist; shared state enums replace 34 backend + 39 web literals with guard tests; OpenAPI byte-identical",
+      "C05": "result 6721053b accepted (decision b409d835); commits 20a0634 b0c1cd0 bfa739b; backend refuses to start without ENVIRONMENT/JWT_SECRET_KEY or with change-me (test exempt); html lang follows FR/EN; axe 0 violations at 1280/390; contrast tokens darkened + pinned; 281 backend tests 92.87%, 34/34 web"
+    },
+    "not_done": [
+      "C06 (single source for transition/password rules) deferred",
+      "legacy dev paths (Dockerfile/compose, conda scripts, terminal/browser frontends, dev_ui.py, fingerprints.py) kept: product decision",
+      "docs archive, README rename, stray root files, strict mypy over all app, mypy on tests, mobile runtime/palette",
+      "C01 coordinator items: score reassessment, new assumption records for policy permission and referrer willingness"
+    ],
+    "feedback": [
+      "aa783af4 friction: map revise flags claimant's own work for review and invalidates its context; WorkTreatment cannot revise question/acceptance",
+      "4e56b8a0 friction: accepted findings reappear as unclassified arrivals in the next context",
+      "2a942fae positive: claim/preview/resolve flow; print context id first",
+      "75fa972d friction: CLI logs interleave with JSON on merged stderr"
+    ],
+    "human_gate": "R015 five employee conversations (work 90e268be); launch gates R1-R4/P1-P8 unknown",
+    "map_head": "88ff9788",
+    "incident": "commit 9a2f7b1 pushed five untracked operator notes (backend/preprompt, backend/tmp_prompt, backend/openapi_new.yaml, backend/test_results, backend/generated/refactor_scan_20260311.md); no credentials; bfa739b untracks them, files kept on disk; they remain in history unless the user authorises a rewrite",
+    "note": "feedback files gitignored in this repo; agent force-added its own four reports + receipts (second repo with this)",
+    "delivery_evidence": [
+      {
+        "main": "1a5325be21e767ba4d0f8e7872d1fdd0ed9ba5b9",
+        "ci": "37985792402",
+        "evidence_id": "1ed1b3d9-148b-4464-a07a-821ea84f4e96"
+      }
+    ]
+  },
+  "foundry": {
+    "delivery_evidence": [
+      {
+        "main": "0af4c090a16a3af0a62e682a570add79f9331eb9",
+        "ci": "37985672390",
+        "evidence_id": "d99f2ad5-737b-40f1-a9a1-3c81ae626edc"
+      }
+    ]
+  }
+}

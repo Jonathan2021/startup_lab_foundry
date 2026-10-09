@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-volley-coach-VC-P3-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package VC-P3; see docs/inquiry/portfolio-review-2026-10-09/volley-coach/REVIEW.md section 6.",
+  "expected_head": "204f0876-15b4-5b20-94e3-784e8af90f4b",
+  "work": {
+    "title": "VC-P3 — Multi-session program scheduling",
+    "description": "Add sessions-per-week and ordered sessions per program; report every unscheduled session explicitly.",
+    "acceptance_criteria": "Red tests first; 3-session program with 3 feasible slots yields 3 ordered sessions, with 2 slots yields 2 plus explicit unscheduled notice; existing invariants green.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo",
+    "blocked_reason": null
+  }
+}

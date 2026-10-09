@@ -1,0 +1,24 @@
+{
+  "files": {
+    "2026-10-06-crous.md": ["f0b5abfe-0274-42f7-9c9a-72dcbe68c116"],
+    "2026-10-07-ride-R005-trials.md": ["v-route-repair"],
+    "2026-10-07-volley-match-R006-pilot-access.md": ["v-sports-session"],
+    "2026-10-08-crous-R011-pilot-readiness.md": ["f0b5abfe-0274-42f7-9c9a-72dcbe68c116"],
+    "2026-10-08-offer-check-R013-quotes.md": ["v-offer-check"],
+    "2026-10-08-volley-coach-R006-own-program.md": ["v-volley-coach"],
+    "2026-10-09-agentic-stack-R014-wedge-decisions.md": ["v-fleet-controller"],
+    "2026-10-09-coopain-R015-referrer-policy.md": ["v-coopain"]
+  },
+  "requests": {
+    "R001": ["v-route-repair"],
+    "R002": ["v-physical"],
+    "R003": ["v-receipt"],
+    "R004": ["v-foundry"],
+    "R005": ["v-route-repair"],
+    "R007": ["v-coopain"],
+    "R008": ["v-physical"],
+    "R009": ["v-receipt"],
+    "R012": ["v-offer-check"]
+  },
+  "ignore": ["INBOX.md"]
+}

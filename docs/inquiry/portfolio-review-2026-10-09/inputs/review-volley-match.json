@@ -1,0 +1,10 @@
+{
+  "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+  "expected_revision": 17,
+  "investigation_stage": "solution_validation",
+  "product_maturity": "mvp",
+  "disposition": "pursue",
+  "next_action": "NARROWED 2026-10-09 to the private results-and-Elo recorder for the founder's own group. Agent: clean Foundry records and sync the checkout to GitHub main 991d702 (VM-R1/VM-R2); add a copy-for-WhatsApp results and standings summary (VM-R3); explain the rating rule in the app (VM-R4); make the browser harness surface server errors (VM-R5); de-minify templates (VM-R8). Human: the two-outing pilot (VM-R6, R006) — results recorded in about a minute per match and shared to WhatsApp, group asks to continue — decides continue/STOP; organizer attestation (VM-R7) only if the pilot shows it is needed. Public discovery and admission work frozen. v-sports-ranking retired; fusion proposal 91fe8686 awaits the user's resolution as superseded.",
+  "reason": "Portfolio review 2026-10-09 (docs/inquiry/portfolio-review-2026-10-09/volley-match/REVIEW.md): make check (89 tests), PostgreSQL suite, backup/restore and browser suites pass (one flaky core replay under load; harness discards server stderr); CI green on PR #1 (run 37928573496). Nobody has used it for real: only 2 of 24 evidence items concern demand, R006 pilot access is unanswered, and a match is rated only when every player has an account and the other side confirms, so the cheapest trial produces no Elo. Spond, WhatsApp group events, VolleySmart, Spiker Pro, OpenSports, TeamChooser and OpenSkill were never assessed. The fusion proposal would create a third duplicate venture; decision a38e9141 already chose v-sports-session.",
+  "author": "agent:fable-portfolio-20261009"
+}

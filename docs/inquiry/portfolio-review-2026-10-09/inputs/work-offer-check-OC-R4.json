@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-offer-check-OC-R4-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package OC-R4; see docs/inquiry/portfolio-review-2026-10-09/offer-check/REVIEW.md section 6.",
+  "expected_head": "e0c768ed-50f5-564e-8719-ae4f50556cfe",
+  "work": {
+    "title": "OC-R4 — Repository hygiene",
+    "description": "Historical banners on dated handoffs, fix REVIEW_NEXT 'no HEAD' statement, decide commit-or-ignore policy for feedback outbox files.",
+    "acceptance_criteria": "Clean git status after decision; no document presents finished packages as claimable.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo",
+    "blocked_reason": null
+  }
+}

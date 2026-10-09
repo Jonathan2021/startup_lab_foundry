@@ -1,0 +1,13 @@
+{
+  "request_key": "delivery-offer-check-e200d51",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Delivery: main=e200d515af42eeb71ba7f490a98c85ce331f9fc7 ci=37985808907 (2026-10-09). Vendored Foundry bridge updated to contract 2026-10-09.1 on top of the 2026-10-09 implementation packages; see DELIVERY.md for the package commits and runs.",
+  "details": "{\"main\": \"e200d515af42eeb71ba7f490a98c85ce331f9fc7\", \"ci_run\": \"37985808907\", \"earlier_runs_this_review\": [\"37930110427 (7c33c95, OC-R1 no-change)\", \"37945711983 (7f150d3)\"], \"record\": \"docs/inquiry/portfolio-review-2026-10-09/offer-check/DELIVERY.md\"}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/offer-check/DELIVERY.md"
+  ],
+  "refs": []
+}

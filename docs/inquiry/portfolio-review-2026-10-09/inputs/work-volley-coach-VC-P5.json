@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-volley-coach-VC-P5-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package VC-P5; see docs/inquiry/portfolio-review-2026-10-09/volley-coach/REVIEW.md section 6.",
+  "expected_head": "2e821260-997a-5d0b-a713-d538c7141179",
+  "work": {
+    "title": "VC-P5 — French UI and private phone access",
+    "description": "FR locale for templates and walkthrough; opt-in LAN bind with configurable allowed hosts and login throttling.",
+    "acceptance_criteria": "Browser flows pass in FR at 390px; LAN mode off by default and documented.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "blocked",
+    "blocked_reason": "Deferred until the operator answers the demand question with yes and approves private phone access/hosting."
+  }
+}

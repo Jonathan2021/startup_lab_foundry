@@ -1,0 +1,32 @@
+{
+  "venture_id": "v-coopain",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "expected_sequence": 1,
+  "request_key": "portfolio-review-score-coopain-2026-10-09",
+  "scores": {
+    "revenue": 4,
+    "profitability": 3,
+    "mvp_speed": 8,
+    "founder_fit": 5,
+    "go_to_market": 2,
+    "moat": 3,
+    "problem": 6,
+    "retention": 3,
+    "legal_risk": 6,
+    "capital": 2,
+    "network": 9,
+    "competition": 8
+  },
+  "rationale": "Reviewer judgment 2026-10-09, medium confidence, replacing the 2026-10-05 estimate of 48 that rated a different idea: no identified payer and employer policies likely exclude platform strangers (revenue 4, profitability 4); MVP finished (mvp_speed 8); founder lacks recruiting-market access (founder_fit 5, go_to_market 3); referral marketplaces and free forums (moat 3, competition 7); pain is real for seekers but served (problem 5, retention 3). Penalties: candidate personal data, placement-payment rules and bonus terms (legal 6); low capital (2); two-sided network (7).",
+  "author": "agent:fable-portfolio-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {},
+  "evidence_ids": {
+    "competition": [
+      "83b5fb59-8c32-4c25-82d7-0178b7eaffb9"
+    ],
+    "moat": [
+      "83b5fb59-8c32-4c25-82d7-0178b7eaffb9"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "request_key": "portfolio-review-volley-coach-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "summary": "Portfolio review 2026-10-09: recommendation HOLD (confidence low); score change record; 3 proposed packages; blockers: No demand evidence; R006 own-program operator decision unanswered, Planner schedules at most one session per goal per week, so real multi-session programs cannot be trialled, Local-only loopback access and English-only UI block a realistic French phone-based trial, Foundry and local checkout lag remote main 122968b (PR #1). Full review: docs/inquiry/portfolio-review-2026-10-09/volley-coach/REVIEW.md",
+  "details": "{\"recommendation\": \"HOLD\", \"confidence\": \"low\", \"score_change\": \"record\", \"blockers\": [\"No demand evidence; R006 own-program operator decision unanswered\", \"Planner schedules at most one session per goal per week, so real multi-session programs cannot be trialled\", \"Local-only loopback access and English-only UI block a realistic French phone-based trial\", \"Foundry and local checkout lag remote main 122968b (PR #1)\"], \"packages\": {\"VC-P4\": \"ready\", \"VC-P3\": \"todo\", \"VC-P5\": \"blocked:Deferred until the operator answers the demand question with yes and approves private phone access/hosting.\"}, \"feedback_ids\": [\"255b15be-79af-42c9-b0a1-0494633be01e\", \"a5a1a905-7814-4f3a-978c-0c0417392aee\", \"5bed744e-44dd-4afc-8c34-c67e3f621871\", \"63d588ac-aa86-43e5-97c7-17d0c4adb56e\"]}",
+  "kind": "artifact_review",
+  "epistemic_status": "observation",
+  "confidence": "low",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/volley-coach/REVIEW.md"
+  ],
+  "refs": []
+}

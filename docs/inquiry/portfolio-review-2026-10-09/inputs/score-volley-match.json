@@ -1,0 +1,32 @@
+{
+  "venture_id": "v-sports-session",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "expected_sequence": 1,
+  "request_key": "portfolio-review-score-volley-match-2026-10-09",
+  "scores": {
+    "revenue": 3,
+    "profitability": 3,
+    "mvp_speed": 9,
+    "founder_fit": 8,
+    "go_to_market": 3,
+    "moat": 2,
+    "problem": 4,
+    "retention": 5,
+    "legal_risk": 3,
+    "capital": 2,
+    "network": 8,
+    "competition": 8
+  },
+  "rationale": "Reviewer judgment 2026-10-09, low–medium confidence, replacing the stale 2026-10-05 starting estimate of 47: free group utility with no payer (revenue 2, profitability 3); released MVP (mvp_speed 7); founder plays and organises (founder_fit 7); word of mouth inside one group only (go_to_market 4); copyable (moat 2); coordination pain is real but served by WhatsApp/Spond (problem 5, retention 5). Penalties: low (legal 3, capital 2), group adoption needed (network 6), Spond/TeamSnap/Heja/Playtomic/OpenSports (competition 7).",
+  "author": "agent:fable-portfolio-20261009",
+  "confidence": "low",
+  "criterion_rationales": {},
+  "evidence_ids": {
+    "competition": [
+      "a121bc0d-c4ba-4b3e-97c2-48d00a010add"
+    ],
+    "moat": [
+      "a121bc0d-c4ba-4b3e-97c2-48d00a010add"
+    ]
+  }
+}

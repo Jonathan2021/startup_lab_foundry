@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-offer-check-OC-T1-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package OC-T1; see docs/inquiry/portfolio-review-2026-10-09/offer-check/REVIEW.md section 6.",
+  "expected_head": "2c2aeb0d-dae0-555e-90d4-0c83c52b8ca1",
+  "work": {
+    "title": "OC-T1 — R013 matched three-arm trial",
+    "description": "Conditional on an R013 answer: template, usual agent plus template, and OfferCheck on identical frozen permitted inputs including capture time.",
+    "acceptance_criteria": "Filled trial record with times, material misses, unknowns, corrections and reuse intent; GO-narrow or STOP decision recorded in Foundry.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "blocked",
+    "blocked_reason": "Only if the operator answers R013 by 2026-10-23 with permitted quotes and a reviewer."
+  }
+}

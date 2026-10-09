@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-crous-queue-P4-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package P4; see docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md section 6.",
+  "expected_head": "833b3dfc-746a-5ca5-be0a-89957cd5a953",
+  "work": {
+    "title": "P4 — Hosted private-beta approval payload",
+    "description": "Refresh DEPLOYMENT_PROPOSAL and deploy/proposal.json to 0.2.0/schema 0006, validate the PostgreSQL branch on a local disposable container, produce exact host/budget/teardown/invite-only payload. No provisioning.",
+    "acceptance_criteria": "Proposal matches current version/schema/checksum; PostgreSQL concurrency, migration and backup/restore tests pass locally; payload lists resources, max EUR 25/month, teardown commands; status NOT AUTHORIZED.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo",
+    "blocked_reason": null
+  }
+}

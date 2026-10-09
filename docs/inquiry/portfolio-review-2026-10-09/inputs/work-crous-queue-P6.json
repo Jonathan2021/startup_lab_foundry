@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-crous-queue-P6-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package P6; see docs/inquiry/portfolio-review-2026-10-09/crous-queue/REVIEW.md section 6.",
+  "expected_head": "fd647b63-ef8f-59be-9623-2ab925c63e0c",
+  "work": {
+    "title": "P6 — Real five-lunch Cuvier/Chatelet coverage test",
+    "description": "After P1 and approved P4, run five ordinary lunch days with checks at 12:15/12:45/13:15; report numerator/denominator and returning devices.",
+    "acceptance_criteria": "Pre-registered thresholds: >=40% fresh real estimates at checks and >=3 devices on >=2 days without individual reminders = continue; <20% or incumbent live Cuvier data = STOP/archive.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "blocked",
+    "blocked_reason": "Awaits R011, the Android incumbent check and an approved hosted private-beta payload (P4)."
+  }
+}

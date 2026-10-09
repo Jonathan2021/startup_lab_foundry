@@ -1,0 +1,15 @@
+{
+  "request_key": "portfolio-coopain-C05-2026-10-09",
+  "actor": "fable-portfolio-20261009",
+  "rationale": "Portfolio review 2026-10-09 package C05; see docs/inquiry/portfolio-review-2026-10-09/coopain/REVIEW.md section 6.",
+  "expected_head": "db4ed8bd-7e70-5348-bc6d-2cc43572bea0",
+  "work": {
+    "title": "C05 — Fail-closed config and a11y basics",
+    "description": "Require explicit ENVIRONMENT, reject default JWT secret outside test, dynamic html lang, axe check in e2e.",
+    "acceptance_criteria": "settings test rejects change-me outside test; axe zero serious violations on 3 main pages",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo",
+    "blocked_reason": null
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "venture_id": "v-volley-coach",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "expected_sequence": 0,
+  "request_key": "portfolio-review-score-volley-coach-2026-10-09",
+  "scores": {
+    "revenue": 2,
+    "profitability": 3,
+    "mvp_speed": 7,
+    "founder_fit": 6,
+    "go_to_market": 3,
+    "moat": 1,
+    "problem": 3,
+    "retention": 3,
+    "legal_risk": 4,
+    "capital": 1,
+    "network": 3,
+    "competition": 6
+  },
+  "rationale": "Reviewer judgment 2026-10-09, low confidence: no evidence anyone wants it (revenue 2, profitability 3, problem 3, retention 3); MVP exists (mvp_speed 7); founder plays and can build (founder_fit 6) but has no distribution (go_to_market 3); trivially copyable (moat 1). Penalties: physical-advice disclaimers for adults (legal 4), none (capital 1), partners/programs needed (network 3), Fitbod/Volt/TrueCoach/volleyball training apps (competition 6).",
+  "author": "agent:fable-portfolio-20261009",
+  "confidence": "low",
+  "criterion_rationales": {},
+  "evidence_ids": {
+    "competition": [
+      "55d4c5e2-0835-49c6-b362-254bdf1c677b"
+    ],
+    "moat": [
+      "55d4c5e2-0835-49c6-b362-254bdf1c677b"
+    ]
+  }
+}
