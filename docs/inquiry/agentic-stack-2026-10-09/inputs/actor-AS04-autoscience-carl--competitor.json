@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Autoscience (Carl)",
+    "website": "https://siliconangle.com/2026/03/19/autoscience-builds-automated-research-lab-machine-learning-models-14m/",
+    "description": "Autonomous ML research lab offered as managed service"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Hosted enterprise ML research Traction: $14M seed led by General Catalyst (2026-03) (https://siliconangle.com/2026/03/19/autoscience-builds-automated-research-lab-machine-learning-models-14m/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

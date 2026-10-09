@@ -1,5 +1,21 @@
 # Current Foundry direction
 
+Latest update 2026-10-09: the user-supplied transcript `idea_queue/agentic_stack_ideas.md`
+was processed as a Foundry discovery loop ([report](inquiry/agentic-stack-2026-10-09/REPORT.md),
+[protocol](inquiry/agentic-stack-2026-10-09/PROTOCOL.md)). Nine transcript-derived
+candidates (AS01–AS09) were scored on the reviewed scorecard against five dated
+competition passes; they collapse into one open-source wedge, **v-fleet-controller**
+(merged idea AS10: outcome ledger, quota-aware failover with durable handover and a
+learned model/effort policy for unmodified official CLI agents under the user's own
+logins), with five dependent packages C01–C05 and an initial decision map. AS04 is
+narrowed to a research-ledger experiment for the ADR-0007 memory pilot; AS02 is held
+with a metadata-only revisit test; AS05–AS07 and AS09 are dropped or use existing tools.
+GO means a local open-source MVP on the operator's own workloads only. The loop
+demonstrated six interface gaps, fixed under [ADR-0019](adr/0019-discovery-records-sources-competition-revisions.md):
+source registration/linking, market-actor competition records, idea revisions and
+relations, `idea create --input`, a source filter and a cohort comparison page.
+Decisions needed from the user are in [R014](../requests/2026-10-09-agentic-stack-R014-wedge-decisions.md).
+
 Latest product update 2026-10-08: Foundry `0.1.0` uses agent contract/bridge
 `2026-10-08.1`. Feedback from six implementation agents led to database-independent
 schema discovery, conditional-branch guidance, explicit context/full-map coverage,

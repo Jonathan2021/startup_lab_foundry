@@ -1,0 +1,13 @@
+{
+  "title": "Research ledger with negative results and trial-aware promotion (narrowed from research OS)",
+  "description": "A typed, cross-project research ledger (established result, conjecture, counterexample, refuted, open question, failed approach) with provenance to runs, noise-aware status (an improvement inside measured rerun noise stays a conjecture) and trial-aware promotion statistics, sitting under existing experiment loops (autoresearch, AIDE/Weco, evo) rather than replacing them. First test: retrieval of relevant prior negative evidence for later hypotheses on the 329 existing ARC3 inquiry records, typed ledger versus plain grep/BM25, Hindsight optional.",
+  "narrowing_or_pivot": "Dropped the inner research loop (commodity: autoresearch 97.6k stars, AIDE/Weco, AlphaEvolve GA, MLE-bench saturated) and the outer researcher-improvement loop (crowded prototypes: autocontext, Sibyl, ShinkaEvolve, GEPA, EvoAgentX). Kept only the ledger, which is Foundry's own evidence/decision domain applied to research runs.",
+  "target_customer": "The operator's own research repositories (kaggle/arc3) and Foundry's inquiry-memory pilot (ADR-0007); no external customer hypothesised.",
+  "business_model": "None; internal capability experiment. A hosted research OS has no evident slot for a solo founder (Edison $70M, Autoscience $14M, Weco $8M; Google/Microsoft platforms).",
+  "focused_mvp_scope": "Retrieval A/B on existing ARC3 records: chronological split, recall@10 of cited prior evidence, missed-relevant-negative count, extraction error rate on 30 sampled entries. Stop rule: typed ledger beats plain search by <10 recall points and finds no missed negative in ≥90% of probes → do not build memory; use a results log plus Markdown.",
+  "estimated_mvp_weeks": 2,
+  "key_validation_test": "Typed ledger improves recall@10 of cited prior evidence by ≥10 points over grep/BM25 on held-out ARC3 records, or surfaces missed negatives in >10% of probes.",
+  "change_reason": "Narrowed after competition pass R5 (2026-10-09): inner and outer loops are covered; the residual belongs to Foundry's inquiry-memory pilot, not to a venture.",
+  "authored_by": "fable-agentic-stack-20261009",
+  "carry_competition": true
+}

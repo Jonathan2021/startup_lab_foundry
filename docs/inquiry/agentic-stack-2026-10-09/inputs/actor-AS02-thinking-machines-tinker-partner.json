@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Thinking Machines Tinker",
+    "website": "https://siliconangle.com/2025/12/12/thinking-machines-makes-tinker-ai-fine-tuning-service-generally-available/",
+    "description": "LoRA fine-tuning API"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "training backend Traction: GA 2025-12-12 (https://siliconangle.com/2025/12/12/thinking-machines-makes-tinker-ai-fine-tuning-service-generally-available/). Licence: commercial.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

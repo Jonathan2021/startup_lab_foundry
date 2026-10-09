@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Relevance AI",
+    "website": "https://relevanceai.com/",
+    "description": "No-code multi-agent 'Workforce'; pricing page now enterprise-only with evals and A/B testing."
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "AI-workforce positioning; moved upmarket. Traction: $24M Series B, May 2025 (https://relevanceai.com/blog/the-ai-workforce-revolution-24m-series-b-to-accelerate-our-mission). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

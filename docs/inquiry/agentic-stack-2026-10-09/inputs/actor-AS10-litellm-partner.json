@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "LiteLLM",
+    "website": "https://github.com/BerriAI/litellm",
+    "description": "OSS gateway with fallbacks/cooldowns/budgets; Auto Router v2 with complexity tiers, effort ladders, Thompson-sampled adaptive pools, Claude Code/Codex harness-aware routing"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "[inherited from AS03] Shadow evaluation could host calibration Traction: 60.5k GitHub stars (https://github.com/BerriAI/litellm). Licence: Open core + LiteLLM Commercial License for enterprise.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "RouteLLM",
+    "website": "https://github.com/lm-sys/RouteLLM",
+    "description": "Preference-trained strong/weak routers; last commit 2024-08-10"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Offline baseline Traction: 5.6k GitHub stars (https://github.com/lm-sys/RouteLLM). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

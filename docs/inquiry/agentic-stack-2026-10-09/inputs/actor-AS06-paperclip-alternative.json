@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Paperclip",
+    "website": "https://github.com/paperclipai/paperclip",
+    "description": "Open-source orchestration for teams of AI agents: org charts, Ready-Made Teams, budgets with auto-pause, approval stages, plugins, adapters for Claude Code/Codex/Cursor/Gemini CLI; Paperclip Cloud waitlist."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "For technical SMEs only. Traction: ~99.1k GitHub stars (https://github.com/paperclipai/paperclip). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

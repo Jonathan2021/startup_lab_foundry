@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Neptune.ai",
+    "website": "https://docs.neptune.ai/transition_hub",
+    "description": "Experiment tracker acquired by OpenAI; SaaS shut down March 2026"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Lock-in risk signal for hosted trackers Traction: SaaS discontinued March 2026, data deleted (https://docs.neptune.ai/transition_hub). Licence: n/a.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

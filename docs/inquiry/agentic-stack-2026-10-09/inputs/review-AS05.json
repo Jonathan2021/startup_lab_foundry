@@ -1,0 +1,10 @@
+{
+  "workspace_id": "b602ddc8-4b6f-4d1a-b3cb-a201d79a0270",
+  "expected_revision": 0,
+  "investigation_stage": "triage",
+  "product_maturity": "concept",
+  "disposition": "dropped",
+  "next_action": "Drop as an OS; fold the cross-runtime eligibility-policy residual into the wedge.",
+  "reason": "Team-OS layer occupied by Paperclip (99.1k stars, Team Catalog, export/import, execution policy, cloud waitlist), Gas Town, Orchestrator.inc, Ruflo, Symphony; framework layer by LangGraph/Mastra/Agno/CrewAI; Vibe Kanban shut down for lack of a business model; Conductor monetises cloud workspaces ($50/mo). Residuals are plugin-sized: eligibility policy across cloud/local/subscription runtimes, ML/Kaggle plugins with evaluation, eval-driven improvement proposals (R1, R4). Dify/n8n licences limit a hosted build.",
+  "author": "agent:fable-agentic-stack-20261009"
+}

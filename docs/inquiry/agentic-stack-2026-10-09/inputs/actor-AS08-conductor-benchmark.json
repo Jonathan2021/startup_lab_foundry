@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Conductor",
+    "website": "https://www.conductor.build/",
+    "description": "Mac app running parallel Claude Code, Codex and Cursor agents in isolated workspaces; BYO subscriptions; paid cloud workspaces"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Sanctioned ChatGPT plan use via Sign in with ChatGPT Traction: OpenAI Sign in with ChatGPT plan-usage partner; Pro $50/mo (https://learn.chatgpt.com/docs/sign-in-with-chatgpt). Licence: Proprietary (no public repo found).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

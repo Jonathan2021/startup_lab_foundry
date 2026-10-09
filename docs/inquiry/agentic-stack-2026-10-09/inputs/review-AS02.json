@@ -1,0 +1,10 @@
+{
+  "workspace_id": "86179d50-d80e-4fcb-961a-d2fb9cd44c03",
+  "expected_revision": 0,
+  "investigation_stage": "comparison",
+  "product_maturity": "concept",
+  "disposition": "hold",
+  "next_action": "Hold as a venture; fold its cheapest test (recurring verifiable-task count from the ledger) into the fleet-controller wedge as a later 'specialization opportunity' report. Revisit if a task class exceeds ~30 verifiable runs/month.",
+  "reason": "R3: the fine-tune-from-traces market is shrinking (TensorZero archived 2026-06-12; OpenPipe closed to new training 2026-07-30 after the CoreWeave acquisition; Predibase redirects to Rubrik; Humanloop shut; Lamini team to AMD; Fireworks deprecated managed RL fine-tuning; OpenAI ends self-serve fine-tuning 2027-01-06 and Evals 2026-11-30 citing 'fewer use cases that require fine-tuning'). Upper rungs are still crowded (Distil Labs, Pioneer/Fastino, Inference.net Catalyst, Overmind) and the lower rungs by Microsoft SkillOpt-Sleep (MIT, 18.2k stars: nightly recurring-task discovery from Claude Code/Codex transcripts, held-out tests, human-approved skill changes). 'Deciding when fine-tuning is worthwhile' is unshipped by ~45 actors, plausibly because the answer is usually 'don't'. Provider terms (OpenAI API, Anthropic 2026-03-16 guidance, Google 2026-04-28) restrict training on outputs; routers trained on outcome metadata fit the classifier exceptions. Local training remains deferred under ADR-0010.",
+  "author": "agent:fable-agentic-stack-20261009"
+}

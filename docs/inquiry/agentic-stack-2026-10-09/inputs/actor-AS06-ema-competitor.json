@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Ema",
+    "website": "https://www.ema.ai/",
+    "description": "'Universal AI employee' agent platform for enterprises."
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Same AI-employee positioning, enterprise segment. Traction: $77M Series B, $140M total, Sep 2026 (https://finance.yahoo.com/technology/ai/articles/ema-raises-77m-series-b-130000096.html). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "DatologyAI",
+    "website": "https://blog.datologyai.com/datologyai-raises-46m-series-a",
+    "description": "Training-data curation"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "adjacent, not trace-based Traction: $46M Series A 2024 (https://blog.datologyai.com/datologyai-raises-46m-series-a). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

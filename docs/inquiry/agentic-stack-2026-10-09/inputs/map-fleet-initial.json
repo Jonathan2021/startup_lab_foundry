@@ -1,0 +1,261 @@
+{
+  "request_key": "fleet-map-initial-20261009",
+  "actor": "fable-agentic-stack-20261009",
+  "expected_head": null,
+  "rationale": "Initial decision map for the merged wedge selected on 2026-10-09: purpose, four questions with measurable conditions, five dependent MVP packages with stop rules, and the alternatives (continue, narrow to utility, hold, contribute upstream, stop). Competition evidence from R1–R5 is linked. No worker is started; C01 is the only ready package.",
+  "map": {
+    "nodes": [
+      {
+        "id": "goal",
+        "kind": "goal",
+        "title": "Never lose a CLI-agent task to a usage limit, never spend a strong model where a cheaper configuration demonstrably works, and keep the evidence",
+        "detail": "Local, open-source supervisor for the unmodified official CLIs (Claude Code, Codex CLI, local models) under the user's own logins; outcome ledger; quota-aware failover with durable handover; learned model+effort policy in shadow mode first. Merged from AS01+AS08+AS03 (+AS05 residual) on 2026-10-09; see docs/inquiry/agentic-stack-2026-10-09/REPORT.md."
+      },
+      {
+        "id": "q_pain",
+        "kind": "question",
+        "title": "Is quota exhaustion and misrouting a weekly cost on the operator's real workloads?",
+        "detail": "Measured by C01/C02: ≥50 verifiable task runs in two weeks and ≥3 limit events per week."
+      },
+      {
+        "id": "q_handover",
+        "kind": "question",
+        "title": "Can another provider resume an interrupted task with bounded rework?",
+        "detail": "Measured by C03 on ten handovers; median rework ≤30%."
+      },
+      {
+        "id": "q_policy",
+        "kind": "question",
+        "title": "Does a policy learned from verifiable outcomes beat the static assignment?",
+        "detail": "Measured by C04 on ≥50 ledger tasks: verified completions per quota unit."
+      },
+      {
+        "id": "q_terms",
+        "kind": "question",
+        "title": "Do provider terms still tolerate unattended use of official CLIs under a personal subscription?",
+        "detail": "Anthropic changed policy five times in 2026; OpenAI recommends API keys for automation. Re-read both before each release; the design never touches credentials."
+      },
+      {
+        "id": "alt_continue",
+        "kind": "alternative",
+        "title": "Continue to the learned policy and calibration (C04, C05)"
+      },
+      {
+        "id": "alt_utility",
+        "kind": "alternative",
+        "title": "Narrow to a ledger + quota utility without learned routing"
+      },
+      {
+        "id": "alt_hold",
+        "kind": "alternative",
+        "title": "Hold: pain too rare on these workloads; keep the ledger spec as a note"
+      },
+      {
+        "id": "alt_upstream",
+        "kind": "alternative",
+        "title": "Contribute upstream (Paperclip PR #9367 lineage) instead of a separate tool",
+        "detail": "If Paperclip merges quota-aware fallback, the remaining value is the ledger and learned policy."
+      },
+      {
+        "id": "alt_stop",
+        "kind": "alternative",
+        "title": "Stop if provider terms forbid the pattern or the policy shows no benefit"
+      },
+      {
+        "id": "C01",
+        "kind": "record",
+        "title": "C01 — Outcome ledger",
+        "ref": {
+          "kind": "work",
+          "id": "3d706534-9076-4606-a73c-5e55021f3ada"
+        }
+      },
+      {
+        "id": "C02",
+        "kind": "record",
+        "title": "C02 — Quota manager (shadow mode)",
+        "ref": {
+          "kind": "work",
+          "id": "f534cbb8-89eb-41b4-a4ba-162d93158105"
+        }
+      },
+      {
+        "id": "C03",
+        "kind": "record",
+        "title": "C03 — Durable checkpoint and handover",
+        "ref": {
+          "kind": "work",
+          "id": "beb45c39-9fd4-44dc-85a9-38eefe3d4890"
+        }
+      },
+      {
+        "id": "C04",
+        "kind": "record",
+        "title": "C04 — Learned model/effort policy",
+        "ref": {
+          "kind": "work",
+          "id": "867ffd86-83bf-4459-a39e-db710f750cbb"
+        }
+      },
+      {
+        "id": "C05",
+        "kind": "record",
+        "title": "C05 — Provider-switch calibration report",
+        "ref": {
+          "kind": "work",
+          "id": "787fe3c4-2d82-40de-b8d4-384ba24ac95a"
+        }
+      },
+      {
+        "id": "ev_competition",
+        "kind": "record",
+        "title": "Competition evidence for the merged wedge (R1–R5, 2026-10-09)",
+        "ref": {
+          "kind": "evidence",
+          "id": "fcc07c8f-0ebd-466e-88b7-59176a284058"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "source": "C01",
+        "target": "goal",
+        "kind": "contributes_to"
+      },
+      {
+        "source": "C02",
+        "target": "goal",
+        "kind": "contributes_to"
+      },
+      {
+        "source": "C03",
+        "target": "goal",
+        "kind": "contributes_to"
+      },
+      {
+        "source": "C04",
+        "target": "goal",
+        "kind": "contributes_to"
+      },
+      {
+        "source": "C05",
+        "target": "goal",
+        "kind": "contributes_to"
+      },
+      {
+        "source": "C02",
+        "target": "C01",
+        "kind": "depends_on"
+      },
+      {
+        "source": "C03",
+        "target": "C02",
+        "kind": "depends_on"
+      },
+      {
+        "source": "C04",
+        "target": "C01",
+        "kind": "depends_on"
+      },
+      {
+        "source": "C04",
+        "target": "C03",
+        "kind": "depends_on"
+      },
+      {
+        "source": "C05",
+        "target": "C04",
+        "kind": "depends_on"
+      },
+      {
+        "source": "C01",
+        "target": "q_pain",
+        "kind": "tests"
+      },
+      {
+        "source": "C02",
+        "target": "q_pain",
+        "kind": "tests"
+      },
+      {
+        "source": "C03",
+        "target": "q_handover",
+        "kind": "tests"
+      },
+      {
+        "source": "C04",
+        "target": "q_policy",
+        "kind": "tests"
+      },
+      {
+        "source": "ev_competition",
+        "target": "goal",
+        "kind": "informs"
+      },
+      {
+        "source": "ev_competition",
+        "target": "q_terms",
+        "kind": "informs"
+      },
+      {
+        "source": "q_pain",
+        "target": "alt_continue",
+        "kind": "may_lead_to",
+        "condition": "≥50 verifiable runs in two weeks and ≥3 limit events per week",
+        "outcome": "supported"
+      },
+      {
+        "source": "q_pain",
+        "target": "alt_hold",
+        "kind": "may_lead_to",
+        "condition": "Fewer than 50 runs or fewer than 3 limit events per week on both workloads",
+        "outcome": "weakened"
+      },
+      {
+        "source": "q_handover",
+        "target": "alt_utility",
+        "kind": "may_lead_to",
+        "condition": "Median rework above 30% on ten handovers",
+        "outcome": "weakened"
+      },
+      {
+        "source": "q_policy",
+        "target": "alt_continue",
+        "kind": "may_lead_to",
+        "condition": "Learned policy beats static assignment on verified completions per quota unit over ≥50 tasks",
+        "outcome": "supported"
+      },
+      {
+        "source": "q_policy",
+        "target": "alt_utility",
+        "kind": "may_lead_to",
+        "condition": "No measurable improvement over the static assignment",
+        "outcome": "refuted"
+      },
+      {
+        "source": "q_terms",
+        "target": "alt_stop",
+        "kind": "may_lead_to",
+        "condition": "Either provider forbids unattended official-CLI use under a personal subscription",
+        "outcome": "blocked"
+      },
+      {
+        "source": "q_terms",
+        "target": "alt_upstream",
+        "kind": "may_lead_to",
+        "condition": "Paperclip merges quota-aware fallback upstream (PR #9367 lineage)",
+        "outcome": "conflicting"
+      },
+      {
+        "source": "alt_continue",
+        "target": "goal",
+        "kind": "contributes_to"
+      }
+    ],
+    "focus": [
+      "goal",
+      "q_pain",
+      "C01"
+    ]
+  }
+}

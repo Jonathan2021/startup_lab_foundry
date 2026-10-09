@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Mem0",
+    "website": "https://github.com/mem0ai/mem0",
+    "description": "Memory layer for agents and apps"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Generic memory, no experiment schema Traction: 66.9k stars (https://github.com/mem0ai/mem0). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

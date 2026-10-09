@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Aleph Alpha (PhariaAI) / Cohere",
+    "website": "https://aleph-alpha.com/",
+    "description": "Sovereign AI compliance/deployment platform; Cohere agreed to acquire with Schwarz Group backing and STACKIT hosting; closing unconfirmed."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Sovereign provider option. Traction: Reported ~$20B combined valuation (secondary) (https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

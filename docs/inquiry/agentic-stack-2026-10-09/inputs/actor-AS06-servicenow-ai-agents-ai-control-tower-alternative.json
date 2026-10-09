@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "ServiceNow AI Agents / AI Control Tower",
+    "website": "https://www.servicenow.com/",
+    "description": "Workflow agents; Control Tower governs agents incl. third-party (secondary); Moveworks acquired 2025-12-15."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Enterprise only. Traction: 5.5M employee users across ServiceNow+Moveworks (company) (https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-completes-acquisition-of-Moveworks/default.aspx). Licence: Proprietary; quote-only.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

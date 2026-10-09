@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Martian",
+    "website": "https://withmartian.com",
+    "description": "Early LLM router; homepage now centers interpretability and ARES online RL for coding agents"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Router company apparently de-emphasizing routing Traction: $9M led by NEA; Accenture investment (2024) (https://www.businesswire.com/news/home/20240917605865/en/Accenture-Invests-in-Martian-to-Bring-Dynamic-Routing-of-Large-Language-Queries-and-More-Effective-AI-Systems-to-Clients). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

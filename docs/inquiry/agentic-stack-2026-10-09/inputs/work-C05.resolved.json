@@ -1,0 +1,14 @@
+{
+  "request_key": "fleet-C05-create-20261009",
+  "actor": "fable-agentic-stack-20261009",
+  "rationale": "MVP package C05 of the agent fleet controller wedge selected in docs/inquiry/agentic-stack-2026-10-09/REPORT.md; dependent on earlier packages where stated.",
+  "expected_head": null,
+  "work": {
+    "title": "C05 — Provider-switch calibration report (portability feature)",
+    "description": "When a provider is added or removed, re-run a sample of historical ledger tasks on the new configuration and produce a calibration report with explicit uncertainty on small samples, flagging negative transfer of instructions/skills per task category.",
+    "acceptance_criteria": "One calibration run on ≥20 sampled tasks produces a report the operator uses to set defaults; sample-size caveats shown; no automatic effort-level equivalence assumed. Optional; only after C04.",
+    "kind": "experiment",
+    "owner": "agent",
+    "status": "todo"
+  }
+}

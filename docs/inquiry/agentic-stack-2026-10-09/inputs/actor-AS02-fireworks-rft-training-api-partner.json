@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Fireworks RFT / Training API",
+    "website": "https://docs.fireworks.ai/fine-tuning/environments",
+    "description": "Remote-environment RL fine-tuning; managed RFT deprecated"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "hosted training backend Traction: docs (https://docs.fireworks.ai/fine-tuning/environments). Licence: commercial.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

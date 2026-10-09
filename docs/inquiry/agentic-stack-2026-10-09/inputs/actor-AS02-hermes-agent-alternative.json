@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Hermes Agent",
+    "website": "https://github.com/NousResearch/hermes-agent",
+    "description": "Self-improving agent creating skills from experience; trajectory generation"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "skills rung without eval gate Traction: 252k stars (https://github.com/NousResearch/hermes-agent). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

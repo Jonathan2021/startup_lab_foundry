@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Flock (PR #3)",
+    "website": "https://github.com/yanina-libenson/flock/pull/3",
+    "description": "User-confirmed Claude-to-Codex handoff on spend limit, carrying task and git state"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Pattern hand-built in Oct 2026 Traction: PR merged 2026-10-06 (https://github.com/yanina-libenson/flock/pull/3). Licence: unknown.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

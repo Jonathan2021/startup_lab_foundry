@@ -1,0 +1,11 @@
+{
+  "actor_id": "d9b4ff72-0cb3-545d-9a42-a6a80cb0c475",
+  "relation": "partner",
+  "is_primary": true,
+  "note": "Host orchestrator for the first plugin adapter: exposes model/effort per agent, routines, approvals and agent.run.completed events; no documented per-run model hook upstream; quota fallback requests open since 2026-03 (R1).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

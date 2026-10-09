@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Edison Scientific Kosmos",
+    "website": "https://edisonscientific.com/news/announcing-kosmos",
+    "description": "Hosted AI scientist with structured world model across data and literature agents"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Structured research memory in science, closed and paid Traction: $70M seed; $200/run; 79.4% accurate conclusions (vendor claim) (https://siliconangle.com/2025/12/18/edison-scientific-raises-70m-build-autonomous-ai-scientists-research). Licence: Hosted; not stated.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

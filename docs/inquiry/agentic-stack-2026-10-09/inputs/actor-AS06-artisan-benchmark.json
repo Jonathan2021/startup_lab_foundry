@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Artisan",
+    "website": "https://www.artisan.co/",
+    "description": "AI SDR 'employee' (Ava)."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "AI-employee framing, single function. Traction: $25M Series A, Apr 2025 (https://www.artisan.co/blog/artisan-series-a). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

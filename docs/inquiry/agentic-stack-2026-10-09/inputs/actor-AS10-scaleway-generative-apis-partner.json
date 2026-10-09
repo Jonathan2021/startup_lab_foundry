@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Scaleway Generative APIs",
+    "website": "https://www.scaleway.com/en/generative-apis-signup/",
+    "description": "Serverless open-model inference; data in Paris region."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "[inherited from AS05] EU-resident provider for policy-constrained eligibility. Traction: not found (https://www.scaleway.com/en/docs/generative-apis/reference-content/data-privacy/). Licence: Proprietary service.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

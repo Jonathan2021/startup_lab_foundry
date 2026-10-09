@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Sakana AI Scientist v2",
+    "website": "https://github.com/SakanaAI/AI-Scientist-v2",
+    "description": "End-to-end paper generation with best-first agentic tree search and experiment manager"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "[inherited from AS05] v1 templates show value of templates Traction: 7.3k stars; Nature publication 2026-03-26 (https://sakana.ai/ai-scientist-nature/). Licence: AI Scientist Source Code License (RAIL-derived).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

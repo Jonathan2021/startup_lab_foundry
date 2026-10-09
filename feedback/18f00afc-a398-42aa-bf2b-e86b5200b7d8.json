@@ -1,0 +1,16 @@
+{
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "A fresh venture gets no decision map from venture-work create, and score rank returns only counts, not the ranked entries",
+  "expected": "Creating work on a venture without a map either drafts an initial map head or documents that expected_head stays null; `score rank` returns the snapshot's ranked entries so a cohort position can be reported without reading the database.",
+  "actual": "Five `venture-work create` calls on v-fleet-controller succeeded with expected_head null and `decision-map show` still returned no map until an explicit revise; `score rank` output keys were id/ranked/excluded/cohort with integer counts. The cohort positions were read with a read-only SQLite query instead.",
+  "reproduction": "Promote a new idea, run venture-work create, then decision-map show; run score rank --scorecard-id portfolio-reviewed-v1 --label X and inspect the JSON.",
+  "impact": "Inconsistent map-head handling between new and existing ventures; ranking results cannot be reported from the CLI alone.",
+  "suggestion": "Return ranked entries (idea_id, rank, score) from score rank; document or unify first-map creation.",
+  "id": "18f00afc-a398-42aa-bf2b-e86b5200b7d8",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/agentic-stack-2026-10-09/promote_and_plan.py"
+  ]
+}

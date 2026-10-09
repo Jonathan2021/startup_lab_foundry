@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Mistral AI (Vibe, AI Studio)",
+    "website": "https://mistral.ai/",
+    "description": "Vibe (ex-Le Chat) Work Mode proposes plans and waits for approval; AI Studio offers runtime, observability, registry with promotion gates, self-hosted option; EU hosting by default."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "[inherited from AS05] EU-resident model provider; AI Studio also a benchmark. Traction: EUR 3B Series D Sep 2026 at >EUR 21B (secondary) (https://valueaddvc.com/blog/mistral-ai-valuation-revenue-2026-europe-ai-champion). Licence: Proprietary platform; some open-weight models.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

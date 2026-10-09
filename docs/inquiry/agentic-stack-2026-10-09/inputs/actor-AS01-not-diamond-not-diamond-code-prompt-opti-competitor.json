@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Not Diamond (Not Diamond Code, Prompt Optimization)",
+    "website": "https://www.notdiamond.ai",
+    "description": "Hosted router; Code routes model+reasoning effort per coding-agent step, cache-aware, adapts to implicit developer feedback (vendor claim); Prompt Optimization adapts prompts per target model"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Closest direct overlap; early access, closed Traction: ~$2.3M total funding; IBM, SAP.iO investors (https://www.caplight.com/company/not-diamond). Licence: Proprietary hosted.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

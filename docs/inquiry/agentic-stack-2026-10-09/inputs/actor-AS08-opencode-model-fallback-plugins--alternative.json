@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OpenCode (+ model-fallback plugins)",
+    "website": "https://github.com/anomalyco/opencode/issues/48991",
+    "description": "Multi-provider coding agent without native cross-model fallback; community plugins add chains"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Gap evidence; plugin-level fallback Traction: Open feature requests (https://github.com/anomalyco/opencode/issues/7602). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

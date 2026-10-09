@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Vellum",
+    "website": "https://www.vellum.ai/",
+    "description": "AI development platform (workflows, evaluation)."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS05] Developer platform, not template OS. Traction: $20M Series A, Jul 2025 (https://siliconangle.com/2025/07/11/enterprise-ai-development-platform-vellum-raises-20m-help-businesses-deploy-apps-faster/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,6 @@
+{
+  "source_idea_id": "AS09",
+  "target_idea_id": "AS02",
+  "kind": "combined_with",
+  "rationale": "Verified evaluations are a property of AS02's ledger-based decision, not a standalone asset (R3)."
+}

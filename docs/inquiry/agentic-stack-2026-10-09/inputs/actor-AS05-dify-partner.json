@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Dify",
+    "website": "https://dify.ai/",
+    "description": "Open-source visual agentic workflow and RAG platform with Cloud, self-hosted and Enterprise editions."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Possible substrate, but multi-tenant hosting needs written authorization. Traction: 158k GitHub stars; $30M pre-A at $180M valuation, Mar 2026 (https://github.com/langgenius/dify). Licence: Dify Open Source License (Apache-2.0 + multi-tenant and logo conditions).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "FutureHouse Robin",
+    "website": "https://futurehouse.org/research-announcements/demonstrating-end-to-end-scientific-discovery-with-robin-a-multi-agent-system",
+    "description": "Multi-agent biology discovery workflow over literature and data agents"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Biology, not ML Traction: Ripasudil dry-AMD candidate (vendor claim) (https://www.deeplearning.ai/the-batch/put-the-lab-in-the-loop). Licence: Apache-2.0 (Robin); Finch platform closed.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,17 @@
+{
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "Promoting an idea does not carry its sources, competition or evidence into the venture workspace, so the venture map cannot reference the idea's evidence",
+  "expected": "After `idea promote`, the venture page shows the idea's sources/competition and a venture map can reference evidence recorded on the idea workspace (by lineage or copied reference).",
+  "actual": "`decision-map revise` on v-fleet-controller was rejected: 'evidence 9add9d47-… is missing or belongs to another workspace' for the merged idea AS10's market-research evidence. Workaround: re-record a venture-level evidence (fcc07c8f-0ebd-466e-88b7-59176a284058) and reference that.",
+  "reproduction": "Promote an idea that has evidence (change record on the idea workspace), then revise the venture's decision map with a record node ref kind=evidence pointing at that evidence ID.",
+  "impact": "Duplicated evidence records; competition tables and sources collected during discovery are invisible from the venture that resulted from them.",
+  "suggestion": "Either copy references at promotion or let venture maps resolve idea-lineage evidence; show idea sources/competition on the venture overview. Proposed as next work F05 in the F02 result.",
+  "id": "a212add8-bc60-492d-9e5c-18fef3be1648",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/agentic-stack-2026-10-09/REPORT.md",
+    "document: docs/inquiry/agentic-stack-2026-10-09/records.json"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "CLIProxyAPI (+ Quotio, 9Router)",
+    "website": "https://github.com/router-for-me/CLIProxyAPI",
+    "description": "Exposes Claude Code/Codex/Gemini OAuth subscriptions as APIs with multi-account balancing; ecosystem apps add quota failover"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Subscription pooling via token proxying; ToS exposure Traction: 54.6k GitHub stars (https://github.com/router-for-me/CLIProxyAPI). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

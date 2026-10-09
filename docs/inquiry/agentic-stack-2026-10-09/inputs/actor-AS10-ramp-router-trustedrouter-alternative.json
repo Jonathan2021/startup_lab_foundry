@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Ramp Router / TrustedRouter",
+    "website": "https://techcrunch.com/2026/08/20/ramp-launches-its-own-ai-model-router-called-router/",
+    "description": "New 2026 API routers (strategy/benchmark-based; open verifiable router)"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS01] Commodity API routing Traction: TrustedRouter $1.25M seed (https://www.finsmes.com/2026/09/trustedrouter-raises-1-25m-in-seed-funding.html). Licence: Proprietary / OSS (TrustedRouter claims).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

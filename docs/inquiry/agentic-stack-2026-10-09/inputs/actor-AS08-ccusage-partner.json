@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "ccusage",
+    "website": "https://github.com/ryoppippi/ccusage",
+    "description": "Local usage/cost reports for agent CLIs incl. 5-hour block monitoring"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Quota signal source Traction: 18.9k GitHub stars (https://github.com/ryoppippi/ccusage). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

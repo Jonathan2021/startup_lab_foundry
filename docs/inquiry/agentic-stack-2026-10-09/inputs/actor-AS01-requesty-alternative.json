@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Requesty",
+    "website": "https://www.requesty.ai",
+    "description": "Hosted gateway with task-label classifier and policy-based routing/fallbacks (vendor)"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Offline classifier Traction: n/a (https://www.requesty.ai/blog/smarter-than-human-model-picking-introducing-requesty-smart-routing). Licence: Proprietary hosted.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

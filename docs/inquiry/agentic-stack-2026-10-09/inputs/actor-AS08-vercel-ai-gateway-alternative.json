@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Vercel AI Gateway",
+    "website": "https://vercel.com/docs/ai-gateway/provider-options",
+    "description": "Managed gateway with model fallbacks and provider ordering"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "API keys only Traction: 200K+ teams (third-party citing Vercel) (https://rywalker.com/research/vercel-ai-gateway). Licence: Proprietary hosted.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

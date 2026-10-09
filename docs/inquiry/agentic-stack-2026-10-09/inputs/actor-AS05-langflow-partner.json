@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Langflow",
+    "website": "https://www.langflow.org/",
+    "description": "Open-source visual agent/workflow builder owned by IBM via DataStax."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "MIT substrate option; 2026 CVE exploitation reported (secondary). Traction: 155k GitHub stars (https://github.com/langflow-ai/langflow). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

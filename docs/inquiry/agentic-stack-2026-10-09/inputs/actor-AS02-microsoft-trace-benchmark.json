@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Microsoft Trace",
+    "website": "https://github.com/microsoft/Trace",
+    "description": "AutoDiff-like optimization of AI systems with general feedback"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "research optimizer Traction: 763 stars (https://github.com/microsoft/Trace). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

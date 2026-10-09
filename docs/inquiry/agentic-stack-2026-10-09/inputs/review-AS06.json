@@ -1,0 +1,10 @@
+{
+  "workspace_id": "adc6e042-4a86-4eef-ad7d-b340a7ca23a3",
+  "expected_revision": 0,
+  "investigation_stage": "triage",
+  "product_maturity": "concept",
+  "disposition": "dropped",
+  "next_action": "Drop: crowded EU SME segment, sales/compliance-heavy, poor solo-technical-founder fit.",
+  "reason": "EU-hosted multi-model SME workspaces sell at €21–25/seat (Langdock ~$42M ARR est., Dust $40M Series B, Mistral Vibe Team, Copilot Business, Gemini Enterprise). Enterprise hubs manage external agents (Agent 365, Frontier, ServiceNow, Dataiku Agent Management). Only residual is a general correction→proposal loop (Sierra does it for CX). Worker-evaluation use is EU AI Act Annex III high-risk (R4).",
+  "author": "agent:fable-agentic-stack-20261009"
+}

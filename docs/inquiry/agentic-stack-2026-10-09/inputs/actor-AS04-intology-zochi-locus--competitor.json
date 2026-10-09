@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Intology (Zochi, Locus)",
+    "website": "https://www.intology.ai/blog/zochi-acl",
+    "description": "Artificial scientist systems; ACL 2025 paper claim"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Closed; internals unknown Traction: ~$8M seed (tracker, low reliability) (https://www.premieralts.com/companies/intology/funding-history). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

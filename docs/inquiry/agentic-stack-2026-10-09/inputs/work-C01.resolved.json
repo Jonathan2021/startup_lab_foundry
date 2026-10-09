@@ -1,0 +1,14 @@
+{
+  "request_key": "fleet-C01-create-20261009",
+  "actor": "fable-agentic-stack-20261009",
+  "rationale": "MVP package C01 of the agent fleet controller wedge selected in docs/inquiry/agentic-stack-2026-10-09/REPORT.md; dependent on earlier packages where stated.",
+  "expected_head": null,
+  "work": {
+    "title": "C01 — Outcome ledger for official CLI agent runs",
+    "description": "Record each task run of the unmodified official CLIs (claude -p / codex exec wrappers; later Paperclip agent.run.completed events) into a local SQLite ledger: task category (from a declared task template or label), provider, model, reasoning effort, start/end, exit status, declared verify-command result (tests), review/retry count, usage-limit event and parsed reset time, estimated cost/quota units. Two real workloads: this Foundry repository and /home/jonathan/kaggle/arc3. No credential handling; no change to how work is requested.",
+    "acceptance_criteria": "At least 50 real task runs recorded across the two repositories within two weeks with ≥90% of runs carrying a verifiable outcome field; ledger schema documented; `fleet report` summarises runs by task category × model × effort; unit tests for wrappers and parser on captured fixtures. Stop rule: fewer than 50 real runs in two weeks means the pain is too rare on these workloads — record that and hold.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready"
+  }
+}

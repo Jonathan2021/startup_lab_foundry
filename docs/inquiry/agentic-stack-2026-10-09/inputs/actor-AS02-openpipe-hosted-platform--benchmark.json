@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OpenPipe (hosted platform)",
+    "website": "https://openpipe.ai/",
+    "description": "SFT-from-logs platform acquired by CoreWeave; legacy platform retired 2026-07-30"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "consolidated into GPU cloud Traction: acquisition announced 2025-09-03 (https://www.coreweave.com/news/coreweave-to-acquire-openpipe-leader-in-reinforcement-learning). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

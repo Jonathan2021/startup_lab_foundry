@@ -1,0 +1,14 @@
+{
+  "request_key": "fleet-C04-create-20261009",
+  "actor": "fable-agentic-stack-20261009",
+  "rationale": "MVP package C04 of the agent fleet controller wedge selected in docs/inquiry/agentic-stack-2026-10-09/REPORT.md; dependent on earlier packages where stated.",
+  "expected_head": null,
+  "work": {
+    "title": "C04 — Learned model/effort policy from verifiable outcomes",
+    "description": "Per task category, compute success and cost statistics from the ledger; apply an explicit escalate-fast (after a failure) / downgrade-slow (after statistically meaningful evidence) rule; show recommendations with the evidence behind them; `--enforce` only after ≥N observations per category; log regret versus the static assignment. Later: contextual bandit over category, provider availability and prior failures.",
+    "acceptance_criteria": "On ≥50 ledger tasks, quality-adjusted throughput (verified completions per subscription/quota unit) of the learned policy beats the operator's static assignment, computed from the same ledger; recommendations are explainable from recorded evidence; tests on synthetic ledgers. Stop rule: no measurable improvement → keep C01–C03 as a utility and record the negative result.",
+    "kind": "experiment",
+    "owner": "agent",
+    "status": "todo"
+  }
+}

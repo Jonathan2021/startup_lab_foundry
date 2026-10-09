@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Adaptive ML",
+    "website": "https://www.businesswire.com/news/home/20240312461522/en",
+    "description": "Enterprise RL fine-tuning, judge evals, A/B and feedback loop"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "enterprise RLOps without discovery Traction: $20M seed 2024 (https://www.businesswire.com/news/home/20240312461522/en). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "In-harness routers (Cursor Router, Copilot Auto, Augment Prism, Factory Router)",
+    "website": "https://www.augmentcode.com/changelog/introducing-augment-prism-model-routing-to-reduce-cost-and-maintain-quality",
+    "description": "Per-request/turn/session routing bundled inside vendor coding agents"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS01] Bundled, harness-locked Traction: Vendor claims 20-60% savings (https://github.blog/changelog/2026-05-20-auto-model-selection-now-routes-based-on-your-task-in-vs-code). Licence: Proprietary, bundled.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

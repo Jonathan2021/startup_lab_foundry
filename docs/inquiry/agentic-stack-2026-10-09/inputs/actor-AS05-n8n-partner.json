@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "n8n",
+    "website": "https://n8n.io/",
+    "description": "Fair-code workflow automation with AI agents, provider switching and human approvals."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Integration target; SUL limits hosting it for others. Traction: 206.8k stars; $5.2B valuation; 1,400+ enterprise customers (2026-05-12) (https://www.prnewswire.com/news-releases/n8n-valuation-doubles-to-5-2bn-as-sap-makes-strategic-investment-and-plans-to-embed-the-ai-platform-into-joule-studio-302767222.html). Licence: Sustainable Use License + n8n Enterprise License (.ee).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

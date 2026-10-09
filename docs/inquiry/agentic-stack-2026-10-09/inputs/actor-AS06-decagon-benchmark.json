@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Decagon",
+    "website": "https://decagon.ai/",
+    "description": "Enterprise CX agents."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "CX only. Traction: $4.5B valuation, $250M Series D, Jan 2026 (https://www.finsmes.com/2026/01/decagon-raises-250m-in-series-d-funding.html). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

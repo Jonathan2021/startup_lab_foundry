@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Cursor (Anysphere, SpaceX)",
+    "website": "https://cursor.com/",
+    "description": "AI IDE with cloud agents in isolated VMs that open PRs."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Covers the software-engineering template; also a runtime to orchestrate. Traction: ~$3B ARR May 2026; acquired by SpaceX at implied $60B, closed 2026-08-14 (Wikipedia, flagged) (https://en.wikipedia.org/wiki/Cursor_(company)). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

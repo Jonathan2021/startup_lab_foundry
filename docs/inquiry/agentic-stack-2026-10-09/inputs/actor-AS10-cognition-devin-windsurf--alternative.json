@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Cognition (Devin, Windsurf)",
+    "website": "https://cognition.ai/",
+    "description": "Autonomous software-engineering agent and IDE."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS05] Software-engineering template incumbent. Traction: $26B valuation, $492M run-rate, May 2026 (secondary) (https://chatforest.com/reviews/cognition-ai-devin-1-billion-round-26b-valuation-492m-arr-2026/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Unify",
+    "website": "https://unify.ai",
+    "description": "Former LLM router; now continual RL post-training of production agents"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "[inherited from AS01] Router startup pivot signal Traction: n/a (https://unify.ai). Licence: Proprietary hosted.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

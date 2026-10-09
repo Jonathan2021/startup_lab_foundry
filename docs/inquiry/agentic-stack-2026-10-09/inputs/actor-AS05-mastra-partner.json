@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Mastra",
+    "website": "https://github.com/mastra-ai/mastra",
+    "description": "TypeScript agent/workflow framework with 40+ providers and suspend/resume"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Possible substrate Traction: 28.7k GitHub stars (https://github.com/mastra-ai/mastra). Licence: Apache-2.0 plus Mastra Enterprise License for ee/.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

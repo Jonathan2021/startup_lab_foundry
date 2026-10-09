@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Opik Agent Optimizer",
+    "website": "https://www.comet.com/docs/opik/agent_optimization/algorithms/overview",
+    "description": "Suite of prompt/agent optimizers on Opik datasets"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "prompt rung Traction: Comet product docs (https://www.comet.com/docs/opik/agent_optimization/algorithms/overview). Licence: open-source SDK.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

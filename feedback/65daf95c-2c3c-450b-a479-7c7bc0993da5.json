@@ -1,0 +1,17 @@
+{
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "Claim, saved context, venture-work create, change record, score assess, review append, idea promote and the new discovery-record commands carried a ten-idea discovery loop end to end without manual store repair",
+  "expected": "The public CLI records a complete discovery loop (source → ideas → evidence → scores → relations/revisions → promotion → packages → map) with stable IDs and idempotent request keys.",
+  "actual": "All phases completed through tools/foundry_agent.py cli and the configured store; idempotent request keys returned existing receipts on re-runs; the additive migration applied on first use after a verified backup; the compare page and idea-page sections rendered the recorded data immediately.",
+  "reproduction": "Run docs/inquiry/agentic-stack-2026-10-09/record_discovery.py phases sources, evidence, merge, scores, reviews, actors and promote_and_plan.py against the configured store.",
+  "impact": "Discovery can be done inside Foundry rather than in a side document; the resulting records are reviewable in the console.",
+  "suggestion": "Keep the CLI-first design; add the discovery inputs to the agent schema registry when the next contract revision is justified.",
+  "id": "65daf95c-2c3c-450b-a479-7c7bc0993da5",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "positive",
+  "sources": [
+    "document: docs/inquiry/agentic-stack-2026-10-09/records.json",
+    "document: docs/inquiry/agentic-stack-2026-10-09/REPORT.md"
+  ]
+}

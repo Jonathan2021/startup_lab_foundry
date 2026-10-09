@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Overmind",
+    "website": "https://www.overmindlab.ai/",
+    "description": "Repo capability scan, trace-to-dataset, prompt experiments and fine-tunes with backtests"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "capability map from code, no escalation rule Traction: 605 GitHub stars (https://github.com/overmind-core/overmind). Licence: AGPL-3.0 platform, MIT SDK.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,23 @@
+{
+  "request_key": "agentic-stack-AS07-competition-2026-10-09",
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "Competition check 2026-10-09 for AS07: 10 market actors recorded (5 competitors, 2 alternatives); details list what each does, its traction signal, licence and the gap versus the candidate. Source files: R1-orchestration.md under docs/inquiry/agentic-stack-2026-10-09/research/.",
+  "details": "- Paperclip [competitor]: Self-hosted control plane for agent companies: org charts, issues, budgets, approvals, routines, CLI adapters with subscription sign-in; alpha plugin SDK Gap/note: Cron/webhook/API routines across all adapters with run history Traction: 99.1k GitHub stars, 16.7k forks (https://github.com/paperclipai/paperclip). Licence: MIT. Checked 2026-10-09.\n- Tutti [competitor]: CLI orchestrating Claude Code, Codex, Aider, OpenClaw in tmux/worktrees with tutti.toml workflows, cron, checkpoints and handoff packets Gap/note: Cron-scheduled workflows across CLIs Traction: 131 GitHub stars (https://github.com/nutthouse/tutti). Licence: MIT. Checked 2026-10-09.\n- Agency [competitor]: Single dashboard for agent teams across many LLM CLIs with scheduled runs, no database Gap/note: Scheduled multi-CLI runs with logs Traction: 71 GitHub stars (https://github.com/christag/agency). Licence: AGPL-3.0. Checked 2026-10-09.\n- OpenAI Symphony [benchmark]: Spec and Elixir reference implementation turning tracker issues into autonomous Codex implementation runs; engineering preview Gap/note: Continuous polling rather than routines Traction: 27.6k GitHub stars (https://github.com/openai/symphony). Licence: Apache-2.0. Checked 2026-10-09.\n- Claude Code routines (Anthropic) [competitor]: Cloud Claude Code sessions triggered by schedule, API or GitHub events; research preview; draws subscription usage Gap/note: First-party scheduling, Claude-only; no documented list API for external dashboards Traction: First-party on Pro/Max/Team/Enterprise (https://code.claude.com/docs/en/routines). Licence: Proprietary (included in plans). Checked 2026-10-09.\n- Codex scheduled tasks (OpenAI) [competitor]: Recurring Codex tasks in app/web with selectable model and reasoning effort; local tasks need the app running Gap/note: First-party, OpenAI-only Traction: First-party on Plus/Pro/Business/Enterprise (https://learn.chatgpt.com/docs/pricing). Licence: Proprietary (included in plans). Checked 2026-10-09.\n- OpenClaw [alternative]: Personal assistant gateway with cron jobs and two-stage failover (auth-profile rotation, model fallbacks) incl. Codex OAuth profiles Gap/note: Cron jobs with fallbacks Traction: 391.5k GitHub stars (https://github.com/openclaw/openclaw). Licence: MIT. Checked 2026-10-09.\n- Hermes Agent [alternative]: Agent with built-in cron scheduler, subagents and switchable providers Gap/note: Natural-language cron tasks Traction: 252.2k GitHub stars (https://github.com/NousResearch/hermes-agent). Licence: MIT. Checked 2026-10-09.\n- LangGraph / LangSmith Deployment [benchmark]: Stateful agent framework with durable execution; hosted deployment offers cron jobs Gap/note: Cron jobs on deployments Traction: 42.9k GitHub stars (https://github.com/langchain-ai/langgraph). Licence: MIT. Checked 2026-10-09.\n- Agno AgentOS [benchmark]: Python agent framework and self-hosted runtime with cron scheduling, approvals, tracing Gap/note: Cron-based background jobs Traction: 42.6k GitHub stars (https://github.com/agno-agi/agno). Licence: Apache-2.0. Checked 2026-10-09.",
+  "kind": "market_research",
+  "epistemic_status": "observation",
+  "confidence": "medium",
+  "sources": [
+    "https://github.com/paperclipai/paperclip",
+    "https://github.com/nutthouse/tutti",
+    "https://github.com/christag/agency",
+    "https://github.com/openai/symphony",
+    "https://code.claude.com/docs/en/routines",
+    "https://learn.chatgpt.com/docs/automations?surface=app",
+    "https://learn.chatgpt.com/docs/pricing",
+    "https://github.com/openclaw/openclaw",
+    "https://github.com/NousResearch/hermes-agent",
+    "https://github.com/langchain-ai/langgraph",
+    "https://github.com/agno-agi/agno"
+  ],
+  "refs": []
+}

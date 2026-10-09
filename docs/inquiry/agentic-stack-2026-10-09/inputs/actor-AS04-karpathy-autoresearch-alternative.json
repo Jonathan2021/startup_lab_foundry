@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "karpathy/autoresearch",
+    "website": "https://github.com/karpathy/autoresearch",
+    "description": "Minimal agent loop: edit train.py, 5-minute fixed-budget run, keep/discard by val_bpb, results.tsv ledger"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Commoditized greedy inner loop; flat ledger, no epistemic status or noise handling Traction: 97.6k stars, 13.6k forks; first commit 2026-03-06 (https://github.com/karpathy/autoresearch/commits/master). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

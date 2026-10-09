@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Lamini",
+    "website": "https://aicouncil.com/profile/sharon-zhou",
+    "description": "Enterprise fine-tuning; team transitioned to AMD"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "exit Traction: ~$25M raised before transition (https://aicouncil.com/profile/sharon-zhou). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

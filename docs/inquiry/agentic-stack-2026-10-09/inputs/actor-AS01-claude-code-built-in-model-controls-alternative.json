@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Claude Code built-in model controls",
+    "website": "https://code.claude.com/docs/en/model-config",
+    "description": "fallbackModel on overload (not rate limits), opusplan, per-model effort levels, adaptive reasoning"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Native effort/model baseline Traction: n/a (https://code.claude.com/docs/en/model-config). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

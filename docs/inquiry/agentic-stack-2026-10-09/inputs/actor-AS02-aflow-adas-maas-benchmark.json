@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "AFlow / ADAS / MaAS",
+    "website": "https://arxiv.org/abs/2410.10762",
+    "description": "Automated agentic workflow design research"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "automated design research Traction: ICLR 2025 (AFlow) (https://arxiv.org/abs/2410.10762). Licence: research code.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

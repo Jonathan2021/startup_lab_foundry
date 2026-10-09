@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Augment Code",
+    "website": "https://www.augmentcode.com/",
+    "description": "Coding agent with codebase context engine."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS05] Software-engineering template incumbent. Traction: $227M Series B at $977M, 2024 (https://www.augmentcode.com/blog/augment-inc-raises-227-million). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

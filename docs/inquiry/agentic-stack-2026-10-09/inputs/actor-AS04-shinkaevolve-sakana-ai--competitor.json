@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "ShinkaEvolve (Sakana AI)",
+    "website": "https://github.com/SakanaAI/ShinkaEvolve",
+    "description": "LLM-ensemble evolutionary program search with novelty filtering, meta-recommendations, UCB model selection"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "In-run model routing and meta-advice overlap outer-loop claims Traction: 1.4k stars; ICLR 2026; ICFP 2025 contest support (vendor claim) (https://github.com/SakanaAI/ShinkaEvolve). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

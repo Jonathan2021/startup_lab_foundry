@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "AlphaEvolve (Google Cloud)",
+    "website": "https://cloud.google.com/blog/products/ai-machine-learning/alphaevolve-is-available-for-everyone",
+    "description": "Gemini-powered evolutionary code optimisation agent, GA on Google Cloud"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Hosted, cloud-locked Traction: GA 2026-07-09; early adopters BASF, JetBrains, Kinaxis (vendor claim) (https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-on-cloud/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "AWS Bedrock Intelligent Prompt Routing",
+    "website": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-routing.html",
+    "description": "Predicts response quality within a model family; cannot adapt to app-specific performance data"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Static offline router Traction: n/a (https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-routing.html). Licence: AWS service.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

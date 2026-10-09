@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Glean",
+    "website": "https://www.glean.com/",
+    "description": "Enterprise search plus agent builder."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Enterprise, search-first. Traction: >$300M ARR (company, 2026) (https://www.glean.com/press/glean-surpasses-300m-arr-unrivaled-enterprise-context-fuels-ai-adoption). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

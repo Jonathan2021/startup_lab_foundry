@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Distil Labs",
+    "website": "https://www.distillabs.ai/",
+    "description": "Agent trace distillation into hosted/downloadable 135M-9B students using open-weight teachers"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "upper rungs only; user picks task; no fallback/retirement Traction: ~12 staff, investor Project A; launch 2026-07-08 (https://tracxn.com/d/companies/distil-labs/__pjQP3-rT28mIslUKv2nLjQk17f21sXGvK3FX-1izixA). Licence: proprietary; weights under R&D licence.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

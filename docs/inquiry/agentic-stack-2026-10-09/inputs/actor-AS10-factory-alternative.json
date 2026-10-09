@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Factory",
+    "website": "https://factory.ai/",
+    "description": "Enterprise coding agents ('Droids')."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS05] Software-engineering template incumbent. Traction: $150M Series C at $1.5B, Apr 2026; $5B round unconfirmed (secondary) (https://continuumcode.ai/guides/factory-ai-funding/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

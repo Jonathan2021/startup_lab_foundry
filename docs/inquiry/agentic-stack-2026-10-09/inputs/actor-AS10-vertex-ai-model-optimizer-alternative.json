@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Vertex AI Model Optimizer",
+    "website": "https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/vertex-ai-model-optimizer",
+    "description": "Gemini-only meta-endpoint routing by cost/quality preference"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS01] Single-vendor Traction: n/a (https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/vertex-ai-model-optimizer). Licence: GCP service.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

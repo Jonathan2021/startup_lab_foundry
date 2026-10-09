@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OpenRouter Auto Router",
+    "website": "https://openrouter.ai",
+    "description": "Task-type classifier + trailing-7-day spend-share ranking within cost tier; no router fee"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS01] Community-data routing, not per-user outcomes Traction: Stripe agreed to acquire (2026-08-19); 10M users per investor (https://menlovc.com/perspective/stripe-to-acquire-openrouter-why-everyone-is-obsessed-with-model-routing/). Licence: Proprietary hosted.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

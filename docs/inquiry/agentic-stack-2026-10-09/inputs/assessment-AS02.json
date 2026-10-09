@@ -1,0 +1,38 @@
+{
+  "idea_id": "AS02",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 5,
+    "profitability": 4,
+    "mvp_speed": 3,
+    "founder_fit": 9,
+    "go_to_market": 3,
+    "moat": 5,
+    "problem": 5,
+    "retention": 6,
+    "legal_risk": 7,
+    "capital": 5,
+    "network": 4,
+    "competition": 8
+  },
+  "rationale": "R3: the fine-tune-from-traces market is shrinking (TensorZero archived 2026-06-12; OpenPipe closed to new training 2026-07-30 after the CoreWeave acquisition; Predibase redirects to Rubrik; Humanloop shut; Lamini team to AMD; Fireworks deprecated managed RL fine-tuning; OpenAI ends self-serve fine-tuning 2027-01-06 and Evals 2026-11-30 citing 'fewer use cases that require fine-tuning'). Upper rungs are still crowded (Distil Labs, Pioneer/Fastino, Inference.net Catalyst, Overmind) and the lower rungs by Microsoft SkillOpt-Sleep (MIT, 18.2k stars: nightly recurring-task discovery from Claude Code/Codex transcripts, held-out tests, human-approved skill changes). 'Deciding when fine-tuning is worthwhile' is unshipped by ~45 actors, plausibly because the answer is usually 'don't'. Provider terms (OpenAI API, Anthropic 2026-03-16 guidance, Google 2026-04-28) restrict training on outputs; routers trained on outcome metadata fit the classifier exceptions. Local training remains deferred under ADR-0010.",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "competition": "Distil Labs, Pioneer, Catalyst, Overmind (trace→specialist); SkillOpt-Sleep (skills); Agent Lightning/ART (training); Braintrust (log mining) — R3",
+    "revenue": "Hosted fine-tuning vendors exiting; buyers appear to prefer stronger general models",
+    "legal_risk": "Outputs-as-training-targets restricted by all three providers; needs legal review even for classifier exceptions",
+    "moat": "Provenance-tracked data and retirement logic are genuine gaps with unknown willingness to pay",
+    "mvp_speed": "Needs the outcome ledger (wedge C01) plus ≥30 recurring verifiable runs/month before any training experiment",
+    "founder_fit": "ML engineer; directly usable on own workloads if volume materialises"
+  },
+  "evidence_ids": {
+    "competition": [
+      "8a6f3d48-6962-403d-b19a-61a39d6ac1ca"
+    ],
+    "moat": [
+      "8a6f3d48-6962-403d-b19a-61a39d6ac1ca"
+    ]
+  },
+  "recommendation": "Hold as a venture; fold its cheapest test (recurring verifiable-task count from the ledger) into the fleet-controller wedge as a later 'specialization opportunity' report. Revisit if a task class exceeds ~30 verifiable runs/month."
+}

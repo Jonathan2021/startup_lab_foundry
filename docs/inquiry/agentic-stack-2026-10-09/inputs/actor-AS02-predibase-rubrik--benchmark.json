@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Predibase (Rubrik)",
+    "website": "https://techcrunch.com/2025/06/25/rubrik-acquires-predibase-to-accelerate-adoption-of-ai-agents/",
+    "description": "LoRA/RFT platform absorbed into Rubrik Agent Cloud"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "exit by acquisition Traction: acquired 2025 (https://techcrunch.com/2025/06/25/rubrik-acquires-predibase-to-accelerate-adoption-of-ai-agents/). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

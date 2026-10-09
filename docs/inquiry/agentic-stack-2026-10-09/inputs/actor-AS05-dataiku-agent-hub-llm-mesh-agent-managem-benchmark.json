@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Dataiku (Agent Hub, LLM Mesh, Agent Management)",
+    "website": "https://www.dataiku.com/product/agent-hub/",
+    "description": "Enterprise AI platform: governed agent building with templates and IT-approved agent library; LLM gateway with provider switching; Agent Management inventories agents on external platforms (GA Oct 2026)."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "LLM Mesh markets provider switching and performance routing; routing docs not found. Traction: ~$342M ARR Sep 2025 (estimate); $3.7B valuation 2022 (https://sacra.com/c/dataiku/). Licence: Proprietary; quote-only.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

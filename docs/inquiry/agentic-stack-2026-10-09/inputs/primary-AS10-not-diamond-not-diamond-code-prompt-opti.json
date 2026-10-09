@@ -1,0 +1,11 @@
+{
+  "actor_id": "5f09719b-04d0-5d60-ae55-81315d22f3bd",
+  "relation": "competitor",
+  "is_primary": true,
+  "note": "[inherited from AS01] Closest direct overlap; early access, closed Traction: ~$2.3M total funding; IBM, SAP.iO investors (https://www.caplight.com/company/not-diamond). Licence: Proprietary hosted.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

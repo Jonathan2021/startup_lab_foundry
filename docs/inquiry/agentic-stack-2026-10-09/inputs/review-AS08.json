@@ -1,0 +1,10 @@
+{
+  "workspace_id": "e2a9c4a8-a0ea-4a84-becd-25b98b06a26f",
+  "expected_revision": 0,
+  "investigation_stage": "triage",
+  "product_maturity": "concept",
+  "disposition": "dropped",
+  "next_action": "Merge into the fleet-controller wedge; its demand signal leads the MVP (C02/C03).",
+  "reason": "Strongest demand signal: four open Paperclip requests since 2026-03 (#2014/#2743/#3317/#11597 — 160 of 400 runs burned on exhausted quota), forks, Flock's hand-built Claude→Codex handoff merged 2026-10-06, OmniRoute 74.5k and CLIProxyAPI 54.6k stars. Popular tools proxy/pool OAuth tokens, which Anthropic's legal page forbids for third parties; Claude Code's own fallback never triggers on rate limits; OpenCode has no cross-model fallback. The terms-respecting local-supervisor form is open; upstream PR #9367 could absorb part of it (R1, R2).",
+  "author": "agent:fable-agentic-stack-20261009"
+}

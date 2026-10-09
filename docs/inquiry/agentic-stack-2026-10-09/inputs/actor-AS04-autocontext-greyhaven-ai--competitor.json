@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "autocontext (greyhaven-ai)",
+    "website": "https://github.com/greyhaven-ai/autocontext",
+    "description": "Recursive self-improving harness with playbooks, gated promotion, model routing, distillation"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Closest outer-loop implementation; not research-ledger specific Traction: 1.3k stars (https://github.com/greyhaven-ai/autocontext). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

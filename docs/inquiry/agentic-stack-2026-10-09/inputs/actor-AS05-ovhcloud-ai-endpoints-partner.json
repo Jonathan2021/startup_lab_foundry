@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OVHcloud AI Endpoints",
+    "website": "https://www.ovhcloud.com/",
+    "description": "Serverless open-weight models hosted in Europe; states it does not store user data (vendor claim)."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "EU-resident provider. Traction: not found (https://docs.ovhcloud.com/en/guides/public-cloud/ai-machine-learning/ai-endpoints-getting-started). Licence: Proprietary service.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

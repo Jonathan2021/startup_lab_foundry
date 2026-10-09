@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "CORAL",
+    "website": "https://github.com/Human-Agent-Society/CORAL",
+    "description": "Multi-agent autoresearch with shared notes/skills and grader isolation"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Covers Kaggle, kernels, Erdos problems; untyped notes Traction: 1.1k stars; COLM 2026 (https://github.com/Human-Agent-Society/CORAL). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

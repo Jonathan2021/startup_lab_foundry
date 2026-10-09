@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Langdock",
+    "website": "https://www.langdock.com/",
+    "description": "Berlin multi-model AI workspace: chat, agents, workflows, API over 40+ models; EU-hosted API; governance add-on with agent review/approval and EU AI Act/GDPR rule templates."
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Direct: EU, per-seat, governance; no documented correction-learning loop. Traction: ~$42M ARR Jun 2026 (estimate); ~$3.5M raised (https://sacra.com/c/langdock/). Licence: Proprietary; EUR 25/99 per user/mo.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,10 @@
+{
+  "workspace_id": "f0f676ef-1f19-4e1c-8f1f-c987d554ca8f",
+  "expected_revision": 0,
+  "investigation_stage": "comparison",
+  "product_maturity": "concept",
+  "disposition": "pursue",
+  "next_action": "Pursue as a bounded open-source MVP on the operator's own workloads (packages C01–C05 with stop rules). GO means local build only: no demand, pricing, legal clearance, publication or hosting is established.",
+  "reason": "Merged wedge of AS01+AS08+AS03 (+AS05 residual) after R1–R5 (2026-10-09). Demand signal is concrete (Paperclip #2014/#2743/#3317/#11597 open since 2026-03, 160/400 runs wasted; OmniRoute 74.5k and CLIProxyAPI 54.6k stars for token-proxy failover; Flock hand-built handoff). The uncovered, terms-respecting intersection is fleet scope × machine-verifiable task outcomes × subscription quota as the binding constraint × unmodified official CLIs under the user's own login. Risks: Anthropic policy volatility (five changes in 2026; 'ordinary, individual usage' clause), Paperclip PR #9367 or Not Diamond Code closing parts of the gap, weak standalone monetisation.",
+  "author": "agent:fable-agentic-stack-20261009"
+}

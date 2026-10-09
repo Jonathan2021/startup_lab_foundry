@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Weights & Biases MCP server",
+    "website": "https://docs.wandb.ai/platform/mcp-server",
+    "description": "Agent-native access to runs, evals, artifacts for research loops"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Tracker as queryable loop memory Traction: 1K+ preview users, 40K+ tool calls (vendor claim) (https://wandb.ai/wandb_fc/product-announcements-fc/reports/Introducing-the-W-B-MCP-Server-An-agent-native-interface-for-your-experiments-and-traces--VmlldzoxNjk0MDE5OQ). Licence: Commercial.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

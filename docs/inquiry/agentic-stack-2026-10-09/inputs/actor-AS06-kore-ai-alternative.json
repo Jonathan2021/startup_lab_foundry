@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Kore.ai",
+    "website": "https://www.kore.ai/",
+    "description": "Enterprise agent platform (Artemis, May 2026); Agent 365 partner."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Enterprise CX/EX. Traction: Strategic growth investment led by AllianceBernstein, Jan 2026 (undisclosed) (https://www.kore.ai/news/kore-ai-secures-strategic-growth-investment-from-alliancebernstein-to-scale-the-next-phase-of-agentic-enterprise-ai). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

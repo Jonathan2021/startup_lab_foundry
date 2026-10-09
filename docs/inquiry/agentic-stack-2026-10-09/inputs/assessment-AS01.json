@@ -1,0 +1,44 @@
+{
+  "idea_id": "AS01",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 3,
+    "profitability": 4,
+    "mvp_speed": 6,
+    "founder_fit": 9,
+    "go_to_market": 5,
+    "moat": 3,
+    "problem": 6,
+    "retention": 6,
+    "legal_risk": 5,
+    "capital": 2,
+    "network": 4,
+    "competition": 8
+  },
+  "rationale": "Routing is commoditized and consolidating (R2: LiteLLM/Mastra classifier routing free; Stripe–OpenRouter, PANW–Portkey; TensorZero archived). Not Diamond Code (hosted, gated, Claude Code harness) and LiteLLM Auto Router v2 claim per-step model/effort, but neither documents verifiable task outcomes keyed by task category as reward nor quota-as-constraint across vendor CLIs (R2 addendum). Paperclip has no documented per-run model hook; Model Capacity plugin is deterministic prior art (R1). Standalone monetisation weak; value is as the policy+evidence layer of a fleet controller. R3 adds: Microsoft SkillOpt-Sleep already learns from Claude Code/Codex transcripts nightly to improve skill files (not model/effort choice or quota); it is a partner/benchmark for the ledger, not a substitute.",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "revenue": "OSS layer; no observed willingness to pay for routing alone; router startups pivoted (Martian, Unify) — R2",
+    "profitability": "No infra cost but no clear payer; hosted competitor (Not Diamond) is gated and funded",
+    "mvp_speed": "Ledger + rule policy in weeks on own workloads; learned policy needs ≥50 tasks of data first",
+    "founder_fit": "ML engineer with two subscriptions and real fleets (this repo, arc3); contextual-bandit comfort",
+    "go_to_market": "Distribution via Paperclip/Tutti/Gas Town communities; alpha plugin SDK is a risk (R1)",
+    "moat": "Routing logic is replicable; only the accumulated outcome ledger is sticky",
+    "problem": "Real but secondary to quota exhaustion; savings claims elsewhere are 20–65% vendor claims",
+    "retention": "If the ledger is useful it stays installed; otherwise easy to drop",
+    "legal_risk": "Must spawn unmodified CLIs under own login; Anthropic policy changed 5× in 2026 (R1 claim 3)",
+    "capital": "Local SQLite, no hosting",
+    "network": "Depends on orchestrator hooks/events (Paperclip SDK alpha, no per-run model hook upstream)",
+    "competition": "Not Diamond Code, LiteLLM Auto Router v2, Model Capacity plugin, Hydra/Ruflo claims, cloud routers"
+  },
+  "evidence_ids": {
+    "competition": [
+      "baf3944b-d0c5-4a67-a19c-023143cf8c78"
+    ],
+    "moat": [
+      "baf3944b-d0c5-4a67-a19c-023143cf8c78"
+    ]
+  },
+  "recommendation": "Merge into the fleet-controller wedge (with AS08, AS03); keep as feature lineage, not a standalone product."
+}

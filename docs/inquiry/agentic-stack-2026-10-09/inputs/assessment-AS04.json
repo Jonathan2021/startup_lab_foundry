@@ -1,0 +1,36 @@
+{
+  "idea_id": "AS04",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 3,
+    "profitability": 3,
+    "mvp_speed": 4,
+    "founder_fit": 10,
+    "go_to_market": 3,
+    "moat": 4,
+    "problem": 5,
+    "retention": 6,
+    "legal_risk": 2,
+    "capital": 5,
+    "network": 2,
+    "competition": 8
+  },
+  "rationale": "Inner loop commoditized (autoresearch 97.6k stars; AIDE/Weco; AlphaEvolve GA; MLE-bench >60% medals, submissions paused). Outer loop crowded at prototype level (autocontext, Sibyl, ShinkaEvolve, GEPA, EvoAgentX). Hosted research agents are funded or platform-owned (Edison $70M, Autoscience $14M, Weco $8M). Residual: typed cross-project ledger with negative results, noise-aware status, trial-aware promotion — testable on 329 existing ARC3 inquiry records with a stop rule (R5).",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "founder_fit": "Direct use on arc3/Kaggle/math; Foundry already is an evidence ledger",
+    "revenue": "No solo hosted slot; research tooling monetises poorly; Neptune hosted shutdown is a warning",
+    "competition": "autoresearch ecosystem, AIDE/Weco, AlphaEvolve, Kosmos, Autoscience, MLE agents",
+    "capital": "Compute for forward A/B; retrieval experiment is free"
+  },
+  "evidence_ids": {
+    "competition": [
+      "9a85f5cd-276d-4e8c-b732-8e395d1ad1cd"
+    ],
+    "moat": [
+      "9a85f5cd-276d-4e8c-b732-8e395d1ad1cd"
+    ]
+  },
+  "recommendation": "Narrow to a research-ledger experiment inside Foundry's inquiry-memory pilot (internal_only); do not pursue as a venture."
+}

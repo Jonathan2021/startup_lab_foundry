@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Nebius Token Factory",
+    "website": "https://nebius.com/services/token-factory/enterprise-grade-inference",
+    "description": "Open-model inference with Finland/France/US data centres and zero-retention mode."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "EU-resident provider option (EU or US regions). Traction: not found (https://nebius.com/services/token-factory/enterprise-grade-inference). Licence: Proprietary service.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

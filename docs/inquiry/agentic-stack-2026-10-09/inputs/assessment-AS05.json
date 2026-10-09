@@ -1,0 +1,36 @@
+{
+  "idea_id": "AS05",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 6,
+    "profitability": 3,
+    "mvp_speed": 2,
+    "founder_fit": 6,
+    "go_to_market": 3,
+    "moat": 3,
+    "problem": 5,
+    "retention": 7,
+    "legal_risk": 5,
+    "capital": 7,
+    "network": 5,
+    "competition": 10
+  },
+  "rationale": "Team-OS layer occupied by Paperclip (99.1k stars, Team Catalog, export/import, execution policy, cloud waitlist), Gas Town, Orchestrator.inc, Ruflo, Symphony; framework layer by LangGraph/Mastra/Agno/CrewAI; Vibe Kanban shut down for lack of a business model; Conductor monetises cloud workspaces ($50/mo). Residuals are plugin-sized: eligibility policy across cloud/local/subscription runtimes, ML/Kaggle plugins with evaluation, eval-driven improvement proposals (R1, R4). Dify/n8n licences limit a hosted build.",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "competition": "Paperclip, Dify, n8n, Langflow, LangGraph Platform, Mastra, Agno, Gas Town, Orchestrator.inc, Ruflo; funded coding agents",
+    "mvp_speed": "Integration surface spans orchestration, gateway, tracing, training; months before differentiation",
+    "capital": "Hosting, integrations, support",
+    "network": "Depends on many third-party substrates and their licences"
+  },
+  "evidence_ids": {
+    "competition": [
+      "81fb38ff-8a5e-4e8b-be68-2ba1992cd194"
+    ],
+    "moat": [
+      "81fb38ff-8a5e-4e8b-be68-2ba1992cd194"
+    ]
+  },
+  "recommendation": "Drop as an OS; fold the cross-runtime eligibility-policy residual into the wedge."
+}

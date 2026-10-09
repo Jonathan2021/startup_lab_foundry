@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "CLIProxyAPI",
+    "website": "https://github.com/router-for-me/CLIProxyAPI",
+    "description": "Proxy exposing CLI OAuth logins as OpenAI/Claude-compatible APIs with multi-account round-robin"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "[inherited from AS01] Quota telemetry source used by Model Capacity Traction: 54.6k GitHub stars (https://github.com/router-for-me/CLIProxyAPI). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,14 @@
+{
+  "request_key": "fleet-C03-create-20261009",
+  "actor": "fable-agentic-stack-20261009",
+  "rationale": "MVP package C03 of the agent fleet controller wedge selected in docs/inquiry/agentic-stack-2026-10-09/REPORT.md; dependent on earlier packages where stated.",
+  "expected_head": null,
+  "work": {
+    "title": "C03 — Durable checkpoint and cross-provider handover",
+    "description": "At checkpoints write a task worktree/branch plus a handoff note (requirements, investigation so far, decisions, current status, next steps) in a provider-neutral format; `resume --with <cli>` re-launches an interrupted task in another official CLI or a local model from the note and repository state (pattern evidenced by Flock PR #3 and Tutti handoff packets). Conversation state is not transferred.",
+    "acceptance_criteria": "Ten real or rehearsed handovers measured: fraction of work redone, whether the resumed run completed, reviewer acceptance; handoff note format documented; tests for note generation and resume. Continue if median rework ≤30%; otherwise narrow to checkpoint-only (no automatic resume).",
+    "kind": "experiment",
+    "owner": "agent",
+    "status": "todo"
+  }
+}

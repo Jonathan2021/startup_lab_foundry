@@ -1,0 +1,17 @@
+{
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "Competitor/market-actor records exist in the schema but cannot be created, listed or displayed, so competition research has nowhere typed to land",
+  "expected": "A way to register market actors (name, website, description) and link them to an idea revision with relation competitor/alternative/partner/benchmark, primary flag, note (what it does / the gap), check date and source refs; idea page shows a competition table.",
+  "actual": "`foundry market-actor ...` is not a CLI resource; `MarketActor`/`IdeaMarketActor` in domain.py have no service, CLI, HTTP route or template usage. The only option is unstructured evidence text via `change record`.",
+  "reproduction": "`python3 tools/foundry_agent.py cli market-actor list` → 'invalid choice: market-actor'. `grep -rn MarketActor src/startup_foundry/*.py | grep -v domain.py` returns nothing.",
+  "impact": "Five competition research passes (orchestration, routing, specialist factories, AI OS platforms, research systems) for AS01–AS09 cannot be recorded as reusable actor records; the 'competition' scoring penalty cannot cite typed competitor links; comparisons across ideas lose reuse.",
+  "suggestion": "Add `market-actor register/list/show` and `idea link-actor --input` writing IdeaMarketActor on the current revision (with checked_on and source refs), expose `competition` in `idea show` and an idea-page table. Being implemented in package F02.",
+  "id": "168ab42a-a899-488e-a559-8f5bcb862952",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/agentic-stack-2026-10-09/PROTOCOL.md",
+    "document: src/startup_foundry/domain.py"
+  ]
+}

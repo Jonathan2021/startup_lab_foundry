@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Mastra ModelSelectionProcessor",
+    "website": "https://mastra.ai/reference/processors/model-selection-processor",
+    "description": "Classifier-backed per-run model selection with fallback to configured models (@mastra/core 1.70.0, 2026-09-24)"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Static classifier, no outcome learning Traction: 28.7k GitHub stars (framework) (https://github.com/mastra-ai/mastra). Licence: Apache-2.0 core; ee/ source-available.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

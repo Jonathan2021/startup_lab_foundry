@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Applied Compute",
+    "website": "https://siliconangle.com/2025/10/30/former-openai-researchers-launch-applied-compute-80m-funding",
+    "description": "RL-trained custom enterprise models/agents, services model"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "high-touch services version of specialization Traction: $80M at $1.3B post (Apr 2026) (https://www.lw.com/en/news/2026/04/latham-represents-applied-compute-in-fundraise). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

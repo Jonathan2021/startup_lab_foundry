@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Arcee AI",
+    "website": "https://thenextweb.com/news/arcee-ai-series-b-1bn-valuation-open-weight-trinity",
+    "description": "Pivoted from post-training services to own open-weight Trinity models"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "customization business pivot Traction: Series B >$1B valuation 2026-09-16 (https://thenextweb.com/news/arcee-ai-series-b-1bn-valuation-open-weight-trinity). Licence: open-weight models (licence per model).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

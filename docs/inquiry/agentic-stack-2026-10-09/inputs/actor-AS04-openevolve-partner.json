@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OpenEvolve",
+    "website": "https://github.com/algorithmicsuperintelligence/openevolve",
+    "description": "Open AlphaEvolve implementation with MAP-Elites, islands, evaluator artifacts"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Evolutionary inner loop; local models supported Traction: 7.5k stars (https://github.com/algorithmicsuperintelligence/openevolve). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

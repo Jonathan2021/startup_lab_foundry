@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OpenAI Codex",
+    "website": "https://openai.com/codex/",
+    "description": "Cloud and CLI coding agent."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Runtime to orchestrate; also an alternative for SWE tasks. Traction: >5M weekly users, Jun 2026 (vendor-reported) (https://www.constellationr.com/insights/news/openai-touts-broadening-codex-usage-5-million-weekly-active-users). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

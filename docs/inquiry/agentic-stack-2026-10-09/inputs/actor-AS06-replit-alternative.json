@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Replit",
+    "website": "https://replit.com/",
+    "description": "Prompt-to-app agent platform."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Adjacent: SMEs building internal apps. Traction: $9B valuation, Mar 2026 (estimate) (https://sacra.com/c/replit/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

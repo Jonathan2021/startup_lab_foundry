@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Azure Foundry Model Router",
+    "website": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router-how-it-works",
+    "description": "Trained ML router with Balanced/Cost/Quality modes, failover, session affinity"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "No customer-outcome learning Traction: n/a (https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router-how-it-works). Licence: Azure service.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

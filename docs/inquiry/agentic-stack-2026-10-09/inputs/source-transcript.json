@@ -1,0 +1,19 @@
+{
+  "kind": "document",
+  "title": "Agentic stack ideas — user conversation transcript (idea_queue/agentic_stack_ideas.md)",
+  "locator": "/home/jonathan/startup_lab/foundry/idea_queue/agentic_stack_ideas.md",
+  "publisher": "user-supplied conversation with another agent",
+  "notes": "Source material and hypotheses; facts inside are unverified claims until checked. Four prompt/response pairs about adaptive multi-provider orchestration, specialist factories, portability, research OS and an adaptive AI OS.",
+  "idea_ids": [
+    "AS01",
+    "AS02",
+    "AS03",
+    "AS04",
+    "AS05",
+    "AS06",
+    "AS07",
+    "AS08",
+    "AS09"
+  ],
+  "role": "inspiration"
+}

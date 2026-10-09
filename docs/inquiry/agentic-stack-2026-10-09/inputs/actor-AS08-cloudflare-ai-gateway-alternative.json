@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Cloudflare AI Gateway",
+    "website": "https://developers.cloudflare.com/ai-gateway/features/dynamic-routing/",
+    "description": "Routing flows with rate/budget nodes and fallbacks; spend limits"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "User-defined API quotas, not subscription windows Traction: n/a (https://developers.cloudflare.com/changelog/post/2026-06-05-spend-limits/). Licence: Proprietary hosted.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

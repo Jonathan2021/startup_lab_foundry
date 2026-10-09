@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Flowise",
+    "website": "https://github.com/FlowiseAI/Flowise",
+    "description": "Visual agent builder; acquired by Workday Aug 2025; repository archived."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "[inherited from AS05] Cautionary: visual builder discontinued after acquisition. Traction: 55.5k stars; archived (https://github.com/FlowiseAI/Flowise). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

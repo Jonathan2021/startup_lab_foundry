@@ -1,0 +1,21 @@
+{
+  "request_key": "agentic-stack-AS03-competition-2026-10-09",
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "Competition check 2026-10-09 for AS03: 7 market actors recorded (2 competitors, 0 alternatives); details list what each does, its traction signal, licence and the gap versus the candidate. Source files: R2-routing.md, R3-specialists.md under docs/inquiry/agentic-stack-2026-10-09/research/.",
+  "details": "- LiteLLM [partner]: OSS gateway with fallbacks/cooldowns/budgets; Auto Router v2 with complexity tiers, effort ladders, Thompson-sampled adaptive pools, Claude Code/Codex harness-aware routing Gap/note: Shadow evaluation could host calibration Traction: 60.5k GitHub stars (https://github.com/BerriAI/litellm). Licence: Open core + LiteLLM Commercial License for enterprise. Checked 2026-10-09.\n- Not Diamond (Not Diamond Code, Prompt Optimization) [competitor]: Hosted router; Code routes model+reasoning effort per coding-agent step, cache-aware, adapts to implicit developer feedback (vendor claim); Prompt Optimization adapts prompts per target model Gap/note: Prompt rewriting for model migration Traction: ~$2.3M total funding; IBM, SAP.iO investors (https://www.caplight.com/company/not-diamond). Licence: Proprietary hosted. Checked 2026-10-09.\n- TensorZero [benchmark]: LLMOps gateway with feedback/experimentation loop; archived 2026-06-12, company wound down Gap/note: Experimentation design reference Traction: 11.7k GitHub stars; archived (https://news.ycombinator.com/item?id=48518120). Licence: Apache-2.0 (unmaintained). Checked 2026-10-09.\n- vLLM Semantic Router [partner]: Signal/DSL routing; v0.4 Hermes with optional off-by-default outcome gate; session and provider-state portability checks Gap/note: Portability checks for mid-session switching Traction: 6.1k GitHub stars (https://github.com/vllm-project/semantic-router). Licence: Apache-2.0. Checked 2026-10-09.\n- SkillOpt / SkillOpt-Sleep [benchmark]: Held-out-gated skill optimization; nightly mining of recurring tasks from coding-agent transcripts Gap/note: cross-harness transfer claim Traction: 18.2k stars (https://github.com/microsoft/SkillOpt). Licence: MIT. Checked 2026-10-09.\n- DSPy [partner]: Programmatic LM pipelines with GEPA/MIPROv2/BootstrapFinetune/GRPO optimizers Gap/note: recompile on model switch Traction: 38.6k stars (https://github.com/stanfordnlp/dspy). Licence: MIT. Checked 2026-10-09.\n- Not Diamond [competitor]: Model router and per-model prompt adaptation Gap/note: prompt re-optimization on provider switch Traction: product docs (https://docs.notdiamond.ai/). Licence: commercial. Checked 2026-10-09.",
+  "kind": "market_research",
+  "epistemic_status": "observation",
+  "confidence": "medium",
+  "sources": [
+    "https://github.com/BerriAI/litellm",
+    "https://www.notdiamond.ai",
+    "https://www.caplight.com/company/not-diamond",
+    "https://github.com/tensorzero/tensorzero",
+    "https://news.ycombinator.com/item?id=48518120",
+    "https://github.com/vllm-project/semantic-router",
+    "https://github.com/microsoft/SkillOpt",
+    "https://github.com/stanfordnlp/dspy",
+    "https://docs.notdiamond.ai/"
+  ],
+  "refs": []
+}

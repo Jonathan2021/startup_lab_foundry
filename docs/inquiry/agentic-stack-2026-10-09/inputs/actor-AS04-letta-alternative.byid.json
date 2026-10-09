@@ -1,0 +1,11 @@
+{
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Not experiment-aware Traction: 25.1k stars (https://github.com/letta-ai/letta). Licence: Apache-2.0. (Linked by actor ID: research passes disagreed on the website; first registration kept.)",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009",
+  "actor_id": "a65bb7a9-c3d2-51a3-9a35-11cd448f5efa"
+}

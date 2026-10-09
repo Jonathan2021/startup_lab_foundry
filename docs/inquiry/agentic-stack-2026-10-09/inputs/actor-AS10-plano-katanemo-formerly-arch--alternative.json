@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Plano (katanemo, formerly Arch)",
+    "website": "https://github.com/katanemo/plano",
+    "description": "Agent data plane with preference-aligned routing via 4B routing model"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS01] Preference routing, no documented outcome learning Traction: 7.1k GitHub stars (https://github.com/katanemo/plano). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

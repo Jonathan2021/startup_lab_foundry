@@ -1,0 +1,37 @@
+{
+  "idea_id": "AS08",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 3,
+    "profitability": 4,
+    "mvp_speed": 7,
+    "founder_fit": 8,
+    "go_to_market": 6,
+    "moat": 2,
+    "problem": 8,
+    "retention": 6,
+    "legal_risk": 5,
+    "capital": 1,
+    "network": 3,
+    "competition": 7
+  },
+  "rationale": "Strongest demand signal: four open Paperclip requests since 2026-03 (#2014/#2743/#3317/#11597 — 160 of 400 runs burned on exhausted quota), forks, Flock's hand-built Claude→Codex handoff merged 2026-10-06, OmniRoute 74.5k and CLIProxyAPI 54.6k stars. Popular tools proxy/pool OAuth tokens, which Anthropic's legal page forbids for third parties; Claude Code's own fallback never triggers on rate limits; OpenCode has no cross-model fallback. The terms-respecting local-supervisor form is open; upstream PR #9367 could absorb part of it (R1, R2).",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "problem": "Quantified waste (#11597) and repeated requests over seven months",
+    "go_to_market": "Acute pain in CLI-agent communities; OSS distribution",
+    "moat": "Small; upstream could ship it; value accrues to the ledger",
+    "legal_risk": "'Ordinary, individual usage' clause; no pooling; OpenAI automation terms unverified",
+    "competition": "OmniRoute, CLIProxyAPI, Quotio, 9Router (token proxies); OpenClaw failover; Tutti planned failover"
+  },
+  "evidence_ids": {
+    "competition": [
+      "77f1b7ad-f4b2-465c-b08c-062d5ddae956"
+    ],
+    "moat": [
+      "77f1b7ad-f4b2-465c-b08c-062d5ddae956"
+    ]
+  },
+  "recommendation": "Merge into the fleet-controller wedge; its demand signal leads the MVP (C02/C03)."
+}

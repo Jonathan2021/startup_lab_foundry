@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Inference.net Catalyst",
+    "website": "https://inference.net/blog/introducing-catalyst/",
+    "description": "Gateway capture to datasets/evals to task-specific models with continuous retraining"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "no opportunity detection; silent on provider terms Traction: $11.8M seed Oct 2025 (https://finder.techleap.nl/news/feed/inference-net-raises-11-8m-seed-funding). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Account switchers (claude-account-switcher, CCS, amux)",
+    "website": "https://github.com/kaitranntt/ccs",
+    "description": "Same-provider account auto-switch, multi-provider profiles, manual cross-CLI reassignment"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "[inherited from AS08] No automatic cross-vendor handoff with checkpoint Traction: CCS 2.9k stars; switcher 67 stars; amux 307 stars (https://amux.io/guides/claude-code-rate-limits/). Licence: MIT / OSS.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

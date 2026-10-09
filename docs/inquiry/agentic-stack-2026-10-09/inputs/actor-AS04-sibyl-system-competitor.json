@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Sibyl System",
+    "website": "https://github.com/Sibyl-Research-Team/AutoResearch-SibylSystem",
+    "description": "Claude Code-native AI scientist with reflection-driven prompt overlays"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Outer loop exists, benefit unmeasured Traction: 283 stars (https://github.com/Sibyl-Research-Team/AutoResearch-SibylSystem). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

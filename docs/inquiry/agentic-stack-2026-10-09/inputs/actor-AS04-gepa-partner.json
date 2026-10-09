@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "GEPA",
+    "website": "https://github.com/gepa-ai/gepa",
+    "description": "Reflective evolution of prompts, code and agent architectures against a metric"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Outer-loop optimiser component Traction: 6.9k stars (https://github.com/gepa-ai/gepa). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

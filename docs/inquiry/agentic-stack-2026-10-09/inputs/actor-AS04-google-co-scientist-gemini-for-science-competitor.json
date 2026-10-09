@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Google Co-Scientist / Gemini for Science",
+    "website": "https://blog.google/innovation-and-ai/models-and-research/google-research/gemini-for-science-io-2026/",
+    "description": "Hypothesis tournament, AlphaEvolve-based computational discovery, literature insights"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Hosted, gradual access Traction: Enterprise users named by vendor (vendor claim) (https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

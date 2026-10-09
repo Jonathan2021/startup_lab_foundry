@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "AI-Researcher (HKUDS)",
+    "website": "https://github.com/HKUDS/AI-Researcher",
+    "description": "Autonomous research pipeline and benchmark; hosted novix.science"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Paper-generation focus Traction: 5.8k stars; NeurIPS 2025 spotlight (https://github.com/HKUDS/AI-Researcher). Licence: Not shown.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

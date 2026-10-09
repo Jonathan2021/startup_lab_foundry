@@ -1,0 +1,44 @@
+{
+  "idea_id": "AS10",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 4,
+    "profitability": 4,
+    "mvp_speed": 7,
+    "founder_fit": 9,
+    "go_to_market": 6,
+    "moat": 3,
+    "problem": 8,
+    "retention": 6,
+    "legal_risk": 5,
+    "capital": 1,
+    "network": 3,
+    "competition": 7
+  },
+  "rationale": "Merged wedge of AS01+AS08+AS03 (+AS05 residual) after R1–R5 (2026-10-09). Demand signal is concrete (Paperclip #2014/#2743/#3317/#11597 open since 2026-03, 160/400 runs wasted; OmniRoute 74.5k and CLIProxyAPI 54.6k stars for token-proxy failover; Flock hand-built handoff). The uncovered, terms-respecting intersection is fleet scope × machine-verifiable task outcomes × subscription quota as the binding constraint × unmodified official CLIs under the user's own login. Risks: Anthropic policy volatility (five changes in 2026; 'ordinary, individual usage' clause), Paperclip PR #9367 or Not Diamond Code closing parts of the gap, weak standalone monetisation.",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "revenue": "OSS tool; a later product (team ledger analytics, specialist report) is a hypothesis without demand evidence",
+    "profitability": "Zero infra cost; no payer identified; sustainable only as OSS or as the substrate of a later product",
+    "mvp_speed": "C01–C02 in weeks on existing wrappers; learned policy needs ≥50 tasks of data",
+    "founder_fit": "Operator runs exactly this fleet (Claude Max + ChatGPT Pro, two repos); ML background for the policy",
+    "go_to_market": "Acute, repeatedly requested pain in Paperclip/CLI communities; distribution via OSS and plugin",
+    "moat": "Logic is replicable; the accumulated outcome ledger is the only sticky asset",
+    "problem": "Quantified waste and seven months of open requests; every multi-subscription user hits limits",
+    "retention": "Stays installed if it saves tasks weekly; otherwise dropped silently",
+    "legal_risk": "Must never intermediate credentials; 'ordinary individual usage' and OpenAI automation terms are open risks",
+    "capital": "Local SQLite, no hosting",
+    "network": "Depends on CLI output formats and orchestrator events; Paperclip SDK alpha",
+    "competition": "OmniRoute/CLIProxyAPI/Quotio/9Router (proxies), Not Diamond Code, LiteLLM Auto Router v2, Model Capacity plugin, OpenClaw failover, Tutti planned failover, Paperclip PR #9367"
+  },
+  "evidence_ids": {
+    "competition": [
+      "9add9d47-e700-4740-b20b-652685cb317b"
+    ],
+    "moat": [
+      "9add9d47-e700-4740-b20b-652685cb317b"
+    ]
+  },
+  "recommendation": "Pursue as a bounded open-source MVP on the operator's own workloads (packages C01–C05 with stop rules). GO means local build only: no demand, pricing, legal clearance, publication or hosting is established."
+}

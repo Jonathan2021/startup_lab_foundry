@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "vLLM Semantic Router",
+    "website": "https://github.com/vllm-project/semantic-router",
+    "description": "Signal/DSL routing; v0.4 Hermes with optional off-by-default outcome gate; session and provider-state portability checks"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "OSS, partial; improvement loop offline Traction: 6.1k GitHub stars (https://github.com/vllm-project/semantic-router). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

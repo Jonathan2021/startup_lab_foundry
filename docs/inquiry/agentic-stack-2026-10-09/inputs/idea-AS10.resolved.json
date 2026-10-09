@@ -1,0 +1,34 @@
+{
+  "id": "AS10",
+  "title": "Agent fleet controller for official CLI agents on subscriptions",
+  "description": "A local, open-source supervisor for the unmodified official CLI agents (Claude Code, Codex CLI, local models through OpenCode/Ollama) run under the user's own sign-ins. It keeps an outcome ledger of every task run (task category, provider, model, reasoning effort, duration, verify-command result, review/retry count, quota-limit events and reset times), manages subscription-quota exhaustion with per-provider circuit breakers and eligible-task rerouting or queueing (budget caps are stops, never fallbacks), writes durable task checkpoints and provider-neutral handoff notes so another CLI or a local model can resume interrupted work, and learns an escalate-fast / downgrade-slow model+effort policy per task category from verifiable outcomes, in shadow mode first and enforced only after evidence. A provider-switch calibration report (from AS03) and a cross-runtime eligibility policy (the only open residual of AS05) are features. Standalone CLI first; Paperclip plugin adapter second.",
+  "original_text": "Merge of AS01 (adaptive model/effort controller), AS08 (quota-aware failover + durable checkpoints) and AS03 (provider-portable competence) after competition passes R1–R5 on 2026-10-09; absorbs AS05's cross-runtime eligibility-policy residual.",
+  "target_customer": "People and small teams running several official CLI coding/research agents on consumer subscriptions (Claude Max, ChatGPT Pro) plus a local model; first user is the operator (this repository and kaggle/arc3), then Paperclip, Tutti and Gas Town users.",
+  "business_model": "Open source (MIT) with no hosted service in scope; monetisation hypotheses deferred — the outcome ledger is the asset a later specialist-factory or team analytics product would consume. No demand or pricing evidence yet.",
+  "narrowing_or_pivot": "Not a router (commoditized), not a team OS (occupied by Paperclip and others), not a credential proxy (forbidden by Anthropic's rules). The uncovered intersection is fleet scope × machine-verifiable task outcomes × subscription quota as the binding constraint × official CLIs under the user's own login.",
+  "focused_mvp_scope": "C01 outcome ledger → C02 quota manager (shadow mode) → C03 durable checkpoint and cross-provider handover → C04 learned model/effort policy → C05 provider-switch calibration report; each package has a stop rule measured on the operator's own workloads.",
+  "estimated_mvp_weeks": 6,
+  "key_validation_test": "Within six weeks on two real workloads: ≥50 ledger tasks with verifiable outcomes, ≥3 quota-limit events per week actually costing tasks, ≤30% median rework on ten handovers, and a learned policy whose verified completions per quota unit beat the static assignment. Any failed gate is recorded as a negative result and narrows the scope.",
+  "category": "Developer tools / agent infrastructure",
+  "venture_type": "Open-source developer tool",
+  "parent_ids": [
+    "AS01",
+    "AS08",
+    "AS03",
+    "AS05"
+  ],
+  "derivation_reason": "Competition passes R1–R5 (2026-10-09) showed routing commoditized, team-OS occupied and quota failover demanded but served only by terms-violating proxies; the merged, terms-respecting local supervisor is the single buildable wedge.",
+  "origin": "generated_derived",
+  "authored_by": "fable-agentic-stack-20261009",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069",
+    "6baf479b-5ad6-5204-b807-93d5a6221441",
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da",
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be",
+    "52618326-5451-5ced-bd09-2789627e47e7",
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f",
+    "b3a1c5e5-c399-5b79-a9ba-4592ed5cd409"
+  ],
+  "source_role": "inspiration",
+  "source_note": "Merged after competition passes R1–R5; see REPORT.md"
+}

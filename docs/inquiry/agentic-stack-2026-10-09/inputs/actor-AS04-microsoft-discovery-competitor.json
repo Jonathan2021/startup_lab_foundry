@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Microsoft Discovery",
+    "website": "https://redmondmag.com/articles/2026/06/02/microsoft-discovery-hits-ga.aspx",
+    "description": "Enterprise agentic R&D platform on graph knowledge engine"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Enterprise science, Azure-billed Traction: GA 2026-06-02 (trade press) (https://campustechnology.com/articles/2026/06/12/microsoft-discovery-platform-brings-agentic-ai-to-scientific-research.aspx). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

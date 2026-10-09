@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "LLMRouter (UIUC) / BaRP",
+    "website": "https://huggingface.co/papers/2608.06867",
+    "description": "Research library of 16+ routers and xRouteBench; BaRP learns routing from bandit feedback"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Algorithms and benchmark for outcome-learned routing Traction: Research (https://arxiv.org/pdf/2510.07429). Licence: Open source (research).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

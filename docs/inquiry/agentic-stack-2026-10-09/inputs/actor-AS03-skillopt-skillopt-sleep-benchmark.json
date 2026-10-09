@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "SkillOpt / SkillOpt-Sleep",
+    "website": "https://github.com/microsoft/SkillOpt",
+    "description": "Held-out-gated skill optimization; nightly mining of recurring tasks from coding-agent transcripts"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "cross-harness transfer claim Traction: 18.2k stars (https://github.com/microsoft/SkillOpt). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

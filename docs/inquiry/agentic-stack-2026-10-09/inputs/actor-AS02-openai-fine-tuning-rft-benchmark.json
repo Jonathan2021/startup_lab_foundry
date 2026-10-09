@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OpenAI fine-tuning / RFT",
+    "website": "https://developers.openai.com/api/docs/deprecations",
+    "description": "Self-serve fine-tuning wind-down; no new jobs after 2027-01-06"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "provider signal of declining fine-tuning need Traction: deprecation notice (https://developers.openai.com/api/docs/deprecations). Licence: commercial.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Anthropic Claude Cowork / Managed Agents / Claude Code cloud sessions",
+    "website": "https://claude.com/product/cowork",
+    "description": "Cowork GA with RBAC, spend limits, OTel; Managed Agents hosted sandboxed runtime (public beta); Claude Code cloud sessions in isolated VMs."
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "[inherited from AS05] Runtime/provider; single-vendor alternative for technical teams. Traction: Cowork GA 2026-04-09 (https://thenewstack.io/anthropic-takes-claude-cowork-out-of-preview-and-straight-into-the-enterprise/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -96,3 +96,71 @@ No model download, training, paid provider or unattended worker is configured.
 Agent-step requests are retained as separate `agent-*.md` handoffs. They are visibly
 blocked until an agent handles them. Future training should use explicitly reviewed
 examples and held-out task tests, retaining synthetic examples as synthetic.
+
+
+## R005 continuation — prepared MVP comparison (2026-10-07)
+
+Original R005 reply remains in 2026-10-04-followups.md. Actual rider/Kurviger
+observations and regional road-use review remain unknown. The runnable preview,
+warning inventory and five matched trials are prepared. Complete the bounded
+[manual observation task](2026-10-07-ride-R005-trials.md); no physical ride, new
+account, paid service or send is requested. Existing operator gate is retained.
+
+## R006 — prepared two-session pilot access follow-up (2026-10-07)
+
+The existing sport/workflow answer is preserved. Local verification, repairs and
+synthetic organizer rehearsal are complete. The remaining gate is a willing group
+and explicitly approved private access; no real trial/send/deployment is authorized.
+[Reply to the R006 follow-up](2026-10-07-volley-match-R006-pilot-access.md) after
+reviewing [the V06 criterion/evidence matrix](../../volley-match/docs/mvp/REVIEW_NEXT.md).
+
+
+## R011 — prepared Crous Queue five-lunch decision (2026-10-08)
+
+Original [R011 response block](2026-10-06-crous.md) remains unchanged. Q06 verification, demonstrated-defect repairs, disposable rehearsal, schedule and blank local records are complete. The next gate requires ordinary queue eligibility and an exact approved private access/data-intake payload; no real trial/send/deployment is authorized. See the [bounded R011 follow-up](2026-10-08-crous-R011-pilot-readiness.md) and [criterion/evidence matrix](../../crous-queue/docs/mvp/REVIEW_NEXT.md).
+
+## R006 — Volley Coach own-program scheduling follow-up (2026-10-08)
+
+C06 local verification, repairs and two-week synthetic preparation are complete.
+The [own-program scheduling gate](2026-10-08-volley-coach-R006-own-program.md)
+requests the operator's decision on consenting adults, an already selected program,
+language/readability and exact local trial/privacy scope. Real observations remain
+blank; no trial/intake/send/remote hosting is authorized. Original R006 replies and
+the Volley Match follow-up are preserved.
+
+
+## R013 — OfferCheck permitted quote-comparison gate (2026-10-08)
+
+O06 verification, demonstrated capture/receipt repairs, matched synthetic rehearsal,
+competent formula baseline and blank real-trial records are prepared. The next
+material gate is an owner-authorized redacted request/two existing quotes and a
+designated reviewer. [Respond to R013](2026-10-08-offer-check-R013-quotes.md) after
+reviewing [the evidence matrix](../../offer-check/docs/mvp/REVIEW_NEXT.md). No real
+intake, tester/supplier contact, orders, payments or deployment is authorized.
+Original request replies are preserved.
+
+
+## R014 — Agentic-stack wedge decisions (2026-10-09)
+
+The transcript `idea_queue/agentic_stack_ideas.md` was reduced to one buildable
+open-source wedge (venture `v-fleet-controller`, merged idea AS10) and two internal
+follow-ups (AS04 research-ledger experiment, AS02 hold). Package C01 is ready but
+not started. [Respond to R014](2026-10-09-agentic-stack-R014-wedge-decisions.md)
+after reading [the discovery report](../docs/inquiry/agentic-stack-2026-10-09/REPORT.md).
+No build, install, send, purchase, publication or deployment is authorized by this entry.
+
+
+## Portfolio review 2026-10-09 — decisions per venture
+
+Six ventures were re-reviewed ([report](../docs/inquiry/portfolio-review-2026-10-09/REPORT.md)
+once complete; per-venture reviews under that folder). Dispositions: Coopain HOLD,
+OfferCheck HOLD (deadline 2026-10-23), Volley Coach HOLD, Crous Queue NARROW, Ride
+Options NARROW, Volley Match NARROW. Agents are finishing bounded code packages and
+pushing to each repo's main; the human gates are:
+
+- [R015 Coopain referrer-policy conversations](2026-10-09-coopain-R015-referrer-policy.md)
+- [R011 addendum: Crous incumbent check and hosting approval](2026-10-08-crous-R011-pilot-readiness.md)
+- [R005: Ride Options rider-vs-Kurviger trial](2026-10-07-ride-R005-trials.md) (unchanged; now the decisive gate)
+- [R006 addendum: Volley Match two-outing pilot and the fusion proposal](2026-10-07-volley-match-R006-pilot-access.md)
+- [R013 addendum: OfferCheck deadline 2026-10-23](2026-10-08-offer-check-R013-quotes.md)
+- [R006 addendum: Volley Coach five-minute demand question](2026-10-08-volley-coach-R006-own-program.md)

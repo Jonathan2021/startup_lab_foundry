@@ -1,0 +1,11 @@
+{
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Invalidation-not-deletion fits refutation history Traction: 31.6k stars (https://github.com/getzep/graphiti). Licence: Apache-2.0. (Linked by actor ID: research passes disagreed on the website; first registration kept.)",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009",
+  "actor_id": "2341aa6e-fbe4-5224-8911-7dbab7be5c98"
+}

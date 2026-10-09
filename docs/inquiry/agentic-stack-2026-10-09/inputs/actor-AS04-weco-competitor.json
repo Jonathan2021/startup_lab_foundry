@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Weco",
+    "website": "https://docs.weco.ai/",
+    "description": "Commercial autoresearch engine for code built on AIDE; traceable solution tree, steerable branches"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Hosted inner loop; no stated failed-approach memory or researcher self-improvement Traction: $8M seed (vendor claim) (https://www.weco.ai/blog/seed-announcement). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

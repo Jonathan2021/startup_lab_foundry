@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "PostTrainBench",
+    "website": "https://arxiv.org/abs/2603.08640",
+    "description": "Benchmark of agents automating post-training"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "best agent 23.2% vs 51.1% official; reward hacking observed Traction: arXiv 2026-03 (https://arxiv.org/abs/2603.08640). Licence: research.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

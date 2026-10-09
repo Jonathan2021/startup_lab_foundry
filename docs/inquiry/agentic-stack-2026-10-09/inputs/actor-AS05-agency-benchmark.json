@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Agency",
+    "website": "https://github.com/christag/agency",
+    "description": "Single dashboard for agent teams across many LLM CLIs with scheduled runs, no database"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Lightweight alternative UX Traction: 71 GitHub stars (https://github.com/christag/agency). Licence: AGPL-3.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

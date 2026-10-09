@@ -1,0 +1,10 @@
+{
+  "workspace_id": "134bf216-1f4d-4a08-a31a-b2ac02db17ea",
+  "expected_revision": 0,
+  "investigation_stage": "comparison",
+  "product_maturity": "concept",
+  "disposition": "internal_only",
+  "next_action": "Narrow to a research-ledger experiment inside Foundry's inquiry-memory pilot (internal_only); do not pursue as a venture.",
+  "reason": "Inner loop commoditized (autoresearch 97.6k stars; AIDE/Weco; AlphaEvolve GA; MLE-bench >60% medals, submissions paused). Outer loop crowded at prototype level (autocontext, Sibyl, ShinkaEvolve, GEPA, EvoAgentX). Hosted research agents are funded or platform-owned (Edison $70M, Autoscience $14M, Weco $8M). Residual: typed cross-project ledger with negative results, noise-aware status, trial-aware promotion — testable on 329 existing ARC3 inquiry records with a stop rule (R5).",
+  "author": "agent:fable-agentic-stack-20261009"
+}

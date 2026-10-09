@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Anyscale post-training skill",
+    "website": "https://anyscale.com/blog/anyscale-llm-post-training-skill",
+    "description": "Agent skill choosing SFT/DPO/RLVR method and generating configs"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "method selection, not whether to fine-tune Traction: launched 2026-05-14 (https://anyscale.com/blog/anyscale-llm-post-training-skill). Licence: commercial platform.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

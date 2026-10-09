@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "EvoAgentX",
+    "website": "https://github.com/EvoAgentX/EvoAgentX",
+    "description": "Framework that generates and evolves multi-agent workflows (TextGrad, AFlow, MIPRO, EvoPrompt)"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Workflow generation from goals Traction: 3.4k stars (https://github.com/EvoAgentX/EvoAgentX). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,16 @@
+{
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "Agent-created ideas are labelled 'User added' and a same-source cohort cannot be compared side by side or filtered",
+  "expected": "`idea create` accepts an origin (generated_new/generated_derived) and source links; `idea list`/`/ideas` filter by source; an `idea compare --ids` command and `/ideas/compare` page show per-criterion scores, competition counts and relations for a chosen cohort without ranking the entire 238-idea portfolio.",
+  "actual": "AS01–AS09 display origin 'User added' although an agent derived them from a transcript; `score rank` can only snapshot the whole scorecard; the ideas list has no source filter and there is no comparison view, so narrowing nine candidates must be done outside Foundry.",
+  "reproduction": "Open http://127.0.0.1:8765/ideas/AS01 (eyebrow shows 'User added'); `foundry idea list --help` has no --source-id; `foundry score rank --help` has no idea filter.",
+  "impact": "The digestible comparison the user asked for must be assembled in a report instead of being a reusable console view; origin labels misattribute authorship in the portfolio.",
+  "suggestion": "Add origin/source options to `idea create --input`, a source filter on idea listing, and `idea compare` + `/ideas/compare`. Being implemented in package F02.",
+  "id": "6c404391-ccf5-44cf-9caf-050bd6a16ec9",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "idea",
+  "sources": [
+    "document: docs/inquiry/agentic-stack-2026-10-09/PROTOCOL.md"
+  ]
+}

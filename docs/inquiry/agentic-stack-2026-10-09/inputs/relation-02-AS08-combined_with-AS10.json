@@ -1,0 +1,6 @@
+{
+  "source_idea_id": "AS08",
+  "target_idea_id": "AS10",
+  "kind": "combined_with",
+  "rationale": "AS08's quota manager and durable handover become packages C02/C03; its demand signal leads the MVP (R1, R2)."
+}

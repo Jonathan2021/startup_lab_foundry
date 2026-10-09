@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Orchestrator.inc agent-orchestrator",
+    "website": "https://github.com/OrchestratorInc/agent-orchestrator",
+    "description": "Persistent orchestrator delegating tasks to workers across 25+ coding harnesses"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Supervisor/worker coding teams Traction: 13.0k GitHub stars (https://github.com/OrchestratorInc/agent-orchestrator). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

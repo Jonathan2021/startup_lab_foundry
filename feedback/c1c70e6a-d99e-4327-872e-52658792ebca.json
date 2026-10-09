@@ -1,0 +1,17 @@
+{
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "Ideas cannot be revised (narrowed/pivoted) or related beyond derived_from, so narrowing and merging a candidate cohort is not representable",
+  "expected": "`idea revise` creating a new IdeaRevision (narrowing_or_pivot, target_customer, business_model, focused_mvp_scope, estimated_mvp_weeks, key_validation_test, change_reason, author) with a stale-revision guard, and `idea relate` for combined_with/duplicates/pivots_from with rationale; idea page shows revision history and all relations.",
+  "actual": "`foundry idea revise` and `idea relate` do not exist. IdeaRevision fields beyond title/description/customer/validation-test are unreachable from the CLI; IdeaRelationKind has COMBINED_WITH/DUPLICATES/PIVOTS_FROM but only DERIVED_FROM is writable via `idea create --parent-id`.",
+  "reproduction": "`python3 tools/foundry_agent.py cli idea revise --id AS01` → 'invalid choice: revise'. Read IdeaDraft and PortfolioService._create in src/startup_foundry/portfolio.py.",
+  "impact": "Narrowing AS01→wedge or merging AS01+AS08 would require creating replacement ideas, orphaning scores and duplicating descriptions; the Foundry principle 'an idea can be derived, combined, narrowed, rescored, or rejected without losing the prior interpretation' is not operable from the public interface.",
+  "suggestion": "Add `idea revise --input` and `idea relate --input`, carry competition links to the new revision, label assessments with the revision scored, and render revisions/relations on the idea page. Being implemented in package F02.",
+  "id": "c1c70e6a-d99e-4327-872e-52658792ebca",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/agentic-stack-2026-10-09/PROTOCOL.md",
+    "document: src/startup_foundry/portfolio.py"
+  ]
+}

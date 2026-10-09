@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Lindy",
+    "website": "https://www.lindy.ai/",
+    "description": "Assistant/agent platform with built-in approvals for outside-impact actions and editable memory."
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "SMB AI employees; residency not stated; correction learning is vendor claim. Traction: ~$50M raised (estimate) (https://getlatka.com/companies/lindyai). Licence: Proprietary; $29.99-$199.99/user/mo.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

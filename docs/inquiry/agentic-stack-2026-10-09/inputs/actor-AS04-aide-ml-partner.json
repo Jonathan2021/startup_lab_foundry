@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "AIDE ML",
+    "website": "https://github.com/WecoAI/aideml",
+    "description": "Tree search over ML solution scripts guided by validation metric"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Usable inner-loop engine; multi-provider incl. local OpenAI-compatible Traction: 1.6k stars; MLE-bench 17.1% any-medal with o1-preview (2024) (https://github.com/openai/mle-bench). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

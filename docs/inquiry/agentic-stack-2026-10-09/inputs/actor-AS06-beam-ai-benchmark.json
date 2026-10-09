@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Beam AI",
+    "website": "https://beam.ai/",
+    "description": "'Self-learning' process agents with human approval for critical tasks; EU or on-prem deployment (vendor claims)."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Learning claim without documented reviewable proposals. Traction: Unclear; $1.35M round Aug 2025 per PitchBook (https://pitchbook.com/profiles/company/512244-91). Licence: Proprietary; quote-only.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

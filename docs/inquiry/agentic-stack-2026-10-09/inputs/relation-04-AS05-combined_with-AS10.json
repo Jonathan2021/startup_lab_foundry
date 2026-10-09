@@ -1,0 +1,6 @@
+{
+  "source_idea_id": "AS05",
+  "target_idea_id": "AS10",
+  "kind": "combined_with",
+  "rationale": "AS05's only open residual (eligibility policy across cloud/local/subscription runtimes) is folded into the wedge; the OS itself is occupied (R1, R4)."
+}

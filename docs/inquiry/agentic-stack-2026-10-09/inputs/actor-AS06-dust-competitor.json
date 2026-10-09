@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Dust",
+    "website": "https://dust.tt/",
+    "description": "Paris multi-model team-agent platform with EU or US data residency; self-serve up to 100 people."
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Direct: EU residency, SME pricing; no correction-to-proposal loop found. Traction: $40M Series B 2026; $6M ARR 2025 (https://thenextweb.com/news/dust-series-b-40-million-multiplayer-ai-enterprise). Licence: MIT repository; EUR 24/seat/mo (yearly).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

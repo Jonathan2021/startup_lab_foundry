@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OmniRoute",
+    "website": "https://github.com/diegosouzapw/OmniRoute",
+    "description": "Local gateway with quota-aware Subscription->API->Cheap->Free fallback, circuit breakers, limit display for coding CLIs"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Strongest overlap; credential proxying ToS risk; no task checkpoints Traction: 74.5k GitHub stars (https://github.com/diegosouzapw/OmniRoute). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

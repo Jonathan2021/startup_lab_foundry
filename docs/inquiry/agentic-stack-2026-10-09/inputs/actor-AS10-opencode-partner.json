@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "OpenCode",
+    "website": "https://github.com/anomalyco/opencode",
+    "description": "Open-source coding agent; supports ChatGPT Plus/Pro login; removed Claude Pro/Max plugins citing Anthropic prohibition"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "[inherited from AS01] Worker runtime incl. local models Traction: 212.3k GitHub stars (https://github.com/anomalyco/opencode). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,11 @@
+{
+  "actor_id": "26c3a549-2c4f-58fb-b6cf-c423d7e85fa5",
+  "relation": "alternative",
+  "is_primary": true,
+  "note": "[inherited from AS01] No model/effort or learned routing Traction: 131 GitHub stars (https://github.com/nutthouse/tutti). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

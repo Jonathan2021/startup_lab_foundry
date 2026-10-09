@@ -1,0 +1,278 @@
+{
+  "AS01": {
+    "confidence": "medium",
+    "recommendation": "Merge into the fleet-controller wedge (with AS08, AS03); keep as feature lineage, not a standalone product.",
+    "rationale": "Routing is commoditized and consolidating (R2: LiteLLM/Mastra classifier routing free; Stripe–OpenRouter, PANW–Portkey; TensorZero archived). Not Diamond Code (hosted, gated, Claude Code harness) and LiteLLM Auto Router v2 claim per-step model/effort, but neither documents verifiable task outcomes keyed by task category as reward nor quota-as-constraint across vendor CLIs (R2 addendum). Paperclip has no documented per-run model hook; Model Capacity plugin is deterministic prior art (R1). Standalone monetisation weak; value is as the policy+evidence layer of a fleet controller. R3 adds: Microsoft SkillOpt-Sleep already learns from Claude Code/Codex transcripts nightly to improve skill files (not model/effort choice or quota); it is a partner/benchmark for the ledger, not a substitute.",
+    "scores": {
+      "revenue": 3,
+      "profitability": 4,
+      "mvp_speed": 6,
+      "founder_fit": 9,
+      "go_to_market": 5,
+      "moat": 3,
+      "problem": 6,
+      "retention": 6,
+      "legal_risk": 5,
+      "capital": 2,
+      "network": 4,
+      "competition": 8
+    },
+    "criterion_rationales": {
+      "revenue": "OSS layer; no observed willingness to pay for routing alone; router startups pivoted (Martian, Unify) — R2",
+      "profitability": "No infra cost but no clear payer; hosted competitor (Not Diamond) is gated and funded",
+      "mvp_speed": "Ledger + rule policy in weeks on own workloads; learned policy needs ≥50 tasks of data first",
+      "founder_fit": "ML engineer with two subscriptions and real fleets (this repo, arc3); contextual-bandit comfort",
+      "go_to_market": "Distribution via Paperclip/Tutti/Gas Town communities; alpha plugin SDK is a risk (R1)",
+      "moat": "Routing logic is replicable; only the accumulated outcome ledger is sticky",
+      "problem": "Real but secondary to quota exhaustion; savings claims elsewhere are 20–65% vendor claims",
+      "retention": "If the ledger is useful it stays installed; otherwise easy to drop",
+      "legal_risk": "Must spawn unmodified CLIs under own login; Anthropic policy changed 5× in 2026 (R1 claim 3)",
+      "capital": "Local SQLite, no hosting",
+      "network": "Depends on orchestrator hooks/events (Paperclip SDK alpha, no per-run model hook upstream)",
+      "competition": "Not Diamond Code, LiteLLM Auto Router v2, Model Capacity plugin, Hydra/Ruflo claims, cloud routers"
+    },
+    "_preview_total": 42
+  },
+  "AS02": {
+    "confidence": "medium",
+    "recommendation": "Hold as a venture; fold its cheapest test (recurring verifiable-task count from the ledger) into the fleet-controller wedge as a later 'specialization opportunity' report. Revisit if a task class exceeds ~30 verifiable runs/month.",
+    "rationale": "R3: the fine-tune-from-traces market is shrinking (TensorZero archived 2026-06-12; OpenPipe closed to new training 2026-07-30 after the CoreWeave acquisition; Predibase redirects to Rubrik; Humanloop shut; Lamini team to AMD; Fireworks deprecated managed RL fine-tuning; OpenAI ends self-serve fine-tuning 2027-01-06 and Evals 2026-11-30 citing 'fewer use cases that require fine-tuning'). Upper rungs are still crowded (Distil Labs, Pioneer/Fastino, Inference.net Catalyst, Overmind) and the lower rungs by Microsoft SkillOpt-Sleep (MIT, 18.2k stars: nightly recurring-task discovery from Claude Code/Codex transcripts, held-out tests, human-approved skill changes). 'Deciding when fine-tuning is worthwhile' is unshipped by ~45 actors, plausibly because the answer is usually 'don't'. Provider terms (OpenAI API, Anthropic 2026-03-16 guidance, Google 2026-04-28) restrict training on outputs; routers trained on outcome metadata fit the classifier exceptions. Local training remains deferred under ADR-0010.",
+    "scores": {
+      "revenue": 5,
+      "profitability": 4,
+      "mvp_speed": 3,
+      "founder_fit": 9,
+      "go_to_market": 3,
+      "moat": 5,
+      "problem": 5,
+      "retention": 6,
+      "legal_risk": 7,
+      "capital": 5,
+      "network": 4,
+      "competition": 8
+    },
+    "criterion_rationales": {
+      "competition": "Distil Labs, Pioneer, Catalyst, Overmind (trace→specialist); SkillOpt-Sleep (skills); Agent Lightning/ART (training); Braintrust (log mining) — R3",
+      "revenue": "Hosted fine-tuning vendors exiting; buyers appear to prefer stronger general models",
+      "legal_risk": "Outputs-as-training-targets restricted by all three providers; needs legal review even for classifier exceptions",
+      "moat": "Provenance-tracked data and retirement logic are genuine gaps with unknown willingness to pay",
+      "mvp_speed": "Needs the outcome ledger (wedge C01) plus ≥30 recurring verifiable runs/month before any training experiment",
+      "founder_fit": "ML engineer; directly usable on own workloads if volume materialises"
+    },
+    "_preview_total": 38
+  },
+  "AS03": {
+    "confidence": "medium",
+    "recommendation": "Fold into the wedge as the provider-switch calibration feature (C05).",
+    "rationale": "Partial coverage: Not Diamond Prompt Optimization rewrites prompts per model; vLLM Semantic Router checks mid-session switch safety; nothing found calibrates a whole agent harness (instruction files, skills, effort defaults) across a CLI switch (R2). A feature, not a product. R3 adds: DSPy/GEPA/SkillOpt cover re-optimisation after a provider switch; what remains is a per-user task profile and a recalibration trigger.",
+    "scores": {
+      "revenue": 3,
+      "profitability": 4,
+      "mvp_speed": 5,
+      "founder_fit": 8,
+      "go_to_market": 3,
+      "moat": 3,
+      "problem": 4,
+      "retention": 5,
+      "legal_risk": 3,
+      "capital": 2,
+      "network": 3,
+      "competition": 5
+    },
+    "criterion_rationales": {
+      "problem": "Switches are infrequent events; pain is episodic",
+      "go_to_market": "No standalone buyer identified",
+      "competition": "Not Diamond prompt optimisation; vLLM SR portability checks; Azure re-evaluation guidance"
+    },
+    "_preview_total": 38
+  },
+  "AS04": {
+    "confidence": "medium",
+    "recommendation": "Narrow to a research-ledger experiment inside Foundry's inquiry-memory pilot (internal_only); do not pursue as a venture.",
+    "rationale": "Inner loop commoditized (autoresearch 97.6k stars; AIDE/Weco; AlphaEvolve GA; MLE-bench >60% medals, submissions paused). Outer loop crowded at prototype level (autocontext, Sibyl, ShinkaEvolve, GEPA, EvoAgentX). Hosted research agents are funded or platform-owned (Edison $70M, Autoscience $14M, Weco $8M). Residual: typed cross-project ledger with negative results, noise-aware status, trial-aware promotion — testable on 329 existing ARC3 inquiry records with a stop rule (R5).",
+    "scores": {
+      "revenue": 3,
+      "profitability": 3,
+      "mvp_speed": 4,
+      "founder_fit": 10,
+      "go_to_market": 3,
+      "moat": 4,
+      "problem": 5,
+      "retention": 6,
+      "legal_risk": 2,
+      "capital": 5,
+      "network": 2,
+      "competition": 8
+    },
+    "criterion_rationales": {
+      "founder_fit": "Direct use on arc3/Kaggle/math; Foundry already is an evidence ledger",
+      "revenue": "No solo hosted slot; research tooling monetises poorly; Neptune hosted shutdown is a warning",
+      "competition": "autoresearch ecosystem, AIDE/Weco, AlphaEvolve, Kosmos, Autoscience, MLE agents",
+      "capital": "Compute for forward A/B; retrieval experiment is free"
+    },
+    "_preview_total": 39
+  },
+  "AS05": {
+    "confidence": "medium",
+    "recommendation": "Drop as an OS; fold the cross-runtime eligibility-policy residual into the wedge.",
+    "rationale": "Team-OS layer occupied by Paperclip (99.1k stars, Team Catalog, export/import, execution policy, cloud waitlist), Gas Town, Orchestrator.inc, Ruflo, Symphony; framework layer by LangGraph/Mastra/Agno/CrewAI; Vibe Kanban shut down for lack of a business model; Conductor monetises cloud workspaces ($50/mo). Residuals are plugin-sized: eligibility policy across cloud/local/subscription runtimes, ML/Kaggle plugins with evaluation, eval-driven improvement proposals (R1, R4). Dify/n8n licences limit a hosted build.",
+    "scores": {
+      "revenue": 6,
+      "profitability": 3,
+      "mvp_speed": 2,
+      "founder_fit": 6,
+      "go_to_market": 3,
+      "moat": 3,
+      "problem": 5,
+      "retention": 7,
+      "legal_risk": 5,
+      "capital": 7,
+      "network": 5,
+      "competition": 10
+    },
+    "criterion_rationales": {
+      "competition": "Paperclip, Dify, n8n, Langflow, LangGraph Platform, Mastra, Agno, Gas Town, Orchestrator.inc, Ruflo; funded coding agents",
+      "mvp_speed": "Integration surface spans orchestration, gateway, tracing, training; months before differentiation",
+      "capital": "Hosting, integrations, support",
+      "network": "Depends on many third-party substrates and their licences"
+    },
+    "_preview_total": 31
+  },
+  "AS06": {
+    "confidence": "medium",
+    "recommendation": "Drop: crowded EU SME segment, sales/compliance-heavy, poor solo-technical-founder fit.",
+    "rationale": "EU-hosted multi-model SME workspaces sell at €21–25/seat (Langdock ~$42M ARR est., Dust $40M Series B, Mistral Vibe Team, Copilot Business, Gemini Enterprise). Enterprise hubs manage external agents (Agent 365, Frontier, ServiceNow, Dataiku Agent Management). Only residual is a general correction→proposal loop (Sierra does it for CX). Worker-evaluation use is EU AI Act Annex III high-risk (R4).",
+    "scores": {
+      "revenue": 8,
+      "profitability": 4,
+      "mvp_speed": 1,
+      "founder_fit": 3,
+      "go_to_market": 2,
+      "moat": 3,
+      "problem": 7,
+      "retention": 8,
+      "legal_risk": 8,
+      "capital": 8,
+      "network": 5,
+      "competition": 10
+    },
+    "criterion_rationales": {
+      "founder_fit": "Sales-led, trust/support/compliance heavy; no SME sales channel",
+      "legal_risk": "GDPR processing roles, AI Act high-risk workplace monitoring, DPAs per customer",
+      "competition": "Langdock, Dust, Mistral, Microsoft, Google, Dataiku, Lindy, Relevance, Beam, Sierra"
+    },
+    "_preview_total": 29
+  },
+  "AS07": {
+    "confidence": "high",
+    "recommendation": "Use existing tools; do not build.",
+    "rationale": "Paperclip, Tutti, Agency, Hermes, OpenClaw and Agno already schedule jobs across providers inside their runtimes; Claude Code routines and Codex scheduled tasks are first-party and expose no list/read API, so a unified dashboard over them is blocked, not merely unbuilt (R1).",
+    "scores": {
+      "revenue": 1,
+      "profitability": 2,
+      "mvp_speed": 7,
+      "founder_fit": 6,
+      "go_to_market": 3,
+      "moat": 1,
+      "problem": 3,
+      "retention": 3,
+      "legal_risk": 3,
+      "capital": 1,
+      "network": 6,
+      "competition": 9
+    },
+    "criterion_rationales": {
+      "network": "Depends on first-party APIs that do not exist",
+      "competition": "First-party routines plus six OSS schedulers",
+      "problem": "Already solved inside each runtime"
+    },
+    "_preview_total": 24
+  },
+  "AS08": {
+    "confidence": "medium",
+    "recommendation": "Merge into the fleet-controller wedge; its demand signal leads the MVP (C02/C03).",
+    "rationale": "Strongest demand signal: four open Paperclip requests since 2026-03 (#2014/#2743/#3317/#11597 — 160 of 400 runs burned on exhausted quota), forks, Flock's hand-built Claude→Codex handoff merged 2026-10-06, OmniRoute 74.5k and CLIProxyAPI 54.6k stars. Popular tools proxy/pool OAuth tokens, which Anthropic's legal page forbids for third parties; Claude Code's own fallback never triggers on rate limits; OpenCode has no cross-model fallback. The terms-respecting local-supervisor form is open; upstream PR #9367 could absorb part of it (R1, R2).",
+    "scores": {
+      "revenue": 3,
+      "profitability": 4,
+      "mvp_speed": 7,
+      "founder_fit": 8,
+      "go_to_market": 6,
+      "moat": 2,
+      "problem": 8,
+      "retention": 6,
+      "legal_risk": 5,
+      "capital": 1,
+      "network": 3,
+      "competition": 7
+    },
+    "criterion_rationales": {
+      "problem": "Quantified waste (#11597) and repeated requests over seven months",
+      "go_to_market": "Acute pain in CLI-agent communities; OSS distribution",
+      "moat": "Small; upstream could ship it; value accrues to the ledger",
+      "legal_risk": "'Ordinary, individual usage' clause; no pooling; OpenAI automation terms unverified",
+      "competition": "OmniRoute, CLIProxyAPI, Quotio, 9Router (token proxies); OpenClaw failover; Tutti planned failover"
+    },
+    "_preview_total": 45
+  },
+  "AS09": {
+    "confidence": "medium",
+    "recommendation": "Drop as a standalone asset; keep verified evaluations as a property of the wedge's ledger (every run carries a verify result).",
+    "rationale": "R3: Prime Intellect runs a public library of task environments; Hermes Agent (252k stars) has community skill libraries; skill files reportedly transfer between tools; Braintrust/Langfuse hold datasets. A library is defensible only with private, verified, domain-specific outcomes, none of which exist yet. R5 adds that evaluating whether an outer loop improves research outcomes is an open question, but that is a research task, not a product.",
+    "scores": {
+      "revenue": 3,
+      "profitability": 4,
+      "mvp_speed": 4,
+      "founder_fit": 7,
+      "go_to_market": 2,
+      "moat": 4,
+      "problem": 4,
+      "retention": 5,
+      "legal_risk": 3,
+      "capital": 3,
+      "network": 5,
+      "competition": 7
+    },
+    "criterion_rationales": {
+      "competition": "Prime Intellect environments hub, Hermes skill libraries, Braintrust/Langfuse datasets, public benchmarks (SWE-bench, MLE-bench)",
+      "moat": "Only private verified outcomes would be defensible; packs and skills are copied freely",
+      "go_to_market": "No buyer for packs alone identified",
+      "network": "Depends on other tools' skill/eval formats"
+    },
+    "_preview_total": 33
+  },
+  "AS10": {
+    "confidence": "medium",
+    "recommendation": "Pursue as a bounded open-source MVP on the operator's own workloads (packages C01–C05 with stop rules). GO means local build only: no demand, pricing, legal clearance, publication or hosting is established.",
+    "rationale": "Merged wedge of AS01+AS08+AS03 (+AS05 residual) after R1–R5 (2026-10-09). Demand signal is concrete (Paperclip #2014/#2743/#3317/#11597 open since 2026-03, 160/400 runs wasted; OmniRoute 74.5k and CLIProxyAPI 54.6k stars for token-proxy failover; Flock hand-built handoff). The uncovered, terms-respecting intersection is fleet scope × machine-verifiable task outcomes × subscription quota as the binding constraint × unmodified official CLIs under the user's own login. Risks: Anthropic policy volatility (five changes in 2026; 'ordinary, individual usage' clause), Paperclip PR #9367 or Not Diamond Code closing parts of the gap, weak standalone monetisation.",
+    "scores": {
+      "revenue": 4,
+      "profitability": 4,
+      "mvp_speed": 7,
+      "founder_fit": 9,
+      "go_to_market": 6,
+      "moat": 3,
+      "problem": 8,
+      "retention": 6,
+      "legal_risk": 5,
+      "capital": 1,
+      "network": 3,
+      "competition": 7
+    },
+    "criterion_rationales": {
+      "revenue": "OSS tool; a later product (team ledger analytics, specialist report) is a hypothesis without demand evidence",
+      "profitability": "Zero infra cost; no payer identified; sustainable only as OSS or as the substrate of a later product",
+      "mvp_speed": "C01–C02 in weeks on existing wrappers; learned policy needs ≥50 tasks of data",
+      "founder_fit": "Operator runs exactly this fleet (Claude Max + ChatGPT Pro, two repos); ML background for the policy",
+      "go_to_market": "Acute, repeatedly requested pain in Paperclip/CLI communities; distribution via OSS and plugin",
+      "moat": "Logic is replicable; the accumulated outcome ledger is the only sticky asset",
+      "problem": "Quantified waste and seven months of open requests; every multi-subscription user hits limits",
+      "retention": "Stays installed if it saves tasks weekly; otherwise dropped silently",
+      "legal_risk": "Must never intermediate credentials; 'ordinary individual usage' and OpenAI automation terms are open risks",
+      "capital": "Local SQLite, no hosting",
+      "network": "Depends on CLI output formats and orchestrator events; Paperclip SDK alpha",
+      "competition": "OmniRoute/CLIProxyAPI/Quotio/9Router (proxies), Not Diamond Code, LiteLLM Auto Router v2, Model Capacity plugin, OpenClaw failover, Tutti planned failover, Paperclip PR #9367"
+    },
+    "_preview_total": 50
+  }
+}

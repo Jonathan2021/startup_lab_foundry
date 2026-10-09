@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Unsloth",
+    "website": "https://github.com/unslothai/unsloth",
+    "description": "Local efficient LoRA/QLoRA/GRPO training"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "local training rung Traction: 77.6k stars (https://github.com/unslothai/unsloth). Licence: Apache-2.0 core; AGPL-3.0 Studio.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

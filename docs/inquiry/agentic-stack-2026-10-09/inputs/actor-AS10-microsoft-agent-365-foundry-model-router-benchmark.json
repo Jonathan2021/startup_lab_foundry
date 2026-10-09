@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Microsoft Agent 365 / Foundry model router / Copilot Studio",
+    "website": "https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/model-router",
+    "description": "Agent 365 governs Microsoft, partner and third-party agents; model router routes prompts across OpenAI/Anthropic/xAI/DeepSeek/Meta models within Azure Policy-governed subsets, honoring data zones."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "[inherited from AS05] Policy-constrained eligibility and routing already exists inside Azure; not across local/subscription runtimes. Traction: Agent 365 GA 2026-05-01 at $15/user/mo (https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

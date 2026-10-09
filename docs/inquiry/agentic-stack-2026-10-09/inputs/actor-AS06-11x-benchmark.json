@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "11x",
+    "website": "https://www.11x.ai/",
+    "description": "AI SDR 'digital workers'."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Cautionary: reported customer-claim and churn issues (secondary). Traction: Benchmark/a16z-backed; reported credibility issues (secondary) (https://thecroreport.com/tools/11x/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Hindsight (vectorize-io)",
+    "website": "https://github.com/vectorize-io/hindsight",
+    "description": "Agent memory with facts, experiences, evidence-backed observations, mental models"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "Candidate storage for research ledger; already selected locally Traction: 47.6k stars; LongMemEval SOTA (vendor claim) (https://github.com/vectorize-io/hindsight). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

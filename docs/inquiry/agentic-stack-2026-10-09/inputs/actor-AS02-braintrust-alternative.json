@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Braintrust",
+    "website": "https://www.braintrust.dev/product/discover",
+    "description": "Eval/observability with Topics clustering, Patterns and Loop"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "task discovery without specialization Traction: $80M Series B at $800M (Feb 2026) (https://www.axios.com/pro/enterprise-software-deals/2026/02/17/ai-observability-braintrust-80-million-800-million). Licence: commercial.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

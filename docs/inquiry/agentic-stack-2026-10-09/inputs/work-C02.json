@@ -1,0 +1,14 @@
+{
+  "request_key": "fleet-C02-create-20261009",
+  "actor": "fable-agentic-stack-20261009",
+  "rationale": "MVP package C02 of the agent fleet controller wedge selected in docs/inquiry/agentic-stack-2026-10-09/REPORT.md; dependent on earlier packages where stated.",
+  "expected_head": null,
+  "work": {
+    "title": "C02 — Quota manager: limits, circuit breakers, rerouting in shadow mode",
+    "description": "Parse usage-limit/reset signals from the official CLIs' local output and usage data; keep per-provider availability state with circuit breakers (stop probing until reset); classify each queued task as eligible for another provider or local model, or queue it; treat a hard budget cap denial as a stop, never a fallback. Default is shadow mode: log what the manager would have done; `--enforce` is explicit.",
+    "acceptance_criteria": "Every observed limit event in two weeks is recorded with provider, reset time and the task affected; shadow log shows the decision the manager would have taken; enforce mode verified on a disposable task set; no task is retried against an exhausted provider. Stop rule: fewer than 3 limit events per week across both workloads → hold C02/C03 and keep C01 as a utility.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "todo"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "actor_id": "5a3717d3-5788-5344-8eb5-7840deec646b",
+  "relation": "alternative",
+  "is_primary": true,
+  "note": "[inherited from AS08] Account pooling; conflicts with Anthropic credential rules Traction: 54.6k GitHub stars (https://github.com/router-for-me/CLIProxyAPI). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

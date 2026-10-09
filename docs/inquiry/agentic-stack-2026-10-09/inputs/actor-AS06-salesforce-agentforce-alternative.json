@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Salesforce Agentforce",
+    "website": "https://www.salesforce.com/agentforce/",
+    "description": "CRM-centred agent platform."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Only for Salesforce-centric organisations. Traction: >$1B Agentforce ARR, Q1 FY27 (company) (https://salesforce.com/news/press-releases/2026/05/27/fy27-q1-earnings). Licence: Proprietary; Flex Credits $500/100k (secondary).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

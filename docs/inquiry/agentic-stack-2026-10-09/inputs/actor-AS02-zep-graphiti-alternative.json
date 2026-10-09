@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Zep / Graphiti",
+    "website": "https://www.getzep.com/downloads/451Research_Reprint_ZepSoftware_10APR2026.pdf",
+    "description": "Temporal knowledge-graph agent memory"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "fact memory Traction: reported nearing $1M ARR (search snippet) (https://www.getzep.com/downloads/451Research_Reprint_ZepSoftware_10APR2026.pdf). Licence: open-source Graphiti + cloud.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

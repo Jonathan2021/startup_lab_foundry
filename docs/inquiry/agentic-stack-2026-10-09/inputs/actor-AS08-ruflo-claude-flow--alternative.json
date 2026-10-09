@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Ruflo (claude-flow)",
+    "website": "https://github.com/ruvnet/ruflo",
+    "description": "Meta-harness for Claude Code and Codex with swarms, memory, loop workers; claims intelligent routing and provider failover (vendor claims)"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Claims 5-provider failover, unverified Traction: 74.2k GitHub stars (https://github.com/ruvnet/ruflo). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

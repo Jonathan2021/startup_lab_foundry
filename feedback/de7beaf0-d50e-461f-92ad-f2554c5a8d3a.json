@@ -1,0 +1,17 @@
+{
+  "actor": "fable-agentic-stack-20261009",
+  "summary": "A user-supplied local document (idea transcript) cannot be registered as a reference source or linked to the ideas derived from it",
+  "expected": "A `source register` command (or console form) accepting a local file path or URL, computing a content digest, and linking the source to one or more ideas with a role (inspiration/market_reference/validation), so idea provenance is recorded at intake.",
+  "actual": "`foundry source register` does not exist (`source` only offers `list`). PortfolioService.record_source has no CLI/HTTP caller and only accepts an http(s) URL with a claim shape. Nine ideas (AS01–AS09) were created from idea_queue/agentic_stack_ideas.md (sha256 df96c6519730d44369aaae096189e51a14b1bf7e7148ed8d5739e2fd8031adb5) with no retained link to that source.",
+  "reproduction": "From the Foundry repo: `python3 tools/foundry_agent.py cli source register --input any.json` → argparse error 'invalid choice: register'. Inspect src/startup_foundry/console_commands.py source parser and grep callers of record_source.",
+  "impact": "Provenance of transcript-derived ideas lives only in free-text descriptions; the Sources page and idea pages show 'No linked sources yet' for the whole cohort; later competition evidence cannot cite a stored source ID.",
+  "suggestion": "Add `source register --input` (kind, title, locator path/URL, publisher, dates, notes, idea_ids, role) with stable digest-based identity and `idea link-source`; show role on the idea page. Being implemented in package F02 (work f2f51679-77a1-4e6a-8468-50dd79cbeca3).",
+  "id": "de7beaf0-d50e-461f-92ad-f2554c5a8d3a",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/agentic-stack-2026-10-09/PROTOCOL.md",
+    "document: src/startup_foundry/console_commands.py"
+  ]
+}

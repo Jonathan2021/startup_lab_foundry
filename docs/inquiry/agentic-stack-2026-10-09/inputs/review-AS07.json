@@ -1,0 +1,10 @@
+{
+  "workspace_id": "7549a244-d5b2-40e2-ae58-c708b700bacf",
+  "expected_revision": 0,
+  "investigation_stage": "triage",
+  "product_maturity": "concept",
+  "disposition": "use_existing",
+  "next_action": "Use existing tools; do not build.",
+  "reason": "Paperclip, Tutti, Agency, Hermes, OpenClaw and Agno already schedule jobs across providers inside their runtimes; Claude Code routines and Codex scheduled tasks are first-party and expose no list/read API, so a unified dashboard over them is blocked, not merely unbuilt (R1).",
+  "author": "agent:fable-agentic-stack-20261009"
+}

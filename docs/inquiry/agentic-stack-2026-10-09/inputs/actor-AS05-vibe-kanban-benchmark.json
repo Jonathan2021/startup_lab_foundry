@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Vibe Kanban",
+    "website": "https://github.com/BloopAI/vibe-kanban",
+    "description": "Kanban UI for 10+ coding agents; company shut down 2026-04-10, community-maintained"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Popular free orchestration UI without a business model Traction: 28.3k GitHub stars (https://github.com/BloopAI/vibe-kanban). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

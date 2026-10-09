@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "EvoAgentX",
+    "website": "https://github.com/EvoAgentX/EvoAgentX",
+    "description": "Workflow generation and evolution with TextGrad/MIPRO/AFlow"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "workflow evolution Traction: 3.4k stars (https://github.com/EvoAgentX/EvoAgentX). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

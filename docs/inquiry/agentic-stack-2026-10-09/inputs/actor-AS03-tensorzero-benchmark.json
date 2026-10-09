@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "TensorZero",
+    "website": "https://github.com/tensorzero/tensorzero",
+    "description": "LLMOps gateway with feedback/experimentation loop; archived 2026-06-12, company wound down"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Experimentation design reference Traction: 11.7k GitHub stars; archived (https://news.ycombinator.com/item?id=48518120). Licence: Apache-2.0 (unmaintained).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

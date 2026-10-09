@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "AIRA-dojo (Meta)",
+    "website": "https://github.com/facebookresearch/aira-dojo",
+    "description": "Research-agent framework with greedy/MCTS/evolutionary policies"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Non-commercial reference implementation Traction: 175 stars; MLE-bench 31.6% (o3) (https://github.com/openai/mle-bench). Licence: CC BY-NC 4.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

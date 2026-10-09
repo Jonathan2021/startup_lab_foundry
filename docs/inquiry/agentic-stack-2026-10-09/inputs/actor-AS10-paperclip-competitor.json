@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Paperclip",
+    "website": "https://github.com/paperclipai/paperclip",
+    "description": "Self-hosted control plane for agent companies: org charts, issues, budgets, approvals, routines, CLI adapters with subscription sign-in; alpha plugin SDK"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "[inherited from AS05] Already the team-OS layer with Team Catalog, export/import, execution policy Traction: 99.1k GitHub stars, 16.7k forks (https://github.com/paperclipai/paperclip). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

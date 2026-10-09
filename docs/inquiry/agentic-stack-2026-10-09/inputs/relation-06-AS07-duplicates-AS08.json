@@ -1,0 +1,6 @@
+{
+  "source_idea_id": "AS07",
+  "target_idea_id": "AS08",
+  "kind": "duplicates",
+  "rationale": "AS07's scheduling job is already covered inside Paperclip/Tutti/OpenClaw/Hermes/Agno and first-party routines expose no list API; any residual is a feature of the quota manager (R1)."
+}

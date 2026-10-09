@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Humanloop",
+    "website": "https://wandb.ai/wandb_fc/product-announcements-fc/reports/Humanloop-is-sunsetting-Migrate-to-Weights-Biases-as-an-alternative--VmlldzoxMzk4ODc1Nw",
+    "description": "Prompt/eval platform shut down after Anthropic acquisition"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "exit Traction: sunset 2025-09-08 (https://wandb.ai/wandb_fc/product-announcements-fc/reports/Humanloop-is-sunsetting-Migrate-to-Weights-Biases-as-an-alternative--VmlldzoxMzk4ODc1Nw). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

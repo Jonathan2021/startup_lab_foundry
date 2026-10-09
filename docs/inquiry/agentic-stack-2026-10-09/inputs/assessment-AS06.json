@@ -1,0 +1,35 @@
+{
+  "idea_id": "AS06",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 8,
+    "profitability": 4,
+    "mvp_speed": 1,
+    "founder_fit": 3,
+    "go_to_market": 2,
+    "moat": 3,
+    "problem": 7,
+    "retention": 8,
+    "legal_risk": 8,
+    "capital": 8,
+    "network": 5,
+    "competition": 10
+  },
+  "rationale": "EU-hosted multi-model SME workspaces sell at €21–25/seat (Langdock ~$42M ARR est., Dust $40M Series B, Mistral Vibe Team, Copilot Business, Gemini Enterprise). Enterprise hubs manage external agents (Agent 365, Frontier, ServiceNow, Dataiku Agent Management). Only residual is a general correction→proposal loop (Sierra does it for CX). Worker-evaluation use is EU AI Act Annex III high-risk (R4).",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "founder_fit": "Sales-led, trust/support/compliance heavy; no SME sales channel",
+    "legal_risk": "GDPR processing roles, AI Act high-risk workplace monitoring, DPAs per customer",
+    "competition": "Langdock, Dust, Mistral, Microsoft, Google, Dataiku, Lindy, Relevance, Beam, Sierra"
+  },
+  "evidence_ids": {
+    "competition": [
+      "3ad8e650-ef10-49cf-becc-ebceffa03595"
+    ],
+    "moat": [
+      "3ad8e650-ef10-49cf-becc-ebceffa03595"
+    ]
+  },
+  "recommendation": "Drop: crowded EU SME segment, sales/compliance-heavy, poor solo-technical-founder fit."
+}

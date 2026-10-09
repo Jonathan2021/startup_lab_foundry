@@ -1,0 +1,36 @@
+{
+  "idea_id": "AS09",
+  "scorecard_id": "portfolio-reviewed-v1",
+  "scores": {
+    "revenue": 3,
+    "profitability": 4,
+    "mvp_speed": 4,
+    "founder_fit": 7,
+    "go_to_market": 2,
+    "moat": 4,
+    "problem": 4,
+    "retention": 5,
+    "legal_risk": 3,
+    "capital": 3,
+    "network": 5,
+    "competition": 7
+  },
+  "rationale": "R3: Prime Intellect runs a public library of task environments; Hermes Agent (252k stars) has community skill libraries; skill files reportedly transfer between tools; Braintrust/Langfuse hold datasets. A library is defensible only with private, verified, domain-specific outcomes, none of which exist yet. R5 adds that evaluating whether an outer loop improves research outcomes is an open question, but that is a research task, not a product.",
+  "author": "agent:fable-agentic-stack-20261009",
+  "confidence": "medium",
+  "criterion_rationales": {
+    "competition": "Prime Intellect environments hub, Hermes skill libraries, Braintrust/Langfuse datasets, public benchmarks (SWE-bench, MLE-bench)",
+    "moat": "Only private verified outcomes would be defensible; packs and skills are copied freely",
+    "go_to_market": "No buyer for packs alone identified",
+    "network": "Depends on other tools' skill/eval formats"
+  },
+  "evidence_ids": {
+    "competition": [
+      "c0401a9f-2f41-4927-89e7-2e60d2d7f361"
+    ],
+    "moat": [
+      "c0401a9f-2f41-4927-89e7-2e60d2d7f361"
+    ]
+  },
+  "recommendation": "Drop as a standalone asset; keep verified evaluations as a property of the wedge's ledger (every run carries a verify result)."
+}

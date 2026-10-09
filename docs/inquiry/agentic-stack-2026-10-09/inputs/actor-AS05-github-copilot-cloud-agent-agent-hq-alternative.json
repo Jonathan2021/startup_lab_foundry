@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "GitHub Copilot cloud agent + Agent HQ",
+    "website": "https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents",
+    "description": "Assign tasks to Copilot, Claude or Codex agents on GitHub; third-party agents in public preview, enabled by admin policy."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Multi-agent hub for software engineering; GitHub-centric. Traction: not found (https://docs.github.com/en/copilot/concepts/agents/about-third-party-coding-agents). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

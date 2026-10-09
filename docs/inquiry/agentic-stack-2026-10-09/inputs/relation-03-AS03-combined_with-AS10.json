@@ -1,0 +1,6 @@
+{
+  "source_idea_id": "AS03",
+  "target_idea_id": "AS10",
+  "kind": "combined_with",
+  "rationale": "AS03 survives only as the provider-switch calibration feature C05 (R2, R3)."
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "HoneyHive",
+    "website": "https://www.vcaonline.com/news/2025040812/honeyhive-a-leadingai-agent-observability-and-evaluation-platform-announces-launch-and-7-4m-in-total-funding-led-by-insight-partners/",
+    "description": "Agent observability and regression datasets"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "eval datasets Traction: $7.4M total (https://www.vcaonline.com/news/2025040812/honeyhive-a-leadingai-agent-observability-and-evaluation-platform-announces-launch-and-7-4m-in-total-funding-led-by-insight-partners/). Licence: commercial.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

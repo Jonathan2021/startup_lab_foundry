@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Sierra",
+    "website": "https://sierra.ai/",
+    "description": "Enterprise CX agents; Explorer produces weekly improvement recommendations that Ghostwriter can implement with before/after comparison (vendor claim)."
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Productized corrections/insights-to-improvement loop, CX only. Traction: $15.8B valuation May 2026; ~$200M ARR (estimate) (https://sacra.com/c/sierra/). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

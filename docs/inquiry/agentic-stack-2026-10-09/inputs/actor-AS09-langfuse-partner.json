@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Langfuse",
+    "website": "https://github.com/langfuse/langfuse",
+    "description": "Open-source tracing, datasets, experiments; ClickHouse-owned"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "trace/dataset source Traction: 35.6k stars (https://github.com/langfuse/langfuse). Licence: MIT (except ee).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "MLE-STAR (Google Cloud research)",
+    "website": "https://research.google/blog/mle-star-a-state-of-the-art-machine-learning-engineering-agents/",
+    "description": "Retrieval of models from web plus targeted ablation-guided refinement"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "No memory or outer loop Traction: 63% medals on MLE-bench Lite (paper claim) (https://arxiv.org/pdf/2506.15692). Licence: Research code (not inspected).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

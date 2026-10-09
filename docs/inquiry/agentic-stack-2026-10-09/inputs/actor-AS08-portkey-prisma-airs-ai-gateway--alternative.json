@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Portkey (Prisma AIRS AI Gateway)",
+    "website": "https://github.com/Portkey-AI/gateway",
+    "description": "Gateway with conditional routing, fallbacks, load balancing; acquired by Palo Alto Networks"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "API-key fallbacks only Traction: Acquired for $117M (closed 2026-05-29) (https://www.sec.gov/Archives/edgar/data/0001327567/000132756726000023/panw-20260731.htm). Licence: MIT gateway.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

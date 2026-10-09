@@ -1,0 +1,10 @@
+{
+  "workspace_id": "dee75b04-1ff8-407e-9b6a-ff688f620142",
+  "expected_revision": 0,
+  "investigation_stage": "triage",
+  "product_maturity": "concept",
+  "disposition": "dropped",
+  "next_action": "Merge into the fleet-controller wedge (with AS08, AS03); keep as feature lineage, not a standalone product.",
+  "reason": "Routing is commoditized and consolidating (R2: LiteLLM/Mastra classifier routing free; Stripe–OpenRouter, PANW–Portkey; TensorZero archived). Not Diamond Code (hosted, gated, Claude Code harness) and LiteLLM Auto Router v2 claim per-step model/effort, but neither documents verifiable task outcomes keyed by task category as reward nor quota-as-constraint across vendor CLIs (R2 addendum). Paperclip has no documented per-run model hook; Model Capacity plugin is deterministic prior art (R1). Standalone monetisation weak; value is as the policy+evidence layer of a fleet controller. R3 adds: Microsoft SkillOpt-Sleep already learns from Claude Code/Codex transcripts nightly to improve skill files (not model/effort choice or quota); it is a partner/benchmark for the ledger, not a substitute.",
+  "author": "agent:fable-agentic-stack-20261009"
+}

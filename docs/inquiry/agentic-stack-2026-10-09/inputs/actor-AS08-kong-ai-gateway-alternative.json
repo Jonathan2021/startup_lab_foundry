@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Kong AI Gateway",
+    "website": "https://developer.konghq.com/plugins/ai-proxy-advanced",
+    "description": "Enterprise AI Proxy Advanced: multi-model load balancing, semantic routing"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Enterprise API gateway Traction: n/a (https://developer.konghq.com/plugins/ai-proxy-advanced). Licence: Enterprise tier.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "a79b225b-6230-548c-8cf7-5577cf9ba2da"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

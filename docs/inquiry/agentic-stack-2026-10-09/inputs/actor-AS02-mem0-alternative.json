@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Mem0",
+    "website": "https://techcrunch.com/2025/10/28/mem0-raises-24m-from-yc-peak-xv-and-basis-set-to-build-the-memory-layer-for-ai-apps",
+    "description": "Memory layer for agents"
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "fact memory, not specialization Traction: $24M; 41k stars (Oct 2025) (https://techcrunch.com/2025/10/28/mem0-raises-24m-from-yc-peak-xv-and-basis-set-to-build-the-memory-layer-for-ai-apps). Licence: open-source core + cloud (licence not verified).",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

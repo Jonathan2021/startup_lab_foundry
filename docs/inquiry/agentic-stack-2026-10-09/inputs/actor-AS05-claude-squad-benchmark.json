@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Claude Squad",
+    "website": "https://github.com/smtg-ai/claude-squad",
+    "description": "TUI managing multiple terminal agents in tmux and git worktrees"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "Session manager only Traction: 8.6k GitHub stars (https://github.com/smtg-ai/claude-squad). Licence: AGPL-3.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

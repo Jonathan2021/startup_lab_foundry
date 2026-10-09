@@ -1,0 +1,10 @@
+{
+  "workspace_id": "b60f57b1-3617-4d69-bfb9-4c2106c7f54d",
+  "expected_revision": 0,
+  "investigation_stage": "triage",
+  "product_maturity": "concept",
+  "disposition": "dropped",
+  "next_action": "Fold into the wedge as the provider-switch calibration feature (C05).",
+  "reason": "Partial coverage: Not Diamond Prompt Optimization rewrites prompts per model; vLLM Semantic Router checks mid-session switch safety; nothing found calibrates a whole agent harness (instruction files, skills, effort defaults) across a CLI switch (R2). A feature, not a product. R3 adds: DSPy/GEPA/SkillOpt cover re-optimisation after a provider switch; what remains is a per-user task profile and a recalibration trigger.",
+  "author": "agent:fable-agentic-stack-20261009"
+}

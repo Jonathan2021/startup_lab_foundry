@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Writer",
+    "website": "https://writer.com/",
+    "description": "Enterprise agentic AI platform with own models."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Enterprise only. Traction: $1.9B valuation, $200M Series C, Nov 2024 (https://www.businesswire.com/news/home/20241112482564/en/Writer-Raises-200M-Series-C-at-1.9B-Valuation-to-Fuel-Leadership-in-Agentic-Enterprise-AI). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

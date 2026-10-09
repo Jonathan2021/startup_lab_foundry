@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Microsoft Agent Lightning",
+    "website": "https://github.com/microsoft/agent-lightning",
+    "description": "Gateway + rollout controller + verl trainer for harnessed agent RL"
+  },
+  "relation": "partner",
+  "is_primary": false,
+  "note": "RL rung backend; no when/what-to-train logic Traction: 18.6k stars; self-reported SWE-bench Verified 41.8->56.4% (https://github.com/microsoft/agent-lightning). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Microsoft RD-Agent",
+    "website": "https://github.com/microsoft/RD-Agent",
+    "description": "Data-driven R&D agent for Kaggle/data science, quant factor/model research, fine-tuning"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Covers ML and finance loops; no documented negative-result store or trial accounting Traction: 14.9k stars; MLE-bench 35.1% (gpt-5) (https://github.com/openai/mle-bench). Licence: MIT.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

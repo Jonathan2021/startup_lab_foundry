@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Make AI Agents",
+    "website": "https://www.make.com/en/ai-agents",
+    "description": "Agents inside Make scenarios, 3,000+ integrations."
+  },
+  "relation": "alternative",
+  "is_primary": false,
+  "note": "Generic SME automation. Traction: not found (https://www.make.com/en/ai-agents). Licence: Proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "52618326-5451-5ced-bd09-2789627e47e7"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

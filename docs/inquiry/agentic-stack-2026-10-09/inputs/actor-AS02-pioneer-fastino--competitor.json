@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Pioneer (Fastino)",
+    "website": "https://fastino.ai/blog/introducing-pioneer",
+    "description": "Agentic fine-tuning and adaptive retraining of open small models from production verdicts"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "task-description driven; no discovery or fallback Traction: Fastino $17.5M seed (May 2025) (https://finder.techleap.nl/news/feed/fastino-raises-17-5m-for-ai-models). Licence: proprietary.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

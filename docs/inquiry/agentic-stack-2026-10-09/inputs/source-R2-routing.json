@@ -1,0 +1,13 @@
+{
+  "kind": "report",
+  "title": "Competition research R2-routing (2026-10-09)",
+  "locator": "/home/jonathan/startup_lab/foundry/docs/inquiry/agentic-stack-2026-10-09/research/R2-routing.md",
+  "publisher": "Opus research agent, session fable-agentic-stack-20261009",
+  "notes": "Dated, URL-attributed competition pass; vendor claims labelled; nothing installed or run.",
+  "idea_ids": [
+    "AS01",
+    "AS03",
+    "AS08"
+  ],
+  "role": "market_reference"
+}

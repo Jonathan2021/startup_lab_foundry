@@ -1,0 +1,11 @@
+{
+  "actor_id": "4bdd3932-484e-518c-9a90-39f4cc6aa2e6",
+  "relation": "competitor",
+  "is_primary": true,
+  "note": "[inherited from AS03] prompt re-optimization on provider switch Traction: product docs (https://docs.notdiamond.ai/). Licence: commercial.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "213065da-d7a4-5ccf-8d61-95bccaa8e2be"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

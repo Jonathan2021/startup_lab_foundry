@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "evo (evo-hq)",
+    "website": "https://github.com/evo-hq/evo",
+    "description": "Codebase autoresearch plugin: metric discovery, tree search with parallel subagents, gates, shared failure traces"
+  },
+  "relation": "competitor",
+  "is_primary": false,
+  "note": "Gates incl. held-out score floor Traction: 1.5k stars; commercial platform in beta (https://github.com/evo-hq/evo). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "8bd6c28b-502f-59d3-8f92-f218f48b960f"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}

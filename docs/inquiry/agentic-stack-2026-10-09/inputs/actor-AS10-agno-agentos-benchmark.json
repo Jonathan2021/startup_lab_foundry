@@ -1,0 +1,15 @@
+{
+  "actor": {
+    "name": "Agno AgentOS",
+    "website": "https://github.com/agno-agi/agno",
+    "description": "Python agent framework and self-hosted runtime with cron scheduling, approvals, tracing"
+  },
+  "relation": "benchmark",
+  "is_primary": false,
+  "note": "[inherited from AS05] Runtime/control-plane substrate Traction: 42.6k GitHub stars (https://github.com/agno-agi/agno). Licence: Apache-2.0.",
+  "checked_on": "2026-10-09",
+  "source_ids": [
+    "0fa7d053-ba16-5a6b-86a1-cc7720190069"
+  ],
+  "recorded_by": "fable-agentic-stack-20261009"
+}
