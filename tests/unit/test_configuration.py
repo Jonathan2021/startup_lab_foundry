@@ -4,8 +4,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from startup_foundry.cli import build_parser, get_settings
 from startup_foundry.config import DEFAULT_DATABASE_URL, load_settings
+from startup_foundry.errors import ConfigurationError
 
 
 def test_configuration_precedence() -> None:
@@ -53,3 +56,21 @@ def test_shared_settings_do_not_implicitly_read_a_dotenv_file(
     )
 
     assert load_settings().database_url == DEFAULT_DATABASE_URL
+
+
+def test_boolean_settings_accept_documented_spellings_only() -> None:
+    for raw in ("0", "false", "No", " OFF "):
+        assert load_settings({"FOUNDRY_DEBUG": raw}).debug is False
+    for raw in ("1", "true", "Yes", " on "):
+        assert load_settings({"FOUNDRY_SQL_ECHO": raw}).sql_echo is True
+    with pytest.raises(ConfigurationError, match="FOUNDRY_DEBUG must be one of"):
+        load_settings({"FOUNDRY_DEBUG": "enabled"})
+
+
+def test_blank_database_url_is_rejected_instead_of_defaulted() -> None:
+    with pytest.raises(ConfigurationError, match="cannot be blank"):
+        load_settings({"FOUNDRY_DATABASE_URL": "   "})
+    assert (
+        load_settings({"FOUNDRY_DATABASE_URL": " sqlite:///x.db "}).database_url
+        == "sqlite:///x.db"
+    )
