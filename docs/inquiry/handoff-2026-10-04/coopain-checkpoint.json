@@ -1,0 +1,132 @@
+{
+  "schema_version": "existing-project/v1",
+  "venture_id": "v-coopain",
+  "source_idea_id": "P046",
+  "name": "Coopain",
+  "description": "Existing candidate/referrer network prototype: preserve profiles, matching, scoped contact access and chat; investigate employer-funded niche introductions before further commercial build.",
+  "repositories": [
+    {
+      "local_reference": "/home/jonathan/coopain",
+      "head": "aa382779b79951f843f37b8080f6f0972efe7e3c",
+      "dirty_state": "?? backend/.coverage\n?? backend/generated/coverage.json\n?? backend/generated/refactor_scan_20260311.md\n?? backend/openapi_new.yaml\n?? backend/preprompt\n?? backend/test_results\n?? backend/tmp_prompt\n?? next_propmpt\n",
+      "artifact_digests": {
+        "README": "f3fa44f457ef8b0b51309617db97791a3bc0f63a62dcb6a39383a5b0d938c6fc",
+        "SYSTEM_GUIDE.md": "7f90ec64fb213d5d3da67b715e74623c4b497ca8815d3de1d50501ecd55c42d2",
+        "backend/PROGRESS.md": "9318b2ef5427c5e191c1c27cd90cb1babd19639dfa353a2d6b9b58d66f917474",
+        "backend/BEFORE_PROD.md": "f999f7607c1b6ef4bcfbdc947b048d17509b586ea2ea22d39c28509fa846cffc",
+        "backend/app/main.py": "4d03c84215719bfc1ac5431527aeb3e5c60e4c8240f7e43861ffadd44047ae7b",
+        "backend/tests/conftest.py": "e498ba1bce62c9ad768fba09d24924950505c6f0238529304c4ab147df2e9543",
+        "backend/tests/test_match_pii_grants_flow.py": "102a38b5850a080f91143cc6426db572cc868949ac89183c95a2c3efd41c454e",
+        "backend/tests/test_matches_snapshot.py": "e053b3d315cfec89dc9821df7d67cf111cfa5b90c03e9fe03ddfc13b2e88aff1",
+        "backend/tests/test_safety_api.py": "1d801e656569d896e31a99c1e2b875ab1c86d6b71b4baa8c80f33aa5e2fd7df3",
+        "frontend/apps/web/src/app/lib/utils.ts": "1108c4dc671b673de27b999ab326c9e689dedabe5d567dd37f238b20c9f7d92d",
+        "frontend/apps/web/src/app/dashboard/page.tsx": "5d2ef6c625f8b6e97a0c82e7e01a97a1bf1704ec6aaaf6d18e9184d200a04101"
+      },
+      "observed_at": "2026-10-04T14:00:00+02:00"
+    }
+  ],
+  "participants_as_reported": [
+    "User and a friend; rights and responsibilities not yet established in retained records"
+  ],
+  "product_maturity": "prototype",
+  "reason_paused": "User-reported revenue/legal concerns. Employer payer/adoption and code ownership remain unverified.",
+  "capabilities": [
+    {
+      "feature": "Candidate/referrer profiles, jobs and preferences",
+      "documented": "backend/PROGRESS.md",
+      "code_present": "backend/tests/test_match_pii_grants_flow.py",
+      "last_test_result": "Blocked: Python 3.13.7 separate environment has no pytest. No Foundry environment contamination.",
+      "observed_workflow": "Not run; no browser available. Tests use memory SQLite and fake email when executable.",
+      "limitations": "Candidate/referrer + preference/job fixtures present; not executed",
+      "evidence_locators": [
+        "/home/jonathan/coopain/backend/PROGRESS.md",
+        "/home/jonathan/coopain/backend/tests/test_match_pii_grants_flow.py"
+      ],
+      "verification_level": "code"
+    },
+    {
+      "feature": "Mutual match and scoped identity/contact grants",
+      "documented": "backend/PROGRESS.md",
+      "code_present": "backend/tests/test_match_pii_grants_flow.py",
+      "last_test_result": "Blocked: Python 3.13.7 separate environment has no pytest. No Foundry environment contamination.",
+      "observed_workflow": "Not run; no browser available. Tests use memory SQLite and fake email when executable.",
+      "limitations": "Grant/revoke expectations present; not executed",
+      "evidence_locators": [
+        "/home/jonathan/coopain/backend/PROGRESS.md",
+        "/home/jonathan/coopain/backend/tests/test_match_pii_grants_flow.py"
+      ],
+      "verification_level": "code"
+    },
+    {
+      "feature": "Chat and PII restrictions",
+      "documented": "backend/PROGRESS.md",
+      "code_present": "backend/tests/test_match_pii_grants_flow.py",
+      "last_test_result": "Blocked: Python 3.13.7 separate environment has no pytest. No Foundry environment contamination.",
+      "observed_workflow": "Not run; no browser available. Tests use memory SQLite and fake email when executable.",
+      "limitations": "Message scope tests present; not executed",
+      "evidence_locators": [
+        "/home/jonathan/coopain/backend/PROGRESS.md",
+        "/home/jonathan/coopain/backend/tests/test_match_pii_grants_flow.py"
+      ],
+      "verification_level": "code"
+    },
+    {
+      "feature": "Block/report and access controls",
+      "documented": "backend/PROGRESS.md",
+      "code_present": "backend/tests/test_safety_api.py",
+      "last_test_result": "Blocked: Python 3.13.7 separate environment has no pytest. No Foundry environment contamination.",
+      "observed_workflow": "Not run; no browser available. Tests use memory SQLite and fake email when executable.",
+      "limitations": "Safety test path present; README older safety caveat conflicts with newer code presence",
+      "evidence_locators": [
+        "/home/jonathan/coopain/backend/PROGRESS.md",
+        "/home/jonathan/coopain/backend/tests/test_safety_api.py"
+      ],
+      "verification_level": "code"
+    },
+    {
+      "feature": "Matching snapshots",
+      "documented": "backend/PROGRESS.md",
+      "code_present": "backend/tests/test_matches_snapshot.py",
+      "last_test_result": "Blocked: Python 3.13.7 separate environment has no pytest. No Foundry environment contamination.",
+      "observed_workflow": "Not run; no browser available. Tests use memory SQLite and fake email when executable.",
+      "limitations": "Snapshot assertions present; not executed",
+      "evidence_locators": [
+        "/home/jonathan/coopain/backend/PROGRESS.md",
+        "/home/jonathan/coopain/backend/tests/test_matches_snapshot.py"
+      ],
+      "verification_level": "code"
+    },
+    {
+      "feature": "Web compatibility presentation",
+      "documented": "frontend/README.md",
+      "code_present": "frontend/apps/web/src/app/dashboard/page.tsx",
+      "last_test_result": "Blocked: Python 3.13.7 separate environment has no pytest. No Foundry environment contamination.",
+      "observed_workflow": "Not run; no browser available. Tests use memory SQLite and fake email when executable.",
+      "limitations": "scoreFromStableId hashes IDs into 60–100; placeholder, not suitability",
+      "evidence_locators": [
+        "/home/jonathan/coopain/frontend/README.md",
+        "/home/jonathan/coopain/frontend/apps/web/src/app/dashboard/page.tsx"
+      ],
+      "verification_level": "code"
+    }
+  ],
+  "prior_decisions_constraints": [
+    "Do not discard existing work or rewrite Coopain.",
+    "Candidate charges/bonus shares are not assumed lawful loopholes. Analyze exact flow.",
+    "No real SMTP/S3/identity provider tests or user data accessed."
+  ],
+  "available_users_data": "User/friend access reported; no independent user sessions, payer commitment or permitted dataset evidenced.",
+  "gaps": [
+    "product: precise niche job still needs buyer review",
+    "payer: employer acceptance unknown",
+    "legal/contract: placement remuneration and employer referral eligibility",
+    "ownership/license: unknown",
+    "implementation: representative runtime blocked by missing pytest",
+    "UX: ID-derived compatibility requires labeling/hiding before users",
+    "delivery/operations: no current E2E or deployed behavior verified"
+  ],
+  "next_bounded_test": "15-minute employer/referrer walkthrough of one candidate-free employer-funded introduction; reject if employer policy excludes external/referral-network introductions or incumbent process suffices.",
+  "ownership_license_access": "Unknown; ask friend/user before reuse, publication or real customer data.",
+  "author": "agent:handoff-20261004",
+  "expected_review_revision": 0
+}

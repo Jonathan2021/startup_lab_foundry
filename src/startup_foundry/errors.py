@@ -26,3 +26,7 @@ class ConflictError(StartupFoundryError):
 
 class ReferenceError(StartupFoundryError):
     """Raised when a referenced record is missing or belongs elsewhere."""
+
+
+class SliceFiveIncompleteError(StartupFoundryError):
+    """Raised by the prepared Agent EvalOps integration boundary."""

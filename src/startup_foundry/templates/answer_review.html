@@ -1,0 +1,8 @@
+<details {{ 'open' if not r.historical }}><summary>{{ 'Historical review · older reply' if r.historical else 'Current answer review' }} · {{ r.outcome|pretty }} · {{ r.actor }} · {{ r.reviewed_at }}</summary>
+<p>{{ r.interpretation }}</p><p>{{ r.rationale }}</p><p>{{ r.score_explanation }}</p>
+<p>Remaining unknowns: {{ r.remaining_unknowns|join('; ') or 'None recorded' }}</p>
+{% for e in r.effects %}<article><p><a href="{{ e.state.url }}">Retained state review · {{ e.state.next_action }}</a></p>
+{% if e.work %}<p>Resulting work: <a href="{{ e.work.url }}">{{ e.work.title }}</a> · {{ e.work.status|pretty }} · Owner: {{ e.work.owner or 'Unassigned' }}</p>{% endif %}
+{% if e.current_work and (not e.work or e.current_work.id != e.work.id) %}<p>Current next work: <a href="{{ e.current_work.url }}">{{ e.current_work.title }}</a> · {{ e.current_work.status|pretty }} · Owner: {{ e.current_work.owner or 'Unassigned' }}</p>{% endif %}
+</article>{% else %}<p>No target work or state effects recorded.</p>{% endfor %}
+{% if r.historical %}<p>This review applies to response {{ r.response_id }}. It does not review the current reply.</p>{% endif %}</details>

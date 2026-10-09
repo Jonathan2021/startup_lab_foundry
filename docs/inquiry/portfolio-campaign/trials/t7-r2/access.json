@@ -1,0 +1,832 @@
+[
+  {
+    "key": "liberty",
+    "requested_url": "https://liberty-rider.com/fr/roadbooks",
+    "url": "https://liberty-rider.com/fr/roadbooks",
+    "status": 200,
+    "body_excerpt": "GPS moto\nRoadbooks\nSOS accident\nPremium offert\nInscription / Connexion\nRechercher\nCr\u00e9er un itin\u00e9raire\nBalades pr\u00e9par\u00e9es par des experts\n\nMes roadbooks\n\nSur les traces de...\nBen Blake\nClara\nGreg\nValootre\nBalades moto Toulouse\nToutes les balades moto Toulouse\nGuide \"Road Trips \u00e0 moto\"\nL'Ari\u00e8ge pr\u00e9historique\nDistance\n222 km\nDur\u00e9e\n4h09\nNiveau\nInterm\u00e9diaire\nAlexis\nRoad en Pays Quercynois\nDistance\n182 km\nDur\u00e9e\n3h18\nNiveau\nInterm\u00e9diaire\nChristophe\nBoucle Mazamet Laprade Les Martys\nDistance\n54 km\nDur\u00e9e\n1h01\nNiveau\nInterm\u00e9diaire\nFrederic\nPetite balade au col de pailh\u00e8res par Quillan\nDistance\n197 km\nDur\u00e9e\n3h14\nNiveau\nInterm\u00e9diaire\nBalades moto Paris\nToutes les balades moto Paris\nGuide \"Road Trips \u00e0 moto\"\nLa for\u00eat de Fontainebleau\nDistance\n159 km\nDur\u00e9e\n3h11\nNiveau\nD\u00e9butant\nGuide \"Road Trips \u00e0 moto\"\nAu fil de l\u2019Eure\nDistance\n177 km\nDur\u00e9e\n3h34\nNiveau\nD\u00e9butant\nGuide \"Road Trips \u00e0 moto\"\nMonts et vaux en Chevreuse\nDistance\n107 km\nDur\u00e9e\n2h08\nNiveau\nD\u00e9butant\njulien\nVexin-Yvelines et de la verdure\nDistance\n136 km\nDur\u00e9e\n2h24\nNiveau\nD\u00e9butant\nBalades moto Grenoble\nToutes les balades moto Grenoble\nGuide \"Road Trips \u00e0 moto\"\nHauts plateaux du Vercors\nDistance\n300 km\nDur\u00e9e\n5h44\nNiveau\nD\u00e9butant\nDafy Trip\nLes vertiges du Vercors\nDistance\n198 km\nDur\u00e9e\n4h13\nNiveau\nD\u00e9butant\nDafy Trip\nCols du Bugey au Pays de Gex\nDistance\n233 km\nDur\u00e9e\n4h14\nNiveau\nD\u00e9butant\nRoadtrip Magazine\nRT n\u00b019 Vercors - Le massif aux merveilles.\nDistance\n190 km\nDur\u00e9e\n3h36\nNiveau\nD\u00e9butant\n\nBienvenue sur la plateforme de balades \u00e0 moto de Liberty\u00a0Rider\u202f; l\u2019application deux-roues qui d\u00e9tecte les accidents et alerte les secours.\nRetrouve aussi tous ces roadbooks moto dans l\u2019application Liberty\u00a0Rider sur iOS et Android, avec toutes les routes par d\u00e9partement, r\u00e9gion ou ville autour de toi.\nEt le meilleur de cet outil pour road book moto\u202f? Tous ces road trips moto pourront \u00eatre lanc\u00e9s directement dans le GPS sp\u00e9cial moto de l\u2019application. Les \u00e9tapes des balades sont pr\u00e9-remplies d\u2019un clic\u202f; tout le parcours moto est trac\u00e9. Le tout, prot\u00e9g\u00e9 puisque Liberty s\u2019occupe d\u2019alerter les secours en cas de chute.\n\nLes balades par les experts\nBalades de Dafy\nBalades de Le guide \"Road Trips \u00e0 moto\"\nBalades de Roadtrip Magazine\nBalades de P&V\nBalades de Vivium\nBalades de Moto Excape\nBalades de High\u00a0Side\nLes balades par lieu\nBalades moto France\nBalades moto Auvergne-Rh\u00f4ne-Alpes\nBalades moto Occitanie\nBalades moto Provence-Alpes-C\u00f4te d'Azur\nBalades moto Grenoble\nBalades moto Nouvelle-Aquitaine\nBalades moto Grand Est\nBalades moto Paris\nBalades moto Montpellier\nBalades moto Bourgogne-Franche-Comt\u00e9\n\u00a0\nBalades moto Italie\nBalades moto Hauts-de-France\nBalades moto Toulouse\nBalades moto \u00cele-de-France\nBalades moto Normandie\nBalades moto Pays de la Loire\nBalades moto Nantes\nBalades moto Belgique\nBalades moto Bretagne\nBalades moto Wallonie\nAide\nContact\nBlog\nCGU\nMentions\u00a0l\u00e9gales\nConfidentialit\u00e9\nPresse\nJobs\nEnglish\nFran\u00e7ais\nNederlands\nItaliano\nLiberty Rider \u2022 Tous droits r\u00e9serv\u00e9s \u2022 2026",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "",
+        "aria": "Fermer"
+      },
+      {
+        "tag": "A",
+        "text": "Installer",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/app"
+      },
+      {
+        "tag": "A",
+        "text": "GPS moto",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/fonctionnalites/application-gps-moto"
+      },
+      {
+        "tag": "A",
+        "text": "Roadbooks",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks"
+      },
+      {
+        "tag": "A",
+        "text": "SOS accident",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/fonctionnalites/sos-accident"
+      },
+      {
+        "tag": "A",
+        "text": "Premium offert",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/partenaires"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Inscription / Connexion",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "title": "",
+        "aria": "Menu"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "On passe par o\u00f9 aujourd\u2019hui\u202f?",
+        "aria": "On passe par o\u00f9 aujourd\u2019hui\u202f?"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Rechercher",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Cr\u00e9er un itin\u00e9raire",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/edit"
+      },
+      {
+        "tag": "A",
+        "text": "Cr\u00e9er",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/edit"
+      },
+      {
+        "tag": "A",
+        "text": "Mes roadbooks",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr#"
+      },
+      {
+        "tag": "A",
+        "text": "Ben Blake",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/a/45fd47f0-8380-48e1-9fd5-8f5f5b526b07"
+      },
+      {
+        "tag": "A",
+        "text": "Clara",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/a/1ca76d1c-ae42-4b88-b6a0-bce8b6ab7c2c"
+      },
+      {
+        "tag": "A",
+        "text": "Greg",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/a/3ca16dc4-8886-4a97-9f35-890de2f82656"
+      },
+      {
+        "tag": "A",
+        "text": "Valootre",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/a/06d444e5-4c3d-42ed-9db4-142872845cb1"
+      },
+      {
+        "tag": "A",
+        "text": "Toutes les balades moto Toulouse",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/haute-garonne/toulouse"
+      },
+      {
+        "tag": "A",
+        "text": "Guide \"Road Trips \u00e0 moto\"\nL'Ari\u00e8ge pr\u00e9historique\nDistance\n222 km\nDur\u00e9e\n4h09\nNiveau\nInterm\u00e9diaire",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/haute-garonne/toulouse/1205/lariege-prehistorique"
+      },
+      {
+        "tag": "A",
+        "text": "Alexis\nRoad en Pays Quercynois\nDistance\n182 km\nDur\u00e9e\n3h18\nNiveau\nInterm\u00e9diaire",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/haute-garonne/toulouse/286/road-en-pays-quercynois"
+      },
+      {
+        "tag": "A",
+        "text": "Christophe\nBoucle Mazamet Laprade Les Martys\nDistance\n54 km\nDur\u00e9e\n1h01\nNiveau\nInterm\u00e9diaire",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/haute-garonne/toulouse/1527761/boucle-mazamet-laprade-les-martys"
+      },
+      {
+        "tag": "A",
+        "text": "Frederic\nPetite balade au col de pailh\u00e8res par Quillan\nDistance\n197 km\nDur\u00e9e\n3h14\nNiveau\nInterm\u00e9diaire",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/haute-garonne/toulouse/1329478/petite-balade-au-col-de-pailheres-par-quillan"
+      },
+      {
+        "tag": "A",
+        "text": "Toutes les balades moto Toulouse",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/haute-garonne/toulouse"
+      },
+      {
+        "tag": "A",
+        "text": "Toutes les balades moto Paris",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france/paris"
+      },
+      {
+        "tag": "A",
+        "text": "Guide \"Road Trips \u00e0 moto\"\nLa for\u00eat de Fontainebleau\nDistance\n159 km\nDur\u00e9e\n3h11\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france/paris/1212/la-foret-de-fontainebleau"
+      },
+      {
+        "tag": "A",
+        "text": "Guide \"Road Trips \u00e0 moto\"\nAu fil de l\u2019Eure\nDistance\n177 km\nDur\u00e9e\n3h34\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france/paris/1223/au-fil-de-leure"
+      },
+      {
+        "tag": "A",
+        "text": "Guide \"Road Trips \u00e0 moto\"\nMonts et vaux en Chevreuse\nDistance\n107 km\nDur\u00e9e\n2h08\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france/paris/1219/monts-et-vaux-en-chevreuse"
+      },
+      {
+        "tag": "A",
+        "text": "julien\nVexin-Yvelines et de la verdure\nDistance\n136 km\nDur\u00e9e\n2h24\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france/paris/1536509/vexin-yvelines-et-de-la-verdure"
+      },
+      {
+        "tag": "A",
+        "text": "Toutes les balades moto Paris",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france/paris"
+      },
+      {
+        "tag": "A",
+        "text": "Toutes les balades moto Grenoble",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes/isere/grenoble"
+      },
+      {
+        "tag": "A",
+        "text": "Guide \"Road Trips \u00e0 moto\"\nHauts plateaux du Vercors\nDistance\n300 km\nDur\u00e9e\n5h44\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes/isere/grenoble/1181/hauts-plateaux-du-vercors"
+      },
+      {
+        "tag": "A",
+        "text": "Dafy Trip\nLes vertiges du Vercors\nDistance\n198 km\nDur\u00e9e\n4h13\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes/isere/grenoble/1243/les-vertiges-du-vercors"
+      },
+      {
+        "tag": "A",
+        "text": "Dafy Trip\nCols du Bugey au Pays de Gex\nDistance\n233 km\nDur\u00e9e\n4h14\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes/isere/grenoble/1416056/cols-du-bugey-au-pays-de-gex"
+      },
+      {
+        "tag": "A",
+        "text": "Roadtrip Magazine\nRT n\u00b019 Vercors - Le massif aux merveilles.\nDistance\n190 km\nDur\u00e9e\n3h36\nNiveau\nD\u00e9butant",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes/isere/grenoble/3868/rt-n19-vercors-le-massif-aux-merveilles"
+      },
+      {
+        "tag": "A",
+        "text": "Toutes les balades moto Grenoble",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes/isere/grenoble"
+      },
+      {
+        "tag": "A",
+        "text": "Balades de Dafy",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/p/dafy"
+      },
+      {
+        "tag": "A",
+        "text": "Balades de Le guide \"Road Trips \u00e0 moto\"",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/p/guide-road-trips-a-moto"
+      },
+      {
+        "tag": "A",
+        "text": "Balades de Roadtrip Magazine",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/p/roadtrip-magazine"
+      },
+      {
+        "tag": "A",
+        "text": "Balades de P&V",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/p/pv-group"
+      },
+      {
+        "tag": "A",
+        "text": "Balades de Vivium",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/p/vivium"
+      },
+      {
+        "tag": "A",
+        "text": "Balades de Moto Excape",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/p/moto-excape"
+      },
+      {
+        "tag": "A",
+        "text": "Balades de High\u00a0Side",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/p/highside"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto France",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/france"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Auvergne-Rh\u00f4ne-Alpes",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Occitanie",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Provence-Alpes-C\u00f4te d'Azur",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/provence-alpes-cote-d-azur"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Grenoble",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/auvergne-rhone-alpes/isere/grenoble"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Nouvelle-Aquitaine",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/nouvelle-aquitaine"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Grand Est",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/grand-est"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Paris",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france/paris"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Montpellier",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/herault/montpellier"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Bourgogne-Franche-Comt\u00e9",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/bourgogne-franche-comte"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Italie",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/italia"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Hauts-de-France",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/hauts-de-france"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Toulouse",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/occitanie/haute-garonne/toulouse"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto \u00cele-de-France",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/ile-de-france"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Normandie",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/normandie"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Pays de la Loire",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/pays-de-la-loire"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Nantes",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/pays-de-la-loire/loire-atlantique/nantes"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Belgique",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/belgium"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Bretagne",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/bretagne"
+      },
+      {
+        "tag": "A",
+        "text": "Balades moto Wallonie",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/roadbooks/belgium/wallonie"
+      },
+      {
+        "tag": "A",
+        "text": "Aide",
+        "title": "",
+        "aria": null,
+        "href": "https://libertyriderhelp.zendesk.com/hc/fr"
+      },
+      {
+        "tag": "A",
+        "text": "Contact",
+        "title": "",
+        "aria": null,
+        "href": "mailto:contact@liberty-rider.com"
+      },
+      {
+        "tag": "A",
+        "text": "Blog",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/blog"
+      },
+      {
+        "tag": "A",
+        "text": "CGU",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/cgu"
+      },
+      {
+        "tag": "A",
+        "text": "Mentions\u00a0l\u00e9gales",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/mentions-legales"
+      },
+      {
+        "tag": "A",
+        "text": "Confidentialit\u00e9",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/politique-de-confidentialite"
+      },
+      {
+        "tag": "A",
+        "text": "Presse",
+        "title": "",
+        "aria": null,
+        "href": "https://liberty-rider.com/fr/press"
+      },
+      {
+        "tag": "A",
+        "text": "Jobs",
+        "title": "",
+        "aria": null,
+        "href": "mailto:jobs@liberty-rider.com"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "title": "",
+        "aria": "Facebook",
+        "href": "https://www.facebook.com/LibertyRiderApp/"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "title": "",
+        "aria": "Instagram",
+        "href": "https://www.instagram.com/LibertyRiderApp/"
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "title": "",
+        "aria": "Tiktok",
+        "href": "https://www.tiktok.com/@libertyriderapp"
+      }
+    ]
+  },
+  {
+    "key": "68",
+    "requested_url": "https://app68.studio/fr",
+    "url": "https://app68.studio/fr",
+    "status": 200,
+    "body_excerpt": "Se connecter\n\n\ud83c\udf6a Chez 68\u00b0, les cookies sont indispensables : ils permettent \u00e0 l\u2019application de fonctionner correctement (connexion, itin\u00e9raires, pr\u00e9f\u00e9rences\u2026) et de vous offrir une exp\u00e9rience fluide. C\u2019est pourquoi nous ne proposons pas d\u2019option \u201csans cookies\u201d. Si vous ne voulez vraiment pas de cookies, mieux vaut ne pas utiliser 68\u00b0 sur ordinateur \ud83d\ude09\ud83c\udfcd\ufe0f\n\n\nPolitique de confidentialit\u00e9Accepter",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "Toggle Menu",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Se connecter",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Politique de confidentialit\u00e9",
+        "title": "",
+        "aria": null,
+        "href": "https://app68.studio/fr/confidential-politic"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Politique de confidentialit\u00e9",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Accepter",
+        "title": "",
+        "aria": null
+      }
+    ]
+  },
+  {
+    "key": "kurviger",
+    "requested_url": "https://kurviger.com/en/plan",
+    "url": "https://kurviger.com/en/plan",
+    "status": 200,
+    "body_excerpt": "\ud83c\udde9\ud83c\uddea Verschwindet der Ladebildschirm nicht?\n\nDas passiert normalerweise beim Einsatz veralteter Software oder agressiver Plugins (z.B. Adblocker).\n\nInformationen zur Probleml\u00f6sung\nForum\n\ud83c\uddec\ud83c\udde7 Stuck while loading?\n\nUsually this happens when you use outdated software or aggressive plugins (e.g., Adblock).\n\nGet Help\nForum",
+    "controls": [
+      {
+        "tag": "A",
+        "text": "Informationen zur Probleml\u00f6sung",
+        "title": "",
+        "aria": null,
+        "href": "https://docs.kurviger.com/de/web/faq/browser_incompatible"
+      },
+      {
+        "tag": "A",
+        "text": "Forum",
+        "title": "",
+        "aria": null,
+        "href": "https://forum.kurviger.com/"
+      },
+      {
+        "tag": "A",
+        "text": "Get Help",
+        "title": "",
+        "aria": null,
+        "href": "https://docs.kurviger.com/web/faq/browser_incompatible"
+      },
+      {
+        "tag": "A",
+        "text": "Forum",
+        "title": "",
+        "aria": null,
+        "href": "https://forum.kurviger.com/"
+      }
+    ]
+  },
+  {
+    "key": "myrouteapp",
+    "requested_url": "https://www.myrouteapp.com/route/create",
+    "url": "https://www.myrouteapp.com/en/user/login",
+    "status": 200,
+    "body_excerpt": "Navigate to \nEN \nRegister\nLog in\nLog in\nYou need to login before you can view this page\n Keep me logged in\nLog in\n    \n\nForgot your password?\nTry out MyRoute-app\n\n Connect to friends\n\n Create the nicest routes and moments\n\n Drive your dream route\n\n Enjoy the journey!\n\nMyRoute-app: the all-in-one route tool, check it out!\n\nMORE INFO\nREGISTER\nMyRouteApp B.V. 2026 (C) all rights reserved.\nBredewater 16, 2715 CA Zoetermeer\nThe Netherlands\n+31 79 3636040\nSupport\nCommunity Forum\nContact\nFAQ\nRedeem Code\nMyRoute-app\nAbout us\nLegal\nRouteXperts\nPricing\nPress & Business\nKeep up to date with the latest news\nSign up",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "Navigate to ",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Library",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/library"
+      },
+      {
+        "tag": "A",
+        "text": "Generator",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/routegenerator"
+      },
+      {
+        "tag": "A",
+        "text": "Subscriptions",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/shop"
+      },
+      {
+        "tag": "A",
+        "text": "Information",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/information"
+      },
+      {
+        "tag": "A",
+        "text": "Routeplanner",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/information/routeplanner"
+      },
+      {
+        "tag": "A",
+        "text": "Navigation",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/information/navigation"
+      },
+      {
+        "tag": "A",
+        "text": "About us",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/contact"
+      },
+      {
+        "tag": "A",
+        "text": "NL",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/nl/user/login"
+      },
+      {
+        "tag": "A",
+        "text": "DE",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/de/user/login"
+      },
+      {
+        "tag": "A",
+        "text": "FR",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/fr/user/login"
+      },
+      {
+        "tag": "A",
+        "text": "ES",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/es/user/login"
+      },
+      {
+        "tag": "A",
+        "text": "IT",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/it/user/login"
+      },
+      {
+        "tag": "A",
+        "text": "Register",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/register"
+      },
+      {
+        "tag": "A",
+        "text": "Log in",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/user/login"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Email address",
+        "aria": null
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Password",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Log in",
+        "title": "",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Forgot your password?",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/user/forgot"
+      },
+      {
+        "tag": "A",
+        "text": "MORE INFO",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/information"
+      },
+      {
+        "tag": "A",
+        "text": "REGISTER",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/en/register"
+      },
+      {
+        "tag": "A",
+        "text": "+31 79 3636040",
+        "title": "",
+        "aria": null,
+        "href": "tel:+31793636040"
+      },
+      {
+        "tag": "A",
+        "text": "Community Forum",
+        "title": "",
+        "aria": null,
+        "href": "https://forum.myrouteapp.com/"
+      },
+      {
+        "tag": "A",
+        "text": "Contact",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/contact#contact"
+      },
+      {
+        "tag": "A",
+        "text": "FAQ",
+        "title": "",
+        "aria": null,
+        "href": "https://support.myrouteapp.com/"
+      },
+      {
+        "tag": "A",
+        "text": "Redeem Code",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/go"
+      },
+      {
+        "tag": "A",
+        "text": "About us",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/contact"
+      },
+      {
+        "tag": "A",
+        "text": "Legal",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/legal"
+      },
+      {
+        "tag": "A",
+        "text": "RouteXperts",
+        "title": "",
+        "aria": null,
+        "href": "https://routexperts.com/"
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "title": "",
+        "aria": null,
+        "href": "https://www.myrouteapp.com/information"
+      },
+      {
+        "tag": "A",
+        "text": "Press & Business",
+        "title": "",
+        "aria": null,
+        "href": "https://info.myrouteapp.com/press-business/"
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "title": "",
+        "placeholder": "Enter your email address here",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sign up",
+        "title": "",
+        "aria": null
+      }
+    ]
+  }
+]

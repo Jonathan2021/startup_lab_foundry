@@ -265,6 +265,15 @@ Enum action_attempt_status {
   unknown
 }
 
+Table decision_maps {
+  id varchar(36) [pk]
+  workspace_id varchar(36) [not null, unique, ref: > workspaces.id]
+  current_revision_artifact_id varchar(36) [not null, ref: > artifacts.id]
+  version_id integer [not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
 Table portfolios {
   id uuid [pk]
   key varchar(100) [not null, unique]
@@ -909,4 +918,163 @@ Table audit_events {
     (workspace_id, occurred_at)
   }
   Note: 'Append-only technical audit, distinct from business evidence and decisions.'
+}
+
+Enum step_status {
+  running
+  succeeded
+  blocked
+  failed
+}
+
+Table step_runs {
+  id uuid [pk]
+  workspace_id uuid [not null, ref: > workspaces.id]
+  work_item_id uuid [not null, unique, ref: > work_items.id]
+  request_key varchar(160) [not null, unique]
+  kind varchar(80) [not null]
+  runner varchar(120) [not null]
+  runner_version varchar(100) [not null]
+  status step_status [not null]
+  input_json json [not null]
+  input_digest varchar(64) [not null]
+  output_json json [not null]
+  error_summary text
+  completed_at timestamptz
+  version_id int [not null, default: 1]
+  created_at timestamptz [not null]
+  updated_at timestamptz [not null]
+  Note: 'Bounded internal step. Terminal outcomes retained; no external-action authority.'
+}
+
+
+// Append-only reviewed coordination; portable enum checks defined in domain.py.
+Table workspace_reviews {
+  id varchar(36) [pk]
+  workspace_id varchar(36) [not null, ref: > workspaces.id]
+  revision int [not null]
+  investigation_stage varchar [not null]
+  product_maturity varchar [not null]
+  disposition varchar [not null]
+  next_action text [not null]
+  next_work_item_id varchar(36) [ref: > work_items.id]
+  reason text [not null]
+  author varchar(200) [not null]
+  reviewed_at timestamp [not null]
+  source_artifact_id varchar(36) [ref: > artifacts.id]
+  decision_id varchar(36) [ref: > decisions.id]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+  indexes { (workspace_id, revision) [unique] }
+}
+
+// ADR-0011: immutable payloads in Artifacts, queryable coordination roots.
+
+Table human_request_targets {
+  request_id varchar(36) [not null, ref: > human_requests.id]
+  workspace_id varchar(36) [not null, ref: > workspaces.id]
+  work_item_id varchar(36) [ref: > work_items.id]
+  id varchar(36) [pk, not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table human_requests {
+  workspace_id varchar(36) [not null, ref: > workspaces.id]
+  title varchar(300) [not null]
+  question text [not null]
+  definition_revision int [not null]
+  definition_artifact_id varchar(36) [not null, ref: > artifacts.id]
+  response_artifact_id varchar(36) [ref: > artifacts.id]
+  review_artifact_id varchar(36) [ref: > artifacts.id]
+  status varchar(40) [not null]
+  file_path varchar(300)
+  source_diagnostics text [not null]
+  id varchar(36) [pk, not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+  version_id int [not null]
+}
+
+Table human_request_dependencies {
+  id varchar(36) [pk]
+  target_id varchar(36) [not null, ref: > human_request_targets.id]
+  work_item_id varchar(36) [not null, ref: > work_items.id]
+  satisfied_response_id varchar(36) [ref: > artifacts.id]
+  other_causes json [not null]
+  version_id integer [not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+  indexes {
+    (target_id, work_item_id) [unique]
+  }
+}
+
+Table venture_assessments {
+  venture_id varchar(36) [not null, ref: > ventures.id]
+  scorecard_id varchar(36) [not null, ref: > scorecards.id]
+  baseline_card_id varchar(36) [ref: > scorecards.id]
+  sequence int [not null]
+  kind varchar(30) [not null]
+  source_assessment_id varchar(36) [ref: > idea_assessments.id]
+  overall_score float
+  confidence varchar(6) [not null]
+  rationale text [not null]
+  author varchar(200) [not null]
+  context_json text [not null]
+  context_digest varchar(64) [not null]
+  request_key varchar(160) [not null]
+  payload_digest varchar(64) [not null]
+  id varchar(36) [pk, not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table venture_criterion_score_evidence {
+  criterion_score_id varchar(36) [not null, ref: > venture_criterion_scores.id]
+  evidence_id varchar(36) [not null, ref: > evidence.id]
+  note text
+  id varchar(36) [pk, not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table venture_criterion_scores {
+  assessment_id varchar(36) [not null, ref: > venture_assessments.id]
+  criterion_id varchar(36) [not null, ref: > scoring_criteria.id]
+  raw_score float [not null]
+  normalized_score float
+  weighted_contribution float
+  rationale text [not null]
+  id varchar(36) [pk, not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+}
+
+Table portfolio_proposals {
+  pending_source_key varchar(64) [note: 'Unique with portfolio_id while pending; null once resolved']
+  portfolio_id varchar(36) [not null, ref: > portfolios.id]
+  workspace_id varchar(36) [not null, ref: > workspaces.id]
+  kind varchar(30) [not null]
+  revision_artifact_id varchar(36) [not null, ref: > artifacts.id]
+  resolution_artifact_id varchar(36) [ref: > artifacts.id]
+  request_key varchar(160) [not null]
+  state varchar(30) [not null]
+  id varchar(36) [pk, not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
+  version_id int [not null]
+  indexes {
+    (portfolio_id, pending_source_key) [unique]
+  }
+}
+
+Table proposal_participants {
+  proposal_id varchar(36) [not null, ref: > portfolio_proposals.id]
+  role varchar(20) [not null]
+  idea_id varchar(36) [ref: > ideas.id]
+  venture_id varchar(36) [ref: > ventures.id]
+  id varchar(36) [pk, not null]
+  created_at timestamp [not null]
+  updated_at timestamp [not null]
 }

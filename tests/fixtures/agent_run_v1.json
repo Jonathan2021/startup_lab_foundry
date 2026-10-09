@@ -1,0 +1,69 @@
+{
+  "schema_version": "agent-evalops.trace.v1",
+  "source": {
+    "system": "startup-foundry",
+    "venture_id": "venture-agentevalops",
+    "run_id": "run-competitor-research-001",
+    "correlation_id": "correlation-competitor-research-001"
+  },
+  "agent": {
+    "definition_id": "agent-competitor-research",
+    "version_id": "agent-competitor-research-v1",
+    "version": "1.0.0",
+    "prompt_version": "prompt-001",
+    "toolset_version": "tools-001",
+    "policy_version": "policy-001",
+    "code_version": "3b082507062838df4009d4b636c4f320436f3b41"
+  },
+  "execution": {
+    "status": "succeeded",
+    "provider": "synthetic",
+    "model": "fixture-model",
+    "started_at": "2026-08-26T09:00:00Z",
+    "completed_at": "2026-08-26T09:00:01Z",
+    "latency_ms": 1000,
+    "input_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "output_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222"
+  },
+  "events": [
+    {
+      "id": "event-run-started-001",
+      "sequence": 1,
+      "type": "run_started",
+      "occurred_at": "2026-08-26T09:00:00Z",
+      "payload": {
+        "input_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    {
+      "id": "event-model-called-001",
+      "sequence": 2,
+      "type": "model_called",
+      "occurred_at": "2026-08-26T09:00:00.500000Z",
+      "payload": {
+        "provider": "synthetic",
+        "model": "fixture-model"
+      }
+    },
+    {
+      "id": "event-artifact-created-001",
+      "sequence": 3,
+      "type": "artifact_created",
+      "occurred_at": "2026-08-26T09:00:00.900000Z",
+      "payload": {
+        "artifact_id": "artifact-competitor-report-001",
+        "artifact_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+        "artifact_location": "fixture://competitor-report-001"
+      }
+    },
+    {
+      "id": "event-run-completed-001",
+      "sequence": 4,
+      "type": "run_completed",
+      "occurred_at": "2026-08-26T09:00:01Z",
+      "payload": {
+        "status": "succeeded"
+      }
+    }
+  ]
+}

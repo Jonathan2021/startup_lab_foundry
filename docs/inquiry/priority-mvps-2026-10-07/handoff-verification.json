@@ -1,0 +1,62 @@
+[
+  {
+    "repository": "volley-match",
+    "venture_id": "v-sports-session",
+    "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+    "next_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+    "next_work_state": "ready",
+    "packages": 5,
+    "plan_integrity": "pass",
+    "application_acceptance": "not implemented/verified by this check"
+  },
+  {
+    "repository": "ride-options",
+    "venture_id": "v-route-repair",
+    "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+    "next_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+    "next_work_state": "ready",
+    "packages": 5,
+    "plan_integrity": "pass",
+    "application_acceptance": "not implemented/verified by this check"
+  },
+  {
+    "repository": "crous-queue",
+    "venture_id": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+    "workspace_id": "81ee3117-de70-411e-9856-07420859ffad",
+    "next_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+    "next_work_state": "ready",
+    "packages": 5,
+    "plan_integrity": "pass",
+    "application_acceptance": "not implemented/verified by this check"
+  },
+  {
+    "repository": "volley-coach",
+    "venture_id": "v-volley-coach",
+    "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5",
+    "next_work_id": "7172fb29-5982-4104-9e5e-eeb1257dc6b7",
+    "next_work_state": "ready",
+    "packages": 5,
+    "plan_integrity": "pass",
+    "application_acceptance": "not implemented/verified by this check"
+  },
+  {
+    "repository": "coopain",
+    "venture_id": "v-coopain",
+    "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+    "next_work_id": "dd504371-7028-4e43-8869-2a2f5eac7871",
+    "next_work_state": "ready",
+    "packages": 5,
+    "plan_integrity": "pass",
+    "application_acceptance": "not implemented/verified by this check"
+  },
+  {
+    "repository": "foundry",
+    "venture_id": "v-foundry",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+    "next_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+    "next_work_state": "ready",
+    "packages": 4,
+    "plan_integrity": "pass",
+    "application_acceptance": "existing Foundry tests separately"
+  }
+]

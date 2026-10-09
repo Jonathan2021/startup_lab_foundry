@@ -1,0 +1,73 @@
+{
+  "idea_id": "a32e67a1-2289-46b4-b12a-d24d2032ef2c",
+  "venture_id": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+  "workspaces": {
+    "faa43039-e990-4706-bc09-4ccf13318ae3": {
+      "artifact_id": "dac10879-c5b8-5e62-9adf-ee5c5693b3ef",
+      "evidence_ids": {
+        "user": "ab47e031-ccb4-5dbc-bd9c-16529d394493",
+        "competition": "7a473585-11d9-5218-a349-49208316776d",
+        "data": "e8eded70-4b26-5c08-9834-853a3294ddbb",
+        "venues": "3e921271-235d-5397-90a5-d1db06137ebe"
+      },
+      "decision_id": "2f2caf11-108a-549f-bfd0-63bc3d3ee6d1",
+      "review_id": "a59b6288-f3ad-4135-ba43-a4bfcce79e0b",
+      "work_ids": {
+        "desk": "209cebc0-615e-5e3d-ae2c-4255b2a671de",
+        "observation": "ae129396-6e13-5916-81aa-83521233280e",
+        "coverage": "096eb28c-5c5b-5017-8117-3d6492619b12"
+      }
+    },
+    "81ee3117-de70-411e-9856-07420859ffad": {
+      "artifact_id": "a790c9a7-00ce-584c-b5b3-70bf4f41c490",
+      "evidence_ids": {
+        "user": "e7d845f6-cf34-50cb-8db9-73a7d56ed65d",
+        "competition": "fa0001ad-a069-5ba3-8580-1a399b92f006",
+        "data": "429df1fb-5b44-5c3b-aeb6-8e862ff9125a",
+        "venues": "ccf1fde5-cbc7-57d5-86f7-b2080c77c4cd"
+      },
+      "decision_id": "ef07cc0b-f2ec-5f30-8b0c-890708ee6ed5",
+      "review_id": "9db07be2-15cf-430c-8292-c65b57abfad3",
+      "work_ids": {
+        "desk": "48f03496-ac66-532d-9bce-f537bbd1c2e5",
+        "observation": "4626ac2b-ae37-515e-998a-8634086981dd",
+        "coverage": "dbbfbb3d-3ec5-5cca-8d2a-2eae04cc21b2"
+      }
+    }
+  },
+  "sources": [
+    "677f4af2-db82-5268-9a22-b080e03e083e",
+    "e0c9951b-8673-5711-a569-a91865048430",
+    "3a5efad9-9336-580a-b1eb-996f4c918c17",
+    "338642ca-3c3a-5b72-93b7-a67ae9b9bc2d",
+    "078a7f1c-0c1c-52d0-bf7a-7f0ac4699e8f",
+    "f1580460-50f8-5141-88e9-649b284d622d",
+    "4f29f904-3320-5271-9e9e-3dcb373b5288",
+    "0947fef1-f9b4-50bc-bb23-669b5099db1a",
+    "483a0ef7-5e49-5cb5-ae88-9802f6b1e553",
+    "6ccfa685-1605-597c-b2ef-c063e87e18ad",
+    "dcf7fe5e-2d14-5e5e-accf-d246c5c37e68"
+  ],
+  "intake_actor": "agent:crous-review-20261006",
+  "idea_assessment_id": "cc26ba68-ebca-4cad-9482-190caabda8a4",
+  "venture_assessment_id": "2b38b397-ddd8-4c15-bb1a-f9d36df96e51",
+  "venture_score": {
+    "total": null,
+    "coverage": 3,
+    "required": 12
+  },
+  "R010": {
+    "status": "resolved",
+    "version": 4,
+    "response_id": "bf6edcac-f2b6-51aa-a44f-524b87437bab",
+    "review_ids": [
+      "5eff1845-fd7e-4536-885c-a4fe76756007"
+    ]
+  },
+  "R011": {
+    "status": "waiting_for_answer",
+    "version": 1,
+    "response_id": null,
+    "review_ids": []
+  }
+}

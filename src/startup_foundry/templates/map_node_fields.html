@@ -1,0 +1,5 @@
+<fieldset data-map-node><legend>{{ node.title or 'New node' }}</legend>
+<input type="hidden" name="node_id" value="{{ node.id }}"><div class="field-grid"><label>Type<select name="node_kind">{% for kind in ['goal','question','alternative','record'] %}<option value="{{ kind }}" {{ 'selected' if node.kind==kind }}>{{ kind|pretty }}</option>{% endfor %}</select></label><label class="check"><input type="checkbox" name="node_focus" {{ 'checked' if node.id in draft_map.focus }}>Current focus</label></div>
+<label>Title<input name="node_title" value="{{ node.title }}" required maxlength="300"></label><label>Explanation or uncertainty<textarea name="node_detail" maxlength="10000">{{ node.detail }}</textarea></label>
+<label data-node-reference>Existing record (type:ID)<input name="node_ref" list="record-options" value="{{ node.ref.kind+':'+node.ref.id if node.ref else '' }}" placeholder="Choose a record or paste its exact reference"></label>
+<button class="secondary small" type="button" data-map-remove>Remove from this revision</button></fieldset>

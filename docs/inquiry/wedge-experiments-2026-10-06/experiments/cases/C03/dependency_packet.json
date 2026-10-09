@@ -1,0 +1,69 @@
+{
+  "format": "synthetic-context-packet-v1",
+  "case_id": "C03",
+  "synthetic": true,
+  "scope": "Reusable bottle pilot in one local market; no purchase authority.",
+  "scope_revision": 3,
+  "question_revision": 2,
+  "goal": "Determine whether a small physical-product pilot can be delivered within its cost and delivery limits.",
+  "current_question": "Can we approve planning for a 100-unit pilot with the present supplier offer?",
+  "branch_criteria": {
+    "continue": "A current written quote covers 100 units within 8 euros landed cost and four weeks, with required food-contact documentation.",
+    "narrow": "A smaller compliant pilot fits a revised explicitly agreed budget.",
+    "stop": "No compliant supply route exists within the chosen constraints.",
+    "unknown": "Any quantity, delivery, cost or compliance condition is unverified or expired; obtain a current quote."
+  },
+  "allowed_scopes": [
+    "C03"
+  ],
+  "selection": {
+    "method": "explicit_bidirectional_relationship_closure",
+    "seed_ids": [
+      "C03-E1",
+      "C03-E3",
+      "C03-E4"
+    ],
+    "source_record_count": 11,
+    "selected_record_count": 4,
+    "limitation": "Unlinked relevant facts may be omitted. Selection is not semantic retrieval."
+  },
+  "records": [
+    {
+      "id": "C03-E1",
+      "revision": 1,
+      "scope": "C03",
+      "kind": "synthetic_source",
+      "text": "Quote Q1 offered 100 units at 7 euros landed and four weeks; the quote expired on day 10.",
+      "links": []
+    },
+    {
+      "id": "C03-E2",
+      "revision": 1,
+      "scope": "C03",
+      "kind": "synthetic_source",
+      "text": "Day 12 supplier note withdrew Q1 and offered 500 units at 6 euros, six weeks, with food-contact documents still pending.",
+      "links": [
+        {
+          "relation": "supersedes",
+          "target": "C03-E1"
+        }
+      ]
+    },
+    {
+      "id": "C03-E3",
+      "revision": 1,
+      "scope": "C03",
+      "kind": "synthetic_source",
+      "text": "The founder's current authorized planning ceiling is 100 units at 8 euros each; no purchase approval was issued.",
+      "links": []
+    },
+    {
+      "id": "C03-E4",
+      "revision": 1,
+      "scope": "C03",
+      "kind": "synthetic_source",
+      "text": "A second supplier has not responded. Absence of response is not evidence that an alternative is impossible.",
+      "links": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "ee1e24ff-18a6-4c94-8f6f-f8298431eb13",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "actor": "Codex:priority-mvps-2026-10-07",
+  "kind": "friction",
+  "summary": "Independent implementation agents need scoped startup and durable feedback; historical scope labels also needed correction",
+  "expected": "A fresh repository supplies venture identity, current task and one reliable feedback path. Current venture name matches user-selected scope.",
+  "actual": "This campaign had to reconstruct workspace IDs and lacked a CLI rename operation; root mypy also missed standalone strict config.",
+  "reproduction": "See docs/inquiry/priority-mvps-2026-10-07/FRICTION.md, rename-red.txt and agent-kit-final.txt; resume v-foundry before this campaign exposed obsolete ready visual-QA work.",
+  "impact": "Repeated setup effort and risk of repeating historical tasks. No token savings measured.",
+  "suggestion": "Use the delivered per-repo manifest/bridge and audited rename. Continue real package work, then triage recurrent omissions before adding APIs or managed agents.",
+  "sources": [
+    "document: /home/jonathan/startup_lab/foundry/docs/inquiry/priority-mvps-2026-10-07/FRICTION.md"
+  ]
+}

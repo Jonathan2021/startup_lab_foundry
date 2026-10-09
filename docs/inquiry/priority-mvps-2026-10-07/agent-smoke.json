@@ -1,0 +1,56 @@
+[
+  {
+    "repository": "volley-match",
+    "start": "pass",
+    "release": "pass",
+    "context_bytes": 12035,
+    "context_complete": true,
+    "store": "isolated copy",
+    "live_work_claimed": false
+  },
+  {
+    "repository": "ride-options",
+    "start": "pass",
+    "release": "pass",
+    "context_bytes": 17553,
+    "context_complete": true,
+    "store": "isolated copy",
+    "live_work_claimed": false
+  },
+  {
+    "repository": "crous-queue",
+    "start": "pass",
+    "release": "pass",
+    "context_bytes": 11850,
+    "context_complete": true,
+    "store": "isolated copy",
+    "live_work_claimed": false
+  },
+  {
+    "repository": "volley-coach",
+    "start": "pass",
+    "release": "pass",
+    "context_bytes": 5141,
+    "context_complete": true,
+    "store": "isolated copy",
+    "live_work_claimed": false
+  },
+  {
+    "repository": "coopain",
+    "start": "pass",
+    "release": "pass",
+    "context_bytes": 11305,
+    "context_complete": true,
+    "store": "isolated copy",
+    "live_work_claimed": false
+  },
+  {
+    "repository": "foundry",
+    "start": "pass",
+    "release": "pass",
+    "context_bytes": 8877,
+    "context_complete": true,
+    "store": "isolated copy",
+    "live_work_claimed": false
+  }
+]

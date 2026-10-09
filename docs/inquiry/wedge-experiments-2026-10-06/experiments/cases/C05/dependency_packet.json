@@ -1,0 +1,78 @@
+{
+  "format": "synthetic-context-packet-v1",
+  "case_id": "C05",
+  "synthetic": true,
+  "scope": "Solo-consultant document checker; hypothetical prices only.",
+  "scope_revision": 3,
+  "question_revision": 2,
+  "goal": "Choose a sustainable paid offer for a narrowly defined customer job.",
+  "current_question": "Does the existing evidence justify a 19 euro monthly price and a paid launch?",
+  "branch_criteria": {
+    "continue": "Qualified buyers make real repeat purchases or equivalent bounded paid commitments covering variable cost.",
+    "narrow": "A subset has a clear recurring job and unit economics but broader audience does not.",
+    "stop": "Even qualified paid use fails the chosen margin/retention condition after the agreed test.",
+    "unknown": "Only interest, stated preference, or insufficient usage-cost evidence exists."
+  },
+  "allowed_scopes": [
+    "C05"
+  ],
+  "selection": {
+    "method": "explicit_bidirectional_relationship_closure",
+    "seed_ids": [
+      "C05-E1",
+      "C05-E3",
+      "C05-E4",
+      "C05-E5"
+    ],
+    "source_record_count": 11,
+    "selected_record_count": 5,
+    "limitation": "Unlinked relevant facts may be omitted. Selection is not semantic retrieval."
+  },
+  "records": [
+    {
+      "id": "C05-E1",
+      "revision": 1,
+      "scope": "C05",
+      "kind": "synthetic_source",
+      "text": "Twenty-five friends joined a free waitlist after seeing a 19 euro mock price. No payment method, commitment or actual charge was collected.",
+      "links": []
+    },
+    {
+      "id": "C05-E2",
+      "revision": 1,
+      "scope": "C05",
+      "kind": "synthetic_source",
+      "text": "The first analysis called the waitlist '25 paying customers'; a correction states they are only free signups.",
+      "links": [
+        {
+          "relation": "clarifies",
+          "target": "C05-E1"
+        }
+      ]
+    },
+    {
+      "id": "C05-E3",
+      "revision": 1,
+      "scope": "C05",
+      "kind": "synthetic_source",
+      "text": "Five usage examples produced variable inference/support costs ranging from 2 to 28 euros per user-month. The examples are too few to estimate the tail reliably.",
+      "links": []
+    },
+    {
+      "id": "C05-E4",
+      "revision": 1,
+      "scope": "C05",
+      "kind": "synthetic_source",
+      "text": "Two experienced consultants report a recurring monthly checking job, but neither has tried the product or agreed to pay.",
+      "links": []
+    },
+    {
+      "id": "C05-E5",
+      "revision": 1,
+      "scope": "C05",
+      "kind": "synthetic_source",
+      "text": "No real checkout, paid launch or spending was authorized. A reversible offer mockup and explicit test proposal are allowed.",
+      "links": []
+    }
+  ]
+}

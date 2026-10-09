@@ -1,0 +1,155 @@
+{
+  "date": "2026-10-07",
+  "baseline_commit": "52c166db436817bf57717b7481bc968779f9d5b1",
+  "product_selection": {
+    "passed": 158,
+    "skipped": 1,
+    "skip": "PostgreSQL requires explicit FOUNDRY_DATABASE_URL; remote CI owns it",
+    "log": "/home/jonathan/startup_lab/foundry/.local/conversation-mvp-2026-10-07/product-tests.txt"
+  },
+  "final_agent_kit": {
+    "passed": 4,
+    "log": "/home/jonathan/startup_lab/foundry/.local/conversation-mvp-2026-10-07/agent-final.txt"
+  },
+  "ruff": "pass",
+  "mypy": "42 source files pass",
+  "wheel_public_client": "pass, final replay retained separately",
+  "kit_sha256": "08dcb36af550a22edffbb1ea3e326f8bf0d2fd836b982d57d6db6f4a7f471291",
+  "repositories": {
+    "volley-match": {
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+      "first_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+      "helper_hash_matches": true,
+      "resume": "pass"
+    },
+    "ride-options": {
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+      "first_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+      "helper_hash_matches": true,
+      "resume": "pass"
+    },
+    "crous-queue": {
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad",
+      "first_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+      "helper_hash_matches": true,
+      "resume": "pass"
+    },
+    "volley-coach": {
+      "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5",
+      "first_work_id": "7172fb29-5982-4104-9e5e-eeb1257dc6b7",
+      "helper_hash_matches": true,
+      "resume": "pass"
+    },
+    "coopain": {
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+      "first_work_id": "dd504371-7028-4e43-8869-2a2f5eac7871",
+      "helper_hash_matches": true,
+      "resume": "pass"
+    },
+    "foundry": {
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+      "first_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+      "helper_hash_matches": true,
+      "resume": "pass"
+    },
+    "offer-check": {
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8",
+      "first_work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+      "helper_hash_matches": true,
+      "resume": "pass"
+    }
+  },
+  "database": {
+    "integrity": "ok",
+    "foreign_key_errors": 0,
+    "all_prior_primary_keys_retained": true,
+    "prior_rows_by_table": {
+      "alembic_version": 1,
+      "portfolios": 1,
+      "agent_definitions": 0,
+      "market_actors": 0,
+      "reference_sources": 120,
+      "scorecards": 2,
+      "workspaces": 264,
+      "agent_versions": 0,
+      "audit_events": 93,
+      "capability_candidates": 0,
+      "decisions": 283,
+      "ranking_snapshots": 2,
+      "scoring_criteria": 24,
+      "idea_relations": 8,
+      "idea_revisions": 252,
+      "idea_sources": 467,
+      "work_items": 537,
+      "agent_runs": 0,
+      "evidence": 309,
+      "experiments": 24,
+      "idea_assessments": 244,
+      "idea_market_actors": 0,
+      "ventures": 12,
+      "artifacts": 683,
+      "assumptions": 277,
+      "capability_uses": 0,
+      "criterion_scores": 2899,
+      "decision_evidence": 46,
+      "evidence_sources": 51,
+      "external_actions": 4,
+      "friction_occurrences": 0,
+      "ranking_entries": 241,
+      "action_attempts": 0,
+      "approval_requests": 0,
+      "artifact_relations": 8,
+      "assumption_assessments": 277,
+      "assumption_relations": 0,
+      "criterion_score_evidence": 10,
+      "evidence_artifacts": 30,
+      "experiment_assumptions": 24,
+      "friction_capabilities": 0,
+      "assessment_evidence": 281,
+      "decision_assessments": 277,
+      "ideas": 252,
+      "step_runs": 8,
+      "workspace_reviews": 317,
+      "human_requests": 12,
+      "human_request_targets": 37,
+      "venture_assessments": 10,
+      "venture_criterion_scores": 101,
+      "venture_criterion_score_evidence": 5,
+      "portfolio_proposals": 1,
+      "proposal_participants": 4,
+      "human_request_dependencies": 0,
+      "decision_maps": 6
+    },
+    "added_rows_by_table": {
+      "workspaces": 2,
+      "audit_events": 13,
+      "decisions": 1,
+      "idea_revisions": 1,
+      "work_items": 4,
+      "evidence": 3,
+      "ventures": 1,
+      "artifacts": 16,
+      "decision_evidence": 2,
+      "artifact_relations": 1,
+      "ideas": 1,
+      "workspace_reviews": 3,
+      "decision_maps": 1
+    }
+  },
+  "local_http_smoke": {
+    "/ventures/v-offer-check": {
+      "status": 200,
+      "expected_text_present": true
+    },
+    "/requests/R012": {
+      "status": 200,
+      "expected_text_present": true
+    }
+  },
+  "limits": [
+    "No independent LLM or MCP-host evaluation",
+    "No OfferCheck application or real supplier data tested",
+    "Quote probe is synthetic; product acceptance remains to implement"
+  ],
+  "private_evidence_root": "/home/jonathan/startup_lab/foundry/.local/conversation-mvp-2026-10-07"
+}

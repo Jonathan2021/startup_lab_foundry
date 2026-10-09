@@ -1,0 +1,29 @@
+{
+  "id": "T1",
+  "version": "3.16.1",
+  "status": "passed",
+  "scope": "local synthetic trace-feedback-expectation-dataset-code-scorer API mechanics",
+  "trace_id": "tr-fc4bb290ed8f8e755c58fdfdd4f95dcf",
+  "assessment_id": "a-96ff880b7b6c48b6b64dec8d8fe76082",
+  "dataset_id": "d-af393b049fbe4f4e8ddcca883c820299",
+  "results": {
+    "broken": {
+      "run_id": "5dd72a0c14cd45e2bc0df2f52935c924",
+      "metrics": {
+        "exact_answer/mean": 0.0
+      }
+    },
+    "fixed": {
+      "run_id": "9c0387bab4054bbfb8568234a76ba9da",
+      "metrics": {
+        "exact_answer/mean": 1.0
+      }
+    }
+  },
+  "limitations": [
+    "No real human review",
+    "No LLM judge",
+    "No customer dataset",
+    "No review-queue UI or deployed CI job"
+  ]
+}

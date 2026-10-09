@@ -1,0 +1,11 @@
+<a class="back" href="{{ workspace_link() }}">← {{ scope.title }}</a>
+<p class="eyebrow">{{ subject|pretty }} · {{ subject_id }}</p>
+<h1>{{ scope.title }}</h1>
+<button type="button" class="secondary small" data-copy="{{ subject_id }}">Copy ID</button>
+{% include 'score_summary.html' %}
+<nav class="workspace-tabs" aria-label="Decision workflow">
+  <a href="{{ workspace_link() }}">Now</a>
+  <a href="{{ workspace_link(path="/workspaces/"+workspace_id+"/decision-map") }}">Decision map</a>
+  <a href="{{ workspace_link('history') }}">History</a>
+  <a href="/agent-guide">Use your agent</a>
+</nav>

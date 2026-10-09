@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block content %}<a href="{{ history_url }}">← {{ subject_id }} history</a><p class="eyebrow">{{ event_kind|pretty }} · {{ event.id }}</p>
+{% if event_kind=='WorkspaceReview' %}<h1>{{ event.next_action }}</h1><p>{{ event.disposition|pretty }} · {{ event.investigation_stage|pretty }} · {{ event.product_maturity|pretty }}</p><p>{{ event.author }} · {{ event.reviewed_at }}</p><p class="preserve">{{ event.reason }}</p>{% if linked_work %}<p><a href="{{ linked_work.url }}">{{ linked_work.title }}</a> · {{ linked_work.status|pretty }} · {{ linked_work.owner or 'Unassigned' }}</p>{% endif %}
+{% elif event_kind=='VentureAssessment' %}<h1>{{ event.overall_score if event.overall_score is not none else 'Unknown total' }} · {{ event.kind|pretty }}</h1><p>{{ event.author }} · {{ event.confidence }} confidence · {{ event.scorecard_id }}</p><p class="preserve">{{ event.rationale }}</p>
+{% elif event.metadata_json and event.metadata_json.text %}<h1>Retained document</h1><pre>{{ event.metadata_json.text }}</pre>
+{% else %}<h1>{{ event.summary or event.name or event.event_type or 'Retained event' }}</h1><p>{{ event.rationale or event.details or '' }}</p>{% endif %}
+<details><summary>Immutable provenance</summary><pre>{{ event|tojson(indent=2) }}</pre></details>{% endblock %}

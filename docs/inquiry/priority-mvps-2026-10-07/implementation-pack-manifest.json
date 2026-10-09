@@ -1,0 +1,404 @@
+[
+  {
+    "repository": "volley-match",
+    "path": ".foundry/project.json",
+    "sha256": "dd863b39963df08b6f5ef40625e983c5ed6db405da32f282dd19ce8cf92634b4",
+    "bytes": 645
+  },
+  {
+    "repository": "volley-match",
+    "path": "AGENTS.md",
+    "sha256": "764a63272d059d2365b8331b992fb000d465112f41673664a907ab03e97e337e",
+    "bytes": 1692
+  },
+  {
+    "repository": "volley-match",
+    "path": "acceptance/cases.json",
+    "sha256": "5eeb6b43241a0c3822d235cf7ee029b12c009f58f2928be4b1965d5b33c8342f",
+    "bytes": 893
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/adr/0001-mvp-boundaries.md",
+    "sha256": "2edc033389a34cf4529048df8f13e962e1705bdc5fcaa35f9a0bb7583637c1d1",
+    "bytes": 1417
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/mvp/AGENT_HANDOFF.md",
+    "sha256": "97181ec1e3ae5264ee9ac22c84c3d5837d51b27430553019630f577dc3ba09f6",
+    "bytes": 6122
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/mvp/ARCHITECTURE.md",
+    "sha256": "20cb5515fd07fc11111236dfea57128bb76396b245914d7db4dc139f3cdfb049",
+    "bytes": 6977
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/mvp/DECISION.md",
+    "sha256": "dfbc8c94ab35d390a4e61374d3aeba6cb40466d7e321d8517907c45134766038",
+    "bytes": 2454
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/mvp/FIRST_TASK.md",
+    "sha256": "1f4e16ea0d1f9b3044e371610349a6f3cb4351f048f7f4ba79bd665670f93a1b",
+    "bytes": 942
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/mvp/ROADMAP.md",
+    "sha256": "f3b45bbf91fda60a8c401c0c716aba19a793d597083d3c08956bf7923936fcf8",
+    "bytes": 5149
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/mvp/SOURCES.md",
+    "sha256": "428e0d01e99066b37847e007ca106b1e857c772e9f036e22fd2eea5dc01836cb",
+    "bytes": 632
+  },
+  {
+    "repository": "volley-match",
+    "path": "docs/mvp/spec.json",
+    "sha256": "dce0e40e54d76b6d23c8b55b229f55e77cb83d88587138aa83f62e6b3352a7c3",
+    "bytes": 9918
+  },
+  {
+    "repository": "volley-match",
+    "path": "tools/foundry_agent.py",
+    "sha256": "dc2d39488bcae88b04ca726b939da01cd5b829f2b5b059fb2d06ce4ea88b6b84",
+    "bytes": 9128
+  },
+  {
+    "repository": "ride-options",
+    "path": ".foundry/project.json",
+    "sha256": "02d41a130b33762a7997fb7f9992faa52301f9325d3c47a52f0edc630ae0749b",
+    "bytes": 643
+  },
+  {
+    "repository": "ride-options",
+    "path": "AGENTS.md",
+    "sha256": "c12f950ec4810df0c33f241c8c70c791fbadfff153f2876183504bc6525e86d0",
+    "bytes": 1692
+  },
+  {
+    "repository": "ride-options",
+    "path": "acceptance/cases.json",
+    "sha256": "34a8f647c1b0a9558bbadbd11ddef6b76fd007fe7f04f599c674af36c1757ff0",
+    "bytes": 904
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/adr/0001-mvp-boundaries.md",
+    "sha256": "3b90d95aa865ba6b66b1b5db89f6279d67d90e50ed14da4951755fa64e2b77d8",
+    "bytes": 1351
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/mvp/AGENT_HANDOFF.md",
+    "sha256": "f16540f7febef34f7e258390bc1db544cb0ada9d5f89dcf5eca42dcf277c34bf",
+    "bytes": 6245
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/mvp/ARCHITECTURE.md",
+    "sha256": "66d470383f3be1780cb7aad55d526d52a5fc62c4ad6a4c04d20b18bac97a6242",
+    "bytes": 7436
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/mvp/DECISION.md",
+    "sha256": "1c63b4b1610f4bc554fa482f927f2d474dcaa6f11bc66bfaa2aa09566ab108b2",
+    "bytes": 2479
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/mvp/FIRST_TASK.md",
+    "sha256": "d76f57cb9af9787a07c947e878241fad98745dd91533c5e83189a5974461af3d",
+    "bytes": 1296
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/mvp/ROADMAP.md",
+    "sha256": "523d7a5b1da8db87f9aa5f2e3aed27f834954937825bc94407d0fe645947399c",
+    "bytes": 5090
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/mvp/SOURCES.md",
+    "sha256": "6445217ffae7d2f12a46645b80640d529f108473108734a6d5760efbe3b0659c",
+    "bytes": 984
+  },
+  {
+    "repository": "ride-options",
+    "path": "docs/mvp/spec.json",
+    "sha256": "96667ef7f590fcdda2701ad14a5d655a2f4974cf733ad444bfd88e4cb7e28407",
+    "bytes": 10815
+  },
+  {
+    "repository": "ride-options",
+    "path": "experiments/README.md",
+    "sha256": "22d674860d80978e4909e747eae207e3f7f4665656e68e89e73a86d123a8233a",
+    "bytes": 1018
+  },
+  {
+    "repository": "ride-options",
+    "path": "experiments/graphhopper-probe.yml",
+    "sha256": "ff71e7d7b01c8686326d9c9b1bbebbad5c686bd99554a0b3b883178538ac50f4",
+    "bytes": 654
+  },
+  {
+    "repository": "ride-options",
+    "path": "experiments/route-probe.json",
+    "sha256": "d2a5a3f25a7bb59a378c61892b179d4029cb2147dd969083401402b9c2920c50",
+    "bytes": 4617
+  },
+  {
+    "repository": "ride-options",
+    "path": "experiments/route_probe.py",
+    "sha256": "1e3844be3c6028bcb369a17b711171ba075400382bf4d63ad5086b41d90633b8",
+    "bytes": 2492
+  },
+  {
+    "repository": "ride-options",
+    "path": "tools/foundry_agent.py",
+    "sha256": "dc2d39488bcae88b04ca726b939da01cd5b829f2b5b059fb2d06ce4ea88b6b84",
+    "bytes": 9128
+  },
+  {
+    "repository": "crous-queue",
+    "path": ".foundry/project.json",
+    "sha256": "b2379281169480184d014a43e07374d029a2e985a4e69556782091e433278cd3",
+    "bytes": 664
+  },
+  {
+    "repository": "crous-queue",
+    "path": "AGENTS.md",
+    "sha256": "0b75a36a12dcaa7ffb0d7d5fc51153caab73e45a828e2773f1c21c2b42b4b0e1",
+    "bytes": 1691
+  },
+  {
+    "repository": "crous-queue",
+    "path": "acceptance/cases.json",
+    "sha256": "c3da8bd80994913e7e0fbf714efbc170f3b1e1214bb7bdda0c64a68c86f3d9a1",
+    "bytes": 833
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/adr/0001-mvp-boundaries.md",
+    "sha256": "3a1c1c7b8da858373b21f827d4f76768b01ed224224b05e58d9cba910e3da892",
+    "bytes": 1472
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/mvp/AGENT_HANDOFF.md",
+    "sha256": "e0181bf693a255a02c7517a7e97574fc4c5b30b9a8456cfd2888fa582fb65676",
+    "bytes": 6162
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/mvp/ARCHITECTURE.md",
+    "sha256": "833798813e689dca7812e01af7a1498a6b72201932af55cb02d597fcb4f0d816",
+    "bytes": 6642
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/mvp/DECISION.md",
+    "sha256": "07f1b5ddfe6fd5086c0098513eae46120787dba042b0d57417b7b90f07415e48",
+    "bytes": 2568
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/mvp/FIRST_TASK.md",
+    "sha256": "dfa6f80059ecfe036bf5283c261ceb166145c3533d1c0fc7b848908cebd3afea",
+    "bytes": 1257
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/mvp/ROADMAP.md",
+    "sha256": "108b8a0004c7811a812532c17da23d2684444365a79a721ce0de611cd3ea5640",
+    "bytes": 5121
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/mvp/SOURCES.md",
+    "sha256": "7575ad26d65670c6d8b9626e51bac2cfdcf5c6db6b1b31e17d93b18f50e70ff0",
+    "bytes": 810
+  },
+  {
+    "repository": "crous-queue",
+    "path": "docs/mvp/spec.json",
+    "sha256": "eed6bd64757c7aa05012e043dff0b714aaaeeb8c3c9c25c5680cb230b85c2218",
+    "bytes": 9878
+  },
+  {
+    "repository": "crous-queue",
+    "path": "fixtures/README.md",
+    "sha256": "dfe9650918f14c772d9870b50a51956a7961b194b9e52b7a8b2210a6059bc0ad",
+    "bytes": 550
+  },
+  {
+    "repository": "crous-queue",
+    "path": "fixtures/directory-provenance.json",
+    "sha256": "e8be0de3dcc7359280b5acdf9b826a8752152b5627440ec7decea5cbd2e4f825",
+    "bytes": 8201
+  },
+  {
+    "repository": "crous-queue",
+    "path": "fixtures/venues-2026-10-07.json",
+    "sha256": "6a06cbcb1c0c6a2eeddf33ae3204c7adaacf92be64757bd08ea5b014a2a49fd9",
+    "bytes": 377084
+  },
+  {
+    "repository": "crous-queue",
+    "path": "tools/foundry_agent.py",
+    "sha256": "dc2d39488bcae88b04ca726b939da01cd5b829f2b5b059fb2d06ce4ea88b6b84",
+    "bytes": 9128
+  },
+  {
+    "repository": "volley-coach",
+    "path": ".foundry/project.json",
+    "sha256": "e2b0dbadc8e0d4962f560e33b0e1d10accec3d547f8961d986a1b4bea4102c9d",
+    "bytes": 643
+  },
+  {
+    "repository": "volley-coach",
+    "path": "AGENTS.md",
+    "sha256": "42bbee6744b176b367c590ab41ad62ad8fd42099ec48ea0a56bb10a397caa2fd",
+    "bytes": 1692
+  },
+  {
+    "repository": "volley-coach",
+    "path": "acceptance/cases.json",
+    "sha256": "f03334b2e9f83b6bc47056dbec23322a40203413532df9104dfa4010de25a7b7",
+    "bytes": 862
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/adr/0001-mvp-boundaries.md",
+    "sha256": "03487663d6fa6682b6880b1413bac3f20a54ce4e71740a1221c64e5b0dc1a839",
+    "bytes": 1498
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/mvp/AGENT_HANDOFF.md",
+    "sha256": "520df2068f477bcf16d2575b8f3a3c1419f97220760195b4917d60b505ffa60a",
+    "bytes": 6128
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/mvp/ARCHITECTURE.md",
+    "sha256": "c09ba3de3e4ccca60be6d269644db8d3524a62dd267ac713829cb2e95ba1c406",
+    "bytes": 6395
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/mvp/DECISION.md",
+    "sha256": "bc4b98f5c83c097cd02afda4fae7a5f07d4ce9f75e329e12430bf811356e0523",
+    "bytes": 2633
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/mvp/FIRST_TASK.md",
+    "sha256": "0accaa684fff6769ba19e0859a0b09ce838c2230d93393df341a92662218ae6a",
+    "bytes": 1300
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/mvp/ROADMAP.md",
+    "sha256": "2d64979df2092830989064e4732df9982c141eca056af596ba42bba93bc9eb88",
+    "bytes": 4748
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/mvp/SOURCES.md",
+    "sha256": "db87991912a6e0b5535c79cec5d31938dad9aa3691e4f7b7877347456f8edbaf",
+    "bytes": 739
+  },
+  {
+    "repository": "volley-coach",
+    "path": "docs/mvp/spec.json",
+    "sha256": "1aedf0050f3e5b28216efa497a4441e95c76de72f8b9d45ea9f142652449b303",
+    "bytes": 9317
+  },
+  {
+    "repository": "volley-coach",
+    "path": "tools/foundry_agent.py",
+    "sha256": "dc2d39488bcae88b04ca726b939da01cd5b829f2b5b059fb2d06ce4ea88b6b84",
+    "bytes": 9128
+  },
+  {
+    "repository": "coopain",
+    "path": ".foundry/project.json",
+    "sha256": "8ecf77eb83c0ba6eb20215f3e0f1c13528a90ed00396c2335ccb6959790f06ab",
+    "bytes": 633
+  },
+  {
+    "repository": "coopain",
+    "path": "AGENTS.md",
+    "sha256": "546d2ad8f47bdff8e1541f0f0ec2f364b8500ff82c16ba83bebec8948a4bc014",
+    "bytes": 1687
+  },
+  {
+    "repository": "coopain",
+    "path": "acceptance/cases.json",
+    "sha256": "cd613cf1973c90edca99b8daa25e0ef50efb97253e6439cffd419d1947355cc2",
+    "bytes": 974
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/adr/0001-mvp-boundaries.md",
+    "sha256": "3412fbac10b769884bfcba49cc0904414039f6a9ebd556e9bf25781ad1c1070d",
+    "bytes": 1430
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/mvp/AGENT_HANDOFF.md",
+    "sha256": "710368f44fc0cb34e95937053f3733e10976a64abf5336436d57dab423990305",
+    "bytes": 6174
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/mvp/ARCHITECTURE.md",
+    "sha256": "64b46f0bfce9fabe4acebe58695c98ce71c315e81af5ee97a1440bb421c2d096",
+    "bytes": 4665
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/mvp/DECISION.md",
+    "sha256": "ce00e915c2c1e181fe157aaa9d0ac35780534c25fef523879d684d9523dec6fe",
+    "bytes": 2576
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/mvp/FIRST_TASK.md",
+    "sha256": "cf1c324987076dc11f892d3b549a1efdb74f6fb1813042c27c29d6d870a7ef36",
+    "bytes": 1534
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/mvp/ROADMAP.md",
+    "sha256": "38a8c622940b93743fcb96c4a0560327dde22bf0abb83109f735730d87ced9f9",
+    "bytes": 5141
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/mvp/SOURCES.md",
+    "sha256": "0e4f8c5727fd16d49fe4ebe72db007000b8c287e069bf21ad2212b1008030cfa",
+    "bytes": 791
+  },
+  {
+    "repository": "coopain",
+    "path": "docs/mvp/spec.json",
+    "sha256": "0a93eb6d50780a0bacc5f27dd5c0828a540fb0770167522d5a2444d3d0cd9a71",
+    "bytes": 9652
+  },
+  {
+    "repository": "coopain",
+    "path": "tools/foundry_agent.py",
+    "sha256": "dc2d39488bcae88b04ca726b939da01cd5b829f2b5b059fb2d06ce4ea88b6b84",
+    "bytes": 9128
+  }
+]

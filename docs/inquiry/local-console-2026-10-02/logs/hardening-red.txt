@@ -1,0 +1,97 @@
+.....F.F.                                                                [100%]
+=================================== FAILURES ===================================
+_________ test_source_reuse_keeps_claim_revisions_and_validates_links __________
+
+services = (<startup_foundry.application.FoundryApplication object at 0x7ac4c42a6680>, <startup_foundry.portfolio.PortfolioServic...ect at 0x7ac4c40603b0>, 'sqlite:////tmp/pytest-of-jonathan/pytest-41/test_source_reuse_keeps_claim_0/foundry.local.db')
+
+    def test_source_reuse_keeps_claim_revisions_and_validates_links(services):
+        _, portfolio, _, _ = services
+        portfolio.create_idea(IdeaDraft(title="Parent", description="A task"), idea_id="p")
+        payload = {
+            "title": "Comparator",
+            "url": "https://example.org/tool",
+            "claim": "Documented capability",
+            "limits": "No runtime trial",
+            "checked_on": "2026-10-02",
+        }
+>       first = portfolio.record_source(payload, idea_ids=["p"])
+                ^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'PortfolioService' object has no attribute 'record_source'
+
+foundry/tests/unit/test_discovery_operations.py:187: AttributeError
+___________ test_csv_import_reconciles_views_and_retries_atomically ____________
+
+services = (<startup_foundry.application.FoundryApplication object at 0x7ac4c430e410>, <startup_foundry.portfolio.PortfolioServic...ect at 0x7ac4c4253ac0>, 'sqlite:////tmp/pytest-of-jonathan/pytest-41/test_csv_import_reconciles_vie0/foundry.local.db')
+tmp_path = PosixPath('/tmp/pytest-of-jonathan/pytest-41/test_csv_import_reconciles_vie0')
+
+    def test_csv_import_reconciles_views_and_retries_atomically(services, tmp_path):
+        import csv
+        import json
+    
+        from startup_foundry.portfolio import CSV_NAMES
+    
+        _, portfolio, _, _ = services
+        inputs = tmp_path / "exports"
+        campaign = tmp_path / "campaign"
+        inputs.mkdir()
+        campaign.mkdir()
+        for name in CSV_NAMES:
+            with (inputs / (name + ".csv")).open("w", newline="") as stream:
+                writer = csv.writer(stream)
+                writer.writerow(["Idea ID", "Title", "Cleaned description"])
+                writer.writerow(["P001", "One idea", "One task"])
+        (campaign / "ideas.json").write_text(
+            json.dumps(
+                [
+                    {
+                        "id": "P001",
+                        "title": "One idea",
+                        "original": "Original task",
+                        "group": "test",
+                        "next_test": "Test the incumbent",
+                        "source_ids": ["source"],
+                        "disposition": "HOLD",
+                        "rationale": "Demand unknown",
+                    }
+                ]
+            )
+        )
+        (campaign / "sources.json").write_text(
+            json.dumps(
+                [
+                    {
+                        "id": "source",
+                        "title": "Comparator",
+                        "url": "https://example.org",
+                        "claim": "Source claim only",
+                    }
+                ]
+            )
+        )
+        result = portfolio.import_campaign(inputs, campaign)
+        assert result["created"] == 1
+        assert portfolio.list_ideas()["total"] == 1
+    
+        (inputs / "startup_ideas.csv").write_text("Idea ID,Title,Cleaned description\nP001,short\n")
+        with pytest.raises(ValidationError, match="row width"):
+>           portfolio.import_campaign(inputs, campaign)
+
+foundry/tests/unit/test_discovery_operations.py:269: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+foundry/src/startup_foundry/portfolio.py:411: in import_campaign
+    for row in (dict(zip(header, r, strict=True)) for r in rows)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0x7ac4c3e87160>
+
+>       for row in (dict(zip(header, r, strict=True)) for r in rows)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }
+E   ValueError: zip() argument 2 is shorter than argument 1
+
+foundry/src/startup_foundry/portfolio.py:411: ValueError
+=========================== short test summary info ============================
+FAILED foundry/tests/unit/test_discovery_operations.py::test_source_reuse_keeps_claim_revisions_and_validates_links
+FAILED foundry/tests/unit/test_discovery_operations.py::test_csv_import_reconciles_views_and_retries_atomically
+2 failed, 7 passed in 3.33s

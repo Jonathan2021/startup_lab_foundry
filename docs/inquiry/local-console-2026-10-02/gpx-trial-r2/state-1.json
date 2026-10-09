@@ -1,0 +1,712 @@
+{
+  "url": "https://gpx.studio/app#0/0/0",
+  "text": "the online GPX file editor \u2014 app\n\nView, edit, and create GPX files online with advanced route planning capabilities and file processing tools, beautiful maps and detailed data visualizations.\n\nPlan or edit a route\n\nSelect a trace to use the routing tool, or click on the map to start creating a new route.\n\nClick on the map to add a new anchor point, or drag existing ones to change the route.\n\nReverse\n\nReverse the direction of the route\n\nBack to start\n\nConnect the last point of the route with the starting point\n\nRound trip\n\nReturn to the starting point by the same route\n\nStart loop here\nCrop or split\n\nUse the slider to crop the trace, or split it by clicking on one of the split markers or on the trace itself.\n\nManage time data\n\nUse the form to set new time data.\n\nMerge items together\nConnect the traces\n\nConnecting the selected traces will create a single continuous trace.\n\nMerge the contents and keep the traces disconnected\n\nMerging the contents of the selected items will group all the contents inside the first item.\n\nRequest elevation data\n\nRequesting elevation data will erase the existing elevation data, if any, and replace it with data from Mapterhorn.\n\nCreate and edit points of interest\n\nFill in the form to create a new point of interest, or click on an existing one to edit it. Click on the map to fill the coordinates, or drag points of interest to move them.\n\nReduce the number of GPS points\n\nUse the slider to choose the number of GPS points to keep.\n\nClean GPS points and points of interest with a rectangle selection\n\nSelect a rectangle area on the map to remove GPS points and points of interest.\n\nFiles, Tracks, Segments, Points of interest\nFile\nEdit\nView\nSettings\nHelp\nDonate\nBasemaps\nWorld\nLiberty Topo\nLiberty Satellite\nOpenMapTiles OSM\nOpenMapTiles OSM Topo\nOpenStreetMap\nOpenTopoMap\nOpenHikingMap\nCyclOSM\nUtagawaMTB\nOverlays\nWorld\nWaymarked Trails\nHiking\nCycling\nMTB\nPoints of interest\nFood\nBakery\nFood Store\nEat and Drink\nAmenities\nToilets\nWater\nTourism\nHotel\nCampsite\nHut\nSummit\nPass\nBicycle\nBicycle Shop\nPublic Transport\nRailway Station\nTram Stop\nBus Stop\n5000\u00a0km\nMapLibre | \u00a9 Mapterhorn | \u00a9 OpenMapTiles \u00a9 OpenStreetMap contributors\n0.00 km\n0 m\n0 m\n0.00\n/\n0.00 km/h\n00:00\n/\n00:00\nNew\nCtrl +\nOpen...\nCtrl O\nDuplicate\nCtrl D\nDelete\nCtrl \u232b\nDelete all\n\u21e7 Ctrl \u232b\nExport...\nCtrl S\nExport all...\n\u21e7 Ctrl S",
+  "controls": [
+    {
+      "tag": "A",
+      "type": "",
+      "title": "",
+      "aria": null,
+      "text": " "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "File",
+      "text": " File"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Edit",
+      "text": " Edit"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "View",
+      "text": " View"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Settings",
+      "text": " Settings"
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "title": "",
+      "aria": "Help",
+      "text": " Help"
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "title": "",
+      "aria": "Donate",
+      "text": " Donate "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Plan or edit a route",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Create and edit points of interest",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Crop or split",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Manage time data",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Merge items together",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Extract contents to separate items",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Request elevation data",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Reduce the number of GPS points",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Clean GPS points and points of interest with a rectangle selection",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Delete \u21e7   Click"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "Zoom in",
+      "aria": "Zoom in",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "Zoom out",
+      "aria": "Zoom out",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "Drag to rotate map, click to reset north",
+      "aria": "Drag to rotate map, click to reset north",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "search",
+      "title": "",
+      "aria": "Search",
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Clear",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "Find my location",
+      "aria": "Find my location",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Basemaps "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Basemaps "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " World "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " World "
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "radio",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Overlays "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Overlays "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " World "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " World "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Waymarked Trails "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Waymarked Trails "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Hiking",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Cycling",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "MTB",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Points of interest "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Points of interest "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Food "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Food "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Bakery",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Food Store",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Eat and Drink",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Amenities "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Amenities "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Toilets",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Water",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Tourism "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Tourism "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Hotel",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Campsite",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Hut",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Summit",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Pass",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Bicycle "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Bicycle "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Bicycle Shop",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Public Transport "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " Public Transport "
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Railway Station",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Tram Stop",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Bus Stop",
+      "text": ""
+    },
+    {
+      "tag": "INPUT",
+      "type": "checkbox",
+      "title": "",
+      "aria": null,
+      "text": "",
+      "accept": ""
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "title": "",
+      "aria": null,
+      "text": "MapLibre"
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "title": "",
+      "aria": null,
+      "text": "\u00a9 Mapterhorn"
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "title": "",
+      "aria": null,
+      "text": "\u00a9 OpenMapTiles"
+    },
+    {
+      "tag": "A",
+      "type": "",
+      "title": "",
+      "aria": null,
+      "text": "\u00a9 OpenStreetMap contributors"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Distance",
+      "text": " 0.00\n        km"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Elevation gain and loss",
+      "text": " 0\n        m  0\n        m"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Speed (Moving / Total)",
+      "text": " 0.00\n             / 0.00\n            km/h"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": "Time (Moving / Total)",
+      "text": " 00:00 / 00:00"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "title": "",
+      "aria": null,
+      "text": " "
+    }
+  ]
+}

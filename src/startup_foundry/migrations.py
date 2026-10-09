@@ -8,19 +8,16 @@ from pathlib import Path
 from alembic.config import Config
 
 from alembic import command
+from startup_foundry.storage import prepare_database_directory
 
 
 def _migration_root() -> Path:
     """Locate migration assets in a source checkout or installed distribution."""
 
     source_root = Path(__file__).resolve().parents[2]
-    installed_root = (
-        Path(sysconfig.get_path("data")) / "share" / "startup-foundry"
-    )
+    installed_root = Path(sysconfig.get_path("data")) / "share" / "startup-foundry"
     for candidate in (source_root, installed_root):
-        if (candidate / "alembic.ini").is_file() and (
-            candidate / "alembic"
-        ).is_dir():
+        if (candidate / "alembic.ini").is_file() and (candidate / "alembic").is_dir():
             return candidate
     raise RuntimeError(
         "Alembic assets are missing from the Foundry source or installation"
@@ -43,4 +40,5 @@ def alembic_config(database_url: str, *, sql_echo: bool = False) -> Config:
 def upgrade_database(database_url: str, *, sql_echo: bool = False) -> None:
     """Bring an application database to the current checked-in revision."""
 
+    prepare_database_directory(database_url)
     command.upgrade(alembic_config(database_url, sql_echo=sql_echo), "head")

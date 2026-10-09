@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "date": "2026-10-02",
+  "script_compilation": true,
+  "existing_output_guards": [
+    {
+      "script": "mlflow_probe.py",
+      "existing_output_refused_before_run": true
+    },
+    {
+      "script": "change_probe.py",
+      "existing_output_refused_before_run": true
+    },
+    {
+      "script": "source_reuse_probe.py",
+      "existing_output_refused_before_run": true
+    },
+    {
+      "script": "source_impact_probe.py",
+      "existing_output_refused_before_run": true
+    },
+    {
+      "script": "route_probe.py",
+      "existing_output_refused_before_run": true
+    },
+    {
+      "script": "route_constraints_probe.py",
+      "existing_output_refused_before_run": true
+    }
+  ],
+  "prior_json_screenshot_log_hashes_unchanged": true,
+  "t3_t6_frozen_input_replays_match": true,
+  "scope": "No product or network trial rerun; guard invocations fail before probe operations. Offline exact-reference replays only."
+}

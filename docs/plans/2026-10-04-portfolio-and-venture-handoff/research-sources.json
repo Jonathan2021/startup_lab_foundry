@@ -1,0 +1,73 @@
+{
+  "purpose": "Bounded planning research; import scoped claims only when used in the next investigation.",
+  "sources": [
+    {
+      "id": "law-placement-profit",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l5321-1",
+      "claim": "Official French government text defines placement and permits for-profit provision.",
+      "limits": "Does not clear any particular Coopain money flow; review application to the selected facts before charging.",
+      "access": "full official page read",
+      "checked_on": "2026-10-04"
+    },
+    {
+      "id": "law-placement-jobseeker-fees",
+      "url": "https://code.travail.gouv.fr/code-du-travail/l5321-3",
+      "claim": "Official text generally prohibits direct or indirect remuneration required from jobseekers for placement services, subject to specified exceptions.",
+      "limits": "Not a blanket prohibition on all career products; not an endorsement of candidate premium services or referrer-payment workarounds.",
+      "access": "full official page read",
+      "checked_on": "2026-10-04"
+    },
+    {
+      "id": "keycoopt-referral",
+      "url": "https://keycoopt.com/en/solution/",
+      "claim": "Vendor describes employee referral programs, internal mobility and HR/ATS integration.",
+      "limits": "Vendor documentation; no runtime trial, independently measured benefit or commercial match to an open referral network.",
+      "access": "official indexed page content",
+      "checked_on": "2026-10-04"
+    },
+    {
+      "id": "basile-referral",
+      "url": "https://basile.io/",
+      "claim": "Vendor describes employee referral portals and ATS integration.",
+      "limits": "No runtime trial; marketing performance and compliance claims were not adopted as evidence.",
+      "access": "full official page read",
+      "checked_on": "2026-10-04"
+    },
+    {
+      "id": "rankat-friends-teams",
+      "url": "https://www.rankat.app/",
+      "claim": "Vendor describes friend groups, ELO/head-to-head history, invitation codes, round-robin/knockout and team tournaments.",
+      "limits": "Not a trial of role-aware rotating-team balancing or repeated group adoption.",
+      "access": "full official page read",
+      "checked_on": "2026-10-04"
+    },
+    {
+      "id": "rankade-groups",
+      "url": "https://rankade.com/frequently-asked-question/2/how-do-i-create-a-group/14",
+      "claim": "Indexed official FAQ describes creation of groups with players or ghosts.",
+      "limits": "Direct fetch returned 502; no runtime behavior established.",
+      "access": "official search excerpt; direct fetch failed",
+      "checked_on": "2026-10-04"
+    },
+    {
+      "id": "rankade-api",
+      "url": "https://rankade.com/api/",
+      "claim": "Indexed official page describes entering matches, creating players and retrieving rankings.",
+      "limits": "Direct fetch failed; no API trial or current access entitlement verified.",
+      "access": "official search excerpt; direct fetch failed",
+      "checked_on": "2026-10-04"
+    },
+    {
+      "id": "elosmash-limited",
+      "url": "https://www.elosmash.com/en",
+      "claim": "Fetched page exposed a badminton tracking/rankings title and loading text.",
+      "limits": "No further functionality inferred.",
+      "access": "loading shell only",
+      "checked_on": "2026-10-04"
+    }
+  ],
+  "access_limits": [
+    "Date-specific Legifrance 2026-10-04 URL failed; official Code du travail numérique text was read instead.",
+    "No competitor accounts, planning submissions, messages or purchases."
+  ]
+}

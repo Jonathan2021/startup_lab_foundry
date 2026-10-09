@@ -6,7 +6,7 @@ import startup_foundry
 
 
 def test_package_is_importable() -> None:
-    assert startup_foundry.__version__ == "0.0.1"
+    assert startup_foundry.__version__ == "0.1.0"
 
 
 def test_learning_state_is_outside_product_package() -> None:

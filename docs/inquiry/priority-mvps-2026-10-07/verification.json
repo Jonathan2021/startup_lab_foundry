@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-07",
+  "command_note": "Replay commands describe the checked scope; retained logs are the original outputs. Groups overlap and must not be summed. Product run preceded the final helper start assertions.",
+  "tests": [
+    {
+      "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/product-check.txt",
+      "sha256": "dec07de444b39cdd7bf62e7e19e5af2ad04fed6dc1ee50e6c3da5e27b6eb5bfb",
+      "observed": "144 passed, 1 skipped",
+      "replay_command": "../.venv/bin/pytest -q tests/unit tests/integration tests/acceptance/test_cli_workspace.py tests/acceptance/test_cli_lifecycle.py tests/acceptance/test_agent_kit.py tests/contract/test_package_boundary.py"
+    },
+    {
+      "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/agent-kit-final.txt",
+      "sha256": "f50daf55faec695af4a354abf106566d26903b0a89bef5484e8b25247bedb7bb",
+      "observed": "3 passed",
+      "replay_command": "../.venv/bin/pytest -q tests/acceptance/test_agent_kit.py tests/unit/test_workspace_modules.py"
+    },
+    {
+      "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/container-workflow-check.txt",
+      "sha256": "fa2b0b6e4efec70fc6099081f3056c855e88291e5d9927afddb5f2a4e26e323e",
+      "observed": "18 passed",
+      "replay_command": "../.venv/bin/pytest -q tests/acceptance/test_container_stack.py tests/contract/test_ci_workflow.py tests/contract/test_delivery_workflows.py"
+    },
+    {
+      "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/browser-check.txt",
+      "sha256": "3eca333451e48d8d35c271dc922270394780bd85952043dc8132e4eb25359314",
+      "observed": "5 passed",
+      "replay_command": "../.venv/bin/pytest -q tests/acceptance/test_lifecycle_browser.py tests/acceptance/test_revamp_browser.py"
+    },
+    {
+      "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/coopain-tests.txt",
+      "sha256": "66dde9206fc340af4c1930b9463f81dcf2fe72e6e9cbdd4f71e12e48e99be877",
+      "observed": "7 passed",
+      "replay_command": "ENVIRONMENT=test AUTO_CREATE_TABLES=false DATABASE_URL=sqlite+pysqlite:///:memory: SMTP_DSN= S3_ENDPOINT_URL=http://127.0.0.1:1 AWS_EC2_METADATA_DISABLED=true PYTHONPATH=. /home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/coopain-venv/bin/pytest -q tests/test_match_pii_grants_flow.py tests/test_referrer_job_posts_api.py tests/test_safety_api.py tests/test_matches_snapshot.py tests/test_candidate_preference_lifecycle.py",
+      "cwd": "/home/jonathan/startup_lab/coopain/backend",
+      "environment": "Isolated Python 3.11.15; backend requirements plus bcrypt==4.0.1; all external providers disabled/faked."
+    }
+  ],
+  "lint": {
+    "command": "../.venv/bin/ruff check src tests scripts/agent-kit",
+    "cwd": "foundry",
+    "result": "All checks passed"
+  },
+  "strict_types": {
+    "command": "make typecheck",
+    "cwd": "/home/jonathan/startup_lab",
+    "result": "Success: no issues found in 41 source files"
+  },
+  "handoffs": "handoff-verification.json",
+  "isolated_starts": "agent-smoke.json",
+  "store_integrity_and_preservation": "store-verification.json",
+  "claim_limits": "New venture apps are not implemented by this campaign; synthetic checks are not user or physical-world validation.",
+  "post_dependency_patch": {
+    "mako": "1.4.3",
+    "pytest": "9.1.1",
+    "lock_check": "pass",
+    "ruff": "pass",
+    "local_checks": [
+      {
+        "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/patched-dependencies-product.txt",
+        "sha256": "bca4b7c5b5d6b1367066af0ba9aad5487de0d7ef8824b427644e7de46a5a5a4a",
+        "result": "144 passed, 1 skipped"
+      },
+      {
+        "log": "/home/jonathan/startup_lab/foundry/.local/priority-mvps-2026-10-07/patched-dependencies-browser-workflow.txt",
+        "sha256": "4cafa564ec75cbd873be7d14599c4fa755f98461c636a011927f47008722f072",
+        "result": "17 passed"
+      }
+    ],
+    "limits": "Host PostgreSQL still intentionally skipped without explicit URL; CI validates PostgreSQL and image on the pushed revision."
+  },
+  "github_pre_dependency_patch": {
+    "commit": "a42f08ef852ab73b400e7a109de461102e28634e",
+    "run": "https://github.com/Jonathan2021/startup_lab_foundry/actions/runs/37616462723",
+    "conclusion": "success",
+    "jobs": "Python 3.11/3.13, PostgreSQL, browser, image/Compose; publication skipped"
+  }
+}

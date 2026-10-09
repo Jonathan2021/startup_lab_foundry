@@ -1,0 +1,51 @@
+{
+  "trial": "T7",
+  "date": "2026-10-02",
+  "outcome": "PARTIAL_INCUMBENT_WORKFLOW_OBSERVED",
+  "liberty": {
+    "anonymous_editor": true,
+    "coordinates": {
+      "start": [
+        2.9045,
+        45.7158
+      ],
+      "end": [
+        2.8669,
+        47.3051
+      ]
+    },
+    "coordinate_meaning": "public town-centre points selected through visible search/map; not user lodging addresses",
+    "fastest_motorways_allowed": {
+      "time_display": "2h34",
+      "distance_km": 255
+    },
+    "fastest_motorways_disabled": {
+      "time_display": "3h05",
+      "distance_km": 225
+    },
+    "export_gpx_menu_observed": true,
+    "export_completed": false,
+    "paid_action": false,
+    "saved_or_published": false
+  },
+  "other_access": {
+    "68_studio": "sign-in view; desktop/premium limits documented; no session used",
+    "myrouteapp": "redirected to login",
+    "kurviger": "stuck-loading screen in isolated Chromium; not a capability failure"
+  },
+  "limits": [
+    "Original user GPX, app versions, settings, dates and actual timings absent",
+    "No scenic-section preference labels or actual arrive-by deadline supplied",
+    "No cross-app transfer or on-road accuracy trial",
+    "Input/selector/API harness errors retained; UI interaction count is not a human usability benchmark",
+    "One intermediate UI state lost endpoint after opening options rapidly; endpoint re-added; cause unisolated, no product-bug conclusion"
+  ],
+  "evidence": [
+    "t7-r2/access.json",
+    "t7-t8-followups/access.json",
+    "t7-liberty/actions.json",
+    "t7-liberty/route-options.png",
+    "t7-liberty/no-motorways-stable.png",
+    "t7-liberty/route-actions.png"
+  ]
+}

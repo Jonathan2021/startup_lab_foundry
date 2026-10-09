@@ -26,6 +26,7 @@ build/
 *.db-*
 *.local.db*
 .local-artifacts/
+.local/
 
 .DS_Store
 Thumbs.db

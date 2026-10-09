@@ -1,0 +1,14 @@
+[
+  {
+    "value": "false",
+    "url": "https://brouter.de/brouter?lonlats=13.278%2C52.508%7C13.51%2C52.365&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=false",
+    "status": 500,
+    "body": ""
+  },
+  {
+    "value": "0",
+    "url": "https://brouter.de/brouter?lonlats=13.278%2C52.508%7C13.51%2C52.365&profile=car-fast&alternativeidx=0&format=geojson&profile%3Aavoid_motorways=0",
+    "status": 400,
+    "body": "target island detected for section 0\n"
+  }
+]

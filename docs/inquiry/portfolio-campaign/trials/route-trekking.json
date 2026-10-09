@@ -1,0 +1,78 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "creator": "BRouter-1.7.10",
+        "name": "brouter_trekking_0",
+        "track-length": "1816",
+        "filtered ascend": "0",
+        "plain-ascend": "0",
+        "total-time": "302",
+        "total-energy": "30168",
+        "cost": "1929",
+        "messages": [
+          ["Longitude", "Latitude", "Elevation", "Distance", "CostPerKm", "ElevCost", "TurnCost", "NodeCost", "InitialCost", "WayTags", "NodeTags", "Time", "Energy"],
+          ["13377474", "52516369", "35", "13", "5050", "0", "0", "0", "0", "highway=footway surface=sett smoothness=good", "", "2", "218"],
+          ["13377032", "52516342", "35", "30", "1000", "0", "0", "20", "0", "highway=footway surface=sett bicycle=yes smoothness=good oneway=no route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes", "nodeaccessgranted=yes highway=traffic_signals traffic_signals:direction=forward traffic_signals=signal", "7", "722"],
+          ["13376989", "52516340", "35", "3", "1000", "0", "0", "0", "0", "highway=footway surface=sett bicycle=yes smoothness=good oneway=no route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes", "nodeaccessgranted=yes barrier=kerb kerb=lowered", "7", "772"],
+          ["13376892", "52516276", "34", "10", "1000", "0", "0", "0", "0", "highway=cycleway surface=asphalt smoothness=excellent cycleway=crossing oneway=yes route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes", "nodeaccessgranted=yes estimated_crossing_class=0", "9", "930"],
+          ["13376706", "52516265", "34", "13", "1000", "0", "0", "0", "0", "highway=primary surface=asphalt foot=use_sidepath smoothness=excellent oneway=yes cycleway:right=lane cycleway:left=no route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes cycleway:right:oneway=yes", "", "11", "1124"],
+          ["13376541", "52516254", "34", "11", "1000", "0", "0", "20", "0", "highway=primary surface=asphalt foot=use_sidepath smoothness=good oneway=yes cycleway:right=lane cycleway:left=no route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes cycleway:right:oneway=yes", "nodeaccessgranted=yes highway=crossing estimated_crossing_class=0 crossing=traffic_signals wheelchair=yes", "12", "1291"],
+          ["13372030", "52515967", "34", "308", "1000", "0", "0", "0", "0", "highway=primary surface=asphalt foot=use_sidepath smoothness=good oneway=yes cycleway:right=lane cycleway:left=no route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes cycleway:right:oneway=yes", "nodeaccessgranted=yes highway=crossing estimated_crossing_class=4 crossing=unmarked kerb=raised", "61", "6139"],
+          ["13370155", "52515845", "34", "128", "1000", "0", "0", "20", "0", "highway=primary surface=asphalt foot=use_sidepath smoothness=good oneway=yes cycleway:right=lane cycleway:left=no route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes cycleway:right:oneway=yes", "nodeaccessgranted=yes highway=traffic_signals estimated_crossing_class=0", "82", "8265"],
+          ["13369609", "52515862", "33", "37", "1000", "0", "0", "0", "0", "highway=cycleway surface=asphalt foot=no bicycle=designated smoothness=good cycleway=crossing oneway=yes route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes", "", "88", "8867"],
+          ["13351704", "52514779", "34", "1219", "1000", "0", "0", "0", "0", "highway=cycleway surface=asphalt bicycle=designated smoothness=intermediate oneway=yes route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes", "", "294", "29428"],
+          ["13351212", "52515001", "34", "44", "1000", "0", "0", "0", "0", "highway=cycleway surface=asphalt foot=no bicycle=designated smoothness=excellent oneway=no route_bicycle_icn=yes route_bicycle_ncn=yes route_bicycle_lcn=yes", "", "301", "30168"]
+        ],
+        "times": [0,0.168,2.184,3.192,6.552,7.224,7.728,9.305,11.249,12.915,22.571,33.524,46.593,61.391,76.479,82.653,83.489,84.659,85.996,87.567,88.356,88.672,93.458,126.642,157.615,172.679,192.01,200.814,207.418,237.642,262.912,292.242,293.419,294.26,295.942,297.287,298.969,299.978,301.323,301.659]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [13.377497, 52.516247, 35.0],
+          [13.377495, 52.516259, 35.0],
+          [13.377474, 52.516369, 35.0],
+          [13.377381, 52.516364, 35.0],
+          [13.377094, 52.516346, 35.0],
+          [13.377032, 52.516342, 35.0],
+          [13.376989, 52.516340, 35.0],
+          [13.376892, 52.516276, 34.75],
+          [13.376706, 52.516265, 34.5],
+          [13.376541, 52.516254, 34.5],
+          [13.375726, 52.516203, 35.0],
+          [13.374602, 52.516131, 34.0],
+          [13.373368, 52.516052, 34.0],
+          [13.372030, 52.515967, 34.0],
+          [13.370697, 52.515882, 34.0],
+          [13.370155, 52.515845, 34.0],
+          [13.370083, 52.515863, 34.0],
+          [13.369984, 52.515886, 34.0],
+          [13.369862, 52.515879, 34.0],
+          [13.369714, 52.515869, 33.75],
+          [13.369640, 52.515865, 33.75],
+          [13.369609, 52.515862, 33.75],
+          [13.369167, 52.515869, 33.75],
+          [13.366127, 52.515677, 33.5],
+          [13.363570, 52.515511, 34.0],
+          [13.362042, 52.515412, 33.0],
+          [13.360262, 52.515301, 33.0],
+          [13.359551, 52.515256, 33.5],
+          [13.359038, 52.515222, 33.75],
+          [13.356603, 52.515065, 34.0],
+          [13.354437, 52.514927, 34.0],
+          [13.351886, 52.514763, 34.0],
+          [13.351781, 52.514767, 34.0],
+          [13.351704, 52.514779, 34.0],
+          [13.351560, 52.514807, 34.0],
+          [13.351456, 52.514838, 34.0],
+          [13.351344, 52.514892, 34.0],
+          [13.351288, 52.514929, 34.0],
+          [13.351226, 52.514985, 34.0],
+          [13.351212, 52.515001, 34.0]
+        ]
+      }
+    }
+  ]
+}

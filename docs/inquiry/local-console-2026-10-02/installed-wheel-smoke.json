@@ -1,0 +1,18 @@
+{
+  "cwd": "/tmp",
+  "installed_wheel": "/tmp/foundry-console-final-wheel/startup_foundry-0.0.1-py3-none-any.whl",
+  "migration": "fresh database upgraded through 7ce261002001",
+  "templates_and_static_assets": 17,
+  "http_pages_and_assets": "passed",
+  "server_stopped": true,
+  "dependency_policy": "unlocked wheel install within declared version bounds; main regression used uv.lock",
+  "versions": {
+    "startup-foundry": "0.0.1",
+    "sqlalchemy": "2.1.2",
+    "alembic": "1.20.0",
+    "fastapi": "0.142.2",
+    "starlette": "1.7.0",
+    "jinja2": "3.1.6",
+    "uvicorn": "0.54.0"
+  }
+}

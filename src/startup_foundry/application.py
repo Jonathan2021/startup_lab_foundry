@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 
-from sqlalchemy import select
+from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
 from startup_foundry.domain import (
@@ -38,6 +38,7 @@ from startup_foundry.domain import (
 from startup_foundry.errors import (
     ConflictError,
     ReferenceError,
+    SliceFiveIncompleteError,
     ValidationError,
     VentureNotFoundError,
 )
@@ -67,6 +68,33 @@ class FoundryApplication:
     def __init__(self, session_factory: SessionFactory) -> None:
         self._session_factory = session_factory
 
+    def record_agent_run(self, payload: JsonObject) -> JsonObject:
+        """Record and emit one versioned run after Slice 005 implementation."""
+
+        # DEFERRED[EVALOPS-CASE]: Persist the Foundry-owned run/version/audit records
+        # transactionally and emit the versioned EvalOps trace contract.
+        del payload
+        raise SliceFiveIncompleteError(
+            "Slice 005 Foundry agent-run recording is intentionally incomplete"
+        )
+
+    def show_agent_run(self, run_id: str) -> JsonObject:
+        """Reconstruct a recorded run and its integration contract."""
+
+        del run_id
+        raise SliceFiveIncompleteError(
+            "Slice 005 Foundry agent-run reconstruction is intentionally incomplete"
+        )
+
+    def link_evalops_trace(self, run_id: str, trace_id: str) -> JsonObject:
+        """Attach the EvalOps-owned trace identity without owning trace state."""
+
+        # DEFERRED[EVALOPS-CASE]: Safe same-ID retries; reject conflicting relinks.
+        del run_id, trace_id
+        raise SliceFiveIncompleteError(
+            "Slice 005 EvalOps trace linking is intentionally incomplete"
+        )
+
     @staticmethod
     def _session(unit_of_work: UnitOfWork) -> Session:
         if unit_of_work.session is None:
@@ -80,15 +108,11 @@ class FoundryApplication:
             raise VentureNotFoundError(venture_id)
         workspace = session.get(Workspace, venture.workspace_id)
         if workspace is None:
-            raise ReferenceError(
-                f"Venture {venture_id!r} has no associated workspace"
-            )
+            raise ReferenceError(f"Venture {venture_id!r} has no associated workspace")
         return venture, workspace
 
     @staticmethod
-    def _same_workspace(
-        *, expected: str, actual: str, description: str
-    ) -> None:
+    def _same_workspace(*, expected: str, actual: str, description: str) -> None:
         if expected != actual:
             raise ReferenceError(f"{description} must belong to the same venture")
 
@@ -100,6 +124,11 @@ class FoundryApplication:
         objective: str,
         stage: VentureStage,
     ) -> JsonObject:
+        venture_id = required_text("venture id", venture_id)
+        name = required_text("name", name)
+        objective = required_text("objective", objective)
+        if len(venture_id) > 36 or len(name) > 240:
+            raise ValidationError("venture id/name exceeds 36/240 characters")
         with UnitOfWork(self._session_factory) as unit_of_work:
             session = self._session(unit_of_work)
             if session.get(Venture, venture_id) is not None:
@@ -135,6 +164,82 @@ class FoundryApplication:
             session.flush()
             return self._venture_json(venture, workspace)
 
+    def list_ventures(
+        self,
+        *,
+        query: str = "",
+        stage: str | None = None,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> JsonObject:
+        """List stable, paginated venture summaries without requiring known IDs."""
+
+        if not 1 <= limit <= 500 or offset < 0:
+            raise ValidationError("limit must be 1–500 and offset nonnegative")
+        statement = select(Venture, Workspace).join(
+            Workspace, Venture.workspace_id == Workspace.id
+        )
+        if stage:
+            try:
+                statement = statement.where(Venture.stage == VentureStage(stage))
+            except ValueError as exc:
+                raise ValidationError("Unknown venture stage") from exc
+        if query:
+            statement = statement.where(
+                or_(
+                    Workspace.title.icontains(query, autoescape=True),
+                    Venture.objective.icontains(query, autoescape=True),
+                    Venture.id.icontains(query, autoescape=True),
+                )
+            )
+        with UnitOfWork(self._session_factory) as unit:
+            session = self._session(unit)
+            total = session.scalar(
+                select(func.count()).select_from(statement.subquery())
+            )
+            rows = session.execute(
+                statement.order_by(Workspace.title, Venture.id)
+                .limit(limit)
+                .offset(offset)
+            )
+            return {
+                "items": [self._venture_json(v, w) for v, w in rows],
+                "total": total,
+                "limit": limit,
+                "offset": offset,
+            }
+
+    def list_records(
+        self,
+        venture_id: str,
+        collection: str,
+        *,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> JsonObject:
+        """Expose the supported venture view consistently to CLI and HTTP."""
+
+        if not 1 <= limit <= 500 or offset < 0:
+            raise ValidationError("limit must be 1–500 and offset nonnegative")
+        if collection not in {
+            "assumptions",
+            "evidence",
+            "assumption_assessments",
+            "decisions",
+            "work_items",
+            "experiments",
+            "artifacts",
+        }:
+            raise ValidationError("Unknown venture record collection")
+        rows = self.show_venture(venture_id)[collection]
+        assert isinstance(rows, list)
+        return {
+            "items": rows[offset : offset + limit],
+            "total": len(rows),
+            "limit": limit,
+            "offset": offset,
+        }
+
     def show_venture(self, venture_id: str) -> JsonObject:
         with UnitOfWork(self._session_factory) as unit_of_work:
             session = self._session(unit_of_work)
@@ -159,9 +264,7 @@ class FoundryApplication:
                     select(AssumptionAssessment)
                     .join(Assumption)
                     .where(Assumption.workspace_id == workspace.id)
-                    .order_by(
-                        AssumptionAssessment.created_at, AssumptionAssessment.id
-                    )
+                    .order_by(AssumptionAssessment.created_at, AssumptionAssessment.id)
                 )
             )
             decisions = list(
@@ -178,6 +281,14 @@ class FoundryApplication:
                     .order_by(WorkItem.created_at, WorkItem.id)
                 )
             )
+            experiments = list(
+                session.scalars(
+                    select(Experiment)
+                    .join(WorkItem, Experiment.work_item_id == WorkItem.id)
+                    .where(WorkItem.workspace_id == workspace.id)
+                    .order_by(WorkItem.created_at, Experiment.id)
+                )
+            )
             artifacts = list(
                 session.scalars(
                     select(Artifact)
@@ -192,10 +303,11 @@ class FoundryApplication:
                 "assumption_assessments": [
                     self._assessment_json(session, item) for item in assessments
                 ],
-                "decisions": [
-                    self._decision_json(session, item) for item in decisions
-                ],
+                "decisions": [self._decision_json(session, item) for item in decisions],
                 "work_items": [self._work_item_json(item) for item in work_items],
+                "experiments": [
+                    self._experiment_json(session, item) for item in experiments
+                ],
                 "artifacts": [self._artifact_json(item) for item in artifacts],
             }
 
@@ -263,9 +375,7 @@ class FoundryApplication:
             session.add(assessment)
             session.flush()
             session.add_all(
-                AssessmentEvidence(
-                    assessment_id=assessment.id, evidence_id=item.id
-                )
+                AssessmentEvidence(assessment_id=assessment.id, evidence_id=item.id)
                 for item in linked_evidence
             )
             session.flush()
@@ -352,9 +462,7 @@ class FoundryApplication:
             session.add(decision)
             session.flush()
             session.add_all(
-                DecisionAssessment(
-                    decision_id=decision.id, assessment_id=item.id
-                )
+                DecisionAssessment(decision_id=decision.id, assessment_id=item.id)
                 for item in assessments
             )
             session.flush()
@@ -392,9 +500,7 @@ class FoundryApplication:
             for assumption_id in assumption_ids:
                 assumption = session.get(Assumption, assumption_id)
                 if assumption is None:
-                    raise ReferenceError(
-                        f"Assumption {assumption_id!r} was not found"
-                    )
+                    raise ReferenceError(f"Assumption {assumption_id!r} was not found")
                 self._same_workspace(
                     expected=workspace.id,
                     actual=assumption.workspace_id,
@@ -447,9 +553,7 @@ class FoundryApplication:
                 )
                 session.flush()
             elif kind is WorkItemKind.EXECUTION and acceptance_criteria is None:
-                raise ValidationError(
-                    "execution work requires acceptance criteria"
-                )
+                raise ValidationError("execution work requires acceptance criteria")
 
             return self._work_item_json(work_item)
 
@@ -461,6 +565,10 @@ class FoundryApplication:
             work_item = session.get(WorkItem, work_item_id)
             if work_item is None:
                 raise ReferenceError(f"WorkItem {work_item_id!r} was not found")
+            if status in {WorkItemStatus.READY, WorkItemStatus.IN_PROGRESS}:
+                from startup_foundry.decision_maps import require_execution_eligible
+
+                require_execution_eligible(session, work_item)
             work_item.status = status
             session.flush()
             return self._work_item_json(work_item)
@@ -511,6 +619,7 @@ class FoundryApplication:
     def _venture_json(venture: Venture, workspace: Workspace) -> JsonObject:
         return {
             "id": venture.id,
+            "workspace_id": workspace.id,
             "name": workspace.title,
             "objective": venture.objective,
             "stage": venture.stage.value,
@@ -578,6 +687,29 @@ class FoundryApplication:
             "summary": decision.summary,
             "rationale": decision.rationale,
             "decided_at": _timestamp(decision.decided_at),
+        }
+
+    @staticmethod
+    def _experiment_json(session: Session, experiment: Experiment) -> JsonObject:
+        assumption_ids = list(
+            session.scalars(
+                select(ExperimentAssumption.assumption_id)
+                .where(ExperimentAssumption.experiment_id == experiment.id)
+                .order_by(
+                    ExperimentAssumption.is_primary.desc(),
+                    ExperimentAssumption.assumption_id,
+                )
+            )
+        )
+        return {
+            "id": experiment.id,
+            "work_item_id": experiment.work_item_id,
+            "status": str(experiment.status),
+            "method": experiment.method,
+            "success_criteria": experiment.success_criteria,
+            "failure_criteria": experiment.failure_criteria,
+            "result_summary": experiment.result_summary,
+            "assumption_ids": assumption_ids,
         }
 
     @staticmethod

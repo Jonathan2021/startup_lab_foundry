@@ -62,6 +62,17 @@ from startup_foundry.domain import (
 )
 
 EXPECTED_TABLES = {
+    "decision_maps",
+    "human_request_dependencies",
+    "human_requests",
+    "human_request_targets",
+    "venture_assessments",
+    "venture_criterion_scores",
+    "venture_criterion_score_evidence",
+    "portfolio_proposals",
+    "proposal_participants",
+    "workspace_reviews",
+    "step_runs",
     "action_attempts",
     "agent_definitions",
     "agent_runs",

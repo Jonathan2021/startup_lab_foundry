@@ -1,0 +1,640 @@
+{
+  "research-memory": {
+    "ids": [
+      "G002",
+      "P088",
+      "P174"
+    ],
+    "source_ids": [
+      "hindsight",
+      "mlflow"
+    ],
+    "default_disposition": "INTERNAL_TRIAL",
+    "rationale": "Own records are available; structured memory already has strong substitutes. Measure evidence recovery before adding a product.",
+    "next_test": "Compare identical source corpus and exact revision recovery with files and an existing memory tool; count maintenance overhead."
+  },
+  "literature-evidence": {
+    "ids": [
+      "G012",
+      "G024",
+      "P027",
+      "P083"
+    ],
+    "source_ids": [
+      "elicit",
+      "hindsight"
+    ],
+    "default_disposition": "HOLD_WORKFLOW",
+    "rationale": "Research/review tools overlap; a specific unmet evidence task and permitted corpus are missing.",
+    "next_test": "Find one recurring review/semantic-history question and compare expected sources against an incumbent; avoid inventing broad research agents."
+  },
+  "model-evaluation": {
+    "ids": [
+      "G021",
+      "G019",
+      "P125",
+      "P129",
+      "P182",
+      "P187",
+      "P196"
+    ],
+    "source_ids": [
+      "mlflow",
+      "datasets",
+      "fiftyone",
+      "cleanlab"
+    ],
+    "default_disposition": "ADOPT_BASELINE_OR_GET_DATA",
+    "rationale": "Evaluation/curation infrastructure exists; prediction or data-selection value needs a real labelled task, not an infrastructure clone.",
+    "next_test": "Use the MLflow mechanics result for infrastructure only; require a leakage-safe dataset and random/uncertainty baseline for model claims."
+  },
+  "foundry-factories": {
+    "ids": [
+      "G001",
+      "U001",
+      "P002",
+      "P075",
+      "P076",
+      "P194"
+    ],
+    "source_ids": [
+      "buildpad"
+    ],
+    "default_disposition": "INTERNAL_ONLY",
+    "rationale": "A broad factory/cofounder platform has overlap and no demonstrated acquisition or outcome advantage.",
+    "next_test": "Use current Foundry for actual investigations and add only repeated missing behavior; benchmark results, not generated plans."
+  },
+  "job-workflow": {
+    "ids": [
+      "G004",
+      "P001",
+      "P019",
+      "P046",
+      "P058",
+      "P124",
+      "P165"
+    ],
+    "source_ids": [
+      "simplify",
+      "sharetribe"
+    ],
+    "default_disposition": "HOLD_DISTRIBUTION",
+    "rationale": "Application/marketplace primitives exist. Personal job use is available, but employer adoption and paid demand are untested.",
+    "next_test": "Use current personal workflow and measure one concrete miss; two-sided products first need reachable employers and candidates."
+  },
+  "skills-evidence": {
+    "ids": [
+      "G005",
+      "P106",
+      "N003"
+    ],
+    "source_ids": [
+      "credentials",
+      "credly"
+    ],
+    "default_disposition": "SHORTLIST_DISCOVERY",
+    "rationale": "Portable evidence has standards; the hard unknown is whether employers will issue and trust scoped interview evidence.",
+    "next_test": "Test signed, revocable, consented work-sample evidence before comparative candidate ranks; obtain issuer/reviewer commitment before platform work."
+  },
+  "regulatory-actions": {
+    "ids": [
+      "G003",
+      "G013",
+      "P008",
+      "P059",
+      "P186"
+    ],
+    "source_ids": [
+      "verifywise",
+      "cube",
+      "change"
+    ],
+    "default_disposition": "HOLD_DOMAIN_ACCESS",
+    "rationale": "Document monitoring/governance products overlap. Legal meaning, liability and buyer workflow require expertise and current source coverage.",
+    "next_test": "Define one source-to-obligation decision with an expert; first test existing monitor/configuration and evidence provenance."
+  },
+  "web-monitoring": {
+    "ids": [
+      "G008",
+      "P031",
+      "P061",
+      "P179",
+      "P193",
+      "P211"
+    ],
+    "source_ids": [
+      "change"
+    ],
+    "default_disposition": "ADOPT_BASELINE",
+    "rationale": "Generic page-change detection is incumbent functionality; valuation, truth and actionable interpretation remain separate problems.",
+    "next_test": "Use the component trial to reject a basic detector build; test a specific permitted source and action with a real user if a narrower gap appears."
+  },
+  "document-admin": {
+    "ids": [
+      "G022",
+      "P054",
+      "P082",
+      "P158",
+      "P162",
+      "P177",
+      "P181",
+      "P203",
+      "P212",
+      "P133"
+    ],
+    "source_ids": [
+      "paperless"
+    ],
+    "default_disposition": "HOLD_WORKFLOW",
+    "rationale": "Document storage alone is weak differentiation; reminders/errata/context are distinct jobs whose frequency and sources are not established.",
+    "next_test": "Select a permitted recurring document-to-action process; compare a directory, document tool and small script before new storage."
+  },
+  "translation": {
+    "ids": [
+      "G010",
+      "P087",
+      "P127",
+      "P128",
+      "P138",
+      "P147"
+    ],
+    "source_ids": [
+      "translation"
+    ],
+    "default_disposition": "ADOPT_BASELINE",
+    "rationale": "The broad display/translation variants overlap documented existing modes; a quality gap must be demonstrated on a specific corpus.",
+    "next_test": "Use permitted multilingual material with bilingual checking; benchmark terminology/layout/context errors, not feature names."
+  },
+  "sports-operations": {
+    "ids": [
+      "G006",
+      "P021",
+      "P023",
+      "P043",
+      "P072",
+      "P095",
+      "P100",
+      "P101",
+      "P103"
+    ],
+    "source_ids": [
+      "spond",
+      "opensports"
+    ],
+    "default_disposition": "HOLD_OPERATOR_ACCESS",
+    "rationale": "Existing organizer tools cover broad operations; no club/coach/operator has exposed an unresolved repeated task.",
+    "next_test": "Observe the last scheduling/payment/ranking failure in a real club before software work."
+  },
+  "equipment-custody": {
+    "ids": [
+      "G018",
+      "P086",
+      "P157",
+      "P209"
+    ],
+    "source_ids": [
+      "shelf",
+      "sharetribe"
+    ],
+    "default_disposition": "HOLD_OPERATOR_ACCESS",
+    "rationale": "Custody software and rental foundations exist; local supply, loss handling and operating economics are missing evidence.",
+    "next_test": "Test checkout/return exceptions with one willing operator using existing software; do not start a general rental network."
+  },
+  "sports-video": {
+    "ids": [
+      "G023",
+      "P005"
+    ],
+    "source_ids": [
+      "balltime"
+    ],
+    "default_disposition": "HOLD_DATA_ACCESS",
+    "rationale": "Video analytics has strong alternatives; multi-view replay and useful amateur decisions need permitted recordings and ground truth.",
+    "next_test": "Get one coach decision and labelled video; compare manual review and a relevant incumbent before training."
+  },
+  "physio-workflow": {
+    "ids": [
+      "G011",
+      "P047",
+      "P161"
+    ],
+    "source_ids": [
+      "physitrack",
+      "cliniko"
+    ],
+    "default_disposition": "HOLD_CLINICAL_ACCESS",
+    "rationale": "Practice administration and adherence tools exist; clinical workflows and outcome evidence are unavailable.",
+    "next_test": "Observe one clinician-approved non-diagnostic workflow; do not claim treatment improvement from app mechanics."
+  },
+  "physical-instructions": {
+    "ids": [
+      "G014",
+      "P007",
+      "N001"
+    ],
+    "source_ids": [
+      "augmentir",
+      "deephow",
+      "bluon"
+    ],
+    "default_disposition": "SHORTLIST_DISCOVERY",
+    "rationale": "Connected-worker and technical-assistance products overlap. Step-state verification on a narrow permitted task remains a testable but unvalidated distinction.",
+    "next_test": "Choose a low-risk procedure with labelled completed/incorrect/ambiguous steps and compare a static checklist plus incumbent; require skilled ground truth."
+  },
+  "learning-tools": {
+    "ids": [
+      "P039",
+      "P065",
+      "P084",
+      "P090",
+      "P110",
+      "P154",
+      "P168",
+      "P188",
+      "P202",
+      "P205",
+      "P206",
+      "P208"
+    ],
+    "source_ids": [
+      "anki"
+    ],
+    "default_disposition": "HOLD_SPECIFIC_LEARNING_JOB",
+    "rationale": "Existing learning primitives are strong; voice/math/driving/marketplace variants are not all solved by one comparator. No measured learning advantage yet.",
+    "next_test": "Choose one learner error and a practical baseline; measure retention or verified task completion rather than generated content volume."
+  },
+  "attention-habits": {
+    "ids": [
+      "G007",
+      "G025",
+      "P014",
+      "P024",
+      "P025",
+      "P033",
+      "P034",
+      "P041",
+      "P056",
+      "P096",
+      "P195"
+    ],
+    "source_ids": [
+      "onesec"
+    ],
+    "default_disposition": "ADOPT_BASELINE_OR_NARROW",
+    "rationale": "Interruption/blocking and simple tracking already exist; persistent messaging/offline constraints require actual device testing.",
+    "next_test": "Use device-native controls and current apps first; isolate one repeated constraint before building another habit suite."
+  },
+  "device-utilities": {
+    "ids": [
+      "P015",
+      "P170",
+      "P175",
+      "P207",
+      "P204"
+    ],
+    "source_ids": [
+      "kde"
+    ],
+    "default_disposition": "HOLD_SPECIFICATION",
+    "rationale": "Several distinct device/voice/configuration jobs lack concrete target environments; KDE is an adjacent integration baseline, not an exact substitute for all.",
+    "next_test": "Specify two target devices or one hardware configuration; reproduce the unmet operation with current utilities."
+  },
+  "family-memory": {
+    "ids": [
+      "G009",
+      "G020",
+      "P093",
+      "P094",
+      "P104"
+    ],
+    "source_ids": [
+      "remento",
+      "translation"
+    ],
+    "default_disposition": "HOLD_CORPUS_AND_BUYER",
+    "rationale": "Story capture/translation offerings overlap; families, rights, long-term ownership and willingness to pay remain untested.",
+    "next_test": "Compare a permitted short recording and translation/review workflow; ask who preserves and pays for the result."
+  },
+  "creative-tools": {
+    "ids": [
+      "P012",
+      "P116",
+      "P152",
+      "P192"
+    ],
+    "source_ids": [
+      "runway"
+    ],
+    "default_disposition": "HOLD_MEASURABLE_CREATOR_TASK",
+    "rationale": "Generation/editing tools exist; content rights, target quality and a paid repeated creator bottleneck are missing.",
+    "next_test": "Compare a small permitted asset corpus and human editing baseline on a specific acceptance rubric."
+  },
+  "nature-vision": {
+    "ids": [
+      "P089",
+      "P115",
+      "P164"
+    ],
+    "source_ids": [
+      "merlin",
+      "seek"
+    ],
+    "default_disposition": "HOLD_TARGET_DATA",
+    "rationale": "Identification has established tools; species counts/tracking and difficult local conditions need their own labelled data.",
+    "next_test": "Test one target species/scene with an expert label set and existing identifier before model development."
+  },
+  "go-digitizer": {
+    "ids": [
+      "P080"
+    ],
+    "source_ids": [
+      "kaya"
+    ],
+    "default_disposition": "ADOPT_BASELINE",
+    "rationale": "A relevant existing project documents board-photo recognition and SGF; the workbook analogue was mismatched.",
+    "next_test": "Try oblique/occluded real permitted board photos before claiming a recognition gap; no own photo corpus currently available."
+  },
+  "routes-discovery": {
+    "ids": [
+      "G016",
+      "G017",
+      "P074",
+      "P081",
+      "P136",
+      "P150",
+      "P151",
+      "P159",
+      "P166",
+      "N008"
+    ],
+    "source_ids": [
+      "windy",
+      "kurviger",
+      "brouter",
+      "route-pain"
+    ],
+    "default_disposition": "HOLD_LOCATION_WORKFLOW",
+    "rationale": "Weather, navigation and location services exist; corridor routing, indoor mapping and hitchhiking are distinct tasks with distinct data constraints.",
+    "next_test": "Test a concrete public route or indoor-map dataset and specify the choice a user makes better; do not equate route generation with business value."
+  },
+  "marketplaces": {
+    "ids": [
+      "P035",
+      "P037",
+      "P048",
+      "P052",
+      "P063",
+      "P066",
+      "P073",
+      "P077",
+      "P097",
+      "P102",
+      "P120",
+      "P167",
+      "P171",
+      "P176",
+      "P189",
+      "P197",
+      "P198"
+    ],
+    "source_ids": [
+      "sharetribe"
+    ],
+    "default_disposition": "HOLD_DISTRIBUTION",
+    "rationale": "Marketplace software is available; trustworthy supply, liquidity, disputes and a reachable launch niche are unresolved.",
+    "next_test": "Manually validate one transaction/workflow with consenting counterparties before code; no outreach or transactions performed."
+  },
+  "browser-agent": {
+    "ids": [
+      "P142",
+      "G015"
+    ],
+    "source_ids": [
+      "browseruse",
+      "mlflow"
+    ],
+    "default_disposition": "ADOPT_COMPONENTS",
+    "rationale": "Browser automation/evaluation components already exist; a constrained valuable action and approval model must justify integration.",
+    "next_test": "Use a local reversible task and explicit success criteria; do not build another general browser agent."
+  },
+  "finance": {
+    "ids": [
+      "P018",
+      "P020",
+      "P036",
+      "P137",
+      "P145",
+      "P180",
+      "N004",
+      "N007"
+    ],
+    "source_ids": [
+      "ghostfolio",
+      "esma"
+    ],
+    "default_disposition": "HOLD_DOMAIN_AND_DATA",
+    "rationale": "Tracking is distinct from advice, speculative returns or a marketplace. Financial validity, data rights, buyer and professional review are not established.",
+    "next_test": "Narrow to explainable permitted record reconciliation or scenario bookkeeping; no personalized recommendations, trades or return promises."
+  },
+  "health-inference": {
+    "ids": [
+      "P040",
+      "P057",
+      "P079",
+      "P117",
+      "P141",
+      "P153",
+      "P184",
+      "P191",
+      "N002"
+    ],
+    "source_ids": [
+      "breathing",
+      "physitrack"
+    ],
+    "default_disposition": "HOLD_VALIDATION",
+    "rationale": "Health or consequential inference needs credible ground truth and specialist/physical validation; adjacent sources do not establish efficacy.",
+    "next_test": "Prefer non-diagnostic recordkeeping if useful; require qualified review and approved data before physiological, safety or individual-trait claims."
+  },
+  "social-dating": {
+    "ids": [
+      "P055",
+      "P069",
+      "P098",
+      "P139",
+      "P149"
+    ],
+    "source_ids": [
+      "sharetribe"
+    ],
+    "default_disposition": "HOLD_BEHAVIORAL_AND_DISTRIBUTION",
+    "rationale": "Trust, consent, moderation and enough participating users matter more than a generic matching algorithm.",
+    "next_test": "Test a consented narrow social workflow before scoring people or building a network."
+  },
+  "adult-wellness": {
+    "ids": [
+      "P085",
+      "P092",
+      "P099",
+      "P114",
+      "P134",
+      "P199"
+    ],
+    "source_ids": [
+      "sharetribe"
+    ],
+    "default_disposition": "HOLD_SCOPE_AND_DISTRIBUTION",
+    "rationale": "No confirmed adult consenting-user workflow, rights-cleared corpus or distribution advantage; no explicit content generated.",
+    "next_test": "Define a lawful consent-first non-explicit service or educational need with an adult buyer; no biometric sexual-performance scoring."
+  },
+  "games": {
+    "ids": [
+      "P013",
+      "P016",
+      "P022",
+      "P030",
+      "P051",
+      "P067",
+      "P091",
+      "P173",
+      "P210"
+    ],
+    "source_ids": [
+      "anki"
+    ],
+    "default_disposition": "HOLD_PLAYTEST",
+    "rationale": "Entertainment concepts need player enjoyment and repeat play; a generic model demo or a workbook analogue does not establish this.",
+    "next_test": "A paper/stock-engine prototype and independent playtest should precede a large technical build; Anki is only adjacent to quiz mechanics."
+  },
+  "content-business": {
+    "ids": [
+      "P010",
+      "P017",
+      "P026",
+      "P068",
+      "P071",
+      "P107",
+      "P113",
+      "P143",
+      "P144"
+    ],
+    "source_ids": [
+      "remento",
+      "runway"
+    ],
+    "default_disposition": "HOLD_DISTRIBUTION",
+    "rationale": "These are formats/content propositions, not demonstrated missing software. Rights, production cost and audience retention dominate.",
+    "next_test": "Produce one permitted sample only after choosing an audience/distribution test; no fabricated revenue model."
+  },
+  "physical-products": {
+    "ids": [
+      "P004",
+      "P028",
+      "P029",
+      "P038",
+      "P049",
+      "P053",
+      "P062",
+      "P064",
+      "P070",
+      "P105",
+      "P108",
+      "P109",
+      "P111",
+      "P118",
+      "P119",
+      "P130",
+      "P131",
+      "P132",
+      "P146",
+      "P156",
+      "P160",
+      "P169",
+      "P178",
+      "P183",
+      "P185",
+      "P200",
+      "N005",
+      "N006"
+    ],
+    "source_ids": [
+      "earring",
+      "mosquito"
+    ],
+    "default_disposition": "HOLD_PHYSICAL_PROTOTYPE",
+    "rationale": "Physical ergonomics, manufacture, durability and field performance cannot be established by this software-only campaign. Comparator sources apply only to the matching mosquito/earring concepts.",
+    "next_test": "Specify one measurable benefit over an actual off-the-shelf alternative and obtain permitted physical test/owner access before tooling or inventory."
+  },
+  "physical-venues": {
+    "ids": [
+      "P011",
+      "P042",
+      "P045",
+      "P112",
+      "P121",
+      "P122",
+      "P123",
+      "P126",
+      "P148",
+      "P155"
+    ],
+    "source_ids": [
+      "sharetribe"
+    ],
+    "default_disposition": "HOLD_LOCAL_OPERATIONS",
+    "rationale": "Premises, permits, staffing, demand and unit economics are key; marketplace software is at most an enabling tool.",
+    "next_test": "Observe a local operating/service test before equipment, premises or app investment."
+  },
+  "deep-infrastructure": {
+    "ids": [
+      "P044",
+      "P050"
+    ],
+    "source_ids": [
+      "browseruse"
+    ],
+    "default_disposition": "HOLD_FEASIBILITY_AND_DISTRIBUTION",
+    "rationale": "Energy generation and GPU networks require physical/operating economics and buyers; a software framework is not evidence of feasibility.",
+    "next_test": "Compare measured cost/reliability against existing suppliers before a prototype; cited software is adjacent only."
+  },
+  "unacceptable-premise": {
+    "ids": [
+      "P006",
+      "P009",
+      "P060",
+      "P078",
+      "P135",
+      "P163",
+      "P172",
+      "P190",
+      "P201",
+      "P140",
+      "N009"
+    ],
+    "source_ids": [
+      "aiact",
+      "immich"
+    ],
+    "default_disposition": "STOP_OR_REFRAME_PREMISE",
+    "rationale": "Current wording involves deception, harmful deployment, unsupported person inference, or unresolved consent/trust; no such capability will be prototyped. Individual reasons below distinguish these cases.",
+    "next_test": "Reframe toward consented skill evidence, learning, prevention or safe simulation; do not infer honesty from faces/voices or optimize real-world harm."
+  },
+  "code-translation": {
+    "ids": [
+      "P003"
+    ],
+    "source_ids": [],
+    "default_disposition": "HOLD_CODE_CORRECTNESS",
+    "rationale": "Code translation needs an execution-equivalence task, not a language-translation analogy.",
+    "next_test": "Choose a language pair and permitted test corpus; identify the strongest compiler/transpiler baseline."
+  },
+  "coupon-wallet": {
+    "ids": [
+      "P032"
+    ],
+    "source_ids": [],
+    "default_disposition": "HOLD_DISTRIBUTION",
+    "rationale": "Coupon aggregation needs merchant coverage, accurate eligibility and a distribution channel.",
+    "next_test": "Compare actual offers and redemption workflow with an existing wallet; no merchant or user corpus available."
+  }
+}

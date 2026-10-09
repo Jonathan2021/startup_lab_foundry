@@ -1,0 +1,315 @@
+{
+  "volley-match": {
+    "complete": true,
+    "venture_id": "v-sports-session",
+    "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+    "research_work_id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+    "context_id": "1359f0e5-3729-5454-a01e-5ba96a5775c7",
+    "result_id": "873f1800-de00-577c-89aa-f4638b667fbc",
+    "receipt": {
+      "result_id": "873f1800-de00-577c-89aa-f4638b667fbc",
+      "resolution": "accept",
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+      "request_digest": "5b8d62b0043b82c45d7c5fc916259030626b247b37cf60f1abafb47b7735df9f",
+      "result_digest": "5182f147d15f9ef512044b9c776d2cf34dd3a998af6fb8884f3e0727063ab761",
+      "coverage_action": "reviewed",
+      "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+      "effects": {
+        "decision_id": "a38e9141-b5be-4e52-99fb-b8cbd4f790f1",
+        "evidence_ids": [
+          "0cb2ab7f-9568-4cf3-a589-e92d6c0ac830"
+        ],
+        "assessment_ids": [],
+        "review_id": "051eeac5-7baf-4029-9bc0-24491c703945",
+        "completed_work_id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+        "next_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+        "map_revision_id": "6e5b0b6b-ba37-5cbd-b454-bf27a8ca6d47",
+        "work_needing_review": {}
+      }
+    },
+    "next_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+    "map_revision_id": "6e5b0b6b-ba37-5cbd-b454-bf27a8ca6d47",
+    "repository": "/home/jonathan/startup_lab/volley-match",
+    "sources": [
+      [
+        "Rankade capabilities",
+        "https://rankade.com/"
+      ],
+      [
+        "Rankade group-relative ranking limits",
+        "https://rankade.com/ree/"
+      ],
+      [
+        "Playtomic open-match model",
+        "https://third-party.playtomic.io/"
+      ],
+      [
+        "User group reference",
+        "https://greenvolleyparis.com/fr"
+      ]
+    ]
+  },
+  "ride-options": {
+    "complete": true,
+    "venture_id": "v-route-repair",
+    "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+    "research_work_id": "ebb47149-a6a4-45f6-af16-4ece3a523981",
+    "context_id": "fdb546f3-2287-54d8-bb47-f396886268a5",
+    "result_id": "5000e791-c19f-5994-8029-f77e6c111971",
+    "receipt": {
+      "result_id": "5000e791-c19f-5994-8029-f77e6c111971",
+      "resolution": "accept",
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+      "request_digest": "610094215e724b2734e88f90fa9506d582e2fe4f5039d20f05257568281855ef",
+      "result_digest": "6e7ac61fc618e5e618d043804b54eb8acaa7931a6dfd5b941284e8a6f6c1e806",
+      "coverage_action": "reviewed",
+      "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+      "effects": {
+        "decision_id": "1802a090-507d-434d-95e5-921941f45e18",
+        "evidence_ids": [
+          "185cf9c3-940b-4827-95f1-bb650fae6c78"
+        ],
+        "assessment_ids": [],
+        "review_id": "5d2371f5-c497-426e-ad12-dc5d999c60c5",
+        "completed_work_id": "ebb47149-a6a4-45f6-af16-4ece3a523981",
+        "next_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+        "map_revision_id": "e6ddaf31-9acd-5f91-9560-3629fdcc6138",
+        "work_needing_review": {
+          "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+        }
+      }
+    },
+    "next_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+    "map_revision_id": "e6ddaf31-9acd-5f91-9560-3629fdcc6138",
+    "repository": "/home/jonathan/startup_lab/ride-options",
+    "sources": [
+      [
+        "Kurviger existing planning",
+        "https://docs.kurviger.com/web/getting_started"
+      ],
+      [
+        "GraphHopper engine API",
+        "https://github.com/graphhopper/graphhopper/blob/11.1/docs/web/api-doc.md"
+      ],
+      [
+        "Custom route models",
+        "https://github.com/graphhopper/graphhopper/blob/11.1/docs/core/custom-models.md"
+      ],
+      [
+        "Motorcycle baseline model",
+        "https://github.com/graphhopper/graphhopper/blob/11.1/core/src/main/resources/com/graphhopper/custom_models/motorcycle.json"
+      ],
+      [
+        "Street View constraints",
+        "https://developers.google.com/maps/documentation/streetview/policies"
+      ],
+      [
+        "OSM reuse",
+        "https://www.openstreetmap.org/copyright"
+      ]
+    ]
+  },
+  "crous-queue": {
+    "complete": true,
+    "venture_id": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+    "workspace_id": "81ee3117-de70-411e-9856-07420859ffad",
+    "research_work_id": "12323d17-d1e5-4dae-a7d8-cfdc1b2b2b01",
+    "context_id": "2db78dc2-5cdb-5ab2-84e8-a3c4e19f39c9",
+    "result_id": "db035611-c22a-591e-a666-045913bbc029",
+    "receipt": {
+      "result_id": "db035611-c22a-591e-a666-045913bbc029",
+      "resolution": "accept",
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+      "request_digest": "ef29ae9d4e4b8cd0a2e8d3981fd0ce68f7c77d3f55b10d4e7f03c5f17dd93102",
+      "result_digest": "28381c24c42a103be1ffb136cc59d6ee5576b5bc604f3bcd2a5f3e4c0312b129",
+      "coverage_action": "reviewed",
+      "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+      "effects": {
+        "decision_id": "1825ca11-0bb3-4f5b-9634-0086d0ce8086",
+        "evidence_ids": [
+          "601d9bc0-3c6c-4ac0-97ab-20cc07b1d78a"
+        ],
+        "assessment_ids": [],
+        "review_id": "b59661e1-777d-42fa-b31c-396cb07211ac",
+        "completed_work_id": "12323d17-d1e5-4dae-a7d8-cfdc1b2b2b01",
+        "next_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+        "map_revision_id": "4143f169-f6a9-568a-8f4e-9cf0e4f8482b",
+        "work_needing_review": {}
+      }
+    },
+    "next_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+    "map_revision_id": "4143f169-f6a9-568a-8f4e-9cf0e4f8482b",
+    "repository": "/home/jonathan/startup_lab/crous-queue",
+    "sources": [
+      [
+        "Official national directory",
+        "https://www.data.gouv.fr/datasets/restaurants-brasseries-et-cafeterias-des-crous"
+      ],
+      [
+        "CrousRadar listing",
+        "https://apps.apple.com/fr/app/crousradar/id6755202143"
+      ],
+      [
+        "Affluences restaurant offering",
+        "https://www.pro.affluences.com/restaurant-universitaire"
+      ],
+      [
+        "RU Cuvier",
+        "https://www.crous-paris.fr/restaurant/ru-cuvier/"
+      ],
+      [
+        "RU Châtelet",
+        "https://www.crous-paris.fr/restaurant/ru-chatelet/"
+      ]
+    ]
+  },
+  "volley-coach": {
+    "complete": true,
+    "venture_id": "v-volley-coach",
+    "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5",
+    "research_work_id": "9afdbf73-8a4d-4b7d-8dda-a882e00b7ffd",
+    "context_id": "06fdc000-8a98-52e9-ac08-e45d07e64d7a",
+    "result_id": "fa5c24f9-3410-5a63-a01c-bca6f1628978",
+    "receipt": {
+      "result_id": "fa5c24f9-3410-5a63-a01c-bca6f1628978",
+      "resolution": "accept",
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+      "request_digest": "f2d2ff7a5154da2016dc80fe4619ccae2b5a450cfe5aa17f463890491b2feca4",
+      "result_digest": "4020208c0f7e52c07c9af30fd0572cb46129c6ff9cad60cf25c38b3cef9fa0dc",
+      "coverage_action": "reviewed",
+      "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+      "effects": {
+        "decision_id": "ddf723c3-b4df-4de8-a888-2afbef033b75",
+        "evidence_ids": [
+          "5e88b3a5-0962-4a2f-af48-be179eb2a2ea"
+        ],
+        "assessment_ids": [],
+        "review_id": "b6a255a0-ce78-439e-99b6-f14361643894",
+        "completed_work_id": "9afdbf73-8a4d-4b7d-8dda-a882e00b7ffd",
+        "next_work_id": "7172fb29-5982-4104-9e5e-eeb1257dc6b7",
+        "map_revision_id": "219d6a58-ab78-506f-8bd0-7bd564ebdb2f",
+        "work_needing_review": {
+          "da9f64ff-1b76-5e2d-bdce-537234f19324": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+        }
+      }
+    },
+    "next_work_id": "7172fb29-5982-4104-9e5e-eeb1257dc6b7",
+    "map_revision_id": "219d6a58-ab78-506f-8bd0-7bd564ebdb2f",
+    "repository": "/home/jonathan/startup_lab/volley-coach",
+    "sources": [
+      [
+        "Hudl Balltime",
+        "https://www.hudl.com/products/balltime"
+      ],
+      [
+        "SwingVision video review",
+        "https://swing.vision/guides/review-your-video-footage"
+      ],
+      [
+        "USA Volleyball coach resources",
+        "https://usavolleyball.org/resources-for-coaches/coaches-tools/"
+      ],
+      [
+        "Art of Coaching existing content",
+        "https://www.theartofcoachingvolleyball.com/goal-setting-worksheet/"
+      ]
+    ]
+  },
+  "coopain": {
+    "complete": true,
+    "venture_id": "v-coopain",
+    "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6",
+    "research_work_id": "58289002-7951-4941-9858-92f86fa2e876",
+    "context_id": "3756db15-dc86-5b5a-bbf9-a3abf06aa08e",
+    "result_id": "070ab3dc-dda7-52c9-ba92-487f2461e1cd",
+    "receipt": {
+      "result_id": "070ab3dc-dda7-52c9-ba92-487f2461e1cd",
+      "resolution": "accept",
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+      "request_digest": "eb076aa374fda6635a3c826a45977582d90426dc5a4bce5fdb4f3224708d0b28",
+      "result_digest": "e37ada8d44695e7475c0b63233b1134c13d829ee5b8fbb79fa62d0bb28678245",
+      "coverage_action": "reviewed",
+      "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+      "effects": {
+        "decision_id": "6d564adb-b5a8-4ff9-b79a-90ba44630989",
+        "evidence_ids": [
+          "7d924a64-c5c8-4402-af8c-3e7ea6d9de41"
+        ],
+        "assessment_ids": [],
+        "review_id": "01fd9a90-cf8c-4141-a80e-7071c04d6c21",
+        "completed_work_id": "58289002-7951-4941-9858-92f86fa2e876",
+        "next_work_id": "dd504371-7028-4e43-8869-2a2f5eac7871",
+        "map_revision_id": "1bf02887-df90-594a-b0cf-18e24280bc0d",
+        "work_needing_review": {
+          "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+        }
+      }
+    },
+    "next_work_id": "dd504371-7028-4e43-8869-2a2f5eac7871",
+    "map_revision_id": "1bf02887-df90-594a-b0cf-18e24280bc0d",
+    "repository": "/home/jonathan/startup_lab/coopain",
+    "sources": [
+      [
+        "Placement principles",
+        "https://code.travail.gouv.fr/code-du-travail/l5321-1"
+      ],
+      [
+        "Candidate payment restriction",
+        "https://code.travail.gouv.fr/code-du-travail/l5321-3"
+      ],
+      [
+        "CNIL recruitment guidance",
+        "https://www.cnil.fr/fr/le-guide-du-recrutement"
+      ],
+      [
+        "Direct referral-network comparator",
+        "https://refer.me/"
+      ],
+      [
+        "Enterprise referral comparator",
+        "https://recruteur.hellowork.com/fr/produit/cooptation.html"
+      ]
+    ]
+  },
+  "foundry": {
+    "complete": true,
+    "venture_id": "v-foundry",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+    "research_work_id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+    "context_id": "0585d523-9591-5e20-ab6c-4c966eede949",
+    "result_id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c",
+    "receipt": {
+      "result_id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c",
+      "resolution": "accept",
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+      "request_digest": "304422a9a1d4e29b25f14fc0e0c94ef56b4daea03a2e2fa57091b4d1f49de436",
+      "result_digest": "b9b4d7735196c5a4bf93e686d03b636c6e7a66e9c0d22690f8a8425282f492e9",
+      "coverage_action": "reviewed",
+      "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+      "effects": {
+        "decision_id": "99f688ce-6cba-4b56-8d72-0e926fd937bb",
+        "evidence_ids": [
+          "bc7cfaa8-2ffa-40ac-b2b1-27119505e6fc"
+        ],
+        "assessment_ids": [],
+        "review_id": "67f2673d-fc5e-4fd7-9383-1c44f0477d3d",
+        "completed_work_id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+        "next_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+        "map_revision_id": "29f1d93d-41da-512b-993a-33e95c1e3b25",
+        "work_needing_review": {
+          "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+        }
+      }
+    },
+    "next_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+    "map_revision_id": "29f1d93d-41da-512b-993a-33e95c1e3b25",
+    "repository": "/home/jonathan/startup_lab/foundry",
+    "sources": []
+  }
+}

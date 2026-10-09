@@ -198,10 +198,7 @@ def test_compose_declares_safe_ordered_cli_topology(
     ), "PostgreSQL data must use a named volume"
 
     assert _dependency_condition(migrate, "db") == "service_healthy"
-    assert (
-        _dependency_condition(foundry, "migrate")
-        == "service_completed_successfully"
-    )
+    assert _dependency_condition(foundry, "migrate") == "service_completed_successfully"
     assert "build" in foundry, "a fresh clone must be able to build Foundry"
     assert foundry.get("image"), "declare a stable local image reference"
     assert migrate.get("image") == foundry.get("image"), (
@@ -458,3 +455,41 @@ def test_postgres_rejects_an_orphan_without_leaving_a_row(
         **common,
     ).stdout.strip()
     assert count == "0"
+
+
+def test_revamp_services_on_disposable_postgresql(
+    compose_project: ComposeProject,
+) -> None:
+    """Exercise new transactions on the same local disposable stack, no live data."""
+    environment = compose_project.environment
+    compose = partial(_compose_command, compose_project.name)
+    common = {
+        "environment": environment,
+        "secrets_to_redact": (compose_project.password,),
+    }
+    _run(compose("up", "--detach", "--wait", "db"), **common)
+    _run(compose("run", "--build", "--rm", "migrate"), **common)
+    code = (FOUNDRY_ROOT / "tests/fixtures/revamp_postgresql.py").read_text()
+    result = _run(
+        compose("run", "--rm", "--entrypoint", "python", "foundry", "-c", code),
+        **common,
+    )
+    assert "revamp-postgresql-pass" in result.stdout
+
+
+def test_lifecycle_coordination_on_disposable_postgresql(
+    compose_project: ComposeProject,
+) -> None:
+    common = {
+        "environment": compose_project.environment,
+        "secrets_to_redact": (compose_project.password,),
+    }
+    compose = partial(_compose_command, compose_project.name)
+    _run(compose("up", "--detach", "--wait", "db"), **common)
+    _run(compose("run", "--build", "--rm", "migrate"), **common)
+    code = (FOUNDRY_ROOT / "tests/fixtures/lifecycle_postgresql.py").read_text()
+    result = _run(
+        compose("run", "--rm", "--entrypoint", "python", "foundry", "-c", code),
+        **common,
+    )
+    assert "lifecycle-postgresql-pass" in result.stdout

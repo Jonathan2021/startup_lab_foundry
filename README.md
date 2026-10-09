@@ -1,57 +1,123 @@
 # Agentic Startup Foundry
 
-The Foundry is a venture operating system for turning ideas into evidence-backed,
-human-controlled execution. It retains assumptions, experiments, evidence,
-assessments, decisions, work items, artifacts, and history so a venture can
-continue without reconstructing context from chats.
+Foundry keeps a venture's purpose, evidence, decisions and next work connected
+as things change, from the first investigation through everyday operations.
+Use the local UI or your existing agent through the CLI. Several ventures can
+share a portfolio; each retains its own history and work.
 
-The authoritative supplied brief is [docs/startup_foundry_project.md](docs/startup_foundry_project.md).
+The [local lifecycle MVP](docs/LIFECYCLE_MVP.md) is implemented. It includes
+versioned decision maps, attributed changes, concise agent context, reviewed
+results, evolving assessments, human input and explicit portfolio fusion.
+Distribution **0.1.0**, agent contract **2026-10-08.1**. See current
+[release checks and limits](docs/RELEASE_READINESS.md) and the historical
+[lifecycle evidence](docs/inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
+Monetization, managed agents, training and hosted multi-user operation are deferred.
+
+Agents outside Codex can use the [public agent contract](docs/EXTERNAL_AGENTS.md)
+with local shell access and a configured store. The repository helper handles
+claims, saved context and feedback; `cli` exposes the remaining public commands.
+There is no MCP server or authenticated remote agent endpoint yet.
+
+The preserved supplied brief is [docs/startup_foundry_project.md](docs/startup_foundry_project.md).
+The [current direction](docs/CURRENT_DIRECTION.md) and
+product boundaries in [ARCHITECTURE.md](ARCHITECTURE.md) govern its direction:
+internal use under evaluation, without a validated platform business.
 Time-sensitive competitor notes and product comparisons are maintained in the
 [competitive landscape](docs/competitive-landscape.md).
 
 ## Current scope
 
-The product is in Stage 0: internal notebook replacement. Slice 001 completed a
-small SQLite-backed application path for one venture's experiment, evidence,
-assessment, decision, work, and artifact history. Slice 002 completed a
-non-root image and readiness-aware PostgreSQL Compose path. Slice 003 used
-those existing boundaries as a real GitHub Actions CI workload without
-expanding Foundry application behavior. Slice 004 prepares a guarded
-image-package delivery boundary and GH-200 readiness gate; its current caller,
-reusable-workflow, and composite-action files are intentionally incomplete and
-grant no token authority. Agent-run, approval, portfolio-import, API, worker,
-and automated product-action behavior remains deferred until a real product
-workflow needs it.
+The console provides Today, portfolio views and scoped venture workspaces. A
+venture's Now page captures changes, prepares agent context and reviews results.
+Its map retains purpose, questions, conditional alternatives and exact links to
+work and evidence. History, scores and optional software/outreach views remain
+inside the venture. The portfolio owns comparison and fusion. Shared inbox and
+outreach screens are projections of records with explicit ownership.
 
-Agent EvalOps will be registered as the first venture after the Foundry foundation and delivery learning slices are usable. Its source remains in `../agentevalops/`; only its venture-management records belong in Foundry state.
+Your agent reasons and researches; Foundry performs typed, transactional record
+operations. Preparing context does not start a worker. Stale results remain
+readable but cannot apply old changes. No model or paid executor is required.
+
+The permanent SQLite default is `~/.local/share/startup-foundry/foundry.local.db`
+(or `$XDG_DATA_HOME/startup-foundry/foundry.local.db`). Existing PostgreSQL support
+and completed container/CI/delivery checks remain available. No publication or
+remote deployment follows from starting the console.
+
+Agent EvalOps is the first documented stop-or-pivot case and is deferred as a
+standalone product. Its source is separate (the optional parent workspace uses
+`../agentevalops/`); its venture decision
+belongs in Foundry. The current
+[portfolio campaign](docs/inquiry/portfolio-campaign/REPORT.md) compares existing
+tools and records dispositions across all supplied ideas. The earlier
+[research handoff / G002](docs/ventures/research-handoff.md) is one preserved
+protocol, not a committed product. Agent-operated trials have established some
+incumbent capabilities, but no paid demand or semantic-memory advantage.
 
 ## Start here
 
-From the repository root:
+From a standalone clone of this repository, with Python 3.11+ (3.13 recommended),
+[uv](https://docs.astral.sh/uv/getting-started/installation/) and GNU Make installed:
 
 ```bash
+git clone https://github.com/Jonathan2021/startup_lab_foundry.git
+cd startup_lab_foundry
 make bootstrap
-make test-regression
-make test-slice
+make foundry-ui
+# Open http://127.0.0.1:8765; stop with Ctrl-C.
 ```
 
-Completed behavior is regression. Slice 003's accepted workflow has a
-learner-authored foundation and agent-authored production hardening, with
-attribution retained in its
-[review](../learning/slices/003-github-actions-ci-fundamentals/FEEDBACK.md).
-The active
-[Slice 004 brief](../learning/slices/004-advanced-actions-delivery-gh200-readiness/BRIEF.md)
-and
-[acceptance contract](../learning/slices/004-advanced-actions-delivery-gh200-readiness/ACCEPTANCE.md)
-govern the intentionally red delivery work.
+No parent workspace, model, provider account or Docker is needed for local SQLite.
+The first launch creates an empty permanent store; it does not contain another
+operator's ventures. Use **New idea** in the UI, then open its venture investigation.
+For an isolated three-scenario synthetic demo instead:
 
-## Current non-goals
+```bash
+make seed-demo
+uv run foundry --store .local/demo.local.db ui --port 8766
+```
 
-- no generic autonomous-company generator;
-- no provider integration or prompt framework;
-- no API server, worker, fake long-running process, cloud, or Kubernetes;
-- no registry publication until an exact learner-controlled request is
-  separately approved; no production deployment, cloud trust/resource, or
-  long-lived delivery credential;
-- no Agent EvalOps trace/evaluation domain;
-- no automated external actions.
+The demo command requires a new path and refuses to overwrite existing data.
+Run these from another terminal for configuration, records and backup:
+
+```bash
+uv run foundry storage info
+uv run foundry venture list
+uv run foundry idea list
+uv run foundry storage backup --output /absolute/path/to/new-backup.local.db
+```
+
+See the [usage guide](docs/LIFECYCLE_MVP.md) for the daily workflow, demo,
+confirmation/reconciliation and recovery. For development use `make check`,
+`make test-browser` and `make verify-distribution`; prerequisites and Docker checks
+are in [DEVELOPMENT.md](DEVELOPMENT.md). CI runs the Python matrix, desktop/mobile
+browser flows, isolated wheel installation/recovery, PostgreSQL and image/Compose
+checks on pushes and PRs. It does not publish images or deploy the app.
+
+A backup refuses to overwrite an existing file. Reusing a step request key returns
+that run; a fresh evaluation needs a new key. A successful readiness step checks
+input completeness and **does not qualify a business**. Ideas are hypotheses;
+opening a venture workspace is an investigation, not a build decision.
+
+Reply inline in [requests/INBOX.md](requests/INBOX.md). The UI displays those files;
+it does not consume replies automatically. The next agent session reads the replies
+and records the resulting evidence/decision. Do not put credentials in the inbox.
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for configuration, restore, tests, migration
+and adapter details, and [ARCHITECTURE.md](ARCHITECTURE.md) for boundaries.
+
+## Current limits
+
+No model downloads/training, unattended agent queue, automated commercial scoring,
+external messages or actions, remote multi-user access, or validated platform
+business. The original [portfolio campaign](docs/inquiry/portfolio-campaign/REPORT.md)
+remains preserved history; current operations use the permanent database.
+
+The [October 4 handoff execution](docs/inquiry/handoff-2026-10-04/README.md) adds
+explainable original/reviewed scores, portfolio filters, separate investigation /
+product maturity / disposition reviews, existing-project checkpoints, editable
+manual outreach drafts and built-in `/help`. Run `foundry ui --port 8765`, then
+open the local console. Drafts have no delivery provider. The historical operator
+store contains imported workbook history and investigations; new installations
+start empty. The [dated follow-ups](requests/2026-10-04-followups.md) preserve that
+operator's real-user and expert-access gates.
+See [development commands](DEVELOPMENT.md) for JSON input formats and backup/configuration.

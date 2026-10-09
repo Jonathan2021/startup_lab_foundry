@@ -1,15 +1,20 @@
 # syntax=docker/dockerfile:1
 
 ARG PYTHON_IMAGE=python:3.13-slim
-ARG UV_IMAGE=ghcr.io/astral-sh/uv:0.11.29
-
-FROM ${UV_IMAGE} AS uv
-
 FROM ${PYTHON_IMAGE} AS build
 
 WORKDIR /app
 
-COPY --from=uv /uv /uvx /bin/
+# Same pinned official uv release; SHA-256-verified wheels avoid the GHCR
+# authorization dependency. Build tooling stays out of the runtime stage.
+COPY uv-build-requirements.txt /tmp/uv-build-requirements.txt
+RUN python -m pip install \
+    --no-cache-dir \
+    --no-deps \
+    --only-binary=:all: \
+    --require-hashes \
+    --index-url https://pypi.org/simple \
+    --requirement /tmp/uv-build-requirements.txt
 
 ENV UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy \

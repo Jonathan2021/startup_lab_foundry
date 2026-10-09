@@ -1,0 +1,92 @@
+{
+  "id": "T3",
+  "status": "passed",
+  "scope": "exact provenance and reference-integrity checks using JSON/rg; no semantic retrieval or human-time comparison",
+  "observations": [
+    {
+      "idea": "G021",
+      "source": "mlflow",
+      "revision": 1,
+      "url": "https://mlflow.org/docs/latest/genai/eval-monitor/regression-testing/",
+      "rg_exact_recovery": true
+    },
+    {
+      "idea": "P061",
+      "source": "change",
+      "revision": 1,
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/master/docs/api-spec.yaml",
+      "rg_exact_recovery": true
+    },
+    {
+      "idea": "G013",
+      "source": "change",
+      "revision": 1,
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/master/docs/api-spec.yaml",
+      "rg_exact_recovery": true
+    },
+    {
+      "idea": "G012",
+      "source": "elicit",
+      "revision": 1,
+      "url": "https://elicit.com/solutions/literature-review",
+      "rg_exact_recovery": true
+    }
+  ],
+  "unique_source_records": 45,
+  "source_idea_links": 317,
+  "multiply_referenced_sources": 41,
+  "synthetic_staleness_check": true,
+  "unknown_source_rejected": true,
+  "counts": {
+    "mlflow": 12,
+    "datasets": 7,
+    "hindsight": 7,
+    "elicit": 4,
+    "buildpad": 6,
+    "simplify": 5,
+    "credentials": 3,
+    "credly": 3,
+    "change": 11,
+    "cube": 5,
+    "verifywise": 5,
+    "paperless": 10,
+    "translation": 11,
+    "spond": 9,
+    "shelf": 4,
+    "opensports": 9,
+    "balltime": 2,
+    "physitrack": 11,
+    "cliniko": 3,
+    "augmentir": 3,
+    "deephow": 3,
+    "bluon": 3,
+    "fiftyone": 7,
+    "cleanlab": 7,
+    "anki": 12,
+    "onesec": 11,
+    "kde": 1,
+    "remento": 5,
+    "runway": 4,
+    "merlin": 3,
+    "seek": 3,
+    "kaya": 1,
+    "windy": 10,
+    "kurviger": 10,
+    "route-pain": 10,
+    "brouter": 10,
+    "sharetribe": 39,
+    "browseruse": 2,
+    "ghostfolio": 8,
+    "esma": 8,
+    "aiact": 10,
+    "breathing": 9,
+    "mosquito": 1,
+    "earring": 1,
+    "immich": 9
+  },
+  "limits": [
+    "Reference reuse is observed, token/time savings unmeasured",
+    "Shared source links are not independent customer evidence",
+    "Manual freshness policy, no automatic update service"
+  ]
+}

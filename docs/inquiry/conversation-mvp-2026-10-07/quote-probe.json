@@ -1,0 +1,162 @@
+{
+  "synthetic": true,
+  "fixture_sha256": "63cec0843bf23916fcd73606b24e1c5b6774f2f8c61b4ec2e53744564333954e",
+  "cases": [
+    {
+      "case": "unit_quote",
+      "observed": {
+        "status": "comparable",
+        "total_minor": 6000,
+        "purchased_units": 12,
+        "issues": []
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "pack_quote",
+      "observed": {
+        "status": "comparable",
+        "total_minor": 7000,
+        "purchased_units": 20,
+        "issues": []
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "shipping_unknown",
+      "observed": {
+        "status": "needs_review",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "shipping_unknown"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "currency_differs",
+      "observed": {
+        "status": "needs_review",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "currency_differs"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "tax_unknown",
+      "observed": {
+        "status": "needs_review",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "tax_basis_differs"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "expired",
+      "observed": {
+        "status": "blocked",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "expired"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "late",
+      "observed": {
+        "status": "blocked",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "late"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "unknown_delivery",
+      "observed": {
+        "status": "needs_review",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "delivery_unknown"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "substitute",
+      "observed": {
+        "status": "blocked",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "sku_differs"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "insufficient_pack_stock",
+      "observed": {
+        "status": "blocked",
+        "total_minor": null,
+        "purchased_units": 20,
+        "issues": [
+          "insufficient_offered_units"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "unsupported_pricing",
+      "observed": {
+        "status": "needs_review",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "pricing_unsupported"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "unchecked_extraction",
+      "observed": {
+        "status": "needs_review",
+        "total_minor": null,
+        "purchased_units": 12,
+        "issues": [
+          "source_unreviewed"
+        ]
+      },
+      "expectation": "pass"
+    },
+    {
+      "case": "negative_price",
+      "observed": {
+        "status": "invalid",
+        "total_minor": null,
+        "issues": [
+          "schema_invalid"
+        ]
+      },
+      "expectation": "pass"
+    }
+  ],
+  "shape_only_valid": 12,
+  "commercially_comparable": 2,
+  "pack_boundary_checks": 1000,
+  "digest_checks": 5,
+  "limit": "Only supplied synthetic terms checked. Source review is a fixture flag. No extraction, supplier truth, UI, persistence or demand validated."
+}

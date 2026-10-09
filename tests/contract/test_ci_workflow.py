@@ -198,6 +198,7 @@ def test_quality_matrix_uses_lock_cache_and_test_evidence() -> None:
         "tests/acceptance/test_cli_workspace.py",
         "tests/contract/test_package_boundary.py",
         "tests/contract/test_ci_workflow.py",
+        "tests/contract/test_delivery_workflows.py",
     ):
         assert suite in commands, f"quality pytest command must include {suite}"
 
@@ -305,6 +306,17 @@ def test_postgresql_service_job_exercises_migration_and_cli() -> None:
     assert "secrets." not in rendered, (
         "CI integration uses synthetic credentials, not repository secrets"
     )
+    configure_steps = [
+        step
+        for step in _steps(integration)
+        if "FOUNDRY_DATABASE_URL" in str(step.get("run", ""))
+    ]
+    assert len(configure_steps) == 1
+    configure = configure_steps[0]
+    assert "${{" not in str(configure.get("run", "")), (
+        "pass expression results through env instead of interpolating shell source"
+    )
+    assert "job.services.postgres.ports" in yaml.dump(configure.get("env", {}))
     commands = _commands(integration)
     for required in (
         "uv lock --check",

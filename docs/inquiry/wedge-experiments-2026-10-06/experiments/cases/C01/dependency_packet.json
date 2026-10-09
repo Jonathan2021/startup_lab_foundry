@@ -1,0 +1,78 @@
+{
+  "format": "synthetic-context-packet-v1",
+  "case_id": "C01",
+  "synthetic": true,
+  "scope": "Students choosing lunch at two invented campus restaurants; no real Crous observations.",
+  "scope_revision": 3,
+  "question_revision": 2,
+  "goal": "Find a useful local lunch decision service before building software.",
+  "current_question": "Does a live waiting-time app leave a useful unmet gap at Cedar and Canal restaurants?",
+  "branch_criteria": {
+    "continue": "At least one verified useful decision remains unsupported and users can obtain the data lawfully.",
+    "narrow": "Basic wait information is covered but a distinct repeated job is directly observed.",
+    "stop": "The proposed waiting-time service duplicates verified coverage and no distinct job is evidenced.",
+    "unknown": "Coverage or unmet need remains unverified; gather exact local evidence without building."
+  },
+  "allowed_scopes": [
+    "C01"
+  ],
+  "selection": {
+    "method": "explicit_bidirectional_relationship_closure",
+    "seed_ids": [
+      "C01-E1",
+      "C01-E3",
+      "C01-E4",
+      "C01-E5"
+    ],
+    "source_record_count": 11,
+    "selected_record_count": 5,
+    "limitation": "Unlinked relevant facts may be omitted. Selection is not semantic retrieval."
+  },
+  "records": [
+    {
+      "id": "C01-E1",
+      "revision": 1,
+      "scope": "C01",
+      "kind": "synthetic_source",
+      "text": "Dated day 1: a founder assumed neither campus restaurant had live queue estimates; this was an assumption, not a checked fact.",
+      "links": []
+    },
+    {
+      "id": "C01-E2",
+      "revision": 1,
+      "scope": "C01",
+      "kind": "synthetic_source",
+      "text": "Dated day 3: an invented incumbent's verified listings provide live queue estimates for both Cedar and Canal. Neither listing describes seat availability.",
+      "links": [
+        {
+          "relation": "contradicts",
+          "target": "C01-E1"
+        }
+      ]
+    },
+    {
+      "id": "C01-E3",
+      "revision": 1,
+      "scope": "C01",
+      "kind": "synthetic_source",
+      "text": "Three informal student comments mention wanting to sit with friends. They are not observations of failed lunch decisions, representative interviews, or willingness to pay.",
+      "links": []
+    },
+    {
+      "id": "C01-E4",
+      "revision": 1,
+      "scope": "C01",
+      "kind": "synthetic_source",
+      "text": "No lawful live seat-data source, willingness-to-contribute test, or paid customer has been established.",
+      "links": []
+    },
+    {
+      "id": "C01-E5",
+      "revision": 1,
+      "scope": "C01",
+      "kind": "synthetic_source",
+      "text": "A proposed reservation upsell would require restaurant permission. No permission or payment test exists.",
+      "links": []
+    }
+  ]
+}

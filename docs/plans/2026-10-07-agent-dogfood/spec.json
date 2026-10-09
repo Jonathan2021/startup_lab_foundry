@@ -1,0 +1,46 @@
+{
+  "name": "Foundry",
+  "slug": "foundry",
+  "venture": "v-foundry",
+  "workspace": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "goal": "Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope.",
+  "decision": "GO: continue the existing lifecycle MVP as the internal coordination tool. Add only demonstrated dogfood improvements. No managed-agent runtime, token billing, MCP server, generic plugin system or multi-user hosted service in this tranche.",
+  "evidence": "Main commit 07ecb37 passed GitHub Python 3.11/3.13, PostgreSQL and image/Compose CI. Current campaign adds a stdlib CLI bridge, local feedback outbox and retry receipts. Actual inspection found an obsolete ready Foundry task and no decision map in its own venture; the campaign corrects the current map/queue while preserving old records. Parent-directory mypy omitted Foundry strict configuration; Makefile now names that configuration.",
+  "packages": [
+    [
+      "F01",
+      [],
+      "Run one complete agent handoff per venture",
+      "Use prepared configs and maps; one writer per venture at a time, parallelism across venture repositories. Verify claim, prepare, result preview/accept, resume and feedback receipt. No production model service.",
+      "Every prepared repo resolves its own workspace and current work; stale/conflicting claims fail; failed feedback send is retained and retry is idempotent."
+    ],
+    [
+      "F02",
+      [
+        "F01"
+      ],
+      "Triage observed agent friction",
+      "Inspect Foundry unreviewed feedback evidence plus local outboxes. Reproduce highest-impact issue, classify duplicate/accepted/deferred/rejected with rationale and link a bounded Foundry work item; do not treat every suggestion as mandatory.",
+      "At least one completed real venture package can be resumed by a fresh agent without reading full chat; retained feedback has decision and work reference or explicit defer reason."
+    ],
+    [
+      "F03",
+      [
+        "F02"
+      ],
+      "Improve context and queue behavior only where measured",
+      "Measure time to identify work, context bytes, omitted information, stale submissions and manual recovery. Fix concrete recurring cases with regression tests. Keep provider/action/storage boundaries replaceable.",
+      "No source lost in context; changed evidence invalidates unsafe effects; completed work is absent from executable queue; app remains useful without the helper."
+    ],
+    [
+      "F04",
+      [
+        "F03"
+      ],
+      "Release the dogfood-supported local MVP update",
+      "Run standalone lint/types/product/agent-kit/browser/container checks appropriate to changes, installed CLI and backup/restore. Update direction and one operator guide; preserve exact evidence IDs.",
+      "A clean checkout supports two separate venture agents and later review; no unconfigured external actions, no claimed commercial or token savings without measurement."
+    ]
+  ],
+  "pilot": "One completed package from volleyball and one from Crous before extending the platform. If manual helper/config work dominates, simplify commands based on the actual failures. Hosted collaboration and autonomous agents need separate requirements and threat/cost design."
+}

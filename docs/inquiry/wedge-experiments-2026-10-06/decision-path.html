@@ -1,0 +1,129 @@
+<div id="foundry-decision-example">
+  <h3>A current step in its bigger picture</h3>
+  <p class="text-small">Crous illustration · all outcomes below are hypothetical</p>
+  <div class="viz-controls">
+    <label class="form-label" for="foundry-finding">Suppose the local coverage check finds
+      <select class="form-select" id="foundry-finding">
+        <option value="unknown">The evidence is still inconclusive</option>
+        <option value="covered">Existing information meets the need</option>
+        <option value="feasible">A useful gap and a feasible data source</option>
+        <option value="blocked">A useful gap, but no viable data source</option>
+      </select>
+    </label>
+  </div>
+  <div id="foundry-map-drawing"></div>
+  <p id="foundry-map-detail" class="text-small" aria-live="polite"></p>
+  <style>
+    #foundry-decision-example { color: var(--foreground); }
+    #foundry-decision-example .decision-svg { display: block; width: 100%; }
+    #foundry-decision-example .decision-svg text { fill: var(--foreground); font: inherit; }
+    #foundry-decision-example .decision-svg .node-label { font-weight: 500; }
+    #foundry-decision-example .decision-svg .edge { fill: none; stroke: var(--border); stroke-width: 1.5; }
+    #foundry-decision-example .decision-svg .active-edge { stroke: var(--viz-series-1); }
+    #foundry-decision-example .decision-svg .node { fill: var(--background); stroke: var(--border); stroke-width: 1; }
+    #foundry-decision-example .decision-svg .active-node { fill: color-mix(in srgb, var(--viz-series-1) 12%, var(--background)); stroke: var(--viz-series-1); }
+  </style>
+  <script>
+    (() => {
+      const root = document.getElementById('foundry-decision-example');
+      const select = root.querySelector('#foundry-finding');
+      const holder = root.querySelector('#foundry-map-drawing');
+      const detail = root.querySelector('#foundry-map-detail');
+      const ns = 'http://www.w3.org/2000/svg';
+      const cases = [
+        {key:'unknown', title:'Inconclusive', action:'Check the exact sites and queue type', later:'Revisit the decision with new evidence', detail:'Next: resolve the missing evidence. Future branches remain open; no build is queued.'},
+        {key:'covered', title:'Need already met', action:'Stop the generic queue app thesis', later:'Reopen only if a distinct gap appears', detail:'Next: retain the stop rationale. A completed investigation can end a branch without creating more work.'},
+        {key:'feasible', title:'Gap and feasible data', action:'Propose a bounded manual pilot', later:'Test repeat usefulness before building', detail:'Next: review the pilot proposal. Data feasibility alone does not establish demand or authorize a launch.'},
+        {key:'blocked', title:'Gap but no viable data', action:'Hold implementation; test data access', later:'Pilot only if the data gate clears', detail:'Next: resolve the data constraint. A promising gap does not make the build step ready.'}
+      ];
+      let selected = 'unknown';
+      function node(tag, attrs, parent, text) {
+        const el = document.createElementNS(ns, tag);
+        Object.entries(attrs || {}).forEach(([k,v]) => el.setAttribute(k,String(v)));
+        if (text !== undefined) el.textContent = text;
+        if (parent) parent.appendChild(el);
+        return el;
+      }
+      function wrap(text, maxWidth, ctx) {
+        const result=[]; let line='';
+        text.split(' ').forEach(word => {
+          const next=line ? line+' '+word : word;
+          if(line && ctx.measureText(next).width>maxWidth) {result.push(line); line=word;}
+          else line=next;
+        });
+        if(line) result.push(line);
+        return result;
+      }
+      function draw() {
+        const width=Math.max(280,Math.round(holder.getBoundingClientRect().width || 700));
+        const style=getComputedStyle(root);
+        const fontSize=parseFloat(style.fontSize)||14;
+        const lineHeight=fontSize*1.4;
+        const canvas=document.createElement('canvas');
+        const ctx=canvas.getContext('2d');
+        ctx.font=fontSize+'px '+style.fontFamily;
+        const cols=width>=650?4:(width>=460?2:1);
+        const gap=14, margin=8;
+        const boxWidth=(width-2*margin-(cols-1)*gap)/cols;
+        const cardLines=cases.map(c=>({title:wrap(c.title,boxWidth-20,ctx),action:wrap(c.action,boxWidth-20,ctx),later:wrap(c.later,boxWidth-20,ctx)}));
+        const cardHeight=Math.max(...cardLines.map(c=>(c.title.length+c.action.length+c.later.length)*lineHeight+44));
+        const topWidth=Math.min(width-16,430);
+        const topText=wrap('Decide whether useful queue guidance at Cuvier and Châtelet is viable',topWidth-24,ctx);
+        const goalHeight=topText.length*lineHeight+28;
+        const questionText=wrap('Current step: verify the local information gap',topWidth-24,ctx);
+        const questionY=goalHeight+38;
+        const questionHeight=questionText.length*lineHeight+28;
+        const branchesY=questionY+questionHeight+42;
+        const rows=Math.ceil(cases.length/cols);
+        const height=branchesY+rows*(cardHeight+20)+8;
+        const svg=node('svg',{viewBox:'0 0 '+width+' '+height,class:'decision-svg',role:'img','aria-labelledby':'foundry-graph-title'},null);
+        node('title',{id:'foundry-graph-title'},svg,'A hypothetical decision map. Goal: useful queue guidance. Current step: check the local gap. Four possible outcomes lead to checking evidence, stopping, proposing a pilot, or resolving data access. Highlighted path: '+cases.find(c=>c.key===selected).title+'.');
+        const edges=node('g',{},svg), boxes=node('g',{},svg);
+        function write(lines,x,y,cls) {
+          const text=node('text',{x,y,'text-anchor':'middle',class:cls||''},boxes);
+          lines.forEach((line,i)=>node('tspan',{x,dy:i?lineHeight:0},text,line));
+        }
+        function box(x,y,w,h,active) {node('rect',{x,y,width:w,height:h,rx:6,class:active?'node active-node':'node'},boxes);}
+        box((width-topWidth)/2,8,topWidth,goalHeight,false);
+        write(topText,width/2,8+24,'node-label');
+        box((width-topWidth)/2,questionY,topWidth,questionHeight,true);
+        write(questionText,width/2,questionY+24,'node-label');
+        node('path',{d:'M '+width/2+' '+(goalHeight+8)+' V '+questionY,class:'edge'},edges);
+        cases.forEach((c,i)=>{
+          const row=Math.floor(i/cols), col=i%cols;
+          const x=margin+col*(boxWidth+gap), y=branchesY+row*(cardHeight+20);
+          const cx=x+boxWidth/2, active=c.key===selected;
+          if(row===0) node('path',{d:'M '+width/2+' '+(questionY+questionHeight)+' V '+(branchesY-20)+' H '+cx+' V '+y,class:active?'edge active-edge':'edge'},edges);
+          else {
+            const rail=col===0?2:width-2;
+            const side=col===0?x:x+boxWidth;
+            node('path',{d:'M '+width/2+' '+(questionY+questionHeight)+' V '+(branchesY-24)+' H '+rail+' V '+(y+cardHeight/2)+' H '+side,class:active?'edge active-edge':'edge'},edges);
+          }
+          box(x,y,boxWidth,cardHeight,active);
+          let textY=y+24;
+          write(cardLines[i].title,cx,textY,'node-label');
+          textY+=cardLines[i].title.length*lineHeight+10;
+          write(cardLines[i].action,cx,textY);
+          textY+=cardLines[i].action.length*lineHeight+12;
+          write(cardLines[i].later,cx,textY);
+        });
+        holder.replaceChildren(svg);
+        detail.textContent=cases.find(c=>c.key===selected).detail;
+      }
+      function restore(value) {
+        if(value && cases.some(c=>c.key===value.finding)) {selected=value.finding; select.value=selected;}
+      }
+      if(window.openai) restore(window.openai.widgetState && window.openai.widgetState.modelContent);
+      select.value=selected;
+      select.addEventListener('change',()=>{
+        selected=select.value; draw();
+        if(window.openai && window.openai.setWidgetState) window.openai.setWidgetState({modelContent:{finding:selected,synthetic:true},privateContent:null}).catch(()=>{});
+      });
+      window.addEventListener('openai:set_globals',event=>{
+        restore(event.detail && event.detail.globals && event.detail.globals.widgetState && event.detail.globals.widgetState.modelContent); draw();
+      });
+      new ResizeObserver(draw).observe(holder);
+      draw();
+    })();
+  </script>
+</div>
