@@ -1,0 +1,16 @@
+{
+  "actor": "fable-portfolio-20261009",
+  "summary": "Bridge `start` fails with the 24000-byte default budget on the Foundry venture map (43686 bytes required)",
+  "expected": "`start` claims the work and saves a context, or tells the agent the exact flag to retry with.",
+  "actual": "`python3 tools/foundry_agent.py start --actor … --work-id b4b14912…` returned 'Required context is 43686 bytes; budget is 24000. Narrow the task/map or increase budget (maximum 100000).' The retry with `--budget 60000` worked; the message does not mention the bridge flag.",
+  "reproduction": "In the Foundry repository run `start` for work b4b14912 without `--budget`.",
+  "impact": "Every claim on a venture with a larger map fails once before succeeding; agents that do not know `--budget` stop.",
+  "suggestion": "Let the bridge retry once with the required size when it is under the maximum, or print `retry with --budget <required>` in the error.",
+  "id": "757a0709-8cde-4592-bfd2-3c3580c21617",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/REPORT.md"
+  ]
+}

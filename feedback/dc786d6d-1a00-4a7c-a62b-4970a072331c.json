@@ -1,0 +1,16 @@
+{
+  "actor": "fable-portfolio-20261009",
+  "summary": "`result show` does not return the pins that `result resolve` requires",
+  "expected": "The result digest, map head, work version and review revision needed for expected_* are readable from the result itself.",
+  "actual": "`result show --id` returns digest, state, stale_reasons, proposal, context_id; expected_head, expected_work_version and expected_review_revision must be read from `handoff show --id <context>` (map_revision_id, review_revision, work.version_id). I built the resolution input by hand from two commands.",
+  "reproduction": "Submit a result, run `result show`, try to fill the resolution schema from it alone.",
+  "impact": "Each resolve needs a second lookup and the field names differ (map_revision_id vs expected_head; work.version_id vs expected_work_version).",
+  "suggestion": "Add a `resolution_pins` object to `result show` (or an `expected` block) with the four values named as the resolution schema names them.",
+  "id": "dc786d6d-1a00-4a7c-a62b-4970a072331c",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/plans/2026-10-07-agent-dogfood/AGENT_HANDOFF.md"
+  ]
+}

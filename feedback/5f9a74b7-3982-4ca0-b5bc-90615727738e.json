@@ -1,0 +1,16 @@
+{
+  "actor": "fable-portfolio-20261009",
+  "summary": "`agent resume` needs_review is an object keyed by work id while the other work lists are arrays",
+  "expected": "Consistent shapes: lists of work items with id/title/reason.",
+  "actual": "Ride Options resume returned needs_review {'281b3f40…': 'Deferred by the 2026-10-09 portfolio review…'}; Foundry returned {} and work/superseded are arrays of objects. A generic summariser crashed on the dict.",
+  "reproduction": "Run `resume` in ride-options and in foundry; compare the needs_review type with superseded/work.",
+  "impact": "Minor: scripts must special-case one key.",
+  "suggestion": "Return needs_review as a list of {work_id, title, reason} (keep the dict under another key for one release if compatibility matters).",
+  "id": "5f9a74b7-3982-4ca0-b5bc-90615727738e",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/REPORT.md"
+  ]
+}

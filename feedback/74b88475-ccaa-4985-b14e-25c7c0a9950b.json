@@ -1,0 +1,16 @@
+{
+  "actor": "fable-portfolio-20261009",
+  "summary": "`venture show` does not expose the venture version needed by `venture alias --input {expected_version}`",
+  "expected": "A read command exposes the version an agent must echo back to a version-checked write.",
+  "actual": "`venture show --id f0b5abfe…` returns {venture: {alias, created_at, id, name, objective, stage, workspace_id}} with no version; `venture alias` requires expected_version. I read ventures.version_id from the store read-only to set `v-crous-queue`.",
+  "reproduction": "Run `venture show --id <venture>`; look for a version field; run `venture alias` with the expected_version it requires.",
+  "impact": "An agent cannot set an alias through the public CLI without a read-only database query or trial and error.",
+  "suggestion": "Include `version_id` in `venture show` (and in `agent resume` venture_state) and name it in the alias error message.",
+  "id": "74b88475-ccaa-4985-b14e-25c7c0a9950b",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "friction",
+  "sources": [
+    "document: docs/inquiry/portfolio-review-2026-10-09/REPORT.md"
+  ]
+}

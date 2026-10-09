@@ -1,0 +1,16 @@
+{
+  "actor": "fable-portfolio-20261009",
+  "summary": "`/ventures/<alias>` redirects (307) to the UUID URL instead of serving the alias URL",
+  "expected": "A readable alias stays in the address bar so links shared by humans read `v-crous-queue`.",
+  "actual": "GET /ventures/v-crous-queue → 307 Location: /ventures/f0b5abfe-0274-42f7-9c9a-72dcbe68c116. The CLI resolves the alias fine.",
+  "reproduction": "Set an alias with `venture alias`; open /ventures/<alias> in the console.",
+  "impact": "Cosmetic: humans still see the UUID in links and bookmarks.",
+  "suggestion": "Serve the page at the alias URL (or redirect UUID → alias once an alias exists).",
+  "id": "eaddae0d-bb4d-43a4-b6ff-2a7215ce31af",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "kind": "idea",
+  "sources": [
+    "document: docs/adr/0020-truthful-venture-state-requests-and-drift.md"
+  ]
+}
