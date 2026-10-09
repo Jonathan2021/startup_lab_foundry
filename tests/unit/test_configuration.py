@@ -44,6 +44,9 @@ def test_shared_settings_do_not_implicitly_read_a_dotenv_file(
 ) -> None:  # type: ignore[no-untyped-def]
     monkeypatch.chdir(tmp_path)
     monkeypatch.delenv("FOUNDRY_DATABASE_URL", raising=False)
+    # The default is defined relative to the home directory, not a developer's
+    # XDG override, so the comparison must not depend on the caller's shell.
+    monkeypatch.delenv("XDG_DATA_HOME", raising=False)
     (tmp_path / ".env").write_text(
         "FOUNDRY_DATABASE_URL=sqlite:///unexpected.db\n",
         encoding="utf-8",
