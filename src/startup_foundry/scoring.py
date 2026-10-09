@@ -751,12 +751,15 @@ class ScoringService:
                 )
                 .order_by(IdeaAssessment.overall_score.desc(), Idea.id)
             ).all()
-            all_count = session.scalar(
-                select(func.count())
-                .select_from(Idea)
-                .join(Workspace)
-                .where(Workspace.portfolio_id == card.portfolio_id)
+            all_ideas = list(
+                session.scalars(
+                    select(Idea)
+                    .join(Workspace)
+                    .where(Workspace.portfolio_id == card.portfolio_id)
+                    .order_by(Idea.id)
+                )
             )
+            all_count = len(all_ideas)
             snapshot = RankingSnapshot(
                 portfolio_id=card.portfolio_id,
                 scorecard_id=card.id,
@@ -766,6 +769,7 @@ class ScoringService:
             )
             session.add(snapshot)
             session.flush()
+            ranked_entries = []
             for rank, (idea, a) in enumerate(rows, 1):
                 session.add(
                     RankingEntry(
@@ -776,8 +780,67 @@ class ScoringService:
                         score=a.overall_score,
                     )
                 )
+                ranked_entries.append(
+                    {
+                        "rank": rank,
+                        "idea_id": idea.id,
+                        "score": a.overall_score,
+                        "assessment_id": a.id,
+                    }
+                )
+            ranked_ids = {idea.id for idea, _ in rows}
             return {
                 "id": snapshot.id,
                 "ranked": len(rows),
-                "excluded": (all_count or 0) - len(rows),
+                "excluded": all_count - len(rows),
+                "ranked_entries": ranked_entries,
+                "excluded_entries": self._exclusions(
+                    session,
+                    scorecard_id,
+                    [idea for idea in all_ideas if idea.id not in ranked_ids],
+                ),
             }
+
+    @staticmethod
+    def _exclusions(
+        session: Session, scorecard_id: str, ideas: list[Idea]
+    ) -> list[JSON]:
+        """Explain each unranked idea; nothing is inferred for a missing total."""
+        excluded = []
+        for idea in ideas:
+            latest = session.scalar(
+                select(IdeaAssessment)
+                .where(
+                    IdeaAssessment.idea_revision_id == idea.current_revision_id,
+                    IdeaAssessment.scorecard_id == scorecard_id,
+                )
+                .order_by(IdeaAssessment.assessment_number.desc())
+                .limit(1)
+            )
+            if latest is not None:
+                reason = "partial_total"
+                assessment_id: str | None = latest.id
+            else:
+                earlier = session.scalar(
+                    select(IdeaAssessment.id)
+                    .join(
+                        IdeaRevision,
+                        IdeaRevision.id == IdeaAssessment.idea_revision_id,
+                    )
+                    .where(
+                        IdeaRevision.idea_id == idea.id,
+                        IdeaAssessment.scorecard_id == scorecard_id,
+                    )
+                    .order_by(IdeaAssessment.created_at.desc())
+                    .limit(1)
+                )
+                reason = (
+                    "assessed_on_earlier_revision_only"
+                    if earlier
+                    else "not_assessed_on_scorecard"
+                )
+                assessment_id = earlier
+            excluded.append(
+                {"idea_id": idea.id, "reason": reason, "assessment_id": assessment_id}
+            )
+        return excluded

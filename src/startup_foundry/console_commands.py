@@ -126,13 +126,23 @@ def add_console_parsers(resources: Any) -> None:
         elif resource == "review":
             actions.add_parser("import-legacy")
             actions.add_parser("append").add_argument("--input", required=True)
-            actions.add_parser("show").add_argument("--workspace-id", required=True)
+            selector = actions.add_parser("show").add_mutually_exclusive_group(
+                required=True
+            )
+            selector.add_argument("--workspace-id")
+            selector.add_argument("--id", help="Venture/alias/workspace/idea ID")
         elif resource == "existing-project":
             actions.add_parser("intake").add_argument("--input", required=True)
-            actions.add_parser("show").add_argument("--venture-id", required=True)
+            selector = actions.add_parser("show").add_mutually_exclusive_group(
+                required=True
+            )
+            selector.add_argument("--venture-id")
+            selector.add_argument("--id", help="Venture ID, alias or workspace ID")
         else:
             listing = actions.add_parser("list")
-            listing.add_argument("--venture-id")
+            selector = listing.add_mutually_exclusive_group()
+            selector.add_argument("--venture-id")
+            selector.add_argument("--id", help="Venture ID, alias or workspace ID")
             create = actions.add_parser("create")
             create.add_argument("--venture-id", required=True)
             create.add_argument("--request-key", required=True)

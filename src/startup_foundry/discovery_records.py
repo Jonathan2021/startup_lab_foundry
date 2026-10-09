@@ -20,6 +20,7 @@ from sqlalchemy.orm import Session
 
 from startup_foundry.domain import (
     CriterionScore,
+    Evidence,
     Idea,
     IdeaAssessment,
     IdeaMarketActor,
@@ -400,6 +401,65 @@ def idea_projection(session: Session, idea: Idea, current: IdeaRevision) -> JSON
         "relations": _relations(session, idea.id),
         "competition": [x for x in links if x["revision_id"] == current.id],
         "competition_history": [h for h in history if h["items"]],
+    }
+
+
+def venture_lineage(session: Session, venture: Venture) -> JSON | None:
+    """Provenance a promoted venture inherits from its source idea (ADR-0020).
+
+    Read-only: the idea keeps its sources, competition and evidence; the venture
+    shows them and may cite that evidence in its map (see decision_maps).
+    """
+    if venture.source_idea_revision_id is None:
+        return None
+    source_revision = session.get(IdeaRevision, venture.source_idea_revision_id)
+    idea = session.get(Idea, source_revision.idea_id) if source_revision else None
+    if source_revision is None or idea is None:
+        return None
+    current = session.get(IdeaRevision, idea.current_revision_id) or source_revision
+    sources = [
+        {
+            "id": source.id,
+            "title": source.title,
+            "locator": source.locator,
+            "kind": source.kind.value,
+            "role": link.role.value,
+            "note": link.note,
+        }
+        for source, link in session.execute(
+            select(ReferenceSource, IdeaSource)
+            .join(IdeaSource, IdeaSource.source_id == ReferenceSource.id)
+            .where(IdeaSource.idea_id == idea.id)
+            .order_by(ReferenceSource.title, IdeaSource.role)
+        )
+    ]
+    evidence_count = (
+        session.scalar(
+            select(func.count())
+            .select_from(Evidence)
+            .where(Evidence.workspace_id == idea.workspace_id)
+        )
+        or 0
+    )
+    evidence = [
+        {"id": e.id, "summary": e.summary[:200], "kind": e.kind.value}
+        for e in session.scalars(
+            select(Evidence)
+            .where(Evidence.workspace_id == idea.workspace_id)
+            .order_by(Evidence.captured_at.desc(), Evidence.id)
+            .limit(10)
+        )
+    ]
+    return {
+        "idea_id": idea.id,
+        "idea_workspace_id": idea.workspace_id,
+        "title": current.title,
+        "source_revision_number": source_revision.revision_number,
+        "current_revision_number": current.revision_number,
+        "sources": sources,
+        "competition": _links(session, [current.id]),
+        "evidence_count": evidence_count,
+        "evidence": evidence,
     }
 
 

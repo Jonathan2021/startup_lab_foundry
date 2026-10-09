@@ -2,11 +2,18 @@
 
 from alembic.autogenerate import compare_metadata
 from alembic.runtime.migration import MigrationContext
-from sqlalchemy import inspect, text
+from sqlalchemy import insert, inspect, text
 
 from alembic import command
-from startup_foundry.application import FoundryApplication
-from startup_foundry.domain import Base, Venture, VentureStage
+from startup_foundry.domain import (
+    Base,
+    Portfolio,
+    Venture,
+    VentureStage,
+    Workspace,
+    WorkspaceKind,
+    utc_now,
+)
 from startup_foundry.migrations import alembic_config, upgrade_database
 from startup_foundry.repository import create_db_engine, create_session_factory
 
@@ -16,14 +23,36 @@ def test_upgrade_populated_previous_schema_and_metadata_parity(tmp_path):
     command.upgrade(alembic_config(url), "7ce261002001")
     engine = create_db_engine(url)
     factory = create_session_factory(engine)
-    FoundryApplication(factory).create_venture(
-        venture_id="retained",
-        name="Retain",
-        objective="No data loss",
-        stage=VentureStage.DISCOVERY,
-    )
-    with factory() as s:
-        before = s.get(Venture, "retained").workspace_id
+    # Write the pre-upgrade rows with that schema's columns: the current ORM maps
+    # later additive columns (for example ventures.alias) the old schema lacks.
+    with factory.begin() as s:
+        s.add(Portfolio(id="portfolio-default", key="default", name="Foundry"))
+        s.add(
+            Workspace(
+                id="ws-retained",
+                portfolio_id="portfolio-default",
+                key="retained",
+                title="Retain",
+                kind=WorkspaceKind.VENTURE,
+            )
+        )
+        s.flush()
+        s.execute(
+            insert(Venture.__table__).values(
+                id="retained",
+                workspace_id="ws-retained",
+                objective="No data loss",
+                stage=VentureStage.DISCOVERY.value,
+                budget_currency="EUR",
+                version_id=1,
+                created_at=utc_now(),
+                updated_at=utc_now(),
+            )
+        )
+    with engine.connect() as c:
+        before = c.execute(
+            text("SELECT workspace_id FROM ventures WHERE id = 'retained'")
+        ).scalar_one()
     upgrade_database(url)
     with factory() as s:
         assert s.get(Venture, "retained").workspace_id == before

@@ -60,6 +60,9 @@
             sources: get(form, 'finding_source') ? [get(form, 'finding_source')] : [], epistemic_status: get(form, 'finding_status')}] : [],
           next_work: get(form, 'next_title') ? {title: get(form, 'next_title'), description: get(form, 'next_description'),
             acceptance_criteria: get(form, 'next_criteria'), owner: get(form, 'next_owner')} : null};
+      } else if (form.dataset.lifecycle === 'close') {
+        payload = {work_id: get(form, 'work_id'), expected_version: Number(get(form, 'expected_version')),
+          actor: get(form, 'actor'), rationale: get(form, 'rationale')};
       } else if (form.dataset.lifecycle === 'resolve') {
         payload = {actor: base.actor, rationale: get(form, 'rationale'), resolution: button.value === 'preview' ? 'accept' : button.value,
           expected_result_digest: get(form, 'expected_result_digest'), expected_head: get(form, 'expected_head'),
@@ -80,6 +83,10 @@
           entry(target, 'Preview only — no changes saved.', 'h3');
           entry(target, result.effects.completed_work_id ? 'This task will be completed.' : 'This task stays active.');
           entry(target, result.effects.next_work_id ? 'The proposed next task will be created.' : 'No next task will be created.');
+          for (const change of result.effects.review_changes || []) {
+            entry(target, 'Venture review ' + change.field.replaceAll('_', ' ') + ': ' + (change.before ?? 'none') + ' → ' + (change.after ?? 'none'));
+          }
+          if (result.effects.next_action_retained) entry(target, 'The venture-level next action is retained (work-scoped result).');
           const affected = result.effects.work_needing_review || {};
           entry(target, Object.keys(affected).length + ' other tasks require review after these changes.');
           for (const [id, reasons] of Object.entries(affected)) entry(target, id + ': ' + JSON.stringify(reasons));

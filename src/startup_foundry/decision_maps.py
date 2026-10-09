@@ -64,6 +64,8 @@ RECORD_MODELS: dict[str, type[Base]] = {
     "assessment": AssumptionAssessment,
 }
 DEPENDENCIES = {"depends_on", "tests", "contributes_to"}
+# Record kinds a venture may reference from its source idea's workspace (ADR-0020).
+LINEAGE_KINDS = {"evidence"}
 
 
 def json_value(value: Any) -> Any:
@@ -87,6 +89,31 @@ def row_json(row: Base) -> JSON:
     }
 
 
+def source_idea_workspace(session: Session, workspace: str) -> str | None:
+    """The workspace of the idea this venture was promoted from, if any."""
+    venture = session.scalar(select(Venture).where(Venture.workspace_id == workspace))
+    if venture is None or venture.source_idea_revision_id is None:
+        return None
+    revision = session.get(IdeaRevision, venture.source_idea_revision_id)
+    idea = session.get(Idea, revision.idea_id) if revision else None
+    return idea.workspace_id if idea else None
+
+
+def reference_allowed(
+    session: Session, workspace: str, kind: str, owner: str | None
+) -> bool:
+    """Resolution rule: same workspace, or source-idea workspace for lineage kinds.
+
+    A venture's map, context and results may cite the evidence retained on the idea
+    it was promoted from. Every other cross-workspace reference is rejected.
+    """
+    if owner is None:
+        return False
+    if owner == workspace:
+        return True
+    return kind in LINEAGE_KINDS and owner == source_idea_workspace(session, workspace)
+
+
 def record_snapshot(session: Session, workspace: str, ref: RecordRef) -> JSON:
     row = session.get(RECORD_MODELS[ref.kind], ref.id)
     owner = getattr(row, "workspace_id", None)
@@ -96,7 +123,7 @@ def record_snapshot(session: Session, workspace: str, ref: RecordRef) -> JSON:
     if isinstance(row, AssumptionAssessment):
         assumption = session.get(Assumption, row.assumption_id)
         owner = assumption.workspace_id if assumption else None
-    if row is None or owner != workspace:
+    if row is None or not reference_allowed(session, workspace, ref.kind, owner):
         raise ReferenceError(
             f"{ref.kind} {ref.id} is missing or belongs to another workspace"
         )
@@ -229,6 +256,33 @@ def derived_reviews(session: Session, workspace: str, data: JSON) -> dict[str, s
         for wid, reason in reviews.items()
         if (work := session.get(WorkItem, wid)) is not None and work.status in ACTIVE
     }
+
+
+def superseded_work(session: Session, workspace: str) -> dict[str, str]:
+    """Blocked legacy work whose recorded blocker says it was superseded.
+
+    ADR-0020: such work was paused with a "Superseded ..." rationale and is
+    reported separately ("close or revise"), not as a pending decision review.
+    """
+    head = map_head(session, workspace)
+    reasons = map_payload(session, head).get("needs_review", {}) if head else {}
+    result = {}
+    for work in session.scalars(
+        select(WorkItem)
+        .where(
+            WorkItem.workspace_id == workspace,
+            WorkItem.status == WorkItemStatus.BLOCKED,
+        )
+        .order_by(WorkItem.created_at, WorkItem.id)
+    ):
+        text = (
+            reasons.get(work.id, "")
+            if work.blocked_reason == "changed_context"
+            else work.blocked_reason or ""
+        )
+        if text.strip().lower().startswith("superseded"):
+            result[work.id] = text
+    return result
 
 
 def execution_blockers(session: Session, work: WorkItem) -> list[str]:
@@ -434,9 +488,23 @@ class DecisionMapService:
             new_edges = {json.dumps(e, sort_keys=True): e for e in draft["edges"]}
             for key in old_edges.keys() ^ new_edges.keys():
                 edge = old_edges.get(key) or new_edges[key]
-                changed.add(edge["source"])
+                # An added/removed relationship changes an unchanged work node
+                # only when it alters that work's execution prerequisites.
+                source = before.get(edge["source"]) or after.get(edge["source"]) or {}
+                unchanged_work = (
+                    (source.get("ref") or {}).get("kind") == "work"
+                    and before.get(edge["source"]) == after.get(edge["source"])
+                )
+                if edge["kind"] == "depends_on" or not unchanged_work:
+                    changed.add(edge["source"])
                 if edge["kind"] in {"informs", "supports", "contradicts"}:
-                    changed.add(edge["target"])
+                    target = (
+                        before.get(edge["target"]) or after.get(edge["target"]) or {}
+                    )
+                    if (target.get("ref") or {}).get("kind") != "work" or before.get(
+                        edge["target"]
+                    ) != after.get(edge["target"]):
+                        changed.add(edge["target"])
             for key, value in references.items():
                 if (
                     key in old["references"]

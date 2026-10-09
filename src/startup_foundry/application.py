@@ -619,6 +619,7 @@ class FoundryApplication:
     def _venture_json(venture: Venture, workspace: Workspace) -> JsonObject:
         return {
             "id": venture.id,
+            "alias": venture.alias,
             "workspace_id": workspace.id,
             "name": workspace.title,
             "objective": venture.objective,

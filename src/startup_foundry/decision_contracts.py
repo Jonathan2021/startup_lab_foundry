@@ -329,6 +329,15 @@ class WorkReleaseInput(WorkClaimInput):
     rationale: Reason
 
 
+class WorkCloseInput(Contract):
+    """Cancel one exact active work item with an audited rationale (ADR-0020)."""
+
+    work_id: Identity
+    expected_version: int = Field(ge=1)
+    actor: Actor
+    rationale: Reason
+
+
 class NewWorkInput(Contract):
     request_key: RequestKey
     actor: Actor

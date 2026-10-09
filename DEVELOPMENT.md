@@ -349,8 +349,42 @@ earlier revision. `idea compare` (1–20 IDs) and `/ideas/compare?ids=A&ids=B`
 use the latest assessment of each current revision, flag an earlier-revision
 score as `stale_revision`, and report missing scores as null. The Sources page
 links each source to `/ideas?source_id=…`, which offers a cohort comparison.
-These shapes are documented here rather than in `agent schema`, whose public
-contract revision is unchanged.
+Since contract `2026-10-09.1` these inputs are also published by `agent schema
+--name source|market_actor_link|idea_revision|idea_relation|idea_create`.
+`score rank` returns `ranked_entries` ({rank, idea_id, score, assessment_id}) and
+`excluded_entries` ({idea_id, reason, assessment_id}) besides the counts.
+
+## Venture state, requests and drift (October 9, ADR-0020)
+
+[ADR-0020](docs/adr/0020-truthful-venture-state-requests-and-drift.md). Additive
+migration `b10261009002` adds the nullable unique `ventures.alias`.
+
+```bash
+foundry venture alias --id VENTURE --input alias.json   # alias, actor, rationale, expected_version
+foundry agent resume --id v-crous-queue --format json   # venture_state, superseded, human_requests, latest_delivery
+foundry venture-work close --workspace-id WS --input close.json
+foundry input sync --requests-directory requests --preview
+foundry input sync --requests-directory requests --apply [--mapping FILE]
+```
+
+- `venture_state.py` derives one state for the header, venture list, Today and
+  `agent resume`. `Venture.stage` is display-only creation data, shown as
+  "Lifecycle (recorded)" only when it differs from the reviewed state.
+- A venture may cite its source idea's evidence in map/context/result records;
+  other cross-workspace references are rejected. The overview shows the idea's
+  sources, competition and evidence.
+- `close.json`: `work_id`, `expected_version`, `actor`, `rationale`. Claimed work
+  must be released first. A map `cancel` treatment, receipt and audit are retained.
+- A work-scoped result keeps a HOLD/narrowed next action; preview and receipts
+  list `review_changes`.
+- Request files: `#`/`##` headings starting `R0NN`. Optional
+  `request-ventures.json` in the requests directory:
+  `{"files": {"file.md": ["v-id"]}, "requests": {"R011": ["v-id"]}, "ignore":
+  ["INBOX.md", "file.md#R001"]}`. Answers are labelled, never imported.
+- Read commands accept `--id` (venture ID, alias, workspace ID/key or idea ID).
+  The console redirects `/ventures/{alias}` to the canonical ID.
+- JSON stdout ends with a newline. INFO logs appear only with `--debug`
+  (default WARNING); warnings/errors keep their correlation IDs.
 
 ## Manual outreach
 

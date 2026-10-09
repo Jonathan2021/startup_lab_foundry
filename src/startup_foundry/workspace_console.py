@@ -127,6 +127,12 @@ def context(
                 .order_by(Venture.id)
             ).all()
         ]
+        from startup_foundry.discovery_records import venture_lineage
+
+        subject_venture = session.get(Venture, venture_id) if venture_id else None
+        lineage = (
+            venture_lineage(session, subject_venture) if subject_venture else None
+        )
         current = session.scalar(
             select(WorkspaceReview)
             .where(WorkspaceReview.workspace_id == workspace)
@@ -154,11 +160,19 @@ def context(
             r
             for r in questions
             if r["status"] in ["waiting_for_answer", "needs_clarification"]
+            and r.get("file_state") != "answered"
         ),
         None,
     )
+    # A request file answered inline awaits the reviewed intake, like an answer.
     pending = next(
-        (r for r in questions if r["status"] in ["ready_for_review", "reviewing"]), None
+        (
+            r
+            for r in questions
+            if r["status"] in ["ready_for_review", "reviewing"]
+            or r.get("file_state") == "answered"
+        ),
+        None,
     )
     deferred = next((r for r in questions if r["status"] == "deferred"), None)
     chosen = waiting or pending or deferred
@@ -187,16 +201,22 @@ def context(
         }
         if chosen
         else {
-            "label": current.next_action
+            # The next-action text itself is shown once, as the current focus.
+            "label": "Open the next task"
+            if active_work
+            else "Go to work and input"
             if current
             else "Specify the next bounded task",
-            "url": workspace_link("work"),
+            "url": active_work["url"] if active_work else workspace_link("work"),
             "owner": active_work["owner"] if active_work else "agent",
             "status": active_work["status"] if active_work else "not scheduled",
         }
     )
     proposals = ProposalService(factory).list(workspace_id=workspace)["items"]
-    undecided = next((p for p in proposals if p["state"] == "proposed"), None)
+    # A stale proposal (ADR-0020) is never presented as the current focus.
+    undecided = next(
+        (p for p in proposals if p["display_state"] == "proposed"), None
+    )
     if undecided and not waiting:
         action = {
             "label": "Review fusion proposal",
@@ -204,9 +224,16 @@ def context(
             "owner": "you",
             "status": "proposed",
         }
+    intake_open = intake is not None and intake["work"]["status"] in {
+        "todo",
+        "ready",
+        "in_progress",
+    }
     if not chosen and not undecided and not current:
         action = {
             "label": "Queued for manual agent review"
+            if intake_open
+            else "Initial review closed · specify the next bounded task"
             if intake
             else "Request initial review",
             "url": workspace_link("work", fragment="initial-review")
@@ -277,10 +304,12 @@ def context(
             event["url"] = workspace_link("history", path=event["url"])
     return {
         "lifecycle": AgentHandoffService(factory).resume(workspace),
+        "lineage": lineage,
         "workspace_id": workspace,
         "workspace_link": workspace_link,
         "score_editor": editor,
         "intake": intake,
+        "intake_open": intake_open,
         "active_work": active_work,
         "briefs": briefs,
         "related_proposals": proposals,
@@ -508,6 +537,21 @@ def install_routes(
     @app.post("/api/inputs/{identity}/dependencies")
     def dependency(identity: str, payload: DependencyInput) -> JSON:
         return inputs.link_dependency(identity, payload)
+
+    @app.get("/requests/{identity}/source")
+    def request_source(identity: str) -> Response:
+        """The registered request file, as untrusted plain text (read-only)."""
+        from fastapi.responses import PlainTextResponse
+
+        from startup_foundry.errors import ReferenceError
+
+        detail = inputs.show(identity)
+        sync = (detail["source_diagnostics"] or {}).get("file_sync") or {}
+        name = sync.get("file") or detail["file_path"]
+        if not name:
+            raise ReferenceError("Request has no registered source file")
+        content, _ = inputs.read_source(name)
+        return PlainTextResponse(content, headers={"X-Source-File": name})
 
     @app.get("/requests/{identity}/handoff")
     def handoff(identity: str) -> Response:

@@ -171,6 +171,11 @@ def test_scorecard_versions_sensitivity_ranking_and_partial_exclusion(scoring):
     )
     rank = service.rank("profile-v2", "test comparison")
     assert rank["ranked"] == 1 and rank["excluded"] == 1
+    assert rank["ranked_entries"] == [
+        {"rank": 1, "idea_id": "a", "score": 0, "assessment_id": full["id"]}
+    ]
+    assert rank["excluded_entries"][0]["idea_id"] == "b"
+    assert rank["excluded_entries"][0]["reason"] == "partial_total"
     changes = service.sensitivity("a", "profile-v2")
     assert changes["assessment_id"] == full["id"] and changes["base"] == 0
     assert changes["changes"]
@@ -183,7 +188,14 @@ def test_scorecard_versions_sensitivity_ranking_and_partial_exclusion(scoring):
             author="test",
         )
     )
-    assert service.rank("profile-v2", "updated comparison")["ranked"] == 0
+    updated = service.rank("profile-v2", "updated comparison")
+    assert updated["ranked"] == 0 and updated["ranked_entries"] == []
+    assert {e["reason"] for e in updated["excluded_entries"]} == {"partial_total"}
+    portfolio.create_idea(IdeaDraft(title="c", description="Unscored"), idea_id="c")
+    unscored = service.rank("profile-v2", "with unscored idea")["excluded_entries"]
+    assert {"idea_id": "c", "reason": "not_assessed_on_scorecard"} == {
+        k: v for k, v in unscored[-1].items() if k != "assessment_id"
+    }
 
 
 def test_duplicate_csv_ids_and_invalid_parity_fail_before_writes(scoring, tmp_path):

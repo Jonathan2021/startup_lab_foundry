@@ -713,6 +713,7 @@ class RankingEntry(IdentityMixin, TimestampMixin, Base):
 
 class Venture(IdentityMixin, TimestampMixin, VersionedMixin, Base):
     __tablename__ = "ventures"
+    __table_args__ = (Index("venture_alias_unique", "alias", unique=True),)
 
     workspace_id: Mapped[str] = mapped_column(
         ForeignKey("workspaces.id"), nullable=False, unique=True
@@ -729,6 +730,8 @@ class Venture(IdentityMixin, TimestampMixin, VersionedMixin, Base):
     budget_currency: Mapped[str] = mapped_column(
         String(3), default="EUR", nullable=False
     )
+    # Optional stable slug (ADR-0020) for ventures created with a raw UUID.
+    alias: Mapped[str | None] = mapped_column(String(64))
 
 
 class Assumption(IdentityMixin, TimestampMixin, VersionedMixin, Base):

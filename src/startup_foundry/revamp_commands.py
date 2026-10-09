@@ -95,16 +95,36 @@ def add_parsers(resources: Any) -> None:
                 p.add_argument("--input", required=True)
             if kind == "list":
                 p.add_argument("--status")
-                p.add_argument("--workspace-id")
+                selector = p.add_mutually_exclusive_group()
+                selector.add_argument("--workspace-id")
+                selector.add_argument("--id", help="Venture/alias/workspace/idea ID")
                 p.add_argument("--limit", type=int, default=50)
                 p.add_argument("--offset", type=int, default=0)
             if kind == "venture":
                 p.add_argument("--scorecard-id", default="portfolio-reviewed-v1")
             if kind == "sync":
                 p.add_argument(
-                    "--preview", required=True, help="Saved output of input preview"
+                    "--preview",
+                    nargs="?",
+                    const=True,
+                    help="Saved output of input preview; with --requests-directory, "
+                    "a bare --preview plans request-file registration",
                 )
                 p.add_argument("--reconciliation", choices=["keep_ui", "use_file"])
+                p.add_argument(
+                    "--requests-directory",
+                    help="Register requests/*.md sections as human requests",
+                )
+                p.add_argument(
+                    "--apply",
+                    action="store_true",
+                    help="Apply the request-file plan (with --requests-directory)",
+                )
+                p.add_argument(
+                    "--mapping",
+                    help="Venture mapping JSON (default: request-ventures.json "
+                    "inside the requests directory)",
+                )
             if kind == "bootstrap":
                 p.add_argument("--review-latest", action="store_true")
 
@@ -143,7 +163,29 @@ def dispatch(
             )
         if args.action == "preview":
             return inputs.preview()
+        directory_arg = getattr(args, "requests_directory", None)
+        apply_plan = getattr(args, "apply", False)
+        mapping_arg = getattr(args, "mapping", None)
+        if args.action == "sync" and directory_arg:
+            from startup_foundry.request_files import RequestFileSync
+
+            if apply_plan == (args.preview is True) or isinstance(args.preview, str):
+                raise ValidationError(
+                    "With --requests-directory use exactly one of a bare "
+                    "--preview or --apply"
+                )
+            files = RequestFileSync(
+                factory,
+                Path(directory_arg),
+                Path(mapping_arg) if mapping_arg else None,
+            )
+            return files.apply() if apply_plan else files.preview()
         if args.action == "sync":
+            if not isinstance(args.preview, str) or apply_plan or mapping_arg:
+                raise ValidationError(
+                    "input sync needs --preview FILE (saved input preview), or "
+                    "--requests-directory PATH with --preview/--apply"
+                )
             try:
                 preview = json.loads(read_bounded(args.preview, "Sync preview"))
             except (OSError, ValueError) as exc:

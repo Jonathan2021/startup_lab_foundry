@@ -115,7 +115,17 @@ Do not claim the app is built because its specification or synthetic fixture pas
 Only add current-package tests. Keep real user trial gates distinct from build gates.
 
 
-## Current upgrade and delivery evidence (2026-10-08.1)
+## Current upgrade (2026-10-09.1)
+
+Record every delivery in a result finding as `Delivery: main=<sha> ci=<run id>`.
+`resume`, `start` and `doctor` print a `repository` block (local HEAD, local
+`origin/main`, latest recorded delivery) and warn when the repository moved past
+it; the bridge never fetches. Legacy items paused as "Superseded ..." appear under
+`superseded`; close one with `cli venture-work close --workspace-id WS --input
+close.json` (`cli agent schema --name close`). Read commands accept `--id` with a
+venture ID, alias, workspace ID/key or idea ID.
+
+## Upgrade and delivery evidence (2026-10-08.1)
 
 Use the current `doctor` and CLI guide; historical initial-task IDs do not override
 resume. An unresolved result with `state=superseded` links its accepted replacement

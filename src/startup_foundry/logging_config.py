@@ -17,7 +17,9 @@ class CorrelationIdFilter(logging.Filter):
         return True
 
 def configure_logging(*, debug: bool = False) -> None:
-    level = logging.DEBUG if debug else logging.INFO
+    # Routine INFO lines would interleave with JSON when stderr is merged;
+    # they are emitted only in debug mode. Warnings and errors always are.
+    level = logging.DEBUG if debug else logging.WARNING
 
     handler = logging.StreamHandler(sys.stderr)
     handler.addFilter(CorrelationIdFilter())

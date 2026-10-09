@@ -7,9 +7,11 @@ here. All writes use the same contracts through CLI and the local console.
 from __future__ import annotations
 
 import json
+import re
+from datetime import UTC, datetime
 from typing import Any
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from startup_foundry.decision_contracts import (
@@ -23,7 +25,9 @@ from startup_foundry.decision_contracts import (
     ResolveResultInput,
     ResultInput,
     WorkClaimInput,
+    WorkCloseInput,
     WorkReleaseInput,
+    WorkTreatment,
 )
 from startup_foundry.decision_maps import (
     ACTIVE,
@@ -34,6 +38,7 @@ from startup_foundry.decision_maps import (
     record_snapshot,
     require_execution_eligible,
     row_json,
+    superseded_work,
     workspace_scope,
 )
 from startup_foundry.domain import (
@@ -70,11 +75,87 @@ from startup_foundry.repository import SessionFactory
 from startup_foundry.reviews import ReviewInput, ReviewService
 from startup_foundry.scoring import digest
 from startup_foundry.snapshots import audit, read_snapshot, snapshot, transaction
+from startup_foundry.venture_state import open_requests, venture_state
 
 JSON = dict[str, Any]
 CONTEXT_SCHEMA = "venture-context/v1"
 RESULT_SCHEMA = "venture-result/v1"
 RESOLUTION_SCHEMA = "venture-result-resolution/v1"
+
+
+def as_utc(value: datetime) -> datetime:
+    return value if value.tzinfo else value.replace(tzinfo=UTC)
+
+
+DELIVERY_SHA = re.compile(
+    r"\bmain=([0-9a-f]{7,40})\b|\bsha[ \t:=]+([0-9a-f]{7,40})\b", re.I
+)
+
+
+def delivery_sha(text: str) -> str | None:
+    """The last `main=<sha>` or `sha <sha>` mention in a recorded text."""
+    found = [a or b for a, b in DELIVERY_SHA.findall(text or "")]
+    return found[-1].lower() if found else None
+
+
+def latest_delivery(session: Session, workspace: str) -> JSON | None:
+    """Newest delivery SHA recorded in accepted results or evidence (ADR-0020).
+
+    Convention for implementation agents: `Delivery: main=<sha> ci=<run id>`.
+    Read-only and bounded to the newest 200 evidence rows and 100 results.
+    """
+    candidates: list[tuple[datetime, JSON]] = []
+    for evidence in session.scalars(
+        select(Evidence)
+        .where(Evidence.workspace_id == workspace)
+        .order_by(Evidence.captured_at.desc(), Evidence.id)
+        .limit(200)
+    ):
+        sha = delivery_sha(evidence.summary + "\n" + (evidence.details or ""))
+        if sha:
+            candidates.append(
+                (
+                    as_utc(evidence.captured_at),
+                    {"sha": sha, "source_kind": "evidence", "source_id": evidence.id},
+                )
+            )
+            break
+    for receipt in session.scalars(
+        select(Artifact)
+        .where(
+            Artifact.workspace_id == workspace,
+            Artifact.name == RESOLUTION_SCHEMA,
+        )
+        .order_by(Artifact.created_at.desc(), Artifact.id)
+        .limit(100)
+    ):
+        if receipt.metadata_json.get("resolution") != "accept":
+            continue
+        result = session.get(Artifact, receipt.metadata_json["result_id"])
+        if result is None:
+            continue
+        proposal = result.metadata_json
+        texts = [proposal.get("summary", ""), proposal.get("rationale", "")]
+        for finding in proposal.get("findings", []):
+            texts += [finding.get("summary", ""), finding.get("details", "")]
+            texts += finding.get("sources", [])
+        sha = delivery_sha("\n".join(texts))
+        if sha:
+            candidates.append(
+                (
+                    as_utc(receipt.created_at),
+                    {"sha": sha, "source_kind": "result", "source_id": result.id},
+                )
+            )
+            break
+    if not candidates:
+        return None
+    moment, found = max(candidates, key=lambda item: item[0])
+    return {**found, "recorded_at": moment.isoformat()}
+
+
+def json_text(value: Any) -> Any:
+    return value.value if hasattr(value, "value") else value
 
 
 def current_review(session: Session, workspace: str) -> WorkspaceReview | None:
@@ -395,8 +476,13 @@ class AgentHandoffService:
         with self.factory() as session:
             scope = workspace_scope(session, workspace)
             review = current_review(session, workspace)
+            superseded = superseded_work(session, workspace)
             work = [
-                {**row_json(w), "execution_blockers": execution_blockers(session, w)}
+                {
+                    **row_json(w),
+                    "execution_blockers": execution_blockers(session, w),
+                    "superseded": w.id in superseded,
+                }
                 for w in session.scalars(
                     select(WorkItem)
                     .where(
@@ -410,18 +496,57 @@ class AgentHandoffService:
                 "workspace_id": workspace,
                 "scope": scope,
                 "map_revision_id": maps["id"],
-                "needs_review": maps["needs_review"],
+                # Superseded legacy work is listed apart: close or revise it.
+                "needs_review": {
+                    wid: reason
+                    for wid, reason in maps["needs_review"].items()
+                    if wid not in superseded
+                },
+                "superseded": [
+                    {
+                        "id": w["id"],
+                        "title": w["title"],
+                        "version_id": w["version_id"],
+                        "reason": superseded[w["id"]],
+                    }
+                    for w in work
+                    if w["superseded"]
+                ],
                 "stale_references": maps["stale_references"],
                 "current_review": row_json(review) if review else None,
+                "venture_state": None,
+                "human_requests": open_requests(session, workspace),
+                "latest_delivery": latest_delivery(session, workspace),
                 "work": work,
                 "worker_running": False,
                 "results": self.list_results(workspace),
             }
+            venture = session.scalar(
+                select(Venture).where(Venture.workspace_id == workspace)
+            )
+            if venture:
+                result["venture_state"] = venture_state(
+                    session, venture, superseded=set(superseded)
+                )
             reviewed = maps.get("reviewed_evidence", {})
             linked = {
                 ref["id"]: ref["digest"]
                 for ref in maps.get("references", {}).values()
                 if ref["kind"] == "evidence"
+            }
+            # Evidence an accepted decision cites after its last change was
+            # reviewed by that decision, including results accepted earlier.
+            decided: dict[str, datetime] = {
+                evidence_id: latest
+                for evidence_id, latest in session.execute(
+                    select(DecisionEvidence.evidence_id, func.max(Decision.decided_at))
+                    .join(Decision, Decision.id == DecisionEvidence.decision_id)
+                    .where(
+                        Decision.workspace_id == workspace,
+                        Decision.status == DecisionStatus.ACCEPTED,
+                    )
+                    .group_by(DecisionEvidence.evidence_id)
+                )
             }
             changes = []
             for evidence in session.scalars(
@@ -429,6 +554,11 @@ class AgentHandoffService:
                 .where(Evidence.workspace_id == workspace)
                 .order_by(Evidence.captured_at.desc(), Evidence.id)
             ):
+                cited_at = decided.get(evidence.id)
+                if cited_at is not None and as_utc(cited_at) >= as_utc(
+                    evidence.updated_at
+                ):
+                    continue
                 current = record_snapshot(
                     session, workspace, RecordRef(kind="evidence", id=evidence.id)
                 )
@@ -448,9 +578,35 @@ class AgentHandoffService:
             "Map revision: " + str(maps["id"] or "not created"),
             "Current next action: "
             + (review.next_action if review else "Choose a bounded question"),
-            "",
         ]
+        state = result["venture_state"]
+        if state:
+            lines.append("State: " + state["headline"])
+            if state["lifecycle"]["differs"]:
+                lines.append(
+                    "Recorded lifecycle: "
+                    + state["lifecycle"]["stored"]
+                    + " (review implies "
+                    + str(state["lifecycle"]["implied"])
+                    + ")"
+                )
+            if state["score"]["status"] == "predates_scope":
+                lines.append("Score predates the current scope; reassess it.")
+        delivery = result["latest_delivery"]
+        if delivery:
+            lines.append(
+                "Latest recorded delivery: main="
+                + delivery["sha"]
+                + " ("
+                + delivery["source_kind"]
+                + " "
+                + delivery["source_id"]
+                + ")"
+            )
+        lines.append("")
         for item in work:
+            if item["superseded"]:
+                continue
             lines.append(
                 f"- {item['id']}: {item['title']} [{item['status']}; "
                 f"owner {item['owner'] or 'unassigned'}; "
@@ -466,6 +622,31 @@ class AgentHandoffService:
                 )
             elif item["state"] not in {"accept", "reject"}:
                 lines.append("- Result " + item["id"] + ": " + item["state"])
+        if result["superseded"]:
+            lines += ["", "## Superseded (close or revise)"]
+            for item in result["superseded"]:
+                lines.append(
+                    f"- {item['id']}: {item['title']} [version {item['version_id']}] "
+                    + item["reason"][:200]
+                )
+            lines.append(
+                "Close with: foundry venture-work close --workspace-id "
+                + workspace
+                + " --input close.json (work_id, expected_version, actor, rationale)"
+            )
+        if result["human_requests"]:
+            lines += ["", "## Human requests"]
+            for request in result["human_requests"]:
+                lines.append(
+                    f"- {request['id']}: {request['title']} [{request['status']}"
+                    + (
+                        "; answered in file, awaiting reviewed intake"
+                        if request["file_state"] == "answered"
+                        else ""
+                    )
+                    + "]"
+                    + (" file " + request["file"] if request["file"] else "")
+                )
         if result["unreviewed_change_count"]:
             lines.append(
                 "Unreviewed evidence changes: " + str(result["unreviewed_change_count"])
@@ -1121,6 +1302,101 @@ class AgentHandoffService:
             )
             return row_json(work)
 
+    def close_work(self, workspace: str, payload: WorkCloseInput) -> JSON:
+        """Cancel one exact active work item, audited and repeat-safe.
+
+        With a decision map, this is a map revision whose only change is a
+        `cancel` work treatment, so the map history records the closure.
+        Claimed (in-progress) work must be released by its owner first.
+        """
+        key = "venture-work-closed/v1"
+        request_digest = digest(payload.model_dump(mode="json"))
+        with transaction(self.factory) as session:
+            workspace_scope(session, workspace)
+            identity = stable_id(
+                key
+                + ":"
+                + workspace
+                + ":"
+                + payload.work_id
+                + ":"
+                + str(payload.expected_version)
+            )
+            prior = session.get(Artifact, identity)
+            if prior:
+                if prior.metadata_json["request_digest"] != request_digest:
+                    raise ConflictError("Work was already closed with another request")
+                return prior.metadata_json
+            head = map_head(session, workspace, lock=True)
+            work = session.get(WorkItem, payload.work_id)
+            if work is None or work.workspace_id != workspace:
+                raise ReferenceError("Work belongs to another workspace")
+            if work.version_id != payload.expected_version or work.status not in ACTIVE:
+                raise ConflictError("Work changed or is finished; refresh it")
+            if work.status == WorkItemStatus.IN_PROGRESS:
+                raise ConflictError(
+                    "Claimed work must be released by its owner before closing"
+                )
+            was = {
+                "status": work.status.value,
+                "blocked_reason": work.blocked_reason,
+                "superseded_reason": superseded_work(session, workspace).get(work.id),
+            }
+            map_revision_id = None
+            if head:
+                draft = map_payload(session, head)["map"]
+                revision = DecisionMapService._revise(
+                    session,
+                    workspace,
+                    MapInput(
+                        expected_head=head.current_revision_artifact_id,
+                        request_key="close:" + identity,
+                        actor=payload.actor,
+                        rationale=payload.rationale,
+                        map=DecisionMapDraft.model_validate(
+                            json.loads(json.dumps(draft))
+                        ),
+                        work_treatments=[
+                            WorkTreatment(
+                                work_id=work.id,
+                                expected_version=work.version_id,
+                                action="cancel",
+                                rationale=payload.rationale,
+                            )
+                        ],
+                    ),
+                )
+                map_revision_id = revision["id"]
+            else:
+                work.status = WorkItemStatus.CANCELLED
+                work.version_id += 1
+                session.flush()
+            result = {
+                "work_id": work.id,
+                "status": work.status.value,
+                "version_id": work.version_id,
+                "previous": was,
+                "map_revision_id": map_revision_id,
+                "request_digest": request_digest,
+            }
+            snapshot(
+                session,
+                workspace,
+                key,
+                result,
+                key=payload.work_id + ":" + str(payload.expected_version),
+                work_id=work.id,
+            )
+            audit(
+                session,
+                workspace,
+                work.id,
+                "work_closed",
+                payload.actor,
+                {"rationale": payload.rationale, "previous": was},
+            )
+            return result
+
     def resolve(self, identity: str, payload: ResolveResultInput) -> JSON:
         with transaction(self.factory) as session:
             return self._resolve(session, identity, payload)
@@ -1250,6 +1526,32 @@ class AgentHandoffService:
         )
         return receipt
 
+    @staticmethod
+    def _venture_level_action(
+        session: Session, review: WorkspaceReview | None
+    ) -> str | None:
+        """The current next action when it records a HOLD or narrowed venture."""
+        if review is None:
+            return None
+        if Disposition(review.disposition) == Disposition.HOLD:
+            return review.next_action
+        # A retained action stays venture-level across later work-scoped results.
+        for earlier in session.scalars(
+            select(WorkspaceReview)
+            .where(WorkspaceReview.workspace_id == review.workspace_id)
+            .order_by(WorkspaceReview.revision.desc())
+        ):
+            if earlier.next_action != review.next_action:
+                break
+            decision = (
+                session.get(Decision, earlier.decision_id)
+                if earlier.decision_id
+                else None
+            )
+            if decision is not None and decision.kind == DecisionKind.NARROW:
+                return review.next_action
+        return None
+
     @classmethod
     def _accept(
         cls,
@@ -1366,6 +1668,15 @@ class AgentHandoffService:
                 "continue": Disposition.PURSUE,
                 "narrow": Disposition.PURSUE,
             }.get(proposal.outcome, disposition)
+        proposed_action = proposal.next_action + (
+            "\nRevisit when: " + proposal.revisit_trigger
+            if proposal.revisit_trigger
+            else ""
+        )
+        # A work-scoped result never replaces a venture-level HOLD/narrowed next
+        # action; only an explicit venture-scoped decision changes direction.
+        retained_action = cls._venture_level_action(session, old_review)
+        keep_action = proposal.decision_scope == "work" and retained_action is not None
         review = ReviewService._append(
             session,
             ReviewInput(
@@ -1378,12 +1689,9 @@ class AgentHandoffService:
                 if old_review
                 else initial_maturity,
                 disposition=disposition,
-                next_action=proposal.next_action
-                + (
-                    "\nRevisit when: " + proposal.revisit_trigger
-                    if proposal.revisit_trigger
-                    else ""
-                ),
+                next_action=retained_action
+                if keep_action and retained_action
+                else proposed_action,
                 next_work_item_id=next_work.id
                 if next_work
                 else work.id
@@ -1444,6 +1752,25 @@ class AgentHandoffService:
                     for r in context["records"].values()
                     if r["kind"] == "evidence"
                 },
+                # Evidence the accepted result explicitly cites is reviewed too.
+                **{
+                    eid: record_snapshot(
+                        session, workspace, RecordRef(kind="evidence", id=eid)
+                    )["digest"]
+                    for eid in sorted(
+                        {
+                            ref.id
+                            for finding in proposal.findings
+                            for ref in finding.refs
+                            if ref.kind == "evidence"
+                        }
+                        | {
+                            eid
+                            for judgment in proposal.assessments
+                            for eid in judgment.evidence_ids
+                        }
+                    )
+                },
                 **{
                     e.id: record_snapshot(
                         session, workspace, RecordRef(kind="evidence", id=e.id)
@@ -1452,7 +1779,27 @@ class AgentHandoffService:
                 },
             },
         )
+        review_changes = [
+            {"field": field, "before": before, "after": after}
+            for field, before, after in [
+                (
+                    name,
+                    json_text(getattr(old_review, name)) if old_review else None,
+                    json_text(getattr(review, name)),
+                )
+                for name in [
+                    "disposition",
+                    "investigation_stage",
+                    "product_maturity",
+                    "next_action",
+                    "next_work_item_id",
+                ]
+            ]
+            if before != after
+        ]
         return {
+            "review_changes": review_changes,
+            "next_action_retained": keep_action,
             "decision_id": decision.id,
             "evidence_ids": [e.id for e in evidence],
             "assessment_ids": assessment_ids,

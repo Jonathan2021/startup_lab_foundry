@@ -432,6 +432,15 @@ class PortfolioViewService:
                     item["next_action"] or "Review and schedule the next bounded task."
                 )
                 items.append(item)
+            if subject == "venture":
+                from startup_foundry.venture_state import venture_state
+
+                # One derived state per card (ADR-0020), same as header/resume.
+                for item in items:
+                    venture = session.get(Venture, item["id"])
+                    item["state"] = (
+                        venture_state(session, venture) if venture else None
+                    )
             if subject == "idea" and items:
                 ids = [i["id"] for i in items]
                 linked = session.execute(

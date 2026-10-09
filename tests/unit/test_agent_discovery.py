@@ -27,7 +27,7 @@ def test_static_discovery_never_initializes_storage(
     assert not store.exists()
     output = capsys.readouterr().out
     if action[0] == "schema":
-        assert json.loads(output)["x-foundry-agent-contract"] == "2026-10-08.1"
+        assert json.loads(output)["x-foundry-agent-contract"] == "2026-10-09.1"
     else:
         assert "final resolve receipt" in output
 
@@ -96,3 +96,27 @@ def test_bridge_timeout_is_bounded_and_does_not_retry_mutations(monkeypatch):
     with pytest.raises(ValueError, match="timeout"):
         invoke({"timeout_seconds": 0}, "agent", "resume")
     assert calls == [90]
+
+
+@pytest.mark.parametrize(
+    ("name", "required"),
+    [
+        ("source", {"kind", "title", "locator"}),
+        ("market_actor_link", {"relation", "note", "checked_on"}),
+        ("idea_revision", {"change_reason", "authored_by"}),
+        ("idea_relation", {"source_idea_id", "target_idea_id", "kind", "rationale"}),
+        ("idea_create", {"title", "description"}),
+    ],
+)
+def test_discovery_inputs_are_published_in_the_agent_schema_registry(
+    tmp_path, capsys, name, required
+):
+    store = tmp_path / "missing.db"
+    assert cli.main(["--store", str(store), "agent", "schema", "--name", name]) == 0
+    schema = json.loads(capsys.readouterr().out)
+    assert schema["x-foundry-agent-contract"] == "2026-10-09.1"
+    assert set(schema["required"]) == required
+    assert schema["additionalProperties"] is False
+    assert not store.exists()
+    assert cli.main(["agent", "guide"]) == 0
+    assert "`" + name + "`" in capsys.readouterr().out

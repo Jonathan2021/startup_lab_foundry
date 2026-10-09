@@ -16,8 +16,10 @@ source registration/linking, market-actor competition records, idea revisions an
 relations, `idea create --input`, a source filter and a cohort comparison page.
 Decisions needed from the user are in [R014](../requests/2026-10-09-agentic-stack-R014-wedge-decisions.md).
 
-Latest product update 2026-10-08: Foundry `0.1.0` uses agent contract/bridge
-`2026-10-08.1`. Feedback from six implementation agents led to database-independent
+Latest product update 2026-10-09: Foundry `0.1.0` uses agent contract/bridge
+`2026-10-09.1` ([ADR-0020](adr/0020-truthful-venture-state-requests-and-drift.md):
+truthful venture state, open request files, repository drift, `--id` selectors).
+The 2026-10-08 update used `2026-10-08.1`. Feedback from six implementation agents led to database-independent
 schema discovery, conditional-branch guidance, explicit context/full-map coverage,
 same-owner interrupted-work recovery, and accepted-result lineage that removes
 replaced proposals from pending attention without deleting their history.

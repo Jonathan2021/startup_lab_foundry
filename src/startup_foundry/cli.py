@@ -80,6 +80,12 @@ def build_parser() -> ArgumentParser:
     )
     venture_show = venture_actions.add_parser("show")
     _identity(venture_show)
+    venture_alias = venture_actions.add_parser(
+        "alias", help="Set a stable v-slug alias (input: alias, actor, rationale, "
+        "expected_version)"
+    )
+    _identity(venture_alias)
+    venture_alias.add_argument("--input", required=True)
 
     assumption = resources.add_parser("assumption", help="Manage assumptions")
     assumption_actions = assumption.add_subparsers(dest="action", required=True)
@@ -195,13 +201,13 @@ def build_parser() -> ArgumentParser:
         artifact_actions,
     ]:
         listing = actions.add_parser("list")
-        listing.add_argument("--venture-id", required=True)
+        _venture_selector(listing)
         add_pagination(listing)
     experiments = resources.add_parser("experiment").add_subparsers(
         dest="action", required=True
     )
     listing = experiments.add_parser("list")
-    listing.add_argument("--venture-id", required=True)
+    _venture_selector(listing)
     add_pagination(listing)
     add_console_parsers(resources)
     return parser
@@ -209,6 +215,12 @@ def build_parser() -> ArgumentParser:
 
 def _identity(parser: ArgumentParser) -> None:
     parser.add_argument("--id", required=True)
+
+
+def _venture_selector(parser: ArgumentParser) -> None:
+    selector = parser.add_mutually_exclusive_group(required=True)
+    selector.add_argument("--venture-id")
+    selector.add_argument("--id", help="Venture ID, alias or workspace ID/key")
 
 
 def _clean_command_text(arguments: Namespace) -> None:
@@ -261,6 +273,13 @@ def run_cli(application: FoundryApplication, arguments: Namespace) -> JsonObject
         )
     if command == ("venture", "show"):
         return application.show_venture(arguments.id)
+    if command == ("venture", "alias"):
+        from startup_foundry.inputs import read_input
+        from startup_foundry.venture_identity import AliasInput, VentureAliasService
+
+        return VentureAliasService(application._session_factory).set_alias(
+            arguments.id, read_input(AliasInput, arguments.input)
+        )
     if command == ("assumption", "add"):
         return application.add_assumption(
             assumption_id=arguments.id,
@@ -348,6 +367,12 @@ def _read_json_object(path_value: str) -> JsonObject:
     return payload
 
 
+def emit_text(text: str) -> None:
+    """Write one complete stdout document ending in exactly one newline."""
+    sys.stdout.write(text if text.endswith("\n") else text + "\n")
+    sys.stdout.flush()
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     """Run one command and return a process exit status."""
 
@@ -360,9 +385,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             from startup_foundry.decision_commands import GUIDE, public_schema
 
             if arguments.action == "guide":
-                print(GUIDE, end="")
+                emit_text(GUIDE)
             else:
-                print(json.dumps(public_schema(arguments.name), sort_keys=True))
+                emit_text(json.dumps(public_schema(arguments.name), sort_keys=True))
             return 0
         settings = get_settings(arguments)
     except (ConfigurationError, StartupFoundryError) as exc:
@@ -385,13 +410,17 @@ def main(argv: Sequence[str] | None = None) -> int:
 
             from startup_foundry.storage import backup_sqlite
 
-            print(
+            emit_text(
                 json.dumps(backup_sqlite(settings.database_url, Path(arguments.output)))
             )
             return 0
         if (arguments.resource, arguments.action) != ("storage", "info"):
             upgrade_database(settings.database_url, sql_echo=settings.sql_echo)
         engine = create_db_engine(settings.database_url, echo=settings.sql_echo)
+        if (arguments.resource, arguments.action) != ("storage", "info"):
+            from startup_foundry.venture_identity import normalize_read_selectors
+
+            normalize_read_selectors(create_session_factory(engine), arguments)
         application = FoundryApplication(create_session_factory(engine))
         if arguments.resource == "ui":
             import uvicorn
@@ -443,9 +472,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         if getattr(arguments, "format", None) == "markdown" or (
             arguments.resource == "agent" and arguments.action == "guide"
         ):
-            print(result["markdown"], end="")
+            emit_text(result["markdown"])
         else:
-            print(json.dumps(result, sort_keys=True, separators=(",", ":")))
+            emit_text(json.dumps(result, sort_keys=True, separators=(",", ":")))
         logger.info(
             "command_completed resource=%s action=%s",
             arguments.resource,

@@ -19,6 +19,7 @@ from startup_foundry.decision_contracts import (
     ResolveResultInput,
     ResultInput,
     WorkClaimInput,
+    WorkCloseInput,
     WorkReleaseInput,
 )
 from startup_foundry.decision_maps import (
@@ -260,6 +261,12 @@ def install_decision_routes(
     @app.post("/api/workspaces/{workspace}/work/{work_id}/claim")
     def claim(workspace: str, work_id: str, payload: WorkClaimInput) -> JSON:
         return handoffs.claim(workspace, work_id, payload)
+
+    @app.post("/api/workspaces/{workspace}/work/{work_id}/close")
+    def close(workspace: str, work_id: str, payload: WorkCloseInput) -> JSON:
+        if payload.work_id != work_id:
+            raise ValidationError("Close the work item named in the URL")
+        return handoffs.close_work(workspace, payload)
 
     @app.post("/api/workspaces/{workspace}/work/{work_id}/release")
     def release(workspace: str, work_id: str, payload: WorkReleaseInput) -> JSON:

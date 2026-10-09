@@ -11,6 +11,8 @@ from sqlalchemy.orm import Session
 from startup_foundry.domain import (
     Artifact,
     AuditEvent,
+    Decision,
+    DecisionStatus,
     Disposition,
     HumanRequest,
     HumanRequestDependency,
@@ -115,6 +117,79 @@ class DelegationInput(Contract):
     action: Literal["accept", "reject", "reverse"]
     reason: str = Field(min_length=1, max_length=20000)
     human_actor: str = Field(min_length=1, max_length=200)
+
+
+# Words an accepted decision uses when it retires a still-pending proposal.
+STALE_MARKERS = ("supersed", "historical", "lineage")
+
+
+def proposal_staleness(session: Session, p: PortfolioProposal) -> str | None:
+    """Why a still-proposed fusion is stale, or None (ADR-0020; read-only).
+
+    Stale when its result venture already exists, or when a participant's
+    workspace has an accepted decision, made after the proposal was created,
+    that names the proposal and records it as superseded/historical lineage.
+    The proposal and its history are unchanged; a human still resolves it.
+    """
+    if p.state != "proposed":
+        return None
+    content = ProposalService._content(session, p)
+    result_venture = str(content["proposal"]["result_venture_id"])
+    if session.get(Venture, result_venture) is not None:
+        return "Result venture " + result_venture + " already exists"
+    workspaces = set()
+    for row in session.scalars(
+        select(ProposalParticipant).where(ProposalParticipant.proposal_id == p.id)
+    ):
+        entity: Idea | Venture | None = (
+            session.get(Idea, row.idea_id)
+            if row.idea_id
+            else session.get(Venture, row.venture_id)
+            if row.venture_id
+            else None
+        )
+        if entity is not None:
+            workspaces.add(entity.workspace_id)
+    if not workspaces:
+        return None
+    for decision in session.scalars(
+        select(Decision)
+        .where(
+            Decision.workspace_id.in_(sorted(workspaces)),
+            Decision.status == DecisionStatus.ACCEPTED,
+            Decision.decided_at > p.created_at,
+        )
+        .order_by(Decision.decided_at.desc(), Decision.id)
+    ):
+        text = (decision.summary + "\n" + decision.rationale).lower()
+        if (p.id in text or p.id[:8] in text) and any(
+            marker in text for marker in STALE_MARKERS
+        ):
+            return "Accepted decision " + decision.id + " records it as historical"
+    return None
+
+
+def stale_proposals_for_venture(session: Session, venture_id: str) -> list[JSON]:
+    rows = session.scalars(
+        select(PortfolioProposal)
+        .join(ProposalParticipant)
+        .where(
+            PortfolioProposal.state == "proposed",
+            ProposalParticipant.venture_id == venture_id,
+        )
+        .distinct()
+        .order_by(PortfolioProposal.created_at.desc())
+    )
+    return [
+        {
+            "id": p.id,
+            "title": ProposalService._content(session, p)["proposal"]["name"],
+            "reason": reason,
+            "url": "/proposals/" + p.id,
+        }
+        for p in rows
+        if (reason := proposal_staleness(session, p))
+    ]
 
 
 class ProposalService:
@@ -1158,12 +1233,15 @@ class ProposalService:
             if w["status"] in {"todo", "ready", "blocked", "in_progress"}
             or w["id"] in treatments
         ]
+        stale_reason = proposal_staleness(session, p)
         return {
             "work_options": work_options,
             "id": p.id,
             "version": p.version_id,
             "revision_id": p.revision_artifact_id,
             "state": p.state,
+            "stale_reason": stale_reason,
+            "display_state": "stale_needs_resolution" if stale_reason else p.state,
             "content": content,
             "name": content["proposal"]["name"],
             "revisions": revisions,
@@ -1212,7 +1290,12 @@ class ProposalService:
                         "version": p.version_id,
                         "state": p.state,
                         "name": self._content(session, p)["proposal"]["name"],
+                        "stale_reason": stale,
+                        "display_state": "stale_needs_resolution"
+                        if stale
+                        else p.state,
                     }
                     for p in rows
+                    for stale in [proposal_staleness(session, p)]
                 ]
             }

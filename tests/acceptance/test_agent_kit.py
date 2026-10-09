@@ -90,7 +90,7 @@ def test_bridge_discovers_public_contracts_without_creating_missing_store(tmp_pa
     )
     assert discovery.returncode == 0, discovery.stderr
     assert not store.exists()
-    assert json.loads(discovery.stdout)["x-foundry-agent-contract"] == "2026-10-08.1"
+    assert json.loads(discovery.stdout)["x-foundry-agent-contract"] == "2026-10-09.1"
     manifest = create_demo(store)
     config.update(manifest["ventures"][0])
     (project / ".foundry/project.json").write_text(json.dumps(config))
@@ -197,9 +197,12 @@ def test_independent_agent_feedback_retry_and_claim_conflict(tmp_path):
     assert doctor.returncode == 0, doctor.stderr
     health = json.loads(doctor.stdout)
     assert (
-        health["agent_contract_version"] == health["bridge_version"] == "2026-10-08.1"
+        health["agent_contract_version"] == health["bridge_version"] == "2026-10-09.1"
     )
-    assert health["store_file_checked"] and not health["database_opened"]
+    assert health["store_file_checked"] and health["database_opened"]
+    assert health["repository"]["recorded_delivery"] is None
+    offline = json.loads(run("doctor", "--offline").stdout)
+    assert not offline["database_opened"]
     try:
         service.claim(
             source["workspace_id"],
@@ -227,3 +230,95 @@ def test_independent_agent_feedback_retry_and_claim_conflict(tmp_path):
     assert "Venture scope changed" in retained["stale_reasons"]
     assert retained["scope"]["title"] == context["scope"]["title"]
     engine.dispose()
+
+
+def test_bridge_reports_repository_drift_and_selects_by_alias(tmp_path):
+    store = tmp_path / "store.db"
+    manifest = create_demo(store)
+    source = manifest["ventures"][0]
+    project = tmp_path / "venture"
+    (project / ".foundry").mkdir(parents=True)
+
+    def git(*args):
+        completed = subprocess.run(
+            ["git", "-C", str(project), *args],
+            capture_output=True,
+            text=True,
+            check=True,
+            env={
+                "GIT_AUTHOR_NAME": "t",
+                "GIT_AUTHOR_EMAIL": "t@example.invalid",
+                "GIT_COMMITTER_NAME": "t",
+                "GIT_COMMITTER_EMAIL": "t@example.invalid",
+                "HOME": str(tmp_path),
+                "PATH": "/usr/bin:/bin",
+            },
+        )
+        return completed.stdout.strip()
+
+    git("init", "-q", "-b", "main")
+    git("commit", "-q", "--allow-empty", "-m", "delivered")
+    delivered = git("rev-parse", "HEAD")
+    git("update-ref", "refs/remotes/origin/main", delivered)
+    engine = create_db_engine("sqlite:///" + str(store))
+    factory = create_session_factory(engine)
+    from startup_foundry.decision_contracts import CaptureInput
+    from startup_foundry.venture_identity import AliasInput, VentureAliasService
+
+    AgentHandoffService(factory).capture(
+        source["workspace_id"],
+        CaptureInput(
+            request_key="delivery",
+            actor="agent",
+            summary="Delivery: main=" + delivered[:12] + " ci=42",
+            sources=["observation: CI run 42"],
+        ),
+    )
+    with factory() as session:
+        from startup_foundry.domain import Venture
+
+        version = session.get(Venture, source["venture_id"]).version_id
+    VentureAliasService(factory).set_alias(
+        source["venture_id"],
+        AliasInput(
+            alias="v-demo-alias",
+            actor="operator",
+            rationale="Readable lookups",
+            expected_version=version,
+        ),
+    )
+    engine.dispose()
+    config = {
+        "cli": [sys.executable, "-m", "startup_foundry", "--store", str(store)],
+        "venture_id": "v-demo-alias",
+        "feedback_workspace_id": source["workspace_id"],
+        "repository": str(project),
+    }
+    (project / ".foundry/project.json").write_text(json.dumps(config))
+
+    def run(*args):
+        return subprocess.run(
+            [sys.executable, str(KIT), *args],
+            cwd=project,
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+
+    current = run("resume")
+    assert current.returncode == 0, current.stderr
+    state = json.loads(current.stdout)
+    assert state["workspace_id"] == source["workspace_id"], "alias selected"
+    drift = state["repository"]
+    assert drift["head"] == drift["origin_main"] == delivered
+    assert drift["recorded_delivery"]["sha"] == delivered[:12]
+    assert not drift["moved_past_delivery"] and "warning" not in current.stderr
+    git("commit", "-q", "--allow-empty", "-m", "unattended change")
+    git("update-ref", "refs/remotes/origin/main", git("rev-parse", "HEAD"))
+    moved = run("resume")
+    assert json.loads(moved.stdout)["repository"]["moved_past_delivery"]
+    assert "moved past the last recorded delivery" in moved.stderr
+    doctor = json.loads(run("doctor").stdout)
+    assert doctor["repository"]["moved_past_delivery"]
+    helped = run("cli", "--help")
+    assert helped.returncode == 0 and "Foundry CLI" in helped.stdout

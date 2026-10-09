@@ -2,12 +2,12 @@
 {% if intake %}
 {% if intake.linked_intake %}<p>Research is retained in the <a href="/ideas/{{ intake.linked_intake.idea_id }}?tab=work">source idea</a>. Continue or inspect that investigation there; promotion did not duplicate it.</p>{% endif %}
 {% if intake.promotion and intake.promotion.policy=='superseded_unstarted' and subject=='idea' %}<p>This unstarted review was superseded by the <a href="/ventures/{{ intake.promotion.venture_id }}?tab=work">venture investigation</a>. Its history is retained.</p>{% endif %}
-<p><strong>{{ 'Queued for manual agent review' if intake.work.status=='ready' else 'Manual review in progress' if intake.work.status=='in_progress' else 'Manual review completed' }}</strong> · Owner: {{ intake.work.owner }} · {{ intake.work.status|pretty }}</p>
+{% set intake_status = intake.work.status %}<p><strong>{{ 'Queued for manual agent review' if intake_status in ['ready','todo'] else 'Manual review in progress' if intake_status=='in_progress' else 'Manual review cancelled' if intake_status=='cancelled' else 'Manual review blocked' if intake_status=='blocked' else 'Manual review completed' }}</strong> · Owner: {{ intake.work.owner }} · {{ intake_status|pretty }}</p>
 <p>{{ intake.work.description }}</p><p>{{ intake.work.acceptance_criteria }}</p>
 <p>Exact revision: {{ intake.idea_revision_id or 'No source idea' }} · Work: {{ intake.work.id }}</p>
-<button type="button" data-copy-url="/{{ 'ventures' if subject=='venture' else 'ideas' }}/{{ subject_id }}/intake-handoff">Copy manual review handoff</button>
+{% if intake_status in ['ready','todo','in_progress'] %}<button type="button" data-copy-url="/{{ 'ventures' if subject=='venture' else 'ideas' }}/{{ subject_id }}/intake-handoff">Copy manual review handoff</button>
 <a href="/{{ 'ventures' if subject=='venture' else 'ideas' }}/{{ subject_id }}/intake-handoff">Download handoff</a><span class="copy-status" role="status"></span>
-<p>No unattended worker is running. Start an agent session with this handoff; claim the exact task and record research, limits, scores and next action.</p>
+<p>No unattended worker is running. Start an agent session with this handoff; claim the exact task and record research, limits, scores and next action.</p>{% else %}<p>This task is {{ intake_status|pretty|lower }}; it cannot be started. Its history is retained.</p>{% endif %}
 {% elif not review.current %}
 <form data-api="/api/{{ 'ventures' if subject=='venture' else 'ideas' }}/{{ subject_id }}/intake" data-reload>
 <input type="hidden" name="expected_revision_id" value="{{ (detail.venture.source_idea_revision_id if subject=='venture' else idea.revision_id) or '' }}">

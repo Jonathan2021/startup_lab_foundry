@@ -23,8 +23,11 @@ def test_upgrade_downgrade_upgrade_uses_only_the_injected_database(
     engine = create_engine(f"sqlite:///{database}")
     with engine.connect() as connection:
         assert MigrationContext.configure(connection).get_current_revision() == (
-            "b10261009001"
+            "b10261009002"
         )
+        assert "alias" in {
+            column["name"] for column in inspect(connection).get_columns("ventures")
+        }
         assert {"checked_on", "source_ids"} <= {
             column["name"]
             for column in inspect(connection).get_columns("idea_market_actors")

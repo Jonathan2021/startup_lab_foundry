@@ -9,6 +9,6 @@
   ],
   "feedback_workspace_id": "FOUNDRY_FEEDBACK_WORKSPACE_ID",
   "repository": "/absolute/path/to/venture",
-  "kit_sha256": "3911d27334f0f05a4643913b3c0d681d77a6cd45a4ae6dcd9b5ca4b7b06a2e5e",
-  "agent_contract_version": "2026-10-08.1"
+  "kit_sha256": "c4f497b865ea82cb654415edc52ff6d2e94c28eeab55b9ce4bd713980d4d5200",
+  "agent_contract_version": "2026-10-09.1"
 }

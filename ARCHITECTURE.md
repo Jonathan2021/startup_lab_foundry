@@ -221,3 +221,6 @@ October 9 `discovery_records.py` exposes the existing source, market-actor,
 revision and relation tables plus cohort comparison
 ([ADR-0019](docs/adr/0019-discovery-records-sources-competition-revisions.md)). Schema migrations never
 import campaign data. Intake/backfills are explicit idempotent operator operations.
+[ADR-0020](docs/adr/0020-truthful-venture-state-requests-and-drift.md) adds the
+read-only `venture_state.py` projection, `request_files.py` (explicit request-file
+registration) and `venture_identity.py` (aliases and `--id` selectors).

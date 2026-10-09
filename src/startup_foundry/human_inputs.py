@@ -798,8 +798,14 @@ class HumanInputService:
                         "status": r.status,
                         "workspace_id": r.workspace_id,
                         "version": r.version_id,
+                        # Request files registered by `input sync --requests-directory`.
+                        "file": sync.get("file") if isinstance(sync, dict) else None,
+                        "file_state": sync.get("state")
+                        if isinstance(sync, dict)
+                        else None,
                     }
                     for r in rows
+                    for sync in [(r.source_diagnostics or {}).get("file_sync")]
                 ],
                 "total": total,
                 "limit": limit,

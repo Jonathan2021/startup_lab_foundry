@@ -58,7 +58,8 @@ python3 tools/foundry_agent.py cli handoff fetch --id CONTEXT_ID --kind evidence
 ```
 
 The full schema names are `map`, `context`, `claim`, `release`, `result`,
-`resolution`, `change`, `work`. Enum values, required fields and limits come from
+`resolution`, `change`, `work`, `close`, plus the discovery inputs `source`,
+`market_actor_link`, `idea_revision`, `idea_relation` and `idea_create`. Enum values, required fields and limits come from
 those JSON Schemas, not guessed names. `--help` discovers each command's flags.
 JSON is on stdout, diagnostic logs/errors on stderr, unsuccessful operations have
 nonzero exit status. `agent resume` and `agent guide` default to readable Markdown;
@@ -203,3 +204,30 @@ is added to Foundry.
 Public release requirements and reproducible checks:
 [release readiness](RELEASE_READINESS.md). Detailed venture/operator records remain
 in the owning local workspace and are not needed to install or use Foundry.
+
+
+# Local upgrade 2026-10-09.1
+
+Current agent contract and canonical repository bridge: **2026-10-09.1**
+([ADR-0020](adr/0020-truthful-venture-state-requests-and-drift.md)). Copy
+`scripts/agent-kit/foundry_agent.py` to `tools/foundry_agent.py`, put its SHA-256
+and `agent_contract_version` in `.foundry/project.json`, then run `doctor`.
+Migration `b10261009002` (nullable `ventures.alias`) applies on the first normal
+command; back up the store first.
+
+- **Delivery convention.** Record each delivery in a result finding as
+  `Delivery: main=<sha> ci=<run id>`. `resume`, `start` and `doctor` add a
+  `repository` block: local `HEAD`, local `refs/remotes/origin/main` (never
+  fetched), and the latest recorded delivery. When they differ the bridge warns
+  "repository moved past the last recorded delivery" on stderr. `doctor` now reads
+  the store through `agent resume`; `doctor --offline` keeps the database-free check.
+- **Selectors.** Read commands accept `--id` with a venture ID, venture alias
+  (`v-slug`), workspace ID, workspace key or idea ID. A manifest may omit
+  `workspace_id` and select by `venture_id` (or alias). `cli --help` reaches Foundry.
+- **Attention.** `agent resume` returns `venture_state`, `superseded` (legacy
+  work to close or revise, no longer in `needs_review`), `human_requests` and
+  `latest_delivery`. Close superseded work with `venture-work close` (schema
+  `close`). A work-scoped result never replaces a HOLD/narrowed venture next
+  action; `result preview` lists `review_changes`. Evidence your accepted result
+  cites leaves the unreviewed list.
+- **Output.** JSON ends with a newline; INFO logs only with `--debug`.

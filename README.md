@@ -8,7 +8,7 @@ share a portfolio; each retains its own history and work.
 The [local lifecycle MVP](docs/LIFECYCLE_MVP.md) is implemented. It includes
 versioned decision maps, attributed changes, concise agent context, reviewed
 results, evolving assessments, human input and explicit portfolio fusion.
-Distribution **0.1.0**, agent contract **2026-10-08.1**. See current
+Distribution **0.1.0**, agent contract **2026-10-09.1**. See current
 [release checks and limits](docs/RELEASE_READINESS.md) and the historical
 [lifecycle evidence](docs/inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
 Monetization, managed agents, training and hosted multi-user operation are deferred.
@@ -36,6 +36,13 @@ outreach screens are projections of records with explicit ownership. Discovery
 records ([ADR-0019](docs/adr/0019-discovery-records-sources-competition-revisions.md))
 register hashed sources, competitors and alternatives, append idea revisions and
 relations, and compare a source's cohort of ideas criterion by criterion.
+[ADR-0020](docs/adr/0020-truthful-venture-state-requests-and-drift.md) derives one
+venture state (disposition, investigation stage, maturity, score status, next
+action, open gates) for the header, lists, Today and `agent resume`; shows a
+promoted venture's source-idea provenance; separates superseded legacy work
+(`venture-work close`); flags stale fusion proposals; registers `requests/*.md`
+sections as open human requests (`input sync --requests-directory`); reports
+repository drift in the bridge; and accepts `--id`/venture aliases on read commands.
 
 Your agent reasons and researches; Foundry performs typed, transactional record
 operations. Preparing context does not start a worker. Stale results remain
