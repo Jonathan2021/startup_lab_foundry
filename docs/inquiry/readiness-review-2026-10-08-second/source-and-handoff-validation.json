@@ -1,0 +1,20 @@
+{
+  "volley-coach": {
+    "source_files_checked": 58,
+    "changed_source_files": [],
+    "handoff_sha256": "bc93bf5892dcd9bc2009d596ce7e0cf336ef7772a9f6b0632ec306c3e01dfd4b",
+    "copied_evidence_files": 10
+  },
+  "crous-queue": {
+    "source_files_checked": 60,
+    "changed_source_files": [],
+    "handoff_sha256": "4153a6a195cd7b3a9f077a0bcbabd403d928cdd5e5822ecb7ebed29a6e98381f",
+    "copied_evidence_files": 10
+  },
+  "offer-check": {
+    "source_files_checked": 59,
+    "changed_source_files": [],
+    "handoff_sha256": "b02a7594a02c1ad6187be709fb7475298913ee5f6555c757042291ce448a7774",
+    "copied_evidence_files": 12
+  }
+}

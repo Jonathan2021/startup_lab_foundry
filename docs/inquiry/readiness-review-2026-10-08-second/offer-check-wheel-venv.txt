@@ -1,0 +1,3 @@
+Using CPython 3.13.5
+Creating virtual environment at: /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env
+Activate with: source /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/activate

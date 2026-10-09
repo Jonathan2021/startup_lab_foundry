@@ -1,0 +1,5 @@
+Using Python 3.13.5 environment at: /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env
+Resolved 1 package in 1ms
+Prepared 1 package in 5ms
+Installed 1 package in 9ms
+ + offer-check==0.1.0 (from file:///home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/offer-check/dist/offer_check-0.1.0-py3-none-any.whl)

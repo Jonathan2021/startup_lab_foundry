@@ -1,0 +1,33 @@
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +3
++++
+Progress: resolved 3, reused 0, downloaded 2, added 2
+Progress: resolved 3, reused 0, downloaded 3, added 3, done
+ WARN  Failed to create bin at /home/jonathan/.cache/pnpm/dlx/5aeef1b793bab101ee027f9e6212aada148492dbac289d76296602e6a0a6a092/1a11a7a0ea5-1170e/node_modules/.pnpm/node@22.23.3/node_modules/node/node_modules/.bin/node. ENOENT: no such file or directory, open '/home/jonathan/.cache/pnpm/dlx/5aeef1b793bab101ee027f9e6212aada148492dbac289d76296602e6a0a6a092/1a11a7a0ea5-1170e/node_modules/.pnpm/node@22.23.3/node_modules/node/bin/node'
+.../.pnpm/node@22.23.3/node_modules/node preinstall$ node installArchSpecificPackage
+.../.pnpm/node@22.23.3/node_modules/node preinstall: npm notice This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit
+.../.pnpm/node@22.23.3/node_modules/node preinstall: + node-linux-x64@22.23.3
+.../.pnpm/node@22.23.3/node_modules/node preinstall: added 1 package in 3.719s
+.../.pnpm/node@22.23.3/node_modules/node preinstall: found 0 vulnerabilities
+.../.pnpm/node@22.23.3/node_modules/node preinstall: Done
+v22.23.3
+10.9.9
+
+added 26 packages, and audited 27 packages in 2s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> ride-options-map@0.1.0 check
+> tsc --noEmit
+
+
+> ride-options-map@0.1.0 build
+> esbuild client/app.ts --bundle --minify --outfile=src/ride_options/static/app.js && cp node_modules/maplibre-gl/dist/maplibre-gl.css src/ride_options/static/maplibre.css && cp node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs node_modules/maplibre-gl/dist/maplibre-gl-shared.mjs src/ride_options/static/
+
+
+  src/ride_options/static/app.js  944.9kb
+
+⚡ Done in 151ms

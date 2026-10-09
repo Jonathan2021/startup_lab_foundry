@@ -1,0 +1,102 @@
+{
+  "offer-check": {
+    "id": "5f244a1b-2f36-4eda-8ada-740446b66114",
+    "request_digest": "d3e81d6e0c86c44a584df498ff1b9ce7d940c2644a0f9275029acaa79d0b444b",
+    "work": {
+      "acceptance_criteria": "Independent acceptance matrix and reproducible checks; synthetic comparison rehearsal runnable without Foundry; baseline and app use identical source terms; real trial records remain blank until permitted inputs exist; any UX repair has a reproducer and green regression; no purchasing or supplier contact.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T16:06:28.308836+00:00",
+      "decision_id": null,
+      "description": "O01\u2013O05 are accepted in Foundry. Fresh make check passed 52 backend tests, Ruff and mypy; Chromium passed all 3 browser tests. The independent review supports the bounded local technical MVP, with manual field/source capture and EUR fixed-pack comparisons. No real comparison benefit has been demonstrated.\nRead /home/jonathan/startup_lab/offer-check/docs/mvp/NEXT_HANDOFF.md\nPrepare a permitted same-task comparison against a competent spreadsheet/template and the operator\u2019s usual agent. Create a small runnable, synthetic rehearsal pack and a blank trial record with identical inputs, setup/review/correction times, material misses, unknown terms and operator interventions. Preserve missing terms as unknown and explicitly label rehearsal rows synthetic. Fix only demonstrated capture/review/receipt friction with before/after browser evidence; keep exact calculation and reviewer boundaries. Deliver a one-page local operator walkthrough and unsent tester request that identifies the exact redacted input needed.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "5f244a1b-2f36-4eda-8ada-740446b66114",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "O06: Verify release usability and prepare a permitted quote-comparison trial",
+      "updated_at": "2026-10-07T16:06:28.308842+00:00",
+      "version_id": 1,
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    }
+  },
+  "volley-match": {
+    "id": "f0c29b5f-c9cf-4956-91da-f6431db8156b",
+    "request_digest": "2bfe6697f18bf874196e1304bf870c51e7925bebe1e4d3ff8033151a59aebb42",
+    "work": {
+      "acceptance_criteria": "Fresh core checks and browser replay pass; six separate synthetic actors complete the whole organizer flow; account deletion preserves appropriate historical records without retaining private identity; a reproducible local rehearsal and two-session observation packet exist; real adoption rows remain empty.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T16:06:30.655297+00:00",
+      "decision_id": null,
+      "description": "V01\u2013V05 are accepted in Foundry. Fresh make check passed Ruff, strict mypy and 41 tests. Actual Chromium replay passed at 1280px and 390px, including opponent confirmations, correction of the first match, rating history and restart. PostgreSQL and independent wheel evidence were retained by the implementing agent; this coordinator reran SQLite and browser checks.\nRead /home/jonathan/startup_lab/volley-match/docs/mvp/NEXT_HANDOFF.md\nTurn the existing two-session pilot sheets into an executable organizer rehearsal: fresh synthetic group, minimal organizer checklist, participant instructions, completion/error counters and an empty observation record for actual sessions. Fix only blockers found in the unaided invite/join/score/confirm flow. Keep invite drafts unsent. Define raw denominators for joins, confirmations without developer intervention, disputes, time-to-confirm and voluntary reuse after session two.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "f0c29b5f-c9cf-4956-91da-f6431db8156b",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "V06: Audit organizer workflow and prepare two private-session trials",
+      "updated_at": "2026-10-07T16:06:30.655300+00:00",
+      "version_id": 1,
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    }
+  },
+  "crous-queue": {
+    "id": "781199db-adde-4600-9a4d-4c56eed14fdc",
+    "request_digest": "742a75a895beb94d8b81b85a9c30c9485f834b55a94af8ef11bf477a04f380f7",
+    "work": {
+      "acceptance_criteria": "Full checks and mobile/offline/moderation flows pass; measurement output includes explicit numerator/denominator and missingness; synthetic and real environments cannot be mixed; demo backup/restore and expiry remain correct; no synthetic waits enter a real feed; release proposal remains a concrete unapproved payload.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T16:06:32.836269+00:00",
+      "decision_id": null,
+      "description": "Q01\u2013Q05 are accepted in Foundry. Fresh make check passed lint, formatting, types and 17 backend tests; all 6 actual browser tests passed. The app delivers the national directory and recent-report workflow. This is a directory-backed local MVP, with no evidence yet of live reporting coverage or returning contributors.\nRead /home/jonathan/startup_lab/crous-queue/docs/mvp/NEXT_HANDOFF.md\nRehearse the existing five-lunch measurement workflow against a disposable synthetic store. Add only missing measurement/diagnostic support actually revealed by the rehearsal. Produce an operator schedule and blank local records for fixed checks at the two selected sites; count planned checks, actual checks, fresh estimates, unknown/conflicting states, distinct-day device reuse and contribution friction separately. Include a missing-check example that stays missing. Confirm queue categories through the existing R011 request when an ordinary voluntary visit is available; preserve user replies.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "781199db-adde-4600-9a4d-4c56eed14fdc",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "Q06: Audit honest wait states and rehearse a five-lunch pilot",
+      "updated_at": "2026-10-07T16:06:32.836272+00:00",
+      "version_id": 1,
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    }
+  },
+  "volley-coach": {
+    "id": "9fb8b808-9737-4083-8587-99d7e9808fbf",
+    "request_digest": "11d1de53cc2c30c0581ba101974be0b666564725c32a3321679710427b7009c4",
+    "work": {
+      "acceptance_criteria": "Full checks and browser flows pass; every assigned session fits its recorded resources/time; completed history survives cancellation/replanning; two users cannot collide on logs; synthetic scheduling rehearsal is repeatable; real participant observations remain blank and no unreviewed app-authored instruction is introduced.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T16:06:35.029981+00:00",
+      "decision_id": null,
+      "description": "C01\u2013C05 are accepted in Foundry. Fresh make check passed Ruff, strict mypy and 31 backend tests; both Chromium tests passed. This supports the independent scheduling MVP in user-provided-program mode. It does not establish the quality of app-authored physical instructions or training outcomes.\nRead /home/jonathan/startup_lab/volley-coach/docs/mvp/NEXT_HANDOFF.md\nPrepare a reproducible two-week scheduling rehearsal using programs already chosen by the participant/coach, with synthetic slots and cancellations for local testing. Extend existing pilot notes only where needed to capture feasibility, skip reasons, replanning effort, actual reuse and reported usefulness. Fix demonstrated onboarding/resource-entry friction with browser evidence. Deliver a simple local walkthrough, an empty consented-trial sheet and a clear mode label showing that user-provided programs are not professionally reviewed by this app.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "9fb8b808-9737-4083-8587-99d7e9808fbf",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "C06: Audit scheduling usability and prepare a two-week own-program trial",
+      "updated_at": "2026-10-07T16:06:35.029984+00:00",
+      "version_id": 1,
+      "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5"
+    }
+  }
+}

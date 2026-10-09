@@ -1,0 +1,640 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "digest": "7a72095dbc022b25a4d6b924a3f0bcbdfd5bbf87ff6ab483b1f3f17b8fe2548a",
+  "head_version": 49,
+  "historical": false,
+  "history": [
+    {
+      "actor": "coordinator-remarks-20261008",
+      "created_at": "2026-10-08T14:52:59.170999",
+      "id": "ad84865d-33fe-5931-a5ac-8bce8d984783",
+      "rationale": "User requested Coopain delivery reconciliation, a feedback-backed Foundry update and handoffs for three root remarks files. Separate from historical discovery tasks.",
+      "sequence": 11
+    },
+    {
+      "actor": "coordinator-readiness-second-20261008",
+      "created_at": "2026-10-08T11:07:19.716819",
+      "id": "c2c89396-8b0a-5263-8b3e-68540bea62a1",
+      "rationale": "User requested the same code/setup/docs/GitHub readiness review and concrete agent prompts. Fresh isolated source and locked wheel tests, GitHub inventory, code/document review and actual failure reproduction support the handoffs; application source and live state were preserved.",
+      "sequence": 10
+    },
+    {
+      "actor": "coordinator-readiness-second-20261008",
+      "created_at": "2026-10-08T10:49:50.907701",
+      "id": "380aa5e5-0903-5619-acf1-a4a8ba9ab51d",
+      "rationale": "User requested the same readiness audit and targeted handoffs for Volley Coach, Crous Queue and OfferCheck. Read-only product audit plus local documentation/coordination.",
+      "sequence": 9
+    },
+    {
+      "actor": "coordinator-readiness-20261008",
+      "created_at": "2026-10-08T09:46:39.205706",
+      "id": "61d663fd-624e-517b-b096-18a60c3970a5",
+      "rationale": "User requested review and actionable agent continuations. Actual source, clean setup, tests, GitHub provenance and documentation were inspected; no implementation takeover or external Git action occurred.",
+      "sequence": 8
+    },
+    {
+      "actor": "coordinator-readiness-20261008",
+      "created_at": "2026-10-08T07:36:00.643345",
+      "id": "0c69ad7c-c5b8-5efa-984d-f859f82a00a3",
+      "rationale": "User requests independent readiness, commit/CI and documentation review of three venture agents; create audit and corrective handoffs only.",
+      "sequence": 7
+    },
+    {
+      "actor": "coordinator-mvp-review-20261007",
+      "created_at": "2026-10-07T16:13:43.224264",
+      "id": "e1461696-b989-5de5-9756-3281670e8e37",
+      "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+      "sequence": 6
+    },
+    {
+      "actor": "coordinator-mvp-review-20261007",
+      "created_at": "2026-10-07T16:07:58.455558",
+      "id": "8d5b6e33-9468-5822-a39c-2682023379f3",
+      "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+      "sequence": 5
+    },
+    {
+      "actor": "coordinator-mvp-review-20261007",
+      "created_at": "2026-10-07T15:55:43.014188",
+      "id": "8e272430-8c63-5543-9383-1d47fbb0ab2a",
+      "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+      "sequence": 4
+    },
+    {
+      "actor": "coordinator-mvp-review-20261007",
+      "created_at": "2026-10-07T15:55:13.341942",
+      "id": "59c1fd4e-261d-5fae-bb79-20a282e5c98c",
+      "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+      "sequence": 3
+    },
+    {
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "created_at": "2026-10-07T11:23:35.689018",
+      "id": "29f1d93d-41da-512b-993a-33e95c1e3b25",
+      "rationale": "The user explicitly prioritized bounded MVP implementation. The retained evidence supports building for a private pilot while keeping business and release unknowns distinct.",
+      "sequence": 2
+    },
+    {
+      "actor": "Codex:priority-mvps-2026-10-07",
+      "created_at": "2026-10-07T11:23:34.750268",
+      "id": "43ba507d-c140-5934-8391-f6f12b555c42",
+      "rationale": "Separate the current bounded package from conditional later scope. Historical holds do not block local implementation.",
+      "sequence": 1
+    }
+  ],
+  "id": "ad84865d-33fe-5931-a5ac-8bce8d984783",
+  "map": {
+    "edges": [
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "research",
+        "target": "goal"
+      },
+      {
+        "condition": "Repeated voluntary use and a specific next unmet need are observed",
+        "kind": "may_lead_to",
+        "outcome": "supported",
+        "source": "pilot",
+        "target": "expand"
+      },
+      {
+        "condition": "Users do not reuse the core or existing tools solve it as well",
+        "kind": "may_lead_to",
+        "outcome": "weakened",
+        "source": "pilot",
+        "target": "revise"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "F01",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "F02",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "depends_on",
+        "outcome": null,
+        "source": "F02",
+        "target": "F01"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "F03",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "depends_on",
+        "outcome": null,
+        "source": "F03",
+        "target": "F02"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "F04",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "depends_on",
+        "outcome": null,
+        "source": "F04",
+        "target": "F03"
+      },
+      {
+        "condition": "",
+        "kind": "informs",
+        "outcome": null,
+        "source": "F04",
+        "target": "pilot"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "work_a3e3b218-144f-403d-9227-e0ec9cd26207",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "work_c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "work_94f740d6-202a-4af6-be5c-b37165c1a092",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "work_33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "work_1f29d43f-556a-4fde-bd44-1202f4098b4f",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "work_32d1895f-6a58-4a86-ab05-f5e9a51c9e74",
+        "target": "goal"
+      },
+      {
+        "condition": "",
+        "kind": "contributes_to",
+        "outcome": null,
+        "source": "work_877c61e4-af2b-419a-92f4-996f80333236",
+        "target": "goal"
+      }
+    ],
+    "focus": [
+      "work_877c61e4-af2b-419a-92f4-996f80333236"
+    ],
+    "nodes": [
+      {
+        "detail": "",
+        "id": "goal",
+        "kind": "goal",
+        "ref": null,
+        "title": "Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope."
+      },
+      {
+        "detail": "",
+        "id": "research",
+        "kind": "record",
+        "ref": {
+          "id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+          "kind": "work"
+        },
+        "title": "MVP scope and evidence review"
+      },
+      {
+        "detail": "",
+        "id": "pilot",
+        "kind": "question",
+        "ref": null,
+        "title": "Does the completed MVP help in repeated real use?"
+      },
+      {
+        "detail": "",
+        "id": "expand",
+        "kind": "alternative",
+        "ref": null,
+        "title": "Extend only the demonstrated useful workflow"
+      },
+      {
+        "detail": "",
+        "id": "revise",
+        "kind": "alternative",
+        "ref": null,
+        "title": "Narrow or use an existing tool if reuse/benefit fails"
+      },
+      {
+        "detail": "Use prepared configs and maps; one writer per venture at a time, parallelism across venture repositories. Verify claim, prepare, result preview/accept, resume and feedback receipt. No production model service.\nAcceptance: Every prepared repo resolves its own workspace and current work; stale/conflicting claims fail; failed feedback send is retained and retry is idempotent.\nProposed package: materialize only after prerequisite acceptance.",
+        "id": "F01",
+        "kind": "alternative",
+        "ref": null,
+        "title": "F01: Run one complete agent handoff per venture"
+      },
+      {
+        "detail": "Inspect Foundry unreviewed feedback evidence plus local outboxes. Reproduce highest-impact issue, classify duplicate/accepted/deferred/rejected with rationale and link a bounded Foundry work item; do not treat every suggestion as mandatory.\nAcceptance: At least one completed real venture package can be resumed by a fresh agent without reading full chat; retained feedback has decision and work reference or explicit defer reason.\nProposed package: materialize only after prerequisite acceptance.",
+        "id": "F02",
+        "kind": "alternative",
+        "ref": null,
+        "title": "F02: Triage observed agent friction"
+      },
+      {
+        "detail": "Measure time to identify work, context bytes, omitted information, stale submissions and manual recovery. Fix concrete recurring cases with regression tests. Keep provider/action/storage boundaries replaceable.\nAcceptance: No source lost in context; changed evidence invalidates unsafe effects; completed work is absent from executable queue; app remains useful without the helper.\nProposed package: materialize only after prerequisite acceptance.",
+        "id": "F03",
+        "kind": "alternative",
+        "ref": null,
+        "title": "F03: Improve context and queue behavior only where measured"
+      },
+      {
+        "detail": "Run standalone lint/types/product/agent-kit/browser/container checks appropriate to changes, installed CLI and backup/restore. Update direction and one operator guide; preserve exact evidence IDs.\nAcceptance: A clean checkout supports two separate venture agents and later review; no unconfigured external actions, no claimed commercial or token savings without measurement.\nProposed package: materialize only after prerequisite acceptance.",
+        "id": "F04",
+        "kind": "alternative",
+        "ref": null,
+        "title": "F04: Release the dogfood-supported local MVP update"
+      },
+      {
+        "detail": "",
+        "id": "work_a3e3b218-144f-403d-9227-e0ec9cd26207",
+        "kind": "record",
+        "ref": {
+          "id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+          "kind": "work"
+        },
+        "title": "F01: Run one complete agent handoff per venture"
+      },
+      {
+        "detail": "",
+        "id": "work_c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+        "kind": "record",
+        "ref": {
+          "id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+          "kind": "work"
+        },
+        "title": "F02: Triage observed agent friction"
+      },
+      {
+        "detail": "",
+        "id": "work_94f740d6-202a-4af6-be5c-b37165c1a092",
+        "kind": "record",
+        "ref": {
+          "id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+          "kind": "work"
+        },
+        "title": "F03: Improve public contracts and interrupted-agent recovery"
+      },
+      {
+        "detail": "",
+        "id": "work_33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+        "kind": "record",
+        "ref": {
+          "id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+          "kind": "work"
+        },
+        "title": "F04: Verify upgraded release and deliver continuation handoffs"
+      },
+      {
+        "detail": "",
+        "id": "work_1f29d43f-556a-4fde-bd44-1202f4098b4f",
+        "kind": "record",
+        "ref": {
+          "id": "1f29d43f-556a-4fde-bd44-1202f4098b4f",
+          "kind": "work"
+        },
+        "title": "Audit Ride Options, Volley Match and Coopain release readiness"
+      },
+      {
+        "detail": "",
+        "id": "work_32d1895f-6a58-4a86-ab05-f5e9a51c9e74",
+        "kind": "record",
+        "ref": {
+          "id": "32d1895f-6a58-4a86-ab05-f5e9a51c9e74",
+          "kind": "work"
+        },
+        "title": "Audit Volley Coach, Crous Queue and OfferCheck release readiness"
+      },
+      {
+        "detail": "",
+        "id": "work_877c61e4-af2b-419a-92f4-996f80333236",
+        "kind": "record",
+        "ref": {
+          "id": "877c61e4-af2b-419a-92f4-996f80333236",
+          "kind": "work"
+        },
+        "title": "Resolve Coopain checkout mismatch, improve resume history and hand off user remarks"
+      }
+    ]
+  },
+  "needs_review": {
+    "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+  },
+  "previous_revision_id": "c2c89396-8b0a-5263-8b3e-68540bea62a1",
+  "rationale": "User requested Coopain delivery reconciliation, a feedback-backed Foundry update and handoffs for three root remarks files. Separate from historical discovery tasks.",
+  "references": {
+    "work:1f29d43f-556a-4fde-bd44-1202f4098b4f": {
+      "digest": "3b387165fb0dda9f5ca8cacee74fd2146c17d7c660c2cfdefa255ab6db1ce0ba",
+      "id": "1f29d43f-556a-4fde-bd44-1202f4098b4f",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "Evidence-backed verdicts for commits/remotes/CI, current checks, independent startup and docs; concrete handoffs for unresolved items, retaining original claims and data.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-08T07:36:00.612284+00:00",
+        "decision_id": null,
+        "description": "/home/jonathan/startup_lab/foundry/docs/inquiry/readiness-review-2026-10-08/PROTOCOL.md",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "1f29d43f-556a-4fde-bd44-1202f4098b4f",
+        "kind": "investigation",
+        "owner": "coordinator-readiness-20261008",
+        "parent_id": null,
+        "question": null,
+        "status": "done",
+        "title": "Audit Ride Options, Volley Match and Coopain release readiness",
+        "updated_at": "2026-10-08T09:46:39.191530+00:00",
+        "version_id": 3,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    },
+    "work:32d1895f-6a58-4a86-ab05-f5e9a51c9e74": {
+      "digest": "0694777126bc4f519841047f97f2a45998138c9a94fedad047a74f02d212ed38",
+      "id": "32d1895f-6a58-4a86-ab05-f5e9a51c9e74",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "Independent code/setup/tests/package/docs and GitHub provenance verdicts, concrete handoffs and prompts for unfinished release gates; preserve app sources and all live state.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-08T10:49:50.842420+00:00",
+        "decision_id": null,
+        "description": "docs/inquiry/readiness-review-2026-10-08-second/PROTOCOL.md",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "32d1895f-6a58-4a86-ab05-f5e9a51c9e74",
+        "kind": "investigation",
+        "owner": "coordinator-readiness-second-20261008",
+        "parent_id": null,
+        "question": null,
+        "status": "done",
+        "title": "Audit Volley Coach, Crous Queue and OfferCheck release readiness",
+        "updated_at": "2026-10-08T11:07:19.703124+00:00",
+        "version_id": 3,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    },
+    "work:33e0e4b7-437b-4b76-bcdc-8472936f98ea": {
+      "digest": "8ad6b3eabe089eaab78cf6545b1ebf282630c3ca5b7c5d1573db02d71c14e798",
+      "id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "Independent wheel handoff workflow passes; seven doctor checks confirm upgraded contract/helper; six handoffs resolve to current scope and exact work; evidence report records actual passes, skips, feedback dispositions and local-only release limits.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-07T16:07:58.443793+00:00",
+        "decision_id": "22f3e183-7f55-4517-93ff-c5bd877d36c7",
+        "description": "Verify installed-wheel public CLI replay, final source/hash provenance and per-venture review/continuation documents. Retain four ready local follow-up tasks; preserve Coopain J03 and Ride Options R05 claims. Document all trial and release limits.",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+        "kind": "execution",
+        "owner": "coordinator-mvp-review-20261007",
+        "parent_id": null,
+        "question": null,
+        "status": "done",
+        "title": "F04: Verify upgraded release and deliver continuation handoffs",
+        "updated_at": "2026-10-07T16:13:43.212803+00:00",
+        "version_id": 3,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    },
+    "work:877c61e4-af2b-419a-92f4-996f80333236": {
+      "digest": "d6042c743b4de6228ca25e4794c1c6d21966d50b1e5755545e636bc0d3594c5e",
+      "id": "877c61e4-af2b-419a-92f4-996f80333236",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "Coopain local/remote state reconciled with backup; focused Foundry regression and required checks pass; all three remarks mapped into actionable handoffs with current bridge and queued work.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-08T14:52:59.134982+00:00",
+        "decision_id": null,
+        "description": "Follow docs/inquiry/remarks-followup-2026-10-08/PROTOCOL.md; preserve local work and immutable history.",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "877c61e4-af2b-419a-92f4-996f80333236",
+        "kind": "execution",
+        "owner": "agent",
+        "parent_id": null,
+        "question": null,
+        "status": "ready",
+        "title": "Resolve Coopain checkout mismatch, improve resume history and hand off user remarks",
+        "updated_at": "2026-10-08T14:52:59.134986+00:00",
+        "version_id": 1,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    },
+    "work:94f740d6-202a-4af6-be5c-b37165c1a092": {
+      "digest": "81956297129bdb25fce25a3c6967ac4ba9f57f2a8a66bf5ae2f823938aed8f9e",
+      "id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "New red/green regressions cover offline discovery without store creation, branch constraints, exact full-map retrieval, same-owner recovery without a second claim, foreign-owner rejection and no automatic mutation retry; full Foundry checks remain green.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-07T15:55:43.004262+00:00",
+        "decision_id": "ab5fa1d4-0ab6-4852-9056-41a6989647a9",
+        "description": "Implement database-independent public discovery, conditional branch schema, explicit focused-map coverage, bounded bridge diagnostics/timeouts and opt-in same-owner context recovery. Preserve stale, foreign-claim and missing-store guards.",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+        "kind": "execution",
+        "owner": "coordinator-mvp-review-20261007",
+        "parent_id": null,
+        "question": null,
+        "status": "done",
+        "title": "F03: Improve public contracts and interrupted-agent recovery",
+        "updated_at": "2026-10-07T16:07:58.443050+00:00",
+        "version_id": 3,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    },
+    "work:a3e3b218-144f-403d-9227-e0ec9cd26207": {
+      "digest": "5d46780f7e74fc0dc47fc7a036ea74461a2ce21564d726c979b117716a15f01f",
+      "id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "Every prepared repo resolves its own workspace and current work; stale/conflicting claims fail; failed feedback send is retained and retry is idempotent.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-07T11:23:35.681391+00:00",
+        "decision_id": "99f688ce-6cba-4b56-8d72-0e926fd937bb",
+        "description": "Use prepared configs and maps; one writer per venture at a time, parallelism across venture repositories. Verify claim, prepare, result preview/accept, resume and feedback receipt. No production model service.\nPlan: /home/jonathan/startup_lab/foundry/docs/plans/2026-10-07-agent-dogfood/README.md",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+        "kind": "execution",
+        "owner": "coordinator-mvp-review-20261007",
+        "parent_id": null,
+        "question": null,
+        "status": "done",
+        "title": "F01: Run one complete agent handoff per venture",
+        "updated_at": "2026-10-07T15:55:13.331891+00:00",
+        "version_id": 3,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    },
+    "work:b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6": {
+      "digest": "764a6a8c9b0489296b763ffff50f276ead3491cad8bead8a2a7b40771f0af45d",
+      "id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "Retain sources, actual probes, limits, dependent roadmap and one next implementation package. No demand or deployment claim.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-07T11:23:34.240626+00:00",
+        "decision_id": null,
+        "description": "Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope.",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+        "kind": "investigation",
+        "owner": "Codex:priority-mvps-2026-10-07",
+        "parent_id": null,
+        "question": null,
+        "status": "done",
+        "title": "Assess Foundry MVP boundary and implementation map",
+        "updated_at": "2026-10-07T11:23:35.681140+00:00",
+        "version_id": 4,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    },
+    "work:c5a26ee7-355e-453e-ada0-a2c657ac4e7d": {
+      "digest": "c20eb9e76194d922edd07994eb344fe97b061c2f5e900c3eef9a7d5cd62faa1a",
+      "id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+      "kind": "work",
+      "record": {
+        "acceptance_criteria": "Each report has an explicit accepted, deferred, duplicate or retained-positive disposition and a bounded work reference or reason.",
+        "blocked_reason": null,
+        "budget_currency": "EUR",
+        "budget_limit": null,
+        "created_at": "2026-10-07T15:55:13.332471+00:00",
+        "decision_id": "078f4901-0c40-4362-9ae0-768215584153",
+        "description": "Review all 22 Foundry feedback arrivals and classify concrete contract and recovery fixes with evidence.",
+        "desired_outcome": null,
+        "due_at": null,
+        "id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+        "kind": "execution",
+        "owner": "coordinator-mvp-review-20261007",
+        "parent_id": null,
+        "question": null,
+        "status": "done",
+        "title": "F02: Triage observed agent friction",
+        "updated_at": "2026-10-07T15:55:43.003670+00:00",
+        "version_id": 3,
+        "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+      }
+    }
+  },
+  "request_digest": "6ec49fdda71d8db2ff7990dca91d86077ef62d1b3ca7b1406447d7c862351ebf",
+  "reviewed_evidence": {
+    "0c928b86-6059-4bd0-8dea-b0056a1f0988": "e0d288ee62e1fe2f2a0fb48e77fc97ea3f6da99cb8fd7cc7446b16dc8fd5fd00",
+    "1b915f27-9482-4ef2-a995-c61ea96a41bd": "c2b72f66571ed9922c0f73980dd9c5f2c004a832fd0e64ab91c3a1ef32a58f64",
+    "1bbdfffb-66ed-4f87-a6cd-29430373e212": "8d37283238412d36d9d26cbb43068dca3a2e039ab0c52e97ef8b526b4236d190",
+    "2b3482d7-2885-472f-b896-344f6b0469f0": "3fb723512313088ddc2b6b600b93c5b766b658fd7b8c0f11394f404fd05add5f",
+    "2b5e4c53-6301-497c-9695-0a05570e3f3f": "f5285c32c0ef9ed83047891f87bacc0b86b47e203e0fa4ce270bbe8325eb808d",
+    "30cd5b46-f68e-404a-8f23-ae5d96e7696e": "f5bf4d7cd4ff06b85e0ab9ee274df474246a9f2baac0f3c4d2cf4efc0f395d5a",
+    "336cdfd0-e3f8-4182-b056-e77e237689e1": "ba4f7d4e0631894ce919b7949f93bb7f8c02978ee4df5215d1d541072efb962b",
+    "34279286-cdc7-40b0-8cb8-59c30e917ce9": "d19b7c1f8ed50412952b48be04f857e477946df4879a038b9be657410390d7fb",
+    "35b6ae39-35cd-4dbe-b08e-77d5f6d08553": "94162908f5f502a0dbca0a90001c4a88332d1859c28cffb27a8537087898ef63",
+    "423cfc8d-f7d9-44d4-b46e-b5b566434728": "13d4bbf07838e2af0333bf713224e1c350b5c3b52b01a524b16e3f9caa4a0c16",
+    "4604609f-5d89-477f-ba92-70dafc59bd28": "84d8e694c64cd243a214114a5eb728f919457350c5eca5f8df61c6aa00cef7e6",
+    "4765a9a1-9bd2-4ee0-9507-1e35ed83fc24": "083599163c903cfa25a543a28e6db3a443e2ac2240c841aa7a7992af451aa717",
+    "4f4f3e56-64c9-49c2-84fe-f474a6ee12d7": "4b7555d7bceada579c074898f94e7f1dd730fd3a4914e7bd4128d76a82f4d13e",
+    "52d0fd83-dd82-4414-b290-583be0c7b6df": "f76d01bfaf241f1bf9a8401d209f3825e7be54ec704620ea30d49e4c6f455aac",
+    "5fa2fa1b-f0fb-493e-b134-dbe67cb5f17f": "0d4266ccfb140b85061d01dc7e38338c4ef17a13145e8837fc0ef2f1f1b23300",
+    "622d2296-34d2-49f8-abec-a6c73764ea0b": "e839032f7a73f79d531c7ca86e4244fefa2f0403d907421ba614a5646d014102",
+    "6894ee5e-d08f-46e4-8005-cdf89400095c": "08f8a870397f2e41bd178fd3a72b45d563984b34c920388e7ec1fa5a75d1e0d1",
+    "68c91ec0-f34d-4927-b3ae-15e37e5c846f": "fdb7146c937f0d5b8e774a51ffcfd6e0b6081664a502ade2c6b3b06da655b0c4",
+    "6953d039-a3b4-4846-88bd-f73eb3b40059": "47bf2075020fe8a6563b6327ae3f0e75e28d9021c3e0eb7a5b2915ee36880ad4",
+    "6a44b3be-10e2-4af1-9d9d-c1090fa7437d": "a0bb5841d2d683461675bc2f50b114030d07b9a86326ee948a287400b7cc0dad",
+    "6f8fe2b4-fe95-472e-9401-b56a2d675430": "dd5baa49929d5ac84ef6e0c7ef9ce4f6268f5c116ca0aa38102498346222164b",
+    "786851a3-921b-4c3e-8948-a267f4e39766": "afbd80358f19a2fc6aeba1173a6dde074d4b02e911f3762ad8c19b590fada0dd",
+    "7ca178f4-e619-4a37-bb72-9aa8b21a559f": "8cea5f4668f142181a40a656c8758b488fe5a8a8036425129da8b883f6c7ea9d",
+    "7cdeb3ad-50fb-42aa-8e1e-8d281a8ad5c7": "19e7b3a422fe65ca9b58777b7ced40dc6211d2655bb9f5da65a92af11e57a2c8",
+    "7d001c8d-7222-4b75-a342-2accae9f08e8": "f10df1e51907d67c7e660a4e3628c2d18468a59b69c1e920b36d19996b031eff",
+    "7e595da0-51db-4ec7-a52a-00e870cb447f": "af0d9b7e1bf640a65466c20d0bacfb97f6513447d78d3bc30997541e9788d5df",
+    "81ddc670-faac-42f6-af3c-fae2424436e1": "457123600a07f62d519cd6341634019af6aabc08f75e6dad0e8d44b232154626",
+    "851406de-a331-4ca6-a06b-7bcb34d5e7b2": "c8ab264bb87de666e0f8a2881bab5dd28533f5ccbc9680eedb082c11852cb707",
+    "8862c6a0-bd1e-54fe-af8a-34bc1e10bbba": "78f9fe6677addc1bb5e82c9319c2c2ee55bb8a43648316bf24e360065706aa6b",
+    "8be0df14-3f99-41ee-acb1-d46a98dfc5f0": "c41ad710dee7f55fcb1c25d493233ad7506a850748841a6396346933e315f5a1",
+    "93485573-d909-4fe6-abeb-1a0da63698f8": "5bea0bddf6eaf736de851200f915ce1b77853d210618fd7aac06ba901cd5f473",
+    "a0cc52a3-5bb7-4cc1-8ef4-2cbcef7a3a41": "98b41689d33eadd09e3a876e4faf203775e838c2ea56b8cabb1bf670077cd95b",
+    "a2b06a1f-c99b-41f3-b60f-e73f32fc21d7": "bb33281d68e1853ef5d41fd9721f85b62415031a5327bc2eb1abf54e11badd10",
+    "a9e9cdb0-39a7-46ed-a15b-99844a78a1e6": "a9794dc3885f84ce927934366d0ce3a1fe2e1496822e41c8b535b22aa2608fa9",
+    "ab23ef25-91ed-4d55-a0d4-ff29521fc9fd": "4477a7904c67425c2b293b25ea11ee342049a1949c5ab826412c5faea730ea5d",
+    "b0336bb0-8104-4dcf-87a3-039d89a7fe1e": "202f82558077ae788097d70171f7b1c0c68275dca33f9b84a92962d9802517e2",
+    "b57be82a-3ab3-4afb-887d-45c291b8226d": "82ec1b80097f6f4a90daefe01a00b0c8bc84e4fd94c4190626e94804c5ab8888",
+    "b62ec00f-385e-423d-8deb-00f3b81062a6": "369abe979b353f8e3054e36f821c468e814d3f024eca07804d12d3a115d9f92f",
+    "b8ee323d-5170-456c-b5e8-e1670a728c2b": "3da62ae0d80d289d007d0d0363ed471a097b8ff9a62de43deac4819e82b38b97",
+    "bc7cfaa8-2ffa-40ac-b2b1-27119505e6fc": "00256f737d9051bb209a48eb79230125960cb4286263449c50ded0dddf7d6e75",
+    "caebc556-d115-4e30-a6a6-5e37c536aa33": "088a333587c9498b05f4757f1c3caeb4663d03c839206d51cbd13eb2c0558939",
+    "console-local-operation-e": "742e0f5d0cf975b7a14bd3e8983faf7ef73fae0f9a3e5cf0d9a09478c879a633",
+    "d472f67d-0246-4384-8ccb-2d656904aa50": "ea68dde841dd5bdf6b5b3ac8b351485d5ab85ca9bdefefc9605e16fa3a8064e2",
+    "d954bab8-0e05-41e5-bdba-f7a0a967702f": "42036c4c1743616e3d2a0de831868be6fc0b289c934bf17775b7ee8b19d34226",
+    "df426a64-c90f-439c-8983-da4d50808aa3": "8195cef58102e7ba9c9605eb56f4e1b0feac87daba74fd64ead7b37dbf4e8810",
+    "e-foundry-docs": "8323cae29f993ac7fa957f7d98d3cd4795dbbcb8963aa6c77ce7e638f15c5573",
+    "e2cfb27c-87bc-43db-b077-e068daa093d2": "67d7106aa32ae9a2e57164475ee5717231eee5e632ebc694c3d3e5af53dbc4cb",
+    "ee4270f9-ef4f-476f-8228-b92e38144b7e": "0f7509173d38da12fcd3a970e04db3f86d4923e55066a49f3f85bb978fa2e5ea",
+    "f27cd4fa-55ca-4283-a333-f1f877e99876": "c98acbd7afcb5ece7133a2bfa598002100fb389e7905923a8eb9bf17bb756060",
+    "f6742d1d-c97a-446a-a457-d2cb7bd410c4": "906380671cad879f3ead960351cae45cc356c5c6b1ce9ad40d9580ca10c3ed9f"
+  },
+  "schema_version": 1,
+  "scope": {
+    "focus": null,
+    "idea_revision_id": null,
+    "objective": "Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope.",
+    "stage": "discovery",
+    "subject": "venture",
+    "subject_id": "v-foundry",
+    "title": "Foundry",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  },
+  "sequence": 11,
+  "stale_references": [],
+  "work_treatments": [],
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+}

@@ -1,0 +1,24 @@
+uv run ruff check src tests scripts
+All checks passed!
+uv run mypy
+Success: no issues found in 24 source files
+uv run pytest
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/jonathan/startup_lab/volley-match
+configfile: pyproject.toml
+testpaths: tests/unit, tests/integration
+plugins: anyio-4.15.1
+collected 41 items
+
+tests/unit/test_backup.py .                                              [  2%]
+tests/unit/test_safety.py .....                                          [ 14%]
+tests/unit/test_scoring.py ..............                                [ 48%]
+tests/integration/test_release_edges.py .....                            [ 60%]
+tests/integration/test_v01.py ...                                        [ 68%]
+tests/integration/test_v02.py ..                                         [ 73%]
+tests/integration/test_v03.py ......                                     [ 87%]
+tests/integration/test_v04.py ..                                         [ 92%]
+tests/integration/test_v05.py ...                                        [100%]
+
+============================= 41 passed in 17.59s ==============================

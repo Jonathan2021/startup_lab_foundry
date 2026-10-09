@@ -1,0 +1,1 @@
+SYNTHETIC identities ready. Private credentials: /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside/.local/demo-credentials.json

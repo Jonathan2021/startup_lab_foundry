@@ -1,0 +1,267 @@
+{
+  "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5",
+  "map_revision_id": "5e5eb260-16af-573f-855f-47fd6d975cb9",
+  "work": [
+    {
+      "acceptance_criteria": "Attributed research, justified known factors, explicit unknowns, review and concrete next owner/action. Queue does not start a worker.",
+      "blocked_reason": "changed_context",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T11:23:28.761992+00:00",
+      "decision_id": null,
+      "description": "Investigate the stated hypothesis and existing alternatives. Retain sources, limits, partial scores and the next bounded action; no external action.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "changed_context",
+        "Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      ],
+      "id": "da9f64ff-1b76-5e2d-bdce-537234f19324",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Initial manual review of v-volley-coach",
+      "updated_at": "2026-10-07T11:23:29.900293+00:00",
+      "version_id": 2,
+      "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5"
+    }
+  ],
+  "current_review": {
+    "author": "implementer-volley-coach-20261007T1634-codex",
+    "created_at": "2026-10-07T15:13:59.650586+00:00",
+    "decision_id": "3b578f8d-4d47-422b-9b2a-3d7535a11e7f",
+    "disposition": "pursue",
+    "id": "1931c99a-e9a4-4fde-b973-f8ca1663134c",
+    "investigation_stage": "solution_validation",
+    "next_action": "Local scheduling MVP ready; consenting adult user-program pilot can follow; public hosting remains a separate approval.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Current-package acceptance and green regression checks pass; reviewed local files and retained evidence. Routine local implementation is authorized.",
+    "reviewed_at": "2026-10-07T15:13:59.650562+00:00",
+    "revision": 8,
+    "source_artifact_id": "1535b1fe-387b-51d8-8f99-7f40f8e30301",
+    "updated_at": "2026-10-07T15:13:59.650587+00:00",
+    "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5"
+  },
+  "results": [
+    {
+      "id": "1535b1fe-387b-51d8-8f99-7f40f8e30301",
+      "work_id": "fe479aa6-1e4f-4dca-be55-66728666cbb5",
+      "context_id": "9fc89c69-1fec-5a16-94ca-933ddea626d2",
+      "state": "accept",
+      "digest": "264d687b7716b5e48c0ee39d0c2f629d3a4baf34c169dfc8c3390839d777927e",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "C05 local MVP v0.1.0 implemented in user-provided-program mode: privacy page/export/delete with auth-material exclusion and complete own-record/session/idempotency cascade; backup/restore with integrity checks, mode 0600 and no overwrite; packaged migration/serve/backup/restore CLI, loopback/trusted-host/CSP config, no import-time database creation, actionable redacted failures, explicit nonphysical synthetic demo, release/recovery/API/privacy/pilot and draft deployment docs. Final audit identified globally keyed deterministic session logs; red regression retained, migration 0004 scopes keys by user and preserves old logs. Final make check: Ruff pass, strict mypy pass, 31 backend tests pass. Actual Chromium core and privacy flows: 2 pass, desktop/390px and screenshots inspected; no skips/xfails, one upstream TestClient deprecation warning. uv build succeeded. Independently installed locked wheel smoke passed without Foundry: migrations, SSR/assets, account/profile/empty plan/export/backup/restore and repeat-safe synthetic demo. Versioned artifacts/hashes retained. Local app running at http://127.0.0.1:8004; an unrelated service on 8000 was preserved.",
+      "limits": "Synthetic tests validate implementation only, not demand, coaching correctness, physical suitability or injury outcomes. No public release or real external actions. MVP build packages C01-C05 complete locally. Public deployment and qualified app-owned physical catalog review remain separate gates. No real adult two-week trial, demand, physiological outcomes, coach correctness or injury safety validated. User-provided-program mode is deliberately the delivered mode; reviewed variants are validated with synthetic metadata in disposable tests only. No external sends/payments/accounts/cloud/hosting, commits or pushes. Password reset/account recovery/rate limits and public operator/privacy configuration require future public-release review. Local running process is reversible development only.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-coach-20261007T1634-codex",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved complete context and all relevant arrivals inspected; package acceptance checked against source roadmap.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "fe479aa6-1e4f-4dca-be55-66728666cbb5",
+          "decision_id": "3b578f8d-4d47-422b-9b2a-3d7535a11e7f",
+          "evidence_ids": [
+            "1d63dfce-132a-4628-84d5-892d96e4b864"
+          ],
+          "map_revision_id": "5e5eb260-16af-573f-855f-47fd6d975cb9",
+          "next_work_id": null,
+          "review_id": "1931c99a-e9a4-4fde-b973-f8ca1663134c",
+          "work_needing_review": {
+            "da9f64ff-1b76-5e2d-bdce-537234f19324": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed current implementation, exact test evidence and proposed effects within authorized local MVP scope.",
+        "request_digest": "3ed90df181ab3f5ca4d2fd1ada9d7e4f276e6fbce5e79718870b52658b7a6cd9",
+        "resolution": "accept",
+        "result_digest": "264d687b7716b5e48c0ee39d0c2f629d3a4baf34c169dfc8c3390839d777927e",
+        "result_id": "1535b1fe-387b-51d8-8f99-7f40f8e30301"
+      }
+    },
+    {
+      "id": "a89e9f21-0027-5187-866a-19bb48c5d57f",
+      "work_id": "4f34d7aa-7017-436a-a872-73ed9ef54c32",
+      "context_id": "ca49816e-f882-58c0-8d93-36289313cebe",
+      "state": "accept",
+      "digest": "9ab9b9d98db8c85b15cebf1f5383b8b4851d22ce58cfa5e1f81f2ced25661a03",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "C04 implemented mobile server-rendered onboarding/goals/unknown comfort, weekly availability/program cards, selected-program generation/acceptance, visible cancellation/replan changes, today/log/progress and explicit adjustment controls. Jinja2 forms reuse typed services; no external assets or compulsory videos/wearables. make check: Ruff passes, strict mypy passes, 21 tests pass. make test-browser: actual Chromium core flow passes at 1280px and 390px with no horizontal overflow/page errors. Final screenshots visually inspected. Browser exposed Referrer-Policy no-referrer causing null Origin for forms; corrected to same-origin, preserving origin checks; early failures retained. ADR 0003 records standard forms instead of optional HTMX.",
+      "limits": "Synthetic tests validate implementation only, not demand, coaching correctness, physical suitability or injury outcomes. No public release or real external actions. Browser flow uses synthetic adults/programs and injected clock in disposable migrated test DB. No usability demand, coaching correctness or physical suitability validated. Export/delete, backups and release docs remain C05.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-coach-20261007T1634-codex",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved complete context and all relevant arrivals inspected; package acceptance checked against source roadmap.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "4f34d7aa-7017-436a-a872-73ed9ef54c32",
+          "decision_id": "53540440-f2f6-4bab-8999-b4e8a0f26733",
+          "evidence_ids": [
+            "04c4c5c7-918c-497b-8a2a-0eec131d4703"
+          ],
+          "map_revision_id": "1eeaeb3c-ce32-535f-9f0f-423fc169c537",
+          "next_work_id": "fe479aa6-1e4f-4dca-be55-66728666cbb5",
+          "review_id": "ce29fc6c-0955-4437-a5af-88c6bccb9f5d",
+          "work_needing_review": {
+            "da9f64ff-1b76-5e2d-bdce-537234f19324": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed current implementation, exact test evidence and proposed effects within authorized local MVP scope.",
+        "request_digest": "30c53e518f2a2950d3e2ae904c2916b734b6f14fc2c97eafc77ea57a5d1a16fd",
+        "resolution": "accept",
+        "result_digest": "9ab9b9d98db8c85b15cebf1f5383b8b4851d22ce58cfa5e1f81f2ced25661a03",
+        "result_id": "a89e9f21-0027-5187-866a-19bb48c5d57f"
+      }
+    },
+    {
+      "id": "bb2000e8-ad1c-5bf2-a1d5-a4ef8eb596a0",
+      "work_id": "69023928-6ed6-451a-a3c2-163796e1a71b",
+      "context_id": "000c4180-874d-512d-b607-af83fb6b0eaf",
+      "state": "accept",
+      "digest": "b237bc01d18913d94010cb54ddd5950c9387048d9d56a93dd87703344f36c241",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "C03 implemented immutable completed/skipped logs with felt/effort/discomfort/illness, preserved past/logged sessions, visible revision changes, idempotent replan, cross-week recovery and match commitments, progression proposal/accept/reject/undo with log refs and decision event history. Same-volume reviewed variants require completed+easy feedback and explicit acceptance; user-program mode proposes keeping the fixed program. Recent discomfort/illness holds progression and recommends rest/skip/professional input without diagnosis. make check: Ruff pass, strict mypy pass, 19 tests pass; one upstream TestClient deprecation warning. Synthetic reviewed metadata exists only in disposable test databases, never seed/runtime catalog.",
+      "limits": "Synthetic tests validate implementation only, not demand, coaching correctness, physical suitability or injury outcomes. No public release or real external actions. No qualified exercise review or physiological validation. Immutable logs are not editable; users can export/delete in C05. C04 browser and C05 release/privacy remain.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-coach-20261007T1634-codex",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved complete context and all relevant arrivals inspected; package acceptance checked against source roadmap.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "69023928-6ed6-451a-a3c2-163796e1a71b",
+          "decision_id": "4e8ce1f8-cf8d-4385-bc76-178f0ee65066",
+          "evidence_ids": [
+            "41bd3ca3-5d76-4763-8069-cafc9ccb7f5e"
+          ],
+          "map_revision_id": "7eb06171-fb84-5493-9b84-6627970fdb85",
+          "next_work_id": "4f34d7aa-7017-436a-a872-73ed9ef54c32",
+          "review_id": "739de966-e1c4-4827-b55a-7caa4acdc327",
+          "work_needing_review": {
+            "da9f64ff-1b76-5e2d-bdce-537234f19324": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed current implementation, exact test evidence and proposed effects within authorized local MVP scope.",
+        "request_digest": "db396dcceb0d949d6a855d37b0df4412752d3f25c33aedabe054b33f7bbf5064",
+        "resolution": "accept",
+        "result_digest": "b237bc01d18913d94010cb54ddd5950c9387048d9d56a93dd87703344f36c241",
+        "result_id": "bb2000e8-ad1c-5bf2-a1d5-a4ef8eb596a0"
+      }
+    },
+    {
+      "id": "3386eff0-1fd6-51a0-b225-7c13db87784b",
+      "work_id": "e44f23f7-3f70-481c-a926-898690e2ff07",
+      "context_id": "83475a36-5064-5ec9-afbc-74aa88b54a51",
+      "state": "accept",
+      "digest": "21864a4115af6dcc277745313af552180fc27298ee9c0c728f3abfd185e0e7cb",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "C02 implemented injected deterministic Planner/Clock interfaces, bounded one-session-per-goal scheduling, full duration/resource/recovery/match constraints, honest unmet goals, immutable source-versioned plan content, plan acceptance with stale availability/profile/revision checks and ownership enforcement. Alembic 0002 added. make check: Ruff passes, strict mypy passes, 14 tests pass with one upstream TestClient deprecation warning. Initial red specification retained. Foundry context intentionally projects current focus; full map preserves all conditional roadmap nodes.",
+      "limits": "Synthetic tests validate implementation only, not demand, coaching correctness, physical suitability or injury outcomes. No public release or real external actions. No professionally reviewed physical catalog; user programs only. Revisions/log history, cross-week recovery and progression are C03. Browser and release remain C04/C05.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-coach-20261007T1634-codex",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved complete context and all relevant arrivals inspected; package acceptance checked against source roadmap.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "e44f23f7-3f70-481c-a926-898690e2ff07",
+          "decision_id": "3e3cffe9-b9cb-4c07-8948-305e0ccc80d8",
+          "evidence_ids": [
+            "538028f5-e597-4106-8828-fc43e78e2fa5"
+          ],
+          "map_revision_id": "ee930857-b1fb-5221-95dd-99216d9dc6f9",
+          "next_work_id": "69023928-6ed6-451a-a3c2-163796e1a71b",
+          "review_id": "548d5d0e-ffa7-46bc-9dbd-c9cec5339f32",
+          "work_needing_review": {
+            "da9f64ff-1b76-5e2d-bdce-537234f19324": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed current implementation, exact test evidence and proposed effects within authorized local MVP scope.",
+        "request_digest": "63af49f4347795eb7a24c8f18c61edc943df9abef69a45175d2f8b9603d4e724",
+        "resolution": "accept",
+        "result_digest": "21864a4115af6dcc277745313af552180fc27298ee9c0c728f3abfd185e0e7cb",
+        "result_id": "3386eff0-1fd6-51a0-b225-7c13db87784b"
+      }
+    },
+    {
+      "id": "b0459f29-4b8e-5472-bcbd-0fe04770ee1a",
+      "work_id": "7172fb29-5982-4104-9e5e-eeb1257dc6b7",
+      "context_id": "3a34aa0a-deda-547d-b968-2cd6de15823d",
+      "state": "accept",
+      "digest": "30e4fe6fe723a60ef60c67b3cd3d250bf3536186a42c09fa82dc62709fd24144",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "C01 implemented: adult profiles with unknown self-assessment, explicit resource slots, UTC persistence, overlap rejection and explicit DST ambiguity resolution; versioned catalog excludes synthetic/unreviewed instructions; isolated local accounts, authorization, atomic idempotency and availability concurrency; Alembic migration, project-local locked dependencies, independent setup and synthetic metadata seed. make check: Ruff passes, strict mypy passes, 8 tests pass (one upstream HTTPX deprecation warning). Initial red specification retained. Foundry claim/context/arrivals worked without blocking friction.",
+      "limits": "Synthetic tests validate implementation only, not demand, coaching correctness, physical suitability or injury outcomes. No public release or real external actions. Planner, logs, browser flow and release tooling remain later packages. Catalog intentionally has no professionally approved physical instructions. Seed is synthetic metadata only. Account recovery is password-based with no sends.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-coach-20261007T1634-codex",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved complete context and all relevant arrivals inspected; package acceptance checked against source roadmap.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "7172fb29-5982-4104-9e5e-eeb1257dc6b7",
+          "decision_id": "791a2a4a-f94e-40ac-90ba-e76e19031de4",
+          "evidence_ids": [
+            "3c2ddecc-69cf-4369-a0b9-25422e3364de"
+          ],
+          "map_revision_id": "2cf4207e-8d7d-5b5c-90dd-e72b431e927c",
+          "next_work_id": "e44f23f7-3f70-481c-a926-898690e2ff07",
+          "review_id": "9aac006f-8b60-4257-b898-19200f4846d8",
+          "work_needing_review": {
+            "da9f64ff-1b76-5e2d-bdce-537234f19324": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed current implementation, exact test evidence and proposed effects within authorized local MVP scope.",
+        "request_digest": "e180d927dc491b53c72ba8a2d96be247ead7e69ea8068f247520249d8d101938",
+        "resolution": "accept",
+        "result_digest": "30e4fe6fe723a60ef60c67b3cd3d250bf3536186a42c09fa82dc62709fd24144",
+        "result_id": "b0459f29-4b8e-5472-bcbd-0fe04770ee1a"
+      }
+    },
+    {
+      "id": "fa5c24f9-3410-5a63-a01c-bca6f1628978",
+      "work_id": "9afdbf73-8a4d-4b7d-8dda-a882e00b7ffd",
+      "context_id": "06fdc000-8a98-52e9-ac08-e45d07e64d7a",
+      "state": "accept",
+      "digest": "4020208c0f7e52c07c9af30fd0572cb46129c6ff9cad60cf25c38b3cef9fa0dc",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "GO for an availability-aware volleyball practice planner; HOLD automatic form judgment and live match-video strategy. Prefer personal progression over a video analytics competitor: it shares user access with Volley Match, can be useful without a labeled video corpus, and has a bounded deterministic first implementation. Keep its repository/domain independent; optional match history import comes later.",
+      "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "9afdbf73-8a4d-4b7d-8dda-a882e00b7ffd",
+          "decision_id": "ddf723c3-b4df-4de8-a888-2afbef033b75",
+          "evidence_ids": [
+            "5e88b3a5-0962-4a2f-af48-be179eb2a2ea"
+          ],
+          "map_revision_id": "219d6a58-ab78-506f-8bd0-7bd564ebdb2f",
+          "next_work_id": "7172fb29-5982-4104-9e5e-eeb1257dc6b7",
+          "review_id": "b6a255a0-ce78-439e-99b6-f14361643894",
+          "work_needing_review": {
+            "da9f64ff-1b76-5e2d-bdce-537234f19324": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "f2d2ff7a5154da2016dc80fe4619ccae2b5a450cfe5aa17f463890491b2feca4",
+        "resolution": "accept",
+        "result_digest": "4020208c0f7e52c07c9af30fd0572cb46129c6ff9cad60cf25c38b3cef9fa0dc",
+        "result_id": "fa5c24f9-3410-5a63-a01c-bca6f1628978"
+      }
+    }
+  ],
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/volley-coach-resume-before.json"
+}

@@ -1,0 +1,13 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "request_key": "volley-match-remarks-observation-20261008",
+  "summary": "User remarks authorize the next local product continuation; full scope and acceptance sequence retained in docs/mvp/REMARKS_HANDOFF.md.",
+  "details": "User-authored root remarks, attributed to the user and not independent market/physical-use evidence:\n- volleymatch login menu has some blue outline when clicking on a text field that covers the field title above (for example adresse email\" is covered by blue when I click on the field.\n- Actually nevermind, so whole layout is ugly. I know it's not the primary focus but god damn it is bad.\n- when making teams for a match, a player can be selected on both teams, also there should nomarlly be at most 1 player difference, but not a hard rule, just display a warning. When creating the match it complains, but should be dynamic.\n- Should optionally be able to select a team name.\n- Should be able to modify match rules after it started. Ok since a member of each team will have to validate the score, and so the rule before elo is changed etc..\n- not sure what \"plafond convenu avant de jouer\" is supposed to mean.\n- date et heure du match should be now by default.\n- Can't seem to see how to create a session.\n- A session might have several matches, with different team configurations.\n- private groups are nice, but should also have the ability to create a standalone match and invite people.\n- You should be able to make a session public or private. If public, people can request to join. Automatically accepted if in elo range set by the session creator. If not, is in waiting list waiting for acceptance by session creator. If quicked out after joining, will have to go through queue even if already invited.\n\nYou can get inspiration from one old repo (not finished product: https://github.com/Jonathan2021/greenplanner) that is essentially like https://greenvolleyparis.com/fr (they stole most of my stuff). You can also get inspiration from rankat. Not so much for the actual design, but for functionnalities, flows, type of interactions etc.\n\nCoordinator handoff uses Foundry2026-10-08.1. Only the first task is ready; continue sequentially after acceptance, retaining historical human gates.",
+  "kind": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: /home/jonathan/startup_lab/volley-match/remarks",
+    "document: /home/jonathan/startup_lab/volley-match/docs/mvp/REMARKS_HANDOFF.md"
+  ],
+  "epistemic_status": "observation"
+}

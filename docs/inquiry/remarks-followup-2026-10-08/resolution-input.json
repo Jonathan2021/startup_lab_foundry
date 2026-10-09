@@ -1,0 +1,11 @@
+{
+  "expected_result_digest": "e0d92b76c4a80099661f239fc277ce538351ff2436fd9240d0540b8f57829764",
+  "expected_head": "ad84865d-33fe-5931-a5ac-8bce8d984783",
+  "expected_work_version": 2,
+  "expected_review_revision": 13,
+  "resolution": "accept",
+  "actor": "coordinator-remarks-20261008",
+  "rationale": "All coordinator package outcomes have concrete evidence. This accepts only reconciliation/tooling/handoff work, not future product features, launch gates or external actions.",
+  "coverage_action": "reviewed",
+  "coverage_rationale": "Complete context selects all56evidence records, including the historical Ride Options friction, latest positive reports and newly retained delivery-checkout friction; original campaign history remains intact."
+}

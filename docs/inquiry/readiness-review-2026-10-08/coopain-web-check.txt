@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: introduction controls follow actual participant identity, including users with both modes
+ok 1 - introduction controls follow actual participant identity, including users with both modes
+  ---
+  duration_ms: 104.640597
+  ...
+# Subtest: historical introduction titles use preserved snapshots instead of identifiers
+ok 2 - historical introduction titles use preserved snapshots instead of identifiers
+  ---
+  duration_ms: 20.249055
+  ...
+# Subtest: request and manual lifecycle API methods send only the explicitly selected payload
+ok 3 - request and manual lifecycle API methods send only the explicitly selected payload
+  ---
+  duration_ms: 66.288772
+  ...
+# Subtest: exploration performs no implicit profile/employment creation or local match simulation
+ok 4 - exploration performs no implicit profile/employment creation or local match simulation
+  ---
+  duration_ms: 0.785354
+  ...
+# Subtest: preference skill selection sends owned profile skill identifiers
+ok 5 - preference skill selection sends owned profile skill identifiers
+  ---
+  duration_ms: 52.950243
+  ...
+# Subtest: account deletion needs exact explicit confirmation and no pending operation
+ok 6 - account deletion needs exact explicit confirmation and no pending operation
+  ---
+  duration_ms: 68.791982
+  ...
+# Subtest: export and delete API calls are authenticated and scoped to the active account
+ok 7 - export and delete API calls are authenticated and scoped to the active account
+  ---
+  duration_ms: 81.35771
+  ...
+# Subtest: generated API contracts match the checked-in source schema
+not ok 8 - generated API contracts match the checked-in source schema
+  ---
+  duration_ms: 1117.11141
+  location: '/tmp/mvp-readiness-20261008-r1faj3o6/coopain/frontend/apps/web/tests/j03-privacy.test.mjs:43:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    node:internal/fs/promises:639
+      return new FileHandle(await PromisePrototypeThen(
+                            ^
+    
+    Error: ENOENT: no such file or directory, open '/tmp/mvp-readiness-20261008-r1faj3o6/coopain/backend/generated/openapi.json'
+        at async open (node:internal/fs/promises:639:25)
+        at async readFile (node:internal/fs/promises:1246:14)
+        at async file:///tmp/mvp-readiness-20261008-r1faj3o6/coopain/frontend/packages/api/generate.mjs:7:22 {
+      errno: -2,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: '/tmp/mvp-readiness-20261008-r1faj3o6/coopain/backend/generated/openapi.json'
+    }
+    
+    Node.js v20.19.4
+    
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    async open (node:internal/fs/promises:639:25)
+    async readFile (node:internal/fs/promises:1246:14)
+    async file:///tmp/mvp-readiness-20261008-r1faj3o6/coopain/frontend/packages/api/generate.mjs:7:22 {
+    TestContext.<anonymous> (file:///tmp/mvp-readiness-20261008-r1faj3o6/coopain/frontend/apps/web/tests/j03-privacy.test.mjs:45:10)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:796:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+    Test.postRun (node:internal/test_runner/test:889:19)
+    Test.run (node:internal/test_runner/test:835:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:526:7)
+  ...
+# Subtest: frontend baseline uses patched Next and sharp with a locked generator
+ok 9 - frontend baseline uses patched Next and sharp with a locked generator
+  ---
+  duration_ms: 0.628417
+  ...
+# Subtest: web runtime has no audited high or critical advisory, with native tooling excluded by the actual alias
+ok 10 - web runtime has no audited high or critical advisory, with native tooling excluded by the actual alias
+  ---
+  duration_ms: 22.172859
+  ...
+# Subtest: criteria report only exact stated similarities, not predictions or identifier-derived scores
+ok 11 - criteria report only exact stated similarities, not predictions or identifier-derived scores
+  ---
+  duration_ms: 99.171535
+  ...
+# Subtest: missing, unavailable, partial or empty skill data stays unknown
+ok 12 - missing, unavailable, partial or empty skill data stays unknown
+  ---
+  duration_ms: 21.134678
+  ...
+# Subtest: optional filters preserve order, retain unknowns by default, and match exact skill names
+ok 13 - optional filters preserve order, retain unknowns by default, and match exact skill names
+  ---
+  duration_ms: 15.785441
+  ...
+# Subtest: preference skill reads support complete pagination
+ok 14 - preference skill reads support complete pagination
+  ---
+  duration_ms: 68.195555
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 13
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1745.157665

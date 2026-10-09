@@ -1,0 +1,39 @@
+{
+  "id": "edacb983-e5a2-54a3-9eaa-e91ff9a5550a",
+  "context_id": "edacb983-e5a2-54a3-9eaa-e91ff9a5550a",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "actor": "coordinator-mvp-review-20261007",
+  "map_revision_id": "8d5b6e33-9468-5822-a39c-2682023379f3",
+  "review_revision": 10,
+  "work": {
+    "acceptance_criteria": "Independent wheel handoff workflow passes; seven doctor checks confirm upgraded contract/helper; six handoffs resolve to current scope and exact work; evidence report records actual passes, skips, feedback dispositions and local-only release limits.",
+    "blocked_reason": null,
+    "budget_currency": "EUR",
+    "budget_limit": null,
+    "created_at": "2026-10-07T16:07:58.443793+00:00",
+    "decision_id": "22f3e183-7f55-4517-93ff-c5bd877d36c7",
+    "description": "Verify installed-wheel public CLI replay, final source/hash provenance and per-venture review/continuation documents. Retain four ready local follow-up tasks; preserve Coopain J03 and Ride Options R05 claims. Document all trial and release limits.",
+    "desired_outcome": null,
+    "due_at": null,
+    "id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+    "kind": "execution",
+    "owner": "coordinator-mvp-review-20261007",
+    "parent_id": null,
+    "question": null,
+    "status": "in_progress",
+    "title": "F04: Verify upgraded release and deliver continuation handoffs",
+    "updated_at": "2026-10-07T16:08:00.639894+00:00",
+    "version_id": 2,
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  },
+  "context_complete": true,
+  "markdown_bytes": 42794,
+  "map_coverage": {
+    "full_map_command": "foundry decision-map show --workspace-id 68afabed-a744-47df-94c1-7402f5c7b3b0 --revision 8d5b6e33-9468-5822-a39c-2682023379f3",
+    "selected_edges": 1,
+    "selected_nodes": 2,
+    "total_edges": 15,
+    "total_nodes": 13
+  },
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/F03-next-context.json"
+}

@@ -1,0 +1,32 @@
+# Foundry feedback triage
+
+2026-10-07. All 22 arrivals fetched through `handoff fetch`; 20 are from the six child ventures. A delivery receipt establishes intake, not resolution.
+
+| Source | Report | Disposition and bounded action |
+| --- | --- | --- |
+| foundry | `0a7a51b2-cd34-4091-83f1-587352d2698b` Push surfaced two current dependency alerts and seven historical-trial alerts | Previously remediated in priority campaign; no new dependency change in this tranche. Frozen historical trials remain archival. |
+| foundry | `ee1e24ff-18a6-4c94-8f6f-f8298431eb13` Independent implementation agents need scoped startup and durable feedback; historical scope labels also needed correction | Prior manifest/bridge/rename changes retained; recurring contract friction is addressed in F03. Generic integrations deferred. |
+| offer-check | `0dd3a7db-8e94-4336-b6cd-98a46bff2c6e` Outside-agent onboarding audit: missing-store guard and public schema guidance | Already addressed by prior public-contract upgrade; fresh kit regressions pass. Preserve missing-store denial for stateful commands. |
+| offer-check | `1b7fbe52-a8d0-4aff-ad52-d2447a027922` Dependent implementation checkpoints stayed owned and reviewable through a local MVP release | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| offer-check | `5e316c5a-87fb-42a8-ace7-3cab21a5a0fa` O01 claim/context/arrival and pinned-result workflow worked without application coupling | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| offer-check | `88219287-bb6f-42e6-8a9d-ee9bef61e873` Published MapEdge schema does not expose conditional branch outcome requirement | Accepted F03: publish conditional required condition/outcome schema and example; retain runtime validator. |
+| volley-match | `29f817f3-4517-4a95-8717-770e3b6d96a8` Five dependent MVP packages completed through one-writer CLI checkpoints | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| volley-match | `6c203df4-5a07-4936-be83-b5baa93e89e6` V03 exact-digest checkpoint and dependency advancement worked | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| volley-match | `9d45f738-524a-4b26-adbd-24cfbb7476b5` V04 retained browser and viewport evidence with clear build/adoption distinction | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| volley-match | `bdf0ec24-615a-4227-ba80-998fd80f36a4` Preview record IDs are provisional and differ at resolve | Accepted F03 documentation: final resolve receipt owns created IDs; use resume for next work. Deterministic preview IDs deferred because effects may allocate records and current warning is correct. |
+| volley-match | `d9cfaa12-bb9a-4b20-9435-af247df48281` V01 claim, arrivals and exact-digest preview succeeded | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| crous-queue | `d4cc88e9-88ef-44c6-acda-b0a6c304481a` Context arrivals timed out at the bridge 60-second limit | Accepted F03: static guide/schema bypass database startup; bounded configurable timeout and uncertain-mutation recovery guidance. Timeout itself not reproduced; do not claim root cause proven. |
+| crous-queue | `e05e3c32-b454-4f25-8d8a-15aa42b16e0b` Ordered claims and pinned package results supported a complete local MVP | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| volley-coach | `029717c9-f7e4-44f7-898b-32ab6b91692b` C01 complete claim/context/result workflow preserved scope and exact review pins | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| volley-coach | `1a5487c3-e9a7-4c23-9c63-f493034bbcbd` C03 proceeded through eligible dependency work with intact source history | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| volley-coach | `3144106f-1585-476f-8f9a-f32547709259` C01-C05 local MVP delivered through sequential Foundry ownership and exact evidence | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| volley-coach | `f0930225-c9c1-45c6-b88f-5e7346c007d4` Clarify focused context map versus retained full roadmap | Accepted F03: context states selected versus total map nodes and exact full-revision retrieval command; do not silently enlarge context. |
+| volley-coach | `fc3b7ca7-09e4-4997-b8bf-d5cf6e4e984c` Browser-evidenced C04 completed without Foundry friction | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| coopain | `ab516b4d-1ffa-47f9-b9b3-8493b4729bdd` J02 retained red specs, integrated evidence and routine local review without platform outage | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| coopain | `f3590eae-b239-4182-8229-dc8aa31ec629` J01 handoff and checkpoint preserve reviewed implementation scope | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| ride-options | `938e33e0-008f-42bf-b738-0bcc265fa2ac` Dependency-safe package continuation and exact review worked for R01 to R02 | Retain positive evidence; preserve claims, exact digest review and runtime independence. No new feature. |
+| ride-options | `fff7fe87-71a6-4b7f-9827-ab5fe39a008c` Result schema command timed out during package preparation | Accepted F03: static guide/schema bypass database startup; bounded configurable timeout and uncertain-mutation recovery guidance. Timeout itself not reproduced; do not claim root cause proven. |
+
+Additional coordinator-observed friction: Coopain retains a valid J03 owner after a host workspace-loading failure. F03 adds explicit same-owner context recovery; it does not repair or diagnose the host failure. A different owner remains a conflict.
+
+Implementation scope F03: database-independent public discovery, conditional branch schema, context coverage metadata, same-owner recovery, read-only bridge doctor and actionable bounded timeouts. No migrations, model services, new transport, claim stealing or external actions.

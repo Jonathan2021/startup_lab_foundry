@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "backup": {
+    "source": "/tmp/foundry-upgrade-replay-20261007/demo.db",
+    "backup": "/tmp/foundry-upgrade-replay-20261007/backup.db",
+    "verified": true
+  },
+  "restored_to_new_path": "/tmp/foundry-upgrade-replay-20261007/restored.db",
+  "same_fields": [
+    "work",
+    "results",
+    "map_revision_id",
+    "current_review"
+  ],
+  "wheel_sha256": "80a344a540c81e55ea6363b4962e38f3ba0525783cd1348cbed578522746bfc8"
+}

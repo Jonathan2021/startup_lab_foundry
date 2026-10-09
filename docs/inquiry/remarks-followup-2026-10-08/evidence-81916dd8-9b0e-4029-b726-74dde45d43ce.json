@@ -1,0 +1,21 @@
+{
+  "as_of_context": false,
+  "digest": "e990a04f617689465e38ea2f1fa09e1209e4a857aaefd665f3494837e9b09020",
+  "id": "81916dd8-9b0e-4029-b726-74dde45d43ce",
+  "instruction": "Prepare fresh context with this record before proposing dependent effects",
+  "kind": "evidence",
+  "record": {
+    "captured_at": "2026-10-08T13:43:41.628687+00:00",
+    "captured_by": "coopain-release-20261008-codex-j06",
+    "confidence": "low",
+    "created_at": "2026-10-08T13:43:41.628720+00:00",
+    "details": "{\"actor\": \"coopain-release-20261008-codex-j06\", \"actual\": \"Fresh complete contexta71fd58b retains work2/mapf8a8c522/review13 and all11evidence records. The same actor owns J06 throughout. Real final Actions37782697497 is green on d9cdd440; no hosted quota is needed with disposable local runners. No new blocking Foundry defect or friction was observed.\", \"expected\": \"Retain only the owned J06 claim and source/counterevidence, without stealing work or changing the store, and complete only after final exact-SHA CI and teardown.\", \"id\": \"c508d328-f81b-41a9-8005-9b90517989ec\", \"impact\": \"The source-backed result can distinguish earlier CI-capacity uncertainty, actual repaired CI failures and an independent main PR2 merge from the verified scoped branch outcome.\", \"kind\": \"positive\", \"reproduction\": \"resume; start --resume-owned with existingactor/workID; prepare explicit complete evidence context; complete independent code/CI verification; inspect exact final run and saved pins before result review.\", \"sources\": [\"document: .foundry/runs/j06/free-ci-context.json\", \"document: .foundry/runs/j06/completion-audit.json\", \"document: .foundry/runs/j06/local-actions/teardown.json\", \"https://github.com/Jonathan2021/coopain/actions/runs/37782697497\"], \"suggestion\": \"Retain owned resume, explicit counterevidence coverage, exact context version pins and immutable result/feedback receipts.\", \"summary\": \"Owned-work resume and immutable context pins supported completing J06 after a verification-only tooling detour.\", \"venture_id\": \"v-coopain\", \"workspace_id\": \"9197a72d-23a6-424d-9b00-03e5d4a366f6\"}\nEpistemic status: observation\nSources: document: feedback/c508d328-f81b-41a9-8005-9b90517989ec.json\nRecord references: ",
+    "id": "81916dd8-9b0e-4029-b726-74dde45d43ce",
+    "kind": "observation",
+    "origin_work_item_id": null,
+    "sources": [],
+    "summary": "[Dogfood/positive] Owned-work resume and immutable context pins supported completing J06 after a verification-only tooling detour.",
+    "updated_at": "2026-10-08T13:43:41.628722+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  }
+}

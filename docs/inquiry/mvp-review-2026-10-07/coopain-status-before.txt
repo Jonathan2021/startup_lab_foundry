@@ -1,0 +1,129 @@
+ M .github/workflows/backend.yml
+ M .gitignore
+ M README
+ M backend/Dockerfile
+ M backend/app/api/routes/auth.py
+ M backend/app/api/routes/auth_service.py
+ M backend/app/api/routes/candidate_profile.py
+ M backend/app/api/routes/conversations.py
+ M backend/app/api/routes/feeds.py
+ M backend/app/api/routes/job_posts.py
+ M backend/app/api/routes/matches.py
+ M backend/app/api/routes/user_profile.py
+ M backend/app/api/routes/users.py
+ M backend/app/auth/dependencies.py
+ M backend/app/auth/jwt.py
+ M backend/app/auth/middleware.py
+ M backend/app/auth/security.py
+ M backend/app/bootstrap.py
+ M backend/app/config/settings.py
+ M backend/app/db/models/__init__.py
+ M backend/app/db/models/common.py
+ M backend/app/db/models/documents.py
+ M backend/app/db/models/lookups.py
+ M backend/app/db/models/matching.py
+ M backend/app/db/models/profiles.py
+ M backend/app/db/models/safety.py
+ M backend/app/db/models/users.py
+ M backend/app/db/session.py
+ M backend/app/domain/audit.py
+ M backend/app/domain/candidate_preferences.py
+ M backend/app/domain/conversations.py
+ M backend/app/domain/documents.py
+ M backend/app/domain/job_posts.py
+ M backend/app/domain/matches.py
+ M backend/app/domain/swipes.py
+ M backend/app/domain/user_profile_history.py
+ M backend/app/domain/user_profile_skills.py
+ M backend/app/domain/user_profile_social_links.py
+ M backend/app/main.py
+ M backend/app/schemas/auth.py
+ M backend/app/schemas/candidate.py
+ M backend/app/schemas/catalog.py
+ M backend/app/schemas/common.py
+ M backend/app/schemas/document.py
+ M backend/app/schemas/match.py
+ M backend/app/schemas/message.py
+ M backend/app/schemas/referrer.py
+ M backend/app/schemas/safety.py
+ M backend/app/schemas/user.py
+ M backend/app/schemas/user_profile.py
+ M backend/docker-compose.yml
+ M backend/generated/openapi.json
+ M backend/requirements.txt
+ M backend/scripts/manage_data_seed_profile.py
+ M backend/scripts/start_api_container.sh
+ M backend/tests/conftest.py
+ M frontend/apps/mobile/app/index.tsx
+ M frontend/apps/mobile/package.json
+ M frontend/apps/mobile/src/hooks/useSwipeMatches.ts
+ M frontend/apps/mobile/src/types.ts
+ M frontend/apps/web/next-env.d.ts
+ M frontend/apps/web/next.config.mjs
+ M frontend/apps/web/package.json
+ M frontend/apps/web/src/app/components/FormField.tsx
+ M frontend/apps/web/src/app/components/PageScaffold.tsx
+ M frontend/apps/web/src/app/conversations/page.tsx
+ M frontend/apps/web/src/app/dashboard/page.tsx
+ M frontend/apps/web/src/app/globals.css
+ M frontend/apps/web/src/app/lib/utils.ts
+ M frontend/apps/web/src/app/login/page.tsx
+ M frontend/apps/web/src/app/matches/page.tsx
+ M frontend/apps/web/src/app/profile/page.tsx
+ M frontend/apps/web/src/app/types.ts
+ M frontend/apps/web/src/app/verify-email/page.tsx
+ M frontend/package.json
+ M frontend/packages/api/package.json
+ M frontend/packages/api/src/client.ts
+ M frontend/packages/api/src/types.ts
+ M frontend/packages/design-system/package.json
+ M frontend/packages/design-system/src/components/profile/MatchList.tsx
+ M frontend/packages/design-system/src/components/profile/ProfileSummary.tsx
+ M frontend/packages/design-system/src/i18n/translations.ts
+ M frontend/pnpm-lock.yaml
+ M openapi/package.json
+ M openapi/server.js
+?? .foundry/
+?? AGENTS.md
+?? acceptance/
+?? backend/.python-version
+?? backend/alembic.ini
+?? backend/app/api/security_boundary.py
+?? backend/app/db/migrations/env.py
+?? backend/app/db/migrations/script.py.mako
+?? backend/app/db/migrations/versions/
+?? backend/app/domain/account_privacy.py
+?? backend/app/domain/interaction_policy.py
+?? backend/app/domain/introductions.py
+?? backend/app/domain/retention.py
+?? backend/app/integrations/local_email.py
+?? backend/app/schemas/account_privacy.py
+?? backend/generated/coverage.json
+?? backend/generated/refactor_scan_20260311.md
+?? backend/openapi_new.yaml
+?? backend/preprompt
+?? backend/requirements.lock
+?? backend/scripts/backup_database.py
+?? backend/scripts/migrate_database.py
+?? backend/scripts/retain_data.py
+?? backend/test_results
+?? backend/tests/test_mvp_j01.py
+?? backend/tests/test_mvp_j02.py
+?? backend/tests/test_mvp_j02_privacy.py
+?? backend/tests/test_mvp_j03_operations.py
+?? backend/tests/test_mvp_j03_security.py
+?? backend/tmp_prompt
+?? docs/
+?? feedback/
+?? frontend/apps/web/src/app/components/AccountPrivacy.tsx
+?? frontend/apps/web/src/app/components/JobPostEditor.tsx
+?? frontend/apps/web/src/app/components/SearchSetup.tsx
+?? frontend/apps/web/src/app/lib/account-privacy.ts
+?? frontend/apps/web/src/app/lib/introduction.ts
+?? frontend/apps/web/src/app/lib/navigation.ts
+?? frontend/apps/web/tests/
+?? frontend/packages/api/generate.mjs
+?? frontend/packages/api/src/generated.ts
+?? next_propmpt
+?? tools/
+?? "unchanged. Venture and coordination records were updated"

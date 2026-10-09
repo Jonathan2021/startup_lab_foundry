@@ -1,0 +1,1 @@
+Wrote OpenAPI schema to /tmp/mvp-readiness-20261008-r1faj3o6/coopain/backend/generated/openapi.json

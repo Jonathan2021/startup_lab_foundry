@@ -1,0 +1,120 @@
+[
+  {
+    "label": "export",
+    "argv": [
+      "uv",
+      "export",
+      "--frozen",
+      "--no-dev",
+      "--no-editable",
+      "--no-emit-project",
+      "--format",
+      "requirements-txt",
+      "--output-file",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/requirements.txt"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/volley-coach",
+    "exit": 0,
+    "elapsed_seconds": 0.026,
+    "log": "volley-coach-wheel-export.txt"
+  },
+  {
+    "label": "venv",
+    "argv": [
+      "uv",
+      "venv",
+      "--python",
+      "3.13",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/env"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.023,
+    "log": "volley-coach-wheel-venv.txt"
+  },
+  {
+    "label": "dependencies",
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/env/bin/python",
+      "--require-hashes",
+      "--no-deps",
+      "-r",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/requirements.txt"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.987,
+    "log": "volley-coach-wheel-dependencies.txt"
+  },
+  {
+    "label": "install",
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/env/bin/python",
+      "--no-deps",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/volley-coach/dist/volley_coach-0.1.1-py3-none-any.whl"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.042,
+    "log": "volley-coach-wheel-install.txt"
+  },
+  {
+    "label": "independence",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/env/bin/python",
+      "-c",
+      "import importlib.util; assert importlib.util.find_spec(\"startup_foundry\") is None; print(\"Foundry not installed\")"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.02,
+    "log": "volley-coach-wheel-independence.txt"
+  },
+  {
+    "label": "migrate",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/env/bin/volley-coach",
+      "migrate"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/outside",
+    "exit": 0,
+    "elapsed_seconds": 5.69,
+    "log": "volley-coach-wheel-migrate.txt"
+  },
+  {
+    "label": "backup",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/env/bin/volley-coach",
+      "backup",
+      "--output",
+      ".local/backup.db"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.662,
+    "log": "volley-coach-wheel-backup.txt"
+  },
+  {
+    "label": "restore",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/env/bin/volley-coach",
+      "restore",
+      "--input",
+      ".local/backup.db",
+      "--output",
+      ".local/restored.dev.db"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-volley-coach/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.441,
+    "log": "volley-coach-wheel-restore.txt"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "changed_since_context": false,
+      "digest": "67d7106aa32ae9a2e57164475ee5717231eee5e632ebc694c3d3e5af53dbc4cb",
+      "id": "e2cfb27c-87bc-43db-b077-e068daa093d2",
+      "summary": "Volley Coach v0.1.1: fresh migration/demo, Ruff/strict types, 37 core and 4 browser tests, independent locked wheel HTTP/migration/backup/restore pass. No new runtime defect; current release/developer docs and committed CI delivery remain."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "0f7509173d38da12fcd3a970e04db3f86d4923e55066a49f3f85bb978fa2e5ea",
+      "id": "ee4270f9-ef4f-476f-8228-b92e38144b7e",
+      "summary": "Verified local agent contract/bridge 2026-10-07.2 across seven repositories with exact helper hashes. Independent installed-wheel public handoff/retry/resume/feedback and backup/restore passed. Four completed MVPs pass fresh scoped acceptance and browser checks; Coopain current backend has 171 passes but J03 remains unfinished, Ride Options remains active at R05. Six verification/continuation handoffs are linked to four ready follow-up tasks and two preserved claims. Feedback triage and all evidence are in docs/inquiry/mvp-review-2026-10-07/REPORT.md. Useful Foundry behavior: incomplete-coverage acceptance was refused and reconciled; no additional blocking defect observed."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "99b7f40272dda0517058ba707ed05410efebf4455531abe9bc422fc47d86b286",
+      "id": "ee62d0e4-fcf0-4650-aef3-2ab429609af6",
+      "summary": "[Dogfood/positive] Upgraded O07 ownership and evidence coverage were explicit before private delivery."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "c98acbd7afcb5ece7133a2bfa598002100fb389e7905923a8eb9bf17bb756060",
+      "id": "f27cd4fa-55ca-4283-a333-f1f877e99876",
+      "summary": "[Dogfood/positive] Sequential J01\u2013J05 coordination retains completion evidence and unresolved launch facts separately."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "906380671cad879f3ead960351cae45cc356c5c6b1ce9ad40d9580ca10c3ed9f",
+      "id": "f6742d1d-c97a-446a-a457-d2cb7bd410c4",
+      "summary": "[Dogfood/friction] Accepted superseding result leaves earlier result listed as needs_reconciliation in resume"
+    }
+  ],
+  "next_offset": null,
+  "total": 55
+}

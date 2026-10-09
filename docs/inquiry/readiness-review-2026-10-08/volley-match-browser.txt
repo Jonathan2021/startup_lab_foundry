@@ -1,0 +1,3 @@
+uv run python tests/browser/replay.py
+{"viewport": 1280, "flow": "create/invite/join/three matches/opponent confirm/correct first/history/restart", "passed": true, "console_errors": []}
+{"viewport": 390, "flow": "create/invite/join/three matches/opponent confirm/correct first/history/restart", "passed": true, "console_errors": []}

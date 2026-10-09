@@ -1,0 +1,2 @@
+uv run volley-coach migrate
+{"status": "ok", "operation": "migrate"}

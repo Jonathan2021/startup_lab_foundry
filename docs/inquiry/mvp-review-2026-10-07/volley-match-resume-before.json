@@ -1,0 +1,229 @@
+{
+  "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+  "map_revision_id": "bb1c8860-169c-512d-bb1e-bb948569c98c",
+  "work": [],
+  "current_review": {
+    "author": "implementer-volley-match-20261007-1639",
+    "created_at": "2026-10-07T15:35:31.804638+00:00",
+    "decision_id": "26189716-88b5-46b3-a4a0-2ce2324771d7",
+    "disposition": "pursue",
+    "id": "51cb94a6-aca0-4cff-96e1-ed9a135b311e",
+    "investigation_stage": "solution_validation",
+    "next_action": "Local MVP complete; arrange two voluntary sessions and approve an exact deployment separately.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Reviewed local implementation against current-package acceptance and exact check output.",
+    "reviewed_at": "2026-10-07T15:35:31.804615+00:00",
+    "revision": 11,
+    "source_artifact_id": "422d3418-f022-5d5e-8abe-8a7d51959107",
+    "updated_at": "2026-10-07T15:35:31.804639+00:00",
+    "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+  },
+  "results": [
+    {
+      "id": "422d3418-f022-5d5e-8abe-8a7d51959107",
+      "work_id": "437b8fae-1494-4571-8994-aa3c4d155374",
+      "context_id": "9b984287-d055-5609-a7b9-0160b5e00cd3",
+      "state": "accept",
+      "digest": "932f9d1cef645844a934d7d9b8a30eccf207071ad8a9da650d113bd94579800d",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "V05 local MVP 0.1.0 delivered: export/password-confirmed deletion, encrypted idempotent retries, security/rate limits, four migrations, backup/recovery and pilot/deployment documents. Ruff/strict mypy and 41 tests pass on SQLite and PostgreSQL; Chromium 1280/390px keyboard flow/restart passes. Fresh source locked install/migrate/seed/check/serve and standalone wheel pass. Synthetic loopback demo runs on 8001; no sends, hosting, real trial, commit or push.",
+      "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "437b8fae-1494-4571-8994-aa3c4d155374",
+          "decision_id": "26189716-88b5-46b3-a4a0-2ce2324771d7",
+          "evidence_ids": [
+            "042811bd-0efa-4549-a2d3-937c43ecef58"
+          ],
+          "map_revision_id": "bb1c8860-169c-512d-bb1e-bb948569c98c",
+          "next_work_id": null,
+          "review_id": "51cb94a6-aca0-4cff-96e1-ed9a135b311e",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "ddd211a78e1341ba93c5621ab0dcc1c5d4f176f2209967aff14ca8a1f898c35a",
+        "resolution": "accept",
+        "result_digest": "932f9d1cef645844a934d7d9b8a30eccf207071ad8a9da650d113bd94579800d",
+        "result_id": "422d3418-f022-5d5e-8abe-8a7d51959107"
+      }
+    },
+    {
+      "id": "ff9f6753-3fc5-5c33-a6d7-d7b343c5c5b1",
+      "work_id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+      "context_id": "46644ba2-ec7e-5ab6-8848-e92c0c84db99",
+      "state": "accept",
+      "digest": "614e7b689f59d8e74725d4e26a02de3fce53c4d27ec766794510aab9d0ebfb64",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "V04 French mobile Jinja/HTMX flows and pool-scoped chart; make check passes 30 tests. Real Chromium desktop/390px keyboard flow passes create/invite/join/three confirmations/correct first/history/restart, no overflow or console errors. Screenshots visually reviewed; v04-check-6.txt and v04-browser-keyboard.txt.",
+      "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+          "decision_id": "aca65c15-4e8c-4f1b-a6a3-d6c1bce15ff7",
+          "evidence_ids": [
+            "bc88ea28-4c51-4536-ac96-78b6ed4d5b57"
+          ],
+          "map_revision_id": "3041bc49-d470-5be1-95e8-db4e29cfe2c1",
+          "next_work_id": "437b8fae-1494-4571-8994-aa3c4d155374",
+          "review_id": "4432a330-550a-4099-b292-4eac08d96c61",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "4a4aa64101690dfbb39c8b05888c48e362448cd0f807d50a2a6ad1c994457dee",
+        "resolution": "accept",
+        "result_digest": "614e7b689f59d8e74725d4e26a02de3fce53c4d27ec766794510aab9d0ebfb64",
+        "result_id": "ff9f6753-3fc5-5c33-a6d7-d7b343c5c5b1"
+      }
+    },
+    {
+      "id": "eeda4abf-f385-59f3-93a7-5d1f0bedf6ef",
+      "work_id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+      "context_id": "6b355ac0-c8eb-58e3-a3b7-c5728c465d49",
+      "state": "accept",
+      "digest": "978e592010d5db6d3dd81688def19626ab1669543d3ce25e5819ec8a5a81c7e8",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "V03 validated scores, two-side confirmation, audited disputes/corrections/voids, idempotent atomic Elo and immutable chronological pool replays; lint/types and 27 tests pass.",
+      "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+          "decision_id": "d6c412ad-dbd9-4672-b419-be42aae0b44b",
+          "evidence_ids": [
+            "59769d1f-6830-4026-92b0-6a6d9cf24241"
+          ],
+          "map_revision_id": "cd0860f9-d709-50a3-81e8-c53b4db583b8",
+          "next_work_id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+          "review_id": "923a068f-328b-4281-a9e9-75b045d218d1",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "d288146e016ddf344b95ef039762942144554c1edbfdcb12fd25369a090417f6",
+        "resolution": "accept",
+        "result_digest": "978e592010d5db6d3dd81688def19626ab1669543d3ce25e5819ec8a5a81c7e8",
+        "result_id": "eeda4abf-f385-59f3-93a7-5d1f0bedf6ef"
+      }
+    },
+    {
+      "id": "2ccdbc24-8d5f-5cda-98b5-50bc8e9127f8",
+      "work_id": "0ed146e4-6459-4745-a484-c32d2651842a",
+      "context_id": "8106fa32-fd3f-5014-b86c-59035d96ea39",
+      "state": "accept",
+      "digest": "d8a47eb5c6cddeaf7868891e5d1f071f6945e97d44990ac84aac630969689236",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "V02 capacity-safe sessions, guest slots and immutable equal-team roster snapshots; lint/types and seven tests pass.",
+      "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "0ed146e4-6459-4745-a484-c32d2651842a",
+          "decision_id": "f7478904-3971-4552-9547-66fb2193fa87",
+          "evidence_ids": [
+            "10aa1084-c112-4870-8195-0075c45fc7d6"
+          ],
+          "map_revision_id": "532594ef-c587-5233-976a-b200f0fce35a",
+          "next_work_id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+          "review_id": "fb6511c2-1ad2-44a0-bb0a-79e36433bc06",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "d5f40597004dcc07e08bb2fbe027274aea55a102b4fb2621d1f722e9bed66ad8",
+        "resolution": "accept",
+        "result_digest": "d8a47eb5c6cddeaf7868891e5d1f071f6945e97d44990ac84aac630969689236",
+        "result_id": "2ccdbc24-8d5f-5cda-98b5-50bc8e9127f8"
+      }
+    },
+    {
+      "id": "a85c86aa-e97e-5023-b25a-f47358f45a23",
+      "work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+      "context_id": "c3b37210-0f6e-583c-8908-322b9381db06",
+      "state": "accept",
+      "digest": "8f29d6bbc3fb931f45cfd2c2936c45b5fff9a7bf91944f4eff17cd055c177c31",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "V01 runnable authenticated private group shell; lint, strict types and five synthetic unit/integration tests passed.",
+      "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+          "decision_id": "56ebca3a-0e12-4f22-a69d-85faf163a734",
+          "evidence_ids": [
+            "a7486406-8e93-43b8-95a1-564406eca3d9"
+          ],
+          "map_revision_id": "72b637bb-9c7b-5819-a941-4a3be82189c4",
+          "next_work_id": "0ed146e4-6459-4745-a484-c32d2651842a",
+          "review_id": "75c0d1c8-5997-4610-b15e-f62a90a48810",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "3b8f1168d3349ae3ba8fc15eaffe4f8b4a1d1d46a28698712a95be080602fb71",
+        "resolution": "accept",
+        "result_digest": "8f29d6bbc3fb931f45cfd2c2936c45b5fff9a7bf91944f4eff17cd055c177c31",
+        "result_id": "a85c86aa-e97e-5023-b25a-f47358f45a23"
+      }
+    },
+    {
+      "id": "873f1800-de00-577c-89aa-f4638b667fbc",
+      "work_id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+      "context_id": "1359f0e5-3729-5454-a01e-5ba96a5775c7",
+      "state": "accept",
+      "digest": "5182f147d15f9ef512044b9c776d2cf34dd3a998af6fb8884f3e0727063ab761",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "GO for a private friends-group MVP. One implementation combines the user-facing P023/P103 jobs; P103 is the canonical build workspace. Preserve P023 and the historical pending fusion proposal as lineage, not another implementation queue. Public matchmaking, court booking and automated tournaments follow demonstrated group reuse.",
+      "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+          "decision_id": "a38e9141-b5be-4e52-99fb-b8cbd4f790f1",
+          "evidence_ids": [
+            "0cb2ab7f-9568-4cf3-a589-e92d6c0ac830"
+          ],
+          "map_revision_id": "6e5b0b6b-ba37-5cbd-b454-bf27a8ca6d47",
+          "next_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+          "review_id": "051eeac5-7baf-4029-9bc0-24491c703945",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "5b8d62b0043b82c45d7c5fc916259030626b247b37cf60f1abafb47b7735df9f",
+        "resolution": "accept",
+        "result_digest": "5182f147d15f9ef512044b9c776d2cf34dd3a998af6fb8884f3e0727063ab761",
+        "result_id": "873f1800-de00-577c-89aa-f4638b667fbc"
+      }
+    }
+  ],
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/volley-match-resume-before.json"
+}

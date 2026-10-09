@@ -1,0 +1,46 @@
+{
+  "coopain": {
+    "local_head": "f3a8c13e52adf620d89620a831d721caad50be28",
+    "remote_main": "f3a8c13e52adf620d89620a831d721caad50be28",
+    "ci": {
+      "conclusion": "success",
+      "headSha": "f3a8c13e52adf620d89620a831d721caad50be28",
+      "status": "completed",
+      "url": "https://github.com/Jonathan2021/coopain/actions/runs/37791874356"
+    },
+    "status": "?? backend/generated/refactor_scan_20260311.md\n?? backend/openapi_new.yaml\n?? backend/preprompt\n?? backend/test_results\n?? backend/tmp_prompt\n?? next_propmpt\n?? \"unchanged. Venture and coordination records were updated\"\n"
+  },
+  "crous-queue": {
+    "local_head": "699eebf63f8a70eff02b961ae0d541cc2a271741",
+    "remote_main": "699eebf63f8a70eff02b961ae0d541cc2a271741",
+    "ci": {
+      "conclusion": "success",
+      "headSha": "699eebf63f8a70eff02b961ae0d541cc2a271741",
+      "status": "completed",
+      "url": "https://github.com/Jonathan2021/crous-queue/actions/runs/37772856832"
+    },
+    "status": " M tools/foundry_agent.py\n?? docs/mvp/REMARKS_HANDOFF.md\n?? remarks\n"
+  },
+  "ride-options": {
+    "local_head": "c08c438ba8d0be723bdd922b9522eeb6f283b93a",
+    "remote_main": "c08c438ba8d0be723bdd922b9522eeb6f283b93a",
+    "ci": {
+      "conclusion": "success",
+      "headSha": "c08c438ba8d0be723bdd922b9522eeb6f283b93a",
+      "status": "completed",
+      "url": "https://github.com/Jonathan2021/ride-options/actions/runs/37764771577"
+    },
+    "status": " M tools/foundry_agent.py\n?? docs/mvp/REMARKS_HANDOFF.md\n?? remarks\n"
+  },
+  "volley-match": {
+    "local_head": "96e4ae94acc93a8c0c2ba7050bc46b322596dcae",
+    "remote_main": "96e4ae94acc93a8c0c2ba7050bc46b322596dcae",
+    "ci": {
+      "conclusion": "success",
+      "headSha": "96e4ae94acc93a8c0c2ba7050bc46b322596dcae",
+      "status": "completed",
+      "url": "https://github.com/Jonathan2021/volley-match/actions/runs/37762687240"
+    },
+    "status": " M tools/foundry_agent.py\n?? docs/mvp/REMARKS_HANDOFF.md\n?? remarks\n"
+  }
+}

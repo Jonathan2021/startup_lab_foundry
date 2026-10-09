@@ -1,0 +1,33 @@
+{
+  "id": "523341fe-58f1-584d-9f52-e44b3e841907",
+  "context_id": "523341fe-58f1-584d-9f52-e44b3e841907",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "actor": "coordinator-mvp-review-20261007",
+  "map_revision_id": "8e272430-8c63-5543-9383-1d47fbb0ab2a",
+  "review_revision": 9,
+  "work": {
+    "acceptance_criteria": "New red/green regressions cover offline discovery without store creation, branch constraints, exact full-map retrieval, same-owner recovery without a second claim, foreign-owner rejection and no automatic mutation retry; full Foundry checks remain green.",
+    "blocked_reason": null,
+    "budget_currency": "EUR",
+    "budget_limit": null,
+    "created_at": "2026-10-07T15:55:43.004262+00:00",
+    "decision_id": "ab5fa1d4-0ab6-4852-9056-41a6989647a9",
+    "description": "Implement database-independent public discovery, conditional branch schema, explicit focused-map coverage, bounded bridge diagnostics/timeouts and opt-in same-owner context recovery. Preserve stale, foreign-claim and missing-store guards.",
+    "desired_outcome": null,
+    "due_at": null,
+    "id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+    "kind": "execution",
+    "owner": "coordinator-mvp-review-20261007",
+    "parent_id": null,
+    "question": null,
+    "status": "in_progress",
+    "title": "F03: Improve public contracts and interrupted-agent recovery",
+    "updated_at": "2026-10-07T15:55:45.122469+00:00",
+    "version_id": 2,
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  },
+  "context_complete": true,
+  "markdown_bytes": 41365,
+  "map_coverage": null,
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/F02-next-context.json"
+}

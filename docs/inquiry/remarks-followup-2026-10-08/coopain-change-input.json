@@ -1,0 +1,13 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "request_key": "coopain-remarks-observation-20261008",
+  "summary": "Delivery mismatch resolved: canonical local main now matches already-pushed GitHub main f3a8c13e with exact-SHA green Actions37791874356.",
+  "details": "Original main aa382779 was stale/dirty. All172 MVP paths matched retained checkpoint d9f5466; none were newer unique source changes. Preserved24 unique local files and ignored environments/data, retained local private archive and recovery ref, then fast-forwarded canonical checkout. Tracked source is clean. Seven unrelated untracked files remain intentionally. No extra commit or push needed. No launch or real-user gate changed.",
+  "kind": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/coopain-reconciliation.json",
+    "https://github.com/Jonathan2021/coopain/actions/runs/37791874356"
+  ],
+  "epistemic_status": "observation"
+}

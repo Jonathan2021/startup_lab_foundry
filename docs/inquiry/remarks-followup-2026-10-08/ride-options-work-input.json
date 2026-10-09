@@ -1,0 +1,14 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "request_key": "ride-options-remarks-20261008",
+  "expected_head": "5de7fc7b-84a3-544a-bb58-fd621c4ad531",
+  "rationale": "The user explicitly requests a follow-up addressing their root remarks after the accepted second run; this does not reopen historical human-trial gates.",
+  "work": {
+    "title": "R08 \u2014 Visible route editing and reliable local engine from user remarks",
+    "description": "Implement R08 in docs/mvp/REMARKS_HANDOFF.md: immediate pins, unified ordered itinerary and real engine startup/recovery. Continue sequentially through R09\u2013R12 under the same user scope.",
+    "acceptance_criteria": "Map-click pins render before routing, one start/via/finish editor works, documented local GraphHopper startup produces a real route and recovers after stop; no fixture substitution for live readiness.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready"
+  }
+}

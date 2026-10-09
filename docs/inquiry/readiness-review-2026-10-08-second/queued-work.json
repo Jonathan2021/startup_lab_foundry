@@ -1,0 +1,77 @@
+{
+  "volley-coach": {
+    "id": "71764075-5c90-446c-9cb3-d3e6b65a3f9d",
+    "request_digest": "f755d0355a201b40cbf4e77fcbfefdfbe01a33159983306c1f5894ca74f556b8",
+    "work": {
+      "acceptance_criteria": "Fresh source checkout and installed wheel pass core/browser/setup/recovery checks; current developer/user/release docs are consistent; scoped private Git delivery and matching green CI only under explicit continuation authorization.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T10:57:58.121546+00:00",
+      "decision_id": null,
+      "description": "Read /home/jonathan/startup_lab/volley-coach/docs/mvp/READINESS_HANDOFF.md. Address current audit findings and finish local preparation; private Git/CI delivery depends on the explicit user continuation prompt.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "71764075-5c90-446c-9cb3-d3e6b65a3f9d",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "C07: Deliver the committed scheduling MVP with reproducible CI",
+      "updated_at": "2026-10-08T10:57:58.121550+00:00",
+      "version_id": 1,
+      "workspace_id": "9d0ed0f5-960b-4cd0-a52f-4176218a40e5"
+    }
+  },
+  "crous-queue": {
+    "id": "d608000e-df62-4005-a1fc-c74080e5f7e2",
+    "request_digest": "e80aa5581baa28df4abd3920fd36e3a52a6026573f03baa756320b2fd0627f8d",
+    "work": {
+      "acceptance_criteria": "Supported distribution contract is explicit and executable: source kit verified, standalone wheel fixed or accurately excluded; locked clean setup/core/browser/offline/recovery CI and current docs; scoped private Git delivery only under explicit continuation authorization.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T10:58:00.385386+00:00",
+      "decision_id": null,
+      "description": "Read /home/jonathan/startup_lab/crous-queue/docs/mvp/READINESS_HANDOFF.md. Address current audit findings and finish local preparation; private Git/CI delivery depends on the explicit user continuation prompt.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "d608000e-df62-4005-a1fc-c74080e5f7e2",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "Q07: Clarify packaging and deliver the committed local MVP",
+      "updated_at": "2026-10-08T10:58:00.385390+00:00",
+      "version_id": 1,
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    }
+  },
+  "offer-check": {
+    "id": "ccb572cc-2da2-4604-8ce1-dbf7af1db90a",
+    "request_digest": "d2f66ef6a6dd45da05f47e1842f3f40bfe44ee08a14190441f83ebeb0431881f",
+    "work": {
+      "acceptance_criteria": "Ruff no-cache succeeds without untracked empty directories; current core/browser/standalone wheel/recovery/rehearsal checks pass; code/user/docs/evidence portable; scoped private Git delivery and exact-SHA green CI only when explicitly authorized.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T10:58:02.556359+00:00",
+      "decision_id": null,
+      "description": "Read /home/jonathan/startup_lab/offer-check/docs/mvp/READINESS_HANDOFF.md. Address current audit findings and finish local preparation; private Git/CI delivery depends on the explicit user continuation prompt.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "ccb572cc-2da2-4604-8ce1-dbf7af1db90a",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "O07: Repair clean-checkout lint and deliver the committed quote-review MVP",
+      "updated_at": "2026-10-08T10:58:02.556363+00:00",
+      "version_id": 1,
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    }
+  }
+}

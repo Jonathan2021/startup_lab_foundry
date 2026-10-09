@@ -1,0 +1,2 @@
+uv run offer-check seed-demo
+SYNTHETIC identities ready. Private credentials: /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/offer-check/.local/demo-credentials.json

@@ -1,0 +1,21 @@
+{
+  "as_of_context": false,
+  "digest": "870e0188efbc171ba940c4819a1ebaf0815597a7451eba168590d6045ce1f148",
+  "id": "bd68973b-5035-4c25-9da2-69ac176333ae",
+  "instruction": "Prepare fresh context with this record before proposing dependent effects",
+  "kind": "evidence",
+  "record": {
+    "captured_at": "2026-10-08T11:48:23.412091+00:00",
+    "captured_by": "coopain-release-20261008-codex-j06",
+    "confidence": "low",
+    "created_at": "2026-10-08T11:48:23.412120+00:00",
+    "details": "{\"actor\": \"coopain-release-20261008-codex-j06\", \"actual\": \"Doctor bridge/contract2026-10-07.2 and helper hash match. Initial9unclassified records were fetched and included explicitly in complete context653ee7c3; progress preview has completed_work_id null and preserves human launch gates. No blocking Foundry defect observed.\", \"expected\": \"Claim only J06, select required prior evidence, preserve exact map/work/review pins, record a local checkpoint with complete_work false until final remote checks exist.\", \"id\": \"911546c0-8828-41dd-a85d-c7e8f134eeb7\", \"impact\": \"Can report genuine clean verification/private delivery while distinguishing unavailable included-capacity facts and absent exact-SHA CI from package completion.\", \"kind\": \"positive\", \"reproduction\": \"doctor/guide/resume/startJ06; fetch arrivals, prepare typed complete context; submit250-test local/private checkpoint with complete_work false; preview exact digest/versions and accept progress only.\", \"sources\": [\"document: .foundry/runs/j06/context.json\", \"document: .foundry/runs/j06/progress-preview.json\", \"document: /home/jonathan/startup_lab/coopain-readiness-20261008/docs/mvp/RELEASE_READINESS.md\"], \"suggestion\": \"Retain explicit coverage/pin/preview contracts and immutable feedback receipts; no new Foundry friction or defect to repair.\", \"summary\": \"Upgraded context/resolution contracts retain verified progress without falsely completing a CI-gated package.\", \"venture_id\": \"v-coopain\", \"workspace_id\": \"9197a72d-23a6-424d-9b00-03e5d4a366f6\"}\nEpistemic status: observation\nSources: document: feedback/911546c0-8828-41dd-a85d-c7e8f134eeb7.json\nRecord references: ",
+    "id": "bd68973b-5035-4c25-9da2-69ac176333ae",
+    "kind": "observation",
+    "origin_work_item_id": null,
+    "sources": [],
+    "summary": "[Dogfood/positive] Upgraded context/resolution contracts retain verified progress without falsely completing a CI-gated package.",
+    "updated_at": "2026-10-08T11:48:23.412121+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  }
+}

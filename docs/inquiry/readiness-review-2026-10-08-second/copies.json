@@ -1,0 +1,14 @@
+{
+  "volley-coach": {
+    "path": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/volley-coach",
+    "files": 363
+  },
+  "crous-queue": {
+    "path": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/crous-queue",
+    "files": 213
+  },
+  "offer-check": {
+    "path": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/offer-check",
+    "files": 126
+  }
+}

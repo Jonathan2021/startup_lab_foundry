@@ -1,0 +1,14 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "request_key": "remarks-followup-20261008",
+  "expected_head": "c2c89396-8b0a-5263-8b3e-68540bea62a1",
+  "rationale": "User requested Coopain delivery reconciliation, a feedback-backed Foundry update and handoffs for three root remarks files. Separate from historical discovery tasks.",
+  "work": {
+    "title": "Resolve Coopain checkout mismatch, improve resume history and hand off user remarks",
+    "description": "Follow docs/inquiry/remarks-followup-2026-10-08/PROTOCOL.md; preserve local work and immutable history.",
+    "acceptance_criteria": "Coopain local/remote state reconciled with backup; focused Foundry regression and required checks pass; all three remarks mapped into actionable handoffs with current bridge and queued work.",
+    "owner": "agent",
+    "kind": "execution",
+    "status": "ready"
+  }
+}

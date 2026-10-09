@@ -1,0 +1,75 @@
+{
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "map_revision_id": "e1461696-b989-5de5-9756-3281670e8e37",
+  "unreviewed_change_count": 0,
+  "work": [
+    {
+      "acceptance_criteria": "One observed workflow issue or confirmation; no fabricated time-saving claim",
+      "blocked_reason": "changed_context",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-04T10:19:18.909437+00:00",
+      "decision_id": null,
+      "description": null,
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "changed_context",
+        "Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      ],
+      "id": "handoff-foundry-next-r1",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Collect first operation feedback and run visual QA when browser is available",
+      "updated_at": "2026-10-07T11:23:34.747930+00:00",
+      "version_id": 2,
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    }
+  ],
+  "results": [
+    {
+      "id": "6bf67c4a-07eb-554d-b3bb-7a6a2f6ade32",
+      "state": "accept",
+      "work_id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+      "stale_reasons": []
+    },
+    {
+      "id": "a6ac4d32-3d56-5d0a-8367-d3cb96579998",
+      "state": "accept",
+      "work_id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+      "stale_reasons": []
+    },
+    {
+      "id": "a1984722-0b75-5db2-ac0d-2d3d63a448a2",
+      "state": "accept",
+      "work_id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+      "stale_reasons": []
+    },
+    {
+      "id": "4ad7af48-43a8-5bbe-aa49-944508cc49af",
+      "state": "accept",
+      "work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+      "stale_reasons": []
+    },
+    {
+      "id": "ea5f5c19-9b55-5493-ae15-7aec19472a98",
+      "state": "needs_reconciliation",
+      "work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+      "stale_reasons": [
+        "Decision map changed",
+        "Work version changed",
+        "Current review changed",
+        "New or changed evidence requires coverage review"
+      ]
+    },
+    {
+      "id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c",
+      "state": "accept",
+      "work_id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+      "stale_reasons": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "interface": "public CLI through subprocesses; no Foundry imports in client",
+  "python": "/tmp/foundry-upgrade-env-20261007/bin/python",
+  "scope": "isolated synthetic store",
+  "context_complete": true,
+  "context_bytes": 2420,
+  "result_id": "a18da059-349f-57b3-81ef-1d1a0f50fb73",
+  "feedback_evidence_id": "5464275d-609f-4808-b644-aa1e62fa962c",
+  "checks": [
+    "guide",
+    "schemas",
+    "claim",
+    "context",
+    "arrivals/fetch",
+    "submit",
+    "preview",
+    "accept/retry",
+    "fresh-process resume",
+    "feedback/retry"
+  ],
+  "limits": "Not an independent LLM or MCP host evaluation. No live ventures or paid execution."
+}

@@ -1,0 +1,32 @@
+Using Python 3.13.5 environment at: /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/env
+Resolved 29 packages in 632ms
+Installed 29 packages in 161ms
+ + alembic==1.20.0
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + anyio==4.15.1
+ + certifi==2026.7.22
+ + click==8.5.0
+ + defusedxml==0.7.1
+ + fastapi==0.142.2
+ + greenlet==3.5.6
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpx==0.28.1
+ + idna==3.20
+ + itsdangerous==2.2.0
+ + jinja2==3.1.6
+ + mako==1.4.3
+ + markupsafe==3.0.4
+ + opentelemetry-api==1.45.1
+ + psycopg==3.3.6
+ + psycopg-binary==3.3.6
+ + pydantic==2.13.5
+ + pydantic-core==2.46.5
+ + pydantic-settings==2.15.0
+ + python-dotenv==1.2.4
+ + sqlalchemy==2.0.54
+ + starlette==1.7.0
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4
+ + uvicorn==0.54.0

@@ -1,0 +1,13 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "request_key": "crous-queue-remarks-observation-20261008",
+  "summary": "User remarks authorize the next local product continuation; full scope and acceptance sequence retained in docs/mvp/REMARKS_HANDOFF.md.",
+  "details": "User-authored root remarks, attributed to the user and not independent market/physical-use evidence:\n- would be nice to be connected to the restaurant website to get opening hours, open today or not displayed inline.\n- even better would be to have a map that way you can see with colors around you which are crowded and which are not. dark red is crowded say, light green is no wait.\n- would be nice to be able to report things such as, no option grillage, vegetarian or normal left. No space to sit left. And other free text options.\n\nCoordinator handoff uses Foundry2026-10-08.1. Only the first task is ready; continue sequentially after acceptance, retaining historical human gates.",
+  "kind": "observation",
+  "confidence": "high",
+  "sources": [
+    "document: /home/jonathan/startup_lab/crous-queue/remarks",
+    "document: /home/jonathan/startup_lab/crous-queue/docs/mvp/REMARKS_HANDOFF.md"
+  ],
+  "epistemic_status": "observation"
+}

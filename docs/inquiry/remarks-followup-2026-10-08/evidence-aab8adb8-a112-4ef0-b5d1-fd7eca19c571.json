@@ -1,0 +1,21 @@
+{
+  "as_of_context": false,
+  "digest": "b51a2edc27900430bcfec3718eff0ea9353e34cc7c9007cbfc2192b61a05e209",
+  "id": "aab8adb8-a112-4ef0-b5d1-fd7eca19c571",
+  "instruction": "Prepare fresh context with this record before proposing dependent effects",
+  "kind": "evidence",
+  "record": {
+    "captured_at": "2026-10-08T11:43:24.330246+00:00",
+    "captured_by": "coach-release-20261008-c07-codex",
+    "confidence": "low",
+    "created_at": "2026-10-08T11:43:24.330268+00:00",
+    "details": "{\"actor\": \"coach-release-20261008-c07-codex\", \"actual\": \"Doctor matched bridge/contract 2026-10-07.2 and canonical hash. Eleven relevant arrivals were fetched; a fresh complete context pins work version 2, review revision 9 and the exact full map. Local clean Git clone/source/installed-wheel checks pass independently of Foundry. No Foundry defect or blocking friction observed.\", \"expected\": \"Verify the upgraded contract, own only C07, read all relevant evidence/full map, and complete private release verification without changing R006 trial approval.\", \"id\": \"fdee1018-07aa-4902-94af-da35b6060562\", \"impact\": \"Explicit evidence coverage, ownership and result review pins keep bounded release work separate from real participant/physical/public gates. No platform workaround required.\", \"kind\": \"positive\", \"reproduction\": \"From the source venture run doctor, agent guide, resume/start; inspect arrivals and fetch the eleven referenced evidence records, prepare complete context b6d456a0-e6d7-5c1e-b68b-679bf8ed0ea3, and read full saved map 16bc3a37-f502-5696-90c1-7eec1b3e8cf0.\", \"sources\": [\"document: evidence/C07/20261008-8afb23d0/doctor.txt\", \"document: evidence/C07/20261008-8afb23d0/context-complete.json\", \"document: docs/evidence/c07/clean-checkout-summary.json\"], \"suggestion\": \"Retain the current explicit coverage and immutable result-digest/review workflow.\", \"summary\": \"C07 context coverage and external release coordination preserve the held human gate.\", \"venture_id\": \"v-volley-coach\", \"workspace_id\": \"9d0ed0f5-960b-4cd0-a52f-4176218a40e5\"}\nEpistemic status: observation\nSources: document: feedback/fdee1018-07aa-4902-94af-da35b6060562.json\nRecord references: ",
+    "id": "aab8adb8-a112-4ef0-b5d1-fd7eca19c571",
+    "kind": "observation",
+    "origin_work_item_id": null,
+    "sources": [],
+    "summary": "[Dogfood/positive] C07 context coverage and external release coordination preserve the held human gate.",
+    "updated_at": "2026-10-08T11:43:24.330269+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "af9f98aa-3eec-5219-8fcd-4a7ad58f4ff3",
+  "context_id": "af9f98aa-3eec-5219-8fcd-4a7ad58f4ff3",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "actor": "coordinator-mvp-review-20261007",
+  "map_revision_id": "59c1fd4e-261d-5fae-bb79-20a282e5c98c",
+  "review_revision": 8,
+  "work": {
+    "acceptance_criteria": "Each report has an explicit accepted, deferred, duplicate or retained-positive disposition and a bounded work reference or reason.",
+    "blocked_reason": null,
+    "budget_currency": "EUR",
+    "budget_limit": null,
+    "created_at": "2026-10-07T15:55:13.332471+00:00",
+    "decision_id": "078f4901-0c40-4362-9ae0-768215584153",
+    "description": "Review all 22 Foundry feedback arrivals and classify concrete contract and recovery fixes with evidence.",
+    "desired_outcome": null,
+    "due_at": null,
+    "id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+    "kind": "execution",
+    "owner": "coordinator-mvp-review-20261007",
+    "parent_id": null,
+    "question": null,
+    "status": "in_progress",
+    "title": "F02: Triage observed agent friction",
+    "updated_at": "2026-10-07T15:55:15.604078+00:00",
+    "version_id": 2,
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  },
+  "context_complete": true,
+  "markdown_bytes": 40213,
+  "map_coverage": null,
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/F01-r2-next-context.json"
+}

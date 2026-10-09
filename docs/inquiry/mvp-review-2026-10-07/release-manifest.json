@@ -1,0 +1,95 @@
+{
+  "local_agent_contract": "2026-10-07.2",
+  "package_version": "0.0.1",
+  "published": false,
+  "source_sha256": {
+    "src/startup_foundry/workspace_console.py": "0d97e9e2515a163dc9b5742e6c035efe095d6bf54d87d5ccde15424294c34373",
+    "src/startup_foundry/projects.py": "ea6997a466247913e541d394dfa71668e3f10e24494969f64bbcb091a0e741d5",
+    "src/startup_foundry/decision_maps.py": "1ae76e2b76eb161b20945ad3eb33c67762c3e53e0cd8056d0f12e95a29210e95",
+    "src/startup_foundry/decision_commands.py": "0da9c013d81b20b02b61caa2267952982e8c50ee21144d76a03a2a6c132069e2",
+    "src/startup_foundry/steps.py": "3c8a81052d51b4a259f1d115b2eb0b742bd3d425f14f6c5068c11f3f747ae877",
+    "src/startup_foundry/reviews.py": "e1368728d6fbb0e2a0afa9d5dcc9a4439121f4e8f274ffed457486635dd196b4",
+    "src/startup_foundry/revamp_bootstrap.py": "ee3dc38b7bfe45195218475cefab910ab716c640ee85c00dd381638c3686c485",
+    "src/startup_foundry/workspace_history.py": "cfbac2e42add3e59c7bf90cb6aae09fcd57eca48579eb58863ea284cec128b1b",
+    "src/startup_foundry/venture_scoring.py": "8355b4a63afaabfb38661cb03583d10d42c96c4935fd78016a5fce8b2ddf7e99",
+    "src/startup_foundry/migrations.py": "5ab08da2ab9ce4f3574b610896ff49a142790200a704aa4119143bcc661cf610",
+    "src/startup_foundry/__init__.py": "2f17f092477ec353cf5591a6047cf417d69d811762d312181f6b488bc1b582ef",
+    "src/startup_foundry/__main__.py": "fb6dec101d509aad6a66271adaf770ebadf61b7f39e6d0a70779b6e1af95fad8",
+    "src/startup_foundry/application.py": "66bf994c8fc30aaada26e2b0408a6faca8bd79788194acba43423c162f8148c1",
+    "src/startup_foundry/console_commands.py": "eba383276cb1f8b597b873ff9f83c596d72340b587cb53e44840491c43f242be",
+    "src/startup_foundry/scoring.py": "89eb7f9c855a4990066bf8188ec70ae8dc97b30bd807f6eaa2d028a1bca9b4e4",
+    "src/startup_foundry/outreach.py": "5ea17e5d0d8187efbf3cb5c58de0ac350a20dbc73ef4fa965b4f9db1001cf0ab",
+    "src/startup_foundry/portfolio.py": "020d376ea3bd6125838011221170aaf3a9543d9bc63eaf67747b221311781a2a",
+    "src/startup_foundry/workspace_modules.py": "c4ae662dfccda0ad02a24e773e330968391a75185313bc65c3c24ba6bcbf3351",
+    "src/startup_foundry/views.py": "972a70822ca06660442963ab1208ea62c122fdfd25fb5c73a4092f0e19c59bbf",
+    "src/startup_foundry/revamp_commands.py": "1245918ddae9b8359e6f68b62773ce33a0e4eba0533a414f595fa8c8ca68e2e7",
+    "src/startup_foundry/cli.py": "c5ade9e0655599c1e11e7ce3108156bf95b8af4a252bf45edab792902288ab36",
+    "src/startup_foundry/decision_contracts.py": "27e7dee9b72d0c392341ba87ec44cb63aab6f540b491de30b71689e0e7db392d",
+    "src/startup_foundry/storage.py": "8e223fb4ae5e7ee85b4011b5e78f5d27a5fcfe29485e0687523d3e35bd7b35c3",
+    "src/startup_foundry/proposals.py": "35dfd868cc5506438806ad4d047e3d5de5a4cef2b6ff74328363e2488a3f9521",
+    "src/startup_foundry/manual_intake.py": "3bc6eebf60f0cd4aab03130e91616ab92f2770908dda02637695a17568e08e9c",
+    "src/startup_foundry/domain.py": "6617ff6e8ce24834fdd72d06646dbf0e13a7e50a18c5e509b21a4100ac29df9a",
+    "src/startup_foundry/human_inputs.py": "835392ade9b6bf9fc9ac1842a64ed50c8d736fc9eb15d8a145dc4d4283cf8701",
+    "src/startup_foundry/demo.py": "d7f5113c3f3ed96a2b6bfa2181d897b6a5b9ef1bd21794909301e1efe2f21bb7",
+    "src/startup_foundry/config.py": "fbd752f6a55d8ff49da6ad8a53bc8e58f6c5fc99914ad168e31d6fb337411dfa",
+    "src/startup_foundry/logging_config.py": "d4820d36cdca8ca3dec8776d258b05b707d22eb7ad71e805cff0d7a5dcd99d60",
+    "src/startup_foundry/decision_console.py": "ae52443824dcc84923aeb2979cbf8bcc7601129415b2176e932a1cdac2d581dd",
+    "src/startup_foundry/web.py": "8adb24a3371ce2cedbf066d7628f02cab50a64d4d8ac92d7a3daee7cc63e4421",
+    "src/startup_foundry/agent_handoffs.py": "5f262c25ebfd7f753d0b37c6580bfb884615be5684ff82265f0f5267584c5dde",
+    "src/startup_foundry/snapshots.py": "7c0b087ddafb29d20c94e34ce774a9620181ed9b49b44956ac2f8355d4be6886",
+    "src/startup_foundry/inputs.py": "c37ae71ec9efaf571edcf52cbb3ca62a8727fac901db6d2f46225d8849a960ea",
+    "src/startup_foundry/workspace_records.py": "cd4c7923724eadc339711bcc06b056877ef3fb91fdc7a5d24efce4391b681ed1",
+    "src/startup_foundry/repository.py": "f71b643dc4f41460ed181dafd65d6275bfa8efc64c42467f58e1712deb4c5cc2",
+    "src/startup_foundry/score_presentation.py": "e089d0451c83ee33abc4e4e4e5d0827a6832b72db303e998b43aa9522bbcbfe0",
+    "src/startup_foundry/workspace_navigation.py": "d7c7d893ad0b7f517a957d627183a11067323cd26230c311a0806c91cb6afd76",
+    "src/startup_foundry/errors.py": "b2f16ea0e3f6d0a111bb4597c0dd5771a8f562dcfe70a7bddb3e8271a98eee1e",
+    "scripts/agent-kit/foundry_agent.py": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f",
+    "scripts/agent-kit/contract_replay.py": "84f2cccc3d212400772b3f5ee09230905f42f7db2656965440eb0d4c4503cb07",
+    "tests/unit/test_agent_discovery.py": "abe3727ae6f2bbd18abc6c2edca47428578d70c4e18a5f275149f51520ecdaad",
+    "tests/unit/test_decision_loop.py": "8dd7d6610ae4ac6f10bc2f4b493276ae8576d1442b4f983f2b063b14dcd4182e",
+    "tests/acceptance/test_agent_kit.py": "f8b024d26dbc1f1be3a8d9bc35d679e8b28367101a9fb49116aabd6c176cd602"
+  },
+  "handoff_sha256": {
+    "offer-check": "96cd2f8b91fb99e5994eeb5622616b93fac76bb6d62aaaff80da1b58f4d33b75",
+    "volley-match": "83dc96534b5787bb76fb59789f8e798f2ade837bf851c35ffad4cd7dd8a21dba",
+    "crous-queue": "0df24ed9c2e8daa11558d54dca6ad4afa1766b6b56651aa73c6ce8952d2bfd6a",
+    "volley-coach": "43b01f2311b5ce81cc52a35b4a1c5ac4028b0081dc5034f5cb1165084c6c2321",
+    "coopain": "4050a75a7b49c4922018f0daf17d4aa9ceaf98dd596216a5e4b3f74408d20909",
+    "ride-options": "1c3a1c993cd589adfe28e74371736895370d3e940f3a32487cfcfba3ee447024"
+  },
+  "verification": {
+    "foundry_product": {
+      "passed": 152,
+      "skipped": 1,
+      "skip_reason": "PostgreSQL test requires explicit database URL"
+    },
+    "foundry_focused": 22,
+    "foundry_final_contract": 6,
+    "foundry_wheel_replay": "pass",
+    "foundry_wheel_recovery": "pass",
+    "offer_check": {
+      "backend": 52,
+      "browser": 3
+    },
+    "volley_match": {
+      "backend": 41,
+      "browser_viewports": [
+        1280,
+        390
+      ]
+    },
+    "crous_queue": {
+      "backend": 17,
+      "browser": 6
+    },
+    "volley_coach": {
+      "backend": 31,
+      "browser": 2
+    },
+    "coopain": {
+      "backend": 171,
+      "checkpoint": "J03 unaccepted"
+    },
+    "ride_options": "read-only active-work snapshot; fresh app suite not run"
+  }
+}

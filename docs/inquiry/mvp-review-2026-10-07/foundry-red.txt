@@ -1,0 +1,149 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+___________ test_static_discovery_never_initializes_storage[action0] ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-jonathan/pytest-310/test_static_discovery_never_in0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76e0973bbe10>
+capsys = <_pytest.capture.CaptureFixture object at 0x76e0972c86e0>
+action = ['guide']
+
+    @pytest.mark.parametrize("action", [["guide"], ["schema", "--name", "result"]])
+    def test_static_discovery_never_initializes_storage(tmp_path, monkeypatch, capsys, action):
+        def forbidden(*args, **kwargs):
+            raise AssertionError("Static discovery touched database configuration")
+    
+        monkeypatch.setattr(cli, "get_settings", forbidden)
+        store = tmp_path / "missing.db"
+>       assert cli.main(["--store", str(store), "agent", *action]) == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_agent_discovery.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/startup_foundry/cli.py:356: in main
+    settings = get_settings(arguments)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Namespace(store='/tmp/pytest-of-jonathan/pytest-310/test_static_discovery_never_in0/missing.db', debug=None, sql_echo=None, resource='agent', action='guide'),)
+kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError("Static discovery touched database configuration")
+E       AssertionError: Static discovery touched database configuration
+
+tests/unit/test_agent_discovery.py:20: AssertionError
+___________ test_static_discovery_never_initializes_storage[action1] ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-jonathan/pytest-310/test_static_discovery_never_in1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76e0973bbce0>
+capsys = <_pytest.capture.CaptureFixture object at 0x76e094fc6350>
+action = ['schema', '--name', 'result']
+
+    @pytest.mark.parametrize("action", [["guide"], ["schema", "--name", "result"]])
+    def test_static_discovery_never_initializes_storage(tmp_path, monkeypatch, capsys, action):
+        def forbidden(*args, **kwargs):
+            raise AssertionError("Static discovery touched database configuration")
+    
+        monkeypatch.setattr(cli, "get_settings", forbidden)
+        store = tmp_path / "missing.db"
+>       assert cli.main(["--store", str(store), "agent", *action]) == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/test_agent_discovery.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/startup_foundry/cli.py:356: in main
+    settings = get_settings(arguments)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (Namespace(store='/tmp/pytest-of-jonathan/pytest-310/test_static_discovery_never_in1/missing.db', debug=None, sql_echo=None, resource='agent', action='schema', name='result'),)
+kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError("Static discovery touched database configuration")
+E       AssertionError: Static discovery touched database configuration
+
+tests/unit/test_agent_discovery.py:20: AssertionError
+_____________ test_public_branch_schema_exposes_runtime_condition ______________
+
+    def test_public_branch_schema_exposes_runtime_condition():
+        schema = ResultInput.model_json_schema()["$defs"]["MapEdge"]
+>       branch = schema["allOf"][0]
+                 ^^^^^^^^^^^^^^^
+E       KeyError: 'allOf'
+
+tests/unit/test_agent_discovery.py:35: KeyError
+__________ test_same_owner_recovery_prepares_without_claim_or_release __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76e094fbf0b0>
+
+    def test_same_owner_recovery_prepares_without_claim_or_release(monkeypatch):
+        start = runpy.run_path(str(KIT))["start_work"]
+        work = {"id": "w", "version_id": 4, "owner": "same", "status": "in_progress"}
+        state = {"work": [work], "current_review": {"next_work_item_id": "w"}, "map_revision_id": "m"}
+        monkeypatch.setitem(start.__globals__, "invoke", lambda *args: state)
+        calls = []
+    
+        def prepare(config, payload, *args):
+            calls.append((payload, args))
+            assert args[:2] == ("handoff", "prepare")
+            raise RuntimeError("Context exceeds budget")
+    
+        monkeypatch.setitem(start.__globals__, "submit", prepare)
+        with pytest.raises(RuntimeError, match="budget"):
+>           start({"workspace_id": "s"}, "same", None, 24000, resume_owned=True)
+E           TypeError: start_work() got an unexpected keyword argument 'resume_owned'
+
+tests/unit/test_agent_discovery.py:61: TypeError
+_________ test_bridge_timeout_is_bounded_and_does_not_retry_mutations __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76e09505d9d0>
+
+    def test_bridge_timeout_is_bounded_and_does_not_retry_mutations(monkeypatch):
+        invoke = runpy.run_path(str(KIT))["invoke"]
+        monkeypatch.setitem(invoke.__globals__, "cli_argv", lambda *args, **kwargs: ["foundry"])
+        calls = []
+    
+        def timeout(argv, **kwargs):
+            calls.append(kwargs["timeout"])
+            raise subprocess.TimeoutExpired(argv, kwargs["timeout"])
+    
+        monkeypatch.setattr(subprocess, "run", timeout)
+        with pytest.raises(RuntimeError, match="outcome may be unknown"):
+>           invoke({"timeout_seconds": 90}, "result", "resolve")
+
+tests/unit/test_agent_discovery.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/agent-kit/foundry_agent.py:57: in invoke
+    completed = subprocess.run(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+argv = ['foundry', 'result', 'resolve']
+kwargs = {'capture_output': True, 'text': True, 'timeout': 60}
+
+    def timeout(argv, **kwargs):
+        calls.append(kwargs["timeout"])
+>       raise subprocess.TimeoutExpired(argv, kwargs["timeout"])
+E       subprocess.TimeoutExpired: Command '['foundry', 'result', 'resolve']' timed out after 60 seconds
+
+tests/unit/test_agent_discovery.py:76: TimeoutExpired
+_____________ test_context_counterevidence_new_arrivals_and_budget _____________
+
+loop = (sessionmaker(class_='Session', bind=Engine(sqlite:////tmp/pytest-of-jonathan/pytest-310/test_context_counterevidence_...98cb6c0-f582-47cc-9566-fe7a9bbaa0e4', <startup_foundry.decision_maps.DecisionMapService object at 0x76e09506af90>, ...)
+
+    def test_context_counterevidence_new_arrivals_and_budget(loop):
+        f, venture, _, eid, _, _, handoffs, _, _ = loop
+        first = context(loop)
+>       coverage = first["map_coverage"]
+                   ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'map_coverage'
+
+tests/unit/test_decision_loop.py:192: KeyError
+=========================== short test summary info ============================
+FAILED tests/unit/test_agent_discovery.py::test_static_discovery_never_initializes_storage[action0]
+FAILED tests/unit/test_agent_discovery.py::test_static_discovery_never_initializes_storage[action1]
+FAILED tests/unit/test_agent_discovery.py::test_public_branch_schema_exposes_runtime_condition
+FAILED tests/unit/test_agent_discovery.py::test_same_owner_recovery_prepares_without_claim_or_release
+FAILED tests/unit/test_agent_discovery.py::test_bridge_timeout_is_bounded_and_does_not_retry_mutations
+FAILED tests/unit/test_decision_loop.py::test_context_counterevidence_new_arrivals_and_budget
+6 failed, 12 deselected in 1.09s

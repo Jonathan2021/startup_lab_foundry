@@ -1,0 +1,1376 @@
+{
+  "current_review": {
+    "author": "volley-release-20261008-v07-c4e2",
+    "created_at": "2026-10-08T10:25:13.746467+00:00",
+    "decision_id": "0e3f5ac1-858f-4718-b789-8a81fcec93d3",
+    "disposition": "pursue",
+    "id": "74a8bf19-6367-47b7-a6b1-2fa8f154f465",
+    "investigation_stage": "solution_validation",
+    "next_action": "Await willing voluntary group, retention owner and selected private access; prepare the exact payload for separate approval before any real two-session trial. Stop feature expansion until real reuse evidence.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Actual CLI red specifications reproduced the independent audit. A persisted-UTC boundary repair retains aware-time validation and database safety. Current source/wheel and scoped private Git delivery satisfy bounded technical readiness while preserving historical evidence and real-trial gates.",
+    "reviewed_at": "2026-10-08T10:25:13.746447+00:00",
+    "revision": 13,
+    "source_artifact_id": "04c97a7c-9a17-53e9-bc71-b0a4d30d2937",
+    "updated_at": "2026-10-08T10:25:13.746468+00:00",
+    "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+  },
+  "map_revision_id": "41f2ab0f-e19a-5992-ba7a-58dc4f635d87",
+  "markdown": "# Resume Volley Match\n\nWorkspace: 417476af-0674-4aba-9022-843957dc3ca2\nObjective: A private volleyball group can invite friends, join a session, record and confirm a match, and see trustworthy match and Elo history.\nMap revision: 41f2ab0f-e19a-5992-ba7a-58dc4f635d87\nCurrent next action: Await willing voluntary group, retention owner and selected private access; prepare the exact payload for separate approval before any real two-session trial. Stop feature expansion until real reuse evidence.\n\n- 4ca1f74c-7bf9-4e5c-8461-41e9a8af1c15: V08 \u2014 Usable session and match interface from user remarks [ready; owner agent; version 1]\nUnreviewed evidence changes: 1\n- 35757b4c-44bc-4f08-879b-40ff3f6e4df4: User remarks authorize the next local product continuation; full scope and acceptance sequence retained in docs/mvp/REMARKS_HANDOFF.md.\n\nUse foundry agent guide for the local workflow and schemas.\nPrepare: foundry handoff prepare --workspace-id 417476af-0674-4aba-9022-843957dc3ca2 --work-id WORK_ID --actor YOUR_AGENT --format markdown\nNo worker was started. External consequences require separate exact approval.\n",
+  "needs_review": {},
+  "results": [
+    {
+      "context_complete": true,
+      "context_id": "4c6860ad-37c3-58a8-a8e7-eae49c5f6095",
+      "deferral": null,
+      "digest": "35c0eba4af0246f535a09b9d3521fb22f985e066d9d97b74178e8448980da07f",
+      "id": "04c97a7c-9a17-53e9-bc71-b0a4d30d2937",
+      "proposal": {
+        "actor": "volley-release-20261008-v07-c4e2",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "4c6860ad-37c3-58a8-a8e7-eae49c5f6095",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Private Jonathan2021/volley-match main at 96e4ae94acc93a8c0c2ba7050bc46b322596dcae. Initial commit a852089f89f561c6e1956c99e1ca60784a3b455c followed by scoped 96e4ae9 manifest/Node24 action repair; no force push. Matching final run https://github.com/Jonathan2021/volley-match/actions/runs/37762687240 completed success: core-and-release (lint/types/59 tests/current source quickstart/installed wheel), chromium (1280/390 plus six-account organizer/deletion), postgres (explicit16 prerequisites, 59 tests/migrations/pg_dump/pg_restore). Downloaded CI manifest equals local current manifest and both actual archive/wheel bytes hash exactly. Source content SHA256 04ea8f5e7cfcbae1b741b8e8d69d1a670d3bf0e772676dde9abc73d70e867f3d; artifacts [{\"path\": \"dist/volley_match-0.1.1.tar.gz\", \"bytes\": 128186, \"sha256\": \"5e8567ae9e0e929b46b35bc377926b0c4c5c6dbef52b81d761434d0183203134\"}, {\"path\": \"dist/volley_match-0.1.1-py3-none-any.whl\", \"bytes\": 75562, \"sha256\": \"e661ef620002e7e6382f95d364f03b2bb0e706ad957275f03059211b405a11d5\"}]. Local clean source smoke also passed. First HTTPS attempt refused OAuth workflow scope; existing SSH succeeded without new access. Repository privacy/main and final remote SHA checked; clean tracked tree. V05 artifact hashes verified unchanged. Final Git/CI references retained here to avoid self-referential commit loops.",
+            "epistemic_status": "observation",
+            "kind": "external_outcome",
+            "refs": [],
+            "sources": [
+              "https://github.com/Jonathan2021/volley-match/actions/runs/37762687240",
+              "https://github.com/Jonathan2021/volley-match/commit/96e4ae94acc93a8c0c2ba7050bc46b322596dcae",
+              "document: docs/evidence/v07-20261008-c4e2/release-manifest-current.json",
+              "document: .foundry/runs/v07-final-ci-receipt.json",
+              "document: .foundry/runs/v07-artifact-comparison.json",
+              "document: docs/mvp/RELEASE_READINESS.md"
+            ],
+            "summary": "Private main delivery and all GitHub Actions jobs are green on the final pushed source SHA; source/wheel hashes match downloaded CI artifacts."
+          },
+          {
+            "confidence": "high",
+            "details": "Initial specifications: 2 failed/3 passed, exact MatchInput offset failure. Persisted session time now passes through common.utc; public datetime inputs remain aware-only. Seed engine disposed in finally. Five green regressions invoke actual migrate/seed on a fresh SQLite development DB, verify seven users/two groups/six seats/fixed rated 3v3/UTC/login/restart, nonempty/nondevelopment refusals and injected rollback. Original audit and red logs preserved.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/v07-20261008-c4e2/seed-specification-red.txt",
+              "document: docs/evidence/v07-20261008-c4e2/seed-regressions-green.txt",
+              "document: tests/integration/test_demo_seed.py",
+              "document: docs/adr/0005-release-seed-and-ci.md"
+            ],
+            "summary": "Fresh SQLite CLI seed failure reproduced and repaired without weakening contracts."
+          },
+          {
+            "confidence": "high",
+            "details": "Ruff and strict mypy: success, 25 source modules. Core and fresh source bundle: 59 tests passed, no skips. Isolated PostgreSQL 17 suite: 59 tests plus pg_dump/pg_restore new-database head/data probe passed. Chromium 1280/390 core create/invite/join/three opposing confirmations/correct/history/restart passes without page errors/overflow. Mobile history/desktop session screenshots visually inspected. Six-account organizer rehearsal passes guest seat/claim, revocation/capacity, dispute/correction, deletion and restart, no unexpected errors. Real observation rows remain empty.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/v07-20261008-c4e2/core-check.txt",
+              "document: docs/evidence/v07-20261008-c4e2/postgres.txt",
+              "document: docs/evidence/v07-20261008-c4e2/chromium.txt",
+              "document: docs/evidence/v07-20261008-c4e2/organizer.txt",
+              "document: docs/evidence/v07-20261008-c4e2/release-smoke-current.txt",
+              "document: docs/pilot/observation_packet.json"
+            ],
+            "summary": "Current technical checks passed across SQLite, Chromium and PostgreSQL with synthetic users."
+          },
+          {
+            "confidence": "high",
+            "details": "Current source bundle performs locked install, migrations 0001\u20130004, synthetic seed, full checks, real HTTP health/login. New wheel venv outside checkout installs pinned runtime dependencies, migrates head 0004 and serves templates/CSS/forms.js/HTMX. Notices and dependency inventory included; source/wheel metadata declares proprietary source while retaining third-party licensing. V05 artifacts and all old evidence untouched. Build manifest now covers auto-included .gitignore after first CI comparison exposed a post-build change; prior manifests/CI artifact preserved. No runtime Foundry imports.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/v07-20261008-c4e2/release-smoke-current.txt",
+              "document: docs/evidence/v07-20261008-c4e2/build-current.txt",
+              "document: docs/evidence/v07-20261008-c4e2/release-manifest-current.json",
+              "document: THIRD_PARTY.md",
+              "document: docs/evidence/v07-20261008-c4e2/dependencies.json"
+            ],
+            "summary": "Release 0.1.1 installs and serves from clean source and a standalone wheel outside the checkout."
+          },
+          {
+            "confidence": "high",
+            "details": "README single Python3.13/uv quickstart links the ten-step organizer/participant walkthrough, configuration/migrations/backup/new-destination restore/seven-day expiry/restart/troubleshooting/no-reset/Elo limits. DEVELOPMENT describes actual modules/APIs and revision/retry/member/guest/deletion/datetime invariants. All ADRs preserved. Reviewed 140-file initial delivery plus scoped follow-up; synthetic-only current logs/notices/manifests committed, config/outboxes/raw historical screenshots/DB/env/build outputs kept local; no unrelated deletion/reset. Raw pytest whitespace and existing minified CSS whitespace intentionally preserved. Current Git content pins complete committed source.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/RELEASE_READINESS.md",
+              "document: README.md",
+              "document: docs/RELEASE.md",
+              "document: docs/DEVELOPMENT.md",
+              "document: .gitignore"
+            ],
+            "summary": "Operator/developer documentation and scoped source delivery inventory are complete."
+          },
+          {
+            "confidence": "high",
+            "details": "Canonical helper SHA256 1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f and manifest match. Unique V07 claim work version 2, saved complete context 4c6860ad-37c3-58a8-a8e7-eae49c5f6095 after all 13 arrivals fetched/selected; exact map 4c8814c0-285e-5806-9ca4-2d22b524514a, 17 nodes/20 edges; review rev12; final arrivals empty. No blocking defect/timeouts. Positive feedback 904787ae-94c9-4905-b83b-4b9c72fc382f retained and delivered to v-foundry. Proposed map preserves all historical/conditional nodes and returns focus to real voluntary trial question; no ready feature continuation.",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/v07-20261008-c4e2/DOCTOR.md",
+              "document: docs/evidence/v07-20261008-c4e2/ACCEPTANCE.md",
+              "document: feedback/904787ae-94c9-4905-b83b-4b9c72fc382f.json",
+              "document: feedback/904787ae-94c9-4905-b83b-4b9c72fc382f.receipt.json"
+            ],
+            "summary": "Foundry 2026-10-07.2 ownership and complete saved-context workflow worked."
+          }
+        ],
+        "limits": "Synthetic technical evidence only; no adoption/physical advice. No public release/deployment, real sends/provider accounts, paid services or budget changes. Existing application databases were never fixtures. No force-push or credential scope expansion. Account billing API unreadable with existing token; standard bounded Actions only within explicitly authorized included allowance. Operational config/raw historical evidence/build outputs remain preserved locally and excluded from Git.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "research",
+              "target": "goal"
+            },
+            {
+              "condition": "Repeated voluntary use and a specific next unmet need are observed",
+              "kind": "may_lead_to",
+              "outcome": "supported",
+              "source": "pilot",
+              "target": "expand"
+            },
+            {
+              "condition": "Users do not reuse the core or existing tools solve it as well",
+              "kind": "may_lead_to",
+              "outcome": "weakened",
+              "source": "pilot",
+              "target": "revise"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V01",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V02",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V02",
+              "target": "V01"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V03",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V03",
+              "target": "V02"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V04",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V04",
+              "target": "V03"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V05",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V05",
+              "target": "V04"
+            },
+            {
+              "condition": "",
+              "kind": "informs",
+              "outcome": null,
+              "source": "V05",
+              "target": "pilot"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_73728cfb-2d51-4592-92b9-20426fc59371",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_0ed146e4-6459-4745-a484-c32d2651842a",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_437b8fae-1494-4571-8994-aa3c4d155374",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_f0c29b5f-c9cf-4956-91da-f6431db8156b",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_3f666496-6be6-4d47-a304-7bc541f76795",
+              "target": "goal"
+            }
+          ],
+          "focus": [
+            "pilot"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "A private volleyball group can invite friends, join a session, record and confirm a match, and see trustworthy match and Elo history."
+            },
+            {
+              "detail": "",
+              "id": "research",
+              "kind": "record",
+              "ref": {
+                "id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+                "kind": "work"
+              },
+              "title": "MVP scope and evidence review"
+            },
+            {
+              "detail": "V01\u2013V07 technical MVP and current private source delivery completed. Real observation rows remain empty; await willing group, retention owner and selected private access with separate exact deployment/send authorization. Do not expand features until voluntary reuse evidence. See docs/mvp/RELEASE_READINESS.md.",
+              "id": "pilot",
+              "kind": "question",
+              "ref": null,
+              "title": "Does the completed MVP help in repeated real use?"
+            },
+            {
+              "detail": "",
+              "id": "expand",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Extend only the demonstrated useful workflow"
+            },
+            {
+              "detail": "",
+              "id": "revise",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Narrow or use an existing tool if reuse/benefit fails"
+            },
+            {
+              "detail": "Create package/config/migrations, local synthetic seed and CI; implement user/group membership and revocable invites. Add fixtures for Alice/Bob/outsider, expired invite and two groups. Keep email adapter fake locally.\nAcceptance: Database survives restart; outsider read/write is denied; expired/revoked invite cannot join; CI lint/types/unit/integration passes.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V01: Bootstrap a runnable authenticated group shell"
+            },
+            {
+              "detail": "Implement capacity-safe join/leave with DB uniqueness and concurrent last-seat handling, organizer roster selection and friendly/rated modes. Retain roster snapshot after membership edits.\nAcceptance: Two concurrent last-seat joins yield one winner; duplicate joins do not double count; organizer cannot assign an outsider; 3v3 roster persists after rename.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V02: Sessions, attendance and fixed match rosters"
+            },
+            {
+              "detail": "Implement rules/state machine above before UI polish. Add transaction/idempotency tests, dispute/correction UI and full pool replay. Store algorithm version and immutable rating history.\nAcceptance: Equal 1000-rated 3v3 winners become 1012 and losers 988; no pending/guest/friendly/disputed match changes Elo; replay after correcting first of three matches matches fresh calculation; double confirmation applies once.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V03: Confirmed scores and replayable Elo"
+            },
+            {
+              "detail": "Build join, record, confirm, match history and player chart flows. French default with plain language; show privacy and provisional ratings. Synthetic six-friend demo only.\nAcceptance: Real browser at desktop/390px completes create -> invite -> join -> score -> opponent confirm -> history; restart preserves all; backdated corrections update chart and explain why.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V04: Mobile match and progression experience"
+            },
+            {
+              "detail": "Export/delete data, backup/restore, rate limits, configuration checks, auth threat review and deployment checklist. Prepare an unsent invite draft and two-session observation sheet.\nAcceptance: Clean checkout can install, migrate, seed and serve; acceptance suite green; no real user data in repo. Before exposing beyond loopback: HTTPS/auth/secrets/retention review and explicit deployment approval.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V05: Release and private pilot"
+            },
+            {
+              "detail": "",
+              "id": "work_73728cfb-2d51-4592-92b9-20426fc59371",
+              "kind": "record",
+              "ref": {
+                "id": "73728cfb-2d51-4592-92b9-20426fc59371",
+                "kind": "work"
+              },
+              "title": "V01: Bootstrap a runnable authenticated group shell"
+            },
+            {
+              "detail": "",
+              "id": "work_0ed146e4-6459-4745-a484-c32d2651842a",
+              "kind": "record",
+              "ref": {
+                "id": "0ed146e4-6459-4745-a484-c32d2651842a",
+                "kind": "work"
+              },
+              "title": "V02: Sessions, attendance and fixed match rosters"
+            },
+            {
+              "detail": "",
+              "id": "work_1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+              "kind": "record",
+              "ref": {
+                "id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+                "kind": "work"
+              },
+              "title": "V03: Confirmed scores and replayable Elo"
+            },
+            {
+              "detail": "",
+              "id": "work_fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+              "kind": "record",
+              "ref": {
+                "id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+                "kind": "work"
+              },
+              "title": "V04: Mobile match and progression experience"
+            },
+            {
+              "detail": "",
+              "id": "work_437b8fae-1494-4571-8994-aa3c4d155374",
+              "kind": "record",
+              "ref": {
+                "id": "437b8fae-1494-4571-8994-aa3c4d155374",
+                "kind": "work"
+              },
+              "title": "V05: Release and private pilot"
+            },
+            {
+              "detail": "",
+              "id": "work_f0c29b5f-c9cf-4956-91da-f6431db8156b",
+              "kind": "record",
+              "ref": {
+                "id": "f0c29b5f-c9cf-4956-91da-f6431db8156b",
+                "kind": "work"
+              },
+              "title": "V06: Audit organizer workflow and prepare two private-session trials"
+            },
+            {
+              "detail": "",
+              "id": "work_3f666496-6be6-4d47-a304-7bc541f76795",
+              "kind": "record",
+              "ref": {
+                "id": "3f666496-6be6-4d47-a304-7bc541f76795",
+                "kind": "work"
+              },
+              "title": "V07: Repair clean demo setup and verify the committed MVP"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Await willing voluntary group, retention owner and selected private access; prepare the exact payload for separate approval before any real two-session trial. Stop feature expansion until real reuse evidence.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "Actual CLI red specifications reproduced the independent audit. A persisted-UTC boundary repair retains aware-time validation and database safety. Current source/wheel and scoped private Git delivery satisfy bounded technical readiness while preserving historical evidence and real-trial gates.",
+        "reconciliation_rationale": null,
+        "request_key": "v07-c4e2-final-release-result",
+        "revisit_trigger": null,
+        "summary": "V07: repaired fresh SQLite demo setup and delivered the current private MVP 0.1.1 with verified release and CI. Final commit 96e4ae94acc93a8c0c2ba7050bc46b322596dcae, matching green CI run 37762687240; both downloaded CI artifacts match current local hashes.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "volley-release-20261008-v07-c4e2",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "All 13 arrivals fetched/selected; complete context, exact 17-node/20-edge full map read; latest arrivals empty. Synthetic evidence does not validate real adoption.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "3f666496-6be6-4d47-a304-7bc541f76795",
+          "decision_id": "0e3f5ac1-858f-4718-b789-8a81fcec93d3",
+          "evidence_ids": [
+            "5fe7caf0-0e22-41ac-9adb-794f78ebcdc5",
+            "bbc64184-da91-41f5-888d-24102a13bdb5",
+            "f8af7ae0-9cf1-4e6d-b0d3-9e417636ec23",
+            "77a919d7-fc40-4ea0-b78a-08f44b7b599a",
+            "7bd7df8c-1504-4cd2-9ddf-51ca9ddf082f",
+            "177991ed-76b0-4a98-abb9-4aa9d03c43e9"
+          ],
+          "map_revision_id": "588838de-bbc0-5e05-9f19-54b1a045ee21",
+          "next_work_id": null,
+          "review_id": "74a8bf19-6367-47b7-a6b1-2fa8f154f465",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed actual red/green seed CLI evidence, source diffs/manifest, local 59-case/core/browser/PostgreSQL/release checks, private final main SHA and matching all-green GitHub run 37762687240. Downloaded source/wheel hashes exactly match current manifest. All relevant arrivals and full map reviewed; technical scope complete, original real trial/deployment gates preserved. User explicitly authorized scoped private commits/push and included Actions. Accept exact saved context/digest; no feature continuation.",
+        "request_digest": "d4d97ec92820c4d85814b6bad03584e0bc7ba06fc335a602bf4be85edaeb60d8",
+        "resolution": "accept",
+        "result_digest": "35c0eba4af0246f535a09b9d3521fb22f985e066d9d97b74178e8448980da07f",
+        "result_id": "04c97a7c-9a17-53e9-bc71-b0a4d30d2937"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "3f666496-6be6-4d47-a304-7bc541f76795",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    },
+    {
+      "context_complete": true,
+      "context_id": "bd65167a-8ee3-54f7-94b2-16417c8442ae",
+      "deferral": null,
+      "digest": "4b833709ffa29d17aefb93d9d79473a6179b82c8db552bb875ba69a398fb3cca",
+      "id": "d66f428d-0fba-5cc1-abba-2991f4ee7991",
+      "proposal": {
+        "actor": "reviewer-volley-match-20261007-v06-9d5c",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "bd65167a-8ee3-54f7-94b2-16417c8442ae",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Baseline make check exit 0: 41 passed; baseline Chromium 1280/390px exit 0. New red specifications: six failed plus one duplicate-seat failed; browser DELETE reproduction HTTP 422. Final make check exit 0: Ruff, strict mypy and 54 passed; final PostgreSQL exit 0: 54 passed plus isolated pg_dump/pg_restore probe. Final Chromium 1280/390px exit 0 with keyboard core flow, correction/chart/restart, no overflow/page errors. Repairs cover claimed seat aliases and lock order, own-side confirmation messaging, cached player-name redaction, audit-attributable replay reason redaction, and JSON DELETE without credentials in URL. All old logs/images retained.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/REVIEW_NEXT.md",
+              "document: docs/evidence/v06-20261007-9d5c/defects-before.md",
+              "document: docs/evidence/v06-20261007-9d5c/final-check.command.json",
+              "document: docs/evidence/v06-20261007-9d5c/final-postgres.command.json",
+              "document: docs/evidence/v06-20261007-9d5c/final-browser.command.json"
+            ],
+            "summary": "Fresh and post-repair verification passed; five real local defects were reproduced and repaired."
+          },
+          {
+            "confidence": "high",
+            "details": "Organizer rehearsal exit 0 at 390px. S01: 6 eligible, 7 attempts, 1 capacity error, 6 unique completions; 4 offered score revisions, 3 opposing confirmations, 1 disputed. S02: 6 eligible/attempts/completions, 1 offered/confirmed revision. Synthetic reuse eligible 6, responses 0; no reuse is inferred. Account UI deletion succeeded with no URL query credentials, guest/native roster display identities anonymized, numeric history preserved and access still revoked after restart. Screenshots of claimed seat, awaited side, chart and deletion were visually reviewed. Blank packet CLI exit 0: synthetic=false, not_observed, all real rows empty.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/v06-20261007-9d5c/organizer-green/counters.json",
+              "document: docs/evidence/v06-20261007-9d5c/organizer-green.command.json",
+              "document: docs/pilot/observation_packet.json",
+              "document: docs/pilot/MEASUREMENTS.md",
+              "document: docs/pilot/ORGANIZER_CHECKLIST.md",
+              "document: docs/pilot/PARTICIPANT_INSTRUCTIONS.md"
+            ],
+            "summary": "Six separate synthetic browser accounts completed two organizer sessions; packet denominators retain expected failures and nonresponse."
+          },
+          {
+            "confidence": "high",
+            "details": "Runtime/test/script source tree SHA256 dd315bd8f0cf7240a64239b8578a24df75105606a905740157271235072279f7. Per-file before/after SHA256 is in changed-file-hashes.json. Changed paths: scripts/pilot_packet.py, src/volley_match/api/ui.py, src/volley_match/pilot_observations.py, src/volley_match/services/accounts.py, src/volley_match/services/sessions.py, src/volley_match/templates/base.html, src/volley_match/templates/match.html, src/volley_match/templates/session.html, tests/browser/organizer_rehearsal.py, tests/integration/test_v06_repairs.py, tests/unit/test_pilot_observations.py, README.md, docs/mvp/REVIEW_NEXT.md, docs/adr/0004-organizer-rehearsal-repairs.md, docs/pilot/ORGANIZER_CHECKLIST.md, docs/pilot/PARTICIPANT_INSTRUCTIONS.md, docs/pilot/MEASUREMENTS.md, docs/pilot/observation_packet.json, docs/pilot/observation.schema.json, docs/pilot/DECISIONS.md, docs/pilot/OBSERVATION_SHEET.md, /home/jonathan/startup_lab/foundry/requests/2026-10-07-volley-match-R006-pilot-access.md, /home/jonathan/startup_lab/foundry/requests/INBOX.md. No schema migration was needed. No Git HEAD existed and no commit/push was performed; initial untracked planning/application state preserved.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/v06-20261007-9d5c/changed-file-hashes.json",
+              "document: docs/adr/0004-organizer-rehearsal-repairs.md"
+            ],
+            "summary": "Changed-file hashes and exact test evidence are retained; no app/runtime Foundry coupling was introduced."
+          },
+          {
+            "confidence": "medium",
+            "details": "Prepared a new follow-up file under the existing R006 lineage; appended a link to Foundry requests/INBOX.md with existing bytes/inline replies preserved, as verified by request-append.json. No existing response was replaced and no invitation sent. The full 16-node map and conditional may_lead_to edges remain retained; focus returns to the pilot question without ready continuation.",
+            "epistemic_status": "unknown",
+            "kind": "document",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/requests/2026-10-07-volley-match-R006-pilot-access.md",
+              "document: docs/evidence/v06-20261007-9d5c/request-append.json",
+              "document: docs/pilot/DECISIONS.md"
+            ],
+            "summary": "Real usefulness remains unobserved; R006 follow-up requests the next group/access decision without expanding the build queue."
+          },
+          {
+            "confidence": "high",
+            "details": "Doctor canonical hash and manifest match. Eight arrivals fetched and selected with explicit 50KB context budget; saved full map read, context complete, final arrivals empty. Feedback UUID aca76648-ac5d-4bd2-9e46-e484ef263cf0; no timeouts or blocking defects. Larger explicit evidence budget was expected, not silent truncation. New IDs will be taken only from final resolution receipt.",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: feedback/aca76648-ac5d-4bd2-9e46-e484ef263cf0.json",
+              "document: feedback/aca76648-ac5d-4bd2-9e46-e484ef263cf0.receipt.json",
+              "document: docs/evidence/v06-20261007-9d5c/doctor.txt"
+            ],
+            "summary": "Foundry 2026-10-07.2 doctor/coverage workflow worked; positive feedback retained and delivered."
+          }
+        ],
+        "limits": "Synthetic technical evidence only. Scripted intervention flags and confirmation durations do not establish real unaided usefulness or voluntary reuse. No real rows, sends, intake, provider accounts, paid services, remote/public deployment, commit or push. Existing application databases were never fixtures. V05 wheel/artifacts preserved as historical evidence, not relabeled as a rebuilt V06 release. No blocking Foundry defect.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "research",
+              "target": "goal"
+            },
+            {
+              "condition": "Repeated voluntary use and a specific next unmet need are observed",
+              "kind": "may_lead_to",
+              "outcome": "supported",
+              "source": "pilot",
+              "target": "expand"
+            },
+            {
+              "condition": "Users do not reuse the core or existing tools solve it as well",
+              "kind": "may_lead_to",
+              "outcome": "weakened",
+              "source": "pilot",
+              "target": "revise"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V01",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V02",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V02",
+              "target": "V01"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V03",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V03",
+              "target": "V02"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V04",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V04",
+              "target": "V03"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "V05",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "V05",
+              "target": "V04"
+            },
+            {
+              "condition": "",
+              "kind": "informs",
+              "outcome": null,
+              "source": "V05",
+              "target": "pilot"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_73728cfb-2d51-4592-92b9-20426fc59371",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_0ed146e4-6459-4745-a484-c32d2651842a",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_437b8fae-1494-4571-8994-aa3c4d155374",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_f0c29b5f-c9cf-4956-91da-f6431db8156b",
+              "target": "goal"
+            }
+          ],
+          "focus": [
+            "pilot"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "A private volleyball group can invite friends, join a session, record and confirm a match, and see trustworthy match and Elo history."
+            },
+            {
+              "detail": "",
+              "id": "research",
+              "kind": "record",
+              "ref": {
+                "id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+                "kind": "work"
+              },
+              "title": "MVP scope and evidence review"
+            },
+            {
+              "detail": "V06 local review and two-session synthetic organizer rehearsal pass. Real observation rows remain empty. Await R006 willing group/private access selection and exact separate authorization; no expansion or ready execution until that gate. See docs/mvp/REVIEW_NEXT.md and docs/pilot/MEASUREMENTS.md.",
+              "id": "pilot",
+              "kind": "question",
+              "ref": null,
+              "title": "Does the completed MVP help in repeated real use?"
+            },
+            {
+              "detail": "",
+              "id": "expand",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Extend only the demonstrated useful workflow"
+            },
+            {
+              "detail": "",
+              "id": "revise",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Narrow or use an existing tool if reuse/benefit fails"
+            },
+            {
+              "detail": "Create package/config/migrations, local synthetic seed and CI; implement user/group membership and revocable invites. Add fixtures for Alice/Bob/outsider, expired invite and two groups. Keep email adapter fake locally.\nAcceptance: Database survives restart; outsider read/write is denied; expired/revoked invite cannot join; CI lint/types/unit/integration passes.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V01: Bootstrap a runnable authenticated group shell"
+            },
+            {
+              "detail": "Implement capacity-safe join/leave with DB uniqueness and concurrent last-seat handling, organizer roster selection and friendly/rated modes. Retain roster snapshot after membership edits.\nAcceptance: Two concurrent last-seat joins yield one winner; duplicate joins do not double count; organizer cannot assign an outsider; 3v3 roster persists after rename.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V02: Sessions, attendance and fixed match rosters"
+            },
+            {
+              "detail": "Implement rules/state machine above before UI polish. Add transaction/idempotency tests, dispute/correction UI and full pool replay. Store algorithm version and immutable rating history.\nAcceptance: Equal 1000-rated 3v3 winners become 1012 and losers 988; no pending/guest/friendly/disputed match changes Elo; replay after correcting first of three matches matches fresh calculation; double confirmation applies once.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V03: Confirmed scores and replayable Elo"
+            },
+            {
+              "detail": "Build join, record, confirm, match history and player chart flows. French default with plain language; show privacy and provisional ratings. Synthetic six-friend demo only.\nAcceptance: Real browser at desktop/390px completes create -> invite -> join -> score -> opponent confirm -> history; restart preserves all; backdated corrections update chart and explain why.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V04: Mobile match and progression experience"
+            },
+            {
+              "detail": "Export/delete data, backup/restore, rate limits, configuration checks, auth threat review and deployment checklist. Prepare an unsent invite draft and two-session observation sheet.\nAcceptance: Clean checkout can install, migrate, seed and serve; acceptance suite green; no real user data in repo. Before exposing beyond loopback: HTTPS/auth/secrets/retention review and explicit deployment approval.\nProposed package: materialize only after prerequisite acceptance.",
+              "id": "V05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "V05: Release and private pilot"
+            },
+            {
+              "detail": "",
+              "id": "work_73728cfb-2d51-4592-92b9-20426fc59371",
+              "kind": "record",
+              "ref": {
+                "id": "73728cfb-2d51-4592-92b9-20426fc59371",
+                "kind": "work"
+              },
+              "title": "V01: Bootstrap a runnable authenticated group shell"
+            },
+            {
+              "detail": "",
+              "id": "work_0ed146e4-6459-4745-a484-c32d2651842a",
+              "kind": "record",
+              "ref": {
+                "id": "0ed146e4-6459-4745-a484-c32d2651842a",
+                "kind": "work"
+              },
+              "title": "V02: Sessions, attendance and fixed match rosters"
+            },
+            {
+              "detail": "",
+              "id": "work_1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+              "kind": "record",
+              "ref": {
+                "id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+                "kind": "work"
+              },
+              "title": "V03: Confirmed scores and replayable Elo"
+            },
+            {
+              "detail": "",
+              "id": "work_fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+              "kind": "record",
+              "ref": {
+                "id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+                "kind": "work"
+              },
+              "title": "V04: Mobile match and progression experience"
+            },
+            {
+              "detail": "",
+              "id": "work_437b8fae-1494-4571-8994-aa3c4d155374",
+              "kind": "record",
+              "ref": {
+                "id": "437b8fae-1494-4571-8994-aa3c4d155374",
+                "kind": "work"
+              },
+              "title": "V05: Release and private pilot"
+            },
+            {
+              "detail": "",
+              "id": "work_f0c29b5f-c9cf-4956-91da-f6431db8156b",
+              "kind": "record",
+              "ref": {
+                "id": "f0c29b5f-c9cf-4956-91da-f6431db8156b",
+                "kind": "work"
+              },
+              "title": "V06: Audit organizer workflow and prepare two private-session trials"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Await R006 follow-up: willing private group, retention owner and selected access arrangement; prepare the exact payload for separate approval before a two-session real trial. Stop feature expansion until voluntary reuse evidence.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "Fresh baseline, red defect reproductions and post-repair core/browser/PostgreSQL checks support completing this bounded local package. Original MVP purpose and conditional expansion are unchanged; the next material gate needs real volunteers and approved private access.",
+        "reconciliation_rationale": null,
+        "request_key": "v06-9d5c-final-local-checkpoint",
+        "revisit_trigger": null,
+        "summary": "V06 completed: honestly verified the MVP, repaired five demonstrated organizer/deletion issues, and delivered a reproducible six-actor/two-session synthetic rehearsal plus an empty real observation packet.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "reviewer-volley-match-20261007-v06-9d5c",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Fetched all eight arrivals and prepared complete context bd65167a-8ee3-54f7-94b2-16417c8442ae; read exact full 16-node map and current source/files. Preserve conditional branches and distinguish baseline, repaired build, synthetic rehearsal and unobserved real use.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "f0c29b5f-c9cf-4956-91da-f6431db8156b",
+          "decision_id": "f0115460-a0df-40c5-a149-1791e2dabb73",
+          "evidence_ids": [
+            "54ada26b-b3fb-4271-9ab1-733a857721d4",
+            "1bf78cc8-d8ad-4eb7-bd75-8f5de2eb3138",
+            "fe96d7e1-466d-4225-92c1-55ed6e6ddde1",
+            "9e0cefe9-497b-4503-9d74-6db327635c26",
+            "c49cdda4-6abc-4751-b696-f2a7ed3294b4"
+          ],
+          "map_revision_id": "d5fa54f2-921c-5654-96d5-ebe2f9b9fa7b",
+          "next_work_id": null,
+          "review_id": "003b1f86-356d-4f2d-82a1-e6d64918e1ea",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed actual source repairs, red reproductions, exact fresh green commands and screenshots against both handoff parts. Local V06 acceptance passes; no external trial/deployment or strategy expansion is approved.",
+        "request_digest": "fa8ff538a7ca2f57e4bc9f24cf5657549d2daa58fa94d90f7f0c411892f6b311",
+        "resolution": "accept",
+        "result_digest": "4b833709ffa29d17aefb93d9d79473a6179b82c8db552bb875ba69a398fb3cca",
+        "result_id": "d66f428d-0fba-5cc1-abba-2991f4ee7991"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "f0c29b5f-c9cf-4956-91da-f6431db8156b",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    },
+    {
+      "context_complete": true,
+      "context_id": "9b984287-d055-5609-a7b9-0160b5e00cd3",
+      "deferral": null,
+      "digest": "932f9d1cef645844a934d7d9b8a30eccf207071ad8a9da650d113bd94579800d",
+      "id": "422d3418-f022-5d5e-8abe-8a7d51959107",
+      "proposal": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "9b984287-d055-5609-a7b9-0160b5e00cd3",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Evidence: docs/evidence/MVP_ACCEPTANCE.md. Dirty content SHA256: 54935851eb9c21a2158d93e5201f31caa641fd0181bf03ce4f3e0f24a0bcde8c. Changed-file inventory: .env.example, .foundry/project.json, .github/workflows/check.yml, .gitignore, AGENTS.md, Makefile, README.md, acceptance/cases.json, alembic.ini, alembic/env.py, alembic/versions/0001_groups.py, alembic/versions/0002_sessions.py, alembic/versions/0003_results.py, alembic/versions/0004_release.py, docs/IMPLEMENTATION_LOG.md, docs/RELEASE.md, docs/adr/0001-mvp-boundaries.md, docs/adr/0002-local-transactions-and-rating-history.md, docs/adr/0003-privacy-and-release.md, docs/evidence/MVP_ACCEPTANCE.md, docs/evidence/release-manifest.json, docs/evidence/v01-check-2.txt, docs/evidence/v01-check-3.txt, docs/evidence/v01-check-4.txt, docs/evidence/v01-check-5.txt, docs/evidence/v01-green.txt, docs/evidence/v01-install-final.txt, docs/evidence/v01-install.txt, docs/evidence/v01-lint-initial.txt, docs/evidence/v01-red.txt, docs/evidence/v02-check-1.txt, docs/evidence/v02-lint-initial.txt, docs/evidence/v02-red.txt, docs/evidence/v03-check-1.txt, docs/evidence/v03-check-2.txt, docs/evidence/v03-check-3.txt, docs/evidence/v03-check-4.txt, docs/evidence/v03-lint-2.txt, docs/evidence/v03-lint-3.txt, docs/evidence/v03-lint-4.txt, docs/evidence/v03-lint-initial.txt, docs/evidence/v03-red-2.txt, docs/evidence/v03-red.txt, docs/evidence/v04-browser-1.txt, docs/evidence/v04-browser-2.txt, docs/evidence/v04-browser-keyboard.txt, docs/evidence/v04-check-1.txt, docs/evidence/v04-check-2.txt, docs/evidence/v04-check-3.txt, docs/evidence/v04-check-4.txt, docs/evidence/v04-check-5.txt, docs/evidence/v04-check-6.txt, docs/evidence/v04-history-1280.png, docs/evidence/v04-history-390.png, docs/evidence/v04-keyboard-history-1280.png, docs/evidence/v04-keyboard-history-390.png, docs/evidence/v04-keyboard-match-1280.png, docs/evidence/v04-keyboard-match-390.png, docs/evidence/v04-keyboard-session-1280.png, docs/evidence/v04-keyboard-session-390.png, docs/evidence/v04-lint-2.txt, docs/evidence/v04-lint-3.txt, docs/evidence/v04-lint-4.txt, docs/evidence/v04-lint-initial.txt, docs/evidence/v04-match-1280.png, docs/evidence/v04-match-390.png, docs/evidence/v04-red.txt, docs/evidence/v04-session-1280.png, docs/evidence/v04-session-390.png, docs/evidence/v05-browser-1.txt, docs/evidence/v05-browser-2.txt, docs/evidence/v05-browser-release.txt, docs/evidence/v05-build-1.txt, docs/evidence/v05-build-2.txt, docs/evidence/v05-build-release.txt, docs/evidence/v05-check-1.txt, docs/evidence/v05-check-10.txt, docs/evidence/v05-check-2.txt, docs/evidence/v05-check-3.txt, docs/evidence/v05-check-4.txt, docs/evidence/v05-check-5.txt, docs/evidence/v05-check-6.txt, docs/evidence/v05-check-7.txt, docs/evidence/v05-check-8.txt, docs/evidence/v05-check-9.txt, docs/evidence/v05-check-complete.txt, docs/evidence/v05-check-release.txt, docs/evidence/v05-clean-release-1.txt, docs/evidence/v05-clean-release-2.txt, docs/evidence/v05-edge-lint.txt, docs/evidence/v05-encryption-install.txt, docs/evidence/v05-final-history-1280.png, docs/evidence/v05-final-history-390.png, docs/evidence/v05-final-match-1280.png, docs/evidence/v05-final-match-390.png, docs/evidence/v05-final-session-1280.png, docs/evidence/v05-final-session-390.png, docs/evidence/v05-history-1280.png, docs/evidence/v05-history-390.png, docs/evidence/v05-httpx2-install.txt, docs/evidence/v05-install-locked.txt, docs/evidence/v05-lint-2.txt, docs/evidence/v05-lint-3.txt, docs/evidence/v05-lint-4.txt, docs/evidence/v05-lint-5.txt, docs/evidence/v05-lint-6.txt, docs/evidence/v05-lint-7.txt, docs/evidence/v05-lint-8.txt, docs/evidence/v05-lint-complete.txt, docs/evidence/v05-lint-final.txt, docs/evidence/v05-lint-initial.txt, docs/evidence/v05-lint-release.txt, docs/evidence/v05-match-1280.png, docs/evidence/v05-match-390.png, docs/evidence/v05-postgres-1.txt, docs/evidence/v05-postgres-2.txt, docs/evidence/v05-postgres-release.txt, docs/evidence/v05-red.txt, docs/evidence/v05-release-history-1280.png, docs/evidence/v05-release-history-390.png, docs/evidence/v05-release-match-1280.png, docs/evidence/v05-release-match-390.png, docs/evidence/v05-release-session-1280.png, docs/evidence/v05-release-session-390.png, docs/evidence/v05-session-1280.png, docs/evidence/v05-session-390.png, docs/evidence/v05-smoke-lint.txt, docs/mvp/AGENT_HANDOFF.md, docs/mvp/ARCHITECTURE.md, docs/mvp/DECISION.md, docs/mvp/FIRST_TASK.md, docs/mvp/ROADMAP.md, docs/mvp/SOURCES.md, docs/mvp/spec.json, docs/pilot/DECISIONS.md, docs/pilot/INVITE_DRAFT.md, docs/pilot/OBSERVATION_SHEET.md, feedback/6c203df4-5a07-4936-be83-b5baa93e89e6.json, feedback/6c203df4-5a07-4936-be83-b5baa93e89e6.receipt.json, feedback/9d45f738-524a-4b26-adbd-24cfbb7476b5.json, feedback/9d45f738-524a-4b26-adbd-24cfbb7476b5.receipt.json, feedback/README.md, feedback/bdf0ec24-615a-4227-ba80-998fd80f36a4.json, feedback/bdf0ec24-615a-4227-ba80-998fd80f36a4.receipt.json, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.json, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.receipt.json, pyproject.toml, scripts/manage.py, scripts/recovery.py, scripts/seed_demo.py, scripts/smoke_release.py, scripts/test_postgres.py, src/volley_match/__init__.py, src/volley_match/api/__init__.py, src/volley_match/api/accounts.py, src/volley_match/api/app.py, src/volley_match/api/idempotency.py, src/volley_match/api/play.py, src/volley_match/api/results.py, src/volley_match/api/ui.py, src/volley_match/config.py, src/volley_match/contracts.py, src/volley_match/db.py, src/volley_match/models.py, src/volley_match/services/__init__.py, src/volley_match/services/accounts.py, src/volley_match/services/auth.py, src/volley_match/services/backup.py, src/volley_match/services/common.py, src/volley_match/services/groups.py, src/volley_match/services/limits.py, src/volley_match/services/matches.py, src/volley_match/services/ratings.py, src/volley_match/services/receipts.py, src/volley_match/services/scoring.py, src/volley_match/services/sessions.py, src/volley_match/static/app.css, src/volley_match/static/forms.js, src/volley_match/static/vendor/HTMX-LICENSE, src/volley_match/static/vendor/htmx.min.js, src/volley_match/templates/account.html, src/volley_match/templates/base.html, src/volley_match/templates/claim.html, src/volley_match/templates/group.html, src/volley_match/templates/guest_created.html, src/volley_match/templates/home.html, src/volley_match/templates/invite.html, src/volley_match/templates/invite_created.html, src/volley_match/templates/login.html, src/volley_match/templates/match.html, src/volley_match/templates/player.html, src/volley_match/templates/session.html, tests/browser/replay.py, tests/conftest.py, tests/integration/test_release_edges.py, tests/integration/test_v01.py, tests/integration/test_v02.py, tests/integration/test_v03.py, tests/integration/test_v04.py, tests/integration/test_v05.py, tests/unit/test_backup.py, tests/unit/test_safety.py, tests/unit/test_scoring.py, tools/foundry_agent.py, uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/volley-match/docs/evidence/MVP_ACCEPTANCE.md",
+              "document: docs/mvp/ROADMAP.md"
+            ],
+            "summary": "V05 local MVP 0.1.0 delivered: export/password-confirmed deletion, encrypted idempotent retries, security/rate limits, four migrations, backup/recovery and pilot/deployment documents. Ruff/strict mypy and 41 tests pass on SQLite and PostgreSQL; Chromium 1280/390px keyboard flow/restart passes. Fresh source locked install/migrate/seed/check/serve and standalone wheel pass. Synthetic loopback demo runs on 8001; no sends, hosting, real trial, commit or push."
+          }
+        ],
+        "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Local MVP complete; arrange two voluntary sessions and approve an exact deployment separately.",
+        "next_work": null,
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation against current-package acceptance and exact check output.",
+        "reconciliation_rationale": null,
+        "request_key": "implementer-volley-match-20261007-1639-V05",
+        "revisit_trigger": null,
+        "summary": "V05 local MVP 0.1.0 delivered: export/password-confirmed deletion, encrypted idempotent retries, security/rate limits, four migrations, backup/recovery and pilot/deployment documents. Ruff/strict mypy and 41 tests pass on SQLite and PostgreSQL; Chromium 1280/390px keyboard flow/restart passes. Fresh source locked install/migrate/seed/check/serve and standalone wheel pass. Synthetic loopback demo runs on 8001; no sends, hosting, real trial, commit or push.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "437b8fae-1494-4571-8994-aa3c4d155374",
+          "decision_id": "26189716-88b5-46b3-a4a0-2ce2324771d7",
+          "evidence_ids": [
+            "042811bd-0efa-4549-a2d3-937c43ecef58"
+          ],
+          "map_revision_id": "bb1c8860-169c-512d-bb1e-bb948569c98c",
+          "next_work_id": null,
+          "review_id": "51cb94a6-aca0-4cff-96e1-ed9a135b311e",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "ddd211a78e1341ba93c5621ab0dcc1c5d4f176f2209967aff14ca8a1f898c35a",
+        "resolution": "accept",
+        "result_digest": "932f9d1cef645844a934d7d9b8a30eccf207071ad8a9da650d113bd94579800d",
+        "result_id": "422d3418-f022-5d5e-8abe-8a7d51959107"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "437b8fae-1494-4571-8994-aa3c4d155374",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    },
+    {
+      "context_complete": true,
+      "context_id": "46644ba2-ec7e-5ab6-8848-e92c0c84db99",
+      "deferral": null,
+      "digest": "614e7b689f59d8e74725d4e26a02de3fce53c4d27ec766794510aab9d0ebfb64",
+      "id": "ff9f6753-3fc5-5c33-a6d7-d7b343c5c5b1",
+      "proposal": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "46644ba2-ec7e-5ab6-8848-e92c0c84db99",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Evidence: docs/evidence/v04-browser-keyboard.txt. Dirty content SHA256: 2f949f2babfa2dc8e9d7c4e27145d0c90cea728e32e03c0d45e1609989426602. Changed-file inventory: .env.example, .foundry/project.json, .github/workflows/check.yml, .gitignore, AGENTS.md, Makefile, README.md, acceptance/cases.json, alembic.ini, alembic/env.py, alembic/versions/0001_groups.py, alembic/versions/0002_sessions.py, alembic/versions/0003_results.py, docs/IMPLEMENTATION_LOG.md, docs/adr/0001-mvp-boundaries.md, docs/adr/0002-local-transactions-and-rating-history.md, docs/evidence/v01-check-2.txt, docs/evidence/v01-check-3.txt, docs/evidence/v01-check-4.txt, docs/evidence/v01-check-5.txt, docs/evidence/v01-green.txt, docs/evidence/v01-install-final.txt, docs/evidence/v01-install.txt, docs/evidence/v01-lint-initial.txt, docs/evidence/v01-red.txt, docs/evidence/v02-check-1.txt, docs/evidence/v02-lint-initial.txt, docs/evidence/v02-red.txt, docs/evidence/v03-check-1.txt, docs/evidence/v03-check-2.txt, docs/evidence/v03-check-3.txt, docs/evidence/v03-check-4.txt, docs/evidence/v03-lint-2.txt, docs/evidence/v03-lint-3.txt, docs/evidence/v03-lint-4.txt, docs/evidence/v03-lint-initial.txt, docs/evidence/v03-red-2.txt, docs/evidence/v03-red.txt, docs/evidence/v04-browser-1.txt, docs/evidence/v04-browser-2.txt, docs/evidence/v04-browser-keyboard.txt, docs/evidence/v04-check-1.txt, docs/evidence/v04-check-2.txt, docs/evidence/v04-check-3.txt, docs/evidence/v04-check-4.txt, docs/evidence/v04-check-5.txt, docs/evidence/v04-check-6.txt, docs/evidence/v04-history-1280.png, docs/evidence/v04-history-390.png, docs/evidence/v04-keyboard-history-1280.png, docs/evidence/v04-keyboard-history-390.png, docs/evidence/v04-keyboard-match-1280.png, docs/evidence/v04-keyboard-match-390.png, docs/evidence/v04-keyboard-session-1280.png, docs/evidence/v04-keyboard-session-390.png, docs/evidence/v04-lint-2.txt, docs/evidence/v04-lint-3.txt, docs/evidence/v04-lint-4.txt, docs/evidence/v04-lint-initial.txt, docs/evidence/v04-match-1280.png, docs/evidence/v04-match-390.png, docs/evidence/v04-red.txt, docs/evidence/v04-session-1280.png, docs/evidence/v04-session-390.png, docs/mvp/AGENT_HANDOFF.md, docs/mvp/ARCHITECTURE.md, docs/mvp/DECISION.md, docs/mvp/FIRST_TASK.md, docs/mvp/ROADMAP.md, docs/mvp/SOURCES.md, docs/mvp/spec.json, feedback/6c203df4-5a07-4936-be83-b5baa93e89e6.json, feedback/6c203df4-5a07-4936-be83-b5baa93e89e6.receipt.json, feedback/README.md, feedback/bdf0ec24-615a-4227-ba80-998fd80f36a4.json, feedback/bdf0ec24-615a-4227-ba80-998fd80f36a4.receipt.json, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.json, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.receipt.json, pyproject.toml, scripts/manage.py, scripts/seed_demo.py, src/volley_match/__init__.py, src/volley_match/api/__init__.py, src/volley_match/api/app.py, src/volley_match/api/play.py, src/volley_match/api/results.py, src/volley_match/api/ui.py, src/volley_match/config.py, src/volley_match/contracts.py, src/volley_match/db.py, src/volley_match/models.py, src/volley_match/services/__init__.py, src/volley_match/services/auth.py, src/volley_match/services/common.py, src/volley_match/services/groups.py, src/volley_match/services/matches.py, src/volley_match/services/ratings.py, src/volley_match/services/scoring.py, src/volley_match/services/sessions.py, src/volley_match/static/app.css, src/volley_match/static/forms.js, src/volley_match/static/vendor/HTMX-LICENSE, src/volley_match/static/vendor/htmx.min.js, src/volley_match/templates/base.html, src/volley_match/templates/claim.html, src/volley_match/templates/group.html, src/volley_match/templates/guest_created.html, src/volley_match/templates/home.html, src/volley_match/templates/invite.html, src/volley_match/templates/invite_created.html, src/volley_match/templates/login.html, src/volley_match/templates/match.html, src/volley_match/templates/player.html, src/volley_match/templates/session.html, tests/browser/replay.py, tests/conftest.py, tests/integration/test_v01.py, tests/integration/test_v02.py, tests/integration/test_v03.py, tests/integration/test_v04.py, tests/unit/test_safety.py, tests/unit/test_scoring.py, tools/foundry_agent.py, uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/volley-match/docs/evidence/v04-browser-keyboard.txt",
+              "document: docs/mvp/ROADMAP.md"
+            ],
+            "summary": "V04 French mobile Jinja/HTMX flows and pool-scoped chart; make check passes 30 tests. Real Chromium desktop/390px keyboard flow passes create/invite/join/three confirmations/correct first/history/restart, no overflow or console errors. Screenshots visually reviewed; v04-check-6.txt and v04-browser-keyboard.txt."
+          }
+        ],
+        "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "V05: Release and private pilot",
+        "next_work": {
+          "acceptance_criteria": "Clean checkout can install, migrate, seed and serve; acceptance suite green; no real user data in repo. Before exposing beyond loopback: HTTPS/auth/secrets/retention review and explicit deployment approval.",
+          "blocked_reason": null,
+          "description": "Export/delete data, backup/restore, rate limits, configuration checks, auth threat review and deployment checklist. Prepare an unsent invite draft and two-session observation sheet.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "V05: Release and private pilot"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation against current-package acceptance and exact check output.",
+        "reconciliation_rationale": null,
+        "request_key": "implementer-volley-match-20261007-1639-V04",
+        "revisit_trigger": null,
+        "summary": "V04 French mobile Jinja/HTMX flows and pool-scoped chart; make check passes 30 tests. Real Chromium desktop/390px keyboard flow passes create/invite/join/three confirmations/correct first/history/restart, no overflow or console errors. Screenshots visually reviewed; v04-check-6.txt and v04-browser-keyboard.txt.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+          "decision_id": "aca65c15-4e8c-4f1b-a6a3-d6c1bce15ff7",
+          "evidence_ids": [
+            "bc88ea28-4c51-4536-ac96-78b6ed4d5b57"
+          ],
+          "map_revision_id": "3041bc49-d470-5be1-95e8-db4e29cfe2c1",
+          "next_work_id": "437b8fae-1494-4571-8994-aa3c4d155374",
+          "review_id": "4432a330-550a-4099-b292-4eac08d96c61",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "4a4aa64101690dfbb39c8b05888c48e362448cd0f807d50a2a6ad1c994457dee",
+        "resolution": "accept",
+        "result_digest": "614e7b689f59d8e74725d4e26a02de3fce53c4d27ec766794510aab9d0ebfb64",
+        "result_id": "ff9f6753-3fc5-5c33-a6d7-d7b343c5c5b1"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    },
+    {
+      "context_complete": true,
+      "context_id": "6b355ac0-c8eb-58e3-a3b7-c5728c465d49",
+      "deferral": null,
+      "digest": "978e592010d5db6d3dd81688def19626ab1669543d3ce25e5819ec8a5a81c7e8",
+      "id": "eeda4abf-f385-59f3-93a7-5d1f0bedf6ef",
+      "proposal": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "6b355ac0-c8eb-58e3-a3b7-c5728c465d49",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Evidence: docs/evidence/v03-check-4.txt. Dirty content SHA256: 98641f02b81db41872e0add32194bc769d87e95cf244a0fee6044a0243fbb700. Changed-file inventory: .env.example, .foundry/project.json, .github/workflows/check.yml, .gitignore, AGENTS.md, Makefile, README.md, acceptance/cases.json, alembic.ini, alembic/env.py, alembic/versions/0001_groups.py, alembic/versions/0002_sessions.py, alembic/versions/0003_results.py, docs/IMPLEMENTATION_LOG.md, docs/adr/0001-mvp-boundaries.md, docs/adr/0002-local-transactions-and-rating-history.md, docs/evidence/v01-check-2.txt, docs/evidence/v01-check-3.txt, docs/evidence/v01-check-4.txt, docs/evidence/v01-check-5.txt, docs/evidence/v01-green.txt, docs/evidence/v01-install-final.txt, docs/evidence/v01-install.txt, docs/evidence/v01-lint-initial.txt, docs/evidence/v01-red.txt, docs/evidence/v02-check-1.txt, docs/evidence/v02-lint-initial.txt, docs/evidence/v02-red.txt, docs/evidence/v03-check-1.txt, docs/evidence/v03-check-2.txt, docs/evidence/v03-check-3.txt, docs/evidence/v03-check-4.txt, docs/evidence/v03-lint-2.txt, docs/evidence/v03-lint-3.txt, docs/evidence/v03-lint-4.txt, docs/evidence/v03-lint-initial.txt, docs/evidence/v03-red-2.txt, docs/evidence/v03-red.txt, docs/mvp/AGENT_HANDOFF.md, docs/mvp/ARCHITECTURE.md, docs/mvp/DECISION.md, docs/mvp/FIRST_TASK.md, docs/mvp/ROADMAP.md, docs/mvp/SOURCES.md, docs/mvp/spec.json, feedback/README.md, feedback/bdf0ec24-615a-4227-ba80-998fd80f36a4.json, feedback/bdf0ec24-615a-4227-ba80-998fd80f36a4.receipt.json, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.json, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.receipt.json, pyproject.toml, scripts/manage.py, scripts/seed_demo.py, src/volley_match/__init__.py, src/volley_match/api/__init__.py, src/volley_match/api/app.py, src/volley_match/api/play.py, src/volley_match/api/results.py, src/volley_match/api/ui.py, src/volley_match/config.py, src/volley_match/contracts.py, src/volley_match/db.py, src/volley_match/models.py, src/volley_match/services/__init__.py, src/volley_match/services/auth.py, src/volley_match/services/common.py, src/volley_match/services/groups.py, src/volley_match/services/matches.py, src/volley_match/services/ratings.py, src/volley_match/services/scoring.py, src/volley_match/services/sessions.py, src/volley_match/static/app.css, src/volley_match/static/forms.js, src/volley_match/templates/base.html, src/volley_match/templates/match.html, tests/conftest.py, tests/integration/test_v01.py, tests/integration/test_v02.py, tests/integration/test_v03.py, tests/unit/test_safety.py, tests/unit/test_scoring.py, tools/foundry_agent.py, uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/volley-match/docs/evidence/v03-check-4.txt",
+              "document: docs/mvp/ROADMAP.md"
+            ],
+            "summary": "V03 validated scores, two-side confirmation, audited disputes/corrections/voids, idempotent atomic Elo and immutable chronological pool replays; lint/types and 27 tests pass."
+          }
+        ],
+        "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "V04: Mobile match and progression experience",
+        "next_work": {
+          "acceptance_criteria": "Real browser at desktop/390px completes create -> invite -> join -> score -> opponent confirm -> history; restart preserves all; backdated corrections update chart and explain why.",
+          "blocked_reason": null,
+          "description": "Build join, record, confirm, match history and player chart flows. French default with plain language; show privacy and provisional ratings. Synthetic six-friend demo only.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "V04: Mobile match and progression experience"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation against current-package acceptance and exact check output.",
+        "reconciliation_rationale": null,
+        "request_key": "implementer-volley-match-20261007-1639-V03",
+        "revisit_trigger": null,
+        "summary": "V03 validated scores, two-side confirmation, audited disputes/corrections/voids, idempotent atomic Elo and immutable chronological pool replays; lint/types and 27 tests pass.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+          "decision_id": "d6c412ad-dbd9-4672-b419-be42aae0b44b",
+          "evidence_ids": [
+            "59769d1f-6830-4026-92b0-6a6d9cf24241"
+          ],
+          "map_revision_id": "cd0860f9-d709-50a3-81e8-c53b4db583b8",
+          "next_work_id": "fc1377b7-b4f4-41fc-9b27-7ed8189f3665",
+          "review_id": "923a068f-328b-4281-a9e9-75b045d218d1",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "d288146e016ddf344b95ef039762942144554c1edbfdcb12fd25369a090417f6",
+        "resolution": "accept",
+        "result_digest": "978e592010d5db6d3dd81688def19626ab1669543d3ce25e5819ec8a5a81c7e8",
+        "result_id": "eeda4abf-f385-59f3-93a7-5d1f0bedf6ef"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    },
+    {
+      "context_complete": true,
+      "context_id": "8106fa32-fd3f-5014-b86c-59035d96ea39",
+      "deferral": null,
+      "digest": "d8a47eb5c6cddeaf7868891e5d1f071f6945e97d44990ac84aac630969689236",
+      "id": "2ccdbc24-8d5f-5cda-98b5-50bc8e9127f8",
+      "proposal": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "8106fa32-fd3f-5014-b86c-59035d96ea39",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Evidence: docs/evidence/v02-check-1.txt. Dirty content SHA256: 4294048925480974fb732a101decc230f7ae262b5ae90d2bcafebbc70c5a38ec. Changed-file inventory: .env.example, .foundry/project.json, .github/workflows/check.yml, .gitignore, AGENTS.md, Makefile, README.md, acceptance/cases.json, alembic.ini, alembic/env.py, alembic/versions/0001_groups.py, alembic/versions/0002_sessions.py, docs/IMPLEMENTATION_LOG.md, docs/adr/0001-mvp-boundaries.md, docs/evidence/v01-check-2.txt, docs/evidence/v01-check-3.txt, docs/evidence/v01-check-4.txt, docs/evidence/v01-check-5.txt, docs/evidence/v01-green.txt, docs/evidence/v01-install-final.txt, docs/evidence/v01-install.txt, docs/evidence/v01-lint-initial.txt, docs/evidence/v01-red.txt, docs/evidence/v02-check-1.txt, docs/evidence/v02-lint-initial.txt, docs/evidence/v02-red.txt, docs/mvp/AGENT_HANDOFF.md, docs/mvp/ARCHITECTURE.md, docs/mvp/DECISION.md, docs/mvp/FIRST_TASK.md, docs/mvp/ROADMAP.md, docs/mvp/SOURCES.md, docs/mvp/spec.json, feedback/README.md, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.json, feedback/d9cfaa12-bb9a-4b20-9435-af247df48281.receipt.json, pyproject.toml, scripts/manage.py, scripts/seed_demo.py, src/volley_match/__init__.py, src/volley_match/api/__init__.py, src/volley_match/api/app.py, src/volley_match/api/play.py, src/volley_match/config.py, src/volley_match/contracts.py, src/volley_match/db.py, src/volley_match/models.py, src/volley_match/services/__init__.py, src/volley_match/services/auth.py, src/volley_match/services/common.py, src/volley_match/services/groups.py, src/volley_match/services/sessions.py, tests/conftest.py, tests/integration/test_v01.py, tests/integration/test_v02.py, tests/unit/test_safety.py, tools/foundry_agent.py, uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/volley-match/docs/evidence/v02-check-1.txt",
+              "document: docs/mvp/ROADMAP.md"
+            ],
+            "summary": "V02 capacity-safe sessions, guest slots and immutable equal-team roster snapshots; lint/types and seven tests pass."
+          }
+        ],
+        "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "V03: Confirmed scores and replayable Elo",
+        "next_work": {
+          "acceptance_criteria": "Equal 1000-rated 3v3 winners become 1012 and losers 988; no pending/guest/friendly/disputed match changes Elo; replay after correcting first of three matches matches fresh calculation; double confirmation applies once.",
+          "blocked_reason": null,
+          "description": "Implement rules/state machine above before UI polish. Add transaction/idempotency tests, dispute/correction UI and full pool replay. Store algorithm version and immutable rating history.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "V03: Confirmed scores and replayable Elo"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation against current-package acceptance and exact check output.",
+        "reconciliation_rationale": null,
+        "request_key": "implementer-volley-match-20261007-1639-V02",
+        "revisit_trigger": null,
+        "summary": "V02 capacity-safe sessions, guest slots and immutable equal-team roster snapshots; lint/types and seven tests pass.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "0ed146e4-6459-4745-a484-c32d2651842a",
+          "decision_id": "f7478904-3971-4552-9547-66fb2193fa87",
+          "evidence_ids": [
+            "10aa1084-c112-4870-8195-0075c45fc7d6"
+          ],
+          "map_revision_id": "532594ef-c587-5233-976a-b200f0fce35a",
+          "next_work_id": "1a037613-3c5f-4428-9ddb-ffd61e1ec54e",
+          "review_id": "fb6511c2-1ad2-44a0-bb0a-79e36433bc06",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "d5f40597004dcc07e08bb2fbe027274aea55a102b4fb2621d1f722e9bed66ad8",
+        "resolution": "accept",
+        "result_digest": "d8a47eb5c6cddeaf7868891e5d1f071f6945e97d44990ac84aac630969689236",
+        "result_id": "2ccdbc24-8d5f-5cda-98b5-50bc8e9127f8"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "0ed146e4-6459-4745-a484-c32d2651842a",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    },
+    {
+      "context_complete": true,
+      "context_id": "c3b37210-0f6e-583c-8908-322b9381db06",
+      "deferral": null,
+      "digest": "8f29d6bbc3fb931f45cfd2c2936c45b5fff9a7bf91944f4eff17cd055c177c31",
+      "id": "a85c86aa-e97e-5023-b25a-f47358f45a23",
+      "proposal": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "c3b37210-0f6e-583c-8908-322b9381db06",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Evidence: docs/evidence/v01-check-5.txt. Dirty content SHA256: 3bc3f10c17603715c7952ae1a3a560b371da8fb59377192eb7215705265f65b8. Changed-file inventory: .env.example, .foundry/project.json, .github/workflows/check.yml, .gitignore, AGENTS.md, Makefile, README.md, acceptance/cases.json, alembic.ini, alembic/env.py, alembic/versions/0001_groups.py, docs/adr/0001-mvp-boundaries.md, docs/evidence/v01-check-2.txt, docs/evidence/v01-check-3.txt, docs/evidence/v01-check-4.txt, docs/evidence/v01-check-5.txt, docs/evidence/v01-green.txt, docs/evidence/v01-install-final.txt, docs/evidence/v01-install.txt, docs/evidence/v01-lint-initial.txt, docs/evidence/v01-red.txt, docs/mvp/AGENT_HANDOFF.md, docs/mvp/ARCHITECTURE.md, docs/mvp/DECISION.md, docs/mvp/FIRST_TASK.md, docs/mvp/ROADMAP.md, docs/mvp/SOURCES.md, docs/mvp/spec.json, feedback/README.md, pyproject.toml, scripts/manage.py, scripts/seed_demo.py, src/volley_match/__init__.py, src/volley_match/api/__init__.py, src/volley_match/api/app.py, src/volley_match/config.py, src/volley_match/contracts.py, src/volley_match/db.py, src/volley_match/models.py, src/volley_match/services/__init__.py, src/volley_match/services/auth.py, src/volley_match/services/common.py, src/volley_match/services/groups.py, tests/conftest.py, tests/integration/test_v01.py, tests/unit/test_safety.py, tools/foundry_agent.py, uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/volley-match/docs/evidence/v01-check-5.txt",
+              "document: docs/mvp/ROADMAP.md"
+            ],
+            "summary": "V01 runnable authenticated private group shell; lint, strict types and five synthetic unit/integration tests passed."
+          }
+        ],
+        "limits": "Synthetic technical checks only; no adoption trial, physical advice validation or public deployment. No commit or push. Initial repository untracked with no HEAD. Foundry had no blocking defect.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "V02: Sessions, attendance and fixed match rosters",
+        "next_work": {
+          "acceptance_criteria": "Two concurrent last-seat joins yield one winner; duplicate joins do not double count; organizer cannot assign an outsider; 3v3 roster persists after rename.",
+          "blocked_reason": null,
+          "description": "Implement capacity-safe join/leave with DB uniqueness and concurrent last-seat handling, organizer roster selection and friendly/rated modes. Retain roster snapshot after membership edits.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "V02: Sessions, attendance and fixed match rosters"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation against current-package acceptance and exact check output.",
+        "reconciliation_rationale": null,
+        "request_key": "implementer-volley-match-20261007-1639-V01",
+        "revisit_trigger": null,
+        "summary": "V01 runnable authenticated private group shell; lint, strict types and five synthetic unit/integration tests passed.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-volley-match-20261007-1639",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read prepared context, actual source, roadmap and all arrivals; technical validation is synthetic only.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+          "decision_id": "56ebca3a-0e12-4f22-a69d-85faf163a734",
+          "evidence_ids": [
+            "a7486406-8e93-43b8-95a1-564406eca3d9"
+          ],
+          "map_revision_id": "72b637bb-9c7b-5819-a941-4a3be82189c4",
+          "next_work_id": "0ed146e4-6459-4745-a484-c32d2651842a",
+          "review_id": "75c0d1c8-5997-4610-b15e-f62a90a48810",
+          "work_needing_review": {}
+        },
+        "rationale": "Actual current-package diff and required tests reviewed within delegated local implementation authority.",
+        "request_digest": "3b8f1168d3349ae3ba8fc15eaffe4f8b4a1d1d46a28698712a95be080602fb71",
+        "resolution": "accept",
+        "result_digest": "8f29d6bbc3fb931f45cfd2c2936c45b5fff9a7bf91944f4eff17cd055c177c31",
+        "result_id": "a85c86aa-e97e-5023-b25a-f47358f45a23"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    },
+    {
+      "context_complete": true,
+      "context_id": "1359f0e5-3729-5454-a01e-5ba96a5775c7",
+      "deferral": null,
+      "digest": "5182f147d15f9ef512044b9c776d2cf34dd3a998af6fb8884f3e0727063ab761",
+      "id": "873f1800-de00-577c-89aa-f4638b667fbc",
+      "proposal": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "1359f0e5-3729-5454-a01e-5ba96a5775c7",
+        "decision_scope": "venture",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/priority-mvps-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "The user plays outdoor volleyball, currently coordinates on WhatsApp, wants balanced teams and progression, and explicitly prioritizes this build. Rankade already supports private groups, results and team rankings; this is not an unserved-category claim. Synthetic replay established the proposed rating invariants and showed that permanently fixed teammates cannot be individually identified from team outcomes."
+          }
+        ],
+        "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": "A private volleyball group can invite friends, join a session, record and confirm a match, and see trustworthy match and Elo history.",
+        "next_action": "V01: Bootstrap a runnable authenticated group shell \u2014 /home/jonathan/startup_lab/volley-match/docs/mvp/ROADMAP.md",
+        "next_work": {
+          "acceptance_criteria": "Database survives restart; outsider read/write is denied; expired/revoked invite cannot join; CI lint/types/unit/integration passes.",
+          "blocked_reason": null,
+          "description": "Create package/config/migrations, local synthetic seed and CI; implement user/group membership and revocable invites. Add fixtures for Alice/Bob/outsider, expired invite and two groups. Keep email adapter fake locally.\nPlan: /home/jonathan/startup_lab/volley-match/docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "V01: Bootstrap a runnable authenticated group shell"
+        },
+        "outcome": "narrow",
+        "rationale": "The user explicitly prioritized bounded MVP implementation. The retained evidence supports building for a private pilot while keeping business and release unknowns distinct.",
+        "reconciliation_rationale": null,
+        "request_key": "priority-result-20261007",
+        "revisit_trigger": null,
+        "summary": "GO for a private friends-group MVP. One implementation combines the user-facing P023/P103 jobs; P103 is the canonical build workspace. Preserve P023 and the historical pending fusion proposal as lineage, not another implementation queue. Public matchmaking, court booking and automated tournaments follow demonstrated group reuse.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+          "decision_id": "a38e9141-b5be-4e52-99fb-b8cbd4f790f1",
+          "evidence_ids": [
+            "0cb2ab7f-9568-4cf3-a589-e92d6c0ac830"
+          ],
+          "map_revision_id": "6e5b0b6b-ba37-5cbd-b454-bf27a8ca6d47",
+          "next_work_id": "73728cfb-2d51-4592-92b9-20426fc59371",
+          "review_id": "051eeac5-7baf-4029-9bc0-24491c703945",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "5b8d62b0043b82c45d7c5fc916259030626b247b37cf60f1abafb47b7735df9f",
+        "resolution": "accept",
+        "result_digest": "5182f147d15f9ef512044b9c776d2cf34dd3a998af6fb8884f3e0727063ab761",
+        "result_id": "873f1800-de00-577c-89aa-f4638b667fbc"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "ed7ecb1f-07aa-4293-a4d4-19d957949db2",
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    }
+  ],
+  "scope": {
+    "focus": null,
+    "idea_revision_id": null,
+    "objective": "A private volleyball group can invite friends, join a session, record and confirm a match, and see trustworthy match and Elo history.",
+    "stage": "discovery",
+    "subject": "venture",
+    "subject_id": "v-sports-session",
+    "title": "Volley Match",
+    "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+  },
+  "stale_references": [],
+  "unreviewed_change_count": 1,
+  "unreviewed_changes": [
+    {
+      "id": "35757b4c-44bc-4f08-879b-40ff3f6e4df4",
+      "summary": "User remarks authorize the next local product continuation; full scope and acceptance sequence retained in docs/mvp/REMARKS_HANDOFF.md."
+    }
+  ],
+  "work": [
+    {
+      "acceptance_criteria": "Browser-verified desktop/mobile flows cover every V08 remark, unique cross-team players and nonblocking imbalance warnings, names and default time, visible session creation and multiple roster configurations; tests and docs pass.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T15:01:18.248385+00:00",
+      "decision_id": null,
+      "description": "Implement V08 in docs/mvp/REMARKS_HANDOFF.md: visual overhaul, focus/layout repair, dynamic team validation, optional names, clear cap, current datetime and visible sessions/multiple matches. Continue sequentially through V09\u2013V11 after acceptance.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [],
+      "id": "4ca1f74c-7bf9-4e5c-8461-41e9a8af1c15",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "V08 \u2014 Usable session and match interface from user remarks",
+      "updated_at": "2026-10-08T15:01:18.248388+00:00",
+      "version_id": 1,
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    }
+  ],
+  "worker_running": false,
+  "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+}

@@ -1,0 +1,150 @@
+........................................................................ [ 34%]
+........................................................................ [ 69%]
+................................................................         [100%]
+=============================== warnings summary ===============================
+../.venv-mvp/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /tmp/mvp-readiness-20261008-r1faj3o6/coopain/.venv-mvp/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_mvp_j03_operations.py::test_unknown_cookie_cannot_authenticate_and_orm_timestamps_are_utc
+  /tmp/mvp-readiness-20261008-r1faj3o6/coopain/.venv-mvp/lib/python3.12/site-packages/starlette/testclient.py:463: DeprecationWarning: Setting per-request cookies=<...> is being deprecated, because the expected behaviour on cookie persistence is ambiguous. Set cookies directly on the client instance instead.
+    return super().request(
+
+tests/test_users_api.py::test_users_update_me_rejects_blank_username_when_validation_is_bypassed
+  /tmp/mvp-readiness-20261008-r1faj3o6/coopain/backend/tests/test_users_api.py:69: PydanticDeprecatedSince20: The `construct` method is deprecated; use `model_construct` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    payload = UserUpdate.construct(username="   ")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.13-final-0 _______________
+
+Name                                                                Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------
+app/__init__.py                                                         0      0   100%
+app/api/__init__.py                                                     2      0   100%
+app/api/routes/__init__.py                                             22      0   100%
+app/api/routes/audit_helpers.py                                        11      0   100%
+app/api/routes/auth.py                                                 85      7    92%   72-73, 93, 96-97, 183, 258
+app/api/routes/auth_service.py                                        154     32    79%   45, 137-149, 220-229, 313-324, 361, 373-385, 423-446, 465-543
+app/api/routes/candidate_preferences.py                                40      1    98%   50
+app/api/routes/candidate_profile.py                                    33      0   100%
+app/api/routes/catalogs.py                                             45      2    96%   189-196
+app/api/routes/conversations.py                                        45      1    98%   26
+app/api/routes/demo.py                                                 14      0   100%
+app/api/routes/documents.py                                            24      0   100%
+app/api/routes/feeds.py                                                33      2    94%   34, 57
+app/api/routes/health.py                                                5      1    80%   8
+app/api/routes/job_posts.py                                            35      9    74%   27-36, 57-64
+app/api/routes/matches.py                                              82      5    94%   46, 63-64, 69-70
+app/api/routes/params.py                                                6      0   100%
+app/api/routes/referrer_jobs.py                                        25      3    88%   51-59
+app/api/routes/response_helpers.py                                      7      0   100%
+app/api/routes/safety.py                                               40      0   100%
+app/api/routes/swipes.py                                               31      3    90%   78-88
+app/api/routes/user_profile.py                                         62      7    89%   92, 103-108, 113
+app/api/routes/user_profile_history.py                                127      0   100%
+app/api/routes/user_profile_skills.py                                  29      0   100%
+app/api/routes/user_profile_social_links.py                            28      0   100%
+app/api/routes/users.py                                                82      3    96%   133-135
+app/api/security_boundary.py                                           41      3    93%   70-78
+app/auth/__init__.py                                                    4      0   100%
+app/auth/dependencies.py                                               33      7    79%   30, 34-37, 43, 64
+app/auth/jwt.py                                                        27      2    93%   26, 49
+app/auth/middleware.py                                                 17      2    88%   25-26
+app/auth/providers.py                                                  56      0   100%
+app/auth/security.py                                                   37      5    86%   27, 50, 54, 66-67
+app/bootstrap.py                                                       34      6    82%   44, 53, 62-66
+app/config/__init__.py                                                  2      0   100%
+app/config/settings.py                                                130     14    89%   190-191, 201-208, 219, 250, 258, 272
+app/constants/__init__.py                                               2      0   100%
+app/constants/enums.py                                                 92      0   100%
+app/db/__init__.py                                                      3      0   100%
+app/db/base.py                                                          3      0   100%
+app/db/migrations/env.py                                               24      4    83%   14-16, 41
+app/db/migrations/versions/0001_frozen_safe_schema_baseline.py         96      1    99%   1675
+app/db/migrations/versions/0002_reconcile_introduction_columns.py      17      1    94%   51
+app/db/migrations/versions/0003_password_session_version.py            12      0   100%
+app/db/models/__init__.py                                               8      0   100%
+app/db/models/catalogs.py                                             114      0   100%
+app/db/models/common.py                                                27      0   100%
+app/db/models/documents.py                                             15      0   100%
+app/db/models/lookups.py                                               83      0   100%
+app/db/models/matching.py                                              73      0   100%
+app/db/models/profiles.py                                             234      0   100%
+app/db/models/safety.py                                                35      0   100%
+app/db/models/users.py                                                 82      0   100%
+app/db/seeds.py                                                        30      0   100%
+app/db/session.py                                                      19      2    89%   32-33
+app/dev_ui.py                                                          16      2    88%   20, 24
+app/domain/__init__.py                                                  2      0   100%
+app/domain/account_privacy.py                                         117     13    89%   138-140, 158, 164, 168-171, 248-258
+app/domain/account_tokens.py                                          131     16    88%   31, 81, 171-173, 210, 218, 236-238, 264, 274, 284, 303-305
+app/domain/account_user_lifecycle.py                                  155     18    88%   37, 51, 82, 94, 121, 146, 148, 175, 189, 191-194, 208, 226-229
+app/domain/accounts.py                                                  3      0   100%
+app/domain/audit.py                                                    17      1    94%   64
+app/domain/candidate_preferences.py                                   187     20    89%   149-152, 369, 376-382, 388, 394-402
+app/domain/candidate_preferences_helpers.py                           216     20    91%   43, 55, 82, 88, 140, 149-152, 157, 169, 351, 366, 377, 432-434, 490, 508-509
+app/domain/catalog_common.py                                           19      0   100%
+app/domain/catalog_utils.py                                           217     46    79%   43, 49, 59-61, 66, 82, 98, 104, 114-116, 134, 150, 156, 166-168, 182, 207, 218, 222, 226, 230, 236, 242-250, 259-261, 286, 297, 313, 317, 330, 347, 351-359, 368-370, 391
+app/domain/catalogs.py                                                154     24    84%   101, 108, 128, 195, 265-282, 297, 393, 425-446
+app/domain/conversations.py                                            87     10    89%   39, 51, 84, 108, 128-129, 138, 178, 199, 205
+app/domain/documents.py                                               145      7    95%   52, 66, 90, 145, 158, 198-199
+app/domain/fingerprints.py                                             40      2    95%   51, 70
+app/domain/includes.py                                                 75      2    97%   37, 134
+app/domain/interaction_policy.py                                       52      1    98%   76
+app/domain/introductions.py                                            63      9    86%   49, 53, 61, 101, 135, 140, 157, 168-169
+app/domain/job_posts.py                                               239     40    83%   27-28, 174, 215, 237, 250, 257-265, 274, 277, 288, 297, 312, 333-336, 396, 399-403, 408, 413-418, 421-428, 443, 452, 454, 456
+app/domain/lookups.py                                                   9      1    89%   19
+app/domain/matches.py                                                 144     13    91%   48, 61, 96, 155, 169, 175, 236, 296, 307, 332, 359, 398, 413
+app/domain/mutation_helpers.py                                         10      0   100%
+app/domain/profiles.py                                                 50      0   100%
+app/domain/query_helpers.py                                            10      0   100%
+app/domain/rate_limits.py                                              31      2    94%   33, 73
+app/domain/referrer_jobs.py                                            92     14    85%   34-35, 44-47, 53, 82-94, 184, 186
+app/domain/retention.py                                                25      1    96%   13
+app/domain/safety.py                                                   88     13    85%   35, 57, 73-95, 119, 181, 241
+app/domain/sanitizer.py                                                17      1    94%   32
+app/domain/swipes.py                                                   85      8    91%   53, 67, 132-140, 164, 174, 222-231
+app/domain/user_profile_history.py                                    262     54    79%   50, 59, 65, 186, 189-194, 197-202, 205-210, 213-218, 221, 224, 230, 325, 328-338, 346, 352-357, 363, 365, 451, 454-458, 461-470, 478, 480
+app/domain/user_profile_skills.py                                      85      2    98%   37, 145
+app/domain/user_profile_social_links.py                                84     13    85%   27, 41, 115, 118-134, 138
+app/integrations/__init__.py                                            4      0   100%
+app/integrations/email.py                                              78      9    88%   29, 37, 39, 46, 51-52, 91, 97, 108
+app/integrations/local_email.py                                        37      5    86%   24, 45, 47, 67, 69
+app/integrations/push.py                                                6      2    67%   10, 16
+app/integrations/storage.py                                            45      4    91%   50, 112-119
+app/main.py                                                            26      1    96%   34
+app/schemas/__init__.py                                                 0      0   100%
+app/schemas/account_privacy.py                                         20      0   100%
+app/schemas/auth.py                                                    27      0   100%
+app/schemas/candidate.py                                              276      3    99%   230, 340, 356
+app/schemas/catalog.py                                                 44      0   100%
+app/schemas/common.py                                                   5      0   100%
+app/schemas/conversation.py                                            13      0   100%
+app/schemas/document.py                                                32      0   100%
+app/schemas/match.py                                                   51      0   100%
+app/schemas/message.py                                                 16      0   100%
+app/schemas/referrer.py                                               112      0   100%
+app/schemas/safety.py                                                  37      0   100%
+app/schemas/swipe.py                                                   15      0   100%
+app/schemas/user.py                                                    31      0   100%
+app/schemas/user_profile.py                                            41      0   100%
+app/telemetry/logging.py                                                3      0   100%
+app/workers/__init__.py                                                 2      0   100%
+app/workers/celery_app.py                                               9      1    89%   24
+scripts/backup_database.py                                             35     14    60%   15, 28, 31-34, 38-44, 48
+scripts/clean_mock_data.py                                              6      1    83%   14
+scripts/export_docs.py                                                 50      4    92%   81, 113-114, 118
+scripts/export_openapi.py                                              16      1    94%   33
+scripts/export_route_progress.py                                      117     26    78%   306-307, 318-332, 350-354, 397-398, 474-476, 480
+scripts/manage_data.py                                                 16      0   100%
+scripts/manage_data_seed_profile.py                                   212      6    97%   100, 182, 192, 334, 394, 1461
+scripts/migrate_database.py                                            30      7    77%   17, 35-43, 47
+scripts/mock_frontend_data.py                                           6      1    83%   14
+scripts/retain_data.py                                                 17      1    94%   24
+scripts/seed_pilot.py                                                 109     16    85%   42-43, 58, 86, 92, 145-154, 158
+-------------------------------------------------------------------------------------------------
+TOTAL                                                                6888    578    92%
+Coverage JSON written to file generated/coverage.json
+Required test coverage of 80% reached. Total coverage: 91.61%
+208 passed, 3 warnings in 115.39s (0:01:55)

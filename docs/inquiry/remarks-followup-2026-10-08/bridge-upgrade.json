@@ -1,0 +1,74 @@
+[
+  {
+    "repository": "foundry",
+    "bridge_version": "2026-10-08.1",
+    "agent_contract_version": "2026-10-08.1",
+    "kit_sha256": "3911d27334f0f05a4643913b3c0d681d77a6cd45a4ae6dcd9b5ca4b7b06a2e5e",
+    "manifest_hash_matches": true,
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+    "venture_id": "v-foundry",
+    "configured_cli": [
+      "/home/jonathan/startup_lab/.venv/bin/foundry",
+      "--store",
+      "/home/jonathan/.local/share/startup-foundry/foundry.local.db"
+    ],
+    "timeout_seconds": 60,
+    "store_file_checked": true,
+    "database_opened": false,
+    "next_check": "Run resume to verify workspace records; doctor checks configuration only"
+  },
+  {
+    "repository": "crous-queue",
+    "bridge_version": "2026-10-08.1",
+    "agent_contract_version": "2026-10-08.1",
+    "kit_sha256": "3911d27334f0f05a4643913b3c0d681d77a6cd45a4ae6dcd9b5ca4b7b06a2e5e",
+    "manifest_hash_matches": true,
+    "workspace_id": "81ee3117-de70-411e-9856-07420859ffad",
+    "venture_id": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+    "configured_cli": [
+      "/home/jonathan/startup_lab/.venv/bin/foundry",
+      "--store",
+      "/home/jonathan/.local/share/startup-foundry/foundry.local.db"
+    ],
+    "timeout_seconds": 60,
+    "store_file_checked": true,
+    "database_opened": false,
+    "next_check": "Run resume to verify workspace records; doctor checks configuration only"
+  },
+  {
+    "repository": "ride-options",
+    "bridge_version": "2026-10-08.1",
+    "agent_contract_version": "2026-10-08.1",
+    "kit_sha256": "3911d27334f0f05a4643913b3c0d681d77a6cd45a4ae6dcd9b5ca4b7b06a2e5e",
+    "manifest_hash_matches": true,
+    "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+    "venture_id": "v-route-repair",
+    "configured_cli": [
+      "/home/jonathan/startup_lab/.venv/bin/foundry",
+      "--store",
+      "/home/jonathan/.local/share/startup-foundry/foundry.local.db"
+    ],
+    "timeout_seconds": 60,
+    "store_file_checked": true,
+    "database_opened": false,
+    "next_check": "Run resume to verify workspace records; doctor checks configuration only"
+  },
+  {
+    "repository": "volley-match",
+    "bridge_version": "2026-10-08.1",
+    "agent_contract_version": "2026-10-08.1",
+    "kit_sha256": "3911d27334f0f05a4643913b3c0d681d77a6cd45a4ae6dcd9b5ca4b7b06a2e5e",
+    "manifest_hash_matches": true,
+    "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2",
+    "venture_id": "v-sports-session",
+    "configured_cli": [
+      "/home/jonathan/startup_lab/.venv/bin/foundry",
+      "--store",
+      "/home/jonathan/.local/share/startup-foundry/foundry.local.db"
+    ],
+    "timeout_seconds": 60,
+    "store_file_checked": true,
+    "database_opened": false,
+    "next_check": "Run resume to verify workspace records; doctor checks configuration only"
+  }
+]

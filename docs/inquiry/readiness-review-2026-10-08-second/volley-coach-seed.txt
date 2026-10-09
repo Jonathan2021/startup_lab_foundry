@@ -1,0 +1,3 @@
+uv run python scripts/seed_demo.py
+Synthetic demo ready: username demo-adult; use your supplied password. Week 2026-10-05.
+Calendar placeholder only; no approved physical instructions or real training claims.

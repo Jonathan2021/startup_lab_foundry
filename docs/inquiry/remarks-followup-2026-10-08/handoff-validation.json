@@ -1,0 +1,38 @@
+{
+  "crous-queue": {
+    "work": "e5d292f5-02cd-4d6a-a266-ac413b60e64f",
+    "status": "ready",
+    "owner": "agent",
+    "handoff_sha256": "659c6d0204847370f1b0c149a4c611f218871ef01a2f948146d24990ec151edf",
+    "remarks_unchanged": true,
+    "helper_hash_matches": true,
+    "local_links_valid": true,
+    "source_diff": [
+      "tools/foundry_agent.py"
+    ]
+  },
+  "ride-options": {
+    "work": "22e53596-28f7-453a-bcbc-228224144a7b",
+    "status": "ready",
+    "owner": "agent",
+    "handoff_sha256": "97d2bb45db1e95dbba86009895272978f7a86e08f5e5def8d7244681d04bf6b6",
+    "remarks_unchanged": true,
+    "helper_hash_matches": true,
+    "local_links_valid": true,
+    "source_diff": [
+      "tools/foundry_agent.py"
+    ]
+  },
+  "volley-match": {
+    "work": "4ca1f74c-7bf9-4e5c-8461-41e9a8af1c15",
+    "status": "ready",
+    "owner": "agent",
+    "handoff_sha256": "68fd8ea0f8e029cf1d5dd9b0e38ed8f7e645e849a2e6a74895f28199b494d9d4",
+    "remarks_unchanged": true,
+    "helper_hash_matches": true,
+    "local_links_valid": true,
+    "source_diff": [
+      "tools/foundry_agent.py"
+    ]
+  }
+}

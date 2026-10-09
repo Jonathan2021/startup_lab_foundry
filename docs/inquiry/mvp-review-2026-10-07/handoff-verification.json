@@ -1,0 +1,50 @@
+[
+  {
+    "repo": "offer-check",
+    "handoff": "/home/jonathan/startup_lab/offer-check/docs/mvp/NEXT_HANDOFF.md",
+    "work_id": "5f244a1b-2f36-4eda-8ada-740446b66114",
+    "status": "ready",
+    "owner": "agent",
+    "bridge_sha256": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f"
+  },
+  {
+    "repo": "volley-match",
+    "handoff": "/home/jonathan/startup_lab/volley-match/docs/mvp/NEXT_HANDOFF.md",
+    "work_id": "f0c29b5f-c9cf-4956-91da-f6431db8156b",
+    "status": "ready",
+    "owner": "agent",
+    "bridge_sha256": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f"
+  },
+  {
+    "repo": "crous-queue",
+    "handoff": "/home/jonathan/startup_lab/crous-queue/docs/mvp/NEXT_HANDOFF.md",
+    "work_id": "781199db-adde-4600-9a4d-4c56eed14fdc",
+    "status": "ready",
+    "owner": "agent",
+    "bridge_sha256": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f"
+  },
+  {
+    "repo": "volley-coach",
+    "handoff": "/home/jonathan/startup_lab/volley-coach/docs/mvp/NEXT_HANDOFF.md",
+    "work_id": "9fb8b808-9737-4083-8587-99d7e9808fbf",
+    "status": "ready",
+    "owner": "agent",
+    "bridge_sha256": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f"
+  },
+  {
+    "repo": "coopain",
+    "handoff": "/home/jonathan/startup_lab/coopain/docs/mvp/NEXT_HANDOFF.md",
+    "work_id": "84e423d8-0e34-48ab-8650-4c6a0a243024",
+    "status": "in_progress",
+    "owner": "implementer-coopain-20261007-codex-1636",
+    "bridge_sha256": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f"
+  },
+  {
+    "repo": "ride-options",
+    "handoff": "/home/jonathan/startup_lab/ride-options/docs/mvp/NEXT_HANDOFF.md",
+    "work_id": "623bf7bb-6a0f-48d2-bc5e-74fb1be38d99",
+    "status": "in_progress",
+    "owner": "implementer-ride-options-20261007-session-a",
+    "bridge_sha256": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f"
+  }
+]

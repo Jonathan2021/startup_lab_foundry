@@ -1,0 +1,14 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "request_key": "volley-match-remarks-20261008",
+  "expected_head": "588838de-bbc0-5e05-9f19-54b1a045ee21",
+  "rationale": "The user explicitly requests a follow-up addressing their root remarks after the accepted second run; this does not reopen historical human-trial gates.",
+  "work": {
+    "title": "V08 \u2014 Usable session and match interface from user remarks",
+    "description": "Implement V08 in docs/mvp/REMARKS_HANDOFF.md: visual overhaul, focus/layout repair, dynamic team validation, optional names, clear cap, current datetime and visible sessions/multiple matches. Continue sequentially through V09\u2013V11 after acceptance.",
+    "acceptance_criteria": "Browser-verified desktop/mobile flows cover every V08 remark, unique cross-team players and nonblocking imbalance warnings, names and default time, visible session creation and multiple roster configurations; tests and docs pass.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready"
+  }
+}

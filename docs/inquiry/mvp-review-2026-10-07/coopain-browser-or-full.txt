@@ -1,0 +1,18 @@
+........................................................................ [ 42%]
+........................................................................ [ 84%]
+...........................                                              [100%]
+=============================== warnings summary ===============================
+../../../../tmp/coopain-j03-security-venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /tmp/coopain-j03-security-venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+backend/tests/test_mvp_j03_operations.py::test_unknown_cookie_cannot_authenticate_and_orm_timestamps_are_utc
+  /tmp/coopain-j03-security-venv/lib/python3.12/site-packages/starlette/testclient.py:463: DeprecationWarning: Setting per-request cookies=<...> is being deprecated, because the expected behaviour on cookie persistence is ambiguous. Set cookies directly on the client instance instead.
+    return super().request(
+
+backend/tests/test_users_api.py::test_users_update_me_rejects_blank_username_when_validation_is_bypassed
+  /home/jonathan/startup_lab/coopain/backend/tests/test_users_api.py:69: PydanticDeprecatedSince20: The `construct` method is deprecated; use `model_construct` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    payload = UserUpdate.construct(username="   ")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+171 passed, 3 warnings in 64.04s (0:01:04)

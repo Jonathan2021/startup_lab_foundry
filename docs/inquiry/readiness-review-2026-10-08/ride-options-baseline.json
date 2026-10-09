@@ -1,0 +1,59 @@
+{
+  "status": {
+    "exit": 0,
+    "stdout": "?? .env.example\n?? .foundry/\n?? .gitignore\n?? AGENTS.md\n?? Makefile\n?? README.md\n?? acceptance/\n?? alembic.ini\n?? alembic/\n?? client/\n?? docs/\n?? engine/\n?? evidence/\n?? experiments/\n?? feedback/\n?? package-lock.json\n?? package.json\n?? pyproject.toml\n?? scripts/\n?? src/\n?? tests/\n?? tools/\n?? tsconfig.json\n?? uv.lock\n",
+    "stderr": ""
+  },
+  "head": {
+    "exit": 128,
+    "stdout": "",
+    "stderr": "fatal: Needed a single revision\n"
+  },
+  "remotes": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "source_hashes": {
+    "src/ride_options/contracts.py": "03194752b26df28cbd221b75ee803f8d1c4a3b2ffff9cf4917cbd80274afb44d",
+    "src/ride_options/__init__.py": "fff0476bed3478e51d3d00d2badb3d87750daa4f107bbc747e46100ac45ef06d",
+    "src/ride_options/db.py": "48a979b304a27b20afdfdca604e6545131b2442c5e38c27d9b7d945e8d6d4ff8",
+    "src/ride_options/config.py": "fbe6b164e93b20d84ac11f9be8171e1966c6162009d23a57d1d9098262a1e7de",
+    "src/ride_options/models.py": "f5ef5727132e2c1a9419358046362883db47e8a0501bf1fb6e3c6647f5a6e78c",
+    "src/ride_options/app.py": "d66555c826125411c3e363f4fe02895e145cc900985d7b5e4aa1ed84227f555f",
+    "src/ride_options/services/geometry.py": "5f41a032bd9d3352be8ee7e632fd24859074b4343e1e08a5856cbfa2d042cd78",
+    "src/ride_options/services/planning.py": "f6a14d06afd3552e0169f41c9281b4b03baa9877e76410fe97af9a02e970c2b0",
+    "src/ride_options/services/generation.py": "bda1605cccce3d65062b586843c7596d6d9abae2f8fcff75b131b3a1519cbe36",
+    "src/ride_options/services/routing.py": "65facac3fb01fc2efe31081e882307c8f083831dcf1731ffc6e3d9eb0810645b",
+    "src/ride_options/services/scenery.py": "8140b7c6225e5cc2c833792a8181a5ab93696b899b3f04703adeaca2a015331f",
+    "src/ride_options/services/recorded.py": "73b9ce361aa45b89cb2e4661fc0a96c8bbfd90c533376cd95d267624fe199671",
+    "src/ride_options/services/backup.py": "3c3fa02c034924c5e9b0d7a674f6cba057cadb6aa0d6af555001b6d5f5f19ca7",
+    "src/ride_options/services/repository.py": "6a646503790c27c126eeacb02caa278cdedb9275744b02e819d78d02dccd40a8",
+    "src/ride_options/services/osm_access.py": "fd875ccb503820bfdf4a0c0f4f461d3b6e067651cc3af1370b9604a16922c445",
+    "tools/foundry_agent.py": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f",
+    "scripts/benchmark_routes.py": "8ef20ea0df085c4ef3a8ca4836279ab90f29d15b98ef5149b128613086b57b9e",
+    "scripts/__init__.py": "419d7426aa3579ec084221fc37cf957e036970668e21e0aa9ae0c20244a3f3c8",
+    "scripts/prepare_engine.py": "88aab332d9911f0c7c61e6c90d582c2e9a4b54cbcb95c0bd7e836a437a09b91f",
+    "scripts/database_backup.py": "6f357540860f0f2a9985b83fa34b852730edf3c62cf132f78ac03a5ad38a2d4c",
+    "scripts/download_engine.py": "33a86bc5d1716900cdb4004aca47aa0bbbf92e3add5dadf77aafacb3ad2a67cf",
+    "scripts/check_access.py": "5113fd8932d09402006722d7445fd3fc792fe4db6decd1c7ef17b94289789001",
+    "scripts/seed_demo.py": "7a05cd1e71af02c6d651f93d235e2aeff2b06532ad22275075c07c875df8d17b",
+    "scripts/build_region_data.py": "0fc3f08ab6011a35ef7562ea2c968c93a174fb87340e6ed5d72945d11b8e3438",
+    "scripts/offline_release_check.py": "a4225e30d136c131b17c764958eb3595f52da35709ea6a871f2ddde756dfc097",
+    "scripts/audit_warnings.py": "d1895e5680598819db6366a3d492b8975eabd0a48c1bb25dccbdba17a88c1ba8",
+    "scripts/build_basemap.py": "eab9cc9457fda9675ccd08c668cb6404ddb09ab8ac387386326fcb041b754ac6",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/integration/test_release.py": "74d7eeba812debb674d243c29bffdf906635c0aa8adb879fcf00ce623fe47f16",
+    "tests/integration/test_persistence.py": "9cf0c36a1ae6f40171a39faa8fc6fe6e18f75b32ef2863e9b3cbad3a915ae8bc",
+    "tests/integration/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/integration/test_access_evidence.py": "616ba9bd85be515db4d053242974ad04d738f6819e9be48e77193bb2d29701c3",
+    "tests/integration/test_api.py": "0e842f5f07ab6db5eb11355116ba5ce9b6f21fcaeef1d19def789fad3fbc4ca6",
+    "tests/unit/test_scenery.py": "2f298f11312c2eb79d54ff0e4adfecbd8dceb2443e41f39fcd73a7309c260985",
+    "tests/unit/__init__.py": "a8a33f1af525d882911fb800bc70254b152f5726bd1a910683b6b50f44024fb3",
+    "tests/unit/test_provider.py": "4e11f92a5c316a6cd61da74c0085b818a79cd9944cd2f337d74c5807808cb912",
+    "tests/unit/test_generation.py": "b8ada441632dd3c7e5f9d3f5f445f0ed875cabc762e8a737a2ef396f6af65fd9",
+    "tests/unit/test_warning_audit.py": "dea595916fad0494f15a2c753f0b3e43a7fa656dcc59a8ddb1a92770e9de3565",
+    "tests/browser/test_regional.py": "54c53e4eb3ac5a9990c55e96029f4a3875b5f51c39cfaad001317edb95aff0b9",
+    "tests/browser/test_core.py": "24b9c9bbf82a1ebaf44173a209d63c34c35f7987a4a295e7c003c27d3d36ce6b"
+  }
+}

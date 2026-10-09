@@ -1,0 +1,591 @@
+{
+  "current_review": {
+    "author": "implementer-coopain-20261007-codex-1636",
+    "created_at": "2026-10-07T17:59:50.979037+00:00",
+    "decision_id": "bb1256af-7f21-4dfe-aa39-430e8e77af67",
+    "disposition": "pursue",
+    "id": "20c22208-72c0-4093-8226-b7c8df2f4d11",
+    "investigation_stage": "solution_validation",
+    "next_action": "Use the independent local synthetic launcher. Review specific rights/privacy/employer-policy facts before proposing any real-person/public work; no further implementation package proposed.",
+    "next_work_item_id": null,
+    "product_maturity": "prototype",
+    "reason": "J01\u2013J04 implementation accepted with208 backend tests91.51% coverage,14webchecks,types/lint/build,actualdesktop/390 browser flow,clean isolatedsetup/restart. J05 documents reviewed against acceptance; local links/evidence paths and unchanged tested product hashes verified.",
+    "reviewed_at": "2026-10-07T17:59:50.979017+00:00",
+    "revision": 12,
+    "source_artifact_id": "53e6474a-c469-5559-8de2-1f962dba33c1",
+    "updated_at": "2026-10-07T17:59:50.979038+00:00",
+    "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+  },
+  "map_revision_id": "310c246a-d800-50dc-843c-d9f4151c79a9",
+  "markdown": "# Resume Coopain\n\nWorkspace: 9197a72d-23a6-424d-9b00-03e5d4a366f6\nObjective: A job seeker finds a relevant role through a consenting employee referrer, both decide whether to connect, share only chosen information, and track the introduction.\nMap revision: 310c246a-d800-50dc-843c-d9f4151c79a9\nCurrent next action: Use the independent local synthetic launcher. Review specific rights/privacy/employer-policy facts before proposing any real-person/public work; no further implementation package proposed.\n\n- 285e380e-96b9-4d14-b62b-26684b5e5f71: Verify Coopain runtime and label the compatibility placeholder before private testing [blocked; owner agent; version 2]\n  Blocked: changed_context\n  Blocked: Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved.\n- 90e268be-e214-59bc-a2da-fe8c7a63a7b5: Review one employer/referrer workflow; resolve ownership and label compatibility placeholder before users. [blocked; owner human; version 2]\n  Blocked: human_input\n\nUse foundry agent guide for the local workflow and schemas.\nPrepare: foundry handoff prepare --workspace-id 9197a72d-23a6-424d-9b00-03e5d4a366f6 --work-id WORK_ID --actor YOUR_AGENT --format markdown\nNo worker was started. External consequences require separate exact approval.\n",
+  "needs_review": {
+    "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+  },
+  "results": [
+    {
+      "context_complete": true,
+      "context_id": "787e9e0f-d9c7-5def-b004-641c28acd410",
+      "deferral": null,
+      "digest": "a973bafec9ec42bdcbba202288769dab5a262e7e70262e5b9d65784f8e69ca87",
+      "id": "53e6474a-c469-5559-8de2-1f962dba33c1",
+      "proposal": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "787e9e0f-d9c7-5def-b004-641c28acd410",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Delegates drafted only assigned documents in isolated trees; root read/integrated/reviewed actual artifacts. Official legal/privacy sources checked; source claims attributed. Invitations unsent, amounts and thresholds hypotheses. No runtime changes or repeat tests solely for prose.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/MVP_STATUS.md",
+              "document: docs/mvp/LOCAL_RUN.md",
+              "document: docs/mvp/LAUNCH_GATES.md",
+              "document: docs/mvp/PAYER_EXPERIMENT.md",
+              "document: docs/mvp/TESTER_INVITATIONS.md",
+              "document: docs/mvp/IMPLEMENTATION_LOG.md",
+              "document: acceptance/cases.json",
+              "document: .foundry/runs/j05/document-review.json",
+              "document: .foundry/runs/j04/backend-verified.log",
+              "document: .foundry/runs/j04/browser-seventh/result.json"
+            ],
+            "summary": "Complete independent local web MVP and reviewable release-preparation artifacts; current acceptance mapped to actual immutable evidence."
+          },
+          {
+            "confidence": "high",
+            "details": "Retained R007 reports no real tests or rights/license agreement. Roles are proposed, not assigned. Synthetic and paid/production alternatives remain conditional; no demand or compliance assessment is marked supported.",
+            "epistemic_status": "unknown",
+            "kind": "document",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/LAUNCH_GATES.md",
+              "document: docs/mvp/DECISION.md",
+              "document: .foundry/runs/787e9e0f-d9c7-5def-b004-641c28acd410.json"
+            ],
+            "summary": "Rights, named controller/real-person privacy plan and selected real-employer policy/eligibility remain explicit unresolved launch facts."
+          }
+        ],
+        "limits": "No real demand, participant trial, rights/license agreement, named controller, selected real-employer policy, production/native certification or commercial/legal clearance. Gate facts explicitly UNKNOWN; future deployment/payment payload and exact authorization remain outside completed local scope. No external sends/payments/cloud/publichosting/commit/push. No Foundry blocking defect/new friction.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Use the independent local synthetic launcher. Review specific rights/privacy/employer-policy facts before proposing any real-person/public work; no further implementation package proposed.",
+        "next_work": null,
+        "outcome": "continue",
+        "rationale": "J01\u2013J04 implementation accepted with208 backend tests91.51% coverage,14webchecks,types/lint/build,actualdesktop/390 browser flow,clean isolatedsetup/restart. J05 documents reviewed against acceptance; local links/evidence paths and unchanged tested product hashes verified.",
+        "reconciliation_rationale": null,
+        "request_key": "J05:6ece1abc-ae2a-4b50-bfca-0ffa9c8152b6",
+        "revisit_trigger": null,
+        "summary": "J05 complete: bounded local web MVP delivered; launch gates, candidate-free payer experiments and unsent tester drafts prepared.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read selected context, arrivals, source files, actual diffs and synthetic acceptance logs. No demand or external launch validation inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "c3fd1fbf-0b5c-4a12-ae98-4e2b7f3b88dc",
+          "decision_id": "bb1256af-7f21-4dfe-aa39-430e8e77af67",
+          "evidence_ids": [
+            "9ed0c747-5a67-486c-aa57-dbcc3822e228",
+            "4fac15c6-d505-470c-b4b7-7492fb0eaa64"
+          ],
+          "map_revision_id": "310c246a-d800-50dc-843c-d9f4151c79a9",
+          "next_work_id": null,
+          "review_id": "20c22208-72c0-4093-8226-b7c8df2f4d11",
+          "work_needing_review": {
+            "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual package diffs and recorded acceptance evidence within authorized local implementation scope.",
+        "request_digest": "994ef571994064041bc46135f7362adab5b1ddfac728336978b8f6015a343690",
+        "resolution": "accept",
+        "result_digest": "a973bafec9ec42bdcbba202288769dab5a262e7e70262e5b9d65784f8e69ca87",
+        "result_id": "53e6474a-c469-5559-8de2-1f962dba33c1"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "c3fd1fbf-0b5c-4a12-ae98-4e2b7f3b88dc",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    },
+    {
+      "context_complete": true,
+      "context_id": "d513d722-b878-520a-90ac-da0c436bcfd3",
+      "deferral": null,
+      "digest": "730ccdf5f492e0b0ec049669a1ff8dbc446e6ef3c17b6c79f1093b318de39d1d",
+      "id": "549e4882-7cf0-546b-be8c-7a426c51a0e2",
+      "proposal": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "d513d722-b878-520a-90ac-da0c436bcfd3",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "All primary signup/setup/actions completed in actual UI at both widths; data fictional, manual referral is explicitly synthetic assertion. Initial harness and invalid fixture failures retained, final acceptance green. Screenshots independently inspected.",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/IMPLEMENTATION_LOG.md",
+              "document: docs/mvp/LOCAL_RUN.md",
+              "document: docs/mvp/OBSERVER_TASK_SHEET.md",
+              "document: .foundry/runs/j04/backend-verified.log",
+              "document: .foundry/runs/j04/browser-seventh/result.json",
+              "document: .foundry/runs/j04/source-state.json",
+              "document: .foundry/runs/j04/restart-after.json"
+            ],
+            "summary": "Clean local launcher and consented introduction work through browser; reset interleaving/social-provider gating/redirect/remote-font defects fixed with evidence."
+          }
+        ],
+        "limits": "No real participant/demand, employer submission, native runtime or production certification. Native tooling advisories documented. Exact rights/controller/real employer policy facts remain external launch gates. No Foundry blocking defect or consequential external action.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "J05: Release gates and payer experiment preparation",
+        "next_work": {
+          "acceptance_criteria": "Local MVP complete; external launch held only on explicit unresolved rights/privacy/policy facts. No candidate charge or bonus handling without later fact-specific legal/payment design review.",
+          "blocked_reason": null,
+          "description": "Prepare collaborator rights checklist, employer policy check and concrete employer/community-funded options. Draft, do not send, tester invitations. Distinguish private local demo from actual personal-data onboarding. Plan docs/mvp/ROADMAP.md.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "J05: Release gates and payer experiment preparation"
+        },
+        "outcome": "continue",
+        "rationale": "208 backend tests pass91.51% coverage/all measured files>=60%; fourteen web checks, types, lint and production build green. Chromium passes both widths through primary UI flow, no outbound HTTP; clean isolated hash/frozen install and synthetic restart preserve history.",
+        "reconciliation_rationale": null,
+        "request_key": "J04:3fb3948a-f8a9-4fe0-b21e-2351c35bb2eb",
+        "revisit_trigger": null,
+        "summary": "J04 complete: independently runnable synthetic local web pilot, real desktop/390px consent and safety replay, clean install and restart verified.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read selected context, arrivals, source files, actual diffs and synthetic acceptance logs. No demand or external launch validation inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "471a297f-5442-4eda-9127-a3a9d1d08197",
+          "decision_id": "63528d75-dfa4-4d06-b461-b248d260e8c0",
+          "evidence_ids": [
+            "c999fbbb-ea57-4f20-9a13-cd6fd9bb451f"
+          ],
+          "map_revision_id": "e35e300a-7470-56e3-94b9-1c01308075f0",
+          "next_work_id": "c3fd1fbf-0b5c-4a12-ae98-4e2b7f3b88dc",
+          "review_id": "d215ebbc-11dc-4299-8ba0-051834f2c7de",
+          "work_needing_review": {
+            "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual package diffs and recorded acceptance evidence within authorized local implementation scope.",
+        "request_digest": "1b8ae91b3414af1acf870f6dcb5ea7020b01465b5ccf651995378dee08ce6870",
+        "resolution": "accept",
+        "result_digest": "730ccdf5f492e0b0ec049669a1ff8dbc446e6ef3c17b6c79f1093b318de39d1d",
+        "result_id": "549e4882-7cf0-546b-be8c-7a426c51a0e2"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "471a297f-5442-4eda-9127-a3a9d1d08197",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    },
+    {
+      "context_complete": true,
+      "context_id": "f3c266b4-415c-5ed8-8111-aec8041ff8e4",
+      "deferral": null,
+      "digest": "ef57e29de9e64ab36287a906f090dff673511c3635db596eeeb099f278bcfa71",
+      "id": "901bc367-267a-5308-b670-774011c901aa",
+      "proposal": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "f3c266b4-415c-5ed8-8111-aec8041ff8e4",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Exact changed source hashes retained. Root reviewed delegate files and integrated actual tests, including initially red specifications. No consequential external action performed.",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/IMPLEMENTATION_LOG.md",
+              "document: docs/mvp/PRIVACY_OPERATIONS.md",
+              "document: .foundry/runs/j03/full-suite-release.log",
+              "document: .foundry/runs/j03/source-state.json",
+              "document: .foundry/runs/j03/backend-audit.json",
+              "document: .foundry/runs/j03/j03-security-notes.json"
+            ],
+            "summary": "Synthetic migration/restore and auth/CSRF/rate-limit/PII/transfer boundaries green. Local never-SMTP, revoked-contact export, anonymous audit cleanup and session reset defects repaired. Backend61 lock packages zero known advisories; web runtime zero audited high/critical."
+          }
+        ],
+        "limits": "No production Postgres rehearsal, real-data physical erasure certification, rights/privacy/policy clearance or public launch. Native tooling4high advisories documented and outside certified web runtime. Browser replay/clean local launcher remain J04. Existing application data and environments preserved. Foundry had no blocking defect; persistent exact results and worktree ownership worked.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "J04: Private web pilot quality",
+        "next_work": {
+          "acceptance_criteria": "Candidate and referrer complete flow without dev-UI tooling; blocked/withdrawn/deleted profile paths safe; no claims of paid or automatic referral.",
+          "blocked_reason": null,
+          "description": "Browser tests at desktop/390px; synthetic seed and clean install; focus candidate/referrer dashboards, truthful filters and match reasons. Prepare observer task sheet. Plan docs/mvp/ROADMAP.md.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "J04: Private web pilot quality"
+        },
+        "outcome": "continue",
+        "rationale": "172 integrated backend tests pass, 91.58% coverage/all measured files>=60%; ten web checks, web/mobile types, lint, build, actual backend lock audit and generated-contract checks pass. Synthetic migration/restart and backup/restore preserve history.",
+        "reconciliation_rationale": null,
+        "request_key": "J03:049c6bdf-6ed0-471d-9bb3-73324dd34e75",
+        "revisit_trigger": null,
+        "summary": "J03 complete: additive migration/security/privacy operations and patched independently runnable backend/web stack.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read selected context, arrivals, source files, actual diffs and synthetic acceptance logs. No demand or external launch validation inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "84e423d8-0e34-48ab-8650-4c6a0a243024",
+          "decision_id": "fceea4b7-5f95-4224-8c39-1ad022d66517",
+          "evidence_ids": [
+            "35c379d1-8588-4b5d-8011-5be944675cc9"
+          ],
+          "map_revision_id": "b2316f90-4ca8-52ca-8a73-022759fb582e",
+          "next_work_id": "471a297f-5442-4eda-9127-a3a9d1d08197",
+          "review_id": "cd653ecc-b25e-469c-9558-bbe28cefedd8",
+          "work_needing_review": {
+            "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual package diffs and recorded acceptance evidence within authorized local implementation scope.",
+        "request_digest": "2ca3a4b53b936bd0ede570abf35e204e17e1fe0e28617bd3e1cd9f1f06d05016",
+        "resolution": "accept",
+        "result_digest": "ef57e29de9e64ab36287a906f090dff673511c3635db596eeeb099f278bcfa71",
+        "result_id": "901bc367-267a-5308-b670-774011c901aa"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "84e423d8-0e34-48ab-8650-4c6a0a243024",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    },
+    {
+      "context_complete": true,
+      "context_id": "9304daa7-c6da-5e81-981b-166fd52e33bb",
+      "deferral": null,
+      "digest": "708ece036db8326eee8085c309eb0984ed42ca52bdd8aa42367781871f8b85f6",
+      "id": "4628f625-0315-58df-90e0-7726f0c9b7b1",
+      "proposal": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "9304daa7-c6da-5e81-981b-166fd52e33bb",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Root schema/domain/route changes plus seven privacy delegate files and thirteen web/API delegate files, regenerated OpenAPI, current-package tests, and repaired legacy seeder illegal disabled-post swipe. Original dirty files retained; no commits/pushes or application database changes.",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/IMPLEMENTATION_LOG.md",
+              "document: .foundry/runs/j02/full-suite-final.log",
+              "document: .foundry/runs/j02/web-checkpoint.json",
+              "document: .foundry/runs/j02/source-state.json"
+            ],
+            "summary": "Backend121 passed; web5 passed; build/lint/types green. Preserved snapshots, selected skill names, contact revocation across reads/previews, block/deletion/withdrawal/replayed-swipe controls and explicit actor state transitions."
+          }
+        ],
+        "limits": "Browser replay and additive migration rehearsal remain J04/J03. Existing dependency advisories remain J03. S3 URLs issued before revocation remain valid until expiry; uploads will be disabled in J03. No market, real-user policy, rights or public launch validation. Foundry worked without defects; isolated delegate worktrees retained exact file ownership.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "J03: Persistence, security and migration readiness",
+        "next_work": {
+          "acceptance_criteria": "Restart and migration preserve historical matches; no reset of existing DB; token/CSRF/rate-limit/PII boundary tests green; disabled uploads cannot produce presigned access.",
+          "blocked_reason": null,
+          "description": "Introduce/rehearse additive Alembic baseline, modernize vulnerable deps with auth regression, tighten upload feature gate, audit/retention/export/delete and error handling. Plan docs/mvp/ROADMAP.md.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "J03: Persistence, security and migration readiness"
+        },
+        "outcome": "continue",
+        "rationale": "Integrated backend 121 passed, coverage91.81% with all measured files>=60%; web five acceptance checks, tsc, lint and production build pass. Initial red specifications retained.",
+        "reconciliation_rationale": null,
+        "request_key": "J02:9e543d3b-f9e7-41a1-a6cc-d865146857bc",
+        "revisit_trigger": null,
+        "summary": "J02 complete: one explicit candidate/referrer web flow with match-owned introduction history, policy metadata and immediate scoped privacy denial.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read selected context, arrivals, source files, actual diffs and synthetic acceptance logs. No demand or external launch validation inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "e3811be8-d6ef-4c5e-9b29-eed26a456c6a",
+          "decision_id": "1e25ee08-4789-4f55-a40d-89ed5ad8c0c1",
+          "evidence_ids": [
+            "4f7894df-d869-4001-8e98-a5c6517f99ea"
+          ],
+          "map_revision_id": "e52a3267-256f-57f4-bb39-02b04b119a87",
+          "next_work_id": "84e423d8-0e34-48ab-8650-4c6a0a243024",
+          "review_id": "9aae2d29-2eb3-4085-939b-3d36159e1cef",
+          "work_needing_review": {
+            "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual package diffs and recorded acceptance evidence within authorized local implementation scope.",
+        "request_digest": "f21aa3f9a5bfbeb60a1c30c4ede845799e7183fb728ffe40fe435cd68d868f53",
+        "resolution": "accept",
+        "result_digest": "708ece036db8326eee8085c309eb0984ed42ca52bdd8aa42367781871f8b85f6",
+        "result_id": "4628f625-0315-58df-90e0-7726f0c9b7b1"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "e3811be8-d6ef-4c5e-9b29-eed26a456c6a",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    },
+    {
+      "context_complete": true,
+      "context_id": "23e759ba-f9b6-5f85-974d-45db886e178c",
+      "deferral": null,
+      "digest": "ea9a6595b655ca713a85afdf3327b0c7448cb1968571796671405cfcb9577774",
+      "id": "0926d93e-e188-58f5-8daf-e3c2943f811c",
+      "proposal": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "23e759ba-f9b6-5f85-974d-45db886e178c",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Changed tests/conftest, test_mvp_j01, settings test isolation, backend requirements/lock and .python-version, shared compatibility renderers, web/mobile scoring/type definitions, .gitignore. Initial dirty state retained at aa382779b79951f843f37b8080f6f0972efe7e3c.",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/IMPLEMENTATION_LOG.md",
+              "document: .foundry/runs/j01/full-suite.log",
+              "document: .foundry/runs/j01/web-build.log"
+            ],
+            "summary": "Full backend suite 74 passed; current specification was red before repairs. Web/mobile TypeScript and design-system/web builds pass."
+          }
+        ],
+        "limits": "Historical dependency vulnerabilities assigned to J03; browser replay and introduction flow remain subsequent packages. No demand, real data, sends or launch validated. Foundry claim/context/arrivals worked; no blocking defect.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "J02: One candidate-to-referrer vertical flow",
+        "next_work": {
+          "acceptance_criteria": "Two users complete synthetic introduction; outsider and blocked user cannot read thread/PII; revoked grant immediately removes access; no fake referral submission.",
+          "blocked_reason": null,
+          "description": "Verify or repair existing web API calls through signup/profile/job/request/match/grant/message/decline. Add intro state and employer-policy metadata where absent, preserving snapshots. Plan docs/mvp/ROADMAP.md.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "J02: One candidate-to-referrer vertical flow"
+        },
+        "outcome": "continue",
+        "rationale": "74 tests pass, including prior seven regressions; source acceptance prohibits ID-derived scores. Shared components compile and production web builds.",
+        "reconciliation_rationale": null,
+        "request_key": "J01:e5a61b1a-2408-4ed1-ae43-620e18d37edb",
+        "revisit_trigger": null,
+        "summary": "J01 complete: reproducible Python 3.11 baseline, offline synthetic full suite and truthful unknown compatibility on web/mobile.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-coopain-20261007-codex-1636",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read selected context, arrivals, source files, actual diffs and synthetic acceptance logs. No demand or external launch validation inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "dd504371-7028-4e43-8869-2a2f5eac7871",
+          "decision_id": "30d614d1-a136-43ed-9c5b-840d9f2d31db",
+          "evidence_ids": [
+            "dcc6b331-472c-427f-a817-2cb1d58f37b8"
+          ],
+          "map_revision_id": "38a604f8-5920-5c6e-9a36-5d225b86af28",
+          "next_work_id": "e3811be8-d6ef-4c5e-9b29-eed26a456c6a",
+          "review_id": "e7814e7c-343f-4ae9-bb72-2290a770fae2",
+          "work_needing_review": {
+            "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual package diffs and recorded acceptance evidence within authorized local implementation scope.",
+        "request_digest": "b8ade6299143b3441aa3b6df89c50bc0b4d58e7044a7dc56879fd5cc5d811465",
+        "resolution": "accept",
+        "result_digest": "ea9a6595b655ca713a85afdf3327b0c7448cb1968571796671405cfcb9577774",
+        "result_id": "0926d93e-e188-58f5-8daf-e3c2943f811c"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "dd504371-7028-4e43-8869-2a2f5eac7871",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    },
+    {
+      "context_complete": true,
+      "context_id": "3756db15-dc86-5b5a-bbf9-a3abf06aa08e",
+      "deferral": null,
+      "digest": "e37ada8d44695e7475c0b63233b1134c13d829ee5b8fbb79fa62d0bb28678245",
+      "id": "070ab3dc-dda7-52c9-ba92-487f2461e1cd",
+      "proposal": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "3756db15-dc86-5b5a-bbf9-a3abf06aa08e",
+        "decision_scope": "venture",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/priority-mvps-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "Existing FastAPI/SQLAlchemy backend and Next/Expo clients retained at aa382779b79951f843f37b8080f6f0972efe7e3c. Seven selected existing tests passed in isolated Python 3.11 with pinned backend requirements and bcrypt 4.0.1: privacy grants, referrer job posts, safety, match snapshots and preference lifecycle. This is not full-suite or end-user runtime certification. Frontend dashboard still derives compatibility from stable IDs; migrations and storage completion remain documented gaps. No user tests or ownership/license agreement reported."
+          }
+        ],
+        "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": "A job seeker finds a relevant role through a consenting employee referrer, both decide whether to connect, share only chosen information, and track the introduction.",
+        "next_action": "J01: Reproducible safe baseline and honest compatibility \u2014 /home/jonathan/startup_lab/coopain/docs/mvp/ROADMAP.md",
+        "next_work": {
+          "acceptance_criteria": "Selected seven tests still pass; full-suite failures documented/fixed by scope; no outbound SMTP/storage/social requests; no UI random/ID-derived percentages.",
+          "blocked_reason": null,
+          "description": "Retain Git/untracked state; lock supported backend environment; run all existing tests with fake providers. Remove ID-derived compatibility and show real matched criteria/unknown. Inventory dependency advisories and assign fixes.\nPlan: /home/jonathan/startup_lab/coopain/docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "J01: Reproducible safe baseline and honest compatibility"
+        },
+        "outcome": "narrow",
+        "rationale": "The user explicitly prioritized bounded MVP implementation. The retained evidence supports building for a private pilot while keeping business and release unknowns distinct.",
+        "reconciliation_rationale": null,
+        "request_key": "priority-result-20261007",
+        "revisit_trigger": null,
+        "summary": "GO for improving the existing private prototype, candidates free and no bonus custody/sharing/payment automation in MVP. Do not rewrite it. Public/commercial release is gated on collaborator rights, employer referral-policy compatibility and production security. These gates do not block local implementation with synthetic profiles.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "58289002-7951-4941-9858-92f86fa2e876",
+          "decision_id": "6d564adb-b5a8-4ff9-b79a-90ba44630989",
+          "evidence_ids": [
+            "7d924a64-c5c8-4402-af8c-3e7ea6d9de41"
+          ],
+          "map_revision_id": "1bf02887-df90-594a-b0cf-18e24280bc0d",
+          "next_work_id": "dd504371-7028-4e43-8869-2a2f5eac7871",
+          "review_id": "01fd9a90-cf8c-4141-a80e-7071c04d6c21",
+          "work_needing_review": {
+            "285e380e-96b9-4d14-b62b-26684b5e5f71": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "eb076aa374fda6635a3c826a45977582d90426dc5a4bce5fdb4f3224708d0b28",
+        "resolution": "accept",
+        "result_digest": "e37ada8d44695e7475c0b63233b1134c13d829ee5b8fbb79fa62d0bb28678245",
+        "result_id": "070ab3dc-dda7-52c9-ba92-487f2461e1cd"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "58289002-7951-4941-9858-92f86fa2e876",
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    }
+  ],
+  "scope": {
+    "focus": null,
+    "idea_revision_id": null,
+    "objective": "A job seeker finds a relevant role through a consenting employee referrer, both decide whether to connect, share only chosen information, and track the introduction.",
+    "stage": "discovery",
+    "subject": "venture",
+    "subject_id": "v-coopain",
+    "title": "Coopain",
+    "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+  },
+  "stale_references": [],
+  "unreviewed_change_count": 0,
+  "unreviewed_changes": [],
+  "work": [
+    {
+      "acceptance_criteria": "Record routing/runtime basis and uncertainty; no external uploads, invitations or publication",
+      "blocked_reason": "changed_context",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-05T19:20:17.490246+00:00",
+      "decision_id": null,
+      "description": null,
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "changed_context",
+        "Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      ],
+      "id": "285e380e-96b9-4d14-b62b-26684b5e5f71",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Verify Coopain runtime and label the compatibility placeholder before private testing",
+      "updated_at": "2026-10-07T11:23:32.239032+00:00",
+      "version_id": 2,
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    },
+    {
+      "acceptance_criteria": "Review one employer/referrer workflow; resolve ownership and label compatibility placeholder before users.",
+      "blocked_reason": "human_input",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-04T10:19:17.870124+00:00",
+      "decision_id": null,
+      "description": "Exact remaining gate in requests/2026-10-04-followups.md; prior supplied answers preserved.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "human_input"
+      ],
+      "id": "90e268be-e214-59bc-a2da-fe8c7a63a7b5",
+      "kind": "investigation",
+      "owner": "human",
+      "parent_id": null,
+      "question": "Review one employer/referrer workflow; resolve ownership and label compatibility placeholder before users.",
+      "status": "blocked",
+      "title": "Review one employer/referrer workflow; resolve ownership and label compatibility placeholder before users.",
+      "updated_at": "2026-10-07T11:23:32.239709+00:00",
+      "version_id": 2,
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    }
+  ],
+  "worker_running": false,
+  "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+}

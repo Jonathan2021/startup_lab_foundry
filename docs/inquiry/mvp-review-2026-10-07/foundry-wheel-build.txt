@@ -1,0 +1,257 @@
+Building wheel...
+running egg_info
+writing src/startup_foundry.egg-info/PKG-INFO
+writing dependency_links to src/startup_foundry.egg-info/dependency_links.txt
+writing entry points to src/startup_foundry.egg-info/entry_points.txt
+writing requirements to src/startup_foundry.egg-info/requires.txt
+writing top-level names to src/startup_foundry.egg-info/top_level.txt
+reading manifest file 'src/startup_foundry.egg-info/SOURCES.txt'
+writing manifest file 'src/startup_foundry.egg-info/SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+copying src/startup_foundry/decision_commands.py -> build/lib/startup_foundry
+copying src/startup_foundry/cli.py -> build/lib/startup_foundry
+copying src/startup_foundry/decision_contracts.py -> build/lib/startup_foundry
+copying src/startup_foundry/decision_console.py -> build/lib/startup_foundry
+copying src/startup_foundry/agent_handoffs.py -> build/lib/startup_foundry
+running egg_info
+writing src/startup_foundry.egg-info/PKG-INFO
+writing dependency_links to src/startup_foundry.egg-info/dependency_links.txt
+writing entry points to src/startup_foundry.egg-info/entry_points.txt
+writing requirements to src/startup_foundry.egg-info/requires.txt
+writing top-level names to src/startup_foundry.egg-info/top_level.txt
+reading manifest file 'src/startup_foundry.egg-info/SOURCES.txt'
+writing manifest file 'src/startup_foundry.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/startup_foundry
+copying build/lib/startup_foundry/workspace_console.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/projects.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/decision_maps.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/decision_commands.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/steps.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/reviews.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/revamp_bootstrap.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/workspace_history.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/venture_scoring.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/migrations.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/__init__.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/__main__.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/application.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/console_commands.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+creating build/bdist.linux-x86_64/wheel/startup_foundry/static
+copying build/lib/startup_foundry/static/console.css -> build/bdist.linux-x86_64/wheel/./startup_foundry/static
+copying build/lib/startup_foundry/static/decisions.css -> build/bdist.linux-x86_64/wheel/./startup_foundry/static
+copying build/lib/startup_foundry/static/console.js -> build/bdist.linux-x86_64/wheel/./startup_foundry/static
+copying build/lib/startup_foundry/static/decisions.js -> build/bdist.linux-x86_64/wheel/./startup_foundry/static
+copying build/lib/startup_foundry/scoring.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/outreach.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/portfolio.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/workspace_modules.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/views.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/revamp_commands.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/cli.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/decision_contracts.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+creating build/bdist.linux-x86_64/wheel/startup_foundry/templates
+copying build/lib/startup_foundry/templates/pagination.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/new.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/agent_guide.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/records.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/proposals.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/venture.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/map_edge_fields.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/draft.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/step.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/proposal_fields.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/proposal_differences.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/request.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/outreach.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/map_node_fields.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/decision_header.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/venture_scores.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/score_summary.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/workspace_header.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/error.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/requests.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/portfolio_filters.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/proposal.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/agent_context.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/lifecycle_summary.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/workspace_modules.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/sources.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/ventures.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/ideas.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/start_step.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/manual_intake.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/steps.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/decision_result.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/base.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/workspace_record.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/workspace_event.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/review.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/help.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/idea.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/sync_inputs.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/existing_project.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/answer_review.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/workspace_history.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/business_summary.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/decision_map.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/dashboard.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/templates/scoring.html -> build/bdist.linux-x86_64/wheel/./startup_foundry/templates
+copying build/lib/startup_foundry/storage.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/proposals.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/manual_intake.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/domain.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/human_inputs.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/demo.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/config.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/logging_config.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/decision_console.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/web.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/agent_handoffs.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/snapshots.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/inputs.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/workspace_records.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/repository.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/score_presentation.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/workspace_navigation.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+copying build/lib/startup_foundry/errors.py -> build/bdist.linux-x86_64/wheel/./startup_foundry
+running install_data
+creating build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data
+creating build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry
+copying alembic.ini -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry
+creating build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic
+copying alembic/README -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic
+copying alembic/env.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic
+copying alembic/script.py.mako -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic
+creating build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/149fc56b9af9_initial_schema.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/42d765ac6946_add_current_revision_foreign_key.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/7ce261002001_bounded_step_runs.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/9af261004001_workspace_reviews.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/b10261005001_human_requests.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/b10261005002_venture_scores.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/b10261005003_portfolio_fusion.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/b10261006001_explicit_human_input_dependencies.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/b10261006002_pending_fusion_source_uniqueness.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+copying alembic/versions/b10261006003_decision_maps.py -> build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions
+running install_egg_info
+Copying src/startup_foundry.egg-info to build/bdist.linux-x86_64/wheel/./startup_foundry-0.0.1-py3.13.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/startup_foundry-0.0.1.dist-info/WHEEL
+creating '/tmp/foundry-upgrade-wheel-20261007/.tmp-e0mgsry0/startup_foundry-0.0.1-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'startup_foundry/__init__.py'
+adding 'startup_foundry/__main__.py'
+adding 'startup_foundry/agent_handoffs.py'
+adding 'startup_foundry/application.py'
+adding 'startup_foundry/cli.py'
+adding 'startup_foundry/config.py'
+adding 'startup_foundry/console_commands.py'
+adding 'startup_foundry/decision_commands.py'
+adding 'startup_foundry/decision_console.py'
+adding 'startup_foundry/decision_contracts.py'
+adding 'startup_foundry/decision_maps.py'
+adding 'startup_foundry/demo.py'
+adding 'startup_foundry/domain.py'
+adding 'startup_foundry/errors.py'
+adding 'startup_foundry/human_inputs.py'
+adding 'startup_foundry/inputs.py'
+adding 'startup_foundry/logging_config.py'
+adding 'startup_foundry/manual_intake.py'
+adding 'startup_foundry/migrations.py'
+adding 'startup_foundry/outreach.py'
+adding 'startup_foundry/portfolio.py'
+adding 'startup_foundry/projects.py'
+adding 'startup_foundry/proposals.py'
+adding 'startup_foundry/repository.py'
+adding 'startup_foundry/revamp_bootstrap.py'
+adding 'startup_foundry/revamp_commands.py'
+adding 'startup_foundry/reviews.py'
+adding 'startup_foundry/score_presentation.py'
+adding 'startup_foundry/scoring.py'
+adding 'startup_foundry/snapshots.py'
+adding 'startup_foundry/steps.py'
+adding 'startup_foundry/storage.py'
+adding 'startup_foundry/venture_scoring.py'
+adding 'startup_foundry/views.py'
+adding 'startup_foundry/web.py'
+adding 'startup_foundry/workspace_console.py'
+adding 'startup_foundry/workspace_history.py'
+adding 'startup_foundry/workspace_modules.py'
+adding 'startup_foundry/workspace_navigation.py'
+adding 'startup_foundry/workspace_records.py'
+adding 'startup_foundry/static/console.css'
+adding 'startup_foundry/static/console.js'
+adding 'startup_foundry/static/decisions.css'
+adding 'startup_foundry/static/decisions.js'
+adding 'startup_foundry/templates/agent_context.html'
+adding 'startup_foundry/templates/agent_guide.html'
+adding 'startup_foundry/templates/answer_review.html'
+adding 'startup_foundry/templates/base.html'
+adding 'startup_foundry/templates/business_summary.html'
+adding 'startup_foundry/templates/dashboard.html'
+adding 'startup_foundry/templates/decision_header.html'
+adding 'startup_foundry/templates/decision_map.html'
+adding 'startup_foundry/templates/decision_result.html'
+adding 'startup_foundry/templates/draft.html'
+adding 'startup_foundry/templates/error.html'
+adding 'startup_foundry/templates/existing_project.html'
+adding 'startup_foundry/templates/help.html'
+adding 'startup_foundry/templates/idea.html'
+adding 'startup_foundry/templates/ideas.html'
+adding 'startup_foundry/templates/lifecycle_summary.html'
+adding 'startup_foundry/templates/manual_intake.html'
+adding 'startup_foundry/templates/map_edge_fields.html'
+adding 'startup_foundry/templates/map_node_fields.html'
+adding 'startup_foundry/templates/new.html'
+adding 'startup_foundry/templates/outreach.html'
+adding 'startup_foundry/templates/pagination.html'
+adding 'startup_foundry/templates/portfolio_filters.html'
+adding 'startup_foundry/templates/proposal.html'
+adding 'startup_foundry/templates/proposal_differences.html'
+adding 'startup_foundry/templates/proposal_fields.html'
+adding 'startup_foundry/templates/proposals.html'
+adding 'startup_foundry/templates/records.html'
+adding 'startup_foundry/templates/request.html'
+adding 'startup_foundry/templates/requests.html'
+adding 'startup_foundry/templates/review.html'
+adding 'startup_foundry/templates/score_summary.html'
+adding 'startup_foundry/templates/scoring.html'
+adding 'startup_foundry/templates/sources.html'
+adding 'startup_foundry/templates/start_step.html'
+adding 'startup_foundry/templates/step.html'
+adding 'startup_foundry/templates/steps.html'
+adding 'startup_foundry/templates/sync_inputs.html'
+adding 'startup_foundry/templates/venture.html'
+adding 'startup_foundry/templates/venture_scores.html'
+adding 'startup_foundry/templates/ventures.html'
+adding 'startup_foundry/templates/workspace_event.html'
+adding 'startup_foundry/templates/workspace_header.html'
+adding 'startup_foundry/templates/workspace_history.html'
+adding 'startup_foundry/templates/workspace_modules.html'
+adding 'startup_foundry/templates/workspace_record.html'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic.ini'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/README'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/env.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/script.py.mako'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/149fc56b9af9_initial_schema.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/42d765ac6946_add_current_revision_foreign_key.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/7ce261002001_bounded_step_runs.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/9af261004001_workspace_reviews.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/b10261005001_human_requests.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/b10261005002_venture_scores.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/b10261005003_portfolio_fusion.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/b10261006001_explicit_human_input_dependencies.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/b10261006002_pending_fusion_source_uniqueness.py'
+adding 'startup_foundry-0.0.1.data/data/share/startup-foundry/alembic/versions/b10261006003_decision_maps.py'
+adding 'startup_foundry-0.0.1.dist-info/METADATA'
+adding 'startup_foundry-0.0.1.dist-info/WHEEL'
+adding 'startup_foundry-0.0.1.dist-info/entry_points.txt'
+adding 'startup_foundry-0.0.1.dist-info/top_level.txt'
+adding 'startup_foundry-0.0.1.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built /tmp/foundry-upgrade-wheel-20261007/startup_foundry-0.0.1-py3-none-any.whl

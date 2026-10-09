@@ -1,0 +1,2 @@
+uv run offer-check migrate
+Migration complete.

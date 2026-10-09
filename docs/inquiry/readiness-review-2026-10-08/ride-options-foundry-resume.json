@@ -1,0 +1,953 @@
+{
+  "current_review": {
+    "author": "implementer-ride-options-20261007-session-a",
+    "created_at": "2026-10-07T17:12:00.360201+00:00",
+    "decision_id": "57a725ce-89ea-4026-8de2-cee89fa8498a",
+    "disposition": "pursue",
+    "id": "28a24396-9302-478b-bc2b-adcfe5a733e2",
+    "investigation_stage": "solution_validation",
+    "next_action": "Existing operator gate ae6816fd-bc8a-4feb-a97e-fe6f85b34d99: perform R005 matched manual planning observations and separate 16-relation/directed-turn review; use actual shorter-loop usefulness to choose keep maximum, bounded target search, narrower product or incumbent. No expansion or physical-use release before its gates.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Both newly authorized parts satisfy local verification/preparation acceptance. Meaningful RED render verification precedes fix; all final checks pass and every failed attempt is retained. Real observations remain required for operator gates.",
+    "reviewed_at": "2026-10-07T17:12:00.360184+00:00",
+    "revision": 12,
+    "source_artifact_id": "5e0831c9-e7c5-5bc7-b1a5-c305a3b784f9",
+    "updated_at": "2026-10-07T17:12:00.360202+00:00",
+    "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+  },
+  "map_revision_id": "6cfb9fde-361c-57c6-a88c-971e047f0db1",
+  "markdown": "# Resume Ride Options\n\nWorkspace: 6972ac19-0263-41c7-9f09-97b64fd99f80\nObjective: Generate A\u2013B and loop motorcycle rides from preferences and a riding-time budget, explain distinct alternatives, let the rider choose and export GPX.\nMap revision: 6cfb9fde-361c-57c6-a88c-971e047f0db1\nCurrent next action: Existing operator gate ae6816fd-bc8a-4feb-a97e-fe6f85b34d99: perform R005 matched manual planning observations and separate 16-relation/directed-turn review; use actual shorter-loop usefulness to choose keep maximum, bounded target search, narrower product or incumbent. No expansion or physical-use release before its gates.\n\n- ae6816fd-bc8a-4feb-a97e-fe6f85b34d99: MVP trial gates: regional access audit and rider/Kurviger comparison [blocked; owner operator; version 2]\n  Blocked: Await operator/rider observations or an enabled interactive browser, and road-use audit review before widening release.\n- 6a6b1c22-2ff1-4abe-b619-f4580a70dded: Compare route-planning alternatives using an explicit routing basis [blocked; owner agent; version 2]\n  Blocked: changed_context\n  Blocked: Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved.\n- Result 1fa55e4b-c96f-591f-9d6e-82edd4e1096d: needs_reconciliation\n\nUse foundry agent guide for the local workflow and schemas.\nPrepare: foundry handoff prepare --workspace-id 6972ac19-0263-41c7-9f09-97b64fd99f80 --work-id WORK_ID --actor YOUR_AGENT --format markdown\nNo worker was started. External consequences require separate exact approval.\n",
+  "needs_review": {
+    "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+  },
+  "results": [
+    {
+      "context_complete": true,
+      "context_id": "39b04e30-e263-5d79-b0cb-3ef2f513133d",
+      "deferral": null,
+      "digest": "a09db4af94f8e38f0481c710eccaab8cc44a648f60849be614012b6d2eb14352",
+      "id": "5e0831c9-e7c5-5bc7-b1a5-c305a3b784f9",
+      "proposal": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "39b04e30-e263-5d79-b0cb-3ef2f513133d",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r06/check-accepted.txt",
+              "document: evidence/r06/typescript-final.txt",
+              "document: evidence/r06/browser-recorded-render-final/browser.json",
+              "document: evidence/r06/browser-live-render-final/browser.json",
+              "document: evidence/r06/browser-regional-render-final/receipt.json",
+              "document: evidence/r06/verification-receipt.json",
+              "document: evidence/r06/files.json"
+            ],
+            "summary": "Fresh make check passes Ruff, strict mypy on 15 source files and 31 tests. TypeScript/build pass. Current chosen A\u2013B and loop GPX preserve every saved coordinate; recorded, live Andorra via/revision and regional real-engine browser replays pass after waiting for rendered routes."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/REVIEW_NEXT.md",
+              "document: evidence/r06/audit-red.txt",
+              "document: evidence/r06/audit-green-01.txt",
+              "document: evidence/r06/browser-route-render-red.txt",
+              "document: evidence/r06/browser-recorded-exact.txt",
+              "document: evidence/r06/browser-recorded-render-final/mobile-loop.png",
+              "document: evidence/r06/browser-regional-render-final/auvergne-loop.png"
+            ],
+            "summary": "Original R05 gates versus narrowed preview explicitly audited. Benchmark run identity repaired; early loop screenshots exposed stale basemap-only render verification, fixed with fresh idle/route signal and RED-to-GREEN browser check. GPX query-string harness and script import-path failures retained separately, not called app defects."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r06/offline-install-final/receipt.json",
+              "document: evidence/r06/offline-install-final/isolation.json",
+              "document: evidence/r06/recovery-receipt.json",
+              "document: evidence/r06/resource-recovery.txt",
+              "document: evidence/r06/release-receipt.json",
+              "document: evidence/r06/runtime.json"
+            ],
+            "summary": "Fresh installed current wheel runs recorded generate/save/GPX/local map with external sockets blocked, outside checkout, Foundry module absent. Isolated synthetic backup/restore retains all rows and geometry/provenance. New immutable r06 bundle SHA and prior release preserved."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r06/warning-audit-02.json",
+              "document: docs/mvp/WARNING_AUDIT.md"
+            ],
+            "summary": "All 58 warning relations inventoried against raw and actual normalized PBF; exact hashes/profile/config/adapter retained and adapter matches import. 42 other-mode-only (40 bicycle,2 HGV conditional); 16 generic ignored restrictions remain unresolved. 25m known-member screen flags curvier Allier and two five-hour loops; possible exposure is not prohibited-turn proof and negative proximity is not clearance."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r06/benchmark-live-01.json",
+              "document: evidence/r06/planning-trials/inspection.json",
+              "document: evidence/r06/loop-duration-analysis.json"
+            ],
+            "summary": "Frozen ten-query live rerun: six feasible,three infeasible,one outside; median1.37s/max3.25s and zero returned checked hard violations. Five trial geometries exactly match R05, fresh GPX1.1/closed endpoints. 240-minute maximum returns68/142/156min,300 returns89/175/171min; zero in240\u2013300 target, target usefulness remains unknown. Generation unchanged."
+          },
+          {
+            "confidence": "low",
+            "details": "",
+            "epistemic_status": "unknown",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: evidence/r06/browser-availability.json",
+              "document: evidence/r06/planning-trials/records.json",
+              "document: docs/mvp/COMPARISON_PROTOCOL.md",
+              "document: evidence/r06/request-link-receipt.json",
+              "document: /home/jonathan/startup_lab/foundry/requests/2026-10-07-ride-R005-trials.md"
+            ],
+            "summary": "No interactive browser connector surfaces; manual Kurviger/actual human elapsed planning, edits,rejections/preferences remain null. Five matched structured records/prospective protocol prepared. Existing R005 reused as an explicit follow-up; original resolved replies and INBOX prefix preserved, existing blocked operator gate retained."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: evidence/r06/doctor.json",
+              "document: evidence/r06/foundry-context-summary.json",
+              "document: feedback/f2aaa4ce-4459-4f69-81b4-e6a62436519b.receipt.json"
+            ],
+            "summary": "Foundry .2 doctor hash/contract and map coverage useful; full revision read,all23 arrivals fetched/covered,final arrivals empty. Positive feedback f2aaa4ce-4459-4f69-81b4-e6a62436519b recorded with receipt. No new blocking defect; prior superseded-result history friction remains already reported."
+          }
+        ],
+        "limits": "No actual manual Kurviger/rider observations, directed regional turn proof, current road conditions or physical-use clearance. 16 generic restrictions unresolved and selected T02/T04 possibly exposed. Loop maximum passes but no 240\u2013300min target option. Synchronous postprocessing outside async routing timeout is measured, not hard wall-time SLA. Linux x86_64/CPython3.13 offline wheel. No real sends,account,payment,public hosting,cloud,push/commit; existing databases/old evidence preserved.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Existing operator gate ae6816fd-bc8a-4feb-a97e-fe6f85b34d99: perform R005 matched manual planning observations and separate 16-relation/directed-turn review; use actual shorter-loop usefulness to choose keep maximum, bounded target search, narrower product or incumbent. No expansion or physical-use release before its gates.",
+        "next_work": null,
+        "outcome": "continue",
+        "rationale": "Both newly authorized parts satisfy local verification/preparation acceptance. Meaningful RED render verification precedes fix; all final checks pass and every failed attempt is retained. Real observations remain required for operator gates.",
+        "reconciliation_rationale": null,
+        "request_key": "ride-r06-20261007-verified-preparation-01",
+        "revisit_trigger": null,
+        "summary": "R06 complete: current local MVP preview verified and reviewable standalone bundle retained; regional warnings and five real-or-null matched comparisons prepared without reopening accepted R05 or claiming road-use/usefulness.",
+        "supersedes_result_id": null,
+        "work_treatments": [
+          {
+            "action": "revise",
+            "description": "R06 preparation complete. Use docs/mvp/COMPARISON_PROTOCOL.md, evidence/r06/planning-trials/records.json and Foundry requests/2026-10-07-ride-R005-trials.md for actual human/Kurviger planning observations (still null). WARNING_AUDIT.md classifies 42 other-mode-only and 16 generic ignored restrictions; directed selected-turn/current access review remains unresolved, including possible T02/T04 exposure. Zero generated loop options meet 240\u2013300min target; decide target semantics from actual usefulness before altering generation. Local planning preview only; no physical ride/external release is authorized.",
+            "expected_version": 1,
+            "rationale": "Retain operator ownership/block and original real evidence acceptance; incorporate completed independent preparation rather than duplicating the gate.",
+            "title": null,
+            "work_id": "ae6816fd-bc8a-4feb-a97e-fe6f85b34d99"
+          }
+        ]
+      },
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "All23 relevant arrivals fetched and included in complete saved context; exact full retained map read; final arrivals empty. Real human/turn/open-road evidence absent and explicitly null, not assumed covered by technical fixtures.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "bf85263e-c14b-4076-9100-fca9c5ff574e",
+          "decision_id": "57a725ce-89ea-4026-8de2-cee89fa8498a",
+          "evidence_ids": [
+            "dabe19e6-3a97-421e-89b8-f6a3494861d4",
+            "dce6f325-123c-4b60-8dbc-834cf41172b8",
+            "926747a2-c6f8-43fd-87ba-2a6fadd88c02",
+            "8606b594-7896-4d12-a2a7-59fb0e09aad4",
+            "55658ffb-60be-4d2f-ac01-f449109c417e",
+            "46ae2b05-94c8-424f-8d6e-572b175e27d3",
+            "ba401636-9e1b-4b0b-8b1d-f2aa1e708d64"
+          ],
+          "map_revision_id": "6cfb9fde-361c-57c6-a88c-971e047f0db1",
+          "next_work_id": null,
+          "review_id": "28a24396-9302-478b-bc2b-adcfe5a733e2",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed final 31 checks/types/build; separate recorded/live/regional rendered-map and exact GPX evidence; clean current offline wheel/no Foundry and isolated recovery; all58 raw/normalized relations, known-member screen and retained hashes; five matched null-or-actual records. Required bounded local verification/preparation complete, original physical-use/human gates unresolved and blocked operator ownership retained. No external consequence accepted.",
+        "request_digest": "1bd0bb8d5936395f6f5a85bb071636f3239b948f04f3f72f5a5d8842cf9bbe94",
+        "resolution": "accept",
+        "result_digest": "a09db4af94f8e38f0481c710eccaab8cc44a648f60849be614012b6d2eb14352",
+        "result_id": "5e0831c9-e7c5-5bc7-b1a5-c305a3b784f9"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "bf85263e-c14b-4076-9100-fca9c5ff574e",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "context_complete": true,
+      "context_id": "a7a0f3bf-7f9f-5dc8-b163-5114e2e08a0f",
+      "deferral": null,
+      "digest": "b035d15024fb6c948353c384021a89208f2f51d36e1d54602f84ecd909c07c0d",
+      "id": "6b935903-0541-5d5f-a4f6-1d485c324ed0",
+      "proposal": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "a7a0f3bf-7f9f-5dc8-b163-5114e2e08a0f",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r05/check-final.txt",
+              "document: evidence/r05/typescript-final.txt",
+              "document: evidence/r05/files.json"
+            ],
+            "summary": "make check: Ruff, strict mypy and 29 unit/integration tests pass. TypeScript passes. Retained acceptance reds precede backup, response-size, quota and recorded-config implementations."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r05/browser-recorded-config-final.txt",
+              "document: evidence/r05/browser-live-final.txt",
+              "document: evidence/r05/regional-browser-01/receipt.json",
+              "document: evidence/r05/access-release-01.json"
+            ],
+            "summary": "Recorded and live core browser flows, plus Auvergne A\u2013B/loop with three options, passed. Nine engine synthetic access cases pass; regional warnings remain a separate gate."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r05/offline-install-04/receipt.json",
+              "document: evidence/r05/offline-install-04/isolation.json",
+              "document: evidence/r05/release-receipt.json",
+              "document: docs/LOCAL_RELEASE.md"
+            ],
+            "summary": "Isolated final wheel install, generate/save/GPX and map assets pass without external runtime network or Foundry. Versioned offline archive, recovery/configuration and resource/cost inventory prepared."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/PLANNING_TRIALS.md",
+              "document: evidence/r05/planning-trials/inspection.json",
+              "document: evidence/r05/planning-trials/geometry-inspection.png"
+            ],
+            "summary": "Five public-coordinate planning trials and GPX exports retain exact geometry/namespace; loops close exactly. Visual geometry inspection completed. No rider judgments invented."
+          },
+          {
+            "confidence": "low",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: feedback/5dc313c3-bd38-494f-bd31-442cce31e69e.json",
+              "document: evidence/r05/foundry-resume-summary.json"
+            ],
+            "summary": "Superseded R02 result remains needs_reconciliation in resume despite accepted correction; nonblocking history noise reported to Foundry, receipt retained. Server interruption recovered with unchanged claim/context; no claim was stolen."
+          }
+        ],
+        "limits": "Regional road-use audit has 58 unresolved import warnings; current openness and safety are not validated. Manual Kurviger comparison and rider judgments remain unknown (no enabled browser connector; feedback request pending). The ten-query benchmark has six feasible cases, three infeasible and one out of area. Loop budgets can produce shorter rides. Offline wheels target Linux x86_64/Python 3.13. Local Git still has no HEAD and changes remain uncommitted. No paid service, send, account creation, hosting, cloud or Git push. Foundry history friction reported with local receipt.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Use the local MVP preview; review regional access warnings and observe rider/Kurviger comparison before any road-use pilot or broader release.",
+        "next_work": {
+          "acceptance_criteria": "Attributable regional restriction audit and real recorded preference/planning-effort observations, separately from synthetic build tests; exact authorization for any external action.",
+          "blocked_reason": "Await operator/rider observations or an enabled interactive browser, and road-use audit review before widening release.",
+          "description": "Local code/build is complete as a planning preview. Review the 58 regional warnings and decide how affected roads are treated; manually compare the frozen planning tasks and obtain actual rider preference/effort judgments. PENDING_TRIALS.md contains alternatives and revisit triggers. No physical road-use pilot or external release is authorized by this task.",
+          "kind": "investigation",
+          "owner": "operator",
+          "status": "blocked",
+          "title": "MVP trial gates: regional access audit and rider/Kurviger comparison"
+        },
+        "outcome": "continue",
+        "rationale": "Assigned narrowed local-preview acceptance is complete: 29 deterministic tests plus recorded/live/regional browser replays, nine real-engine synthetic access checks, isolated offline installed-wheel run, backup/restore, synthetic demo, five prepared planning trials and inspected GPX exports. No fake route, third option, rider judgment or public release claim.",
+        "reconciliation_rationale": null,
+        "request_key": "ride-r05-20261007-local-release-01",
+        "revisit_trigger": null,
+        "summary": "Ride Options 0.1.0 local MVP preview released as a runnable offline bundle and running Auvergne app. Core A\u2013B/loop/preferences/via/save/revision/GPX workflow verified; broader road-use and rider comparison gates remain explicit.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete saved context and empty final arrivals inspected. Known benchmark failures, 58 regional warnings and null human judgments explicitly retained.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "623bf7bb-6a0f-48d2-bc5e-74fb1be38d99",
+          "decision_id": "52fe24da-d88c-4e71-b1e5-dccc699a81fb",
+          "evidence_ids": [
+            "a9c66007-769f-417e-83c0-4e07fd7af20a",
+            "dd31d6c0-9c6a-469e-9b95-898e0b2a1265",
+            "8a8cc947-5758-44c1-bf29-b2c84c741598",
+            "5aa3ff8a-703e-4638-91ca-3a8c478f613a",
+            "73f4d25c-9a73-4020-92c8-35738b9a2d7f"
+          ],
+          "map_revision_id": "681d012f-9c34-5149-99ed-0df92e6a2e97",
+          "next_work_id": "ae6816fd-bc8a-4feb-a97e-fe6f85b34d99",
+          "review_id": "50bf95d7-ea35-44e5-9ada-8b9e10ba1ab5",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed immutable source/build manifest, isolated final installed wheel and artifact digest, 29 passing tests, browser replays, nine access cases, recovery and five GPX inspections. Assigned local-preview release is complete; unresolved rider/road-use gates prevent wider release and remain blocked operator review. No external deployment or commercial validation accepted.",
+        "request_digest": "28f41a173e5f779f4233c7e0aa358eaae43cb3ee159f296c79c827e3347a6d23",
+        "resolution": "accept",
+        "result_digest": "b035d15024fb6c948353c384021a89208f2f51d36e1d54602f84ecd909c07c0d",
+        "result_id": "6b935903-0541-5d5f-a4f6-1d485c324ed0"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "623bf7bb-6a0f-48d2-bc5e-74fb1be38d99",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "context_complete": true,
+      "context_id": "a2bb8dd9-5c83-5b1f-8422-488e991792ed",
+      "deferral": null,
+      "digest": "eda127e0491570964811bd3738f776af6344c7df226f23ebf45fd062c619540c",
+      "id": "10a700bf-a6c0-588c-95a2-d08f1f7233a7",
+      "proposal": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "a2bb8dd9-5c83-5b1f-8422-488e991792ed",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r04/benchmark-v1.json",
+              "document: docs/mvp/QUALITY_REPORT.md",
+              "document: experiments/quality-queries.json"
+            ],
+            "summary": "Ten-query benchmark: six return feasible options, three infeasible, one outside coverage. Median 1.58s/max 3.44s; four Auvergne cases yield three distinct candidates; no returned checked hard-constraint violations."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r04/green-accepted.txt",
+              "document: evidence/r04/lint-accepted.txt",
+              "document: evidence/r04/types-accepted.txt",
+              "document: evidence/r04/scenery-resource.json",
+              "document: evidence/r04/engine-warnings.txt"
+            ],
+            "summary": "Mapped forest/water proximity is attributable, hash/version retained, unavailable metrics remain unknown. 24 checks and browser regression pass. Scenery startup measured 5.17s/427MiB; regional import warnings retained."
+          },
+          {
+            "confidence": "low",
+            "details": "",
+            "epistemic_status": "unknown",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/PENDING_TRIALS.md"
+            ],
+            "summary": "Manual comparison and rider judgments remain unknown; local preview preparation is independent of adoption and road-use trials. Revisit with operator comparison/judgments or an enabled interactive browser; regional warning audit also required."
+          }
+        ],
+        "limits": "Manual Kurviger comparison not performed: no enabled browser connector surfaces; no scraping substitute. Rider judgments and comparative effort are null. Source spatial coverage is a bounding-box proxy, OSM completeness unknown. 58 regional routing warnings require audit before road-use. Five-hour maximum loop options are shorter than the budget. Foundry had no new defects/friction. No external action or commit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "R05: Regional private local-preview release preparation; road-use and human trial gates retained",
+        "next_work": {
+          "acceptance_criteria": "Independent offline install and recorded fixture runtime; bounded resources, attribution, backup/restore, five prepared planning trials and GPX inspection; synthetic road-use tag checks pass, regional warning gate remains explicit. No hosted or road-use pilot release while pending gates are unresolved.",
+          "blocked_reason": null,
+          "description": "Bound resource use, map tile/provider attribution, backup/export, abuse controls and a deployment cost inventory. Prepare five planning trials and manual GPX inspection. Prepare local preview only; retain manual comparison, rider judgments and regional road-use audit as explicit unresolved release/pilot gates. No public hosting.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "R05: Regional private local-preview release preparation"
+        },
+        "outcome": "continue",
+        "rationale": "24 automated tests, types/lint and browser regression pass; benchmark retains all successes/failures and separates human unknowns. R04 required technical report is available. Continue independent local release preparation while retaining human comparison as pending rather than claiming adoption or road-use readiness.",
+        "reconciliation_rationale": null,
+        "request_key": "ride-r04-20261007-technical-checkpoint",
+        "revisit_trigger": null,
+        "summary": "R04 technical quality checkpoint: ten frozen regional queries measured, Auvergne extract pinned and local scenery proxy implemented; six requests yield feasible options. Manual comparison and rider judgments remain a bounded open trial gate.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete context/arrivals inspected; null human fields are unknown, not evidence of preference or comparative effort.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "83749135-8037-476b-b3b6-14909d50bfc6",
+          "decision_id": "57a275cb-48ed-4a10-aa33-97460fc39af4",
+          "evidence_ids": [
+            "68ba66fc-de19-4af4-8ecc-b705261621c8",
+            "ac754484-cd8f-4ff0-ab55-359ba9954748",
+            "d4cba671-9942-4e06-9de8-d75574e1e675"
+          ],
+          "map_revision_id": "b92a1155-1dd4-5fa6-ba54-ca6f71e84e29",
+          "next_work_id": "623bf7bb-6a0f-48d2-bc5e-74fb1be38d99",
+          "review_id": "34fc19a3-955e-465d-9011-2412a0ea6cd3",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed ten-query artifacts, failure cases, source/coverage limits and 24 passing checks. Accept technical quality checkpoint and explicitly narrowed local-preview R05; human comparison and road-use gates remain unresolved and visible. No broader release authorized.",
+        "request_digest": "a03ae7d56d8629886b86853fe49e00da1a500293bfad1f820c7c170d81310754",
+        "resolution": "accept",
+        "result_digest": "eda127e0491570964811bd3738f776af6344c7df226f23ebf45fd062c619540c",
+        "result_id": "10a700bf-a6c0-588c-95a2-d08f1f7233a7"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "83749135-8037-476b-b3b6-14909d50bfc6",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "context_complete": true,
+      "context_id": "aaff4ecf-eb2c-5770-8ba7-76c54ef16cd6",
+      "deferral": null,
+      "digest": "f0922d5b2b6bee79aa5acec7e0f9421c358e5cc1fe1fc819ef13aea9cfe5f3f2",
+      "id": "23208e11-1cb0-5b4c-ba99-4c13ccfe7ae0",
+      "proposal": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "aaff4ecf-eb2c-5770-8ba7-76c54ef16cd6",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r03/green-accepted.txt",
+              "document: evidence/r03/lint-accepted.txt",
+              "document: evidence/r03/types-accepted.txt",
+              "document: evidence/r03/typescript.txt"
+            ],
+            "summary": "22 deterministic checks pass including CSRF, other-owner isolation, idempotent save, optimistic revisions, original GPX geometry/namespace and restart persistence. Ruff, strict mypy and TypeScript pass."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r03/browser-recorded-accepted.txt",
+              "document: evidence/r03/browser-live-accepted.txt",
+              "document: evidence/r03/browser-live-accepted/browser.json",
+              "document: evidence/r03/browser-live-accepted/desktop-ab.png",
+              "document: evidence/r03/npm-audit.json",
+              "document: docs/ATTRIBUTION.md"
+            ],
+            "summary": "Recorded browser replay works with external network blocked. Live-engine browser A\u2013B, loop and via revision pass; prior revision unchanged. Desktop/mobile screenshots reviewed. MapLibre updated to patched 6.4.1 with zero known npm audit findings."
+          }
+        ],
+        "limits": "App is a planning preview on Andorra. Scenery preference remains unknown/unavailable; no user preference, demand or physical-safety claim. Road-use audit remains gated. Browser connector surfaces unavailable, so documented Playwright browser replay used for local acceptance. Foundry had no new defects/friction in this package. No deployment/commit/send/spend.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "R04: Preference quality checkpoint",
+        "next_work": {
+          "acceptance_criteria": "Report generation latency, feasible/unique options, hard-constraint errors, interventions and user preference judgments separately. No invented beauty ground truth or ETA calibration.",
+          "blocked_reason": null,
+          "description": "Benchmark 10 fixed regional queries including user-inspired 4\u20135h Auvergne/river preferences. Add broad-area routing only after core passes; compare same queries in Kurviger manually without scraping.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "R04: Preference quality checkpoint"
+        },
+        "outcome": "continue",
+        "rationale": "22 tests, lint, strict Python/TypeScript types and recorded/live actual browser flows pass. Real browser testing found and fixed stale-card selection, missing MapLibre 6 worker assets and engine waypoint-algorithm incompatibility. Reviewed images show road/route overlays and readable mobile cards.",
+        "reconciliation_rationale": null,
+        "request_key": "ride-r03-20261007-r1",
+        "revisit_trigger": null,
+        "summary": "R03 built and verified request/results map, owned local saves, via regeneration with immutable revisions, GPX geometry export and consented feedback. Bundled offline map works on desktop/mobile.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete saved context and empty relevant arrivals read; all new browser failure/correction evidence retained.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "4692d3b7-979a-4ea5-a68d-746bf2ca7706",
+          "decision_id": "468a1a60-5e65-48e1-9bcb-0fd2782e4e14",
+          "evidence_ids": [
+            "5486dfb7-4620-42fd-b2a4-1f51b6e54ec0",
+            "419308c3-4508-461c-ad4e-819b41e65490"
+          ],
+          "map_revision_id": "f52d5623-f6df-5843-be55-a5f196d41f60",
+          "next_work_id": "83749135-8037-476b-b3b6-14909d50bfc6",
+          "review_id": "ef65a935-98de-4bce-b406-32343a52db23",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed code, red-to-green records, passing unit/integration checks and actual recorded/live browser acceptance with visible route overlays. Exact core scope implemented, preview and user-trial gates remain explicit.",
+        "request_digest": "3d0633364f8225d43ad50197af9a3736de12dd92cbae9bebe7dd9342ff44d554",
+        "resolution": "accept",
+        "result_digest": "f0922d5b2b6bee79aa5acec7e0f9421c358e5cc1fe1fc819ef13aea9cfe5f3f2",
+        "result_id": "23208e11-1cb0-5b4c-ba99-4c13ccfe7ae0"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "4692d3b7-979a-4ea5-a68d-746bf2ca7706",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "context_complete": true,
+      "context_id": "9a2884c3-6839-5545-81a6-76df943be58e",
+      "deferral": null,
+      "digest": "ad503e72206695e5c910c3ab3e6ecdf5ea7096e13d489f62a63b5ee4c3fa7cb8",
+      "id": "09300511-4d10-5858-9330-2d5e507048e4",
+      "proposal": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "9a2884c3-6839-5545-81a6-76df943be58e",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r02/green-final.txt",
+              "document: evidence/r02/red.txt",
+              "document: evidence/r02/lint-final.txt",
+              "document: evidence/r02/types.txt"
+            ],
+            "summary": "18 deterministic tests pass, including dominated/duplicate/time filters, reversed overlap, failed loop, concurrency/deadline cancellation, hard-constraint unknowns and restart/ownership persistence."
+          },
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r02/live-generation.json"
+            ],
+            "summary": "Live pinned local engine pipeline returns only feasible unique options. A\u2013B complete with one option, loop partial with one; infeasible engine queries retained as reasons."
+          }
+        ],
+        "limits": "Scenery metrics remain unknown and nature weight does not affect ranking. Synthetic tests establish invariants only. Andorra extract restrictions/current conditions are not fully audited. Foundry queue transition was useful; positive feedback submitted. No external actions or Git commit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "R03: Request/results map and GPX workflow",
+        "next_work": {
+          "acceptance_criteria": "Browser completes both A\u2013B and Loop; selected GPX preserves chosen geometry and namespace; regeneration retains prior revision; errors preserve form input.",
+          "blocked_reason": null,
+          "description": "Build mobile request form, candidate cards, map, selection, via edit and GPX export; basic save/reload.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "R03: Request/results map and GPX workflow"
+        },
+        "outcome": "continue",
+        "rationale": "Current acceptance written and red import failure retained before implementation. Final 18 tests, Ruff and strict mypy pass. Real local A\u2013B returns one unique option, loop partial with one option; no invented third.",
+        "reconciliation_rationale": "Initial submission prematurely called lint green; its output showed one import-order finding. Fixed the import order and retained original lint output; lint-final.txt is the passing check. No behavioral code changed.",
+        "request_key": "ride-r02-20261007-r2",
+        "revisit_trigger": null,
+        "summary": "R02 implemented bounded generation, neutral baseline/presets, fail-closed hard filters, undirected overlap/loop checks, Pareto tradeoffs and immutable geometry/provenance persistence with Alembic.",
+        "supersedes_result_id": "1fa55e4b-c96f-591f-9d6e-82edd4e1096d",
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete saved context and no arrivals; historical rider records are not fixtures.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+          "decision_id": "fa0cb5b7-5c84-4e77-a7a5-8d1091d32bea",
+          "evidence_ids": [
+            "f483b67d-55a2-4cba-a669-474980fc56ba",
+            "8ac25af7-6858-4f25-8538-d81490db6f20"
+          ],
+          "map_revision_id": "ecd48898-3909-5540-a161-6b4a97615e4e",
+          "next_work_id": "4692d3b7-979a-4ea5-a68d-746bf2ca7706",
+          "review_id": "b4c79b1c-2227-4b11-89df-0d25cb653718",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed corrected lint evidence, strict types, 18 passing tests and live generation artifacts. Scope and partial results honest; routine local package only.",
+        "request_digest": "b416d26e94495fd29330a809201f514b5c9bb3a5d609e393576f62118236de49",
+        "resolution": "accept",
+        "result_digest": "ad503e72206695e5c910c3ab3e6ecdf5ea7096e13d489f62a63b5ee4c3fa7cb8",
+        "result_id": "09300511-4d10-5858-9330-2d5e507048e4"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "context_complete": true,
+      "context_id": "9a2884c3-6839-5545-81a6-76df943be58e",
+      "deferral": null,
+      "digest": "bb6a5ba7ef3dacda351b641658638aacd857a7d8f2fa0bd3a53eca610d5905f1",
+      "id": "1fa55e4b-c96f-591f-9d6e-82edd4e1096d",
+      "proposal": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "9a2884c3-6839-5545-81a6-76df943be58e",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r02/green-final.txt",
+              "document: evidence/r02/red.txt",
+              "document: evidence/r02/lint.txt",
+              "document: evidence/r02/types.txt"
+            ],
+            "summary": "18 deterministic tests pass, including dominated/duplicate/time filters, reversed overlap, failed loop, concurrency/deadline cancellation, hard-constraint unknowns and restart/ownership persistence."
+          },
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r02/live-generation.json"
+            ],
+            "summary": "Live pinned local engine pipeline returns only feasible unique options. A\u2013B complete with one option, loop partial with one; infeasible engine queries retained as reasons."
+          }
+        ],
+        "limits": "Scenery metrics remain unknown and nature weight does not affect ranking. Synthetic tests establish invariants only. Andorra extract restrictions/current conditions are not fully audited. Foundry queue transition was useful; positive feedback submitted. No external actions or Git commit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "R03: Request/results map and GPX workflow",
+        "next_work": {
+          "acceptance_criteria": "Browser completes both A\u2013B and Loop; selected GPX preserves chosen geometry and namespace; regeneration retains prior revision; errors preserve form input.",
+          "blocked_reason": null,
+          "description": "Build mobile request form, candidate cards, map, selection, via edit and GPX export; basic save/reload.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "R03: Request/results map and GPX workflow"
+        },
+        "outcome": "continue",
+        "rationale": "Current acceptance written and red import failure retained before implementation. Final 18 tests, Ruff and strict mypy pass. Real local A\u2013B returns one unique option, loop partial with one option; no invented third.",
+        "reconciliation_rationale": null,
+        "request_key": "ride-r02-20261007-r1",
+        "revisit_trigger": null,
+        "summary": "R02 implemented bounded generation, neutral baseline/presets, fail-closed hard filters, undirected overlap/loop checks, Pareto tradeoffs and immutable geometry/provenance persistence with Alembic.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": null,
+      "stale_reasons": [
+        "Decision map changed",
+        "Work version changed",
+        "Current review changed",
+        "New or changed evidence requires coverage review"
+      ],
+      "state": "needs_reconciliation",
+      "work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "context_complete": true,
+      "context_id": "24066b75-ebe6-55b6-914c-e7d45d357557",
+      "deferral": null,
+      "digest": "44b2bc5f6b739ab0ce7ba353a9384438fa9b5db8557062bbeefb41ab9f48c1c1",
+      "id": "6db37f7e-cb26-5b2b-86e6-7e818193ab47",
+      "proposal": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "24066b75-ebe6-55b6-914c-e7d45d357557",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: evidence/r01/green.txt",
+              "document: evidence/r01/adapted-access-r2.json",
+              "document: evidence/r01/stock-access.json",
+              "document: docs/adr/0002-motorcycle-import.md"
+            ],
+            "summary": "Six pytest regressions pass; nine adapted synthetic engine access cases pass. Stock six of nine cases fail; intermediate adapted turn case failed and corrected namespace handling passes."
+          },
+          {
+            "confidence": "low",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: uv.lock",
+              "document: evidence/r01/lint.txt",
+              "document: evidence/r01/types.txt",
+              "document: feedback/fff7fe87-71a6-4b7f-9827-ab5fe39a008c.json"
+            ],
+            "summary": "Pinned dependencies and local assets reproduce routing. Lint and strict mypy pass. Foundry startup timeout was reported; schema retry worked."
+          }
+        ],
+        "limits": "Road-use pilot remains gated: Andorra extract has incomplete turn relations. Tests are synthetic/recorded; current openness, physical safety, regional quality and demand are unvalidated. Initial acceptance was written first; first pytest attempt lacked pytest, then fixtures were intentionally red (2 failed, 3 passed); final 6 passed. Foundry schema timeout feedback delivered and retry succeeded. No Git HEAD exists; initial repository was entirely untracked, preserved without commits.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "R02: Bounded candidate and tradeoff pipeline",
+        "next_work": {
+          "acceptance_criteria": "Synthetic dominated/duplicate/over-budget candidates are removed; no fake third route; failed 40km-loop fixture returns infeasible; reversed shared edges count toward duplicate loops.",
+          "blocked_reason": null,
+          "description": "Implement direct baseline, preset candidate generation, hard filters, loop feasibility, geometry deduplication and non-dominated ranking; persist reproducibility metadata.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "R02: Bounded candidate and tradeoff pipeline"
+        },
+        "outcome": "continue",
+        "rationale": "Required local A\u2013B/loop, unsupported-area, timeout and forbidden-edge acceptance passed. Actual raw profile failures and failed adapter revision are retained. Reviewed source, test evidence and restrictions before next package.",
+        "reconciliation_rationale": null,
+        "request_key": "ride-r01-20261007-r1",
+        "revisit_trigger": null,
+        "summary": "R01 implemented: pinned independent Python runtime, local GraphHopper configuration and typed HTTP provider; dedicated motorcycle import passes nine real-engine synthetic access cases.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved complete context and empty arrivals inspected; historical evidence is not used as a fixture.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+          "decision_id": "1dbc367d-c8f9-4dcb-8c82-66a1c0d004b4",
+          "evidence_ids": [
+            "56a1d092-d853-4bf7-bddf-6ca4e5035d65",
+            "d7eb9d5e-a1dd-4537-8c8b-0ca5924dc5ec"
+          ],
+          "map_revision_id": "084fb56e-1baf-5303-bf34-75795b2ebd7c",
+          "next_work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+          "review_id": "288ffabf-f9c5-4ffa-b746-e13060862b20",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local source, nine synthetic engine acceptance cases, retained failures and six passing regression tests; scope remains preview-only and routine local implementation.",
+        "request_digest": "19f4e3c85dee62ec97b1a28bbc2e52f402b2d0297b6f0f86747168731ca15eec",
+        "resolution": "accept",
+        "result_digest": "44b2bc5f6b739ab0ce7ba353a9384438fa9b5db8557062bbeefb41ab9f48c1c1",
+        "result_id": "6db37f7e-cb26-5b2b-86e6-7e818193ab47"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "context_complete": true,
+      "context_id": "fdb546f3-2287-54d8-bb47-f396886268a5",
+      "deferral": null,
+      "digest": "6e7ac61fc618e5e618d043804b54eb8acaa7931a6dfd5b941284e8a6f6c1e806",
+      "id": "5000e791-c19f-5994-8029-f77e6c111971",
+      "proposal": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "fdb546f3-2287-54d8-bb47-f396886268a5",
+        "decision_scope": "venture",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/priority-mvps-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "User supplied a concrete planning pain: manually placing road-precise markers and checking views. Kurviger already offers curvy routing and loops, so the hypothesis is less manual planning through explicit tradeoffs and broad-area preferences, not invention of curvy routing. GraphHopper 11.1 produced real alternatives and loops locally on an Andorra OSM extract; detailed timings, hashes and failures are in the portfolio route probe. A 40km loop request failed and smaller requested lengths overshot: implement feasibility checks."
+          }
+        ],
+        "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": "Generate A\u2013B and loop motorcycle rides from preferences and a riding-time budget, explain distinct alternatives, let the rider choose and export GPX.",
+        "next_action": "R01: Reproduce routing and settle access semantics \u2014 /home/jonathan/startup_lab/ride-options/docs/mvp/ROADMAP.md",
+        "next_work": {
+          "acceptance_criteria": "A\u2013B and loop generation run locally; unsupported area and timeout return clear errors; no motorcycle-forbidden edge in restricted fixture. If stock access fails, keep app preview-only until fixed.",
+          "blocked_reason": null,
+          "description": "Package local engine startup/config and pinned extract manifest; implement RoutingProvider with recorded HTTP fixtures. Add minimal OSM access/one-way/turn restriction fixtures before a road-use pilot. Document exact failing cases and an adapter/engine choice.\nPlan: /home/jonathan/startup_lab/ride-options/docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "R01: Reproduce routing and settle access semantics"
+        },
+        "outcome": "narrow",
+        "rationale": "The user explicitly prioritized bounded MVP implementation. The retained evidence supports building for a private pilot while keeping business and release unknowns distinct.",
+        "reconciliation_rationale": null,
+        "request_key": "priority-result-20261007",
+        "revisit_trigger": null,
+        "summary": "GO for a regional planning MVP. Reset the venture objective from ETA diagnosis to route creation. Keep prior GPX/ETA evidence as history. A road-use pilot is gated by motorcycle access/turn-restriction verification; prototyping and UI can proceed immediately against fixtures and the tested local engine.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "ebb47149-a6a4-45f6-af16-4ece3a523981",
+          "decision_id": "1802a090-507d-434d-95e5-921941f45e18",
+          "evidence_ids": [
+            "185cf9c3-940b-4827-95f1-bb650fae6c78"
+          ],
+          "map_revision_id": "e6ddaf31-9acd-5f91-9560-3629fdcc6138",
+          "next_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+          "review_id": "5d2371f5-c497-426e-ad12-dc5d999c60c5",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "610094215e724b2734e88f90fa9506d582e2fe4f5039d20f05257568281855ef",
+        "resolution": "accept",
+        "result_digest": "6e7ac61fc618e5e618d043804b54eb8acaa7931a6dfd5b941284e8a6f6c1e806",
+        "result_id": "5000e791-c19f-5994-8029-f77e6c111971"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "ebb47149-a6a4-45f6-af16-4ece3a523981",
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    }
+  ],
+  "scope": {
+    "focus": null,
+    "idea_revision_id": null,
+    "objective": "Generate A\u2013B and loop motorcycle rides from preferences and a riding-time budget, explain distinct alternatives, let the rider choose and export GPX.",
+    "stage": "discovery",
+    "subject": "venture",
+    "subject_id": "v-route-repair",
+    "title": "Ride Options",
+    "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+  },
+  "stale_references": [],
+  "unreviewed_change_count": 0,
+  "unreviewed_changes": [],
+  "work": [
+    {
+      "acceptance_criteria": "Attributable regional restriction audit and real recorded preference/planning-effort observations, separately from synthetic build tests; exact authorization for any external action.",
+      "blocked_reason": "Await operator/rider observations or an enabled interactive browser, and road-use audit review before widening release.",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T16:33:27.693947+00:00",
+      "decision_id": "52fe24da-d88c-4e71-b1e5-dccc699a81fb",
+      "description": "R06 preparation complete. Use docs/mvp/COMPARISON_PROTOCOL.md, evidence/r06/planning-trials/records.json and Foundry requests/2026-10-07-ride-R005-trials.md for actual human/Kurviger planning observations (still null). WARNING_AUDIT.md classifies 42 other-mode-only and 16 generic ignored restrictions; directed selected-turn/current access review remains unresolved, including possible T02/T04 exposure. Zero generated loop options meet 240\u2013300min target; decide target semantics from actual usefulness before altering generation. Local planning preview only; no physical ride/external release is authorized.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "Await operator/rider observations or an enabled interactive browser, and road-use audit review before widening release."
+      ],
+      "id": "ae6816fd-bc8a-4feb-a97e-fe6f85b34d99",
+      "kind": "investigation",
+      "owner": "operator",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "MVP trial gates: regional access audit and rider/Kurviger comparison",
+      "updated_at": "2026-10-07T17:12:00.370546+00:00",
+      "version_id": 2,
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "acceptance_criteria": "Record routing/runtime basis and uncertainty; no external uploads, invitations or publication",
+      "blocked_reason": "changed_context",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-05T19:20:17.480642+00:00",
+      "decision_id": null,
+      "description": null,
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "changed_context",
+        "Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      ],
+      "id": "6a6b1c22-2ff1-4abe-b619-f4580a70dded",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Compare route-planning alternatives using an explicit routing basis",
+      "updated_at": "2026-10-07T11:23:23.993131+00:00",
+      "version_id": 2,
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    }
+  ],
+  "worker_running": false,
+  "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+}

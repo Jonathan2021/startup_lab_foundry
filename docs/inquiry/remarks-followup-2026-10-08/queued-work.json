@@ -1,0 +1,77 @@
+{
+  "crous-queue": {
+    "id": "e5d292f5-02cd-4d6a-a266-ac413b60e64f",
+    "request_digest": "ff9baaa5db1f7315fbe2e1676c57176f26c685b2946c2d8a9b65d56ac9faaa3c",
+    "work": {
+      "acceptance_criteria": "Source-linked local-time hours, explicit open/closed/unknown/stale cases, import failure recovery and meaningful tests; user remarks preserved.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T15:01:13.997136+00:00",
+      "decision_id": null,
+      "description": "Implement the official hours/source/status foundation in docs/mvp/REMARKS_HANDOFF.md, then advance through Q09 map, Q10 availability/free text and Q11 verified delivery only after each accepted dependency.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "e5d292f5-02cd-4d6a-a266-ac413b60e64f",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "Q08 \u2014 Official opening status from user remarks",
+      "updated_at": "2026-10-08T15:01:13.997140+00:00",
+      "version_id": 1,
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    }
+  },
+  "ride-options": {
+    "id": "22e53596-28f7-453a-bcbc-228224144a7b",
+    "request_digest": "009e27157bbc4565cc228d998e8c41080ca7a4a2b42df95c8e7b2265da1890ad",
+    "work": {
+      "acceptance_criteria": "Map-click pins render before routing, one start/via/finish editor works, documented local GraphHopper startup produces a real route and recovers after stop; no fixture substitution for live readiness.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T15:01:16.147611+00:00",
+      "decision_id": null,
+      "description": "Implement R08 in docs/mvp/REMARKS_HANDOFF.md: immediate pins, unified ordered itinerary and real engine startup/recovery. Continue sequentially through R09\u2013R12 under the same user scope.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "22e53596-28f7-453a-bcbc-228224144a7b",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "R08 \u2014 Visible route editing and reliable local engine from user remarks",
+      "updated_at": "2026-10-08T15:01:16.147615+00:00",
+      "version_id": 1,
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    }
+  },
+  "volley-match": {
+    "id": "4ca1f74c-7bf9-4e5c-8461-41e9a8af1c15",
+    "request_digest": "a596f43d6457c96b1e7469512e4171c48d7ce58cbef12903e8a7b636d725fc2d",
+    "work": {
+      "acceptance_criteria": "Browser-verified desktop/mobile flows cover every V08 remark, unique cross-team players and nonblocking imbalance warnings, names and default time, visible session creation and multiple roster configurations; tests and docs pass.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T15:01:18.248385+00:00",
+      "decision_id": null,
+      "description": "Implement V08 in docs/mvp/REMARKS_HANDOFF.md: visual overhaul, focus/layout repair, dynamic team validation, optional names, clear cap, current datetime and visible sessions/multiple matches. Continue sequentially through V09\u2013V11 after acceptance.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "4ca1f74c-7bf9-4e5c-8461-41e9a8af1c15",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "V08 \u2014 Usable session and match interface from user remarks",
+      "updated_at": "2026-10-08T15:01:18.248388+00:00",
+      "version_id": 1,
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    }
+  }
+}

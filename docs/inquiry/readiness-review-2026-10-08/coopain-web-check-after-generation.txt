@@ -1,0 +1,122 @@
+TAP version 13
+# Subtest: introduction controls follow actual participant identity, including users with both modes
+ok 1 - introduction controls follow actual participant identity, including users with both modes
+  ---
+  duration_ms: 101.327963
+  ...
+# Subtest: historical introduction titles use preserved snapshots instead of identifiers
+ok 2 - historical introduction titles use preserved snapshots instead of identifiers
+  ---
+  duration_ms: 20.655858
+  ...
+# Subtest: request and manual lifecycle API methods send only the explicitly selected payload
+ok 3 - request and manual lifecycle API methods send only the explicitly selected payload
+  ---
+  duration_ms: 63.132163
+  ...
+# Subtest: exploration performs no implicit profile/employment creation or local match simulation
+ok 4 - exploration performs no implicit profile/employment creation or local match simulation
+  ---
+  duration_ms: 0.563965
+  ...
+# Subtest: preference skill selection sends owned profile skill identifiers
+ok 5 - preference skill selection sends owned profile skill identifiers
+  ---
+  duration_ms: 43.467609
+  ...
+# Subtest: account deletion needs exact explicit confirmation and no pending operation
+ok 6 - account deletion needs exact explicit confirmation and no pending operation
+  ---
+  duration_ms: 69.32248
+  ...
+# Subtest: export and delete API calls are authenticated and scoped to the active account
+ok 7 - export and delete API calls are authenticated and scoped to the active account
+  ---
+  duration_ms: 80.811899
+  ...
+# Subtest: generated API contracts match the checked-in source schema
+ok 8 - generated API contracts match the checked-in source schema
+  ---
+  duration_ms: 1443.061798
+  ...
+# Subtest: frontend baseline uses patched Next and sharp with a locked generator
+ok 9 - frontend baseline uses patched Next and sharp with a locked generator
+  ---
+  duration_ms: 0.542605
+  ...
+# Subtest: web runtime has no audited high or critical advisory, with native tooling excluded by the actual alias
+ok 10 - web runtime has no audited high or critical advisory, with native tooling excluded by the actual alias
+  ---
+  duration_ms: 16.712798
+  ...
+# Subtest: criteria report only exact stated similarities, not predictions or identifier-derived scores
+ok 11 - criteria report only exact stated similarities, not predictions or identifier-derived scores
+  ---
+  duration_ms: 95.056422
+  ...
+# Subtest: missing, unavailable, partial or empty skill data stays unknown
+ok 12 - missing, unavailable, partial or empty skill data stays unknown
+  ---
+  duration_ms: 20.769793
+  ...
+# Subtest: optional filters preserve order, retain unknowns by default, and match exact skill names
+ok 13 - optional filters preserve order, retain unknowns by default, and match exact skill names
+  ---
+  duration_ms: 15.563536
+  ...
+# Subtest: preference skill reads support complete pagination
+ok 14 - preference skill reads support complete pagination
+  ---
+  duration_ms: 65.462797
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2053.591801
+
+> @coopain/web@0.0.1 lint /tmp/mvp-readiness-20261008-r1faj3o6/coopain/frontend/apps/web
+> eslint "src/**/*.{ts,tsx}"
+
+
+> @coopain/web@0.0.1 build /tmp/mvp-readiness-20261008-r1faj3o6/coopain/frontend/apps/web
+> next build
+
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.mjs took 25ms
+- Experiments (use with caution):
+  ✓ scrollRestoration
+
+  Creating an optimized production build ...
+  Using external babel configuration from /tmp/mvp-readiness-20261008-r1faj3o6/coopain/frontend/apps/web/babel.config.js
+✓ Compiled successfully in 5.5s
+  Running TypeScript ...
+  Finished TypeScript in 4.7s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/12) ...
+  Generating static pages using 11 workers (3/12) 
+  Generating static pages using 11 workers (6/12) 
+  Generating static pages using 11 workers (9/12) 
+✓ Generating static pages using 11 workers (12/12) in 532ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /conversations
+├ ○ /dashboard
+├ ○ /forgot-password
+├ ○ /login
+├ ○ /matches
+├ ○ /profile
+├ ○ /register
+├ ○ /reset-password
+└ ○ /verify-email
+
+
+○  (Static)  prerendered as static content
+

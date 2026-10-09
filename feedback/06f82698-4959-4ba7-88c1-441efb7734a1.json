@@ -1,0 +1,17 @@
+{
+  "id": "06f82698-4959-4ba7-88c1-441efb7734a1",
+  "venture_id": "v-foundry",
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "actor": "coordinator-remarks-20261008",
+  "kind": "friction",
+  "summary": "A successful worktree delivery left the canonical user checkout stale, making a real GitHub delivery look missing.",
+  "expected": "Release evidence identifies both working paths and reconciles the user-facing checkout or clearly reports the remaining divergence.",
+  "actual": "Coopain main was already pushed/merged with exact-SHA green CI, while the original folder still showed aa382779 and uncommitted J01-J05. Reversible checkpoint comparison and synchronization resolved it; 24 unique local files and ignored data were preserved.",
+  "reproduction": "Compare original coopain main and delivery worktree history against GitHub main f3a8c13e; see the retained sanitized reconciliation receipt.",
+  "impact": "User could not see the delivered product in the folder they were using, despite a correct GitHub delivery.",
+  "suggestion": "Implemented a precise delivery-provenance requirement in the 2026-10-08.1 public guide and all three follow-up handoffs. Keep Git mutation manual/authorized and preserve local data.",
+  "sources": [
+    "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/coopain-reconciliation.json",
+    "document: docs/EXTERNAL_AGENTS.md"
+  ]
+}

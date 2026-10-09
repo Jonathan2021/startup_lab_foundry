@@ -1,0 +1,92 @@
+[
+  {
+    "label": "export",
+    "argv": [
+      "uv",
+      "export",
+      "--frozen",
+      "--no-dev",
+      "--no-editable",
+      "--no-emit-project",
+      "--format",
+      "requirements-txt",
+      "--output-file",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/requirements.txt"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/crous-queue",
+    "exit": 0,
+    "elapsed_seconds": 0.02,
+    "log": "crous-queue-wheel-export.txt"
+  },
+  {
+    "label": "venv",
+    "argv": [
+      "uv",
+      "venv",
+      "--python",
+      "3.13",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/env"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.027,
+    "log": "crous-queue-wheel-venv.txt"
+  },
+  {
+    "label": "dependencies",
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/env/bin/python",
+      "--require-hashes",
+      "--no-deps",
+      "-r",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/requirements.txt"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.997,
+    "log": "crous-queue-wheel-dependencies.txt"
+  },
+  {
+    "label": "install",
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/env/bin/python",
+      "--no-deps",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/crous-queue/dist/crous_queue-0.1.1-py3-none-any.whl"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.039,
+    "log": "crous-queue-wheel-install.txt"
+  },
+  {
+    "label": "independence",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/env/bin/python",
+      "-c",
+      "import importlib.util; assert importlib.util.find_spec(\"startup_foundry\") is None; print(\"Foundry not installed\")"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.021,
+    "log": "crous-queue-wheel-independence.txt"
+  },
+  {
+    "label": "migrate",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/env/bin/crous-queue",
+      "migrate"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-crous-queue/outside",
+    "exit": 1,
+    "elapsed_seconds": 1.585,
+    "log": "crous-queue-wheel-migrate.txt"
+  }
+]

@@ -1,0 +1,3 @@
+uv run pytest tests/browser/test_core.py -q
+.                                                                        [100%]
+1 passed in 9.62s

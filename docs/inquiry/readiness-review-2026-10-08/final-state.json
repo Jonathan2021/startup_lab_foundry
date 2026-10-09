@@ -1,0 +1,30 @@
+{
+  "ride-options": {
+    "work": {
+      "id": "42b34c32-fc4b-45dc-bd91-7f2456b3f767",
+      "status": "ready",
+      "owner": "agent",
+      "version_id": 1
+    },
+    "HEAD": null
+  },
+  "volley-match": {
+    "work": {
+      "id": "3f666496-6be6-4d47-a304-7bc541f76795",
+      "status": "ready",
+      "owner": "agent",
+      "version_id": 1
+    },
+    "HEAD": null
+  },
+  "coopain": {
+    "work": {
+      "id": "118dc039-d6f6-408b-852e-8fd49b79101c",
+      "status": "ready",
+      "owner": "agent",
+      "version_id": 1
+    },
+    "HEAD": "aa382779b79951f843f37b8080f6f0972efe7e3c"
+  },
+  "coopain_remote_main": "4f6899287dea2c10236d6293d77d6240587b6703"
+}

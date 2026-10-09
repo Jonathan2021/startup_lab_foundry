@@ -1,0 +1,21 @@
+{
+  "as_of_context": false,
+  "digest": "e89b4a5bd867b50b2225f6fee1a7b86a6047df623dbfe329a86c946c3c24b52c",
+  "id": "2fa038ca-94ed-4f5c-aa96-9a09a693a7d8",
+  "instruction": "Prepare fresh context with this record before proposing dependent effects",
+  "kind": "evidence",
+  "record": {
+    "captured_at": "2026-10-08T15:10:53.743303+00:00",
+    "captured_by": "coordinator-remarks-20261008",
+    "confidence": "low",
+    "created_at": "2026-10-08T15:10:53.743324+00:00",
+    "details": "{\"actor\": \"coordinator-remarks-20261008\", \"actual\": \"Coopain main was already pushed/merged with exact-SHA green CI, while the original folder still showed aa382779 and uncommitted J01-J05. Reversible checkpoint comparison and synchronization resolved it; 24 unique local files and ignored data were preserved.\", \"expected\": \"Release evidence identifies both working paths and reconciles the user-facing checkout or clearly reports the remaining divergence.\", \"id\": \"06f82698-4959-4ba7-88c1-441efb7734a1\", \"impact\": \"User could not see the delivered product in the folder they were using, despite a correct GitHub delivery.\", \"kind\": \"friction\", \"reproduction\": \"Compare original coopain main and delivery worktree history against GitHub main f3a8c13e; see the retained sanitized reconciliation receipt.\", \"sources\": [\"document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/coopain-reconciliation.json\", \"document: docs/EXTERNAL_AGENTS.md\"], \"suggestion\": \"Implemented a precise delivery-provenance requirement in the 2026-10-08.1 public guide and all three follow-up handoffs. Keep Git mutation manual/authorized and preserve local data.\", \"summary\": \"A successful worktree delivery left the canonical user checkout stale, making a real GitHub delivery look missing.\", \"venture_id\": \"v-foundry\", \"workspace_id\": \"68afabed-a744-47df-94c1-7402f5c7b3b0\"}\nEpistemic status: observation\nSources: document: feedback/06f82698-4959-4ba7-88c1-441efb7734a1.json\nRecord references: ",
+    "id": "2fa038ca-94ed-4f5c-aa96-9a09a693a7d8",
+    "kind": "observation",
+    "origin_work_item_id": null,
+    "sources": [],
+    "summary": "[Dogfood/friction] A successful worktree delivery left the canonical user checkout stale, making a real GitHub delivery look missing.",
+    "updated_at": "2026-10-08T15:10:53.743326+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  }
+}

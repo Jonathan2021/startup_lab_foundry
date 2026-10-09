@@ -1,0 +1,21 @@
+{
+  "as_of_context": false,
+  "digest": "c3715e7b7725a3a3b50d1ac091fa13ce8c2aa790c439921c3bb5d91a83f33f76",
+  "id": "2c17ca68-ec03-4d7c-9ede-f1adca9dcb76",
+  "instruction": "Prepare fresh context with this record before proposing dependent effects",
+  "kind": "evidence",
+  "record": {
+    "captured_at": "2026-10-08T11:45:17.464274+00:00",
+    "captured_by": "crous-release-20261008-q07-e83a",
+    "confidence": "low",
+    "created_at": "2026-10-08T11:45:17.464299+00:00",
+    "details": "{\"actor\": \"crous-release-20261008-q07-e83a\", \"actual\": \"Doctor canonical hash matched; all 14 evidence records and full map were read, then context 9e344b61-f53f-5c03-987e-34724095b2d2 reported complete with zero unclassified records. Standalone release runs without Foundry.\", \"expected\": \"Verify canonical 2026-10-07.2 bridge and classify every relevant retained arrival before editing, without making Foundry an application dependency.\", \"id\": \"46df556b-9bfc-488a-87c6-81a1a3407aa9\", \"impact\": \"Ownership/context pins were available before release work; independent packaging validation required no Foundry runtime or store.\", \"kind\": \"positive\", \"reproduction\": \"From the configured venture run doctor, guide/resume/start with the unique actor and 100000-byte budget, fetch the 14 arrivals and exact full-map revision, prepare complete context, then run wheel/source-kit harnesses.\", \"sources\": [\"docs/evidence/q07-20261008-e83a/doctor.json\", \"docs/mvp/RELEASE_READINESS.md\", \"docs/evidence/q07-20261008-e83a/wheel-verified.json\"], \"suggestion\": \"Retain explicit coverage counters, saved pins, canonical helper check and separate full-map command. No new Foundry bug or blocking friction observed in this package.\", \"summary\": \"Q07 upgraded doctor and explicit coverage enabled a fully owned release checkpoint.\", \"venture_id\": \"f0b5abfe-0274-42f7-9c9a-72dcbe68c116\", \"workspace_id\": \"81ee3117-de70-411e-9856-07420859ffad\"}\nEpistemic status: observation\nSources: document: feedback/46df556b-9bfc-488a-87c6-81a1a3407aa9.json\nRecord references: ",
+    "id": "2c17ca68-ec03-4d7c-9ede-f1adca9dcb76",
+    "kind": "observation",
+    "origin_work_item_id": null,
+    "sources": [],
+    "summary": "[Dogfood/positive] Q07 upgraded doctor and explicit coverage enabled a fully owned release checkpoint.",
+    "updated_at": "2026-10-08T11:45:17.464300+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "volley-coach": {
+    "wheel": "volley_coach-0.1.1-py3-none-any.whl",
+    "migrations": [
+      "volley_coach/migrations/env.py",
+      "volley_coach/migrations/versions/0001_foundations.py",
+      "volley_coach/migrations/versions/0002_plans.py",
+      "volley_coach/migrations/versions/0003_history.py",
+      "volley_coach/migrations/versions/0004_scoped_logs.py"
+    ],
+    "templates": 10,
+    "static": 1
+  },
+  "crous-queue": {
+    "wheel": "crous_queue-0.1.1-py3-none-any.whl",
+    "migrations": [],
+    "templates": 6,
+    "static": 8
+  },
+  "offer-check": {
+    "wheel": "offer_check-0.1.0-py3-none-any.whl",
+    "migrations": [
+      "offer_check/migrations/env.py",
+      "offer_check/migrations/versions/0001_capture.py",
+      "offer_check/migrations/versions/0002_retention.py"
+    ],
+    "templates": 12,
+    "static": 4
+  }
+}

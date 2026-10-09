@@ -1,0 +1,14 @@
+{
+  "actor": "coordinator-remarks-20261008",
+  "request_key": "crous-queue-remarks-20261008",
+  "expected_head": "7f903f34-fc3d-5ffb-b6e5-f89c2307b6cf",
+  "rationale": "The user explicitly requests a follow-up addressing their root remarks after the accepted second run; this does not reopen historical human-trial gates.",
+  "work": {
+    "title": "Q08 \u2014 Official opening status from user remarks",
+    "description": "Implement the official hours/source/status foundation in docs/mvp/REMARKS_HANDOFF.md, then advance through Q09 map, Q10 availability/free text and Q11 verified delivery only after each accepted dependency.",
+    "acceptance_criteria": "Source-linked local-time hours, explicit open/closed/unknown/stale cases, import failure recovery and meaningful tests; user remarks preserved.",
+    "kind": "execution",
+    "owner": "agent",
+    "status": "ready"
+  }
+}

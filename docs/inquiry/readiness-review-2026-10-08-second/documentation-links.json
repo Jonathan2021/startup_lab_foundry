@@ -1,0 +1,37 @@
+{
+  "volley-coach": {
+    "checked": [
+      "README.md",
+      "docs/RELEASE.md",
+      "docs/DEPLOYMENT_PROPOSAL.md",
+      "docs/API.md",
+      "docs/PILOT.md",
+      "docs/PRIVACY.md",
+      "docs/IMPLEMENTATION_LOG.md",
+      "docs/pilot/TRIAL_SHEET.md",
+      "docs/pilot/WALKTHROUGH.md",
+      "docs/mvp/REVIEW_NEXT.md"
+    ],
+    "missing_local_targets": []
+  },
+  "crous-queue": {
+    "checked": [
+      "README.md",
+      "docs/DEPLOYMENT_PROPOSAL.md",
+      "docs/PILOT.md",
+      "docs/OPERATIONS.md",
+      "docs/PILOT_OPERATOR_SCHEDULE.md",
+      "docs/IMPLEMENTATION_LOG.md",
+      "docs/mvp/REVIEW_NEXT.md"
+    ],
+    "missing_local_targets": []
+  },
+  "offer-check": {
+    "checked": [
+      "README.md",
+      "docs/OPERATIONS.md",
+      "docs/mvp/REVIEW_NEXT.md"
+    ],
+    "missing_local_targets": []
+  }
+}

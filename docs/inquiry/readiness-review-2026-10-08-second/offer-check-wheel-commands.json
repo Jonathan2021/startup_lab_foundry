@@ -1,0 +1,129 @@
+[
+  {
+    "label": "export",
+    "argv": [
+      "uv",
+      "export",
+      "--frozen",
+      "--no-dev",
+      "--no-editable",
+      "--no-emit-project",
+      "--format",
+      "requirements-txt",
+      "--output-file",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/requirements.txt"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/offer-check",
+    "exit": 0,
+    "elapsed_seconds": 0.021,
+    "log": "offer-check-wheel-export.txt"
+  },
+  {
+    "label": "venv",
+    "argv": [
+      "uv",
+      "venv",
+      "--python",
+      "3.13",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.026,
+    "log": "offer-check-wheel-venv.txt"
+  },
+  {
+    "label": "dependencies",
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/python",
+      "--require-hashes",
+      "--no-deps",
+      "-r",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/requirements.txt"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.991,
+    "log": "offer-check-wheel-dependencies.txt"
+  },
+  {
+    "label": "install",
+    "argv": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/python",
+      "--no-deps",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/offer-check/dist/offer_check-0.1.0-py3-none-any.whl"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.039,
+    "log": "offer-check-wheel-install.txt"
+  },
+  {
+    "label": "independence",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/python",
+      "-c",
+      "import importlib.util; assert importlib.util.find_spec(\"startup_foundry\") is None; print(\"Foundry not installed\")"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.022,
+    "log": "offer-check-wheel-independence.txt"
+  },
+  {
+    "label": "migrate",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/offer-check",
+      "migrate"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 6.027,
+    "log": "offer-check-wheel-migrate.txt"
+  },
+  {
+    "label": "seed",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/offer-check",
+      "seed-demo"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 1.594,
+    "log": "offer-check-wheel-seed.txt"
+  },
+  {
+    "label": "backup",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/offer-check",
+      "backup",
+      "--output",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/backup"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.772,
+    "log": "offer-check-wheel-backup.txt"
+  },
+  {
+    "label": "restore",
+    "argv": [
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/env/bin/offer-check",
+      "restore",
+      "--input",
+      "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/backup"
+    ],
+    "cwd": "/home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/wheel-offer-check/outside",
+    "exit": 0,
+    "elapsed_seconds": 0.653,
+    "log": "offer-check-wheel-restore.txt"
+  }
+]

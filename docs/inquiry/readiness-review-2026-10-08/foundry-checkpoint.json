@@ -1,0 +1,32 @@
+{
+  "result_id": "4cf25af4-276a-5486-bf56-9ef0224d01d0",
+  "supersedes_result_id": "2f354d71-0d02-5246-98da-6c7cb6142c57",
+  "context_id": "5e92bd71-af26-5b35-98fa-0641f32d0785",
+  "resolution": {
+    "actor": "coordinator-readiness-20261008",
+    "coverage_action": "reviewed",
+    "coverage_rationale": "Fresh context includes all 39 selected evidence records, including both late feedback arrivals. No unclassified records remain.",
+    "effects": {
+      "assessment_ids": [],
+      "completed_work_id": "1f29d43f-556a-4fde-bd44-1202f4098b4f",
+      "decision_id": "e7686d1d-4b15-4118-b606-e5ceb6408a61",
+      "evidence_ids": [
+        "6f8fe2b4-fe95-472e-9401-b56a2d675430",
+        "a9e9cdb0-39a7-46ed-a15b-99844a78a1e6",
+        "ab23ef25-91ed-4d55-a0d4-ff29521fc9fd",
+        "b62ec00f-385e-423d-8deb-00f3b81062a6"
+      ],
+      "map_revision_id": "61d663fd-624e-517b-b096-18a60c3970a5",
+      "next_work_id": null,
+      "review_id": "30a27299-dea0-49a1-8f20-45c5eaff1cc2",
+      "work_needing_review": {
+        "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      }
+    },
+    "rationale": "Fresh independent audit and concrete handoffs complete; product release packages and external Git delivery remain pending. Late positive feedback reviewed without changing conclusions.",
+    "request_digest": "6aae60223dadb039d2998f756f77bf8086a5d37624ad0eb32748d422e20969fc",
+    "resolution": "accept",
+    "result_digest": "ef47b76c3a4f7cc8668058d3ec3d9c9eaad7d6cc66b558a76eacf005777aed61",
+    "result_id": "4cf25af4-276a-5486-bf56-9ef0224d01d0"
+  }
+}

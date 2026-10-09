@@ -1,0 +1,109 @@
+{
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0",
+  "map_revision_id": "29f1d93d-41da-512b-993a-33e95c1e3b25",
+  "work": [
+    {
+      "acceptance_criteria": "Every prepared repo resolves its own workspace and current work; stale/conflicting claims fail; failed feedback send is retained and retry is idempotent.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T11:23:35.681391+00:00",
+      "decision_id": "99f688ce-6cba-4b56-8d72-0e926fd937bb",
+      "description": "Use prepared configs and maps; one writer per venture at a time, parallelism across venture repositories. Verify claim, prepare, result preview/accept, resume and feedback receipt. No production model service.\nPlan: /home/jonathan/startup_lab/foundry/docs/plans/2026-10-07-agent-dogfood/README.md",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [],
+      "id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+      "kind": "execution",
+      "owner": "coordinator-mvp-review-20261007",
+      "parent_id": null,
+      "question": null,
+      "status": "in_progress",
+      "title": "F01: Run one complete agent handoff per venture",
+      "updated_at": "2026-10-07T15:49:41.085715+00:00",
+      "version_id": 2,
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "acceptance_criteria": "One observed workflow issue or confirmation; no fabricated time-saving claim",
+      "blocked_reason": "changed_context",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-04T10:19:18.909437+00:00",
+      "decision_id": null,
+      "description": null,
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "changed_context",
+        "Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      ],
+      "id": "handoff-foundry-next-r1",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Collect first operation feedback and run visual QA when browser is available",
+      "updated_at": "2026-10-07T11:23:34.747930+00:00",
+      "version_id": 2,
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    }
+  ],
+  "current_review": {
+    "author": "Codex:priority-mvps-2026-10-07",
+    "created_at": "2026-10-07T11:23:35.994890+00:00",
+    "decision_id": null,
+    "disposition": "internal_only",
+    "id": "c83744e1-5fd0-4a1e-baf2-aad1012499e8",
+    "investigation_stage": "solution_validation",
+    "next_action": "F01: Run one complete agent handoff per venture \u2014 /home/jonathan/startup_lab/foundry/docs/plans/2026-10-07-agent-dogfood/README.md",
+    "next_work_item_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+    "product_maturity": "mvp",
+    "reason": "Private MVP implementation authorized; demand and public release gates remain explicit in roadmap.",
+    "reviewed_at": "2026-10-07T11:23:35.994859+00:00",
+    "revision": 7,
+    "source_artifact_id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c",
+    "updated_at": "2026-10-07T11:23:35.994891+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  },
+  "results": [
+    {
+      "id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c",
+      "work_id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+      "context_id": "0585d523-9591-5e20-ab6c-4c966eede949",
+      "state": "accept",
+      "digest": "b9b4d7735196c5a4bf93e686d03b636c6e7a66e9c0d22690f8a8425282f492e9",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "GO: continue the existing lifecycle MVP as the internal coordination tool. Add only demonstrated dogfood improvements. No managed-agent runtime, token billing, MCP server, generic plugin system or multi-user hosted service in this tranche.",
+      "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+          "decision_id": "99f688ce-6cba-4b56-8d72-0e926fd937bb",
+          "evidence_ids": [
+            "bc7cfaa8-2ffa-40ac-b2b1-27119505e6fc"
+          ],
+          "map_revision_id": "29f1d93d-41da-512b-993a-33e95c1e3b25",
+          "next_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+          "review_id": "67f2673d-fc5e-4fd7-9383-1c44f0477d3d",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "304422a9a1d4e29b25f14fc0e0c94ef56b4daea03a2e2fa57091b4d1f49de436",
+        "resolution": "accept",
+        "result_digest": "b9b4d7735196c5a4bf93e686d03b636c6e7a66e9c0d22690f8a8425282f492e9",
+        "result_id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c"
+      }
+    }
+  ],
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/foundry-resume-before.json"
+}

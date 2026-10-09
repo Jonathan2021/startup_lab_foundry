@@ -1,0 +1,84 @@
+uv run ruff check src tests scripts examples
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/offer_check/db.py:1:1
+  |
+1 | / from pathlib import Path
+2 | |
+3 | | from alembic.config import Config
+4 | | from sqlalchemy import Engine, create_engine, event
+5 | |
+6 | | from alembic import command
+7 | | from offer_check.config import Settings
+  | |_______________________________________^
+help: Organize imports
+  |
+2 |
+3 + from alembic import command
+4 | from alembic.config import Config
+5 | from sqlalchemy import Engine, create_engine, event
+6 |
+  - from alembic import command
+7 | from offer_check.config import Settings
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/offer_check/migrations/env.py:1:1
+  |
+1 | / from sqlalchemy import create_engine
+2 | |
+3 | | from alembic import context
+4 | | from offer_check.models import Base
+  | |___________________________________^
+5 |
+6 |   engine = create_engine(context.config.get_main_option("sqlalchemy.url") or "")
+  |
+help: Organize imports
+  |
+1 + from alembic import context
+2 | from sqlalchemy import create_engine
+3 |
+  - from alembic import context
+4 | from offer_check.models import Base
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/offer_check/migrations/versions/0001_capture.py:3:1
+  |
+1 |   """Initial private capture schema. All domain records are append-only revisions."""
+2 |
+3 | / import sqlalchemy as sa
+4 | |
+5 | | from alembic import op
+  | |______________________^
+6 |
+7 |   revision = "0001"
+  |
+help: Organize imports
+  |
+3 | import sqlalchemy as sa
+  -
+4 | from alembic import op
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> src/offer_check/migrations/versions/0002_retention.py:3:1
+  |
+1 |   """Disclose source retention redactions while retaining original payload digests."""
+2 |
+3 | / import sqlalchemy as sa
+4 | |
+5 | | from alembic import op
+  | |______________________^
+6 |
+7 |   revision = "0002"
+  |
+help: Organize imports
+  |
+3 | import sqlalchemy as sa
+  -
+4 | from alembic import op
+  |
+
+Found 4 errors.
+[*] 4 fixable with the `--fix` option.
+make: *** [Makefile:5: check] Error 1

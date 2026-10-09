@@ -1,0 +1,1242 @@
+{
+  "current_review": {
+    "author": "reviewer-crous-queue-20261008-q06-b7a2",
+    "created_at": "2026-10-08T09:37:07.708154+00:00",
+    "decision_id": "22fb650f-9f54-404d-acbd-10e2c8365d13",
+    "disposition": "pursue",
+    "id": "b9a08a35-2243-452c-a129-c024eff4196c",
+    "investigation_stage": "solution_validation",
+    "next_action": "Review existing R011 and exact five-lunch private access/intake payload; defer until ordinary eligibility and voluntary access are available. No ready agent feature continuation.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Current 22 backend and 7 browser checks pass. Three observed defects were repaired (release cache, mixed measurement logs, national instead of pilot cohort), and missing planned-denominator support was added only after rehearsal exposed the gap.",
+    "reviewed_at": "2026-10-08T09:37:07.708132+00:00",
+    "revision": 10,
+    "source_artifact_id": "ce2d0fb8-aa40-5c41-8a76-ab0b68bdd74d",
+    "updated_at": "2026-10-08T09:37:07.708155+00:00",
+    "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+  },
+  "map_revision_id": "89c44237-62c3-5a37-8aff-a008c04c2d7b",
+  "markdown": "# Resume Crous Queue\n\nWorkspace: 81ee3117-de70-411e-9856-07420859ffad\nObjective: Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting.\nMap revision: 89c44237-62c3-5a37-8aff-a008c04c2d7b\nCurrent next action: Review existing R011 and exact five-lunch private access/intake payload; defer until ordinary eligibility and voluntary access are available. No ready agent feature continuation.\n\n- dbbfbb3d-3ec5-5cca-8d2a-2eae04cc21b2: Check exact Cuvier and Chatelet listings in incumbent apps [blocked; owner agent; version 3]\n  Blocked: external_access\n- 4626ac2b-ae37-515e-998a-8634086981dd: R011: confirm queue type and one optional own lunch observation [blocked; owner human; version 3]\n  Blocked: human_input\n\nUse foundry agent guide for the local workflow and schemas.\nPrepare: foundry handoff prepare --workspace-id 81ee3117-de70-411e-9856-07420859ffad --work-id WORK_ID --actor YOUR_AGENT --format markdown\nNo worker was started. External consequences require separate exact approval.\n",
+  "needs_review": {},
+  "results": [
+    {
+      "context_complete": true,
+      "context_id": "d08bcdc6-f1af-5f1a-ab81-44733549ea75",
+      "deferral": null,
+      "digest": "fc18cbf5bc89e67d40373874083ca8979a3a73e98af20d8ec88b6553ce631077",
+      "id": "ce2d0fb8-aa40-5c41-8a76-ab0b68bdd74d",
+      "proposal": {
+        "actor": "reviewer-crous-queue-20261008-q06-b7a2",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "d08bcdc6-f1af-5f1a-ab81-44733549ea75",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Baseline make check exit 0: 17 tests, lint/format/mypy pass; baseline browser exit 0: 6. Cache, measurement-isolation and cohort regressions each exit 1 before repair. Candidate final check exit 2 due packaging import lint only; current verified make check exit 0: 22 tests plus lint/format/mypy; final browser exit 0: 7 real Chromium checks; cache green exit 0. No skips/xfails.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/REVIEW_NEXT.md",
+              "document: docs/evidence/q06-20261008-b7a2/verified-check.txt",
+              "document: docs/evidence/q06-20261008-b7a2/final-browser.txt"
+            ],
+            "summary": "Fresh MVP verification, reproduced failures and current acceptance passed after bounded repairs."
+          },
+          {
+            "confidence": "high",
+            "details": "40 planned venue checks, 38 performed, 2 deliberately missing (day 3 at 12:15); 19 fresh/38 actual, 19 fresh/40 planned, 19 unknown, 4 conflicting, 15 single. One synthetic repeat pilot device; unrelated repeat venue excluded. Three fabricated friction attempts kept separate; unset measurements null. Demo checked restore and exact +15 minute expiry pass; non-demo seed refused and disposable other store report count zero. Forty blank local rows created with unassigned dates.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/q06-20261008-b7a2/rehearsal.json",
+              "document: docs/PILOT_OPERATOR_SCHEDULE.md"
+            ],
+            "summary": "Synthetic five-lunch rehearsal has explicit denominators/missingness, scoped device reuse, separate friction and demo recovery guards."
+          },
+          {
+            "confidence": "high",
+            "details": "New 0.1.1 source/wheel; clean copy install/migrate/import/check/backup/restore/retain/demo/serve all exit 0 without Foundry. Artifact inspection excludes operator secrets/databases/environments; old evidence hashes unchanged. Doctor bridge/contract 2026-10-07.2 and canonical hash match. All 11 arrivals fetched and included in complete context; full map separately read. Positive feedback UUID ac4d1719-f4e9-4db2-bb1d-ed44be079eb7 delivered for triage, no new defects. Changes are source/cache/measurement services, scoped metrics, scripts, regression tests, patch metadata, reviewed docs and only the explicitly authorized new R011 request/append-only INBOX entry.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/q06-20261008-b7a2/build.txt",
+              "document: docs/evidence/q06-20261008-b7a2/clean-release.txt",
+              "document: docs/evidence/q06-20261008-b7a2/after-changed-hashes.json",
+              "document: docs/evidence/q06-20261008-b7a2/artifact-inspection.json",
+              "document: feedback/ac4d1719-f4e9-4db2-bb1d-ed44be079eb7.json"
+            ],
+            "summary": "Standalone 0.1.1 build/recovery and retained-evidence review pass; Foundry workflow upgrade useful without new friction."
+          }
+        ],
+        "limits": "Directory observations dated 2026-10-07; no permitted live refresh performed. No real participant intake, physical queue/accuracy/usefulness trial or private access authorization. PostgreSQL and external/public release not run. Existing databases and earlier evidence remain untouched. No new feature package, commits, pushes, accounts, sends, spend or provisioning.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+              "target": "goal"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q02",
+              "target": "conditional_Q01"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q03",
+              "target": "conditional_Q02"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q04",
+              "target": "conditional_Q03"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q05",
+              "target": "conditional_Q04"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_781199db-adde-4600-9a4d-4c56eed14fdc",
+              "target": "goal"
+            },
+            {
+              "condition": "Only after ordinary eligibility, voluntary participation and exact private access/intake approval are available.",
+              "kind": "may_lead_to",
+              "outcome": "blocked",
+              "source": "work_781199db-adde-4600-9a4d-4c56eed14fdc",
+              "target": "q06_real_pilot_gate"
+            }
+          ],
+          "focus": [
+            "work_781199db-adde-4600-9a4d-4c56eed14fdc"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting."
+            },
+            {
+              "detail": "",
+              "id": "work_9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+              "kind": "record",
+              "ref": {
+                "id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+                "kind": "work"
+              },
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. 972-row observed snapshot imports idempotently; Cuvier/Ch\u00e2telet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable.",
+              "id": "conditional_Q01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q01: Import and search the national directory"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes.",
+              "id": "conditional_Q02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q02: Reports, expiry and honest aggregation"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required.",
+              "id": "conditional_Q03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q03: Mobile search/report/favorites experience"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location.",
+              "id": "conditional_Q04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q04: Moderation and public-readiness safeguards"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs.",
+              "id": "conditional_Q05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            },
+            {
+              "detail": "",
+              "id": "work_781199db-adde-4600-9a4d-4c56eed14fdc",
+              "kind": "record",
+              "ref": {
+                "id": "781199db-adde-4600-9a4d-4c56eed14fdc",
+                "kind": "work"
+              },
+              "title": "Q06: Audit honest wait states and rehearse a five-lunch pilot"
+            },
+            {
+              "detail": "NOT RUN: no real data intake or trial/access approval. Independent synthetic preparation complete; existing R011 request/replies retained. Public deployment separate.",
+              "id": "q06_real_pilot_gate",
+              "kind": "question",
+              "ref": null,
+              "title": "R011: ordinary queues and approved private five-lunch access/intake"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Review existing R011 and exact five-lunch private access/intake payload; defer until ordinary eligibility and voluntary access are available. No ready agent feature continuation.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "Current 22 backend and 7 browser checks pass. Three observed defects were repaired (release cache, mixed measurement logs, national instead of pilot cohort), and missing planned-denominator support was added only after rehearsal exposed the gap.",
+        "reconciliation_rationale": null,
+        "request_key": "q06-b7a2-verification-and-rehearsal-result-r1",
+        "revisit_trigger": null,
+        "summary": "Q06 completed: verified/repaired local MVP 0.1.1 and rehearsed five lunch days in disposable synthetic stores; physical-use gate remains unapproved and unmeasured.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "reviewer-crous-queue-20261008-q06-b7a2",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "All 11 relevant arrivals fetched and included in complete saved context d08bcdc6-f1af-5f1a-ab81-44733549ea75; full retained map read separately via map_coverage. Selected-map projection never used to overwrite full roadmap. Current source and fresh checks reviewed; source/demand limitations explicit.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "781199db-adde-4600-9a4d-4c56eed14fdc",
+          "decision_id": "22fb650f-9f54-404d-acbd-10e2c8365d13",
+          "evidence_ids": [
+            "7418056d-52cd-47d5-9c4a-8ffb11c01ec1",
+            "e18ee55a-728a-4673-971e-88416f75f781",
+            "fed583f1-15be-44ba-9fb1-230279071def"
+          ],
+          "map_revision_id": "89c44237-62c3-5a37-8aff-a008c04c2d7b",
+          "next_work_id": null,
+          "review_id": "b9a08a35-2243-452c-a129-c024eff4196c",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed current source hashes and exact passing checks, three before-repair failures, separate synthetic rehearsal and preserved history. Accept completed routine local Q06 only; physical/private intake and all external consequences remain unapproved.",
+        "request_digest": "9f563ff80324eac471957823ea5828774fd94c65783172ef28bbef68de375c91",
+        "resolution": "accept",
+        "result_digest": "fc18cbf5bc89e67d40373874083ca8979a3a73e98af20d8ec88b6553ce631077",
+        "result_id": "ce2d0fb8-aa40-5c41-8a76-ab0b68bdd74d"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "781199db-adde-4600-9a4d-4c56eed14fdc",
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "context_complete": true,
+      "context_id": "2039a17a-b341-5cc0-8459-f33a37e8b1f7",
+      "deferral": null,
+      "digest": "5cd79f9de93414e3b4d291d555764f1cd2d912114e862db6e9cd38ea7a66bf3a",
+      "id": "bd9fff84-b0be-5054-aee4-e243153c0dc2",
+      "proposal": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "2039a17a-b341-5cc0-8459-f33a37e8b1f7",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "make check: Ruff/format/mypy passed and 17 tests passed without warnings; CQ_EVIDENCE_PREFIX=q05 uv run pytest tests/browser: 6 passed including 390px three-tap flow, clock expiry, lost response, actual offline service worker, moderation, own timer and validation recovery. uv build passed; source archive clean install/migrate/import/check/backup/restore/retain/demo/serve replay passed without Foundry. Immutable evidence copies and SHA256SUMS in docs/evidence/release-0.1.0; build checksums q05-build.txt. Foundry positive feedback recorded; no new defects, arrivals empty.\nContent SHA256: d2c6b55a4a9affe28947dd1a413c5e79a28d92468d7d96bb9db4ef9ba42f63a5\nChanged files: ?? .env.example\n?? .foundry/\n?? .gitignore\n?? AGENTS.md\n?? Makefile\n?? README.md\n?? acceptance/\n?? alembic.ini\n?? alembic/\n?? deploy/\n?? docs/\n?? feedback/\n?? fixtures/\n?? pyproject.toml\n?? scripts/\n?? src/\n?? tests/\n?? tools/\n?? uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/q05-green.txt",
+              "document: .foundry/runs/Q05-file-state.json"
+            ],
+            "summary": "Q05 local MVP release complete: version 0.1.0 runnable source/wheel, national unknown waits, guarded separate synthetic demo, clean setup/recovery replay, pilot measurement tool and explicit NOT AUTHORIZED deployment checkpoint."
+          }
+        ],
+        "limits": "Local MVP build finished; voluntary five-lunch-day adoption/accuracy trial NOT MEASURED. Public deployment NOT AUTHORIZED; exact host/domain/current provider quote, operator contact and real PostgreSQL integration remain explicit gates. No accounts, sends, paid services, cloud resources, Git commits or pushes. Local app used alternate loopback port because 8000 was occupied; existing listener preserved.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+              "target": "goal"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q02",
+              "target": "conditional_Q01"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q03",
+              "target": "conditional_Q02"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q04",
+              "target": "conditional_Q03"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q05",
+              "target": "conditional_Q04"
+            }
+          ],
+          "focus": [
+            "work_9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting."
+            },
+            {
+              "detail": "",
+              "id": "work_9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+              "kind": "record",
+              "ref": {
+                "id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+                "kind": "work"
+              },
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. 972-row observed snapshot imports idempotently; Cuvier/Ch\u00e2telet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable.",
+              "id": "conditional_Q01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q01: Import and search the national directory"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes.",
+              "id": "conditional_Q02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q02: Reports, expiry and honest aggregation"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required.",
+              "id": "conditional_Q03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q03: Mobile search/report/favorites experience"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location.",
+              "id": "conditional_Q04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q04: Moderation and public-readiness safeguards"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs.",
+              "id": "conditional_Q05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Private release ready; conduct voluntary lunch pilot and review exact deployment proposal separately.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "Reviewed bounded local implementation against current roadmap acceptance and actual test evidence.",
+        "reconciliation_rationale": null,
+        "request_key": "Q05:11f17388-2abd-4dcf-9943-36af0d10754d",
+        "revisit_trigger": null,
+        "summary": "Q05 local MVP release complete: version 0.1.0 runnable source/wheel, national unknown waits, guarded separate synthetic demo, clean setup/recovery replay, pilot measurement tool and explicit NOT AUTHORIZED deployment checkpoint.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+          "decision_id": "299a3b85-d860-4830-b50d-0da0876f2f53",
+          "evidence_ids": [
+            "9acb2108-e117-4ba6-8cdd-e4a0ed558225"
+          ],
+          "map_revision_id": "10494dc7-8701-51b3-905f-3a4865a74b1c",
+          "next_work_id": null,
+          "review_id": "bf04aef9-2cd9-4d42-bc97-3d0d94ac87f9",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "c1d2c38b6d0827eef9924c18ae0da3beabe51c18a427f00839d2594e1e731662",
+        "resolution": "accept",
+        "result_digest": "5cd79f9de93414e3b4d291d555764f1cd2d912114e862db6e9cd38ea7a66bf3a",
+        "result_id": "bd9fff84-b0be-5054-aee4-e243153c0dc2"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "context_complete": true,
+      "context_id": "6682c2a2-84d8-5a8d-905a-76e457bad365",
+      "deferral": null,
+      "digest": "d8d53d0c983f3e8e4491498b66873db43d03e3236b46a30023fcd582f09a45ca",
+      "id": "9deb999e-a6db-5d7e-9a56-cf8762fc864c",
+      "proposal": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "6682c2a2-84d8-5a8d-905a-76e457bad365",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "uv run pytest: 14 passed; mypy and Ruff passed; uv run pytest tests/browser: 4 passed including actual admin hide/flag flow. Inspected q04-admin.png. Concurrent duplicate writes produce one report, hide drops aggregate immediately, stale moderation gives 409, exact retention and restore environment/overwrite checks pass. Current-spec q04-red.txt retained. No new Foundry friction; arrivals empty.\nContent SHA256: 484b74d827665173b270105afba0ab5b83e6000eea6a045880bffde2d56dcdfe\nChanged files: ?? .env.example\n?? .foundry/\n?? .gitignore\n?? AGENTS.md\n?? Makefile\n?? README.md\n?? acceptance/\n?? alembic.ini\n?? alembic/\n?? docs/\n?? feedback/\n?? fixtures/\n?? pyproject.toml\n?? scripts/\n?? src/\n?? tests/\n?? tools/\n?? uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/q04-green.txt",
+              "document: .foundry/runs/Q04-file-state.json"
+            ],
+            "summary": "Q04 implemented: separately authenticated moderation with versioned audits, enum flags, exact retention, redacted structured logs, aggregate metrics and checked isolated SQLite backup/restore."
+          }
+        ],
+        "limits": "Local SQLite and Chromium verified. Public rollout still needs PostgreSQL integration, independent retention job, named operator/contact and exact hosting authorization. Backups require private 7-day rotation; expired-job shutdown cannot guarantee deletion until recovery. Synthetic tests do not establish adoption.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+              "target": "goal"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q02",
+              "target": "conditional_Q01"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q03",
+              "target": "conditional_Q02"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q04",
+              "target": "conditional_Q03"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q05",
+              "target": "conditional_Q04"
+            }
+          ],
+          "focus": [
+            "work_78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting."
+            },
+            {
+              "detail": "",
+              "id": "work_78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+              "kind": "record",
+              "ref": {
+                "id": "78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+                "kind": "work"
+              },
+              "title": "Q04: Moderation and public-readiness safeguards"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. 972-row observed snapshot imports idempotently; Cuvier/Ch\u00e2telet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable.",
+              "id": "conditional_Q01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q01: Import and search the national directory"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes.",
+              "id": "conditional_Q02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q02: Reports, expiry and honest aggregation"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required.",
+              "id": "conditional_Q03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q03: Mobile search/report/favorites experience"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location.",
+              "id": "conditional_Q04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q04: Moderation and public-readiness safeguards"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs.",
+              "id": "conditional_Q05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Q05: Private pilot then explicit deployment checkpoint",
+        "next_work": {
+          "acceptance_criteria": "National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs.",
+          "blocked_reason": null,
+          "description": "Exercise Cuvier/Ch\u00e2telet with synthetic data in demo and ordinary voluntary reports only when available. Prepare rollout config and cost/teardown document; do not seed public live feeds with invented waits.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "Q05: Private pilot then explicit deployment checkpoint"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed bounded local implementation against current roadmap acceptance and actual test evidence.",
+        "reconciliation_rationale": null,
+        "request_key": "Q04:72b589e5-6564-469a-bcf0-99be0def3779",
+        "revisit_trigger": null,
+        "summary": "Q04 implemented: separately authenticated moderation with versioned audits, enum flags, exact retention, redacted structured logs, aggregate metrics and checked isolated SQLite backup/restore.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+          "decision_id": "71bad7cc-b0aa-4c30-bc66-ac8790860107",
+          "evidence_ids": [
+            "16ad7ca7-9e51-4623-b289-c56ae8021496"
+          ],
+          "map_revision_id": "d832d9d0-1cd9-531a-8365-12f30fc76346",
+          "next_work_id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+          "review_id": "8229059c-891e-4045-bb72-7a34c3bf950a",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "681ac40058746e33c126a5a68fee4cf764db7732e47a53e0893594ed75cd640b",
+        "resolution": "accept",
+        "result_digest": "d8d53d0c983f3e8e4491498b66873db43d03e3236b46a30023fcd582f09a45ca",
+        "result_id": "9deb999e-a6db-5d7e-9a56-cf8762fc864c"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "context_complete": true,
+      "context_id": "df87298f-8805-5874-952d-e787f29bfabc",
+      "deferral": null,
+      "digest": "9209140ffecde8d7877baeb1c09d7a927e929e8cbd7260d43f76d827020db338",
+      "id": "ac991a19-7156-59d6-8cbb-6deb267f79f1",
+      "proposal": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "df87298f-8805-5874-952d-e787f29bfabc",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "uv run pytest tests/browser: 3 passed using Chromium with actual clicks at 390px; uv run pytest: 10 regression tests passed; mypy and Ruff passed. Screenshots q03-mobile.png and q03-desktop.png visually inspected. Simulated committed POST with lost response then retry creates one report; actual service-worker offline navigation passes. Red specification q03-red.txt retained. No new Foundry friction; arrivals empty.\nContent SHA256: d6ad66d3e6d4bde1cea317ff9336bae00ba22c75f0d18330962040e774797e05\nChanged files: ?? .env.example\n?? .foundry/\n?? .gitignore\n?? AGENTS.md\n?? Makefile\n?? README.md\n?? acceptance/\n?? alembic.ini\n?? alembic/\n?? docs/\n?? feedback/\n?? fixtures/\n?? pyproject.toml\n?? scripts/\n?? src/\n?? tests/\n?? tools/\n?? uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/q03-green.txt",
+              "document: .foundry/runs/Q03-file-state.json"
+            ],
+            "summary": "Q03 implemented and visually reviewed: French responsive server-rendered PWA, manual search, local favorites, three-tap report, timer controls, client expiry and explicit offline behavior."
+          }
+        ],
+        "limits": "Chromium local desktop/mobile viewport tested; no physical mobile-device or lunch trial yet. No public launch. HTMX omitted in ADR-0003 in favor of small same-origin JS. Manual search requires no geolocation. Transport matcher accounts for URL-encoded venue IDs.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+              "target": "goal"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q02",
+              "target": "conditional_Q01"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q03",
+              "target": "conditional_Q02"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q04",
+              "target": "conditional_Q03"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q05",
+              "target": "conditional_Q04"
+            }
+          ],
+          "focus": [
+            "work_12cb53b0-e682-4a21-ac25-85d21d6b2c47"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting."
+            },
+            {
+              "detail": "",
+              "id": "work_12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+              "kind": "record",
+              "ref": {
+                "id": "12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+                "kind": "work"
+              },
+              "title": "Q03: Mobile search/report/favorites experience"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. 972-row observed snapshot imports idempotently; Cuvier/Ch\u00e2telet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable.",
+              "id": "conditional_Q01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q01: Import and search the national directory"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes.",
+              "id": "conditional_Q02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q02: Reports, expiry and honest aggregation"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required.",
+              "id": "conditional_Q03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q03: Mobile search/report/favorites experience"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location.",
+              "id": "conditional_Q04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q04: Moderation and public-readiness safeguards"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs.",
+              "id": "conditional_Q05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Q04: Moderation and public-readiness safeguards",
+        "next_work": {
+          "acceptance_criteria": "Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location.",
+          "blocked_reason": null,
+          "description": "Implement admin auth, hide/flag history, server limits, retention command, metrics without PII, backup/restore, and plain-language privacy page.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "Q04: Moderation and public-readiness safeguards"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed bounded local implementation against current roadmap acceptance and actual test evidence.",
+        "reconciliation_rationale": null,
+        "request_key": "Q03:75404da7-28e3-4be0-acc8-28183f09befa",
+        "revisit_trigger": null,
+        "summary": "Q03 implemented and visually reviewed: French responsive server-rendered PWA, manual search, local favorites, three-tap report, timer controls, client expiry and explicit offline behavior.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+          "decision_id": "6faa2a6c-0f0f-40fe-8fc2-d1abdc95b979",
+          "evidence_ids": [
+            "536740c4-0e03-466e-9788-674a27477f4b"
+          ],
+          "map_revision_id": "f639d7a4-e692-5f3d-a978-78a3f18fe9e5",
+          "next_work_id": "78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+          "review_id": "bb795a38-c825-4d4e-8321-c9e01d12c6aa",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "9f552ac238b0b6b9954c78039bd13d6528a2d500a4bb15ce6ad8dbee1da642bf",
+        "resolution": "accept",
+        "result_digest": "9209140ffecde8d7877baeb1c09d7a927e929e8cbd7260d43f76d827020db338",
+        "result_id": "ac991a19-7156-59d6-8cbb-6deb267f79f1"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "context_complete": true,
+      "context_id": "0cbba28b-b915-5430-b4a2-844d9f3266c0",
+      "deferral": null,
+      "digest": "f203def8c8e24e5531fddc05b59641614d27f14fe0c8f6f325d30f1fc15bbc15",
+      "id": "9ceee9e9-7447-5ee0-89ef-cadb706d80cc",
+      "proposal": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "0cbba28b-b915-5430-b4a2-844d9f3266c0",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "uv run pytest: 10 passed; uv run mypy: passed; uv run ruff check src tests scripts alembic: passed. Current-spec red recorded in q02-red.txt. Arrival listing empty. No new Foundry defects; pinned result review and retry coverage worked.\nContent SHA256: 6aec2cc1791871802cc1741281bcc68a364e1637a31b1f757ad7e10d8c636ff3\nChanged files: ?? .env.example\n?? .foundry/\n?? .gitignore\n?? AGENTS.md\n?? Makefile\n?? README.md\n?? acceptance/\n?? alembic.ini\n?? alembic/\n?? docs/\n?? feedback/\n?? fixtures/\n?? pyproject.toml\n?? scripts/\n?? src/\n?? tests/\n?? tools/\n?? uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/q02-green.txt",
+              "document: .foundry/runs/Q02-file-state.json"
+            ],
+            "summary": "Q02 implemented: signed anonymous device session, idempotent reports/timers, queue separation, strict validation, throttles and exact honest expiry."
+          }
+        ],
+        "limits": "Synthetic tests establish aggregation and local SQLite behavior only. PostgreSQL branch requires real database validation before public launch. Device cookies limit repeats, not Sybil attacks; no queue eligibility or live coverage inference.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_31c3e040-7c1b-4983-8e52-e717b1cc9441",
+              "target": "goal"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q02",
+              "target": "conditional_Q01"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q03",
+              "target": "conditional_Q02"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q04",
+              "target": "conditional_Q03"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q05",
+              "target": "conditional_Q04"
+            }
+          ],
+          "focus": [
+            "work_31c3e040-7c1b-4983-8e52-e717b1cc9441"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting."
+            },
+            {
+              "detail": "",
+              "id": "work_31c3e040-7c1b-4983-8e52-e717b1cc9441",
+              "kind": "record",
+              "ref": {
+                "id": "31c3e040-7c1b-4983-8e52-e717b1cc9441",
+                "kind": "work"
+              },
+              "title": "Q02: Reports, expiry and honest aggregation"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. 972-row observed snapshot imports idempotently; Cuvier/Ch\u00e2telet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable.",
+              "id": "conditional_Q01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q01: Import and search the national directory"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes.",
+              "id": "conditional_Q02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q02: Reports, expiry and honest aggregation"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required.",
+              "id": "conditional_Q03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q03: Mobile search/report/favorites experience"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location.",
+              "id": "conditional_Q04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q04: Moderation and public-readiness safeguards"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs.",
+              "id": "conditional_Q05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Q03: Mobile search/report/favorites experience",
+        "next_work": {
+          "acceptance_criteria": "At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required.",
+          "blocked_reason": null,
+          "description": "Build venue card/search and one-hand report form. Display counts, freshness and source limitations, with client expiry and offline read-only/error behavior.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "Q03: Mobile search/report/favorites experience"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed bounded local implementation against current roadmap acceptance and actual test evidence.",
+        "reconciliation_rationale": null,
+        "request_key": "Q02:887de733-3d4d-4446-84d9-26ac7c972cab",
+        "revisit_trigger": null,
+        "summary": "Q02 implemented: signed anonymous device session, idempotent reports/timers, queue separation, strict validation, throttles and exact honest expiry.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "31c3e040-7c1b-4983-8e52-e717b1cc9441",
+          "decision_id": "d9c38c58-bc87-4b93-8d39-8c4d1276c440",
+          "evidence_ids": [
+            "e391f98a-bec0-4ec7-97a6-6dee5a583490"
+          ],
+          "map_revision_id": "42b88aa1-4c00-5a27-b35e-6f6039ca180b",
+          "next_work_id": "12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+          "review_id": "ba42d39e-10c7-446c-a8cf-27cc0ef3ba53",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "dc7c52c587864cf2b6ac9ec34d567779c7379e9ede821ad8f43b56a2e522461f",
+        "resolution": "accept",
+        "result_digest": "f203def8c8e24e5531fddc05b59641614d27f14fe0c8f6f325d30f1fc15bbc15",
+        "result_id": "9ceee9e9-7447-5ee0-89ef-cadb706d80cc"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "31c3e040-7c1b-4983-8e52-e717b1cc9441",
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "context_complete": true,
+      "context_id": "0df6fab8-45b7-5e4e-92db-b28e14087de3",
+      "deferral": null,
+      "digest": "1fda0ef3e542cf9bb927b847f12c9b6e9f686f7682dc2fafd36b5ce3f96b0e74",
+      "id": "6d48e301-582c-52bc-b79c-f81ce1f2b2fc",
+      "proposal": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "0df6fab8-45b7-5e4e-92db-b28e14087de3",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "uv run pytest: 4 passed; uv run ruff check src tests: passed; uv run mypy src: passed. Red specification evidence retained in docs/evidence/q01-red.txt and q01-attribute-red.txt. Foundry arrivals timeout feedback d4cc88e9-88ef-44c6-acda-b0a6c304481a recorded; retry returned no arrivals.\nContent SHA256: 7e3143751019c730a4ceddeaed739485c7bcfce031bd8543f1105c39e9bcf3be\nChanged files: ?? .env.example\n?? .foundry/\n?? .gitignore\n?? AGENTS.md\n?? Makefile\n?? README.md\n?? acceptance/\n?? alembic.ini\n?? alembic/\n?? docs/\n?? feedback/\n?? fixtures/\n?? pyproject.toml\n?? scripts/\n?? src/\n?? tests/\n?? tools/\n?? uv.lock",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/evidence/q01-green.txt",
+              "document: .foundry/runs/Q01-file-state.json"
+            ],
+            "summary": "Q01 implemented: 972-venue retained directory, safe bounded importer, provenance, accent-insensitive national search."
+          }
+        ],
+        "limits": "Snapshot is directory evidence only; source hours/access absent in normalized snapshot until explicit refresh. No live wait, demand or public launch validation. HTTP feeds have transport integrity limitations. Latest TestClient emits httpx deprecation warning. Only bounded Paris XML shape probe performed; routine tests use retained/synthetic fixtures.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_6b65e124-c511-4506-8258-f7774bed8498",
+              "target": "goal"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q02",
+              "target": "conditional_Q01"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q03",
+              "target": "conditional_Q02"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q04",
+              "target": "conditional_Q03"
+            },
+            {
+              "condition": "Prior package accepted",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "conditional_Q05",
+              "target": "conditional_Q04"
+            }
+          ],
+          "focus": [
+            "work_6b65e124-c511-4506-8258-f7774bed8498"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting."
+            },
+            {
+              "detail": "",
+              "id": "work_6b65e124-c511-4506-8258-f7774bed8498",
+              "kind": "record",
+              "ref": {
+                "id": "6b65e124-c511-4506-8258-f7774bed8498",
+                "kind": "work"
+              },
+              "title": "Q01: Import and search the national directory"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. 972-row observed snapshot imports idempotently; Cuvier/Ch\u00e2telet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable.",
+              "id": "conditional_Q01",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q01: Import and search the national directory"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes.",
+              "id": "conditional_Q02",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q02: Reports, expiry and honest aggregation"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. At 390px user finds Cuvier and submits 10min in <=3 interactions after venue selection; browser clock advance expires estimate; offline retry cannot duplicate it; no location permission required.",
+              "id": "conditional_Q03",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q03: Mobile search/report/favorites experience"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. Two simultaneous duplicate writes create one report; hidden report removed from aggregates immediately; deletion job honors cutoffs; server logs contain no session token/precise location.",
+              "id": "conditional_Q04",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q04: Moderation and public-readiness safeguards"
+            },
+            {
+              "detail": "Conditional on prior package acceptance. National directory works with unknown waits everywhere; real and demo data are separate; launch authorization explicit. Measure fresh-report coverage and returning contributors, not just installs.",
+              "id": "conditional_Q05",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Q05: Private pilot then explicit deployment checkpoint"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Q02: Reports, expiry and honest aggregation",
+        "next_work": {
+          "acceptance_criteria": "Empty != zero; 15min report excluded; latest same-device replaces older; conflicting 0/40 values show conflict; completed wait does not masquerade as live estimate; retries do not add votes.",
+          "blocked_reason": null,
+          "description": "Implement signed device session, request idempotency, estimate/completed split, throttles and exact 15-minute clock semantics. Unit test with injected UTC clock.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "Q02: Reports, expiry and honest aggregation"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed bounded local implementation against current roadmap acceptance and actual test evidence.",
+        "reconciliation_rationale": null,
+        "request_key": "Q01:0cf93cf0-3ae1-4f99-aa24-33a71ebd407f",
+        "revisit_trigger": null,
+        "summary": "Q01 implemented: 972-venue retained directory, safe bounded importer, provenance, accent-insensitive national search.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+          "decision_id": "a493361f-a878-4d2a-9b6c-cdb7e9516efe",
+          "evidence_ids": [
+            "8f62565e-44c3-45d8-8975-d5b19d7c0e60"
+          ],
+          "map_revision_id": "0abe598c-00bb-553b-b32e-d59e1f528f44",
+          "next_work_id": "31c3e040-7c1b-4983-8e52-e717b1cc9441",
+          "review_id": "5a2b0942-cdc8-495e-ae9d-2ff088d304e5",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "c353c46139399a602857f73e6089ad74fdcbd7c5d676845792c116c2935d7b26",
+        "resolution": "accept",
+        "result_digest": "1fda0ef3e542cf9bb927b847f12c9b6e9f686f7682dc2fafd36b5ce3f96b0e74",
+        "result_id": "6d48e301-582c-52bc-b79c-f81ce1f2b2fc"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "context_complete": true,
+      "context_id": "2db78dc2-5cdb-5ab2-84e8-a3c4e19f39c9",
+      "deferral": null,
+      "digest": "28381c24c42a103be1ffb136cc59d6ee5576b5bc604f3bcd2a5f3e4c0312b129",
+      "id": "db035611-c22a-591e-a666-045913bbc029",
+      "proposal": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "2db78dc2-5cdb-5ab2-84e8-a3c4e19f39c9",
+        "decision_scope": "venture",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/priority-mvps-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "CNOUS feed license is fr-lo (Open Licence); all 26 current resource URLs returned parseable XML. Paris has separate RU Cuvier paris:r177, RU Ch\u00e2telet paris:r175, Cuvier cafeteria paris:r889 and administrative Jussieu paris:r1149. Never merge these by coordinates. HTTPS on the legacy Paris feed returned 404 while the catalog-declared HTTP feed succeeded; import server-side with strict bounds and plain-text normalization. Existing Affluences and CrousRadar establish strong overlap; adoption remains an experiment."
+          }
+        ],
+        "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting.",
+        "next_action": "Q01: Import and search the national directory \u2014 /home/jonathan/startup_lab/crous-queue/docs/mvp/ROADMAP.md",
+        "next_work": {
+          "acceptance_criteria": "972-row observed snapshot imports idempotently; Cuvier/Ch\u00e2telet IDs resolve; coordinate duplicates remain distinct; malformed/failed region preserves last-good data; hostile CDATA is not executable.",
+          "blocked_reason": null,
+          "description": "Build strict importer from 26 declared feeds using the retained normalized snapshot and small XML fixtures. Save provenance, separate source fields and safe display fields.\nPlan: /home/jonathan/startup_lab/crous-queue/docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "Q01: Import and search the national directory"
+        },
+        "outcome": "narrow",
+        "rationale": "The user explicitly prioritized bounded MVP implementation. The retained evidence supports building for a private pilot while keeping business and release unknowns distinct.",
+        "reconciliation_rationale": null,
+        "request_key": "priority-result-20261007",
+        "revisit_trigger": null,
+        "summary": "GO for a national-directory, crowd-reporting MVP. All 26 official feeds were fetched: 972 unique region-scoped venue IDs, including restaurants, cafeterias and other types. This is observed directory coverage, not proof every venue is open or every university restaurant is listed. Seed Cuvier/Ch\u00e2telet for a local pilot without blocking the build on lunch observations.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "12323d17-d1e5-4dae-a7d8-cfdc1b2b2b01",
+          "decision_id": "1825ca11-0bb3-4f5b-9634-0086d0ce8086",
+          "evidence_ids": [
+            "601d9bc0-3c6c-4ac0-97ab-20cc07b1d78a"
+          ],
+          "map_revision_id": "4143f169-f6a9-568a-8f4e-9cf0e4f8482b",
+          "next_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+          "review_id": "b59661e1-777d-42fa-b31c-396cb07211ac",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "ef29ae9d4e4b8cd0a2e8d3981fd0ce68f7c77d3f55b10d4e7f03c5f17dd93102",
+        "resolution": "accept",
+        "result_digest": "28381c24c42a103be1ffb136cc59d6ee5576b5bc604f3bcd2a5f3e4c0312b129",
+        "result_id": "db035611-c22a-591e-a666-045913bbc029"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "12323d17-d1e5-4dae-a7d8-cfdc1b2b2b01",
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    }
+  ],
+  "scope": {
+    "focus": null,
+    "idea_revision_id": null,
+    "objective": "Find a university restaurant and see or report a recent wait in seconds, with unknown/stale states that cannot be confused with zero waiting.",
+    "stage": "discovery",
+    "subject": "venture",
+    "subject_id": "f0b5abfe-0274-42f7-9c9a-72dcbe68c116",
+    "title": "Crous Queue",
+    "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+  },
+  "stale_references": [],
+  "unreviewed_change_count": 0,
+  "unreviewed_changes": [],
+  "work": [
+    {
+      "acceptance_criteria": "Use actual accessible app/site search, record device/time/name/address/freshness/features; web search absence is not proof. Current session has no enabled browser/mobile interface; no account creation.",
+      "blocked_reason": "external_access",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-06T10:33:51.361576+00:00",
+      "decision_id": "ef07cc0b-f2ec-5f30-8b0c-890708ee6ed5",
+      "description": "Use actual accessible app/site search, record device/time/name/address/freshness/features; web search absence is not proof. Current session has no enabled browser/mobile interface; no account creation.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "external_access"
+      ],
+      "id": "dbbfbb3d-3ec5-5cca-8d2a-2eae04cc21b2",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Check exact Cuvier and Chatelet listings in incumbent apps",
+      "updated_at": "2026-10-07T11:23:26.777651+00:00",
+      "version_id": 3,
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "acceptance_criteria": "Resolve only R011: relevant queue/eligibility and whether first ordinary visit information is available; no third-party observations required.",
+      "blocked_reason": "human_input",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-06T10:33:51.360316+00:00",
+      "decision_id": "ef07cc0b-f2ec-5f30-8b0c-890708ee6ed5",
+      "description": "Resolve only R011: relevant queue/eligibility and whether first ordinary visit information is available; no third-party observations required.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "human_input"
+      ],
+      "id": "4626ac2b-ae37-515e-998a-8634086981dd",
+      "kind": "investigation",
+      "owner": "human",
+      "parent_id": null,
+      "question": "Which student or staff queue would you use at Cuvier/Chatelet? If practical, report one ordinary visit: queue join, food paid/ready, seat availability, and any displayed Affluences estimate. Unknown or unable is fine; no names/photos or observing strangers.",
+      "status": "blocked",
+      "title": "R011: confirm queue type and one optional own lunch observation",
+      "updated_at": "2026-10-07T11:23:26.778219+00:00",
+      "version_id": 3,
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    }
+  ],
+  "worker_running": false,
+  "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+}

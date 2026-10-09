@@ -1,0 +1,4 @@
+npm ERR! Cannot read properties of undefined (reading 'maplibre-gl')
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/jonathan/.npm/_logs/2026-10-08T07_45_20_417Z-debug.log

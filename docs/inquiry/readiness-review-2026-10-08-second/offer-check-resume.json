@@ -1,0 +1,1156 @@
+{
+  "current_review": {
+    "author": "reviewer-offer-check-20261008-o06-a",
+    "created_at": "2026-10-08T10:11:34.400739+00:00",
+    "decision_id": "cde025fb-ef21-4026-a2cc-11268cf1ca4a",
+    "disposition": "pursue",
+    "id": "cc275a06-ae48-4f43-95ba-11aecc2cc3fa",
+    "investigation_stage": "solution_validation",
+    "next_action": "Await R013 owner-authorized redacted request/two existing quotes and designated reviewer. Freeze identical terms/as_of across template, usual agent and app; measure actual correctness/effort before considering any integration.\nRevisit when: R013 explicitly supplies permitted local data-use/intake scope, redacted exact-SKU EUR fixed-pack input set, designated reviewer and agreed privacy/retention/method scope.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Executed both later user-authorized handoff parts under the reviewed claim. Repairs were demonstrated before implementation and accepted only after current regression/browser/wheel evidence. Local parity is preparation, not proof of real usefulness.",
+    "reviewed_at": "2026-10-08T10:11:34.400717+00:00",
+    "revision": 9,
+    "source_artifact_id": "09009845-1946-510e-b767-bac6646a68d5",
+    "updated_at": "2026-10-08T10:11:34.400740+00:00",
+    "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+  },
+  "map_revision_id": "f0f532bf-723d-5a30-9b17-0e5d674ae06c",
+  "markdown": "# Resume OfferCheck\n\nWorkspace: 546ed36a-a8be-4639-b88c-1b3bcf96c7d8\nObjective: Help a person or their agent compare exact-SKU supplier offers against a purchase request, expose missing terms and preserve an explainable source-linked review before any purchase.\nMap revision: f0f532bf-723d-5a30-9b17-0e5d674ae06c\nCurrent next action: Await R013 owner-authorized redacted request/two existing quotes and designated reviewer. Freeze identical terms/as_of across template, usual agent and app; measure actual correctness/effort before considering any integration.\nRevisit when: R013 explicitly supplies permitted local data-use/intake scope, redacted exact-SKU EUR fixed-pack input set, designated reviewer and agreed privacy/retention/method scope.\n\n\nUse foundry agent guide for the local workflow and schemas.\nPrepare: foundry handoff prepare --workspace-id 546ed36a-a8be-4639-b88c-1b3bcf96c7d8 --work-id WORK_ID --actor YOUR_AGENT --format markdown\nNo worker was started. External consequences require separate exact approval.\n",
+  "needs_review": {},
+  "results": [
+    {
+      "context_complete": true,
+      "context_id": "116c12e0-9fef-55ee-8e4c-adc426d5da3b",
+      "deferral": null,
+      "digest": "41e7dc654d8eb45d96e57ab90a895a11c95577265b806e453ce65dbaf676ccac",
+      "id": "09009845-1946-510e-b767-bac6646a68d5",
+      "proposal": {
+        "actor": "reviewer-offer-check-20261008-o06-a",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "116c12e0-9fef-55ee-8e4c-adc426d5da3b",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Doctor before work confirmed bridge and agent contract 2026-10-07.2, canonical hash match. Before baseline make check 52 and browsers 3 green; new meaningful UX tests exposed two failures. Exact command exit codes, negative/intermediate results, screenshots and changed-file hashes are retained in docs/checkpoints/O06.md and .foundry/runs/O06-20261008-a. No skips/xfails; upstream TestClient deprecation warning retained.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/mvp/REVIEW_NEXT.md",
+              "document: docs/checkpoints/O06.md",
+              "document: .foundry/runs/O06-20261008-a/full-final.txt",
+              "document: .foundry/runs/O06-20261008-a/changed-files.json"
+            ],
+            "summary": "Current MVP verification passes: make check 54 backend/HTTP/rehearsal tests, 6 real Chromium browser tests; full suite 60. Lint, mypy and JS syntax green."
+          },
+          {
+            "confidence": "high",
+            "details": "Before browser probe observed min=1 and rangeUnderflow=true; after min=0/rangeUnderflow=false. New UI flows create a request, upload/hash an original synthetic source, capture fields, link/review sources and compare both zero and unknown cases. Positive request/pack quantities remain unchanged.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: tests/browser/test_o06_capture_receipt.py",
+              "document: .foundry/runs/O06-20261008-a/browser-and-workbook-evidence.json",
+              "document: src/offer_check/templates/offer_form.html"
+            ],
+            "summary": "Repaired demonstrated capture friction: explicit zero stock now saves as zero and remains blocked; blank stock stays unknown."
+          },
+          {
+            "confidence": "high",
+            "details": "Decision heading moved y=6041.25 to y=247.640625 on 390x900; page height 6632 to 2417. Current decision follows the authoritative resource head, including equal-timestamp corrections. Comparisons/inputs remain immutable; calculation, contracts, auth and transactional review file hashes unchanged.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: tests/integration/test_receipt_summary.py",
+              "document: src/offer_check/templates/receipt.html",
+              "document: .foundry/runs/O06-20261008-a/browser-and-workbook-evidence.json"
+            ],
+            "summary": "Receipt review outcome is now visible at 390px, with source evidence/digests/history retained."
+          },
+          {
+            "confidence": "high",
+            "details": "Two one-item EUR fixed-pack cases, four original source/hash sets. Known A=6000/B=7000 cents with eight extra B units; missing B shipping preserves null total. Workbook formulas authored independently, both sheets visually checked and zero formula errors. Runner verifies all raw inputs/hashes and exported cached formula parity. Fresh wheel-only Python environment from /tmp passes live HTTP, restart, restored receipts/source hashes, role/isolation, stale edit/expiry and retention checks. Simulated reviewer authority only; no qualified human review or usual-agent run.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: trials/o06/README.md",
+              "document: trials/o06/pack.json",
+              "document: outputs/o06-20261008-a/baseline.xlsx",
+              "document: scripts/rehearse_trial.py",
+              "document: .foundry/runs/O06-20261008-a/wheel-rehearsal.txt"
+            ],
+            "summary": "Bounded synthetic rehearsal is runnable without Foundry and reconciles an independent formula workbook to identical app source terms."
+          },
+          {
+            "confidence": "high",
+            "details": "351-word local walkthrough. trial_record.blank.json keeps permission/reviewer, setup/review/correction times, material misses, unknowns and interventions null. Usual-agent task uses identical inputs/profile and accepts negative baseline findings. New R013 requests one owner-authorized redacted exact-SKU request/two existing quotes and reviewer; INBOX link appended without replacing replies. No real intake/contact/purchase/deployment.",
+            "epistemic_status": "observation",
+            "kind": "document",
+            "refs": [],
+            "sources": [
+              "document: trials/o06/trial_record.blank.json",
+              "document: trials/o06/agent_task.md",
+              "document: trials/o06/tester_request.unsent.md",
+              "document: docs/mvp/OPERATOR_WALKTHROUGH.md",
+              "document: /home/jonathan/startup_lab/foundry/requests/2026-10-08-offer-check-R013-quotes.md"
+            ],
+            "summary": "Real trial records remain blank; walkthrough and exact tester request are prepared but unsent. Next material decision waits on R013."
+          },
+          {
+            "confidence": "high",
+            "details": "Saved selected map 2/15 was distinguished from evidence completeness; seven arrivals fetched and included in fresh complete context 116c12e0-9fef-55ee-8e4c-adc426d5da3b with exact full revision ec4430ff-f171-5130-9098-decb77f23e22 retained. No claim theft/store reset or blocking Foundry bug/friction observed. Feedback evidence 2b5e4c53-6301-497c-9695-0a05570e3f3f.",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: feedback/38e3ea1d-74fd-4827-ac86-4702388c5ed4.json",
+              "document: docs/checkpoints/O06.md"
+            ],
+            "summary": "Foundry upgraded coverage/ownership workflow operated successfully; positive feedback 38e3ea1d-74fd-4827-ac86-4702388c5ed4 recorded."
+          }
+        ],
+        "limits": "Synthetic local/private SQLite only. One-item/two-offer formula baseline and cached formula reconciliation, not a general verifier or measured human/agent baseline. Manual JSON source linking, no OCR/extraction. Human effort, qualified review, operator usual-agent run, adoption and repeated usefulness not measured. No real documents/intake/contact/sends/orders/payments/cloud/deployment/commit/push. External backups require separate retention; no forensic erasure claim. Upstream TestClient deprecation warning retained.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_8647e0b4-7e98-4e56-a095-7703e1730b13",
+              "target": "goal"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O03",
+              "target": "O02"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O04",
+              "target": "O03"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O05",
+              "target": "O04"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_f6c34318-68cd-41b7-8f96-e9baeda919b6",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "local_release",
+              "target": "goal"
+            },
+            {
+              "condition": "Local technical release accepted plus permitted quote set",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "pilot",
+              "target": "local_release"
+            },
+            {
+              "condition": "Repeated useful comparisons and concrete unmet input",
+              "kind": "may_lead_to",
+              "outcome": "supported",
+              "source": "pilot",
+              "target": "one_integration"
+            },
+            {
+              "condition": "No advantage over competent baseline",
+              "kind": "may_lead_to",
+              "outcome": "weakened",
+              "source": "pilot",
+              "target": "adapter_or_stop"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_5f244a1b-2f36-4eda-8ada-740446b66114",
+              "target": "goal"
+            }
+          ],
+          "focus": [
+            "pilot"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Help a person or their agent compare exact-SKU supplier offers against a purchase request, expose missing terms and preserve an explainable source-linked review before any purchase."
+            },
+            {
+              "detail": "",
+              "id": "work_8647e0b4-7e98-4e56-a095-7703e1730b13",
+              "kind": "record",
+              "ref": {
+                "id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+                "kind": "work"
+              },
+              "title": "O01: Authenticated capture and immutable input revisions"
+            },
+            {
+              "detail": "Conditional on completion of O01; see docs/mvp/ROADMAP.md",
+              "id": "O02",
+              "kind": "question",
+              "ref": null,
+              "title": "O02: Explainable quote checking and totals"
+            },
+            {
+              "detail": "Conditional on completion of O02; see docs/mvp/ROADMAP.md",
+              "id": "O03",
+              "kind": "question",
+              "ref": null,
+              "title": "O03: Source review, version checks and decision receipts"
+            },
+            {
+              "detail": "Conditional on completion of O03; see docs/mvp/ROADMAP.md",
+              "id": "O04",
+              "kind": "question",
+              "ref": null,
+              "title": "O04: Usable comparison and outside-agent workflow"
+            },
+            {
+              "detail": "Conditional on completion of O04; see docs/mvp/ROADMAP.md",
+              "id": "O05",
+              "kind": "question",
+              "ref": null,
+              "title": "O05: Local release, recovery and evidence-based pilot checkpoint"
+            },
+            {
+              "detail": "",
+              "id": "work_d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+              "kind": "record",
+              "ref": {
+                "id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+                "kind": "work"
+              },
+              "title": "O02: Explainable quote checking and totals"
+            },
+            {
+              "detail": "",
+              "id": "work_f6c34318-68cd-41b7-8f96-e9baeda919b6",
+              "kind": "record",
+              "ref": {
+                "id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+                "kind": "work"
+              },
+              "title": "O03: Source review, version checks and decision receipts"
+            },
+            {
+              "detail": "",
+              "id": "work_b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+              "kind": "record",
+              "ref": {
+                "id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+                "kind": "work"
+              },
+              "title": "O04: Usable comparison and outside-agent workflow"
+            },
+            {
+              "detail": "",
+              "id": "work_4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+              "kind": "record",
+              "ref": {
+                "id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+                "kind": "work"
+              },
+              "title": "O05: Local release, recovery and evidence-based pilot checkpoint"
+            },
+            {
+              "detail": "Local/private MVP reverified 2026-10-08: 60 tests, UI zero/unknown capture and first-viewport receipt repairs, independent wheel rehearsal/recovery. Core calculation/reviewer boundaries unchanged. No real-data intake or public release authority.",
+              "id": "local_release",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Use OfferCheck 0.1.0 as a private local MVP"
+            },
+            {
+              "detail": "O06 local verification/repairs and matched synthetic preparation complete. Real usefulness awaits R013 owner-authorized redacted request/two existing quotes and a designated reviewer. No qualified real comparison or usual-agent run; no ready integration.",
+              "id": "pilot",
+              "kind": "question",
+              "ref": null,
+              "title": "Does OfferCheck improve permitted real quote comparisons?"
+            },
+            {
+              "detail": "Only after repeated useful comparisons expose a concrete unmet input.",
+              "id": "one_integration",
+              "kind": "alternative",
+              "ref": null,
+              "title": "One targeted input integration"
+            },
+            {
+              "detail": "If no advantage over competent baseline or no repeated voluntary use.",
+              "id": "adapter_or_stop",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Adapter/template or stop standalone product"
+            },
+            {
+              "detail": "",
+              "id": "work_5f244a1b-2f36-4eda-8ada-740446b66114",
+              "kind": "record",
+              "ref": {
+                "id": "5f244a1b-2f36-4eda-8ada-740446b66114",
+                "kind": "work"
+              },
+              "title": "O06: Verify release usability and prepare a permitted quote-comparison trial"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Await R013 owner-authorized redacted request/two existing quotes and designated reviewer. Freeze identical terms/as_of across template, usual agent and app; measure actual correctness/effort before considering any integration.",
+        "next_work": null,
+        "outcome": "hold",
+        "rationale": "Executed both later user-authorized handoff parts under the reviewed claim. Repairs were demonstrated before implementation and accepted only after current regression/browser/wheel evidence. Local parity is preparation, not proof of real usefulness.",
+        "reconciliation_rationale": null,
+        "request_key": "offercheck-o06-20261008-a-checkpoint",
+        "revisit_trigger": "R013 explicitly supplies permitted local data-use/intake scope, redacted exact-SKU EUR fixed-pack input set, designated reviewer and agreed privacy/retention/method scope.",
+        "summary": "O06 complete: current local MVP verified/repaired, 60 tests green, independent same-input synthetic trial preparation delivered. Hold expansion pending R013 permitted inputs/reviewer.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "reviewer-offer-check-20261008-o06-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Seven arrivals fetched and explicitly included in complete context; selected/full-map coverage read separately. Current code and relevant files inspected. Real evidence absent and not inferred from synthetic results.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "5f244a1b-2f36-4eda-8ada-740446b66114",
+          "decision_id": "cde025fb-ef21-4026-a2cc-11268cf1ca4a",
+          "evidence_ids": [
+            "e4d2f116-c45b-4ddd-9126-b21163be0bee",
+            "dd29ccf4-422c-4e72-9bd7-f2e86b3c9ae7",
+            "60af4551-5a7b-4a90-a8d0-bb4459e52909",
+            "ee98642a-d6de-462e-8288-fef0efd6a9f3",
+            "1f372c50-11dc-4aa6-9e19-4e6f92feb6aa",
+            "38945817-d08f-41cb-83c7-94b022562fa3"
+          ],
+          "map_revision_id": "f0f532bf-723d-5a30-9b17-0e5d674ae06c",
+          "next_work_id": null,
+          "review_id": "cc275a06-ae48-4f43-95ba-11aecc2cc3fa",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed actual before/after code/hash evidence, fresh test failures/repairs, 60 current tests, desktop/mobile screens, independent workbook and isolated wheel rehearsal. Routine local O06 acceptance only; real trial/intake/send/deployment remains gated.",
+        "request_digest": "29a8c1179b637cc24d1e219367583f71ea9e5247ad101c99e1fbac60213d71a2",
+        "resolution": "accept",
+        "result_digest": "41e7dc654d8eb45d96e57ab90a895a11c95577265b806e453ce65dbaf676ccac",
+        "result_id": "09009845-1946-510e-b767-bac6646a68d5"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "5f244a1b-2f36-4eda-8ada-740446b66114",
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    },
+    {
+      "context_complete": true,
+      "context_id": "692a1c5f-74be-56fb-af8e-e14e324ee780",
+      "deferral": null,
+      "digest": "0260a425979edcb8b41dcb7e8383f9a5354bccaab11b4329f2c27730c42acf8d",
+      "id": "c8191321-1a76-5b15-8286-99cf7d30caf2",
+      "proposal": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "692a1c5f-74be-56fb-af8e-e14e324ee780",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Exact commands, results, changed files, actual red/first/review failures and known limits: docs/checkpoints/O05.md. Real desktop/390px Chromium, keyboard/HTMX/unreviewed arithmetic, independent HTTP replay and revoked/tenant failures green. Backup restore reproduces receipt/source hashes; retention removes live originals and linked excerpts, preserves explicit digests/tombstones and audit, erasure leaves outside workspace intact. Foreign prices remain declared currency minor units; unsupported price totals withheld under rules v1.1. Concrete local deployment and permitted matched-baseline pilot gates in RELEASE.md. Foundry package ownership/context/preview/resolution worked through four accepted transitions; positive feedback separately retained. One schema discoverability friction: result schema made branch outcome optional, but may_lead_to validation required it; corrected conditional outcome tags and reported separately. No store reset or claim bypass.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/checkpoints/O05.md",
+              "document: docs/mvp/RELEASE.md",
+              "document: docs/OPERATIONS.md",
+              "document: tests/integration/test_recovery.py",
+              "document: tests/browser/test_flow.py",
+              "document: acceptance/cases.json"
+            ],
+            "summary": "GO for OfferCheck 0.1.0 private local MVP: O01\u2013O05 complete; 55 tests, lint/type/JS/schema and independent wheel backup/restore pass."
+          }
+        ],
+        "limits": "Synthetic SQLite/loopback technical release only; TestClient upstream warning retained. PDF/source correspondence manual, explicit JSON evidence; no extraction/provider calls. Independent exported/backup copies require their own retention; no forensic SSD erasure claim. Demand, procurement benefit, supplier truth, real-data permission and remote/public deployment unvalidated. No sends/orders/payments/accounts/cloud/Git commit/push. Stop automatic expansion at this release decision; pilot/integration branches remain conditional without queued ready implementation.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_8647e0b4-7e98-4e56-a095-7703e1730b13",
+              "target": "goal"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O03",
+              "target": "O02"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O04",
+              "target": "O03"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O05",
+              "target": "O04"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_f6c34318-68cd-41b7-8f96-e9baeda919b6",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+              "target": "goal"
+            },
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "local_release",
+              "target": "goal"
+            },
+            {
+              "condition": "Local technical release accepted plus permitted quote set",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "pilot",
+              "target": "local_release"
+            },
+            {
+              "condition": "Repeated useful comparisons and concrete unmet input",
+              "kind": "may_lead_to",
+              "outcome": "supported",
+              "source": "pilot",
+              "target": "one_integration"
+            },
+            {
+              "condition": "No advantage over competent baseline",
+              "kind": "may_lead_to",
+              "outcome": "weakened",
+              "source": "pilot",
+              "target": "adapter_or_stop"
+            }
+          ],
+          "focus": [
+            "local_release",
+            "pilot"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Help a person or their agent compare exact-SKU supplier offers against a purchase request, expose missing terms and preserve an explainable source-linked review before any purchase."
+            },
+            {
+              "detail": "",
+              "id": "work_8647e0b4-7e98-4e56-a095-7703e1730b13",
+              "kind": "record",
+              "ref": {
+                "id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+                "kind": "work"
+              },
+              "title": "O01: Authenticated capture and immutable input revisions"
+            },
+            {
+              "detail": "Conditional on completion of O01; see docs/mvp/ROADMAP.md",
+              "id": "O02",
+              "kind": "question",
+              "ref": null,
+              "title": "O02: Explainable quote checking and totals"
+            },
+            {
+              "detail": "Conditional on completion of O02; see docs/mvp/ROADMAP.md",
+              "id": "O03",
+              "kind": "question",
+              "ref": null,
+              "title": "O03: Source review, version checks and decision receipts"
+            },
+            {
+              "detail": "Conditional on completion of O03; see docs/mvp/ROADMAP.md",
+              "id": "O04",
+              "kind": "question",
+              "ref": null,
+              "title": "O04: Usable comparison and outside-agent workflow"
+            },
+            {
+              "detail": "Conditional on completion of O04; see docs/mvp/ROADMAP.md",
+              "id": "O05",
+              "kind": "question",
+              "ref": null,
+              "title": "O05: Local release, recovery and evidence-based pilot checkpoint"
+            },
+            {
+              "detail": "",
+              "id": "work_d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+              "kind": "record",
+              "ref": {
+                "id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+                "kind": "work"
+              },
+              "title": "O02: Explainable quote checking and totals"
+            },
+            {
+              "detail": "",
+              "id": "work_f6c34318-68cd-41b7-8f96-e9baeda919b6",
+              "kind": "record",
+              "ref": {
+                "id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+                "kind": "work"
+              },
+              "title": "O03: Source review, version checks and decision receipts"
+            },
+            {
+              "detail": "",
+              "id": "work_b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+              "kind": "record",
+              "ref": {
+                "id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+                "kind": "work"
+              },
+              "title": "O04: Usable comparison and outside-agent workflow"
+            },
+            {
+              "detail": "",
+              "id": "work_4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+              "kind": "record",
+              "ref": {
+                "id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+                "kind": "work"
+              },
+              "title": "O05: Local release, recovery and evidence-based pilot checkpoint"
+            },
+            {
+              "detail": "55 technical tests and independent wheel/recovery acceptance pass; see docs/mvp/RELEASE.md. No public/real-data authority.",
+              "id": "local_release",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Use OfferCheck 0.1.0 as a private local MVP"
+            },
+            {
+              "detail": "Conditional on permitted anonymized inputs and matched competent baseline; no such quote set available. No ready automatic implementation.",
+              "id": "pilot",
+              "kind": "question",
+              "ref": null,
+              "title": "Does OfferCheck improve permitted real quote comparisons?"
+            },
+            {
+              "detail": "Only after repeated useful comparisons expose a concrete unmet input.",
+              "id": "one_integration",
+              "kind": "alternative",
+              "ref": null,
+              "title": "One targeted input integration"
+            },
+            {
+              "detail": "If no advantage over competent baseline or no repeated voluntary use.",
+              "id": "adapter_or_stop",
+              "kind": "alternative",
+              "ref": null,
+              "title": "Adapter/template or stop standalone product"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Local MVP release complete; hold public deployment and real-data pilot behind documented gates.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "Reviewed local implementation and actual acceptance evidence under user instruction to finish the bounded MVP.",
+        "reconciliation_rationale": null,
+        "request_key": "implementation-O05-20261007",
+        "revisit_trigger": null,
+        "summary": "GO for OfferCheck 0.1.0 private local MVP: O01\u2013O05 complete; 55 tests, lint/type/JS/schema and independent wheel backup/restore pass.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+          "decision_id": "84f15f70-4bb2-4508-a129-63ac2126d9ed",
+          "evidence_ids": [
+            "96a1d71e-4d4a-4458-bab6-9bf0a3de3d70"
+          ],
+          "map_revision_id": "8548e4aa-92b8-5a50-b89f-09432123d7fd",
+          "next_work_id": null,
+          "review_id": "3c2bb32e-d744-410f-bf67-902759bd5259",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "c397fc6df0b9a7c47882504908fddf876c7fafde4c231740e8df29ed965cd510",
+        "resolution": "accept",
+        "result_digest": "0260a425979edcb8b41dcb7e8383f9a5354bccaab11b4329f2c27730c42acf8d",
+        "result_id": "c8191321-1a76-5b15-8286-99cf7d30caf2"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    },
+    {
+      "context_complete": true,
+      "context_id": "ac5f4fbc-6d42-54e9-aead-873557b941bb",
+      "deferral": null,
+      "digest": "7ad48b3d158f22d08ecce921a4bd0c2e293396166a49a61f7f4e37aa7b4a771e",
+      "id": "5897e6a8-cd78-5115-9336-64ef8dc5915a",
+      "proposal": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "ac5f4fbc-6d42-54e9-aead-873557b941bb",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Exact commands/files, screenshots and actual failures: docs/checkpoints/O04.md. Four browser/HTTP cases green; 45 non-browser cases green (one HTTP case overlaps). Fixed genuine mobile receipt hash overflow after preserving 47-pass/1-failure evidence. Browser assets/local API guide self-contained. Typed versioned JSON/CSV imports, OpenAPI/schemas and HTTP-only client supplied. No new Foundry defects/friction observed; no arrivals.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/checkpoints/O04.md",
+              "document: tests/browser/test_flow.py",
+              "document: docs/api/WORKFLOW.md",
+              "document: examples/agent_client.py"
+            ],
+            "summary": "O04 real Chromium desktop/390px, restart receipt and separate stdlib HTTP replay pass; 48 unique tests plus lint/type/JS checks covered."
+          }
+        ],
+        "limits": "Synthetic local/private SQLite only. Explicit JSON field/source capture; no extraction/OCR. O05 retention/recovery/release evidence outstanding. Upstream TestClient warning remains. Demand and public deployment unvalidated.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "O05: Local release, recovery and evidence-based pilot checkpoint",
+        "next_work": {
+          "acceptance_criteria": "All required unit/integration/browser/HTTP contract checks green; backup restore reproduces source hashes and receipts; deletion does not leak original confidential bytes. No real sends/orders/uploads to third parties. Release package states unvalidated demand and actual unresolved deployment/data gates.",
+          "blocked_reason": null,
+          "description": "Document independent install/config/serve, migration recovery, backup/restore of DB plus attachments, retention/export/deletion, redacted errors and no-network default. Produce a repeatable demo and concrete deployment proposal. Prepare a matched spreadsheet/agent/procurement comparison with permitted anonymized quotes only if available; synthetic data is sufficient for local release tests.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "O05: Local release, recovery and evidence-based pilot checkpoint"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation and actual acceptance evidence under user instruction to finish the bounded MVP.",
+        "reconciliation_rationale": null,
+        "request_key": "implementation-O04-20261007",
+        "revisit_trigger": null,
+        "summary": "O04 real Chromium desktop/390px, restart receipt and separate stdlib HTTP replay pass; 48 unique tests plus lint/type/JS checks covered.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+          "decision_id": "20f7b1ad-56ed-4d78-b491-94ef253622b6",
+          "evidence_ids": [
+            "e86137c7-bcdc-4874-bf05-0bf33d80d94d"
+          ],
+          "map_revision_id": "bf3f010a-f753-5e74-abe3-c867f3258a1d",
+          "next_work_id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+          "review_id": "c834c668-6def-4002-9fe9-67056b48fe1a",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "a54cabd0f23b80353da75b3d1f5225135f8e8c986c057c31a49f444377cd0507",
+        "resolution": "accept",
+        "result_digest": "7ad48b3d158f22d08ecce921a4bd0c2e293396166a49a61f7f4e37aa7b4a771e",
+        "result_id": "5897e6a8-cd78-5115-9336-64ef8dc5915a"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    },
+    {
+      "context_complete": true,
+      "context_id": "74e032dd-4247-5124-94cd-d247f68790cc",
+      "deferral": null,
+      "digest": "5e8a3af2b4b4b6a36a5db9bfdd5ecef00bf9fb23ca53648797422ea4dae16bb2",
+      "id": "ea94fe1c-45f8-53ec-8acf-c1889154b38b",
+      "proposal": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "74e032dd-4247-5124-94cd-d247f68790cc",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Exact commands/files and preserved red/first/green failures: docs/checkpoints/O03.md. Field reviews require humans and pin exact inputs; old reviews do not transfer. Live heads, rules, review snapshots, source bytes and expiry are rechecked; same-key concurrent decisions produce one effect and conflicting heads return 409. Receipts retain comparison/digest and explicit not-an-order limits; unsent drafts are deterministic. No new Foundry defect/friction observed; zero arrivals.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/checkpoints/O03.md",
+              "document: tests/integration/test_review.py",
+              "document: docs/mvp/ARCHITECTURE.md"
+            ],
+            "summary": "O03 source-review, decision, concurrency, restart/expiry and escaped-receipt acceptance passes; 42 tests plus lint/type green."
+          }
+        ],
+        "limits": "Synthetic SQLite/loopback only. PDF field correspondence remains manual. UI/browser/independent HTTP and retention/recovery remain O04/O05. Demand, supplier truth and deployment gates unvalidated.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "O04: Usable comparison and outside-agent workflow",
+        "next_work": {
+          "acceptance_criteria": "Desktop and 390px real browser: load synthetic request, review two offers, inspect cost/extra units, shortlist and reopen receipt after restart. Separately an HTTP-only client with a scoped token creates a draft, checks it and reads the result without importing application internals. Cross-workspace and revoked-token attempts fail.",
+          "blocked_reason": null,
+          "description": "Build request/capture/source-review/compare/history screens and empty/error/stale states. Publish OpenAPI/schema examples, one minimal stdlib HTTP client and a new-process contract replay. Use escaped source text and authorized attachment downloads; make unknowns accessible without hiding valid arithmetic.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "O04: Usable comparison and outside-agent workflow"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation and actual acceptance evidence under user instruction to finish the bounded MVP.",
+        "reconciliation_rationale": null,
+        "request_key": "implementation-O03-20261007",
+        "revisit_trigger": null,
+        "summary": "O03 source-review, decision, concurrency, restart/expiry and escaped-receipt acceptance passes; 42 tests plus lint/type green.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+          "decision_id": "2a58914f-a784-4038-85ca-feaa83933409",
+          "evidence_ids": [
+            "e0cab708-040e-4963-ae30-ac890d60b44c"
+          ],
+          "map_revision_id": "60c87d10-6ff1-58ff-a58e-178b47776412",
+          "next_work_id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+          "review_id": "7dcca40f-c812-4955-8685-65a06aa9fc39",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "53d08b4247a26f53a9b15d32c54d6408ed15eb21a46995440f502b8f23ad0c11",
+        "resolution": "accept",
+        "result_digest": "5e8a3af2b4b4b6a36a5db9bfdd5ecef00bf9fb23ca53648797422ea4dae16bb2",
+        "result_id": "ea94fe1c-45f8-53ec-8acf-c1889154b38b"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    },
+    {
+      "context_complete": true,
+      "context_id": "801b8f82-8cf1-5133-8c96-aaa749e79ffa",
+      "deferral": null,
+      "digest": "0b189f98f62c8dfb31d2d19260c8e721509f976e56f1880e1c016a6b24f92c2a",
+      "id": "2595f1c7-8768-5486-923e-0cf3a52694b3",
+      "proposal": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "801b8f82-8cf1-5133-8c96-aaa749e79ffa",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Commands, results, files and actual failures: docs/checkpoints/O02.md. Two goods lines 2000+3000 with shipping 1000 produce 6000. Immutable comparisons pin inputs, source hashes, rules/as_of, named issues and separate arithmetic/ranking. No new Foundry friction or bugs observed; zero arrivals. Source correspondence fails closed pending O03.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/checkpoints/O02.md",
+              "document: fixtures/cases.json",
+              "document: tests/unit/test_checks.py",
+              "document: tests/integration/test_comparisons.py"
+            ],
+            "summary": "O02 passes 35 regression/acceptance tests, all 13 frozen cases and 1000 pack boundaries; lint/type checks pass."
+          }
+        ],
+        "limits": "Synthetic SQLite local checks only. No source-review decision endpoints/UI/recovery yet. Exact declared matching only; supplier truth, demand and real-data deployment remain unvalidated.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "O03: Source review, version checks and decision receipts",
+        "next_work": {
+          "acceptance_criteria": "Unreviewed extraction cannot receive eligible status; old reviews do not transfer to edited terms or source bytes. Offer update/expiry between display and submit gives 409 and preserves history. Concurrent decisions/idempotent retries cannot duplicate effects. Receipt explicitly is not an order or guarantee.",
+          "blocked_reason": null,
+          "description": "Bind field reviews to exact artifact/offer revision and authorized reviewer. Build shortlist/reject/defer and unsent clarification drafts. Transactionally pin input heads and comparison digest; recheck expiry on review, including after restart. Export readable HTML and machine JSON receipts with limits and tombstones.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "O03: Source review, version checks and decision receipts"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation and actual acceptance evidence under user instruction to finish the bounded MVP.",
+        "reconciliation_rationale": null,
+        "request_key": "implementation-O02-20261007",
+        "revisit_trigger": null,
+        "summary": "O02 passes 35 regression/acceptance tests, all 13 frozen cases and 1000 pack boundaries; lint/type checks pass.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+          "decision_id": "2327d75c-2321-4f56-8838-b51d41265ab8",
+          "evidence_ids": [
+            "c82e0865-510d-4b19-b595-fcba5ec44718"
+          ],
+          "map_revision_id": "120ac5e8-cbb6-591d-91c8-d548c3e5c887",
+          "next_work_id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+          "review_id": "83e6277e-9120-4651-8229-6733665ae2d2",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "4f14c9a9892a616bc4f1d2c055c21f190e556fc266c3b6f72e9ed8924be40f29",
+        "resolution": "accept",
+        "result_digest": "0b189f98f62c8dfb31d2d19260c8e721509f976e56f1880e1c016a6b24f92c2a",
+        "result_id": "2595f1c7-8768-5486-923e-0cf3a52694b3"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    },
+    {
+      "context_complete": true,
+      "context_id": "7a2e5b9a-dad8-581f-ba8d-70bcfa143a81",
+      "deferral": null,
+      "digest": "a6342f204bcdb51c44887b4adf5fc4f89465277e3c1884cd02add575bf11253d",
+      "id": "013006a7-5ac0-5bcd-8c55-8ff77f256dee",
+      "proposal": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "7a2e5b9a-dad8-581f-ba8d-70bcfa143a81",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "Exact commands/results and changed files: docs/checkpoints/O01.md. Initial red import failure and first 14-pass/1-failure runtime evidence retained. Final 15 passed. Authentication, tenant-scoped capture/history/download, token revocation, CSRF, strict money/quantity, idempotency, expected heads and unsafe/oversized upload rejection exercised. Conditional O02\u2013O05 remain in roadmap. Foundry claim/preparation/arrivals operated successfully; positive feedback submitted separately.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/checkpoints/O01.md",
+              "document: docs/mvp/ARCHITECTURE.md",
+              "document: tests/integration/test_capture.py"
+            ],
+            "summary": "O01 capture acceptance passes: 15 integration cases, lint/type checks and independent clean wheel install/restart."
+          }
+        ],
+        "limits": "Synthetic SQLite/loopback acceptance only. PDF signature validation is not malware certification. No calculation, field review, decisions, browser, recovery or real-data/customer validation yet. TestClient upstream deprecation warning retained.",
+        "map": {
+          "edges": [
+            {
+              "condition": "",
+              "kind": "contributes_to",
+              "outcome": null,
+              "source": "work_8647e0b4-7e98-4e56-a095-7703e1730b13",
+              "target": "goal"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O03",
+              "target": "O02"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O04",
+              "target": "O03"
+            },
+            {
+              "condition": "Previous technical acceptance passes",
+              "kind": "depends_on",
+              "outcome": null,
+              "source": "O05",
+              "target": "O04"
+            }
+          ],
+          "focus": [
+            "work_8647e0b4-7e98-4e56-a095-7703e1730b13"
+          ],
+          "nodes": [
+            {
+              "detail": "",
+              "id": "goal",
+              "kind": "goal",
+              "ref": null,
+              "title": "Help a person or their agent compare exact-SKU supplier offers against a purchase request, expose missing terms and preserve an explainable source-linked review before any purchase."
+            },
+            {
+              "detail": "",
+              "id": "work_8647e0b4-7e98-4e56-a095-7703e1730b13",
+              "kind": "record",
+              "ref": {
+                "id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+                "kind": "work"
+              },
+              "title": "O01: Authenticated capture and immutable input revisions"
+            },
+            {
+              "detail": "Conditional on completion of O01; see docs/mvp/ROADMAP.md",
+              "id": "O02",
+              "kind": "question",
+              "ref": null,
+              "title": "O02: Explainable quote checking and totals"
+            },
+            {
+              "detail": "Conditional on completion of O02; see docs/mvp/ROADMAP.md",
+              "id": "O03",
+              "kind": "question",
+              "ref": null,
+              "title": "O03: Source review, version checks and decision receipts"
+            },
+            {
+              "detail": "Conditional on completion of O03; see docs/mvp/ROADMAP.md",
+              "id": "O04",
+              "kind": "question",
+              "ref": null,
+              "title": "O04: Usable comparison and outside-agent workflow"
+            },
+            {
+              "detail": "Conditional on completion of O04; see docs/mvp/ROADMAP.md",
+              "id": "O05",
+              "kind": "question",
+              "ref": null,
+              "title": "O05: Local release, recovery and evidence-based pilot checkpoint"
+            }
+          ]
+        },
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "O02: Explainable quote checking and totals",
+        "next_work": {
+          "acceptance_criteria": "All 13 frozen cases pass; 1000 pack-boundary cases pass; duplicate/missing lines, unsupported pricing and absent charges cannot become ranked offers. Two lines costing 2000 and 3000 cents with 1000 shipping total 6000, not 7000. Comparisons contain sources, actual overbuy and unknowns.",
+          "blocked_reason": null,
+          "description": "Implement exact-SKU/quantity/pack matching, injected clock, expiry/date checks, explicit shipping/fee and tax-basis rules. Reuse Pydantic and integer cents; do not port the experimental checker blindly. Create immutable comparisons with input/rules hashes, named issues and arithmetic. Add two-line quote fixtures to ensure quote-level shipping is counted once.\nPlan: docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "O02: Explainable quote checking and totals"
+        },
+        "outcome": "continue",
+        "rationale": "Reviewed local implementation and actual acceptance evidence under user instruction to finish the bounded MVP.",
+        "reconciliation_rationale": null,
+        "request_key": "implementation-O01-20261007",
+        "revisit_trigger": null,
+        "summary": "O01 capture acceptance passes: 15 integration cases, lint/type checks and independent clean wheel install/restart.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+          "decision_id": "565fe894-9629-45c3-9eed-1870cbe804e7",
+          "evidence_ids": [
+            "4585b3d1-de52-44f8-9edd-3e75f09592f4"
+          ],
+          "map_revision_id": "c132d2b5-0d21-5908-a5dd-95f2dff277bf",
+          "next_work_id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+          "review_id": "d1cf993f-a19d-4c14-934d-65003b3fe7fe",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "0d5379e8db0bee9b1cc3f98567daeb55edf11ee3790f53223cef6cf716107345",
+        "resolution": "accept",
+        "result_digest": "a6342f204bcdb51c44887b4adf5fc4f89465277e3c1884cd02add575bf11253d",
+        "result_id": "013006a7-5ac0-5bcd-8c55-8ff77f256dee"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    },
+    {
+      "context_complete": true,
+      "context_id": "d5e33037-2ef2-503b-a12b-824f59e860d2",
+      "deferral": null,
+      "digest": "c25db33e0401b21d5c594616d28d0dae80a8113f0f3e61b206f5194c5a8c46c2",
+      "id": "f758721d-8d12-5b5a-9a36-6e65314be1f4",
+      "proposal": {
+        "actor": "Codex:conversation-mvp-2026-10-07",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "d5e33037-2ef2-503b-a12b-824f59e860d2",
+        "decision_scope": "venture",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/offer-check/docs/mvp/SOURCES.md"
+            ],
+            "summary": "User supplied Generate Startup Ideas.md (commercial facts and verified outcomes). Primary sources show QuoteWerks/Fairmarkit overlap and mature budget/data validators. Synthetic probe: 13 exact cases, 1000 pack boundaries and 5 digest checks; 12 inputs pass shape validation but only 2 are comparable under the declared rules. This does not validate real extraction, supplier truth or adoption."
+          }
+        ],
+        "limits": "No real customer data, product comparison trial, demand, price or deployment validation. Probe covers only the declared synthetic cases; application not built.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": "Help a person or their agent compare exact-SKU supplier offers against a purchase request, expose missing terms and preserve an explainable source-linked review before any purchase.",
+        "next_action": "O01: Authenticated capture and immutable input revisions \u2014 /home/jonathan/startup_lab/offer-check/docs/mvp/ROADMAP.md",
+        "next_work": {
+          "acceptance_criteria": "Clean install and restart retain records; outsiders cannot list/read/download another workspace; token cannot change roles; same-key same-body retries are identical and changed-body retries conflict; unsafe/oversized uploads fail without orphan records.",
+          "blocked_reason": null,
+          "description": "Create locked Python package, app factory, config, migrations and local seed. Implement two synthetic workspaces, viewer/editor/reviewer authorization and scoped agent tokens. Store request/offer revisions and bounded source attachments with hashes. Add strict import schema and idempotency records. No automatic extraction or provider calls.\nPlan: /home/jonathan/startup_lab/offer-check/docs/mvp/ROADMAP.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "O01: Authenticated capture and immutable input revisions"
+        },
+        "outcome": "narrow",
+        "rationale": "The user requested a source-derived idea through MVP handover. Primary research and the probe justify this bounded local implementation, not market validation.",
+        "reconciliation_rationale": null,
+        "request_key": "conversation-result-20261007",
+        "revisit_trigger": null,
+        "summary": "GO for a bounded local/private quote-review MVP; demand and advantage over established procurement tools remain unvalidated. No purchasing, payment or factual supplier guarantees.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "Codex:conversation-mvp-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Supplied source and primary sources read; full local plans/probe retained. No commercial truth or demand inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "ed72e9e5-9db1-49a7-9712-4a659ec5c62b",
+          "decision_id": "2ee34c83-705e-41b7-8bb9-f709842edc78",
+          "evidence_ids": [
+            "2d19d052-6a3b-40e4-bc72-d0a6b5c25996"
+          ],
+          "map_revision_id": "1b642dd7-b21d-5a5c-b551-5145a6abe948",
+          "next_work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+          "review_id": "38040d12-59df-41fe-bf9f-09fc042a4767",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed bounded local handoff under user authorization; self-review, not independent market validation.",
+        "request_digest": "f867cd43c5ee8f744d22cff92eec24d1f301c933641e22be62f2adf54e728972",
+        "resolution": "accept",
+        "result_digest": "c25db33e0401b21d5c594616d28d0dae80a8113f0f3e61b206f5194c5a8c46c2",
+        "result_id": "f758721d-8d12-5b5a-9a36-6e65314be1f4"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "work_id": "ed72e9e5-9db1-49a7-9712-4a659ec5c62b",
+      "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+    }
+  ],
+  "scope": {
+    "focus": null,
+    "idea_revision_id": null,
+    "objective": "Help a person or their agent compare exact-SKU supplier offers against a purchase request, expose missing terms and preserve an explainable source-linked review before any purchase.",
+    "stage": "discovery",
+    "subject": "venture",
+    "subject_id": "v-offer-check",
+    "title": "OfferCheck",
+    "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+  },
+  "stale_references": [],
+  "unreviewed_change_count": 0,
+  "unreviewed_changes": [],
+  "work": [],
+  "worker_running": false,
+  "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+}

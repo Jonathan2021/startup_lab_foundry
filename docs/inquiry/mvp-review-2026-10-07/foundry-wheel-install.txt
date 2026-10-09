@@ -1,0 +1,30 @@
+Using Python 3.13.5 environment at: /tmp/foundry-upgrade-env-20261007
+Resolved 23 packages in 631ms
+Prepared 1 package in 27ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 23 packages in 5.97s
+ + alembic==1.20.0
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + anyio==4.15.1
+ + click==8.5.0
+ + fastapi==0.142.2
+ + h11==0.16.0
+ + idna==3.20
+ + jinja2==3.1.6
+ + mako==1.4.3
+ + markupsafe==3.0.4
+ + opentelemetry-api==1.45.1
+ + psycopg==3.3.6
+ + psycopg-binary==3.3.6
+ + pydantic==2.13.5
+ + pydantic-core==2.46.5
+ + python-dotenv==1.2.4
+ + sqlalchemy==2.1.3
+ + starlette==1.7.0
+ + startup-foundry==0.0.1 (from file:///tmp/foundry-upgrade-wheel-20261007/startup_foundry-0.0.1-py3-none-any.whl)
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4
+ + uvicorn==0.54.0

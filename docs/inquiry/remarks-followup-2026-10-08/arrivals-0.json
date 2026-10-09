@@ -1,0 +1,306 @@
+{
+  "items": [
+    {
+      "changed_since_context": false,
+      "digest": "e0d288ee62e1fe2f2a0fb48e77fc97ea3f6da99cb8fd7cc7446b16dc8fd5fd00",
+      "id": "0c928b86-6059-4bd0-8dea-b0056a1f0988",
+      "summary": "[Dogfood/positive] Dependency-safe package continuation and exact review worked for R01 to R02"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "c2b72f66571ed9922c0f73980dd9c5f2c004a832fd0e64ab91c3a1ef32a58f64",
+      "id": "1b915f27-9482-4ef2-a995-c61ea96a41bd",
+      "summary": "[Dogfood/friction] Result schema command timed out during package preparation"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "8d37283238412d36d9d26cbb43068dca3a2e039ab0c52e97ef8b526b4236d190",
+      "id": "1bbdfffb-66ed-4f87-a6cd-29430373e212",
+      "summary": "Crous Queue: 22 core and 7 browser tests, lint/format/types and complete source release kit pass setup/recovery/HTTP checks. Bare wheel migrate fails without cwd-relative Alembic config; wheel contains no revisions. Q07 must explicitly support/test an honest distribution contract."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "3fb723512313088ddc2b6b600b93c5b766b658fd7b8c0f11394f404fd05add5f",
+      "id": "2b3482d7-2885-472f-b896-344f6b0469f0",
+      "summary": "[Dogfood/positive] Five dependent MVP packages completed through one-writer CLI checkpoints"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "f5285c32c0ef9ed83047891f87bacc0b86b47e203e0fa4ce270bbe8325eb808d",
+      "id": "2b5e4c53-6301-497c-9695-0a05570e3f3f",
+      "summary": "[Dogfood/positive] 2026-10-07.2 context coverage made O06 review ownership and retained-map scope explicit"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "c3715e7b7725a3a3b50d1ac091fa13ce8c2aa790c439921c3bb5d91a83f33f76",
+      "id": "2c17ca68-ec03-4d7c-9ede-f1adca9dcb76",
+      "summary": "[Dogfood/positive] Q07 upgraded doctor and explicit coverage enabled a fully owned release checkpoint."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "f5bf4d7cd4ff06b85e0ab9ee274df474246a9f2baac0f3c4d2cf4efc0f395d5a",
+      "id": "30cd5b46-f68e-404a-8f23-ae5d96e7696e",
+      "summary": "[Dogfood/bug] Push surfaced two current dependency alerts and seven historical-trial alerts"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "ba4f7d4e0631894ce919b7949f93bb7f8c02978ee4df5215d1d541072efb962b",
+      "id": "336cdfd0-e3f8-4182-b056-e77e237689e1",
+      "summary": "[Dogfood/positive] O01 claim/context/arrival and pinned-result workflow worked without application coupling"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "d19b7c1f8ed50412952b48be04f857e477946df4879a038b9be657410390d7fb",
+      "id": "34279286-cdc7-40b0-8cb8-59c30e917ce9",
+      "summary": "[Dogfood/positive] Upgraded doctor/map coverage and arrival selection supported honest V06 verification"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "94162908f5f502a0dbca0a90001c4a88332d1859c28cffb27a8537087898ef63",
+      "id": "35b6ae39-35cd-4dbe-b08e-77d5f6d08553",
+      "summary": "[Dogfood/friction] Context arrivals timed out at the bridge 60-second limit"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "13d4bbf07838e2af0333bf713224e1c350b5c3b52b01a524b16e3f9caa4a0c16",
+      "id": "423cfc8d-f7d9-44d4-b46e-b5b566434728",
+      "summary": "[Dogfood/positive] Doctor and exact-map/evidence coverage supported an authorized release package without reopening road-use work."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "84d8e694c64cd243a214114a5eb728f919457350c5eca5f8df61c6aa00cef7e6",
+      "id": "4604609f-5d89-477f-ba92-70dafc59bd28",
+      "summary": "[Dogfood/positive] V03 exact-digest checkpoint and dependency advancement worked"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "083599163c903cfa25a543a28e6db3a443e2ac2240c841aa7a7992af451aa717",
+      "id": "4765a9a1-9bd2-4ee0-9507-1e35ed83fc24",
+      "summary": "Triaged all 22 received reports; accepted bounded public-schema, context-visibility and timeout/recovery improvements, retained positive evidence, and explicitly deferred stable preview allocation and generic integrations. FEEDBACK_TRIAGE.md maps every UUID to its disposition."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "4b7555d7bceada579c074898f94e7f1dd730fd3a4914e7bd4128d76a82f4d13e",
+      "id": "4f4f3e56-64c9-49c2-84fe-f474a6ee12d7",
+      "summary": "[Dogfood/positive] J02 retained red specs, integrated evidence and routine local review without platform outage"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "f76d01bfaf241f1bf9a8401d209f3825e7be54ec704620ea30d49e4c6f455aac",
+      "id": "52d0fd83-dd82-4414-b290-583be0c7b6df",
+      "summary": "[Dogfood/positive] V04 retained browser and viewport evidence with clear build/adoption distinction"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "0d4266ccfb140b85061d01dc7e38338c4ef17a13145e8837fc0ef2f1f1b23300",
+      "id": "5fa2fa1b-f0fb-493e-b134-dbe67cb5f17f",
+      "summary": "[Dogfood/positive] C03 proceeded through eligible dependency work with intact source history"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "e839032f7a73f79d531c7ca86e4244fefa2f0403d907421ba614a5646d014102",
+      "id": "622d2296-34d2-49f8-abec-a6c73764ea0b",
+      "summary": "[Dogfood/positive] Saved context and pinned result review support sequential long-running MVP packages."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "08f8a870397f2e41bd178fd3a72b45d563984b34c920388e7ec1fa5a75d1e0d1",
+      "id": "6894ee5e-d08f-46e4-8005-cdf89400095c",
+      "summary": "[Dogfood/positive] 2026-10-07.2 doctor/map coverage supported an honest C06 continuation review"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "fdb7146c937f0d5b8e774a51ffcfd6e0b6081664a502ade2c6b3b06da655b0c4",
+      "id": "68c91ec0-f34d-4927-b3ae-15e37e5c846f",
+      "summary": "[Dogfood/positive] Ordered claims and pinned package results supported a complete local MVP"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "47bf2075020fe8a6563b6327ae3f0e75e28d9021c3e0eb7a5b2915ee36880ad4",
+      "id": "6953d039-a3b4-4846-88bd-f73eb3b40059",
+      "summary": "[Dogfood/positive] Browser-evidenced C04 completed without Foundry friction"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "a0bb5841d2d683461675bc2f50b114030d07b9a86326ee948a287400b7cc0dad",
+      "id": "6a44b3be-10e2-4af1-9d9d-c1090fa7437d",
+      "summary": "OfferCheck: 54 core and 6 browser tests, strict types, setup and independent wheel recovery pass. Fresh make check fails four Ruff I001 errors. No-cache controlled directory toggle yields original pass, clean-copy fail, empty alembic directory added pass, removed fail. Fix deterministic third-party classification, not empty-directory or cached-workspace dependence."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "dd5baa49929d5ac84ef6e0c7ef9ce4f6268f5c116ca0aa38102498346222164b",
+      "id": "6f8fe2b4-fe95-472e-9401-b56a2d675430",
+      "summary": "Ride Options: 31 core tests, lint/types, independent recorded browser and supported frontend build pass; no HEAD, remote or CI workflow. Regional bootstrap documentation mismatch remains."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "afbd80358f19a2fc6aeba1173a6dde074d4b02e911f3762ad8c19b590fada0dd",
+      "id": "786851a3-921b-4c3e-8948-a267f4e39766",
+      "summary": "Foundry: user scope and bounded MVP investigation"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "8cea5f4668f142181a40a656c8758b488fe5a8a8036425129da8b883f6c7ea9d",
+      "id": "7ca178f4-e619-4a37-bb72-9aa8b21a559f",
+      "summary": "[Dogfood/idea] Clarify focused context map versus retained full roadmap"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "19e7b3a422fe65ca9b58777b7ced40dc6211d2655bb9f5da65a92af11e57a2c8",
+      "id": "7cdeb3ad-50fb-42aa-8e1e-8d281a8ad5c7",
+      "summary": "[Dogfood/positive] Upgrade doctor and context coverage guard supported Q06 audit and bounded rehearsal"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "f10df1e51907d67c7e660a4e3628c2d18468a59b69c1e920b36d19996b031eff",
+      "id": "7d001c8d-7222-4b75-a342-2accae9f08e8",
+      "summary": "Implemented agent contract and bridge revision 2026-10-07.2 from six initially failing regressions. Static discovery bypasses DB setup, branch schema exposes requirements, context reports full-map retrieval, and explicit same-owner recovery preserves claims. Seven bridge hashes and contract revisions verified. Focused suite 22 passed; full product suite 152 passed with one PostgreSQL environment skip; lint and strict types pass. Timed-out incident root causes remain unproven; six current command probes complete in about one second."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "af0d9b7e1bf640a65466c20d0bacfb97f6513447d78d3bc30997541e9788d5df",
+      "id": "7e595da0-51db-4ec7-a52a-00e870cb447f",
+      "summary": "[Dogfood/friction] Published MapEdge schema does not expose conditional branch outcome requirement"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "e990a04f617689465e38ea2f1fa09e1209e4a857aaefd665f3494837e9b09020",
+      "id": "81916dd8-9b0e-4029-b726-74dde45d43ce",
+      "summary": "[Dogfood/positive] Owned-work resume and immutable context pins supported completing J06 after a verification-only tooling detour."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "457123600a07f62d519cd6341634019af6aabc08f75e6dad0e8d44b232154626",
+      "id": "81ddc670-faac-42f6-af3c-fae2424436e1",
+      "summary": "[Dogfood/positive] C01-C05 local MVP delivered through sequential Foundry ownership and exact evidence"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "c8ab264bb87de666e0f8a2881bab5dd28533f5ccbc9680eedb082c11852cb707",
+      "id": "851406de-a331-4ca6-a06b-7bcb34d5e7b2",
+      "summary": "[Dogfood/positive] C01 complete claim/context/result workflow preserved scope and exact review pins"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "78f9fe6677addc1bb5e82c9319c2c2ee55bb8a43648316bf24e360065706aa6b",
+      "id": "8862c6a0-bd1e-54fe-af8a-34bc1e10bbba",
+      "summary": "R004: supplied inbox answer reviewed; attributed to user, not independent validation."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "c41ad710dee7f55fcb1c25d493233ad7506a850748841a6396346933e315f5a1",
+      "id": "8be0df14-3f99-41ee-acb1-d46a98dfc5f0",
+      "summary": "[Dogfood/positive] V01 claim, arrivals and exact-digest preview succeeded"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "5bea0bddf6eaf736de851200f915ce1b77853d210618fd7aac06ba901cd5f473",
+      "id": "93485573-d909-4fe6-abeb-1a0da63698f8",
+      "summary": "[Dogfood/positive] Dependent implementation checkpoints stayed owned and reviewable through a local MVP release"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "98b41689d33eadd09e3a876e4faf203775e838c2ea56b8cabb1bf670077cd95b",
+      "id": "a0cc52a3-5bb7-4cc1-8ef4-2cbcef7a3a41",
+      "summary": "[Dogfood/positive] J01 handoff and checkpoint preserve reviewed implementation scope"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "bb33281d68e1853ef5d41fd9721f85b62415031a5327bc2eb1abf54e11badd10",
+      "id": "a2b06a1f-c99b-41f3-b60f-e73f32fc21d7",
+      "summary": "All three repos have no HEAD, remote or workflow and no matching GitHub repo under Jonathan2021. Upgraded bridge/contract 2026-10-07.2/hash and accepted complete-context C06/Q06/O06 results confirmed. Relevant positive feedback retained; no new blocking Foundry defect or justified platform upgrade. C07/Q07/O07 queued unclaimed with human gates preserved."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "a9794dc3885f84ce927934366d0ce3a1fe2e1496822e41c8b535b22aa2608fa9",
+      "id": "a9e9cdb0-39a7-46ed-a15b-99844a78a1e6",
+      "summary": "Volley Match: 54 core tests and two browser viewports pass; fresh documented seed command exits 2 with naive played_at validation. No HEAD/remote; CI and distribution coverage incomplete."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "b51a2edc27900430bcfec3718eff0ea9353e34cc7c9007cbfc2192b61a05e209",
+      "id": "aab8adb8-a112-4ef0-b5d1-fd7eca19c571",
+      "summary": "[Dogfood/positive] C07 context coverage and external release coordination preserve the held human gate."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "4477a7904c67425c2b293b25ea11ee342049a1949c5ab826412c5faea730ea5d",
+      "id": "ab23ef25-91ed-4d55-a0d4-ff29521fc9fd",
+      "summary": "Coopain: independent setup, 208 backend tests (91.61%, per-file >=60%), 14 web tests/types/lint/build and two browser flows pass. Shell runner returns 0 after synthetic pytest exit 7. Current MVP uncommitted, upstream cleanup ahead; remote green CI covers older main only."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "202f82558077ae788097d70171f7b1c0c68275dca33f9b84a92962d9802517e2",
+      "id": "b0336bb0-8104-4dcf-87a3-039d89a7fe1e",
+      "summary": "[Dogfood/friction] Outside-agent onboarding audit: missing-store guard and public schema guidance"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "82ec1b80097f6f4a90daefe01a00b0c8bc84e4fd94c4190626e94804c5ab8888",
+      "id": "b57be82a-3ab3-4afb-887d-45c291b8226d",
+      "summary": "Fresh coordinator resumed all six actual venture histories. Four local MVPs pass fresh checks/browser flows; Coopain and Ride Options retain active package ownership. All 20 child-venture feedback reports have receipts; existing agent-kit regressions pass 4/4 including claim conflict and idempotent feedback recovery."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "369abe979b353f8e3054e36f821c468e814d3f024eca07804d12d3a115d9f92f",
+      "id": "b62ec00f-385e-423d-8deb-00f3b81062a6",
+      "summary": "All three agents used upgraded Foundry 2026-10-07.2 with accepted complete-context checkpoints and matching bridge hashes. No new blocking Foundry defect observed. Positive doctor/coverage feedback retained; known superseded-result history noise deferred to separate work. Ready follow-ups preserve historical human gates and are unclaimed."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "3da62ae0d80d289d007d0d0363ed471a097b8ff9a62de43deac4819e82b38b97",
+      "id": "b8ee323d-5170-456c-b5e8-e1670a728c2b",
+      "summary": "[Dogfood/positive] Upgraded doctor and map coverage make bounded continuation auditable without reopening accepted work."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "00256f737d9051bb209a48eb79230125960cb4286263449c50ded0dddf7d6e75",
+      "id": "bc7cfaa8-2ffa-40ac-b2b1-27119505e6fc",
+      "summary": "Main commit 07ecb37 passed GitHub Python 3.11/3.13, PostgreSQL and image/Compose CI. Current campaign adds a stdlib CLI bridge, local feedback outbox and retry receipts. Actual inspection found an obsolete ready Foundry task and no decision map in its own venture; the campaign corrects the current map/queue while preserving old records. Parent-directory mypy omitted Foundry strict configuration; Makefile now names that configuration."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "870e0188efbc171ba940c4819a1ebaf0815597a7451eba168590d6045ce1f148",
+      "id": "bd68973b-5035-4c25-9da2-69ac176333ae",
+      "summary": "[Dogfood/positive] Upgraded context/resolution contracts retain verified progress without falsely completing a CI-gated package."
+    },
+    {
+      "changed_since_context": false,
+      "digest": "088a333587c9498b05f4757f1c3caeb4663d03c839206d51cbd13eb2c0558939",
+      "id": "caebc556-d115-4e30-a6a6-5e37c536aa33",
+      "summary": "[Dogfood/friction] Preview record IDs are provisional and differ at resolve"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "742e0f5d0cf975b7a14bd3e8983faf7ef73fae0f9a3e5cf0d9a09478c879a633",
+      "id": "console-local-operation-e",
+      "summary": "250 ideas, five venture workspaces and 99 sources retained. Real browser browse/readiness and disposable create/derive/promote/blocked-agent workflows passed. Original databases unchanged. Technical support only; no measured commercial demand or token/time savings. Evidence: /home/jonathan/startup_lab/foundry/docs/inquiry/local-console-2026-10-02"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "ea68dde841dd5bdf6b5b3ac8b351485d5ab85ca9bdefefc9605e16fa3a8064e2",
+      "id": "d472f67d-0246-4384-8ccb-2d656904aa50",
+      "summary": "[Dogfood/positive] V07 release coordination: doctor, explicit ownership and complete arrivals worked without platform edits"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "42036c4c1743616e3d2a0de831868be6fc0b289c934bf17775b7ee8b19d34226",
+      "id": "d954bab8-0e05-41e5-bdba-f7a0a967702f",
+      "summary": "[Dogfood/positive] Security checkpoint retained scope and exact before/after acceptance without coordination outage"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "8195cef58102e7ba9c9605eb56f4e1b0feac87daba74fd64ead7b37dbf4e8810",
+      "id": "df426a64-c90f-439c-8983-da4d50808aa3",
+      "summary": "[Dogfood/friction] Independent implementation agents need scoped startup and durable feedback; historical scope labels also needed correction"
+    },
+    {
+      "changed_since_context": false,
+      "digest": "8323cae29f993ac7fa957f7d98d3cd4795dbbcb8963aa6c77ce7e638f15c5573",
+      "id": "e-foundry-docs",
+      "summary": "Buildpad and DimeADozen advertise idea research, guidance and validation reporting. Differentiation and willingness to pay for this Foundry remain untested. Sources S5-S6 in foundry/docs/inquiry/2026-10-02-portfolio-realignment.md; https://buildpad.io/"
+    }
+  ],
+  "next_offset": 50,
+  "total": 55
+}

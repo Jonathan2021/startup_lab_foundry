@@ -1,0 +1,276 @@
+{
+  "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80",
+  "map_revision_id": "b92a1155-1dd4-5fa6-ba54-ca6f71e84e29",
+  "work": [
+    {
+      "acceptance_criteria": "Independent offline install and recorded fixture runtime; bounded resources, attribution, backup/restore, five prepared planning trials and GPX inspection; synthetic road-use tag checks pass, regional warning gate remains explicit. No hosted or road-use pilot release while pending gates are unresolved.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-07T15:49:02.288011+00:00",
+      "decision_id": "57a275cb-48ed-4a10-aa33-97460fc39af4",
+      "description": "Bound resource use, map tile/provider attribution, backup/export, abuse controls and a deployment cost inventory. Prepare five planning trials and manual GPX inspection. Prepare local preview only; retain manual comparison, rider judgments and regional road-use audit as explicit unresolved release/pilot gates. No public hosting.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [],
+      "id": "623bf7bb-6a0f-48d2-bc5e-74fb1be38d99",
+      "kind": "execution",
+      "owner": "implementer-ride-options-20261007-session-a",
+      "parent_id": null,
+      "question": null,
+      "status": "in_progress",
+      "title": "R05: Regional private local-preview release preparation",
+      "updated_at": "2026-10-07T15:49:06.531188+00:00",
+      "version_id": 2,
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    },
+    {
+      "acceptance_criteria": "Record routing/runtime basis and uncertainty; no external uploads, invitations or publication",
+      "blocked_reason": "changed_context",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-05T19:20:17.480642+00:00",
+      "decision_id": null,
+      "description": null,
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "changed_context",
+        "Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      ],
+      "id": "6a6b1c22-2ff1-4abe-b619-f4580a70dded",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Compare route-planning alternatives using an explicit routing basis",
+      "updated_at": "2026-10-07T11:23:23.993131+00:00",
+      "version_id": 2,
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    }
+  ],
+  "current_review": {
+    "author": "implementer-ride-options-20261007-session-a",
+    "created_at": "2026-10-07T15:49:02.291218+00:00",
+    "decision_id": "57a275cb-48ed-4a10-aa33-97460fc39af4",
+    "disposition": "pursue",
+    "id": "34fc19a3-955e-465d-9011-2412a0ea6cd3",
+    "investigation_stage": "solution_validation",
+    "next_action": "R05: Regional private local-preview release preparation; road-use and human trial gates retained",
+    "next_work_item_id": "623bf7bb-6a0f-48d2-bc5e-74fb1be38d99",
+    "product_maturity": "concept",
+    "reason": "24 automated tests, types/lint and browser regression pass; benchmark retains all successes/failures and separates human unknowns. R04 required technical report is available. Continue independent local release preparation while retaining human comparison as pending rather than claiming adoption or road-use readiness.",
+    "reviewed_at": "2026-10-07T15:49:02.291201+00:00",
+    "revision": 10,
+    "source_artifact_id": "10a700bf-a6c0-588c-95a2-d08f1f7233a7",
+    "updated_at": "2026-10-07T15:49:02.291219+00:00",
+    "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+  },
+  "results": [
+    {
+      "id": "10a700bf-a6c0-588c-95a2-d08f1f7233a7",
+      "work_id": "83749135-8037-476b-b3b6-14909d50bfc6",
+      "context_id": "a2bb8dd9-5c83-5b1f-8422-488e991792ed",
+      "state": "accept",
+      "digest": "eda127e0491570964811bd3738f776af6344c7df226f23ebf45fd062c619540c",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "R04 technical quality checkpoint: ten frozen regional queries measured, Auvergne extract pinned and local scenery proxy implemented; six requests yield feasible options. Manual comparison and rider judgments remain a bounded open trial gate.",
+      "limits": "Manual Kurviger comparison not performed: no enabled browser connector surfaces; no scraping substitute. Rider judgments and comparative effort are null. Source spatial coverage is a bounding-box proxy, OSM completeness unknown. 58 regional routing warnings require audit before road-use. Five-hour maximum loop options are shorter than the budget. Foundry had no new defects/friction. No external action or commit.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete context/arrivals inspected; null human fields are unknown, not evidence of preference or comparative effort.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "83749135-8037-476b-b3b6-14909d50bfc6",
+          "decision_id": "57a275cb-48ed-4a10-aa33-97460fc39af4",
+          "evidence_ids": [
+            "68ba66fc-de19-4af4-8ecc-b705261621c8",
+            "ac754484-cd8f-4ff0-ab55-359ba9954748",
+            "d4cba671-9942-4e06-9de8-d75574e1e675"
+          ],
+          "map_revision_id": "b92a1155-1dd4-5fa6-ba54-ca6f71e84e29",
+          "next_work_id": "623bf7bb-6a0f-48d2-bc5e-74fb1be38d99",
+          "review_id": "34fc19a3-955e-465d-9011-2412a0ea6cd3",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed ten-query artifacts, failure cases, source/coverage limits and 24 passing checks. Accept technical quality checkpoint and explicitly narrowed local-preview R05; human comparison and road-use gates remain unresolved and visible. No broader release authorized.",
+        "request_digest": "a03ae7d56d8629886b86853fe49e00da1a500293bfad1f820c7c170d81310754",
+        "resolution": "accept",
+        "result_digest": "eda127e0491570964811bd3738f776af6344c7df226f23ebf45fd062c619540c",
+        "result_id": "10a700bf-a6c0-588c-95a2-d08f1f7233a7"
+      }
+    },
+    {
+      "id": "23208e11-1cb0-5b4c-ba99-4c13ccfe7ae0",
+      "work_id": "4692d3b7-979a-4ea5-a68d-746bf2ca7706",
+      "context_id": "aaff4ecf-eb2c-5770-8ba7-76c54ef16cd6",
+      "state": "accept",
+      "digest": "f0922d5b2b6bee79aa5acec7e0f9421c358e5cc1fe1fc819ef13aea9cfe5f3f2",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "R03 built and verified request/results map, owned local saves, via regeneration with immutable revisions, GPX geometry export and consented feedback. Bundled offline map works on desktop/mobile.",
+      "limits": "App is a planning preview on Andorra. Scenery preference remains unknown/unavailable; no user preference, demand or physical-safety claim. Road-use audit remains gated. Browser connector surfaces unavailable, so documented Playwright browser replay used for local acceptance. Foundry had no new defects/friction in this package. No deployment/commit/send/spend.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete saved context and empty relevant arrivals read; all new browser failure/correction evidence retained.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "4692d3b7-979a-4ea5-a68d-746bf2ca7706",
+          "decision_id": "468a1a60-5e65-48e1-9bcb-0fd2782e4e14",
+          "evidence_ids": [
+            "5486dfb7-4620-42fd-b2a4-1f51b6e54ec0",
+            "419308c3-4508-461c-ad4e-819b41e65490"
+          ],
+          "map_revision_id": "f52d5623-f6df-5843-be55-a5f196d41f60",
+          "next_work_id": "83749135-8037-476b-b3b6-14909d50bfc6",
+          "review_id": "ef65a935-98de-4bce-b406-32343a52db23",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed code, red-to-green records, passing unit/integration checks and actual recorded/live browser acceptance with visible route overlays. Exact core scope implemented, preview and user-trial gates remain explicit.",
+        "request_digest": "3d0633364f8225d43ad50197af9a3736de12dd92cbae9bebe7dd9342ff44d554",
+        "resolution": "accept",
+        "result_digest": "f0922d5b2b6bee79aa5acec7e0f9421c358e5cc1fe1fc819ef13aea9cfe5f3f2",
+        "result_id": "23208e11-1cb0-5b4c-ba99-4c13ccfe7ae0"
+      }
+    },
+    {
+      "id": "09300511-4d10-5858-9330-2d5e507048e4",
+      "work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+      "context_id": "9a2884c3-6839-5545-81a6-76df943be58e",
+      "state": "accept",
+      "digest": "ad503e72206695e5c910c3ab3e6ecdf5ea7096e13d489f62a63b5ee4c3fa7cb8",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "R02 implemented bounded generation, neutral baseline/presets, fail-closed hard filters, undirected overlap/loop checks, Pareto tradeoffs and immutable geometry/provenance persistence with Alembic.",
+      "limits": "Scenery metrics remain unknown and nature weight does not affect ranking. Synthetic tests establish invariants only. Andorra extract restrictions/current conditions are not fully audited. Foundry queue transition was useful; positive feedback submitted. No external actions or Git commit.",
+      "supersedes_result_id": "1fa55e4b-c96f-591f-9d6e-82edd4e1096d",
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete saved context and no arrivals; historical rider records are not fixtures.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+          "decision_id": "fa0cb5b7-5c84-4e77-a7a5-8d1091d32bea",
+          "evidence_ids": [
+            "f483b67d-55a2-4cba-a669-474980fc56ba",
+            "8ac25af7-6858-4f25-8538-d81490db6f20"
+          ],
+          "map_revision_id": "ecd48898-3909-5540-a161-6b4a97615e4e",
+          "next_work_id": "4692d3b7-979a-4ea5-a68d-746bf2ca7706",
+          "review_id": "b4c79b1c-2227-4b11-89df-0d25cb653718",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed corrected lint evidence, strict types, 18 passing tests and live generation artifacts. Scope and partial results honest; routine local package only.",
+        "request_digest": "b416d26e94495fd29330a809201f514b5c9bb3a5d609e393576f62118236de49",
+        "resolution": "accept",
+        "result_digest": "ad503e72206695e5c910c3ab3e6ecdf5ea7096e13d489f62a63b5ee4c3fa7cb8",
+        "result_id": "09300511-4d10-5858-9330-2d5e507048e4"
+      }
+    },
+    {
+      "id": "1fa55e4b-c96f-591f-9d6e-82edd4e1096d",
+      "work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+      "context_id": "9a2884c3-6839-5545-81a6-76df943be58e",
+      "state": "needs_reconciliation",
+      "digest": "bb6a5ba7ef3dacda351b641658638aacd857a7d8f2fa0bd3a53eca610d5905f1",
+      "context_complete": true,
+      "stale_reasons": [
+        "Decision map changed",
+        "Work version changed",
+        "Current review changed",
+        "New or changed evidence requires coverage review"
+      ],
+      "summary": "R02 implemented bounded generation, neutral baseline/presets, fail-closed hard filters, undirected overlap/loop checks, Pareto tradeoffs and immutable geometry/provenance persistence with Alembic.",
+      "limits": "Scenery metrics remain unknown and nature weight does not affect ranking. Synthetic tests establish invariants only. Andorra extract restrictions/current conditions are not fully audited. Foundry queue transition was useful; positive feedback submitted. No external actions or Git commit.",
+      "supersedes_result_id": null,
+      "receipt": null
+    },
+    {
+      "id": "6db37f7e-cb26-5b2b-86e6-7e818193ab47",
+      "work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+      "context_id": "24066b75-ebe6-55b6-914c-e7d45d357557",
+      "state": "accept",
+      "digest": "44b2bc5f6b739ab0ce7ba353a9384438fa9b5db8557062bbeefb41ab9f48c1c1",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "R01 implemented: pinned independent Python runtime, local GraphHopper configuration and typed HTTP provider; dedicated motorcycle import passes nine real-engine synthetic access cases.",
+      "limits": "Road-use pilot remains gated: Andorra extract has incomplete turn relations. Tests are synthetic/recorded; current openness, physical safety, regional quality and demand are unvalidated. Initial acceptance was written first; first pytest attempt lacked pytest, then fixtures were intentionally red (2 failed, 3 passed); final 6 passed. Foundry schema timeout feedback delivered and retry succeeded. No Git HEAD exists; initial repository was entirely untracked, preserved without commits.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-ride-options-20261007-session-a",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved complete context and empty arrivals inspected; historical evidence is not used as a fixture.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+          "decision_id": "1dbc367d-c8f9-4dcb-8c82-66a1c0d004b4",
+          "evidence_ids": [
+            "56a1d092-d853-4bf7-bddf-6ca4e5035d65",
+            "d7eb9d5e-a1dd-4537-8c8b-0ca5924dc5ec"
+          ],
+          "map_revision_id": "084fb56e-1baf-5303-bf34-75795b2ebd7c",
+          "next_work_id": "41ae0f61-8a1f-4db6-8d91-7a60ce583527",
+          "review_id": "288ffabf-f9c5-4ffa-b746-e13060862b20",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local source, nine synthetic engine acceptance cases, retained failures and six passing regression tests; scope remains preview-only and routine local implementation.",
+        "request_digest": "19f4e3c85dee62ec97b1a28bbc2e52f402b2d0297b6f0f86747168731ca15eec",
+        "resolution": "accept",
+        "result_digest": "44b2bc5f6b739ab0ce7ba353a9384438fa9b5db8557062bbeefb41ab9f48c1c1",
+        "result_id": "6db37f7e-cb26-5b2b-86e6-7e818193ab47"
+      }
+    },
+    {
+      "id": "5000e791-c19f-5994-8029-f77e6c111971",
+      "work_id": "ebb47149-a6a4-45f6-af16-4ece3a523981",
+      "context_id": "fdb546f3-2287-54d8-bb47-f396886268a5",
+      "state": "accept",
+      "digest": "6e7ac61fc618e5e618d043804b54eb8acaa7931a6dfd5b941284e8a6f6c1e806",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "GO for a regional planning MVP. Reset the venture objective from ETA diagnosis to route creation. Keep prior GPX/ETA evidence as history. A road-use pilot is gated by motorcycle access/turn-restriction verification; prototyping and UI can proceed immediately against fixtures and the tested local engine.",
+      "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "ebb47149-a6a4-45f6-af16-4ece3a523981",
+          "decision_id": "1802a090-507d-434d-95e5-921941f45e18",
+          "evidence_ids": [
+            "185cf9c3-940b-4827-95f1-bb650fae6c78"
+          ],
+          "map_revision_id": "e6ddaf31-9acd-5f91-9560-3629fdcc6138",
+          "next_work_id": "175d85ff-31a1-45a5-a0da-6e4aff7ed491",
+          "review_id": "5d2371f5-c497-426e-ad12-dc5d999c60c5",
+          "work_needing_review": {
+            "6a6b1c22-2ff1-4abe-b619-f4580a70dded": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "610094215e724b2734e88f90fa9506d582e2fe4f5039d20f05257568281855ef",
+        "resolution": "accept",
+        "result_digest": "6e7ac61fc618e5e618d043804b54eb8acaa7931a6dfd5b941284e8a6f6c1e806",
+        "result_id": "5000e791-c19f-5994-8029-f77e6c111971"
+      }
+    }
+  ],
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/ride-options-resume-before.json"
+}

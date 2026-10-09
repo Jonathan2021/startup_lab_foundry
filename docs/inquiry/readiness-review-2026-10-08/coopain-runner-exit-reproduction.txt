@@ -1,0 +1,5 @@
+Copied runner; fake pytest returns 7; synthetic coverage succeeds.
+Runner exit: 0
+Per-file coverage check passed: all measured files are >= 60%
+Total coverage: 100.00% (pytest floor already enforces >= 80%)
+Synthetic pytest failure: exit 7

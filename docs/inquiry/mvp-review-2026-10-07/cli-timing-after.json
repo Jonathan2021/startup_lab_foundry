@@ -1,0 +1,98 @@
+[
+  {
+    "repo": "ride-options",
+    "command": [
+      "python3",
+      "tools/foundry_agent.py",
+      "cli",
+      "agent",
+      "schema",
+      "--name",
+      "result"
+    ],
+    "attempt": 1,
+    "seconds": 0.971,
+    "exit_code": 0,
+    "stdout_bytes": 8966
+  },
+  {
+    "repo": "ride-options",
+    "command": [
+      "python3",
+      "tools/foundry_agent.py",
+      "cli",
+      "agent",
+      "schema",
+      "--name",
+      "result"
+    ],
+    "attempt": 2,
+    "seconds": 0.98,
+    "exit_code": 0,
+    "stdout_bytes": 8966
+  },
+  {
+    "repo": "ride-options",
+    "command": [
+      "python3",
+      "tools/foundry_agent.py",
+      "cli",
+      "agent",
+      "schema",
+      "--name",
+      "result"
+    ],
+    "attempt": 3,
+    "seconds": 0.981,
+    "exit_code": 0,
+    "stdout_bytes": 8966
+  },
+  {
+    "repo": "crous-queue",
+    "command": [
+      "python3",
+      "tools/foundry_agent.py",
+      "cli",
+      "handoff",
+      "arrivals",
+      "--id",
+      "0df6fab8-45b7-5e4e-92db-b28e14087de3"
+    ],
+    "attempt": 1,
+    "seconds": 0.931,
+    "exit_code": 0,
+    "stdout_bytes": 42
+  },
+  {
+    "repo": "crous-queue",
+    "command": [
+      "python3",
+      "tools/foundry_agent.py",
+      "cli",
+      "handoff",
+      "arrivals",
+      "--id",
+      "0df6fab8-45b7-5e4e-92db-b28e14087de3"
+    ],
+    "attempt": 2,
+    "seconds": 0.971,
+    "exit_code": 0,
+    "stdout_bytes": 42
+  },
+  {
+    "repo": "crous-queue",
+    "command": [
+      "python3",
+      "tools/foundry_agent.py",
+      "cli",
+      "handoff",
+      "arrivals",
+      "--id",
+      "0df6fab8-45b7-5e4e-92db-b28e14087de3"
+    ],
+    "attempt": 3,
+    "seconds": 1.023,
+    "exit_code": 0,
+    "stdout_bytes": 42
+  }
+]

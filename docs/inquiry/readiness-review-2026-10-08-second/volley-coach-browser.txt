@@ -1,0 +1,20 @@
+uv run pytest tests/browser
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/volley-coach
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collected 4 items
+
+tests/browser/test_c06_own_program.py .                                  [ 25%]
+tests/browser/test_c06_resource_entry.py .                               [ 50%]
+tests/browser/test_core_flow.py .                                        [ 75%]
+tests/browser/test_privacy_flow.py .                                     [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/fastapi/testclient.py:1
+  /home/jonathan/startup_lab/foundry/.foundry/runs/readiness-second-20261008/copies-kp4wo5t9/volley-coach/.venv/lib/python3.13/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 1 warning in 11.81s =========================

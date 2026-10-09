@@ -1,0 +1,1374 @@
+[
+  {
+    "path": ".foundry/project.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 677,
+    "sha256": "66e39458f53abc999bd55783ad38da35bb3633f4c84052210aae4dc9726d52f0"
+  },
+  {
+    "path": ".github/workflows/backend.yml",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1908,
+    "sha256": "aa9bf70f8b95690bf6001ca0cf7963146c20971890ce44625849456b23944b3a"
+  },
+  {
+    "path": ".gitignore",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 533,
+    "sha256": "8628072f9fef0c4ddc7f831637913037a65132f8877b0c6abdcb873c6a864da0"
+  },
+  {
+    "path": "AGENTS.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4424,
+    "sha256": "5997831c57d54108146dfeb2ae9ea48444ca34960fa249057d9954112504e588"
+  },
+  {
+    "path": "README",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2999,
+    "sha256": "2f4f282b3c3d10bf6fd3e4907c87f5b0327b9b80edd0fbb7c90ae95d3130139d"
+  },
+  {
+    "path": "SYSTEM_GUIDE.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3670,
+    "sha256": "41e9eab343c4a71ac1432548e425b647e000c1a71471cc5c8cf840b5fa1a4631"
+  },
+  {
+    "path": "acceptance/cases.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3505,
+    "sha256": "a0c81a2d32f4ff32b6cb1ace41e199c19596c3b84f7017908b716d9a3be5df7f"
+  },
+  {
+    "path": "backend/.python-version",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5,
+    "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+  },
+  {
+    "path": "backend/Dockerfile",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 418,
+    "sha256": "f0a45b76a1fc8e3be92ddc446800cf8d62978dfffe65379a9483d94422969f9d"
+  },
+  {
+    "path": "backend/alembic.ini",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 130,
+    "sha256": "bf1d27f256cf59ffef403c6411424b908827b6671eac75fff7ef2c7b87af382c"
+  },
+  {
+    "path": "backend/app/api/routes/__init__.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1987,
+    "sha256": "fe6db3d1042c3ea3bcc0637a2435ca8e86ff47816d3c761d289fdc1b003aa13e"
+  },
+  {
+    "path": "backend/app/api/routes/auth.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 7976,
+    "sha256": "988b6ed54236cf3c09bbe2ccaa464a58b966d13effa3b5179aed96b42da5bf01"
+  },
+  {
+    "path": "backend/app/api/routes/auth_service.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 24371,
+    "sha256": "117af56393ab462a076e076e5960b82f3b18d7f70a9584a1aefbb21b954f58dc"
+  },
+  {
+    "path": "backend/app/api/routes/candidate_profile.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2652,
+    "sha256": "64fc64c44a0032400782e954c35c619da8456663ec538a27350c67b07679535d"
+  },
+  {
+    "path": "backend/app/api/routes/conversations.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3930,
+    "sha256": "8a316df2a5fbf58e65e85a1d3beb87cd07cb84b0a9a9752b3db331f93e8f09c0"
+  },
+  {
+    "path": "backend/app/api/routes/demo.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1826,
+    "sha256": "00574d404a0a080a7ce58cc9ec70cffe263fe11fac7d5ee3d9f59cc74f96d8ad"
+  },
+  {
+    "path": "backend/app/api/routes/feeds.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2696,
+    "sha256": "db83f983ce6155a7aa6473230a5fe26f7d2b5eed630926ea7d2b4c5317f5389e"
+  },
+  {
+    "path": "backend/app/api/routes/job_posts.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2792,
+    "sha256": "605f89a826a4850d2e058ca0c6ef92df840a59381846809d7ed8a67cee4da551"
+  },
+  {
+    "path": "backend/app/api/routes/matches.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 7291,
+    "sha256": "a3dcf928dd394c082b51071bd43b587a613e507d59b941768889516059bbecaf"
+  },
+  {
+    "path": "backend/app/api/routes/user_profile.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4975,
+    "sha256": "3f4ffa7e692327fc5a38e81a5a6d34603b80ecd6603e2c08ff669c75bb87d1c5"
+  },
+  {
+    "path": "backend/app/api/routes/users.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5718,
+    "sha256": "6c43bedf2e734f3348321268fc6f2d3922a5d80ea2564744a608b43127a17b1a"
+  },
+  {
+    "path": "backend/app/api/security_boundary.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3255,
+    "sha256": "d80c46cd3c04b82fcfa90af1bdf23a50a8f695e6ca53cb88b0be5bac757734ad"
+  },
+  {
+    "path": "backend/app/auth/dependencies.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2049,
+    "sha256": "27ac85ea1e1c9fb90bd62b0c55db38b4a3fb1286e28d62aeacf373bab6a57fba"
+  },
+  {
+    "path": "backend/app/auth/jwt.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2117,
+    "sha256": "fb08f5f63ecb300df235a910dad61fefd6777cfc68a627c67e046207502e1e03"
+  },
+  {
+    "path": "backend/app/auth/middleware.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 948,
+    "sha256": "210a0a797ec2cc9ece0117fb4eb6d9ead3497f02f2a4b71359bfc481cb91ba0e"
+  },
+  {
+    "path": "backend/app/auth/providers.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3568,
+    "sha256": "719200d676149ed46c59df74f22cb03164d68f01f5be6afc0d37a315de170800"
+  },
+  {
+    "path": "backend/app/auth/security.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2282,
+    "sha256": "cfee4ede0dc26267d6553edb2b0157619b40ab417cd8072e45863ef4754d4e80"
+  },
+  {
+    "path": "backend/app/bootstrap.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2501,
+    "sha256": "615de994fcb7dea3e9dc3d58a0d64638c865fb2d4acab01edf00aec3482ea0bd"
+  },
+  {
+    "path": "backend/app/config/settings.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 12122,
+    "sha256": "f089c12a96118a89c20c6b4593fac7bc0e20c075db4ebda49f128ec7bba3f0a9"
+  },
+  {
+    "path": "backend/app/db/migrations/README.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 720,
+    "sha256": "11864dfe0edb1781a354bdf475eb44386df17e93fe9c49ada83ea62471c86dd7"
+  },
+  {
+    "path": "backend/app/db/migrations/env.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1349,
+    "sha256": "909ad9a97627ea39cb23ce5b7172d63459759c080e6d82fe12599624a78738f5"
+  },
+  {
+    "path": "backend/app/db/migrations/script.py.mako",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 424,
+    "sha256": "116d035db5d6b4abe2f7e00e60d547bf8396983c741d09af902b184ccc6e0a35"
+  },
+  {
+    "path": "backend/app/db/migrations/versions/0001_frozen_safe_schema_baseline.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 62864,
+    "sha256": "4af43a1f7466350c627db312b1f920c73c632c79b800270005e38fd9be0f4ac3"
+  },
+  {
+    "path": "backend/app/db/migrations/versions/0002_reconcile_introduction_columns.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1565,
+    "sha256": "a991b6c8e4acacadbf153fa57733709dbd7be342a287530d848fba193637a0c9"
+  },
+  {
+    "path": "backend/app/db/migrations/versions/0003_password_session_version.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 691,
+    "sha256": "b99f39cf733cb8cc90a44fdb5220f7873fc131eb8b2611d89df3aa1724f4b703"
+  },
+  {
+    "path": "backend/app/db/models/__init__.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3732,
+    "sha256": "d7bf7af0d75991828569423d9a03374162fb53755a524a66ed57ed5694f7b5a3"
+  },
+  {
+    "path": "backend/app/db/models/common.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1886,
+    "sha256": "36de6bf34fc1e5b8dd4d45d1ac0e2996c18579bd6b0e2c97c7cd4e0fcd8bfbae"
+  },
+  {
+    "path": "backend/app/db/models/documents.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 916,
+    "sha256": "d94a59ca971102dcf2c9b25cb406cbbfb0660020123a85deb85ec8fc8fc967c8"
+  },
+  {
+    "path": "backend/app/db/models/lookups.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3302,
+    "sha256": "da36d6247b4efc9dc822c209731a455e17f2f1ada0793433dec6be99275758d8"
+  },
+  {
+    "path": "backend/app/db/models/matching.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5108,
+    "sha256": "2dd1c2791ee30861e7d79061de5c9d6c2a80344109121d0bba015c5ea2b56628"
+  },
+  {
+    "path": "backend/app/db/models/profiles.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 15527,
+    "sha256": "02f46798b041b0006525ecc2d7de9113c531a7f157318c59733ae1ab6362b7e2"
+  },
+  {
+    "path": "backend/app/db/models/safety.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2362,
+    "sha256": "f59a7aff8ada55e4cce0e26eca2d65910ada4b0511aae3abe382daaa016a8640"
+  },
+  {
+    "path": "backend/app/db/models/users.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4934,
+    "sha256": "3e6a85f7d31c6a2d15b0805aec51ca3562d8414834a51466d2d1f2738cd93549"
+  },
+  {
+    "path": "backend/app/db/session.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1083,
+    "sha256": "cab0f72ba98f83ee529e5c4c484923f0447fb7a85e36b908708fccc6d3e3ee27"
+  },
+  {
+    "path": "backend/app/domain/account_privacy.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 12317,
+    "sha256": "f79f7d923e16c9afacb7e5012184a6177dc286aa0427417e91189af6ae1a6c3d"
+  },
+  {
+    "path": "backend/app/domain/account_tokens.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 8946,
+    "sha256": "db9b097b588023bd624cb12f69f566a9b4d0a611f247a272d0fb04521d4f324a"
+  },
+  {
+    "path": "backend/app/domain/audit.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2483,
+    "sha256": "4deda14545a8e31672793bf9ef58d02999a8cd9255b8fa0eb1a4d36b3591ec7f"
+  },
+  {
+    "path": "backend/app/domain/candidate_preferences.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 22237,
+    "sha256": "53ba47569c5ced80739ed1ab98708e43f63b875faf7f578a6449f0403ee4475b"
+  },
+  {
+    "path": "backend/app/domain/conversations.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 9123,
+    "sha256": "c49af261ebe05bafdf432ddf9b8609bbb73ccf6f868a46fc813bed752cf435b2"
+  },
+  {
+    "path": "backend/app/domain/documents.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 15515,
+    "sha256": "99a70e18a6a66037322160e0f55899e2cc0a2e205a3cbde86d93ef9796244c3b"
+  },
+  {
+    "path": "backend/app/domain/interaction_policy.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 8040,
+    "sha256": "7a502ce677465a67cf10ff01c35225aa539f1af1059f4121b8290dffd6d570a7"
+  },
+  {
+    "path": "backend/app/domain/introductions.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 7378,
+    "sha256": "4a01a89a8f4b17d3321e4666834429915476c833083bae8b2f3c9cc6c3b60773"
+  },
+  {
+    "path": "backend/app/domain/job_posts.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 21000,
+    "sha256": "c60672ae62df24e75abf91bd6f8a038c514b8adf70a6a614da5e35e41a9ecd0b"
+  },
+  {
+    "path": "backend/app/domain/matches.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 13137,
+    "sha256": "71b7c4f81497fc02a8ec255b21718fe1ca3e93814987d72078da9e136d083876"
+  },
+  {
+    "path": "backend/app/domain/retention.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2593,
+    "sha256": "24331a3849848f22e1fd1932088e3cdddc5b0f80191f9529302ec8c24287f847"
+  },
+  {
+    "path": "backend/app/domain/swipes.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 8624,
+    "sha256": "14d0ca3dfb7f463d2d672a6914c1c032006ad5169fbaf0e4d44b3907f4874937"
+  },
+  {
+    "path": "backend/app/domain/user_profile_history.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 20267,
+    "sha256": "6949abd7aa44452dc749564fa0d92f6d7b1bc9b099bc5c66f06b9827b3f4790d"
+  },
+  {
+    "path": "backend/app/domain/user_profile_skills.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 7063,
+    "sha256": "c94153157ed61c396d3b055543006665c76a8ed6eaf26066f91c9b3bc75c63d2"
+  },
+  {
+    "path": "backend/app/domain/user_profile_social_links.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 6646,
+    "sha256": "cf954f75d72a995b72e1e46fcbb419f348e0efac1f1b6b199513a468da14df2e"
+  },
+  {
+    "path": "backend/app/integrations/local_email.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2605,
+    "sha256": "d310c45614df259cd479be0ca007b7025a62b5d3310e19f8678562f270d3ef27"
+  },
+  {
+    "path": "backend/app/main.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1515,
+    "sha256": "da0de362dbc879ea7f1864e510c849610dbafcdb85f5924df5636240c2d5844a"
+  },
+  {
+    "path": "backend/app/schemas/account_privacy.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 820,
+    "sha256": "8574b59159ab5517b8342546a12ac29a9119fc08bdfa9e0ae1ba85815d1652fe"
+  },
+  {
+    "path": "backend/app/schemas/auth.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1648,
+    "sha256": "a58ff99ef562bb90ccaefa629217cbe61ad5026130439ef130f0502ee1c8bce6"
+  },
+  {
+    "path": "backend/app/schemas/candidate.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 12929,
+    "sha256": "533c3b02c88315f2e7fbe99a80c471d2586fe88560890d3edbf0e6d6587b0354"
+  },
+  {
+    "path": "backend/app/schemas/catalog.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1566,
+    "sha256": "e8da73556a863d81906f80d6e8f7317ec70146315f498e3e5e68e6741bf0261a"
+  },
+  {
+    "path": "backend/app/schemas/common.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 514,
+    "sha256": "5400eb4936121523e36654cd1cdb753d254f7aa171c6ab47850adeccce79700a"
+  },
+  {
+    "path": "backend/app/schemas/document.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1289,
+    "sha256": "39b7a1c7a9ab4df6a3af651e2df02d592b578e8851889399a776732f4d0d2494"
+  },
+  {
+    "path": "backend/app/schemas/match.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2167,
+    "sha256": "f5b8f349cacf7f6ab83fe6788fdd2be656714818974da071d11f48f9010ac301"
+  },
+  {
+    "path": "backend/app/schemas/message.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 539,
+    "sha256": "de157ee295c9f923a3faa2f1e7dd241b2df09b50e45bbf6e25b0091bf6f59ceb"
+  },
+  {
+    "path": "backend/app/schemas/referrer.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4940,
+    "sha256": "0f1b4bee696c55c939adb33361201c58b4dafe7d6b6d0b15a5553d1ff0b03cae"
+  },
+  {
+    "path": "backend/app/schemas/safety.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1186,
+    "sha256": "c44f4984e91fe18edc7ff34e115dfd62e139f67d73f628214663902a60c8705d"
+  },
+  {
+    "path": "backend/app/schemas/user.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1398,
+    "sha256": "f65a250c110fcfa1cfdaddb77adbc9fd6f53db9891a15f31bacf8a6ec1fc166c"
+  },
+  {
+    "path": "backend/app/schemas/user_profile.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1958,
+    "sha256": "4444481e67ec807b1d3917ad056669514f036384bcc73be174d02a1769934548"
+  },
+  {
+    "path": "backend/docker-compose.yml",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3190,
+    "sha256": "432d97d3110bed088373fc8a2e74897ed3cc8bb84c4dea53e975f0e171ba52bd"
+  },
+  {
+    "path": "backend/generated/coverage.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 411463,
+    "sha256": "d3f0e2a8bf75f15e9833ea790f5e07e6f3698bda51fefe4caab7082978608209"
+  },
+  {
+    "path": "backend/generated/openapi.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 231852,
+    "sha256": "5e780a952e5c6ce6e1102d2af251eeb2d177b5bf80307a538470b59a26435b69"
+  },
+  {
+    "path": "backend/generated/refactor_scan_20260311.md",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 9172,
+    "sha256": "131273c4c8b73897072fe3251e2159f050e3aa5b00b7958b0dbc57699a78c616"
+  },
+  {
+    "path": "backend/openapi_new.yaml",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 123089,
+    "sha256": "24d57ae896f0c930bb233507096456ab5bcd298db66564d9815f331399a2a0d4"
+  },
+  {
+    "path": "backend/preprompt",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 2637,
+    "sha256": "9324e6fa37d595f79c570d5f670e6d6b32a155e1952aba3a7e39e5d413cbdf13"
+  },
+  {
+    "path": "backend/requirements.lock",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 96033,
+    "sha256": "ecbaabcfaeb8d96c865b9ad071eb27226c2dc6dd08e62aff2a421a1d23420d1c"
+  },
+  {
+    "path": "backend/requirements.txt",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 327,
+    "sha256": "0d0d7700829801b86d4bca13745c9c6d252966f7bcbd4041d6769e97e4973a79"
+  },
+  {
+    "path": "backend/scripts/backup_database.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1776,
+    "sha256": "abd91ae5959e16fafb2d67868d1df3065c8c99036091ee9d64571d550f048330"
+  },
+  {
+    "path": "backend/scripts/manage_data_seed_profile.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 56807,
+    "sha256": "a6bce94367ec8433ecb0f3c07be0d50a84d26ffbd025e5798932955c68f3d2ff"
+  },
+  {
+    "path": "backend/scripts/migrate_database.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1375,
+    "sha256": "5536211dd834ded95c1fcdbb10c8bcfbbbade6bfb8b3e42b6ac688dbb52070e9"
+  },
+  {
+    "path": "backend/scripts/retain_data.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 761,
+    "sha256": "7af4d99d8e007af82f86aadbec522e6da69daa7badfcef473ba477d0a31c8c3b"
+  },
+  {
+    "path": "backend/scripts/seed_pilot.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 9168,
+    "sha256": "24c2cfc58fda7f8194ffb8236c1017f2f4c07077e051e7a3adefa84e9f4d5471"
+  },
+  {
+    "path": "backend/scripts/start_api_container.sh",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 407,
+    "sha256": "3a92b0d32e713f6ed7bb40cbf2bf7690e26d5633ebc357e4d09c81b4e20c6d8a"
+  },
+  {
+    "path": "backend/test_results",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 7502,
+    "sha256": "11c2c32f36844fa36938e1021d2df5188441c53877b0ad69d624d7cb2f84b0f8"
+  },
+  {
+    "path": "backend/tests/conftest.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5245,
+    "sha256": "fcdc28c4db2aa4952778e19a39d51792268efd45b27ef01cc2ce4e43c845e5cd"
+  },
+  {
+    "path": "backend/tests/test_mvp_j01.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 785,
+    "sha256": "45cc065b6d2f752b482462effb7db6cf939604e785964f67991dfe355ec9c54a"
+  },
+  {
+    "path": "backend/tests/test_mvp_j02.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 11021,
+    "sha256": "1cc6b1e7528c80e3befe4fcc6b391617fdf144885602cd1b6bf24dc48227db57"
+  },
+  {
+    "path": "backend/tests/test_mvp_j02_privacy.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 14844,
+    "sha256": "08677405fb593c4b12e549cc54349fc37a434aa0268aec432ad2b03660c6aa7b"
+  },
+  {
+    "path": "backend/tests/test_mvp_j03_operations.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 13866,
+    "sha256": "78f9e741962e2a5b11476a4ffee486f9ab2e56bd29a51b331759ce09f93781b9"
+  },
+  {
+    "path": "backend/tests/test_mvp_j03_security.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 11780,
+    "sha256": "70a4e8dcae6337ad3bd1fb883299acbd751daf2e87594a8ddc5db9e59c72a55d"
+  },
+  {
+    "path": "backend/tests/test_mvp_j03_session_reset.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1706,
+    "sha256": "a567996be60e52d32f3ee0bc015aee97b1307629e20103cf679ec0abae654cda"
+  },
+  {
+    "path": "backend/tests/test_mvp_j04_login_interleaving.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1505,
+    "sha256": "f1a46d1a118a5fa488bff6f7afa6fb864bf2702e1dd937c2d4b7fa59cc64f80e"
+  },
+  {
+    "path": "backend/tests/test_mvp_j04_pilot_seed.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 12010,
+    "sha256": "750db5b08b9c126957c2c28095544b4ed1b483afcc0d1a8fb786f64539e5adaa"
+  },
+  {
+    "path": "backend/tests/test_mvp_j04_retention_cli.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 6117,
+    "sha256": "d9b65d8f227fcc885e87dfc3f432efd1958c3e0bf43c639961cd5ae0e6eedc0e"
+  },
+  {
+    "path": "backend/tests/test_mvp_j04_social_gate.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1450,
+    "sha256": "9904729872a89c189738fd1530450e4cb5b2605b9927c04936c9ca222eef1777"
+  },
+  {
+    "path": "backend/tmp_prompt",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 963,
+    "sha256": "db72488c78dc88851a44c4deeb6ce06daad463531df0d4fcb96afb04b2435e4b"
+  },
+  {
+    "path": "docs/adr/0001-mvp-boundaries.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1430,
+    "sha256": "3412fbac10b769884bfcba49cc0904414039f6a9ebd556e9bf25781ad1c1070d"
+  },
+  {
+    "path": "docs/adr/0002-introduction-lifecycle.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1209,
+    "sha256": "9ad75289ec177fccd41f492c108522bed49a349d6b1d13a41d342d8b6b185736"
+  },
+  {
+    "path": "docs/adr/0003-persistence-and-private-web-security.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1651,
+    "sha256": "347d9d9f1989c3276cdfcbdf43bb7f8435bebab6146b8cc02d0f6630a2338cea"
+  },
+  {
+    "path": "docs/evidence/readiness-20261008/coopain-browser.txt",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 352,
+    "sha256": "59412ceadc319e32032bd52ff7346c801ef594f85e61435d0746804941a0ecc0"
+  },
+  {
+    "path": "docs/evidence/readiness-20261008/coopain-check-fresh.txt",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 15001,
+    "sha256": "466af226681be74f482435932cbfaab61c421e78b69d6a3c6da8744e83b2e39c"
+  },
+  {
+    "path": "docs/evidence/readiness-20261008/coopain-clean-setup.txt",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4896,
+    "sha256": "4c298f25b8e6d144f770983a261e736ef0967550339c38c1d1edbfc2cae49c3e"
+  },
+  {
+    "path": "docs/evidence/readiness-20261008/coopain-doctor.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 623,
+    "sha256": "50b30970f1c01464b09b026ac0e01da918b045120aa499c9d2f16db14ad44248"
+  },
+  {
+    "path": "docs/evidence/readiness-20261008/coopain-per-file-coverage.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 86,
+    "sha256": "f01124ab64db8c6b1fd4e54a4edf35092f287c9220b9c3de9edc62f578475528"
+  },
+  {
+    "path": "docs/evidence/readiness-20261008/coopain-runner-exit-reproduction.txt",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 240,
+    "sha256": "99d6ea97946f1252c5566e2c5504f7de41af6784676fd91b29220e07ce3883b9"
+  },
+  {
+    "path": "docs/evidence/readiness-20261008/coopain-web-check-after-generation.txt",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4306,
+    "sha256": "0f75f92b3287bf5d78b56b35685f4da79e079f464e564f2a7817afc63673bae1"
+  },
+  {
+    "path": "docs/mvp/AGENT_HANDOFF.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 6453,
+    "sha256": "4f7c2ef386c8574076255a27b45984d895aba33785a1a96068f1ed0ded49bb8f"
+  },
+  {
+    "path": "docs/mvp/ARCHITECTURE.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4665,
+    "sha256": "64b46f0bfce9fabe4acebe58695c98ce71c315e81af5ee97a1440bb421c2d096"
+  },
+  {
+    "path": "docs/mvp/DECISION.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2576,
+    "sha256": "ce00e915c2c1e181fe157aaa9d0ac35780534c25fef523879d684d9523dec6fe"
+  },
+  {
+    "path": "docs/mvp/DEPENDENCY_INVENTORY.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4750,
+    "sha256": "d07ed8cb2f6bc4fabc828c40c247599cd95a0eb8f41702edc99b2f309f6258cc"
+  },
+  {
+    "path": "docs/mvp/FIRST_TASK.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1534,
+    "sha256": "cf1c324987076dc11f892d3b549a1efdb74f6fb1813042c27c29d6d870a7ef36"
+  },
+  {
+    "path": "docs/mvp/IMPLEMENTATION_LOG.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 14925,
+    "sha256": "f248110d7483a16d181d0ec7617926230eada1f4c20d40a4c80e994cc3292a33"
+  },
+  {
+    "path": "docs/mvp/LAUNCH_GATES.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 18014,
+    "sha256": "35395bed2610db7c78f675dafb85df74debef3dd2f632c716217435296dc61c4"
+  },
+  {
+    "path": "docs/mvp/LOCAL_RUN.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5661,
+    "sha256": "a68ed8fa1a697a15bd6ac9b8e3de75dbd7526c845cfd3ab2b2319dd1647edac9"
+  },
+  {
+    "path": "docs/mvp/MVP_STATUS.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5206,
+    "sha256": "bc3b76e279b85c37e671f670f9c6401694ec37aa87d884e63362ce5deb08776c"
+  },
+  {
+    "path": "docs/mvp/NEXT_HANDOFF.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 9593,
+    "sha256": "8f436b7dc2a3d3bb418c02068a0455db066973af1cbd32b5d0f380a9f4a81a11"
+  },
+  {
+    "path": "docs/mvp/OBSERVER_TASK_SHEET.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5742,
+    "sha256": "9dd9e167e8c67ec03ca46ff23222385d2990179527bd9dacc9d5360b8146fb2b"
+  },
+  {
+    "path": "docs/mvp/PAYER_EXPERIMENT.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 10329,
+    "sha256": "cb33833b33314ce0a6495f9505e2ede2160a57258186e35bcea4d1523dfe641d"
+  },
+  {
+    "path": "docs/mvp/PRIVACY_OPERATIONS.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5203,
+    "sha256": "acea5090c7fd62d391d2f629c41a4017f9f104297aea3e944ae32538a14c766e"
+  },
+  {
+    "path": "docs/mvp/READINESS_HANDOFF.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 8317,
+    "sha256": "dfddf3ad0d3d62f7a2167b600781f69d949e883a0114fa95a58f152993802eec"
+  },
+  {
+    "path": "docs/mvp/ROADMAP.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5141,
+    "sha256": "38a8c622940b93743fcb96c4a0560327dde22bf0abb83109f735730d87ced9f9"
+  },
+  {
+    "path": "docs/mvp/SOURCES.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1356,
+    "sha256": "ecd686f55990a579459b355a6628cbe3fb6098321651816e188b0139bb93befd"
+  },
+  {
+    "path": "docs/mvp/TESTER_INVITATIONS.md",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 6579,
+    "sha256": "1bbc19e90840d36d6b8f0304c6dca4d208ea8052b410f96dc987950c8b702eee"
+  },
+  {
+    "path": "docs/mvp/spec.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 9652,
+    "sha256": "0a93eb6d50780a0bacc5f27dd5c0828a540fb0770167522d5a2444d3d0cd9a71"
+  },
+  {
+    "path": "feedback/7857366d-7ff3-4f4a-a75d-8f6e51260381.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 1256,
+    "sha256": "2cd9a92826ef0a377fa0933f4763945cb36837946ad87c35b0dfebcac0510a01"
+  },
+  {
+    "path": "feedback/7857366d-7ff3-4f4a-a75d-8f6e51260381.receipt.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 183,
+    "sha256": "26c4ec24066efe48323648057555bc7f0ed95eef3402a60bbf2e66164f638e04"
+  },
+  {
+    "path": "feedback/8d831de9-dcae-400d-9a18-fd7ae73de5c5.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 1113,
+    "sha256": "27f33ff39bb9c03d0184435a66b9a52350ad186964d7e9be5fe32172eaa07c6f"
+  },
+  {
+    "path": "feedback/8d831de9-dcae-400d-9a18-fd7ae73de5c5.receipt.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 183,
+    "sha256": "0b7a3aa9679b290ca660373d80b1d9028a3082e6cd8d6d1966ffb717608c4ecd"
+  },
+  {
+    "path": "feedback/911546c0-8828-41dd-a85d-c7e8f134eeb7.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 1570,
+    "sha256": "fe0c953cde2e2c1790f8e0d5ceb0ee69dbefeb76d5db4e43763ef1a3022c5968"
+  },
+  {
+    "path": "feedback/911546c0-8828-41dd-a85d-c7e8f134eeb7.receipt.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 183,
+    "sha256": "55631d29d9d3c9409d0f24a7fd928d660a1c32d32894a887edfd697e33f06162"
+  },
+  {
+    "path": "feedback/README.md",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 1009,
+    "sha256": "7307f684b49cd0e24abfd951b8ba9f289e14087373d738534dcd5229e4f08e7b"
+  },
+  {
+    "path": "feedback/ab516b4d-1ffa-47f9-b9b3-8493b4729bdd.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 1034,
+    "sha256": "3691b8c4d31055f2ddb9ce387a4aedb7e7b11514f8b9196d6985a694450c2464"
+  },
+  {
+    "path": "feedback/ab516b4d-1ffa-47f9-b9b3-8493b4729bdd.receipt.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 183,
+    "sha256": "78edc1e6e2be2b7994422cb9629359f81b8032e6f423604749c045cf7ac75490"
+  },
+  {
+    "path": "feedback/b6e0d630-f597-4dba-a6d8-cf244bca3d17.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 1084,
+    "sha256": "2afa9bdea73f1b923190b412524077a8fb6d00e7373631a2a3e1cb1765c421f0"
+  },
+  {
+    "path": "feedback/b6e0d630-f597-4dba-a6d8-cf244bca3d17.receipt.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 183,
+    "sha256": "99c623c17606951622df51e90f5cdb5097bc1624c2e38110f53d6d75cddedd0c"
+  },
+  {
+    "path": "feedback/c508d328-f81b-41a9-8005-9b90517989ec.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 1652,
+    "sha256": "384507b401ab6add13ada449010b5fa416376580127e3fc9791507be2da517f5"
+  },
+  {
+    "path": "feedback/c508d328-f81b-41a9-8005-9b90517989ec.receipt.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 183,
+    "sha256": "631385c15e45a6e511aff3744c92df00b513719c8e51b5793e221a79af070a46"
+  },
+  {
+    "path": "feedback/f3590eae-b239-4182-8229-dc8aa31ec629.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 932,
+    "sha256": "51bf56bc2c036b4bef653329a36f564d5040bb8e80bb63238ee89233142da9f0"
+  },
+  {
+    "path": "feedback/f3590eae-b239-4182-8229-dc8aa31ec629.receipt.json",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 183,
+    "sha256": "8996f5f30868c93739e86b5953a872f9bdbb5e704d866550c3c33f2977db0a4e"
+  },
+  {
+    "path": "frontend/apps/mobile/App.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 299,
+    "sha256": "5ca192302edc78dc6d5c156cc4a39b14ea2ec5a490cdae5027bc1e73defd2c27"
+  },
+  {
+    "path": "frontend/apps/mobile/app/index.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 14257,
+    "sha256": "9aaba232abbfd90ff9484bb107b3d5591bb468a9ed40c67c62728678c9bbd0c6"
+  },
+  {
+    "path": "frontend/apps/mobile/package.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1034,
+    "sha256": "44de380441ff9b2a9cc514a9774427d719bd1a806c529965e35b0b3d36252f5d"
+  },
+  {
+    "path": "frontend/apps/mobile/src/hooks/useSwipeMatches.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 8958,
+    "sha256": "b7af2dd3bac60155abed95d2f2dcd94e45f58a4b106910f0495c3c1659801be8"
+  },
+  {
+    "path": "frontend/apps/mobile/src/types.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 678,
+    "sha256": "f1beab07e7ad48a184d82d10477b57c134f3db2b448d53acbf612beb256429c3"
+  },
+  {
+    "path": "frontend/apps/web/next-env.d.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 288,
+    "sha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b"
+  },
+  {
+    "path": "frontend/apps/web/next.config.mjs",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 731,
+    "sha256": "3f1051546fca214858ce10a2cfba00fc23b4d18ad848396bd94ca77c7fbcf6cb"
+  },
+  {
+    "path": "frontend/apps/web/package.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 626,
+    "sha256": "66ee86c4ec61a81a2afb793dfb2bda5db8c861c740a2ba3fd4d16f0a854c5e8b"
+  },
+  {
+    "path": "frontend/apps/web/playwright.config.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 723,
+    "sha256": "651aae9f228298ea54c27fc0b332b426e9b09b8779988da3a02436d93521d4a0"
+  },
+  {
+    "path": "frontend/apps/web/src/app/components/AccountPrivacy.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4012,
+    "sha256": "0e800b365bc563536883f88ccc1b890ac273afef0e6396de6ebb69f3b00b9e69"
+  },
+  {
+    "path": "frontend/apps/web/src/app/components/FormField.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1720,
+    "sha256": "d7c72c94c2efbe6add9b9424b897a67bdd7fc9f45a7c14f3de5f1a4b8a9c84ab"
+  },
+  {
+    "path": "frontend/apps/web/src/app/components/GoogleLoginButton.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5190,
+    "sha256": "ccd634f55465aa9f08673c332ba7839e4b62b6e7df4b38c640176764f2beeb90"
+  },
+  {
+    "path": "frontend/apps/web/src/app/components/JobPostEditor.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 13107,
+    "sha256": "a2c9b201fc4c8c762507f33a228c3d8258c4c5eb2b37cbfc911ac2a68f26303c"
+  },
+  {
+    "path": "frontend/apps/web/src/app/components/PageScaffold.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4680,
+    "sha256": "e03c4b1e695c36eb03989e232d8433cc1f2c447492e8f8f840c0600b2229d2db"
+  },
+  {
+    "path": "frontend/apps/web/src/app/components/SearchSetup.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 12114,
+    "sha256": "8474a9651308a435ba0aa79f3e19b5f309212b69337e5321dad94fef09d66f1d"
+  },
+  {
+    "path": "frontend/apps/web/src/app/conversations/page.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 16478,
+    "sha256": "03ed1376fec25dc4488df86554fcacbcd0202f5a317b3ed0fe680f0e4f37f572"
+  },
+  {
+    "path": "frontend/apps/web/src/app/dashboard/page.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 17937,
+    "sha256": "6e92308dde0eba3fd35cf6cf1e19cb4f9213fced00e9a34a534c420bd9216e05"
+  },
+  {
+    "path": "frontend/apps/web/src/app/globals.css",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 15464,
+    "sha256": "29dfbd672e70fa2201b622a8ff8efdc96a6653403ab5f0f76ea80df94eee9837"
+  },
+  {
+    "path": "frontend/apps/web/src/app/lib/account-privacy.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 120,
+    "sha256": "ca53af83d6ed884fbfa41d92e4ccfbdf5fa09a134587be4b146c997ff36064e1"
+  },
+  {
+    "path": "frontend/apps/web/src/app/lib/criteria.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2303,
+    "sha256": "ed006c937926e6ae6882b928d84eb4cd2917c4dfd866d0faeeaef5ce99d4f92d"
+  },
+  {
+    "path": "frontend/apps/web/src/app/lib/introduction.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2463,
+    "sha256": "ac0425094f845eb51fb77be766ae659166cd8f2129c5b29e177d3ca349d5a9f1"
+  },
+  {
+    "path": "frontend/apps/web/src/app/lib/navigation.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 251,
+    "sha256": "56fda05783eba7ff362de409b1fc54d9e01b4ee5362592ccbbd09acf03d33f86"
+  },
+  {
+    "path": "frontend/apps/web/src/app/lib/utils.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 969,
+    "sha256": "bdf62cef90d4a7d9e01a7a6d407b3b1fd1e575300b52e4efc28a4cf6ee3aeed6"
+  },
+  {
+    "path": "frontend/apps/web/src/app/login/page.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 6172,
+    "sha256": "e12c63a9b3d321a5ab0718cc473fb4ced30de3a814616e52ce2fd60235298c01"
+  },
+  {
+    "path": "frontend/apps/web/src/app/matches/page.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 20155,
+    "sha256": "9fbd16564b6c763ed97d2ef18ac2d13e68a5edb96ada21b645d89b0bd9aa7cd7"
+  },
+  {
+    "path": "frontend/apps/web/src/app/profile/page.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 20249,
+    "sha256": "92938c044ad4ec49b95b7172b4d1063f80d9ecdd75ed3b33d3e1e5a6e935bcb9"
+  },
+  {
+    "path": "frontend/apps/web/src/app/register/page.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 7531,
+    "sha256": "f3e7ea65aae0aee21f15a9b62677ad2583b05a6aae9953f04919d4d9e4ab7e28"
+  },
+  {
+    "path": "frontend/apps/web/src/app/types.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 511,
+    "sha256": "d0a34ac1ec571c00d420d493c3978dc65ce5e97d30a4db2e10f75a7408b80f3d"
+  },
+  {
+    "path": "frontend/apps/web/src/app/verify-email/page.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 7520,
+    "sha256": "a72eef72e22a462d29166362b5401246f10777b4ca52dfa54ee77926127050c2"
+  },
+  {
+    "path": "frontend/apps/web/tests/e2e/pilot.spec.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 14859,
+    "sha256": "4baa90e6fe75601310ec46beef5c016acf628bba1f40f7b535da21d5da56a2de"
+  },
+  {
+    "path": "frontend/apps/web/tests/j02-introductions.test.mjs",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 5227,
+    "sha256": "711aab215c6b041a1418fb0344d502dd6548c9dd5f4769ede6038f0579e0f9f0"
+  },
+  {
+    "path": "frontend/apps/web/tests/j03-audit-after-summary.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2022,
+    "sha256": "cbb053dc731f8b8cc9354a7a7be663f13aad9d44a40e4032a0f8e1b2bb4a42cb"
+  },
+  {
+    "path": "frontend/apps/web/tests/j03-audit-after.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1321308,
+    "sha256": "cba9710e58e8d367519f684a47c5a0b1f52975454d15a7ffcbd97389a474994b"
+  },
+  {
+    "path": "frontend/apps/web/tests/j03-privacy.test.mjs",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 4856,
+    "sha256": "bbb74a06a428a9c6b990dc60b905a3117ec707271f7a18a617d8dbcc10777a3f"
+  },
+  {
+    "path": "frontend/apps/web/tests/j04-criteria.test.mjs",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 3573,
+    "sha256": "280f700865c5aa896ae52835a7fe777bea0d71242211373502913fe99fed8d72"
+  },
+  {
+    "path": "frontend/package.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 833,
+    "sha256": "14f98d15ea91bf56d94ab8cef4d0aa8871f817b9e617fc1dc6fd1ecbf8f03144"
+  },
+  {
+    "path": "frontend/packages/api/generate.mjs",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1188,
+    "sha256": "ceacb82d4eb7d9244e0952ed9a06debc0ec23a201a7bcf47fe9f78cdcadc9f22"
+  },
+  {
+    "path": "frontend/packages/api/package.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 344,
+    "sha256": "55f487e7c36a90c5c99c5758b8d5e6d9066c5b5921766fccd58b1dea7b6cb2ae"
+  },
+  {
+    "path": "frontend/packages/api/src/client.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 12515,
+    "sha256": "ecea80bfd95e8f0710b8357cc235d80c51006d54e4289b8b2d685d96a8491288"
+  },
+  {
+    "path": "frontend/packages/api/src/generated.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 163435,
+    "sha256": "bfe74634fdfbec542841c51c61868e60f83b9f0645ec5e8e0edcfc2d2c380e75"
+  },
+  {
+    "path": "frontend/packages/api/src/types.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 7001,
+    "sha256": "660da45ba3566f248b53b2b704d9ed7e6a7eccd18bf5953a74d7338f1ae64722"
+  },
+  {
+    "path": "frontend/packages/design-system/package.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 778,
+    "sha256": "414b5640b3a583a02e8a234745e78603f4c3ee10d6c500dc9d6bf841ac88208d"
+  },
+  {
+    "path": "frontend/packages/design-system/src/components/LanguageToggle.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1819,
+    "sha256": "b22137e82ef8491efa4074c0df3fbb6e61da4d5cd28e0b3cbbfdd7f24642dba3"
+  },
+  {
+    "path": "frontend/packages/design-system/src/components/profile/MatchList.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1763,
+    "sha256": "0f4402bf0033968451f31bbca3a703c12fce912914201007ffcb60242b51baed"
+  },
+  {
+    "path": "frontend/packages/design-system/src/components/profile/ProfileSummary.tsx",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2857,
+    "sha256": "eb2ea697627625f274fb0593b99cd976326844048df51a4253df62d05e719dac"
+  },
+  {
+    "path": "frontend/packages/design-system/src/i18n/translations.ts",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 2009,
+    "sha256": "30fb412c4dd1bce7ca9be5c19552cdf32ee33ee0165021dfadaf754bbdc854a2"
+  },
+  {
+    "path": "frontend/pnpm-lock.yaml",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 361666,
+    "sha256": "f7ed009f8eda62e9d4794091fcd2e1f336b41871e13247c3e63e484d6a3ccae1"
+  },
+  {
+    "path": "next_propmpt",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 260,
+    "sha256": "208f1441165b4aa42050c2c0f7351695427481764f6af38ba371403980cfd057"
+  },
+  {
+    "path": "openapi/package.json",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 309,
+    "sha256": "541c9fffd5be32369c89b14b52e7c6de59987197ceabbe04550283e0bd88a2ad"
+  },
+  {
+    "path": "openapi/server.js",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 1801,
+    "sha256": "b4cd3ca97bc790f5d069e6e1accf41beb3b36afb735efc81b16cecc62dd829ea"
+  },
+  {
+    "path": "tools/foundry_agent.py",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 14622,
+    "sha256": "1e0be09cd1b537864e0b04bbc2358932b1efba7c7a5d4abb4c0b9aff0e91703f"
+  },
+  {
+    "path": "tools/run_local_mvp.sh",
+    "checkpoint_present": true,
+    "same_checkpoint": true,
+    "bytes": 10981,
+    "sha256": "061728a76b768634d0f0c52b629323655692ea27ee5c4cf0c0a7626c79cb5f43"
+  },
+  {
+    "path": "unchanged. Venture and coordination records were updated",
+    "checkpoint_present": false,
+    "same_checkpoint": false,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

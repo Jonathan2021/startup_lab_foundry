@@ -1,0 +1,12 @@
+[
+  {
+    "condition": "empty untracked alembic directory present",
+    "exit": 0,
+    "output": "All checks passed!\n"
+  },
+  {
+    "condition": "empty directory absent, as in Git checkout",
+    "exit": 0,
+    "output": "All checks passed!\n"
+  }
+]

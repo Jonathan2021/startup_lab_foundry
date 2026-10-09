@@ -1,0 +1,77 @@
+{
+  "ride-options": {
+    "id": "42b34c32-fc4b-45dc-bd91-7f2456b3f767",
+    "request_digest": "275585d7513abaae27b05bf45d937aa013b91ac27b80c9f79d86713dca5fe3e4",
+    "work": {
+      "acceptance_criteria": "Recorded preview, supported frontend rebuild, current distribution and documentation verified from a clean checkout; scoped Git commits/private remote and exact-SHA GitHub Actions green only when explicitly authorized in the continuation prompt. Preserve road-use gate.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T07:47:22.385814+00:00",
+      "decision_id": null,
+      "description": "Read /home/jonathan/startup_lab/ride-options/docs/mvp/READINESS_HANDOFF.md. Address the independent 2026-10-08 audit in order; no feature expansion. Complete local preparation first. Publication depends on the exact authorization in the user continuation prompt.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "42b34c32-fc4b-45dc-bd91-7f2456b3f767",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "R07: Commit and verify a reproducible local preview release",
+      "updated_at": "2026-10-08T07:47:22.385817+00:00",
+      "version_id": 1,
+      "workspace_id": "6972ac19-0263-41c7-9f09-97b64fd99f80"
+    }
+  },
+  "volley-match": {
+    "id": "3f666496-6be6-4d47-a304-7bc541f76795",
+    "request_digest": "6c730847c5698eabb6cb75cf41fe75735f2c35eb5e27161beb6231ee9e0cd1f2",
+    "work": {
+      "acceptance_criteria": "Fresh SQLite migrate/seed succeeds with a regression; updated source/wheel, core/browser/PostgreSQL/recovery checks and documentation pass; scoped commits/private remote and exact-SHA GitHub Actions green only when explicitly authorized.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T07:47:25.298949+00:00",
+      "decision_id": null,
+      "description": "Read /home/jonathan/startup_lab/volley-match/docs/mvp/READINESS_HANDOFF.md. Address the independent 2026-10-08 audit in order; no feature expansion. Complete local preparation first. Publication depends on the exact authorization in the user continuation prompt.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "3f666496-6be6-4d47-a304-7bc541f76795",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "V07: Repair clean demo setup and verify the committed MVP",
+      "updated_at": "2026-10-08T07:47:25.298953+00:00",
+      "version_id": 1,
+      "workspace_id": "417476af-0674-4aba-9022-843957dc3ca2"
+    }
+  },
+  "coopain": {
+    "id": "118dc039-d6f6-408b-852e-8fd49b79101c",
+    "request_digest": "184554635791c7a6a4fdd83da7a701d742df9a65bc47213cb9e06480a0cb77a7",
+    "work": {
+      "acceptance_criteria": "Failing pytest causes nonzero runner exit even with passing/stale coverage; existing upstream cleanup reconciled without lost changes; current setup/docs and backend/web/browser checks pass; scoped branch pushed and exact-SHA GitHub CI green only when explicitly authorized.",
+      "blocked_reason": null,
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-08T07:47:28.279898+00:00",
+      "decision_id": null,
+      "description": "Read /home/jonathan/startup_lab/coopain/docs/mvp/READINESS_HANDOFF.md. Address the independent 2026-10-08 audit in order; no feature expansion. Complete local preparation first. Publication depends on the exact authorization in the user continuation prompt.",
+      "desired_outcome": null,
+      "due_at": null,
+      "id": "118dc039-d6f6-408b-852e-8fd49b79101c",
+      "kind": "execution",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "ready",
+      "title": "J06: Repair CI failure propagation and release the current local MVP",
+      "updated_at": "2026-10-08T07:47:28.279902+00:00",
+      "version_id": 1,
+      "workspace_id": "9197a72d-23a6-424d-9b00-03e5d4a366f6"
+    }
+  }
+}

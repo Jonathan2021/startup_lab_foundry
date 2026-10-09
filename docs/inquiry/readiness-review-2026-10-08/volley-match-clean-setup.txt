@@ -1,0 +1,85 @@
+uv sync --locked
+Using CPython 3.13.5
+Creating virtual environment at: .venv
+Resolved 54 packages in 1ms
+   Building volley-match @ file:///tmp/mvp-readiness-20261008-r1faj3o6/volley-match
+      Built volley-match @ file:///tmp/mvp-readiness-20261008-r1faj3o6/volley-match
+Prepared 1 package in 291ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 51 packages in 44.43s
+ + alembic==1.20.0
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + anyio==4.15.1
+ + argon2-cffi==25.1.0
+ + argon2-cffi-bindings==26.1.0
+ + certifi==2026.7.22
+ + cffi==2.1.1
+ + click==8.5.0
+ + cryptography==49.0.0
+ + fastapi==0.142.2
+ + greenlet==3.5.6
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httpcore2==2.13.1
+ + httpx==0.28.1
+ + httpx2==2.13.1
+ + idna==3.20
+ + iniconfig==2.3.1
+ + itsdangerous==2.2.0
+ + jinja2==3.1.6
+ + librt==0.16.0
+ + mako==1.4.3
+ + markupsafe==3.0.4
+ + mypy==1.20.2
+ + mypy-extensions==1.1.0
+ + opentelemetry-api==1.45.1
+ + packaging==26.3
+ + pathspec==1.1.1
+ + playwright==1.63.0
+ + pluggy==1.6.0
+ + psycopg==3.3.6
+ + psycopg-binary==3.3.6
+ + pwdlib==0.3.1
+ + pycparser==3.0
+ + pydantic==2.13.5
+ + pydantic-core==2.46.5
+ + pydantic-settings==2.15.0
+ + pyee==13.0.1
+ + pygments==2.21.0
+ + pytest==9.1.1
+ + python-dotenv==1.2.4
+ + python-multipart==0.0.32
+ + ruff==0.16.10
+ + sqlalchemy==2.0.54
+ + starlette==1.7.0
+ + truststore==0.10.4
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4
+ + uvicorn==0.54.0
+ + volley-match==0.1.0 (from file:///tmp/mvp-readiness-20261008-r1faj3o6/volley-match)
+uv run python scripts/manage.py migrate
+uv run python scripts/seed_demo.py
+Traceback (most recent call last):
+  File "/tmp/mvp-readiness-20261008-r1faj3o6/volley-match/scripts/seed_demo.py", line 74, in <module>
+    seed()
+    ~~~~^^
+  File "/tmp/mvp-readiness-20261008-r1faj3o6/volley-match/scripts/seed_demo.py", line 59, in seed
+    MatchInput(
+    ~~~~~~~~~~^
+        expected_revision=session.revision,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        score_mode="single21",
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/tmp/mvp-readiness-20261008-r1faj3o6/volley-match/.venv/lib/python3.13/site-packages/pydantic/main.py", line 263, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for MatchInput
+played_at
+  Value error, Specify a UTC offset for the session time [type=value_error, input_value=datetime.datetime(2026, 10, 9, 7, 42, 58, 421868), input_type=datetime]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+make: *** [Makefile:11: seed-demo] Error 1

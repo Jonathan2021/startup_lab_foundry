@@ -1,0 +1,18 @@
+{
+  "ride-options": {
+    "baseline_source_files": 40,
+    "changed": []
+  },
+  "volley-match": {
+    "baseline_source_files": 46,
+    "changed": []
+  },
+  "coopain": {
+    "baseline_source_files": 114,
+    "changed": []
+  },
+  "ride_asset_rebuild_comparison": {
+    "status": "not_verified",
+    "reason": "Temporary source copy no longer present after user continuation; empty traversal is not evidence of byte equality."
+  }
+}

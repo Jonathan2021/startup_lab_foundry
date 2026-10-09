@@ -1,0 +1,278 @@
+{
+  "workspace_id": "81ee3117-de70-411e-9856-07420859ffad",
+  "map_revision_id": "10494dc7-8701-51b3-905f-3a4865a74b1c",
+  "work": [
+    {
+      "acceptance_criteria": "Use actual accessible app/site search, record device/time/name/address/freshness/features; web search absence is not proof. Current session has no enabled browser/mobile interface; no account creation.",
+      "blocked_reason": "external_access",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-06T10:33:51.361576+00:00",
+      "decision_id": "ef07cc0b-f2ec-5f30-8b0c-890708ee6ed5",
+      "description": "Use actual accessible app/site search, record device/time/name/address/freshness/features; web search absence is not proof. Current session has no enabled browser/mobile interface; no account creation.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "external_access"
+      ],
+      "id": "dbbfbb3d-3ec5-5cca-8d2a-2eae04cc21b2",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Check exact Cuvier and Chatelet listings in incumbent apps",
+      "updated_at": "2026-10-07T11:23:26.777651+00:00",
+      "version_id": 3,
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    },
+    {
+      "acceptance_criteria": "Resolve only R011: relevant queue/eligibility and whether first ordinary visit information is available; no third-party observations required.",
+      "blocked_reason": "human_input",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-06T10:33:51.360316+00:00",
+      "decision_id": "ef07cc0b-f2ec-5f30-8b0c-890708ee6ed5",
+      "description": "Resolve only R011: relevant queue/eligibility and whether first ordinary visit information is available; no third-party observations required.",
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "human_input"
+      ],
+      "id": "4626ac2b-ae37-515e-998a-8634086981dd",
+      "kind": "investigation",
+      "owner": "human",
+      "parent_id": null,
+      "question": "Which student or staff queue would you use at Cuvier/Chatelet? If practical, report one ordinary visit: queue join, food paid/ready, seat availability, and any displayed Affluences estimate. Unknown or unable is fine; no names/photos or observing strangers.",
+      "status": "blocked",
+      "title": "R011: confirm queue type and one optional own lunch observation",
+      "updated_at": "2026-10-07T11:23:26.778219+00:00",
+      "version_id": 3,
+      "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+    }
+  ],
+  "current_review": {
+    "author": "implementer-crous-queue-20261007-mvp-a91e",
+    "created_at": "2026-10-07T15:18:27.128625+00:00",
+    "decision_id": "299a3b85-d860-4830-b50d-0da0876f2f53",
+    "disposition": "pursue",
+    "id": "bf04aef9-2cd9-4d42-bc97-3d0d94ac87f9",
+    "investigation_stage": "solution_validation",
+    "next_action": "Private release ready; conduct voluntary lunch pilot and review exact deployment proposal separately.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Reviewed bounded local implementation against current roadmap acceptance and actual test evidence.",
+    "reviewed_at": "2026-10-07T15:18:27.128606+00:00",
+    "revision": 9,
+    "source_artifact_id": "bd9fff84-b0be-5054-aee4-e243153c0dc2",
+    "updated_at": "2026-10-07T15:18:27.128626+00:00",
+    "workspace_id": "81ee3117-de70-411e-9856-07420859ffad"
+  },
+  "results": [
+    {
+      "id": "bd9fff84-b0be-5054-aee4-e243153c0dc2",
+      "work_id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+      "context_id": "2039a17a-b341-5cc0-8459-f33a37e8b1f7",
+      "state": "accept",
+      "digest": "5cd79f9de93414e3b4d291d555764f1cd2d912114e862db6e9cd38ea7a66bf3a",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "Q05 local MVP release complete: version 0.1.0 runnable source/wheel, national unknown waits, guarded separate synthetic demo, clean setup/recovery replay, pilot measurement tool and explicit NOT AUTHORIZED deployment checkpoint.",
+      "limits": "Local MVP build finished; voluntary five-lunch-day adoption/accuracy trial NOT MEASURED. Public deployment NOT AUTHORIZED; exact host/domain/current provider quote, operator contact and real PostgreSQL integration remain explicit gates. No accounts, sends, paid services, cloud resources, Git commits or pushes. Local app used alternate loopback port because 8000 was occupied; existing listener preserved.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+          "decision_id": "299a3b85-d860-4830-b50d-0da0876f2f53",
+          "evidence_ids": [
+            "9acb2108-e117-4ba6-8cdd-e4a0ed558225"
+          ],
+          "map_revision_id": "10494dc7-8701-51b3-905f-3a4865a74b1c",
+          "next_work_id": null,
+          "review_id": "bf04aef9-2cd9-4d42-bc97-3d0d94ac87f9",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "c1d2c38b6d0827eef9924c18ae0da3beabe51c18a427f00839d2594e1e731662",
+        "resolution": "accept",
+        "result_digest": "5cd79f9de93414e3b4d291d555764f1cd2d912114e862db6e9cd38ea7a66bf3a",
+        "result_id": "bd9fff84-b0be-5054-aee4-e243153c0dc2"
+      }
+    },
+    {
+      "id": "9deb999e-a6db-5d7e-9a56-cf8762fc864c",
+      "work_id": "78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+      "context_id": "6682c2a2-84d8-5a8d-905a-76e457bad365",
+      "state": "accept",
+      "digest": "d8d53d0c983f3e8e4491498b66873db43d03e3236b46a30023fcd582f09a45ca",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "Q04 implemented: separately authenticated moderation with versioned audits, enum flags, exact retention, redacted structured logs, aggregate metrics and checked isolated SQLite backup/restore.",
+      "limits": "Local SQLite and Chromium verified. Public rollout still needs PostgreSQL integration, independent retention job, named operator/contact and exact hosting authorization. Backups require private 7-day rotation; expired-job shutdown cannot guarantee deletion until recovery. Synthetic tests do not establish adoption.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+          "decision_id": "71bad7cc-b0aa-4c30-bc66-ac8790860107",
+          "evidence_ids": [
+            "16ad7ca7-9e51-4623-b289-c56ae8021496"
+          ],
+          "map_revision_id": "d832d9d0-1cd9-531a-8365-12f30fc76346",
+          "next_work_id": "9d3ce92c-48b0-48a9-aa46-e7ebddd0b90e",
+          "review_id": "8229059c-891e-4045-bb72-7a34c3bf950a",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "681ac40058746e33c126a5a68fee4cf764db7732e47a53e0893594ed75cd640b",
+        "resolution": "accept",
+        "result_digest": "d8d53d0c983f3e8e4491498b66873db43d03e3236b46a30023fcd582f09a45ca",
+        "result_id": "9deb999e-a6db-5d7e-9a56-cf8762fc864c"
+      }
+    },
+    {
+      "id": "ac991a19-7156-59d6-8cbb-6deb267f79f1",
+      "work_id": "12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+      "context_id": "df87298f-8805-5874-952d-e787f29bfabc",
+      "state": "accept",
+      "digest": "9209140ffecde8d7877baeb1c09d7a927e929e8cbd7260d43f76d827020db338",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "Q03 implemented and visually reviewed: French responsive server-rendered PWA, manual search, local favorites, three-tap report, timer controls, client expiry and explicit offline behavior.",
+      "limits": "Chromium local desktop/mobile viewport tested; no physical mobile-device or lunch trial yet. No public launch. HTMX omitted in ADR-0003 in favor of small same-origin JS. Manual search requires no geolocation. Transport matcher accounts for URL-encoded venue IDs.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+          "decision_id": "6faa2a6c-0f0f-40fe-8fc2-d1abdc95b979",
+          "evidence_ids": [
+            "536740c4-0e03-466e-9788-674a27477f4b"
+          ],
+          "map_revision_id": "f639d7a4-e692-5f3d-a978-78a3f18fe9e5",
+          "next_work_id": "78d6d373-e2b9-4a9c-ab94-f9a63d9e93f7",
+          "review_id": "bb795a38-c825-4d4e-8321-c9e01d12c6aa",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "9f552ac238b0b6b9954c78039bd13d6528a2d500a4bb15ce6ad8dbee1da642bf",
+        "resolution": "accept",
+        "result_digest": "9209140ffecde8d7877baeb1c09d7a927e929e8cbd7260d43f76d827020db338",
+        "result_id": "ac991a19-7156-59d6-8cbb-6deb267f79f1"
+      }
+    },
+    {
+      "id": "9ceee9e9-7447-5ee0-89ef-cadb706d80cc",
+      "work_id": "31c3e040-7c1b-4983-8e52-e717b1cc9441",
+      "context_id": "0cbba28b-b915-5430-b4a2-844d9f3266c0",
+      "state": "accept",
+      "digest": "f203def8c8e24e5531fddc05b59641614d27f14fe0c8f6f325d30f1fc15bbc15",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "Q02 implemented: signed anonymous device session, idempotent reports/timers, queue separation, strict validation, throttles and exact honest expiry.",
+      "limits": "Synthetic tests establish aggregation and local SQLite behavior only. PostgreSQL branch requires real database validation before public launch. Device cookies limit repeats, not Sybil attacks; no queue eligibility or live coverage inference.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "31c3e040-7c1b-4983-8e52-e717b1cc9441",
+          "decision_id": "d9c38c58-bc87-4b93-8d39-8c4d1276c440",
+          "evidence_ids": [
+            "e391f98a-bec0-4ec7-97a6-6dee5a583490"
+          ],
+          "map_revision_id": "42b88aa1-4c00-5a27-b35e-6f6039ca180b",
+          "next_work_id": "12cb53b0-e682-4a21-ac25-85d21d6b2c47",
+          "review_id": "ba42d39e-10c7-446c-a8cf-27cc0ef3ba53",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "dc7c52c587864cf2b6ac9ec34d567779c7379e9ede821ad8f43b56a2e522461f",
+        "resolution": "accept",
+        "result_digest": "f203def8c8e24e5531fddc05b59641614d27f14fe0c8f6f325d30f1fc15bbc15",
+        "result_id": "9ceee9e9-7447-5ee0-89ef-cadb706d80cc"
+      }
+    },
+    {
+      "id": "6d48e301-582c-52bc-b79c-f81ce1f2b2fc",
+      "work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+      "context_id": "0df6fab8-45b7-5e4e-92db-b28e14087de3",
+      "state": "accept",
+      "digest": "1fda0ef3e542cf9bb927b847f12c9b6e9f686f7682dc2fafd36b5ce3f96b0e74",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "Q01 implemented: 972-venue retained directory, safe bounded importer, provenance, accent-insensitive national search.",
+      "limits": "Snapshot is directory evidence only; source hours/access absent in normalized snapshot until explicit refresh. No live wait, demand or public launch validation. HTTP feeds have transport integrity limitations. Latest TestClient emits httpx deprecation warning. Only bounded Paris XML shape probe performed; routine tests use retained/synthetic fixtures.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-crous-queue-20261007-mvp-a91e",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, project sources and arrivals; no omitted relevant arrivals. No public release or demand claim.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+          "decision_id": "a493361f-a878-4d2a-9b6c-cdb7e9516efe",
+          "evidence_ids": [
+            "8f62565e-44c3-45d8-8975-d5b19d7c0e60"
+          ],
+          "map_revision_id": "0abe598c-00bb-553b-b32e-d59e1f528f44",
+          "next_work_id": "31c3e040-7c1b-4983-8e52-e717b1cc9441",
+          "review_id": "5a2b0942-cdc8-495e-ae9d-2ff088d304e5",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed changed source, exact green checks and package limitations; accept local implementation only.",
+        "request_digest": "c353c46139399a602857f73e6089ad74fdcbd7c5d676845792c116c2935d7b26",
+        "resolution": "accept",
+        "result_digest": "1fda0ef3e542cf9bb927b847f12c9b6e9f686f7682dc2fafd36b5ce3f96b0e74",
+        "result_id": "6d48e301-582c-52bc-b79c-f81ce1f2b2fc"
+      }
+    },
+    {
+      "id": "db035611-c22a-591e-a666-045913bbc029",
+      "work_id": "12323d17-d1e5-4dae-a7d8-cfdc1b2b2b01",
+      "context_id": "2db78dc2-5cdb-5ab2-84e8-a3c4e19f39c9",
+      "state": "accept",
+      "digest": "28381c24c42a103be1ffb136cc59d6ee5576b5bc604f3bcd2a5f3e4c0312b129",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "GO for a national-directory, crowd-reporting MVP. All 26 official feeds were fetched: 972 unique region-scoped venue IDs, including restaurants, cafeterias and other types. This is observed directory coverage, not proof every venue is open or every university restaurant is listed. Seed Cuvier/Ch\u00e2telet for a local pilot without blocking the build on lunch observations.",
+      "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "12323d17-d1e5-4dae-a7d8-cfdc1b2b2b01",
+          "decision_id": "1825ca11-0bb3-4f5b-9634-0086d0ce8086",
+          "evidence_ids": [
+            "601d9bc0-3c6c-4ac0-97ab-20cc07b1d78a"
+          ],
+          "map_revision_id": "4143f169-f6a9-568a-8f4e-9cf0e4f8482b",
+          "next_work_id": "6b65e124-c511-4506-8258-f7774bed8498",
+          "review_id": "b59661e1-777d-42fa-b31c-396cb07211ac",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "ef29ae9d4e4b8cd0a2e8d3981fd0ce68f7c77d3f55b10d4e7f03c5f17dd93102",
+        "resolution": "accept",
+        "result_digest": "28381c24c42a103be1ffb136cc59d6ee5576b5bc604f3bcd2a5f3e4c0312b129",
+        "result_id": "db035611-c22a-591e-a666-045913bbc029"
+      }
+    }
+  ],
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/crous-queue-resume-before.json"
+}

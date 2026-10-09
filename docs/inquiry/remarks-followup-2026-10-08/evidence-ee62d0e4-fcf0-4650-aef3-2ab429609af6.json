@@ -1,0 +1,21 @@
+{
+  "as_of_context": false,
+  "digest": "99b7f40272dda0517058ba707ed05410efebf4455531abe9bc422fc47d86b286",
+  "id": "ee62d0e4-fcf0-4650-aef3-2ab429609af6",
+  "instruction": "Prepare fresh context with this record before proposing dependent effects",
+  "kind": "evidence",
+  "record": {
+    "captured_at": "2026-10-08T11:25:51.355322+00:00",
+    "captured_by": "offer-release-20261008-o07",
+    "confidence": "low",
+    "created_at": "2026-10-08T11:25:51.355345+00:00",
+    "details": "{\"actor\": \"offer-release-20261008-o07\", \"actual\": \"Doctor reported bridge/contract 2026-10-07.2 with matching canonical hash; O07 claimed only after resume. Initial 2/16 map selection and 13 arrivals were explicit. Fetching and including all arrivals produced complete saved context af6598fc-22cd-5519-b3e6-21d44c0d2301. No new blocking bug or friction observed.\", \"expected\": \"Verify reviewed helper revision, resume ready O07 work, preserve ownership and distinguish selected map from complete saved evidence.\", \"id\": \"2e352239-9a04-44ea-8164-c1b1e970246f\", \"impact\": \"Scoped repair and private Git delivery used a retained claim and complete context; no replacement store, stolen claim or app runtime coupling.\", \"kind\": \"positive\", \"reproduction\": \"From OfferCheck existing manifest/store run doctor, cli agent guide, resume, start with ready O07 work and unique actor; read full saved map, fetch arrivals, prepare with their IDs and expected head/work version.\", \"sources\": [\"docs/checkpoints/O07.md\", \"docs/mvp/RELEASE_READINESS.md\"], \"suggestion\": \"Retain doctor hash checks and separate map/evidence coverage in the public contract.\", \"summary\": \"Upgraded O07 ownership and evidence coverage were explicit before private delivery.\", \"venture_id\": \"v-offer-check\", \"workspace_id\": \"546ed36a-a8be-4639-b88c-1b3bcf96c7d8\"}\nEpistemic status: observation\nSources: document: feedback/2e352239-9a04-44ea-8164-c1b1e970246f.json\nRecord references: ",
+    "id": "ee62d0e4-fcf0-4650-aef3-2ab429609af6",
+    "kind": "observation",
+    "origin_work_item_id": null,
+    "sources": [],
+    "summary": "[Dogfood/positive] Upgraded O07 ownership and evidence coverage were explicit before private delivery.",
+    "updated_at": "2026-10-08T11:25:51.355346+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  }
+}

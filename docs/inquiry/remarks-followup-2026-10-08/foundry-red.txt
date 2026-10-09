@@ -1,0 +1,179 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_________ test_superseded_history_requires_accepted_replacement[None] __________
+
+loop = (sessionmaker(class_='Session', bind=Engine(sqlite:////tmp/pytest-of-jonathan/pytest-69/test_superseded_history_requir...a3cb8bc-38f7-48c1-b58e-6bdcf470064e', <startup_foundry.decision_maps.DecisionMapService object at 0x77edcd988830>, ...)
+replacement_resolution = None
+
+    @pytest.mark.parametrize("replacement_resolution", [None, "reject", "defer", "accept"])
+    def test_superseded_history_requires_accepted_replacement(loop, replacement_resolution):
+        factory, venture, *_ = loop
+        service = loop[6]
+        ws = venture["workspace_id"]
+        ctx = context(loop)
+        old = service.submit(ws, result_payload(ctx, request_key="original"))
+        middle = service.submit(
+            ws, result_payload(ctx, request_key="middle", supersedes_result_id=old["id"],
+                               reconciliation_rationale="Correct the original finding")
+        )
+        replacement = service.submit(
+            ws, result_payload(ctx, request_key="replacement", supersedes_result_id=middle["id"],
+                               reconciliation_rationale="Finish reconciling the finding")
+        )
+        if replacement_resolution:
+            service.resolve(replacement["id"], resolution(
+                replacement, ctx, resolution=replacement_resolution))
+        resumed = AgentHandoffService(factory).resume(ws)
+        original = service.show_result(old["id"])
+        assert original["digest"] == old["digest"]
+        assert original["proposal"] == old["proposal"]
+        assert original["receipt"] is None
+        if replacement_resolution == "accept":
+            assert original["state"] == "superseded"
+            assert original["superseded_by"] == replacement["id"]
+            assert service.show_result(middle["id"])["superseded_by"] == replacement["id"]
+            assert original["stale_reasons"]  # Retain why the historical context changed.
+            assert f"Result {old['id']}: needs_reconciliation" not in resumed["markdown"]
+            assert replacement["id"] in resumed["markdown"]
+            # Pagination must not determine whether an accepted successor exists.
+            assert service.list_results(ws, limit=1)[0]["state"] == "accept"
+            assert service.show_result(replacement["id"])["state"] == "accept"
+        else:
+            assert original["state"] != "superseded"
+>           assert original["superseded_by"] is None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'superseded_by'
+
+foundry/tests/unit/test_decision_loop.py:505: KeyError
+________ test_superseded_history_requires_accepted_replacement[reject] _________
+
+loop = (sessionmaker(class_='Session', bind=Engine(sqlite:////tmp/pytest-of-jonathan/pytest-69/test_superseded_history_requir...51bb675-b7a8-4036-9c07-e7bf78d2508c', <startup_foundry.decision_maps.DecisionMapService object at 0x77edcd880190>, ...)
+replacement_resolution = 'reject'
+
+    @pytest.mark.parametrize("replacement_resolution", [None, "reject", "defer", "accept"])
+    def test_superseded_history_requires_accepted_replacement(loop, replacement_resolution):
+        factory, venture, *_ = loop
+        service = loop[6]
+        ws = venture["workspace_id"]
+        ctx = context(loop)
+        old = service.submit(ws, result_payload(ctx, request_key="original"))
+        middle = service.submit(
+            ws, result_payload(ctx, request_key="middle", supersedes_result_id=old["id"],
+                               reconciliation_rationale="Correct the original finding")
+        )
+        replacement = service.submit(
+            ws, result_payload(ctx, request_key="replacement", supersedes_result_id=middle["id"],
+                               reconciliation_rationale="Finish reconciling the finding")
+        )
+        if replacement_resolution:
+            service.resolve(replacement["id"], resolution(
+                replacement, ctx, resolution=replacement_resolution))
+        resumed = AgentHandoffService(factory).resume(ws)
+        original = service.show_result(old["id"])
+        assert original["digest"] == old["digest"]
+        assert original["proposal"] == old["proposal"]
+        assert original["receipt"] is None
+        if replacement_resolution == "accept":
+            assert original["state"] == "superseded"
+            assert original["superseded_by"] == replacement["id"]
+            assert service.show_result(middle["id"])["superseded_by"] == replacement["id"]
+            assert original["stale_reasons"]  # Retain why the historical context changed.
+            assert f"Result {old['id']}: needs_reconciliation" not in resumed["markdown"]
+            assert replacement["id"] in resumed["markdown"]
+            # Pagination must not determine whether an accepted successor exists.
+            assert service.list_results(ws, limit=1)[0]["state"] == "accept"
+            assert service.show_result(replacement["id"])["state"] == "accept"
+        else:
+            assert original["state"] != "superseded"
+>           assert original["superseded_by"] is None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'superseded_by'
+
+foundry/tests/unit/test_decision_loop.py:505: KeyError
+_________ test_superseded_history_requires_accepted_replacement[defer] _________
+
+loop = (sessionmaker(class_='Session', bind=Engine(sqlite:////tmp/pytest-of-jonathan/pytest-69/test_superseded_history_requir...77be3d1-3506-45a1-99ca-33c7cdf7908e', <startup_foundry.decision_maps.DecisionMapService object at 0x77edcdce5220>, ...)
+replacement_resolution = 'defer'
+
+    @pytest.mark.parametrize("replacement_resolution", [None, "reject", "defer", "accept"])
+    def test_superseded_history_requires_accepted_replacement(loop, replacement_resolution):
+        factory, venture, *_ = loop
+        service = loop[6]
+        ws = venture["workspace_id"]
+        ctx = context(loop)
+        old = service.submit(ws, result_payload(ctx, request_key="original"))
+        middle = service.submit(
+            ws, result_payload(ctx, request_key="middle", supersedes_result_id=old["id"],
+                               reconciliation_rationale="Correct the original finding")
+        )
+        replacement = service.submit(
+            ws, result_payload(ctx, request_key="replacement", supersedes_result_id=middle["id"],
+                               reconciliation_rationale="Finish reconciling the finding")
+        )
+        if replacement_resolution:
+            service.resolve(replacement["id"], resolution(
+                replacement, ctx, resolution=replacement_resolution))
+        resumed = AgentHandoffService(factory).resume(ws)
+        original = service.show_result(old["id"])
+        assert original["digest"] == old["digest"]
+        assert original["proposal"] == old["proposal"]
+        assert original["receipt"] is None
+        if replacement_resolution == "accept":
+            assert original["state"] == "superseded"
+            assert original["superseded_by"] == replacement["id"]
+            assert service.show_result(middle["id"])["superseded_by"] == replacement["id"]
+            assert original["stale_reasons"]  # Retain why the historical context changed.
+            assert f"Result {old['id']}: needs_reconciliation" not in resumed["markdown"]
+            assert replacement["id"] in resumed["markdown"]
+            # Pagination must not determine whether an accepted successor exists.
+            assert service.list_results(ws, limit=1)[0]["state"] == "accept"
+            assert service.show_result(replacement["id"])["state"] == "accept"
+        else:
+            assert original["state"] != "superseded"
+>           assert original["superseded_by"] is None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'superseded_by'
+
+foundry/tests/unit/test_decision_loop.py:505: KeyError
+________ test_superseded_history_requires_accepted_replacement[accept] _________
+
+loop = (sessionmaker(class_='Session', bind=Engine(sqlite:////tmp/pytest-of-jonathan/pytest-69/test_superseded_history_requir...b4bdd63-cbe2-45cd-9b9f-87b84749f279', <startup_foundry.decision_maps.DecisionMapService object at 0x77edcd5eb8a0>, ...)
+replacement_resolution = 'accept'
+
+    @pytest.mark.parametrize("replacement_resolution", [None, "reject", "defer", "accept"])
+    def test_superseded_history_requires_accepted_replacement(loop, replacement_resolution):
+        factory, venture, *_ = loop
+        service = loop[6]
+        ws = venture["workspace_id"]
+        ctx = context(loop)
+        old = service.submit(ws, result_payload(ctx, request_key="original"))
+        middle = service.submit(
+            ws, result_payload(ctx, request_key="middle", supersedes_result_id=old["id"],
+                               reconciliation_rationale="Correct the original finding")
+        )
+        replacement = service.submit(
+            ws, result_payload(ctx, request_key="replacement", supersedes_result_id=middle["id"],
+                               reconciliation_rationale="Finish reconciling the finding")
+        )
+        if replacement_resolution:
+            service.resolve(replacement["id"], resolution(
+                replacement, ctx, resolution=replacement_resolution))
+        resumed = AgentHandoffService(factory).resume(ws)
+        original = service.show_result(old["id"])
+        assert original["digest"] == old["digest"]
+        assert original["proposal"] == old["proposal"]
+        assert original["receipt"] is None
+        if replacement_resolution == "accept":
+>           assert original["state"] == "superseded"
+E           AssertionError: assert 'needs_reconciliation' == 'superseded'
+E             
+E             - superseded
+E             + needs_reconciliation
+
+foundry/tests/unit/test_decision_loop.py:494: AssertionError
+=========================== short test summary info ============================
+FAILED foundry/tests/unit/test_decision_loop.py::test_superseded_history_requires_accepted_replacement[None]
+FAILED foundry/tests/unit/test_decision_loop.py::test_superseded_history_requires_accepted_replacement[reject]
+FAILED foundry/tests/unit/test_decision_loop.py::test_superseded_history_requires_accepted_replacement[defer]
+FAILED foundry/tests/unit/test_decision_loop.py::test_superseded_history_requires_accepted_replacement[accept]
+4 failed, 13 deselected in 1.76s

@@ -1,0 +1,24 @@
+uv run ruff check src tests scripts alembic
+All checks passed!
+uv run mypy
+Success: no issues found in 15 source files
+uv run pytest
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/jonathan/startup_lab/ride-options
+configfile: pyproject.toml
+testpaths: tests/unit, tests/integration
+plugins: asyncio-1.4.0, anyio-4.15.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 31 items
+
+tests/unit/test_generation.py ...........                                [ 35%]
+tests/unit/test_provider.py .......                                      [ 58%]
+tests/unit/test_scenery.py ..                                            [ 64%]
+tests/unit/test_warning_audit.py ..                                      [ 70%]
+tests/integration/test_access_evidence.py .                              [ 74%]
+tests/integration/test_api.py ..                                         [ 80%]
+tests/integration/test_persistence.py ..                                 [ 87%]
+tests/integration/test_release.py ....                                   [100%]
+
+============================= 31 passed in 11.38s ==============================

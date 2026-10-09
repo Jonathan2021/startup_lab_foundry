@@ -1,0 +1,229 @@
+{
+  "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8",
+  "map_revision_id": "8548e4aa-92b8-5a50-b89f-09432123d7fd",
+  "work": [],
+  "current_review": {
+    "author": "implementer-offer-check-20261007-1638",
+    "created_at": "2026-10-07T15:38:14.090781+00:00",
+    "decision_id": "84f15f70-4bb2-4508-a129-63ac2126d9ed",
+    "disposition": "pursue",
+    "id": "3c2bb32e-d744-410f-bf67-902759bd5259",
+    "investigation_stage": "solution_validation",
+    "next_action": "Local MVP release complete; hold public deployment and real-data pilot behind documented gates.",
+    "next_work_item_id": null,
+    "product_maturity": "concept",
+    "reason": "Reviewed local implementation and actual acceptance evidence under user instruction to finish the bounded MVP.",
+    "reviewed_at": "2026-10-07T15:38:14.090762+00:00",
+    "revision": 8,
+    "source_artifact_id": "c8191321-1a76-5b15-8286-99cf7d30caf2",
+    "updated_at": "2026-10-07T15:38:14.090781+00:00",
+    "workspace_id": "546ed36a-a8be-4639-b88c-1b3bcf96c7d8"
+  },
+  "results": [
+    {
+      "id": "c8191321-1a76-5b15-8286-99cf7d30caf2",
+      "work_id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+      "context_id": "692a1c5f-74be-56fb-af8e-e14e324ee780",
+      "state": "accept",
+      "digest": "0260a425979edcb8b41dcb7e8383f9a5354bccaab11b4329f2c27730c42acf8d",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "GO for OfferCheck 0.1.0 private local MVP: O01\u2013O05 complete; 55 tests, lint/type/JS/schema and independent wheel backup/restore pass.",
+      "limits": "Synthetic SQLite/loopback technical release only; TestClient upstream warning retained. PDF/source correspondence manual, explicit JSON evidence; no extraction/provider calls. Independent exported/backup copies require their own retention; no forensic SSD erasure claim. Demand, procurement benefit, supplier truth, real-data permission and remote/public deployment unvalidated. No sends/orders/payments/accounts/cloud/Git commit/push. Stop automatic expansion at this release decision; pilot/integration branches remain conditional without queued ready implementation.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+          "decision_id": "84f15f70-4bb2-4508-a129-63ac2126d9ed",
+          "evidence_ids": [
+            "96a1d71e-4d4a-4458-bab6-9bf0a3de3d70"
+          ],
+          "map_revision_id": "8548e4aa-92b8-5a50-b89f-09432123d7fd",
+          "next_work_id": null,
+          "review_id": "3c2bb32e-d744-410f-bf67-902759bd5259",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "c397fc6df0b9a7c47882504908fddf876c7fafde4c231740e8df29ed965cd510",
+        "resolution": "accept",
+        "result_digest": "0260a425979edcb8b41dcb7e8383f9a5354bccaab11b4329f2c27730c42acf8d",
+        "result_id": "c8191321-1a76-5b15-8286-99cf7d30caf2"
+      }
+    },
+    {
+      "id": "5897e6a8-cd78-5115-9336-64ef8dc5915a",
+      "work_id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+      "context_id": "ac5f4fbc-6d42-54e9-aead-873557b941bb",
+      "state": "accept",
+      "digest": "7ad48b3d158f22d08ecce921a4bd0c2e293396166a49a61f7f4e37aa7b4a771e",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "O04 real Chromium desktop/390px, restart receipt and separate stdlib HTTP replay pass; 48 unique tests plus lint/type/JS checks covered.",
+      "limits": "Synthetic local/private SQLite only. Explicit JSON field/source capture; no extraction/OCR. O05 retention/recovery/release evidence outstanding. Upstream TestClient warning remains. Demand and public deployment unvalidated.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+          "decision_id": "20f7b1ad-56ed-4d78-b491-94ef253622b6",
+          "evidence_ids": [
+            "e86137c7-bcdc-4874-bf05-0bf33d80d94d"
+          ],
+          "map_revision_id": "bf3f010a-f753-5e74-abe3-c867f3258a1d",
+          "next_work_id": "4da483b9-2cb3-46e6-8f13-e2889ccf07d1",
+          "review_id": "c834c668-6def-4002-9fe9-67056b48fe1a",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "a54cabd0f23b80353da75b3d1f5225135f8e8c986c057c31a49f444377cd0507",
+        "resolution": "accept",
+        "result_digest": "7ad48b3d158f22d08ecce921a4bd0c2e293396166a49a61f7f4e37aa7b4a771e",
+        "result_id": "5897e6a8-cd78-5115-9336-64ef8dc5915a"
+      }
+    },
+    {
+      "id": "ea94fe1c-45f8-53ec-8acf-c1889154b38b",
+      "work_id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+      "context_id": "74e032dd-4247-5124-94cd-d247f68790cc",
+      "state": "accept",
+      "digest": "5e8a3af2b4b4b6a36a5db9bfdd5ecef00bf9fb23ca53648797422ea4dae16bb2",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "O03 source-review, decision, concurrency, restart/expiry and escaped-receipt acceptance passes; 42 tests plus lint/type green.",
+      "limits": "Synthetic SQLite/loopback only. PDF field correspondence remains manual. UI/browser/independent HTTP and retention/recovery remain O04/O05. Demand, supplier truth and deployment gates unvalidated.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+          "decision_id": "2a58914f-a784-4038-85ca-feaa83933409",
+          "evidence_ids": [
+            "e0cab708-040e-4963-ae30-ac890d60b44c"
+          ],
+          "map_revision_id": "60c87d10-6ff1-58ff-a58e-178b47776412",
+          "next_work_id": "b1999ef1-19bc-43fa-ae88-b038cc020a4b",
+          "review_id": "7dcca40f-c812-4955-8685-65a06aa9fc39",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "53d08b4247a26f53a9b15d32c54d6408ed15eb21a46995440f502b8f23ad0c11",
+        "resolution": "accept",
+        "result_digest": "5e8a3af2b4b4b6a36a5db9bfdd5ecef00bf9fb23ca53648797422ea4dae16bb2",
+        "result_id": "ea94fe1c-45f8-53ec-8acf-c1889154b38b"
+      }
+    },
+    {
+      "id": "2595f1c7-8768-5486-923e-0cf3a52694b3",
+      "work_id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+      "context_id": "801b8f82-8cf1-5133-8c96-aaa749e79ffa",
+      "state": "accept",
+      "digest": "0b189f98f62c8dfb31d2d19260c8e721509f976e56f1880e1c016a6b24f92c2a",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "O02 passes 35 regression/acceptance tests, all 13 frozen cases and 1000 pack boundaries; lint/type checks pass.",
+      "limits": "Synthetic SQLite local checks only. No source-review decision endpoints/UI/recovery yet. Exact declared matching only; supplier truth, demand and real-data deployment remain unvalidated.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+          "decision_id": "2327d75c-2321-4f56-8838-b51d41265ab8",
+          "evidence_ids": [
+            "c82e0865-510d-4b19-b595-fcba5ec44718"
+          ],
+          "map_revision_id": "120ac5e8-cbb6-591d-91c8-d548c3e5c887",
+          "next_work_id": "f6c34318-68cd-41b7-8f96-e9baeda919b6",
+          "review_id": "83e6277e-9120-4651-8229-6733665ae2d2",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "4f14c9a9892a616bc4f1d2c055c21f190e556fc266c3b6f72e9ed8924be40f29",
+        "resolution": "accept",
+        "result_digest": "0b189f98f62c8dfb31d2d19260c8e721509f976e56f1880e1c016a6b24f92c2a",
+        "result_id": "2595f1c7-8768-5486-923e-0cf3a52694b3"
+      }
+    },
+    {
+      "id": "013006a7-5ac0-5bcd-8c55-8ff77f256dee",
+      "work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+      "context_id": "7a2e5b9a-dad8-581f-ba8d-70bcfa143a81",
+      "state": "accept",
+      "digest": "a6342f204bcdb51c44887b4adf5fc4f89465277e3c1884cd02add575bf11253d",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "O01 capture acceptance passes: 15 integration cases, lint/type checks and independent clean wheel install/restart.",
+      "limits": "Synthetic SQLite/loopback acceptance only. PDF signature validation is not malware certification. No calculation, field review, decisions, browser, recovery or real-data/customer validation yet. TestClient upstream deprecation warning retained.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "implementer-offer-check-20261007-1638",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Saved required context and arrivals read; synthetic evidence only; no supplier or customer truth inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+          "decision_id": "565fe894-9629-45c3-9eed-1870cbe804e7",
+          "evidence_ids": [
+            "4585b3d1-de52-44f8-9edd-3e75f09592f4"
+          ],
+          "map_revision_id": "c132d2b5-0d21-5908-a5dd-95f2dff277bf",
+          "next_work_id": "d7c274e2-74ed-4a8d-a16a-a53542b992d2",
+          "review_id": "d1cf993f-a19d-4c14-934d-65003b3fe7fe",
+          "work_needing_review": {}
+        },
+        "rationale": "Self-reviewed diffs, actual tests and source contract. Routine local checkpoint only; no external consequences.",
+        "request_digest": "0d5379e8db0bee9b1cc3f98567daeb55edf11ee3790f53223cef6cf716107345",
+        "resolution": "accept",
+        "result_digest": "a6342f204bcdb51c44887b4adf5fc4f89465277e3c1884cd02add575bf11253d",
+        "result_id": "013006a7-5ac0-5bcd-8c55-8ff77f256dee"
+      }
+    },
+    {
+      "id": "f758721d-8d12-5b5a-9a36-6e65314be1f4",
+      "work_id": "ed72e9e5-9db1-49a7-9712-4a659ec5c62b",
+      "context_id": "d5e33037-2ef2-503b-a12b-824f59e860d2",
+      "state": "accept",
+      "digest": "c25db33e0401b21d5c594616d28d0dae80a8113f0f3e61b206f5194c5a8c46c2",
+      "context_complete": true,
+      "stale_reasons": [],
+      "summary": "GO for a bounded local/private quote-review MVP; demand and advantage over established procurement tools remain unvalidated. No purchasing, payment or factual supplier guarantees.",
+      "limits": "No real customer data, product comparison trial, demand, price or deployment validation. Probe covers only the declared synthetic cases; application not built.",
+      "supersedes_result_id": null,
+      "receipt": {
+        "actor": "Codex:conversation-mvp-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Supplied source and primary sources read; full local plans/probe retained. No commercial truth or demand inferred.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "ed72e9e5-9db1-49a7-9712-4a659ec5c62b",
+          "decision_id": "2ee34c83-705e-41b7-8bb9-f709842edc78",
+          "evidence_ids": [
+            "2d19d052-6a3b-40e4-bc72-d0a6b5c25996"
+          ],
+          "map_revision_id": "1b642dd7-b21d-5a5c-b551-5145a6abe948",
+          "next_work_id": "8647e0b4-7e98-4e56-a095-7703e1730b13",
+          "review_id": "38040d12-59df-41fe-bf9f-09fc042a4767",
+          "work_needing_review": {}
+        },
+        "rationale": "Reviewed bounded local handoff under user authorization; self-review, not independent market validation.",
+        "request_digest": "f867cd43c5ee8f744d22cff92eec24d1f301c933641e22be62f2adf54e728972",
+        "resolution": "accept",
+        "result_digest": "c25db33e0401b21d5c594616d28d0dae80a8113f0f3e61b206f5194c5a8c46c2",
+        "result_id": "f758721d-8d12-5b5a-9a36-6e65314be1f4"
+      }
+    }
+  ],
+  "full_local_snapshot": "/home/jonathan/startup_lab/foundry/.foundry/runs/mvp-review-20261007/offer-check-resume-before.json"
+}

@@ -1,0 +1,17 @@
+{
+  "ride-options": {
+    "handoff_sha256": "709c6cb318d72cac92ee1840e090f99c65493a145a5a6b0ba31dc3bdc52f40a5",
+    "ready_work_id": "42b34c32-fc4b-45dc-bd91-7f2456b3f767",
+    "evidence_files": 5
+  },
+  "volley-match": {
+    "handoff_sha256": "307b2b0a019a06b98928389938e0be603cea869067a2ed7f81f49783c4bbed14",
+    "ready_work_id": "3f666496-6be6-4d47-a304-7bc541f76795",
+    "evidence_files": 4
+  },
+  "coopain": {
+    "handoff_sha256": "dfddf3ad0d3d62f7a2167b600781f69d949e883a0114fa95a58f152993802eec",
+    "ready_work_id": "118dc039-d6f6-408b-852e-8fd49b79101c",
+    "evidence_files": 7
+  }
+}

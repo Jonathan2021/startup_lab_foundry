@@ -1,0 +1,939 @@
+{
+  "current_review": {
+    "author": "coordinator-remarks-20261008",
+    "created_at": "2026-10-08T15:16:27.270924+00:00",
+    "decision_id": "4f9d9010-35f3-4b02-b2d2-705d8e241b05",
+    "disposition": "internal_only",
+    "id": "f6f126f9-fc1e-4196-bc87-f8fd6d712bf5",
+    "investigation_stage": "solution_validation",
+    "next_action": "User can run the three prompts in docs/inquiry/remarks-followup-2026-10-08/PROMPTS.md. Agents claim Q08/R08/V08 and progress through the full dependency-ordered handoffs on Foundry2026-10-08.1.",
+    "next_work_item_id": null,
+    "product_maturity": "mvp",
+    "reason": "User explicitly requested these local reconciliation, tooling and handoff outcomes. Compared actual Git state/checkpoints, verified exact remote CI, retained reports, reproduced history defect and ran regression checks before distributing the bridge.",
+    "reviewed_at": "2026-10-08T15:16:27.270907+00:00",
+    "revision": 14,
+    "source_artifact_id": "db79ea00-e3c8-59d7-95b5-8c2531d673db",
+    "updated_at": "2026-10-08T15:16:27.270925+00:00",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  },
+  "map_revision_id": "fb2af13e-5f4c-522a-a346-9c9750ea2cdb",
+  "markdown": "# Resume Foundry\n\nWorkspace: 68afabed-a744-47df-94c1-7402f5c7b3b0\nObjective: Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope.\nMap revision: fb2af13e-5f4c-522a-a346-9c9750ea2cdb\nCurrent next action: User can run the three prompts in docs/inquiry/remarks-followup-2026-10-08/PROMPTS.md. Agents claim Q08/R08/V08 and progress through the full dependency-ordered handoffs on Foundry2026-10-08.1.\n\n- handoff-foundry-next-r1: Collect first operation feedback and run visual QA when browser is available [blocked; owner agent; version 2]\n  Blocked: changed_context\n  Blocked: Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved.\n- Historical result 2f354d71-0d02-5246-98da-6c7cb6142c57: superseded by accepted result 4cf25af4-276a-5486-bf56-9ef0224d01d0\n- Historical result ea5f5c19-9b55-5493-ae15-7aec19472a98: superseded by accepted result 4ad7af48-43a8-5bbe-aa49-944508cc49af\n\nUse foundry agent guide for the local workflow and schemas.\nPrepare: foundry handoff prepare --workspace-id 68afabed-a744-47df-94c1-7402f5c7b3b0 --work-id WORK_ID --actor YOUR_AGENT --format markdown\nNo worker was started. External consequences require separate exact approval.\n",
+  "needs_review": {
+    "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+  },
+  "results": [
+    {
+      "context_complete": true,
+      "context_id": "9783506e-19e1-5032-a91d-42333910e734",
+      "deferral": null,
+      "digest": "e0d92b76c4a80099661f239fc277ce538351ff2436fd9240d0540b8f57829764",
+      "id": "db79ea00-e3c8-59d7-95b5-8c2531d673db",
+      "proposal": {
+        "actor": "coordinator-remarks-20261008",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "9783506e-19e1-5032-a91d-42333910e734",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "No redundant commit or push. Private archive and refs/recovery/coopain-pre-sync-20261008 preserve the original state. Ignored environments/data and unrelated worktrees untouched.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/coopain-reconciliation.json",
+              "https://github.com/Jonathan2021/coopain/actions/runs/37791874356"
+            ],
+            "summary": "Coopain remote delivery already existed. Safely synchronized canonical checkout aa382779 to f3a8c13e; preserved172 checkpoint-identical MVP paths in recovery and restored24 unique local files; tracked source clean, GitHub main and successful CI match."
+          },
+          {
+            "confidence": "high",
+            "details": "Real Ride Options obsolete R02 result now points to accepted replacement with unchanged digest. Pending/rejected/deferred descendants still require normal review; history immutable. Four active helper/manifest doctors verified hash3911d27334f0f05a4643913b3c0d681d77a6cd45a4ae6dcd9b5ca4b7b06a2e5e. Latest positive feedback retained; no generic platform expansion.",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/foundry-product.txt",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/ride-options-resume-after.json",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/bridge-upgrade.json"
+            ],
+            "summary": "Foundry2026-10-08.1 fixes accepted supersession history and adds precise release checkout/remote/CI guidance. Ruff/strict mypy and156product tests pass; optional PostgreSQL test skipped."
+          },
+          {
+            "confidence": "high",
+            "details": "User remarks preserved verbatim and recorded in each venture. Scoped private Git/CI delivery authority retained; public deployment, paid resources, real messages and human evidence gates remain separate. OfferCheck and Volley Coach left aside.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/handoff-validation.json",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/PROMPTS.md",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/remarks-followup-2026-10-08/github-final.json"
+            ],
+            "summary": "Every Crous Queue/Ride Options/Volley Match root remark is covered by a new implementation handoff and copy-paste prompt; first tasks are ready/unclaimed, later work remains sequential. All second-run local/remote main SHAs match green CI."
+          }
+        ],
+        "limits": "Feature implementations are future agent work. Foundry/helper/handoff edits are local and uncommitted; no Foundry push requested. No public deployment, paid actions, messages, new app-wide security certification, PostgreSQL/container trial, heavy model training or real-use evidence claimed. Seven unrelated Coopain untracked files and old worktrees remain intentionally.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "User can run the three prompts in docs/inquiry/remarks-followup-2026-10-08/PROMPTS.md. Agents claim Q08/R08/V08 and progress through the full dependency-ordered handoffs on Foundry2026-10-08.1.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "User explicitly requested these local reconciliation, tooling and handoff outcomes. Compared actual Git state/checkpoints, verified exact remote CI, retained reports, reproduced history defect and ran regression checks before distributing the bridge.",
+        "reconciliation_rationale": null,
+        "request_key": "remarks-followup-result-20261008",
+        "revisit_trigger": null,
+        "summary": "Resolved Coopain local/GitHub discrepancy with full recovery, upgraded Foundry from demonstrated feedback, and handed off all user remarks to three ready venture continuations.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "coordinator-remarks-20261008",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete context selects all56evidence records, including the historical Ride Options friction, latest positive reports and newly retained delivery-checkout friction; original campaign history remains intact.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "877c61e4-af2b-419a-92f4-996f80333236",
+          "decision_id": "4f9d9010-35f3-4b02-b2d2-705d8e241b05",
+          "evidence_ids": [
+            "3b11cadf-8b2d-4b59-8f08-34cd28f8e683",
+            "638723e6-b32a-472d-8d18-41e0c861cfc0",
+            "9c5272ee-8449-497c-bb7d-a14f7f990e86"
+          ],
+          "map_revision_id": "fb2af13e-5f4c-522a-a346-9c9750ea2cdb",
+          "next_work_id": null,
+          "review_id": "f6f126f9-fc1e-4196-bc87-f8fd6d712bf5",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "All coordinator package outcomes have concrete evidence. This accepts only reconciliation/tooling/handoff work, not future product features, launch gates or external actions.",
+        "request_digest": "0b30721aa2bbd9922c56e0152084e0928a218bc3635bb679f9a9afd1bb67e73c",
+        "resolution": "accept",
+        "result_digest": "e0d92b76c4a80099661f239fc277ce538351ff2436fd9240d0540b8f57829764",
+        "result_id": "db79ea00-e3c8-59d7-95b5-8c2531d673db"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "877c61e4-af2b-419a-92f4-996f80333236",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "4208a993-d584-57db-a5e2-410bfa99fb08",
+      "deferral": null,
+      "digest": "11a2e00ed1b422c5778b63c615d5cebacde54ecb0dbfe05825acb93ba5444b04",
+      "id": "4a7af5e5-684e-534f-8369-82c9bb2a5f44",
+      "proposal": {
+        "actor": "coordinator-readiness-second-20261008",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "4208a993-d584-57db-a5e2-410bfa99fb08",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/volley-coach/docs/mvp/READINESS_HANDOFF.md",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/volley-coach-commands.json",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/volley-coach-wheel-summary.json"
+            ],
+            "summary": "Volley Coach v0.1.1: fresh migration/demo, Ruff/strict types, 37 core and 4 browser tests, independent locked wheel HTTP/migration/backup/restore pass. No new runtime defect; current release/developer docs and committed CI delivery remain."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/crous-queue/docs/mvp/READINESS_HANDOFF.md",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/crous-queue-wheel-migrate.txt",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/crous-queue-source-release-command.json"
+            ],
+            "summary": "Crous Queue: 22 core and 7 browser tests, lint/format/types and complete source release kit pass setup/recovery/HTTP checks. Bare wheel migrate fails without cwd-relative Alembic config; wheel contains no revisions. Q07 must explicitly support/test an honest distribution contract."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/offer-check/docs/mvp/READINESS_HANDOFF.md",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/offer-check-lint-portability-no-cache.json",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/offer-check-wheel-summary.json"
+            ],
+            "summary": "OfferCheck: 54 core and 6 browser tests, strict types, setup and independent wheel recovery pass. Fresh make check fails four Ruff I001 errors. No-cache controlled directory toggle yields original pass, clean-copy fail, empty alembic directory added pass, removed fail. Fix deterministic third-party classification, not empty-directory or cached-workspace dependence."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08-second/github-inventory.json",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/queued-work.json",
+              "document: docs/inquiry/readiness-review-2026-10-08-second/REPORT.md"
+            ],
+            "summary": "All three repos have no HEAD, remote or workflow and no matching GitHub repo under Jonathan2021. Upgraded bridge/contract 2026-10-07.2/hash and accepted complete-context C06/Q06/O06 results confirmed. Relevant positive feedback retained; no new blocking Foundry defect or justified platform upgrade. C07/Q07/O07 queued unclaimed with human gates preserved."
+          }
+        ],
+        "limits": "Audit only, not delivery or full security certification. No commits, pushes, remote creation/CI dispatch, public deployment, real users/quotes/physical coaching or spend. No fresh dependency-wide advisory scan or PostgreSQL claim. Crous source distribution is supported; wheel failure is an explicit artifact boundary. Real trial gates remain unchanged.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "User may send docs/inquiry/readiness-review-2026-10-08-second/PROMPTS.md continuations. Agents claim C07/Q07/O07, finish bounded readiness work and perform private Git/CI delivery only under the explicit prompt.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "User requested the same code/setup/docs/GitHub readiness review and concrete agent prompts. Fresh isolated source and locked wheel tests, GitHub inventory, code/document review and actual failure reproduction support the handoffs; application source and live state were preserved.",
+        "reconciliation_rationale": null,
+        "request_key": "readiness-second-result-20261008",
+        "revisit_trigger": null,
+        "summary": "Completed independent readiness audit of Volley Coach, Crous Queue and OfferCheck. All have working local MVP flows and verified upgraded Foundry usage, but no commits/remotes/workflows. Reproduced OfferCheck clean-checkout lint dependency on an empty untracked directory; Crous source kit passes while bare wheel lacks migrations. Wrote targeted C07/Q07/O07 handoffs and queued ready unclaimed work.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "coordinator-readiness-second-20261008",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Complete context covers all 46 selected records, including current C06/Q06/O06 feedback and prior audit findings. Final resume showed no new relevant arrival.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "32d1895f-6a58-4a86-ab05-f5e9a51c9e74",
+          "decision_id": "594674b8-b67a-4e10-a727-6383f2b636f5",
+          "evidence_ids": [
+            "e2cfb27c-87bc-43db-b077-e068daa093d2",
+            "1bbdfffb-66ed-4f87-a6cd-29430373e212",
+            "6a44b3be-10e2-4af1-9d9d-c1090fa7437d",
+            "a2b06a1f-c99b-41f3-b60f-e73f32fc21d7"
+          ],
+          "map_revision_id": "c2c89396-8b0a-5263-8b3e-68540bea62a1",
+          "next_work_id": null,
+          "review_id": "55f3e335-71f7-4d61-8eab-658ab1a05078",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Evidence-backed audit and requested handoffs are complete. This completes coordinator work only; three release tasks and human trial gates remain pending. No external Git action is approved by this resolution.",
+        "request_digest": "25d5b064866a3aa05262c8084203b84a628136a54d19b0601b3c931f99ffa50a",
+        "resolution": "accept",
+        "result_digest": "11a2e00ed1b422c5778b63c615d5cebacde54ecb0dbfe05825acb93ba5444b04",
+        "result_id": "4a7af5e5-684e-534f-8369-82c9bb2a5f44"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "32d1895f-6a58-4a86-ab05-f5e9a51c9e74",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "5e92bd71-af26-5b35-98fa-0641f32d0785",
+      "deferral": null,
+      "digest": "ef47b76c3a4f7cc8668058d3ec3d9c9eaad7d6cc66b558a76eacf005777aed61",
+      "id": "4cf25af4-276a-5486-bf56-9ef0224d01d0",
+      "proposal": {
+        "actor": "coordinator-readiness-20261008",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "5e92bd71-af26-5b35-98fa-0641f32d0785",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/REPORT.md",
+              "document: /home/jonathan/startup_lab/ride-options/docs/mvp/READINESS_HANDOFF.md"
+            ],
+            "summary": "Ride Options: 31 core tests, lint/types, independent recorded browser and supported frontend build pass; no HEAD, remote or CI workflow. Regional bootstrap documentation mismatch remains."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/volley-match-clean-setup.txt",
+              "document: /home/jonathan/startup_lab/volley-match/docs/mvp/READINESS_HANDOFF.md"
+            ],
+            "summary": "Volley Match: 54 core tests and two browser viewports pass; fresh documented seed command exits 2 with naive played_at validation. No HEAD/remote; CI and distribution coverage incomplete."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/coopain-runner-exit-reproduction.txt",
+              "document: docs/inquiry/readiness-review-2026-10-08/coopain-github-actions.json",
+              "document: /home/jonathan/startup_lab/coopain/docs/mvp/READINESS_HANDOFF.md"
+            ],
+            "summary": "Coopain: independent setup, 208 backend tests (91.61%, per-file >=60%), 14 web tests/types/lint/build and two browser flows pass. Shell runner returns 0 after synthetic pytest exit 7. Current MVP uncommitted, upstream cleanup ahead; remote green CI covers older main only."
+          },
+          {
+            "confidence": "high",
+            "details": "Late Crous Queue and Volley Coach reports also confirm upgraded doctor/map/coverage behavior; no new platform change requested. The coverage guard correctly required reconciliation of the initial audit result.",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/queued-work.json",
+              "document: docs/inquiry/readiness-review-2026-10-08/REPORT.md"
+            ],
+            "summary": "All three agents used upgraded Foundry 2026-10-07.2 with accepted complete-context checkpoints and matching bridge hashes. No new blocking Foundry defect observed. Positive doctor/coverage feedback retained; known superseded-result history noise deferred to separate work. Ready follow-ups preserve historical human gates and are unclaimed."
+          }
+        ],
+        "limits": "Point-in-time audit of dirty source. No fresh regional live engine, wheel, PostgreSQL or dependency-wide advisory audit. Coopain browser retained stdout reports two passes; temporary tree/session became unavailable after user continuation. Real-use and commercial gates remain unchanged. New prompts separately authorize bounded private Git delivery if the user sends them.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "User may send the three prompts in docs/inquiry/readiness-review-2026-10-08/PROMPTS.md. Implementation agents claim ready R07/V07/J06, repair demonstrated gaps, verify and deliver within exact authorization.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "User requested review and actionable agent continuations. Actual source, clean setup, tests, GitHub provenance and documentation were inspected; no implementation takeover or external Git action occurred.",
+        "reconciliation_rationale": "Two positive Foundry feedback reports arrived while the user paused/continued the audit. Fetched and included them in a fresh complete context of 39 evidence records; conclusions and product scope unchanged.",
+        "request_key": "readiness-audit-result-reconciled-20261008",
+        "revisit_trigger": null,
+        "summary": "Independent readiness audit completed for Ride Options, Volley Match and Coopain. Fresh checks confirm substantial working local MVPs, but none has verified GitHub CI for its current committed release. Reproduced Volley Match SQLite seed failure and Coopain shell test-runner false success; wrote concrete R07/V07/J06 handoffs and queued unclaimed work.",
+        "supersedes_result_id": "2f354d71-0d02-5246-98da-6c7cb6142c57",
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "coordinator-readiness-20261008",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Fresh context includes all 39 selected evidence records, including both late feedback arrivals. No unclassified records remain.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "1f29d43f-556a-4fde-bd44-1202f4098b4f",
+          "decision_id": "e7686d1d-4b15-4118-b606-e5ceb6408a61",
+          "evidence_ids": [
+            "6f8fe2b4-fe95-472e-9401-b56a2d675430",
+            "a9e9cdb0-39a7-46ed-a15b-99844a78a1e6",
+            "ab23ef25-91ed-4d55-a0d4-ff29521fc9fd",
+            "b62ec00f-385e-423d-8deb-00f3b81062a6"
+          ],
+          "map_revision_id": "61d663fd-624e-517b-b096-18a60c3970a5",
+          "next_work_id": null,
+          "review_id": "30a27299-dea0-49a1-8f20-45c5eaff1cc2",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Fresh independent audit and concrete handoffs complete; product release packages and external Git delivery remain pending. Late positive feedback reviewed without changing conclusions.",
+        "request_digest": "6aae60223dadb039d2998f756f77bf8086a5d37624ad0eb32748d422e20969fc",
+        "resolution": "accept",
+        "result_digest": "ef47b76c3a4f7cc8668058d3ec3d9c9eaad7d6cc66b558a76eacf005777aed61",
+        "result_id": "4cf25af4-276a-5486-bf56-9ef0224d01d0"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "1f29d43f-556a-4fde-bd44-1202f4098b4f",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "bc2ecfd6-f620-5f1d-b581-7a64ca61f1f8",
+      "deferral": null,
+      "digest": "d980850c4bd53f20d8a2d99de8a220cbddfab9a167e1aae4c05f43e689e7b02f",
+      "id": "2f354d71-0d02-5246-98da-6c7cb6142c57",
+      "proposal": {
+        "actor": "coordinator-readiness-20261008",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "bc2ecfd6-f620-5f1d-b581-7a64ca61f1f8",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/REPORT.md",
+              "document: /home/jonathan/startup_lab/ride-options/docs/mvp/READINESS_HANDOFF.md"
+            ],
+            "summary": "Ride Options: 31 core tests, lint/types, independent recorded browser and supported frontend build pass; no HEAD, remote or CI workflow. Regional bootstrap documentation mismatch remains."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/volley-match-clean-setup.txt",
+              "document: /home/jonathan/startup_lab/volley-match/docs/mvp/READINESS_HANDOFF.md"
+            ],
+            "summary": "Volley Match: 54 core tests and two browser viewports pass; fresh documented seed command exits 2 with naive played_at validation. No HEAD/remote; CI and distribution coverage incomplete."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "experiment_result",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/coopain-runner-exit-reproduction.txt",
+              "document: docs/inquiry/readiness-review-2026-10-08/coopain-github-actions.json",
+              "document: /home/jonathan/startup_lab/coopain/docs/mvp/READINESS_HANDOFF.md"
+            ],
+            "summary": "Coopain: independent setup, 208 backend tests (91.61%, per-file >=60%), 14 web tests/types/lint/build and two browser flows pass. Shell runner returns 0 after synthetic pytest exit 7. Current MVP uncommitted, upstream cleanup ahead; remote green CI covers older main only."
+          },
+          {
+            "confidence": "high",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "artifact_review",
+            "refs": [],
+            "sources": [
+              "document: docs/inquiry/readiness-review-2026-10-08/queued-work.json",
+              "document: docs/inquiry/readiness-review-2026-10-08/REPORT.md"
+            ],
+            "summary": "All three agents used upgraded Foundry 2026-10-07.2 with accepted complete-context checkpoints and matching bridge hashes. No new blocking Foundry defect observed. Positive doctor/coverage feedback retained; known superseded-result history noise deferred to separate work. Ready follow-ups preserve historical human gates and are unclaimed."
+          }
+        ],
+        "limits": "Point-in-time audit of dirty source. No fresh regional live engine, wheel, PostgreSQL or dependency-wide advisory audit. Coopain browser retained stdout reports two passes; temporary tree/session became unavailable after user continuation. Real-use and commercial gates remain unchanged. New prompts separately authorize bounded private Git delivery if the user sends them.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "User may send the three prompts in docs/inquiry/readiness-review-2026-10-08/PROMPTS.md. Implementation agents claim ready R07/V07/J06, repair demonstrated gaps, verify and deliver within exact authorization.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "User requested review and actionable agent continuations. Actual source, clean setup, tests, GitHub provenance and documentation were inspected; no implementation takeover or external Git action occurred.",
+        "reconciliation_rationale": null,
+        "request_key": "readiness-audit-result-20261008",
+        "revisit_trigger": null,
+        "summary": "Independent readiness audit completed for Ride Options, Volley Match and Coopain. Fresh checks confirm substantial working local MVPs, but none has verified GitHub CI for its current committed release. Reproduced Volley Match SQLite seed failure and Coopain shell test-runner false success; wrote concrete R07/V07/J06 handoffs and queued unclaimed work.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": null,
+      "stale_reasons": [
+        "Decision map changed",
+        "Work version changed",
+        "Current review changed",
+        "New or changed evidence requires coverage review"
+      ],
+      "state": "superseded",
+      "superseded_by": "4cf25af4-276a-5486-bf56-9ef0224d01d0",
+      "work_id": "1f29d43f-556a-4fde-bd44-1202f4098b4f",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "edacb983-e5a2-54a3-9eaa-e91ff9a5550a",
+      "deferral": null,
+      "digest": "108d9268ac000418ec00dd94f70bbca1aa393c08870fd93de2f01bcbc8e31d24",
+      "id": "6bf67c4a-07eb-554d-b3bb-7a6a2f6ade32",
+      "proposal": {
+        "actor": "coordinator-mvp-review-20261007",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "edacb983-e5a2-54a3-9eaa-e91ff9a5550a",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/REPORT.md",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "Verified local agent contract/bridge 2026-10-07.2 across seven repositories with exact helper hashes. Independent installed-wheel public handoff/retry/resume/feedback and backup/restore passed. Four completed MVPs pass fresh scoped acceptance and browser checks; Coopain current backend has 171 passes but J03 remains unfinished, Ride Options remains active at R05. Six verification/continuation handoffs are linked to four ready follow-up tasks and two preserved claims. Feedback triage and all evidence are in docs/inquiry/mvp-review-2026-10-07/REPORT.md. Useful Foundry behavior: incomplete-coverage acceptance was refused and reconciled; no additional blocking defect observed."
+          }
+        ],
+        "limits": "Local technical verification only. No external release, adoption proof, claim takeover or learner credit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "Use per-venture continuation handoffs; review real trial evidence when available.",
+        "next_work": null,
+        "outcome": "no_change",
+        "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+        "reconciliation_rationale": null,
+        "request_key": "mvp-review-F04",
+        "revisit_trigger": null,
+        "summary": "Verified local agent contract/bridge 2026-10-07.2 across seven repositories with exact helper hashes. Independent installed-wheel public handoff/retry/resume/feedback and backup/restore passed. Four completed MVPs pass fresh scoped acceptance and browser checks; Coopain current backend has 171 passes but J03 remains unfinished, Ride Options remains active at R05. Six verification/continuation handoffs are linked to four ready follow-up tasks and two preserved claims. Feedback triage and all evidence are in docs/inquiry/mvp-review-2026-10-07/REPORT.md. Useful Foundry behavior: incomplete-coverage acceptance was refused and reconciled; no additional blocking defect observed.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "coordinator-mvp-review-20261007",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, fetched all 22 feedback arrivals and consulted all six venture repos. Scope is technical package coordination; unrelated historical market claims are not revalidated.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+          "decision_id": "418b6465-f048-4bef-a2ec-86c11cd50eef",
+          "evidence_ids": [
+            "ee4270f9-ef4f-476f-8228-b92e38144b7e"
+          ],
+          "map_revision_id": "e1461696-b989-5de5-9756-3281670e8e37",
+          "next_work_id": null,
+          "review_id": "2b2c58fa-8e43-4551-ac24-e04a2e832be1",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual local source, commands and retained evidence within delegated local coordination authority.",
+        "request_digest": "4b8b9432202bef0e3bb5d2828927a7a177ae9b02ab9eacf1a828f08b362a70ac",
+        "resolution": "accept",
+        "result_digest": "108d9268ac000418ec00dd94f70bbca1aa393c08870fd93de2f01bcbc8e31d24",
+        "result_id": "6bf67c4a-07eb-554d-b3bb-7a6a2f6ade32"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "523341fe-58f1-584d-9f52-e44b3e841907",
+      "deferral": null,
+      "digest": "f69b08c20ed63445d7dcc29463aacecde63bba5333019923a207c88761c850a3",
+      "id": "a6ac4d32-3d56-5d0a-8367-d3cb96579998",
+      "proposal": {
+        "actor": "coordinator-mvp-review-20261007",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "523341fe-58f1-584d-9f52-e44b3e841907",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/REPORT.md",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "Implemented agent contract and bridge revision 2026-10-07.2 from six initially failing regressions. Static discovery bypasses DB setup, branch schema exposes requirements, context reports full-map retrieval, and explicit same-owner recovery preserves claims. Seven bridge hashes and contract revisions verified. Focused suite 22 passed; full product suite 152 passed with one PostgreSQL environment skip; lint and strict types pass. Timed-out incident root causes remain unproven; six current command probes complete in about one second."
+          }
+        ],
+        "limits": "Local technical verification only. No external release, adoption proof, claim takeover or learner credit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "F04: Verify upgraded release and deliver continuation handoffs",
+        "next_work": {
+          "acceptance_criteria": "Independent wheel handoff workflow passes; seven doctor checks confirm upgraded contract/helper; six handoffs resolve to current scope and exact work; evidence report records actual passes, skips, feedback dispositions and local-only release limits.",
+          "blocked_reason": null,
+          "description": "Verify installed-wheel public CLI replay, final source/hash provenance and per-venture review/continuation documents. Retain four ready local follow-up tasks; preserve Coopain J03 and Ride Options R05 claims. Document all trial and release limits.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "F04: Verify upgraded release and deliver continuation handoffs"
+        },
+        "outcome": "no_change",
+        "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+        "reconciliation_rationale": null,
+        "request_key": "mvp-review-F03",
+        "revisit_trigger": null,
+        "summary": "Implemented agent contract and bridge revision 2026-10-07.2 from six initially failing regressions. Static discovery bypasses DB setup, branch schema exposes requirements, context reports full-map retrieval, and explicit same-owner recovery preserves claims. Seven bridge hashes and contract revisions verified. Focused suite 22 passed; full product suite 152 passed with one PostgreSQL environment skip; lint and strict types pass. Timed-out incident root causes remain unproven; six current command probes complete in about one second.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "coordinator-mvp-review-20261007",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, fetched all 22 feedback arrivals and consulted all six venture repos. Scope is technical package coordination; unrelated historical market claims are not revalidated.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+          "decision_id": "22f3e183-7f55-4517-93ff-c5bd877d36c7",
+          "evidence_ids": [
+            "7d001c8d-7222-4b75-a342-2accae9f08e8"
+          ],
+          "map_revision_id": "8d5b6e33-9468-5822-a39c-2682023379f3",
+          "next_work_id": "33e0e4b7-437b-4b76-bcdc-8472936f98ea",
+          "review_id": "1b218867-e9e8-4c16-92ce-ba772f8abea9",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual local source, commands and retained evidence within delegated local coordination authority.",
+        "request_digest": "4bf5f4b6256e4a69ae8492c0dc3906cc11bc61325f16c61f7b6f331d9a0e910e",
+        "resolution": "accept",
+        "result_digest": "f69b08c20ed63445d7dcc29463aacecde63bba5333019923a207c88761c850a3",
+        "result_id": "a6ac4d32-3d56-5d0a-8367-d3cb96579998"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "af9f98aa-3eec-5219-8fcd-4a7ad58f4ff3",
+      "deferral": null,
+      "digest": "82cbc652deb7d1cbd568054c4422dd0f2114d76bac0918d1d969aa85a7e05456",
+      "id": "a1984722-0b75-5db2-ac0d-2d3d63a448a2",
+      "proposal": {
+        "actor": "coordinator-mvp-review-20261007",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "af9f98aa-3eec-5219-8fcd-4a7ad58f4ff3",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/REPORT.md",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "Triaged all 22 received reports; accepted bounded public-schema, context-visibility and timeout/recovery improvements, retained positive evidence, and explicitly deferred stable preview allocation and generic integrations. FEEDBACK_TRIAGE.md maps every UUID to its disposition."
+          }
+        ],
+        "limits": "Local technical verification only. No external release, adoption proof, claim takeover or learner credit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "F03: Improve public contracts and interrupted-agent recovery",
+        "next_work": {
+          "acceptance_criteria": "New red/green regressions cover offline discovery without store creation, branch constraints, exact full-map retrieval, same-owner recovery without a second claim, foreign-owner rejection and no automatic mutation retry; full Foundry checks remain green.",
+          "blocked_reason": null,
+          "description": "Implement database-independent public discovery, conditional branch schema, explicit focused-map coverage, bounded bridge diagnostics/timeouts and opt-in same-owner context recovery. Preserve stale, foreign-claim and missing-store guards.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "F03: Improve public contracts and interrupted-agent recovery"
+        },
+        "outcome": "no_change",
+        "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+        "reconciliation_rationale": null,
+        "request_key": "mvp-review-F02",
+        "revisit_trigger": null,
+        "summary": "Triaged all 22 received reports; accepted bounded public-schema, context-visibility and timeout/recovery improvements, retained positive evidence, and explicitly deferred stable preview allocation and generic integrations. FEEDBACK_TRIAGE.md maps every UUID to its disposition.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "coordinator-mvp-review-20261007",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, fetched all 22 feedback arrivals and consulted all six venture repos. Scope is technical package coordination; unrelated historical market claims are not revalidated.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+          "decision_id": "ab5fa1d4-0ab6-4852-9056-41a6989647a9",
+          "evidence_ids": [
+            "4765a9a1-9bd2-4ee0-9507-1e35ed83fc24"
+          ],
+          "map_revision_id": "8e272430-8c63-5543-9383-1d47fbb0ab2a",
+          "next_work_id": "94f740d6-202a-4af6-be5c-b37165c1a092",
+          "review_id": "919978b2-407c-4aba-b368-15502cf339b5",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual local source, commands and retained evidence within delegated local coordination authority.",
+        "request_digest": "370ab24a073ad71c6724779de379387e006eebccd4a77b8e76abb94ca666e1f1",
+        "resolution": "accept",
+        "result_digest": "82cbc652deb7d1cbd568054c4422dd0f2114d76bac0918d1d969aa85a7e05456",
+        "result_id": "a1984722-0b75-5db2-ac0d-2d3d63a448a2"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "a0c7af8f-32e1-54fe-b291-887fe164227c",
+      "deferral": null,
+      "digest": "36fb6034b79e71a63c11b601127e3a12851b83b892ac2819d98709157baaff78",
+      "id": "4ad7af48-43a8-5bbe-aa49-944508cc49af",
+      "proposal": {
+        "actor": "coordinator-mvp-review-20261007",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "a0c7af8f-32e1-54fe-b291-887fe164227c",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/REPORT.md",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "Fresh coordinator resumed all six actual venture histories. Four local MVPs pass fresh checks/browser flows; Coopain and Ride Options retain active package ownership. All 20 child-venture feedback reports have receipts; existing agent-kit regressions pass 4/4 including claim conflict and idempotent feedback recovery."
+          }
+        ],
+        "limits": "Local technical verification only. No external release, adoption proof, claim takeover or learner credit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "F02: Triage observed agent friction",
+        "next_work": {
+          "acceptance_criteria": "Each report has an explicit accepted, deferred, duplicate or retained-positive disposition and a bounded work reference or reason.",
+          "blocked_reason": null,
+          "description": "Review all 22 Foundry feedback arrivals and classify concrete contract and recovery fixes with evidence.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "F02: Triage observed agent friction"
+        },
+        "outcome": "no_change",
+        "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+        "reconciliation_rationale": "Fresh context explicitly includes all 22 fetched feedback arrivals; prior incomplete-context result retained.",
+        "request_key": "mvp-review-F01-r2",
+        "revisit_trigger": null,
+        "summary": "Fresh coordinator resumed all six actual venture histories. Four local MVPs pass fresh checks/browser flows; Coopain and Ride Options retain active package ownership. All 20 child-venture feedback reports have receipts; existing agent-kit regressions pass 4/4 including claim conflict and idempotent feedback recovery.",
+        "supersedes_result_id": "ea5f5c19-9b55-5493-ae15-7aec19472a98",
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "coordinator-mvp-review-20261007",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Read saved context, fetched all 22 feedback arrivals and consulted all six venture repos. Scope is technical package coordination; unrelated historical market claims are not revalidated.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+          "decision_id": "078f4901-0c40-4362-9ae0-768215584153",
+          "evidence_ids": [
+            "b57be82a-3ab3-4afb-887d-45c291b8226d"
+          ],
+          "map_revision_id": "59c1fd4e-261d-5fae-bb79-20a282e5c98c",
+          "next_work_id": "c5a26ee7-355e-453e-ada0-a2c657ac4e7d",
+          "review_id": "09fe98d6-ec51-4237-b79b-d1215db6b7fb",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed actual local source, commands and retained evidence within delegated local coordination authority.",
+        "request_digest": "007000e0bac031c382edb543aba44f65f0b6e856f6bb6a7bb81e980dc1a98938",
+        "resolution": "accept",
+        "result_digest": "36fb6034b79e71a63c11b601127e3a12851b83b892ac2819d98709157baaff78",
+        "result_id": "4ad7af48-43a8-5bbe-aa49-944508cc49af"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": false,
+      "context_id": "b532f566-3bae-54b9-8463-e4e311d0083e",
+      "deferral": null,
+      "digest": "8c5c46a42b81b4126eaa82638c53938c78593856fd03b7604455b31504815eeb",
+      "id": "ea5f5c19-9b55-5493-ae15-7aec19472a98",
+      "proposal": {
+        "actor": "coordinator-mvp-review-20261007",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "b532f566-3bae-54b9-8463-e4e311d0083e",
+        "decision_scope": "work",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/REPORT.md",
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/mvp-review-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "Fresh coordinator resumed all six actual venture histories. Four local MVPs pass fresh checks/browser flows; Coopain and Ride Options retain active package ownership. All 20 child-venture feedback reports have receipts; existing agent-kit regressions pass 4/4 including claim conflict and idempotent feedback recovery."
+          }
+        ],
+        "limits": "Local technical verification only. No external release, adoption proof, claim takeover or learner credit.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": null,
+        "next_action": "F02: Triage observed agent friction",
+        "next_work": {
+          "acceptance_criteria": "Each report has an explicit accepted, deferred, duplicate or retained-positive disposition and a bounded work reference or reason.",
+          "blocked_reason": null,
+          "description": "Review all 22 Foundry feedback arrivals and classify concrete contract and recovery fixes with evidence.",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "F02: Triage observed agent friction"
+        },
+        "outcome": "no_change",
+        "rationale": "User requested MVP verification and a feedback-supported Foundry upgrade before follow-up handoffs.",
+        "reconciliation_rationale": null,
+        "request_key": "mvp-review-F01",
+        "revisit_trigger": null,
+        "summary": "Fresh coordinator resumed all six actual venture histories. Four local MVPs pass fresh checks/browser flows; Coopain and Ride Options retain active package ownership. All 20 child-venture feedback reports have receipts; existing agent-kit regressions pass 4/4 including claim conflict and idempotent feedback recovery.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": null,
+      "stale_reasons": [
+        "Decision map changed",
+        "Work version changed",
+        "Current review changed",
+        "New or changed evidence requires coverage review"
+      ],
+      "state": "superseded",
+      "superseded_by": "4ad7af48-43a8-5bbe-aa49-944508cc49af",
+      "work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    },
+    {
+      "context_complete": true,
+      "context_id": "0585d523-9591-5e20-ab6c-4c966eede949",
+      "deferral": null,
+      "digest": "b9b4d7735196c5a4bf93e686d03b636c6e7a66e9c0d22690f8a8425282f492e9",
+      "id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c",
+      "proposal": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "assessments": [],
+        "chosen_branch": null,
+        "complete_work": true,
+        "context_id": "0585d523-9591-5e20-ab6c-4c966eede949",
+        "decision_scope": "venture",
+        "findings": [
+          {
+            "confidence": "medium",
+            "details": "",
+            "epistemic_status": "observation",
+            "kind": "observation",
+            "refs": [],
+            "sources": [
+              "document: /home/jonathan/startup_lab/foundry/docs/inquiry/priority-mvps-2026-10-07/PROTOCOL.md"
+            ],
+            "summary": "Main commit 07ecb37 passed GitHub Python 3.11/3.13, PostgreSQL and image/Compose CI. Current campaign adds a stdlib CLI bridge, local feedback outbox and retry receipts. Actual inspection found an obsolete ready Foundry task and no decision map in its own venture; the campaign corrects the current map/queue while preserving old records. Parent-directory mypy omitted Foundry strict configuration; Makefile now names that configuration."
+          }
+        ],
+        "limits": "No real user tests, market validation, payment clearance or public deployment. Technical probes cover only recorded cases. Full artifacts remain in the owning repositories.",
+        "map": null,
+        "model": null,
+        "narrowed_objective": "Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope.",
+        "next_action": "F01: Run one complete agent handoff per venture — /home/jonathan/startup_lab/foundry/docs/plans/2026-10-07-agent-dogfood/README.md",
+        "next_work": {
+          "acceptance_criteria": "Every prepared repo resolves its own workspace and current work; stale/conflicting claims fail; failed feedback send is retained and retry is idempotent.",
+          "blocked_reason": null,
+          "description": "Use prepared configs and maps; one writer per venture at a time, parallelism across venture repositories. Verify claim, prepare, result preview/accept, resume and feedback receipt. No production model service.\nPlan: /home/jonathan/startup_lab/foundry/docs/plans/2026-10-07-agent-dogfood/README.md",
+          "kind": "execution",
+          "owner": "agent",
+          "status": "ready",
+          "title": "F01: Run one complete agent handoff per venture"
+        },
+        "outcome": "narrow",
+        "rationale": "The user explicitly prioritized bounded MVP implementation. The retained evidence supports building for a private pilot while keeping business and release unknowns distinct.",
+        "reconciliation_rationale": null,
+        "request_key": "priority-result-20261007",
+        "revisit_trigger": null,
+        "summary": "GO: continue the existing lifecycle MVP as the internal coordination tool. Add only demonstrated dogfood improvements. No managed-agent runtime, token billing, MCP server, generic plugin system or multi-user hosted service in this tranche.",
+        "supersedes_result_id": null,
+        "work_treatments": []
+      },
+      "receipt": {
+        "actor": "Codex:priority-mvps-2026-10-07",
+        "coverage_action": "reviewed",
+        "coverage_rationale": "Historical and current local summaries consulted; the decision is only to implement the bounded private MVP, not validate all previous claims.",
+        "effects": {
+          "assessment_ids": [],
+          "completed_work_id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+          "decision_id": "99f688ce-6cba-4b56-8d72-0e926fd937bb",
+          "evidence_ids": [
+            "bc7cfaa8-2ffa-40ac-b2b1-27119505e6fc"
+          ],
+          "map_revision_id": "29f1d93d-41da-512b-993a-33e95c1e3b25",
+          "next_work_id": "a3e3b218-144f-403d-9227-e0ec9cd26207",
+          "review_id": "67f2673d-fc5e-4fd7-9383-1c44f0477d3d",
+          "work_needing_review": {
+            "handoff-foundry-next-r1": "Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+          }
+        },
+        "rationale": "Reviewed local planning decision within user authorization. No external execution or implicit commercial validation.",
+        "request_digest": "304422a9a1d4e29b25f14fc0e0c94ef56b4daea03a2e2fa57091b4d1f49de436",
+        "resolution": "accept",
+        "result_digest": "b9b4d7735196c5a4bf93e686d03b636c6e7a66e9c0d22690f8a8425282f492e9",
+        "result_id": "fc9e8147-6ce0-5928-b635-dc3dab8bea9c"
+      },
+      "stale_reasons": [],
+      "state": "accept",
+      "superseded_by": null,
+      "work_id": "b5d3b837-2d7f-41ec-9b20-7b19e9e3bcd6",
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    }
+  ],
+  "scope": {
+    "focus": null,
+    "idea_revision_id": null,
+    "objective": "Let independent implementation agents resume the right venture, claim bounded work, return source-backed results and report friction without losing context or silently widening scope.",
+    "stage": "discovery",
+    "subject": "venture",
+    "subject_id": "v-foundry",
+    "title": "Foundry",
+    "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+  },
+  "stale_references": [],
+  "unreviewed_change_count": 0,
+  "unreviewed_changes": [],
+  "work": [
+    {
+      "acceptance_criteria": "One observed workflow issue or confirmation; no fabricated time-saving claim",
+      "blocked_reason": "changed_context",
+      "budget_currency": "EUR",
+      "budget_limit": null,
+      "created_at": "2026-10-04T10:19:18.909437+00:00",
+      "decision_id": null,
+      "description": null,
+      "desired_outcome": null,
+      "due_at": null,
+      "execution_blockers": [
+        "changed_context",
+        "Decision review required: Superseded as an executable priority by the user-approved 2026-10-07 scope and this package roadmap; historical findings preserved."
+      ],
+      "id": "handoff-foundry-next-r1",
+      "kind": "investigation",
+      "owner": "agent",
+      "parent_id": null,
+      "question": null,
+      "status": "blocked",
+      "title": "Collect first operation feedback and run visual QA when browser is available",
+      "updated_at": "2026-10-07T11:23:34.747930+00:00",
+      "version_id": 2,
+      "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+    }
+  ],
+  "worker_running": false,
+  "workspace_id": "68afabed-a744-47df-94c1-7402f5c7b3b0"
+}
