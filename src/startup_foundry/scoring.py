@@ -463,7 +463,24 @@ class ScoringService:
                 artifact_id = stable_id(
                     "original-score:" + str(idea.current_revision_id)
                 )
-                existing = session.get(Artifact, artifact_id)
+                # The original row belongs to whichever revision first received
+                # it; a later idea revision never re-imports the workbook score.
+                existing = next(
+                    (
+                        artifact
+                        for revision_id in session.scalars(
+                            select(IdeaRevision.id)
+                            .where(IdeaRevision.idea_id == idea.id)
+                            .order_by(IdeaRevision.revision_number)
+                        )
+                        if (
+                            artifact := session.get(
+                                Artifact, stable_id("original-score:" + revision_id)
+                            )
+                        )
+                    ),
+                    None,
+                )
                 row_digest = digest(row)
                 if existing:
                     if existing.metadata_json["row_sha256"] != row_digest:
@@ -567,9 +584,11 @@ class ScoringService:
             .select_from(ScoringCriterion)
             .where(ScoringCriterion.scorecard_id == a.scorecard_id)
         )
+        revision = session.get(IdeaRevision, a.idea_revision_id)
         result: JSON = {
             "id": a.id,
             "revision_id": a.idea_revision_id,
+            "revision_number": revision.revision_number if revision else None,
             "scorecard_id": a.scorecard_id,
             "number": a.assessment_number,
             "total": a.overall_score,
@@ -614,7 +633,8 @@ class ScoringService:
         with UnitOfWork(self.factory) as unit:
             session = unit.session
             assert session is not None
-            if session.get(Idea, idea_id) is None:
+            idea = session.get(Idea, idea_id)
+            if idea is None:
                 raise ReferenceError("Idea does not exist")
             assessments = session.scalars(
                 select(IdeaAssessment)
@@ -622,9 +642,16 @@ class ScoringService:
                 .where(IdeaRevision.idea_id == idea_id)
                 .order_by(IdeaAssessment.created_at.desc(), IdeaAssessment.id)
             )
+            history = [self._assessment(session, a) for a in assessments]
+            for item in history:
+                # Assessments stay attached to the revision they judged.
+                item["current_revision"] = (
+                    item["revision_id"] == idea.current_revision_id
+                )
             return {
                 "idea_id": idea_id,
-                "history": [self._assessment(session, a) for a in assessments],
+                "current_revision_id": idea.current_revision_id,
+                "history": history,
             }
 
     def list_scorecards(self) -> JSON:

@@ -547,6 +547,9 @@ class IdeaMarketActor(IdentityMixin, TimestampMixin, Base):
     )
     is_primary: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     note: Mapped[str | None] = mapped_column(Text)
+    # When the actor was last checked and which retained sources support it.
+    checked_on: Mapped[date | None] = mapped_column(Date)
+    source_ids: Mapped[list[str] | None] = mapped_column(JSON)
 
 
 class Scorecard(IdentityMixin, TimestampMixin, VersionedMixin, Base):

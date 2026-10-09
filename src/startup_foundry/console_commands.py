@@ -10,6 +10,7 @@ from sqlalchemy.engine import make_url
 
 from startup_foundry.application import FoundryApplication
 from startup_foundry.config import data_directory
+from startup_foundry.domain import IdeaSourceRole
 from startup_foundry.inputs import read_input
 from startup_foundry.outreach import DraftInput, OutcomeInput, OutreachService
 from startup_foundry.portfolio import IdeaDraft, PortfolioService
@@ -18,6 +19,7 @@ from startup_foundry.repository import SessionFactory
 from startup_foundry.reviews import ReviewInput, ReviewService
 from startup_foundry.scoring import (
     ORIGINAL,
+    REVIEWED,
     AssessmentInput,
     ScorecardInput,
     ScoringService,
@@ -55,13 +57,17 @@ def add_console_parsers(resources: Any) -> None:
     listing = actions.add_parser("list")
     add_pagination(listing)
     listing.add_argument("--query", default="")
+    listing.add_argument("--source-id", help="Only ideas linked to this source")
     add_portfolio_filters(listing)
     show = actions.add_parser("show")
     show.add_argument("--id", required=True)
-    create = actions.add_parser("create")
+    create = actions.add_parser(
+        "create", help="Create from flags or from --input idea.json"
+    )
+    create.add_argument("--input", help="JSON with every revision field")
     create.add_argument("--id")
-    create.add_argument("--title", required=True)
-    create.add_argument("--description", required=True)
+    create.add_argument("--title")
+    create.add_argument("--description")
     create.add_argument("--customer", default=None)
     create.add_argument("--validation-test", default=None)
     create.add_argument("--parent-id", action="append", default=[])
@@ -69,11 +75,7 @@ def add_console_parsers(resources: Any) -> None:
     promote = actions.add_parser("promote")
     promote.add_argument("--id", required=True)
     promote.add_argument("--venture-id")
-    source = resources.add_parser("source")
-    source_actions = source.add_subparsers(dest="action", required=True)
-    listing = source_actions.add_parser("list")
-    listing.add_argument("--query", default="")
-    add_pagination(listing)
+    add_discovery_parsers(resources, actions)
     portfolio = resources.add_parser("portfolio")
     imports = portfolio.add_subparsers(dest="action", required=True).add_parser(
         "import"
@@ -154,6 +156,123 @@ def add_console_parsers(resources: Any) -> None:
     ui.add_argument("--port", type=int, default=8765)
 
 
+def add_discovery_parsers(resources: Any, idea_actions: Any) -> None:
+    """Sources, market actors, idea revisions/relations and cohort comparison."""
+    revise = idea_actions.add_parser("revise", help="Append an idea revision")
+    revise.add_argument("--id", required=True)
+    revise.add_argument("--input", required=True)
+    relate = idea_actions.add_parser("relate", help="Record a relation between ideas")
+    relate.add_argument("--input", required=True)
+    link_source = idea_actions.add_parser("link-source")
+    link_source.add_argument("--id", required=True)
+    link_source.add_argument("--source-id", required=True)
+    link_source.add_argument(
+        "--role", choices=[r.value for r in IdeaSourceRole], default="inspiration"
+    )
+    link_source.add_argument("--note")
+    link_actor = idea_actions.add_parser(
+        "link-actor", help="Link a market actor to the current revision"
+    )
+    link_actor.add_argument("--id", required=True)
+    link_actor.add_argument("--input", required=True)
+    compare = idea_actions.add_parser("compare", help="Compare a cohort of ideas")
+    compare.add_argument("--ids", nargs="+", required=True)
+    compare.add_argument("--scorecard-id", default=REVIEWED)
+    source_actions = resources.add_parser(
+        "source", help="Register and inspect reusable sources"
+    ).add_subparsers(dest="action", required=True)
+    listing = source_actions.add_parser("list")
+    listing.add_argument("--query", default="")
+    add_pagination(listing)
+    source_actions.add_parser("register").add_argument("--input", required=True)
+    source_actions.add_parser("show").add_argument("--id", required=True)
+    actor_actions = resources.add_parser(
+        "market-actor", help="Competitors, alternatives, partners and benchmarks"
+    ).add_subparsers(dest="action", required=True)
+    actor_actions.add_parser("register").add_argument("--input", required=True)
+    listing = actor_actions.add_parser("list")
+    listing.add_argument("--query", default="")
+    add_pagination(listing)
+    actor_actions.add_parser("show").add_argument("--id", required=True)
+
+
+def discovery_dispatch(factory: SessionFactory, args: Namespace) -> dict[str, Any]:
+    from startup_foundry.discovery_records import (
+        ActorLinkInput,
+        DiscoveryService,
+        IdeaCreateInput,
+        IdeaRelationInput,
+        IdeaRevisionInput,
+        MarketActorInput,
+        SourceInput,
+    )
+    service = DiscoveryService(factory)
+    action = (args.resource, args.action)
+    if action == ("idea", "create"):
+        check_idea_create(args)
+        return service.create_idea(read_input(IdeaCreateInput, args.input))
+    if action == ("idea", "revise"):
+        return service.revise(args.id, read_input(IdeaRevisionInput, args.input))
+    if action == ("idea", "relate"):
+        return service.relate(read_input(IdeaRelationInput, args.input))
+    if action == ("idea", "link-source"):
+        return service.link_source(
+            args.id, args.source_id, IdeaSourceRole(args.role), args.note
+        )
+    if action == ("idea", "link-actor"):
+        return service.link_actor(args.id, read_input(ActorLinkInput, args.input))
+    if action == ("idea", "compare"):
+        return service.compare(args.ids, args.scorecard_id)
+    if action == ("source", "register"):
+        return service.register_source(read_input(SourceInput, args.input))
+    if action == ("source", "show"):
+        return service.show_source(args.id)
+    if action == ("market-actor", "register"):
+        return service.register_actor(read_input(MarketActorInput, args.input))
+    if action == ("market-actor", "list"):
+        return service.list_actors(
+            query=args.query, limit=args.limit, offset=args.offset
+        )
+    if action == ("market-actor", "show"):
+        return service.show_actor(args.id)
+    raise RuntimeError("Unhandled discovery command")
+
+
+def check_idea_create(args: Namespace) -> None:
+    """Reject ambiguous idea creation before any store is opened."""
+    from startup_foundry.errors import ValidationError
+
+    if (args.resource, args.action) != ("idea", "create"):
+        return
+    flags = [
+        args.id,
+        args.title,
+        args.description,
+        args.customer,
+        args.validation_test,
+        args.derivation_reason,
+    ]
+    if args.input is not None:
+        if any(value is not None for value in flags) or args.parent_id:
+            raise ValidationError("Use either --input or the idea flags, not both")
+    elif args.title is None or args.description is None:
+        raise ValidationError("idea create needs --title and --description or --input")
+
+
+DISCOVERY_ACTIONS = {
+    ("idea", "revise"),
+    ("idea", "relate"),
+    ("idea", "link-source"),
+    ("idea", "link-actor"),
+    ("idea", "compare"),
+    ("source", "register"),
+    ("source", "show"),
+    ("market-actor", "register"),
+    ("market-actor", "list"),
+    ("market-actor", "show"),
+}
+
+
 def add_pagination(parser: ArgumentParser) -> None:
     parser.add_argument("--limit", type=int, default=50)
     parser.add_argument("--offset", type=int, default=0)
@@ -219,9 +338,13 @@ def dispatch(
         from startup_foundry.revamp_commands import dispatch as revamp_dispatch
 
         return revamp_dispatch(factory, args, requests_directory())
+    action = (args.resource, args.action)
+    if action in DISCOVERY_ACTIONS or (
+        action == ("idea", "create") and args.input is not None
+    ):
+        return discovery_dispatch(factory, args)
     portfolio = PortfolioService(factory)
     steps = StepService(factory, requests_directory())
-    action = (args.resource, args.action)
     scores = ScoringService(factory)
     reviews = ReviewService(factory)
     projects = ExistingProjectService(factory)
@@ -286,6 +409,7 @@ def dispatch(
     if action == ("idea", "show"):
         return portfolio.show_idea(args.id)
     if action == ("idea", "create"):
+        check_idea_create(args)
         return portfolio.create_idea(
             IdeaDraft(
                 title=args.title,

@@ -32,7 +32,10 @@ venture's Now page captures changes, prepares agent context and reviews results.
 Its map retains purpose, questions, conditional alternatives and exact links to
 work and evidence. History, scores and optional software/outreach views remain
 inside the venture. The portfolio owns comparison and fusion. Shared inbox and
-outreach screens are projections of records with explicit ownership.
+outreach screens are projections of records with explicit ownership. Discovery
+records ([ADR-0019](docs/adr/0019-discovery-records-sources-competition-revisions.md))
+register hashed sources, competitors and alternatives, append idea revisions and
+relations, and compare a source's cohort of ideas criterion by criterion.
 
 Your agent reasons and researches; Foundry performs typed, transactional record
 operations. Preparing context does not start a worker. Stale results remain

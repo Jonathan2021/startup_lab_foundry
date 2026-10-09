@@ -20,6 +20,7 @@ from startup_foundry.console_commands import (
     add_console_parsers,
     add_pagination,
     add_portfolio_filters,
+    check_idea_create,
     dispatch,
     requests_directory,
 )
@@ -353,6 +354,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     arguments = build_parser().parse_args(argv)
     try:
         _clean_command_text(arguments)
+        check_idea_create(arguments)
         # Discovery is a static public contract, including during store outages.
         if arguments.resource == "agent" and arguments.action in {"guide", "schema"}:
             from startup_foundry.decision_commands import GUIDE, public_schema
@@ -409,6 +411,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             in {
                 "idea",
                 "source",
+                "market-actor",
                 "portfolio",
                 "step",
                 "storage",

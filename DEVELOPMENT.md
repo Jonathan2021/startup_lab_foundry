@@ -189,8 +189,9 @@ historical; it is not silently rewritten after product code changes.
 
 `idea create` accepts repeated `--parent-id` and a `--derivation-reason`. The UI's
 Derive or combine form records the same lineage. `idea promote --id ...` opens an
-investigation workspace without asserting commercial viability. Source reuse is
-available through `PortfolioService.record_source`; this round's bookkeeping is
+investigation workspace without asserting commercial viability. Claim-shaped source reuse remains
+available through `PortfolioService.record_source`; `source register` is the public
+path (see Discovery records below). This round's bookkeeping is
 `scripts/record_console_investigations.py`. No automatic idea generator is installed.
 
 `step catalog`, `step list`, `step show --id ...` and `step start` expose durable
@@ -261,6 +262,95 @@ under `docs/inquiry/handoff-2026-10-04/` is a complete reference. Repository ref
 are data: HTTP never recursively reads or executes them. Same manifest is reused;
 a changed manifest appends a checkpoint and review with expected review revision.
 The UI has `/existing-project`, contextual checkpoint links and history.
+
+## Discovery records (October 9)
+
+[ADR-0019](docs/adr/0019-discovery-records-sources-competition-revisions.md) adds
+sources, competition, idea revisions/relations and cohort comparison. All inputs
+are JSON files validated with unknown fields rejected; content is data only.
+
+```bash
+foundry source register --input source.json      # idempotent; file is hashed
+foundry source show --id SOURCE_ID               # links with role and note
+foundry idea link-source --id AS01 --source-id SOURCE_ID --role market_reference --note "p. 3"
+foundry idea create --input idea.json            # alternative to the flags
+foundry market-actor register --input actor.json
+foundry market-actor list --query cursor
+foundry idea link-actor --id AS01 --input link.json
+foundry idea revise --id AS01 --input revision.json
+foundry idea relate --input relation.json
+foundry idea list --source-id SOURCE_ID          # the source's cohort
+foundry idea compare --ids AS01 AS02 AS03 --scorecard-id portfolio-reviewed-v1
+```
+
+`source.json` (`kind`: document|spreadsheet|webpage|interview|dataset|observation|
+report|other; `role`: inspiration|market_reference|validation). A non-URL locator
+must be a readable local file; its SHA-256 becomes part of the stored locator, so a
+changed file creates a new source. A URL digest is stored only when supplied.
+
+```json
+{"kind":"document","title":"Agentic stack transcript","locator":"idea_queue/agentic_stack_ideas.md",
+ "publisher":"User","published_at":"2026-10-09","notes":"Transcript, untrusted",
+ "idea_ids":["AS01","AS02"],"role":"inspiration","link_note":"Segment 1"}
+```
+
+`idea.json` accepts `id`, `title`, `description`, `original_text`,
+`target_customer`, `business_model`, `narrowing_or_pivot`, `focused_mvp_scope`,
+`estimated_mvp_weeks`, `key_validation_test`, `category`, `venture_type`,
+`cluster`, `parent_ids`, `derivation_reason`, `origin`
+(user_added|generated_new|generated_derived; parents imply generated_derived),
+`source_ids`, `source_role`, `source_note` and `authored_by`. Do not combine
+`--input` with the creation flags.
+
+```json
+{"id":"AS03","title":"Agent eval replay","description":"Replay traces as regressions",
+ "origin":"generated_new","source_ids":["SOURCE_ID"],"source_note":"Minute 12"}
+```
+
+`actor.json` has `name`, optional http(s) `website` and `description`. The same
+normalized name/website returns the existing actor; a same-name actor with another
+website is a conflict. `link.json` links the actor to the idea's current revision:
+
+```json
+{"actor": {"name":"Braintrust","website":"https://braintrust.dev"},
+ "relation":"competitor","is_primary":true,
+ "note":"Hosted evals; gap: no local replay","checked_on":"2026-10-09",
+ "source_ids":["SOURCE_ID"],"recorded_by":"discovery-agent"}
+```
+
+Use `actor_id` instead of `actor` for a registered actor. Relations are
+competitor|alternative|partner|benchmark. Repeating an identical link is a no-op;
+a changed note/date/sources updates the link and records the previous values in
+an audit event.
+
+`revision.json` needs `change_reason` and `authored_by`. Other fields (`title`,
+`description`, `narrowing_or_pivot`, `target_customer`, `business_model`,
+`focused_mvp_scope`, `estimated_mvp_weeks`, `key_validation_test`, `category`,
+`venture_type`, `cluster`) carry over when omitted; `""` clears an optional field.
+`expected_revision_id` rejects a stale write; `carry_competition` (default true)
+copies the current competition links. A revision that changes nothing is rejected.
+
+```json
+{"title":"Local eval replay for coding agents","narrowing_or_pivot":"Coding agents only",
+ "change_reason":"Hosted competitors cover tracing","authored_by":"discovery-agent",
+ "expected_revision_id":"CURRENT_REVISION_ID"}
+```
+
+`relation.json`: `source_idea_id`, `target_idea_id`, `kind`
+(derived_from|combined_with|duplicates|pivots_from) and a required `rationale`.
+Self-relations are rejected; the same relation with a different rationale conflicts.
+
+`idea show` adds `revisions`, `relations` (both directions), `competition` and
+`competition_history`, and each source's `role`/`link_note`; `parents` remains.
+`score show` labels every assessment's `revision_number` and `current_revision`.
+Assessments stay on the revision they judged, so portfolio lists show a revised
+idea as unscored until it is reassessed. Promotion reuses a venture opened from an
+earlier revision. `idea compare` (1–20 IDs) and `/ideas/compare?ids=A&ids=B`
+use the latest assessment of each current revision, flag an earlier-revision
+score as `stale_revision`, and report missing scores as null. The Sources page
+links each source to `/ideas?source_id=…`, which offers a cohort comparison.
+These shapes are documented here rather than in `agent schema`, whose public
+contract revision is unchanged.
 
 ## Manual outreach
 

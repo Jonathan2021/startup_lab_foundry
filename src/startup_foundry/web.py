@@ -21,6 +21,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 from startup_foundry.application import FoundryApplication
 from startup_foundry.console_commands import attachment_roots
 from startup_foundry.decision_console import portfolio_attention
+from startup_foundry.discovery_records import DiscoveryService
 from startup_foundry.domain import (
     Disposition,
     InvestigationStage,
@@ -40,7 +41,7 @@ from startup_foundry.projects import ExistingProjectInput, ExistingProjectServic
 from startup_foundry.proposals import ProposalService
 from startup_foundry.repository import SessionFactory
 from startup_foundry.reviews import ReviewInput, ReviewService
-from startup_foundry.scoring import FACTORS, AssessmentInput, ScoringService
+from startup_foundry.scoring import FACTORS, REVIEWED, AssessmentInput, ScoringService
 from startup_foundry.steps import STEP_CATALOG, StepService
 from startup_foundry.views import PortfolioQuery, PortfolioViewService
 from startup_foundry.workspace_console import (
@@ -124,6 +125,16 @@ def create_app(factory: SessionFactory, requests_directory: Path) -> FastAPI:
     human_inputs = HumanInputService(factory, requests_directory)
     projects = ExistingProjectService(factory)
     outreach = OutreachService(factory, attachment_roots())
+    discovery = DiscoveryService(factory)
+
+    def comparison(request: Request) -> dict[str, Any]:
+        ids = [
+            identity
+            for value in request.query_params.getlist("ids")
+            for identity in value.split(",")
+        ]
+        card = request.query_params.get("scorecard_id") or REVIEWED
+        return discovery.compare(ids, card)
 
     def venture_workspace(identity: str) -> str:
         with factory() as session:
@@ -255,7 +266,19 @@ def create_app(factory: SessionFactory, requests_directory: Path) -> FastAPI:
             q=query.q,
             page=views.list("idea", query),
             filters=query.model_dump(mode="json"),
+            source=discovery.show_source(query.source_id) if query.source_id else None,
         )
+
+    # Registered before /ideas/{identity} so "compare" is never an idea ID.
+    @app.get("/ideas/compare", response_class=HTMLResponse)
+    def idea_compare(request: Request) -> Response:
+        return render(
+            request, "idea_compare.html", nav="ideas", comparison=comparison(request)
+        )
+
+    @app.get("/api/ideas/compare")
+    def api_idea_compare(request: Request) -> dict[str, Any]:
+        return comparison(request)
 
     @app.get("/new", response_class=HTMLResponse)
     def new(request: Request, parent_id: str = "") -> Response:

@@ -68,6 +68,12 @@ class IdeaDraft:
     original_text: str = ""
     category: str = ""
     business_model: str = ""
+    narrowing_or_pivot: str = ""
+    focused_mvp_scope: str = ""
+    estimated_mvp_weeks: float | None = None
+    venture_type: str = ""
+    cluster: str = ""
+    authored_by: str = "foundry-intake-v1"
 
 
 class PortfolioService:
@@ -130,12 +136,17 @@ class PortfolioService:
             cleaned_description=description,
             original_text=draft.original_text or description,
             category=draft.category or None,
+            venture_type=draft.venture_type or None,
+            cluster=draft.cluster or None,
             target_customer=draft.customer or None,
             business_model=draft.business_model or None,
+            narrowing_or_pivot=draft.narrowing_or_pivot or None,
+            focused_mvp_scope=draft.focused_mvp_scope or None,
+            estimated_mvp_weeks=draft.estimated_mvp_weeks,
             key_validation_test=draft.validation_test or None,
             change_reason=draft.derivation_reason
             or "Initial intake; unvalidated hypothesis",
-            authored_by="foundry-intake-v1",
+            authored_by=draft.authored_by or "foundry-intake-v1",
         )
         session.add(revision)
         session.flush()
@@ -168,6 +179,11 @@ class PortfolioService:
             "revision_id": revision.id,
             "revision": revision.revision_number,
             "change_reason": revision.change_reason,
+            "narrowing_or_pivot": revision.narrowing_or_pivot,
+            "focused_mvp_scope": revision.focused_mvp_scope,
+            "estimated_mvp_weeks": revision.estimated_mvp_weeks,
+            "venture_type": revision.venture_type,
+            "cluster": revision.cluster,
         }
 
     def create_idea(self, draft: IdeaDraft, *, idea_id: str | None = None) -> JSON:
@@ -237,12 +253,12 @@ class PortfolioService:
                 )
             ]
             data["sources"] = [
-                self._source(s)
-                for s in session.scalars(
-                    select(ReferenceSource)
+                {**self._source(s), "role": link.role.value, "link_note": link.note}
+                for s, link in session.execute(
+                    select(ReferenceSource, IdeaSource)
                     .join(IdeaSource, IdeaSource.source_id == ReferenceSource.id)
                     .where(IdeaSource.idea_id == idea.id)
-                    .order_by(ReferenceSource.title)
+                    .order_by(ReferenceSource.title, IdeaSource.role)
                 )
             ]
             data["assessment"] = next(
@@ -261,14 +277,21 @@ class PortfolioService:
                 ),
                 None,
             )
+            # Ventures opened from earlier revisions remain this idea's ventures.
             data["ventures"] = [
                 v.id
                 for v in session.scalars(
-                    select(Venture).where(
-                        Venture.source_idea_revision_id == revision.id
+                    select(Venture)
+                    .join(
+                        IdeaRevision, Venture.source_idea_revision_id == IdeaRevision.id
                     )
+                    .where(IdeaRevision.idea_id == idea.id)
+                    .order_by(Venture.created_at, Venture.id)
                 )
             ]
+            from startup_foundry.discovery_records import idea_projection
+
+            data.update(idea_projection(session, idea, revision))
             return data
 
     @staticmethod
@@ -297,6 +320,13 @@ class PortfolioService:
             "locator": source.locator,
             "kind": source.kind.value,
             "digest": source.content_digest,
+            "publisher": source.publisher,
+            "published_at": source.published_at.isoformat()
+            if source.published_at
+            else None,
+            "retrieved_at": source.retrieved_at.isoformat()
+            if source.retrieved_at
+            else None,
             "notes": notes,
             "claim": metadata.get("claim"),
             "limits": metadata.get("limits"),
@@ -317,13 +347,22 @@ class PortfolioService:
             count = unit.session.scalar(
                 select(func.count()).select_from(statement.subquery())
             )
-            rows = unit.session.scalars(
-                statement.order_by(ReferenceSource.title, ReferenceSource.id)
+            linked = (
+                select(func.count(func.distinct(IdeaSource.idea_id)))
+                .where(IdeaSource.source_id == ReferenceSource.id)
+                .scalar_subquery()
+            )
+            rows = unit.session.execute(
+                statement.add_columns(linked)
+                .order_by(ReferenceSource.title, ReferenceSource.id)
                 .limit(limit)
                 .offset(offset)
             )
             return {
-                "items": [self._source(s) for s in rows],
+                "items": [
+                    {**self._source(s), "linked_ideas": linked_count or 0}
+                    for s, linked_count in rows
+                ],
                 "total": count,
                 "limit": limit,
                 "offset": offset,
@@ -400,9 +439,23 @@ class PortfolioService:
                     select(Venture)
                     .where(Venture.source_idea_revision_id == revision.id)
                     .order_by(Venture.created_at, Venture.id)
+                ) or session.scalar(
+                    # A revised idea keeps the venture opened from an earlier
+                    # revision; promotion never silently forks a second one.
+                    select(Venture)
+                    .join(
+                        IdeaRevision, Venture.source_idea_revision_id == IdeaRevision.id
+                    )
+                    .where(IdeaRevision.idea_id == idea.id)
+                    .order_by(Venture.created_at, Venture.id)
                 )
             if existing:
-                if existing.source_idea_revision_id != revision.id:
+                source = (
+                    session.get(IdeaRevision, existing.source_idea_revision_id)
+                    if existing.source_idea_revision_id
+                    else None
+                )
+                if source is None or source.idea_id != idea.id:
                     raise ConflictError("Venture ID belongs to a different source")
                 workspace = session.get(Workspace, existing.workspace_id)
                 assert workspace is not None

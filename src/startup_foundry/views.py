@@ -14,6 +14,7 @@ from startup_foundry.domain import (
     Idea,
     IdeaAssessment,
     IdeaRevision,
+    IdeaSource,
     InvestigationStage,
     PortfolioProposal,
     ProductMaturity,
@@ -53,6 +54,8 @@ class PortfolioQuery(BaseModel):
         | None
     ) = None
     stage: VentureStage | None = None
+    # Ideas linked to one retained source (a discovery cohort).
+    source_id: str | None = Field(default=None, min_length=1, max_length=36)
     continued: Literal["all", "exclude"] = "all"
     score_view: str = Field(default="reviewed", min_length=1, max_length=36)
     criterion: str = Field(
@@ -308,6 +311,16 @@ class PortfolioViewService:
                 else blocker
             )
             statement = statement.where(blocker_expression == query.blocker)
+        if query.source_id is not None:
+            if subject != "idea":
+                raise ValidationError("source_id filters ideas, not ventures")
+            statement = statement.where(
+                model.id.in_(
+                    select(IdeaSource.idea_id).where(
+                        IdeaSource.source_id == query.source_id
+                    )
+                )
+            )
         if subject == "venture" and query.stage:
             statement = statement.where(Venture.stage == query.stage)
         if query.min_score is not None:

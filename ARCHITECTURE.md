@@ -216,5 +216,8 @@ October 4 operation adds `scoring.py` (immutable methods and judgments), `review
 `projects.py` (reference-only checkpoints) and `outreach.py` (manual drafts/outcomes).
 Provider/model/action interfaces remain independent; none imports learning code.
 [ADR-0010](docs/adr/0010-portfolio-reviews-and-draft-history.md) records the one new
-review table and existing Artifact/AuditEvent history reuse. Schema migrations never
+review table and existing Artifact/AuditEvent history reuse.
+October 9 `discovery_records.py` exposes the existing source, market-actor,
+revision and relation tables plus cohort comparison
+([ADR-0019](docs/adr/0019-discovery-records-sources-competition-revisions.md)). Schema migrations never
 import campaign data. Intake/backfills are explicit idempotent operator operations.

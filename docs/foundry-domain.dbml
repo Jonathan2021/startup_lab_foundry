@@ -398,6 +398,8 @@ Table idea_market_actors {
   relation market_actor_relation [not null]
   is_primary boolean [not null, default: false]
   note text
+  checked_on date
+  source_ids json [note: 'Retained reference_sources IDs supporting the check']
   created_at timestamptz [not null]
   updated_at timestamptz [not null]
 
