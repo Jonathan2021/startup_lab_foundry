@@ -8,7 +8,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic import ValidationError as ContractError
 
 from startup_foundry.errors import ValidationError
-from startup_foundry.scoring import ORIGINAL, REVIEWED
+from startup_foundry.scoring import scorecard_for_view
 
 
 class DetailQuery(BaseModel):
@@ -38,9 +38,7 @@ class DetailQuery(BaseModel):
 
     @property
     def card_id(self) -> str:
-        return {"original": ORIGINAL, "reviewed": REVIEWED}.get(
-            self.score_view, self.score_view
-        )
+        return scorecard_for_view(self.score_view)
 
     def back(self, kind: str) -> str:
         fallback = "/" + kind

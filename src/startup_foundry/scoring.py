@@ -72,6 +72,11 @@ def digest(value: Any) -> str:
     return hashlib.sha256(canonical(value).encode()).hexdigest()
 
 
+def scorecard_for_view(score_view: str) -> str:
+    """Resolve a list/detail `score_view` (built-in name or card ID) to a card ID."""
+    return {"original": ORIGINAL, "reviewed": REVIEWED}.get(score_view, score_view)
+
+
 def number(value: Any) -> Decimal:
     try:
         if isinstance(value, bool):

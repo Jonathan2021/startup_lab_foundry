@@ -29,7 +29,7 @@ from startup_foundry.domain import (
 )
 from startup_foundry.errors import ValidationError
 from startup_foundry.repository import SessionFactory
-from startup_foundry.scoring import FACTORS, ORIGINAL, REVIEWED
+from startup_foundry.scoring import FACTORS, ORIGINAL, REVIEWED, scorecard_for_view
 
 JSON = dict[str, Any]
 
@@ -81,9 +81,7 @@ class PortfolioQuery(BaseModel):
 
     @property
     def card_id(self) -> str:
-        return {"original": ORIGINAL, "reviewed": REVIEWED}.get(
-            self.score_view, self.score_view
-        )
+        return scorecard_for_view(self.score_view)
 
 
 class PortfolioViewService:
