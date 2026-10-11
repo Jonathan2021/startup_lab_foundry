@@ -201,6 +201,44 @@ def test_one_derived_state_drives_header_list_today_and_resume(world):
     assert "Lifecycle (recorded): Discovery" in client.get("/ventures").text
 
 
+def test_unique_claim_shows_package_when_older_review_has_no_work_pointer(world):
+    factory, ws, ids, _, client, _ = world
+    ReviewService(factory).append(
+        ReviewInput(
+            workspace_id=ws,
+            expected_revision=1,
+            investigation_stage="solution_validation",
+            product_maturity="mvp",
+            disposition="hold",
+            next_action=NEXT_ACTION,
+            reason="Retain human gate without scheduling another package",
+            author="reviewer",
+        )
+    )
+    handoffs = AgentHandoffService(factory)
+    assert handoffs.resume(ws)["venture_state"]["next_action"]["work_id"] is None
+    with factory.begin() as session:
+        current = session.get(WorkItem, ids["current"])
+        current.status = WorkItemStatus.IN_PROGRESS
+        current.owner = "package-agent"
+    action = handoffs.resume(ws)["venture_state"]["next_action"]
+    assert action["text"] == NEXT_ACTION
+    assert action["work_id"] == ids["current"]
+    assert action["work_action"] == "Harden the MVP"
+    assert "Package action: Harden the MVP" in client.get("/ventures/v-queue").text
+    with factory.begin() as session:
+        session.add(
+            WorkItem(
+                workspace_id=ws,
+                title="Another active claim",
+                kind="execution",
+                status="in_progress",
+                owner="other-agent",
+            )
+        )
+    assert handoffs.resume(ws)["venture_state"]["next_action"]["work_id"] is None
+
+
 def test_lifecycle_note_is_hidden_when_the_review_agrees(world):
     factory, ws, _, _, client, _ = world
     with factory.begin() as session:
@@ -246,7 +284,7 @@ def test_superseded_legacy_work_is_listed_apart_and_closed_with_audit(world):
     factory, ws, ids, _, client, _ = world
     handoffs = AgentHandoffService(factory)
     resume = handoffs.resume(ws)
-    assert ids["legacy"] not in resume["needs_review"]
+    assert ids["legacy"] not in [i["work_id"] for i in resume["needs_review"]]
     assert [s["id"] for s in resume["superseded"]] == [ids["legacy"]]
     assert "## Superseded (close or revise)" in resume["markdown"]
     assert "venture-work close" in resume["markdown"]
@@ -274,7 +312,9 @@ def test_superseded_legacy_work_is_listed_apart_and_closed_with_audit(world):
         assert event is not None and event.actor == "operator"
         assert event.payload["previous"]["superseded_reason"] == SUPERSEDED
     after = handoffs.resume(ws)
-    assert after["superseded"] == [] and ids["legacy"] not in after["needs_review"]
+    assert after["superseded"] == [] and ids["legacy"] not in [
+        i["work_id"] for i in after["needs_review"]
+    ]
     with pytest.raises(ConflictError):
         handoffs.close_work(
             ws,

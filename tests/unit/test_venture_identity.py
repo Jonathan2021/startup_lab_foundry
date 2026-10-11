@@ -105,6 +105,7 @@ def test_read_commands_accept_id_selectors(crous, capsys):
     assert code == 0, err
     assert json.loads(out)["venture"]["id"] == CROUS
     assert json.loads(out)["venture"]["alias"] == "v-crous-queue"
+    assert json.loads(out)["venture"]["version_id"] == version + 1
     for args in [
         ["agent", "resume", "--id", "v-crous-queue", "--format", "json"],
         ["agent", "resume", "--id", ws, "--format", "json"],
@@ -137,7 +138,7 @@ def test_read_commands_accept_id_selectors(crous, capsys):
     assert code == 2 and "matches" in err
 
 
-def test_console_redirects_alias_routes(crous, capsys):
+def test_console_serves_alias_routes_without_redirect(crous, capsys):
     factory, database, _, tmp_path = crous
     with factory() as session:
         version = session.get(Venture, CROUS).version_id
@@ -146,8 +147,8 @@ def test_console_redirects_alias_routes(crous, capsys):
         create_app(factory, tmp_path / "requests"), base_url="http://127.0.0.1"
     )
     redirect = client.get("/ventures/v-crous-queue?tab=work", follow_redirects=False)
-    assert redirect.status_code == 307
-    assert redirect.headers["location"] == "/ventures/" + CROUS + "?tab=work"
+    assert redirect.status_code == 200
+    assert "location" not in redirect.headers
     page = client.get("/ventures/v-crous-queue")
     assert page.status_code == 200 and "Crous Queue" in page.text
     api = client.get("/api/ventures/v-crous-queue/scores")

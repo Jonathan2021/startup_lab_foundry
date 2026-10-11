@@ -1,11 +1,23 @@
 # Foundry 0.1.0 — local MVP delivery
 
-Agent contract and repository helper: **2026-10-09.1**. Distribution version:
+Agent contract and repository helper: **2026-10-11.1**. Distribution version:
 **0.1.0**. Intended use: one trusted local operator, SQLite console/CLI, optional
 PostgreSQL/Compose, existing external agents through the documented local bridge.
 No provider account, parent workspace or model service is required.
 
 ## What changed
+
+2026-10-11.1 ([ADR-0021](adr/0021-agent-followups-and-feedback-triage.md)):
+work-scoped results preserve map focus; classified unchanged evidence stops
+recurring as new arrivals; claimant edits retain context only when unrelated to
+the selected task and scope. Existing review requirements remain guarded.
+Work treatments can revise questions and acceptance criteria. Result views expose
+saved resolution pins, venture reads expose versions, resume uses an array for
+review items, and read aliases keep their URL. The bridge retries a reported
+context-size failure once up to 100 KB and doctor checks outbox ignore status.
+Imported scores and scheduled package actions are labelled explicitly; saved
+rankings have a read-only retrieval command. No migration or paid service is added.
+Update bridge copies, version and manifest hash, then run `doctor`.
 
 2026-10-09.1 ([ADR-0020](adr/0020-truthful-venture-state-requests-and-drift.md)):
 published discovery input schemas and `close`; one derived venture state; superseded

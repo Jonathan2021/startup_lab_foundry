@@ -176,7 +176,7 @@ Use created IDs from the final resolve receipt and `resume`, never preview IDs.
 
 # Local upgrade 2026-10-08.1
 
-Current agent contract and canonical repository bridge: **2026-10-08.1**.
+Historical agent contract and canonical repository bridge: **2026-10-08.1**.
 Run `doctor` from the venture root and require the canonical SHA in its manifest.
 The 2026-10-07.2 section above records the previous upgrade; use this revision
 for the remarks continuations. No database migration is required.
@@ -208,7 +208,7 @@ in the owning local workspace and are not needed to install or use Foundry.
 
 # Local upgrade 2026-10-09.1
 
-Current agent contract and canonical repository bridge: **2026-10-09.1**
+Historical agent contract and canonical repository bridge: **2026-10-09.1**
 ([ADR-0020](adr/0020-truthful-venture-state-requests-and-drift.md)). Copy
 `scripts/agent-kit/foundry_agent.py` to `tools/foundry_agent.py`, put its SHA-256
 and `agent_contract_version` in `.foundry/project.json`, then run `doctor`.
@@ -231,3 +231,34 @@ command; back up the store first.
   action; `result preview` lists `review_changes`. Evidence your accepted result
   cites leaves the unreviewed list.
 - **Output.** JSON ends with a newline; INFO logs only with `--debug`.
+
+# Local upgrade 2026-10-11.1
+
+Current agent contract and canonical repository bridge: **2026-10-11.1**
+([ADR-0021](adr/0021-agent-followups-and-feedback-triage.md)). Copy the canonical
+bridge and update the manifest hash/version; no database migration is required.
+
+- `start` retries an exact context-size error once, at the reported budget up to
+  100000 bytes. It reports `budget_retry`, retains claim pins and request key, and
+  never retries unknown failures. A failed new claim preparation releases its
+  exact claim; `--resume-owned` preserves existing ownership on failure.
+- `doctor` reports `feedback_outbox` and warns when Git ignores the durable outbox.
+  A warning does not change the repository's ignore rules or publish receipts.
+- Result show includes `resolution_pins` from its saved context. Work-scoped
+  results preserve map focus, including when they schedule new work; explicit
+  proposed maps can change it. Preview includes `focus_changes` before/after.
+- Accepted, unchanged evidence is excluded from new unclassified arrivals while
+  the full manifest remains pinned. A claimant's own irrelevant map edit can
+  preserve context only while the selected task map and scope stay unchanged.
+  Another actor's revision or changed work/dependencies still requires recovery.
+  Work treatments can revise `question` and `acceptance_criteria` with normal pins.
+- Resume returns `needs_review` as an array of `{work_id, reason}`. Venture reads
+  include `version_id`. Alias reads serve the same URL without redirection.
+- Venture direction and scheduled package action are displayed separately.
+  Scores expose `score_state`: `none`, `imported`, `reviewed` or `stale`.
+  `score ranking-show --id ID` reads an immutable ranking's pinned assessments;
+  it does not recompute using newer judgments.
+- Source locators accept HTTP(S), `observation:` or `document:`. Observations
+  require an attributable source or record reference; unsupported judgments use
+  `inference` or `unknown`. `market-actor list --query NAME` discovers existing IDs
+  before explicitly linking an actor; conflicting websites are never merged.

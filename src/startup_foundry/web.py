@@ -10,7 +10,7 @@ from urllib.parse import quote, urlsplit
 from uuid import uuid4
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, ConfigDict, Field
@@ -189,7 +189,7 @@ def create_app(factory: SessionFactory, requests_directory: Path) -> FastAPI:
     async def venture_alias(
         request: Request, call_next: Callable[[Request], Awaitable[Response]]
     ) -> Response:
-        """Redirect GET /ventures/{alias}… and /api/ventures/{alias}… (ADR-0020)."""
+        """Resolve read-only alias routes while keeping the caller's URL."""
         parts = request.url.path.split("/")
         offset = 2 if parts[1:2] == ["ventures"] else 3
         if (
@@ -209,10 +209,8 @@ def create_app(factory: SessionFactory, requests_directory: Path) -> FastAPI:
                 )
             if canonical:
                 parts[offset] = quote(canonical, safe="")
-                target = "/".join(parts)
-                if request.url.query:
-                    target += "?" + request.url.query
-                return RedirectResponse(target, status_code=307)
+                request.scope["path"] = "/".join(parts)
+                request.scope["raw_path"] = request.scope["path"].encode()
         return await call_next(request)
 
     @app.exception_handler(StartupFoundryError)

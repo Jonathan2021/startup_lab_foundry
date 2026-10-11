@@ -8,7 +8,7 @@ share a portfolio; each retains its own history and work.
 The [local lifecycle MVP](docs/LIFECYCLE_MVP.md) is implemented. It includes
 versioned decision maps, attributed changes, concise agent context, reviewed
 results, evolving assessments, human input and explicit portfolio fusion.
-Distribution **0.1.0**, agent contract **2026-10-09.1**. See current
+Distribution **0.1.0**, agent contract **2026-10-11.1**. See current
 [release checks and limits](docs/RELEASE_READINESS.md) and the historical
 [lifecycle evidence](docs/inquiry/lifecycle-mvp-2026-10-06/REPORT.md).
 Monetization, managed agents, training and hosted multi-user operation are deferred.

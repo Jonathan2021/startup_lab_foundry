@@ -36,6 +36,7 @@ def test_independence_frozen_baseline_partial_idempotence_and_sort(tmp_path):
         for v in ["one", "two"]
     )
     assert s.bootstrap()["imported"] == 0
+    assert s.show("two")["score_state"] == "imported"
 
     def payload(v, key, n=1, values=scores):
         return VentureAssessmentInput(
@@ -54,6 +55,7 @@ def test_independence_frozen_baseline_partial_idempotence_and_sort(tmp_path):
     with pytest.raises(ConflictError):
         s.assess(payload("one", "stale"))
     partial = s.assess(payload("one", "partial", 2, {"problem": 3}))
+    assert s.show("one")["score_state"] == "reviewed"
     assert partial["total"] is None and s.show("one")["current"]["id"] == partial["id"]
     ideas.assess(
         AssessmentInput(

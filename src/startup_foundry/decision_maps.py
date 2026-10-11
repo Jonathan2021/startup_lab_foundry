@@ -342,7 +342,11 @@ def apply_treatments(
         if work is None or work.workspace_id != workspace:
             raise ReferenceError("Work treatment belongs to another workspace")
         if work.version_id != treatment.expected_version or work.status not in ACTIVE:
-            raise ConflictError("Work treatment is stale; refresh the exact work item")
+            raise ConflictError(
+                f"Work treatment is stale for {work.id}: expected version "
+                f"{treatment.expected_version}, current {work.version_id} "
+                f"({work.status.value}); refresh the exact work item"
+            )
         if treatment.action == "pause":
             if work.status != WorkItemStatus.BLOCKED:
                 work.blocked_reason = "changed_context"
@@ -358,10 +362,15 @@ def apply_treatments(
             ):
                 work.status, work.blocked_reason = WorkItemStatus.READY, None
             if treatment.action == "revise":
-                if treatment.title:
-                    work.title = treatment.title
-                if treatment.description:
-                    work.description = treatment.description
+                for field in (
+                    "title",
+                    "description",
+                    "question",
+                    "acceptance_criteria",
+                ):
+                    value = getattr(treatment, field)
+                    if value is not None:
+                        setattr(work, field, value)
         work.version_id += 1
     session.flush()
 
@@ -491,10 +500,9 @@ class DecisionMapService:
                 # An added/removed relationship changes an unchanged work node
                 # only when it alters that work's execution prerequisites.
                 source = before.get(edge["source"]) or after.get(edge["source"]) or {}
-                unchanged_work = (
-                    (source.get("ref") or {}).get("kind") == "work"
-                    and before.get(edge["source"]) == after.get(edge["source"])
-                )
+                unchanged_work = (source.get("ref") or {}).get(
+                    "kind"
+                ) == "work" and before.get(edge["source"]) == after.get(edge["source"])
                 if edge["kind"] == "depends_on" or not unchanged_work:
                     changed.add(edge["source"])
                 if edge["kind"] in {"informs", "supports", "contradicts"}:
@@ -523,10 +531,20 @@ class DecisionMapService:
                 for n in old["map"]["nodes"]
                 if n.get("ref") and n["ref"]["kind"] == "work"
             }
-            for wid in affected:
+            for wid in sorted(affected):
                 work = session.get(WorkItem, wid)
                 if work and work.status in ACTIVE:
-                    pending[wid] = payload.rationale
+                    if (
+                        work.status == WorkItemStatus.IN_PROGRESS
+                        and work.owner == payload.actor
+                    ):
+                        # The claimant is deliberately reviewing this map edit.
+                        # Changed task context still requires fresh preparation.
+                        affected.discard(wid)
+                        # An earlier review requirement still needs an explicit
+                        # treatment; owning this edit does not clear that history.
+                    else:
+                        pending[wid] = payload.rationale
         apply_treatments(session, workspace, payload.work_treatments, pending)
         treated = {t.work_id for t in payload.work_treatments}
         for wid in affected - treated:

@@ -100,7 +100,12 @@ def score_status(session: Session, venture: Venture) -> JSON:
         or next((a for a in rows if a.scorecard_id == ORIGINAL), None)
     )
     if selected is None:
-        return {"status": "not_scored", "assessment_id": None, "total": None}
+        return {
+            "status": "not_scored",
+            "score_state": "none",
+            "assessment_id": None,
+            "total": None,
+        }
     scope = {
         "objective": venture.objective,
         "source_idea_revision_id": venture.source_idea_revision_id,
@@ -108,6 +113,11 @@ def score_status(session: Session, venture: Venture) -> JSON:
     recorded = {key: selected.context_json.get(key) for key in scope}
     return {
         "status": "predates_scope" if recorded != scope else "current",
+        "score_state": "stale"
+        if recorded != scope
+        else "imported"
+        if selected.kind == "source_baseline"
+        else "reviewed",
         "assessment_id": selected.id,
         "total": selected.overall_score,
         "scorecard_id": selected.scorecard_id,
@@ -164,6 +174,22 @@ def venture_state(
         if review and review.next_work_item_id
         else None
     )
+    if work is None:
+        # Older reviews can retain the venture gate without a scheduled pointer.
+        # One exact active claim still identifies the current package; do not
+        # guess among several claims or select unclaimed work automatically.
+        claimed = list(
+            session.scalars(
+                select(WorkItem)
+                .where(
+                    WorkItem.workspace_id == venture.workspace_id,
+                    WorkItem.status == WorkItemStatus.IN_PROGRESS,
+                )
+                .limit(2)
+            )
+        )
+        if len(claimed) == 1:
+            work = claimed[0]
     superseded = (
         superseded
         if superseded is not None
@@ -214,6 +240,7 @@ def venture_state(
             "work_title": work.title if work else None,
             "work_status": work.status.value if work else "not_scheduled",
             "owner": work.owner if work else None,
+            "work_action": (work.description or work.title) if work else None,
         },
         "open_gates": gates,
         "open_gate_count": len(gates),

@@ -31,6 +31,7 @@ from startup_foundry.decision_contracts import (
 )
 from startup_foundry.decision_maps import (
     ACTIVE,
+    MAP_SCHEMA,
     DecisionMapService,
     execution_blockers,
     map_head,
@@ -51,6 +52,7 @@ from startup_foundry.domain import (
     DecisionAssessment,
     DecisionEvidence,
     DecisionKind,
+    DecisionMap,
     DecisionStatus,
     Disposition,
     Evidence,
@@ -497,11 +499,11 @@ class AgentHandoffService:
                 "scope": scope,
                 "map_revision_id": maps["id"],
                 # Superseded legacy work is listed apart: close or revise it.
-                "needs_review": {
-                    wid: reason
+                "needs_review": [
+                    {"work_id": wid, "reason": reason}
                     for wid, reason in maps["needs_review"].items()
                     if wid not in superseded
-                },
+                ],
                 "superseded": [
                     {
                         "id": w["id"],
@@ -581,6 +583,10 @@ class AgentHandoffService:
         ]
         state = result["venture_state"]
         if state:
+            if state["next_action"]["work_action"]:
+                lines.append(
+                    "Current package action: " + state["next_action"]["work_action"]
+                )
             lines.append("State: " + state["headline"])
             if state["lifecycle"]["differs"]:
                 lines.append(
@@ -800,6 +806,8 @@ class AgentHandoffService:
                 identity
                 for identity in manifest
                 if "evidence:" + identity not in records
+                and manifest[identity]
+                != data.get("reviewed_evidence", {}).get(identity)
             ]
             arrivals = []
             for eid in unseen[:50]:
@@ -839,6 +847,7 @@ class AgentHandoffService:
                 "evidence_manifest": manifest,
                 "unclassified": arrivals,
                 "unclassified_total": len(unseen),
+                "unclassified_ids": unseen,
                 "next_arrivals_offset": 50 if len(unseen) > 50 else None,
                 "context_complete": not unseen,
                 "created_at": utc_now().isoformat(),
@@ -866,6 +875,43 @@ class AgentHandoffService:
             return self._context_view(result)
 
     @staticmethod
+    def _compatible_map(
+        session: Session, context: JSON, head: DecisionMap | None
+    ) -> bool:
+        """Only the claimant's irrelevant edits can retain an immutable context.
+
+        Inspect every intervening revision, not just the latest author. Purpose,
+        dependencies, conditions and referenced records stay pinned to the saved
+        context; other stale checks still run independently.
+        """
+        if head is None:
+            return False
+        identity = head.current_revision_artifact_id
+        seen: set[str] = set()
+        work = session.get(WorkItem, context["work"]["id"])
+        if (
+            work is None
+            or work.status != WorkItemStatus.IN_PROGRESS
+            or work.owner != context["actor"]
+        ):
+            return False
+        while identity != context["map_revision_id"]:
+            if identity is None or identity in seen:
+                return False
+            seen.add(identity)
+            revision = read_snapshot(
+                session, identity, context["workspace_id"], MAP_SCHEMA
+            )
+            if (
+                revision["actor"] != context["actor"]
+                or revision["scope"] != context["scope"]
+                or task_map(revision["map"], work.id) != context["map"]
+            ):
+                return False
+            identity = revision["previous_revision_id"]
+        return True
+
+    @staticmethod
     def _stale(session: Session, context: JSON) -> list[str]:
         workspace = context["workspace_id"]
         head = map_head(session, workspace)
@@ -873,7 +919,7 @@ class AgentHandoffService:
         if (
             head is None
             or head.current_revision_artifact_id != context["map_revision_id"]
-        ):
+        ) and not AgentHandoffService._compatible_map(session, context, head):
             reasons.append("Decision map changed")
         if workspace_scope(session, workspace) != context["scope"]:
             reasons.append("Venture scope changed")
@@ -913,11 +959,14 @@ class AgentHandoffService:
         with self.factory() as session:
             artifact = self._artifact(session, context_id, CONTEXT_SCHEMA)
             data = artifact.metadata_json
-            ids = [
-                key
-                for key in data["evidence_manifest"]
-                if "evidence:" + key not in data["records"]
-            ]
+            ids = data.get(
+                "unclassified_ids",
+                [
+                    key
+                    for key in data["evidence_manifest"]
+                    if "evidence:" + key not in data["records"]
+                ],
+            )
             items = []
             for identity in ids[offset : offset + limit]:
                 record = record_snapshot(
@@ -1169,6 +1218,12 @@ class AgentHandoffService:
             "deferral": deferred.metadata_json if deferred else None,
             "context_complete": context.metadata_json["context_complete"],
             "work_id": context.work_item_id,
+            "resolution_pins": {
+                "expected_result_digest": result.content_digest,
+                "expected_head": context.metadata_json["map_revision_id"],
+                "expected_work_version": context.metadata_json["work"]["version_id"],
+                "expected_review_revision": context.metadata_json["review_revision"],
+            },
         }
 
     def show_result(self, identity: str) -> JSON:
@@ -1709,7 +1764,7 @@ class AgentHandoffService:
         draft = proposal.map.model_dump(mode="json") if proposal.map else old_map["map"]
         # Copy before adding links; immutable stored JSON must never be mutated.
         draft = json.loads(json.dumps(draft))
-        if proposal.complete_work:
+        if proposal.complete_work and proposal.decision_scope == "venture":
             completed_nodes = {
                 n["id"]
                 for n in draft["nodes"]
@@ -1733,7 +1788,8 @@ class AgentHandoffService:
                 draft["edges"].append(
                     {"source": key, "target": goals[0], "kind": "contributes_to"}
                 )
-            draft["focus"] = [key]
+            if proposal.decision_scope == "venture":
+                draft["focus"] = [key]
         session.flush()
         revision = DecisionMapService._revise(
             session,
@@ -1799,6 +1855,10 @@ class AgentHandoffService:
         ]
         return {
             "review_changes": review_changes,
+            "focus_changes": {
+                "before": old_map["map"]["focus"],
+                "after": draft["focus"],
+            },
             "next_action_retained": keep_action,
             "decision_id": decision.id,
             "evidence_ids": [e.id for e in evidence],

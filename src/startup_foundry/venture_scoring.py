@@ -409,6 +409,13 @@ class VentureScoringService:
             )
             return {
                 "history": history,
+                "score_state": "none"
+                if current is None
+                else "stale"
+                if current["scope_stale"]
+                else "imported"
+                if current["kind"] == "source_baseline"
+                else "reviewed",
                 "current": current,
                 "primary": primary,
                 "fallback": fallback,

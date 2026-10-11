@@ -9,6 +9,7 @@ assessments stay attached to the revision they judged.
 from __future__ import annotations
 
 import hashlib
+import json
 from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Annotated, Any, Literal, Self
@@ -576,7 +577,8 @@ class DiscoveryService:
                 return actor, False
             raise ConflictError(
                 f"Market actor {actor.name!r} already exists as {actor.id} with "
-                f"website {actor.website or 'unset'}; reference it by actor_id"
+                f"website {actor.website or 'unset'}; reference it by actor_id. "
+                f"Find it with market-actor list --query {json.dumps(actor.name)}"
             )
         actor = MarketActor(
             id=identity,

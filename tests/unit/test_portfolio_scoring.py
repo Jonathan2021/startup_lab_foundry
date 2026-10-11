@@ -190,6 +190,11 @@ def test_scorecard_versions_sensitivity_ranking_and_partial_exclusion(scoring):
     )
     updated = service.rank("profile-v2", "updated comparison")
     assert updated["ranked"] == 0 and updated["ranked_entries"] == []
+    saved = service.ranking_show(rank["id"])
+    assert saved["entries"][0]["assessment_id"] == full["id"]
+    assert saved["entries"][0]["total"] == 0
+    assert saved["entries"][0]["revision_id"] == full["revision_id"]
+    assert service.ranking_show(updated["id"])["entries"] == []
     assert {e["reason"] for e in updated["excluded_entries"]} == {"partial_total"}
     portfolio.create_idea(IdeaDraft(title="c", description="Unscored"), idea_id="c")
     unscored = service.rank("profile-v2", "with unscored idea")["excluded_entries"]

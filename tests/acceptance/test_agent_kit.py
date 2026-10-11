@@ -90,7 +90,7 @@ def test_bridge_discovers_public_contracts_without_creating_missing_store(tmp_pa
     )
     assert discovery.returncode == 0, discovery.stderr
     assert not store.exists()
-    assert json.loads(discovery.stdout)["x-foundry-agent-contract"] == "2026-10-09.1"
+    assert json.loads(discovery.stdout)["x-foundry-agent-contract"] == "2026-10-11.1"
     manifest = create_demo(store)
     config.update(manifest["ventures"][0])
     (project / ".foundry/project.json").write_text(json.dumps(config))
@@ -163,7 +163,7 @@ def test_independent_agent_feedback_retry_and_claim_conflict(tmp_path):
     factory = create_session_factory(engine)
     service = AgentHandoffService(factory)
     work = service.resume(source["workspace_id"])["work"][0]
-    failed_start = run(
+    started = run(
         "start",
         "--actor",
         "one",
@@ -172,12 +172,10 @@ def test_independent_agent_feedback_retry_and_claim_conflict(tmp_path):
         "--budget-bytes",
         "512",
     )
-    assert failed_start.returncode == 1
-    released = service.resume(source["workspace_id"])["work"][0]
-    assert released["status"] == "ready" and released["owner"] == "agent"
-    started = run("start", "--actor", "one", "--work-id", work["id"])
     assert started.returncode == 0, started.stderr
     context = json.loads(started.stdout)
+    assert context["budget_retry"]["requested_bytes"] == 512
+    assert 512 < context["budget_retry"]["used_bytes"] <= 100000
     assert Path(context["saved_context"]).is_file()
     assert context["work"]["owner"] == "one"
     recovered = run(
@@ -197,7 +195,7 @@ def test_independent_agent_feedback_retry_and_claim_conflict(tmp_path):
     assert doctor.returncode == 0, doctor.stderr
     health = json.loads(doctor.stdout)
     assert (
-        health["agent_contract_version"] == health["bridge_version"] == "2026-10-09.1"
+        health["agent_contract_version"] == health["bridge_version"] == "2026-10-11.1"
     )
     assert health["store_file_checked"] and health["database_opened"]
     assert health["repository"]["recorded_delivery"] is None

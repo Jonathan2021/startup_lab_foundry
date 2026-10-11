@@ -120,6 +120,7 @@ def add_console_parsers(resources: Any) -> None:
             rank = actions.add_parser("rank")
             rank.add_argument("--scorecard-id", required=True)
             rank.add_argument("--label", required=True)
+            actions.add_parser("ranking-show").add_argument("--id", required=True)
         elif resource == "scorecard":
             actions.add_parser("list")
             actions.add_parser("import").add_argument("--input", required=True)
@@ -369,6 +370,8 @@ def dispatch(
         return scores.sensitivity(args.idea_id, args.scorecard_id)
     if action == ("score", "rank"):
         return scores.rank(args.scorecard_id, args.label)
+    if action == ("score", "ranking-show"):
+        return scores.ranking_show(args.id)
     if action == ("scorecard", "list"):
         return scores.list_scorecards()
     if action == ("scorecard", "import"):

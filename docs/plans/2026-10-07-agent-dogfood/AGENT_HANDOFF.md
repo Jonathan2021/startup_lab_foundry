@@ -20,9 +20,11 @@ python3 tools/foundry_agent.py start --actor implementer-foundry-YOUR_SESSION_ID
 The third command claims the current reviewed next work and saves context under
 `.foundry/runs/`. Use a unique actor per agent session. It does not launch a model.
 If the current work is already claimed, do not steal it or reset the database.
-If preparation exceeds its 24KB budget, the bridge releases its exact claim;
-review scope before explicitly using `--budget-bytes 50000` or 100000. Nothing is
-silently truncated. A crash after a claim can leave work owned: inspect resume and
+If preparation exceeds its 24KB budget, the bridge retries once at the exact
+reported size, capped at 100000 bytes, without claiming again. Successful output
+includes `budget_retry`; nothing is silently truncated. Larger contexts and other
+errors fail and release the exact unchanged new claim. Recovery with
+`--resume-owned` preserves ownership on failure. A crash after a claim can leave work owned: inspect resume and
 use `handoff release` with the same actor/current version and a reason. There is
 no lease expiry or claim authentication; the store is trusted local coordination.
 
@@ -79,7 +81,8 @@ Work-scoped no_change/continue is appropriate for ordinary implementation; a
 venture-level pivot needs explicit proposed objective and treatment of other work.
 Hold needs a revisit trigger and cannot queue ready continuation in the same result.
 
-Resolution pins `expected_result_digest` from result show, and expected map head,
+Result show exposes a `resolution_pins` object. It pins the result digest and saved
+context versions, not newer live state. Resolution pins `expected_result_digest` from result show, and expected map head,
 work version and review revision from the *saved result context*. Never fill stale
 fields with newer values just to pass validation. Explain coverage limits if any.
 The authorized coordinating agent may accept routine local implementation results
@@ -115,7 +118,25 @@ Do not claim the app is built because its specification or synthetic fixture pas
 Only add current-package tests. Keep real user trial gates distinct from build gates.
 
 
-## Current upgrade (2026-10-09.1)
+## Current upgrade (2026-10-11.1)
+
+Use the current canonical bridge and update its manifest hash. `doctor` also warns
+if Git ignores the feedback outbox. Work-scoped acceptance preserves map focus;
+an explicit proposed map can move it, with before/after focus in preview.
+Unchanged evidence classified by an accepted revision is not a new arrival.
+All evidence remains pinned for change detection. Resume's `needs_review` is an
+array of `{work_id, reason}`. `venture show` includes `version_id` for updates.
+
+A claimant's own irrelevant map edit can preserve its context; changed task
+dependencies, scope, work or another actor's revision still require fresh context.
+Map work treatments can revise `question` and `acceptance_criteria`. The console
+shows scheduled package action separately from the retained venture HOLD/action;
+scores identify imported estimates versus reviewed judgments. `score ranking-show
+--id SNAPSHOT_ID` reads a retained ranking without recomputing it. Alias reads keep
+the original URL. Source locators accept HTTP(S), `observation:` or `document:`;
+an observation needs an attributable locator or record reference.
+
+## Previous upgrade (2026-10-09.1)
 
 Record every delivery in a result finding as `Delivery: main=<sha> ci=<run id>`.
 `resume`, `start` and `doctor` print a `repository` block (local HEAD, local

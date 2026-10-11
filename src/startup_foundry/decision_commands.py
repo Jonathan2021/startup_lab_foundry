@@ -35,7 +35,7 @@ from startup_foundry.repository import SessionFactory
 
 SELECTOR_HELP = "Venture ID, venture alias, workspace ID/key or idea ID"
 RESOURCES = {"agent", "decision-map", "handoff", "result", "change", "venture-work"}
-AGENT_CONTRACT_VERSION = "2026-10-09.1"
+AGENT_CONTRACT_VERSION = "2026-10-11.1"
 SCHEMAS: dict[str, type[BaseModel]] = {
     "map": MapInput,
     "context": ContextInput,
@@ -46,7 +46,7 @@ SCHEMAS: dict[str, type[BaseModel]] = {
     "change": CaptureInput,
     "work": NewWorkInput,
     "close": WorkCloseInput,
-    # Discovery inputs (ADR-0019), published in contract 2026-10-09.1.
+    # Discovery inputs (ADR-0019), published in contract 2026-10-11.1.
     "source": SourceInput,
     "market_actor_link": ActorLinkInput,
     "idea_revision": IdeaRevisionInput,
@@ -107,8 +107,24 @@ the repository bridge compares it with local HEAD and origin/main (no fetch).
 `handoff release` needs expected_version, actor and rationale for interrupted work.
 Use the CLI's --store PATH consistently for an isolated/demo store.
 
-Public contract revision: 2026-10-09.1. Guide and schema discovery do not open,
+Public contract revision: 2026-10-11.1. Guide and schema discovery do not open,
 migrate or create a database. Stateful commands still require the intended store.
+Result show includes resolution_pins from the saved context; never substitute newer
+live versions. Work-scoped acceptance preserves map focus; an explicit proposed map
+can move it, with focus_changes in preview. Resume needs_review is an array of
+work_id/reason objects; venture show exposes version_id. Alias reads keep their URL.
+Accepted unchanged evidence is classified, not a fresh arrival; all evidence stays
+pinned for change detection. A claimant's irrelevant own map edit may preserve
+context only with unchanged selected task map/scope and no intervening other actor.
+Work treatments may revise question and acceptance_criteria with normal versions.
+The repository bridge retries an exact size error once, at most 100000 bytes, using
+the same claim and request key. Arbitrary errors/timeouts are never retried. Doctor
+warns if the feedback outbox is Git-ignored. Read relevant arrivals even after retry.
+Venture direction and package action are separate. Scores label imported estimates,
+reviewed judgments, stale and absent states. score ranking-show --id ID reads a
+retained snapshot without recomputing it. market-actor list --query NAME finds IDs.
+Source locators accept HTTP(S), observation: or document:. An observation needs
+an attributable source or record reference; otherwise use inference or unknown.
 Prepared context contains the map nodes selected for this work; map_coverage
 gives counts and the command to retrieve the exact full map revision. This is
 separate from context_complete, which describes evidence selection coverage.

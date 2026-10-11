@@ -438,8 +438,11 @@ class PortfolioViewService:
                 # One derived state per card (ADR-0020), same as header/resume.
                 for item in items:
                     venture = session.get(Venture, item["id"])
-                    item["state"] = (
-                        venture_state(session, venture) if venture else None
+                    item["state"] = venture_state(session, venture) if venture else None
+                    item["score_state"] = (
+                        item["state"]["score"]["score_state"]
+                        if item["state"]
+                        else "none"
                     )
             if subject == "idea" and items:
                 ids = [i["id"] for i in items]

@@ -620,6 +620,7 @@ class FoundryApplication:
         return {
             "id": venture.id,
             "alias": venture.alias,
+            "version_id": venture.version_id,
             "workspace_id": workspace.id,
             "name": workspace.title,
             "objective": venture.objective,

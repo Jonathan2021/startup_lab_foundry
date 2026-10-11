@@ -710,6 +710,36 @@ class ScoringService:
             "limits": "Sensitivity, not success probability",
         }
 
+    def ranking_show(self, identity: str) -> JSON:
+        """Read the pinned assessments in a retained ranking, never rerank today."""
+        with self.factory() as session:
+            saved = session.get(RankingSnapshot, identity)
+            if saved is None:
+                raise ReferenceError("Ranking snapshot does not exist")
+            rows = session.execute(
+                select(RankingEntry, IdeaAssessment)
+                .join(IdeaAssessment, IdeaAssessment.id == RankingEntry.assessment_id)
+                .where(RankingEntry.snapshot_id == identity)
+                .order_by(RankingEntry.rank)
+            )
+            return {
+                "id": saved.id,
+                "label": saved.label,
+                "scorecard_id": saved.scorecard_id,
+                "generated_at": saved.generated_at.isoformat(),
+                "entries": [
+                    {
+                        "rank": entry.rank,
+                        "idea_id": entry.idea_id,
+                        "revision_id": assessment.idea_revision_id,
+                        "total": entry.score,
+                        "grade": assessment.grade,
+                        "assessment_id": entry.assessment_id,
+                    }
+                    for entry, assessment in rows
+                ],
+            }
+
     def rank(self, scorecard_id: str, label: str) -> JSON:
         with UnitOfWork(self.factory) as unit:
             session = unit.session

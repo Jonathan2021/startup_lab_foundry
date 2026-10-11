@@ -163,12 +163,23 @@ class WorkTreatment(Contract):
     rationale: Reason
     title: ShortText | None = None
     description: str | None = Field(default=None, max_length=10000)
+    question: str | None = Field(default=None, max_length=10000)
+    acceptance_criteria: str | None = Field(default=None, max_length=10000)
 
     @model_validator(mode="after")
     def revised_fields(self) -> Self:
-        if self.action == "revise" and not (self.title or self.description):
+        changed = any(
+            field is not None
+            for field in (
+                self.title,
+                self.description,
+                self.question,
+                self.acceptance_criteria,
+            )
+        )
+        if self.action == "revise" and not changed:
             raise ValueError("A work revision must specify its change")
-        if self.action != "revise" and (self.title or self.description):
+        if self.action != "revise" and changed:
             raise ValueError("Only a revision changes work content")
         return self
 
@@ -193,10 +204,19 @@ class ContextInput(Contract):
 
 
 class Finding(Contract):
+    """An observation requires a source or record ref; label unsourced inference
+    and unknowns explicitly. Source schemes are http(s), observation: or document:.
+    """
+
     summary: Reason
     details: str = Field(default="", max_length=10000)
     sources: list[Annotated[str, Field(min_length=1, max_length=2000)]] = Field(
-        default_factory=list, max_length=20
+        default_factory=list,
+        max_length=20,
+        description="Each locator must use http(s), observation: or document:. "
+        "HTTP URLs require a host and cannot contain credentials. "
+        "An observation needs a source or record ref; otherwise label it "
+        "inference or unknown.",
     )
     refs: list[RecordRef] = Field(default_factory=list, max_length=30)
     kind: EvidenceKind = EvidenceKind.OBSERVATION

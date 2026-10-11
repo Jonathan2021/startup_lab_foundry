@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
-BRIDGE_VERSION = "2026-10-09.1"
+BRIDGE_VERSION = "2026-10-11.1"
 
 
 def write_new(path: Path, value: dict[str, Any]) -> None:
@@ -224,7 +224,7 @@ def start_work(
                 "use normal start for ready work and never take another owner's claim"
             )
         # No claim mutation and no release on failure: interrupted work stays owned.
-        return submit(
+        return prepare_with_budget(
             config,
             {
                 "work_id": work["id"],
@@ -234,9 +234,6 @@ def start_work(
                 "actor": actor,
                 "budget_bytes": budget,
             },
-            "handoff",
-            "prepare",
-            "--workspace-id",
             workspace,
         )
     claimed = submit(
@@ -250,7 +247,7 @@ def start_work(
         work["id"],
     )
     try:
-        return submit(
+        return prepare_with_budget(
             config,
             {
                 "work_id": work["id"],
@@ -260,9 +257,6 @@ def start_work(
                 "actor": actor,
                 "budget_bytes": budget,
             },
-            "handoff",
-            "prepare",
-            "--workspace-id",
             workspace,
         )
     except (OSError, ValueError, RuntimeError, subprocess.TimeoutExpired):
@@ -282,6 +276,59 @@ def start_work(
             work["id"],
         )
         raise
+
+
+def prepare_with_budget(
+    config: dict[str, Any], payload: dict[str, Any], workspace: str
+) -> dict[str, Any]:
+    """Retry preparation once on the CLI's exact size error, never a mutation.
+
+    Unknown outcomes, timeouts and arbitrary validation errors are not retried.
+    No content is truncated. The CLI's 100 KB maximum remains the hard limit.
+    """
+    requested = payload["budget_bytes"]
+    try:
+        return submit(
+            config, payload, "handoff", "prepare", "--workspace-id", workspace
+        )
+    except RuntimeError as exc:
+        size = re.search(
+            r"Required context is (\d+) bytes; budget is (\d+)\.", str(exc)
+        )
+        if size is None:
+            raise
+        required = int(size.group(1))
+        if not requested < required <= 100000:
+            raise RuntimeError(
+                str(exc) + " Review scope; use --budget-bytes only within 100000 bytes."
+            ) from exc
+        prepared = submit(
+            config,
+            {**payload, "budget_bytes": required},
+            "handoff",
+            "prepare",
+            "--workspace-id",
+            workspace,
+        )
+        prepared["budget_retry"] = {
+            "requested_bytes": requested,
+            "used_bytes": required,
+        }
+        return prepared
+
+
+def feedback_outbox_status(repository: Path) -> dict[str, Any]:
+    ignored = git_value(
+        repository, "check-ignore", "feedback/.foundry-outbox-probe.json"
+    )
+    return {
+        "path": str(repository / "feedback"),
+        "git_ignored": ignored is not None,
+        "warning": "feedback/ is Git-ignored; immutable reports will not travel "
+        "with repository delivery"
+        if ignored
+        else None,
+    }
 
 
 def send_feedback(config: dict[str, Any], report: dict[str, Any]) -> dict[str, Any]:
@@ -428,6 +475,9 @@ def main() -> int:
                 except (OSError, ValueError, RuntimeError) as exc:
                     result["store_error"] = str(exc)[-500:]
             result["repository"] = repository_drift(config, config_path, state)
+            result["feedback_outbox"] = feedback_outbox_status(
+                Path(result["repository"]["path"])
+            )
         elif args.command == "resume":
             result = resume_state(config)
             result["repository"] = repository_drift(config, config_path, result)
@@ -491,6 +541,9 @@ def main() -> int:
         drift = result.get("repository") if isinstance(result, dict) else None
         if isinstance(drift, dict) and drift.get("moved_past_delivery"):
             print("Foundry bridge warning: " + drift["warning"], file=sys.stderr)
+        outbox = result.get("feedback_outbox")
+        if isinstance(outbox, dict) and outbox.get("warning"):
+            print("Foundry bridge warning: " + outbox["warning"], file=sys.stderr)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
     except (

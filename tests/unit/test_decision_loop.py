@@ -364,7 +364,7 @@ def test_competing_result_cannot_apply_and_review_clears_attention(loop):
     with pytest.raises(ConflictError, match="reconciliation"):
         handoffs.resolve(two["id"], resolution(two, ctx))
     assert handoffs.resume(venture["workspace_id"])["unreviewed_change_count"] == 0
-    assert not maps.show(venture["workspace_id"])["map"]["focus"]
+    assert maps.show(venture["workspace_id"])["map"]["focus"] == ["work"]
     from startup_foundry.domain import DecisionEvidence
 
     with f() as s:
@@ -535,3 +535,218 @@ def test_superseded_history_requires_accepted_replacement(
     else:
         assert original["state"] != "superseded"
         assert original["superseded_by"] is None
+
+
+def test_work_result_preserves_focus_and_exposes_saved_resolution_pins(loop):
+    _, venture, _, _, _, maps, handoffs, _, _ = loop
+    ctx = context(loop)
+    result = handoffs.submit(venture["workspace_id"], result_payload(ctx))
+    assert result["resolution_pins"] == {
+        "expected_result_digest": result["digest"],
+        "expected_head": ctx["map_revision_id"],
+        "expected_work_version": ctx["work"]["version_id"],
+        "expected_review_revision": ctx["review_revision"],
+    }
+    handoffs.resolve(result["id"], resolution(result, ctx))
+    assert maps.show(venture["workspace_id"])["map"]["focus"] == ["work"]
+    assert (
+        handoffs.show_result(result["id"])["resolution_pins"]
+        == result["resolution_pins"]
+    )
+
+
+def test_explicit_result_map_can_move_focus(loop):
+    _, venture, _, _, _, maps, handoffs, data, _ = loop
+    ctx = context(loop)
+    changed = data.map.model_dump(mode="json")
+    changed["focus"] = ["hold"]
+    result = handoffs.submit(venture["workspace_id"], result_payload(ctx, map=changed))
+    preview = handoffs.preview(result["id"], resolution(result, ctx))
+    assert preview["effects"]["focus_changes"] == {
+        "before": ["work"],
+        "after": ["hold"],
+    }
+    assert maps.show(venture["workspace_id"])["map"]["focus"] == ["work"]
+    handoffs.resolve(result["id"], resolution(result, ctx))
+    assert maps.show(venture["workspace_id"])["map"]["focus"] == ["hold"]
+
+
+def test_accepted_findings_are_classified_but_changed_findings_arrive_again(loop):
+    f, venture, _, _, sibling, maps, handoffs, _, _ = loop
+    ctx = context(loop)
+    result = handoffs.submit(venture["workspace_id"], result_payload(ctx))
+    receipt = handoffs.resolve(result["id"], resolution(result, ctx))
+    head = maps.show(venture["workspace_id"])
+    draft = head["map"]
+    draft["nodes"].append(
+        {
+            "id": "sibling",
+            "kind": "record",
+            "title": "Help work",
+            "ref": {"kind": "work", "id": sibling},
+        }
+    )
+    head = maps.revise(
+        venture["workspace_id"],
+        MapInput(
+            expected_head=head["id"],
+            request_key="add-sibling",
+            actor="operator",
+            rationale="Plan the unrelated help work",
+            map=draft,
+        ),
+    )
+    with f() as s:
+        version = s.get(WorkItem, sibling).version_id
+
+    def prepare(key):
+        return handoffs.prepare(
+            venture["workspace_id"],
+            ContextInput(
+                work_id=sibling,
+                expected_work_version=version,
+                expected_head=head["id"],
+                request_key=key,
+                actor="agent",
+            ),
+        )
+
+    later = prepare("sibling-context")
+    assert later["context_complete"]
+    assert handoffs.arrivals(later["id"])["items"] == []
+    with f.begin() as s:
+        s.get(Evidence, receipt["effects"]["evidence_ids"][0]).details = "Correction"
+    corrected = prepare("corrected-context")
+    assert not corrected["context_complete"]
+    assert receipt["effects"]["evidence_ids"][0] in [
+        i["id"] for i in handoffs.arrivals(corrected["id"])["items"]
+    ]
+
+
+def test_claimant_unrelated_map_edit_keeps_context_but_other_actor_edit_does_not(loop):
+    f, venture, wid, _, _, maps, handoffs, data, head = loop
+    from startup_foundry.decision_contracts import WorkClaimInput
+
+    with f() as session:
+        version = session.get(WorkItem, wid).version_id
+    handoffs.claim(
+        venture["workspace_id"],
+        wid,
+        WorkClaimInput(expected_version=version, actor="agent"),
+    )
+    ctx = context(loop)
+    changed = data.model_dump(mode="json")
+    changed.update(
+        expected_head=head["id"], request_key="claimant-add-note", actor="agent"
+    )
+    changed["map"]["nodes"].append(
+        {"id": "note", "kind": "question", "title": "Future question"}
+    )
+    revised = maps.revise(venture["workspace_id"], MapInput.model_validate(changed))
+    assert wid not in revised["needs_review"]
+    assert handoffs.show_context(ctx["id"])["stale_reasons"] == []
+    result = handoffs.submit(venture["workspace_id"], result_payload(ctx))
+    assert result["state"] == "ready_for_review"
+    changed.update(
+        expected_head=revised["id"], request_key="operator-edit", actor="other"
+    )
+    changed["map"]["nodes"][-1]["title"] = "A different future question"
+    maps.revise(venture["workspace_id"], MapInput.model_validate(changed))
+    assert "Decision map changed" in handoffs.show_context(ctx["id"])["stale_reasons"]
+
+
+def test_claimant_meaningful_context_edit_requires_fresh_context(loop):
+    f, venture, wid, _, _, maps, handoffs, data, head = loop
+    from startup_foundry.decision_contracts import WorkClaimInput
+
+    with f() as session:
+        version = session.get(WorkItem, wid).version_id
+    handoffs.claim(
+        venture["workspace_id"],
+        wid,
+        WorkClaimInput(expected_version=version, actor="agent"),
+    )
+    ctx = context(loop)
+    changed = data.model_dump(mode="json")
+    changed.update(
+        expected_head=head["id"], request_key="claimant-changes-gate", actor="agent"
+    )
+    changed["map"]["nodes"][1]["title"] = "Test r19 instead"
+    revised = maps.revise(venture["workspace_id"], MapInput.model_validate(changed))
+    assert wid not in revised["needs_review"]
+    assert "Decision map changed" in handoffs.show_context(ctx["id"])["stale_reasons"]
+    with pytest.raises(ConflictError):
+        result = handoffs.submit(venture["workspace_id"], result_payload(ctx))
+        handoffs.resolve(result["id"], resolution(result, ctx))
+
+    changed.update(
+        expected_head=revised["id"], request_key="other-changes-gate", actor="other"
+    )
+    changed["map"]["nodes"][1]["title"] = "Test r20 instead"
+    external = maps.revise(venture["workspace_id"], MapInput.model_validate(changed))
+    assert wid in external["needs_review"]
+    changed.update(
+        expected_head=external["id"], request_key="claimant-follows-up", actor="agent"
+    )
+    changed["map"]["nodes"][1]["title"] = "Clarify r20 test"
+    own = maps.revise(venture["workspace_id"], MapInput.model_validate(changed))
+    assert wid in own["needs_review"], "Own edits cannot clear an earlier review guard"
+
+
+def test_work_treatment_revises_question_and_acceptance_criteria(loop):
+    f, venture, wid, _, _, maps, _, data, head = loop
+    changed = data.model_dump(mode="json")
+    changed.update(expected_head=head["id"], request_key="refine-acceptance")
+    with f() as session:
+        version = session.get(WorkItem, wid).version_id
+    changed["work_treatments"] = [
+        {
+            "work_id": wid,
+            "expected_version": version,
+            "action": "revise",
+            "rationale": "Align with the reviewed package plan",
+            "question": "Does r19 isolate accounts?",
+            "acceptance_criteria": "r19 isolation passes",
+        }
+    ]
+    maps.revise(venture["workspace_id"], MapInput.model_validate(changed))
+    with f() as s:
+        work = s.get(WorkItem, wid)
+        assert work.question == "Does r19 isolate accounts?"
+        assert work.acceptance_criteria == "r19 isolation passes"
+        assert work.version_id == version + 1
+
+
+def test_next_work_preserves_deliberate_focus_and_is_still_claimable(loop):
+    _, venture, _, _, _, maps, handoffs, _, _ = loop
+    ctx = context(loop)
+    result = handoffs.submit(
+        venture["workspace_id"],
+        result_payload(
+            ctx,
+            outcome="continue",
+            revisit_trigger=None,
+            next_work={
+                "title": "Next package",
+                "description": "Implement the checked fix",
+                "acceptance_criteria": "Checks pass",
+                "kind": "execution",
+            },
+        ),
+    )
+    receipt = handoffs.resolve(result["id"], resolution(result, ctx))
+    assert maps.show(venture["workspace_id"])["map"]["focus"] == ["work"]
+    next_id = receipt["effects"]["next_work_id"]
+    resumed = handoffs.resume(venture["workspace_id"])
+    assert isinstance(resumed["needs_review"], list)
+    assert (
+        resumed["venture_state"]["next_action"]["work_action"]
+        == "Implement the checked fix"
+    )
+    from startup_foundry.decision_contracts import WorkClaimInput
+
+    handoffs.claim(
+        venture["workspace_id"],
+        next_id,
+        WorkClaimInput(expected_version=1, actor="agent"),
+    )
